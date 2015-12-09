@@ -9,6 +9,18 @@
 /* Begin PBXBuildFile section */
 		623DE8F3F2CEAA896CFA50AC /* Pods_locator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F065E9F82669863AC08B17B /* Pods_locator.framework */; };
 		876290231C1893DE00D2870E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876290221C1893DE00D2870E /* LoginVC.swift */; };
+		876290241C18E1B400D2870E /* SourceSansPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 876290141C187DD700D2870E /* SourceSansPro-Black.ttf */; };
+		876290251C18E1B400D2870E /* SourceSansPro-BlackIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 876290151C187DD700D2870E /* SourceSansPro-BlackIt.ttf */; };
+		876290261C18E1B400D2870E /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 876290161C187DD700D2870E /* SourceSansPro-Bold.ttf */; };
+		876290271C18E1B400D2870E /* SourceSansPro-BoldIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 876290171C187DD700D2870E /* SourceSansPro-BoldIt.ttf */; };
+		876290281C18E1B400D2870E /* SourceSansPro-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 876290181C187DD700D2870E /* SourceSansPro-ExtraLight.ttf */; };
+		876290291C18E1B400D2870E /* SourceSansPro-ExtraLightIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 876290191C187DD700D2870E /* SourceSansPro-ExtraLightIt.ttf */; };
+		8762902A1C18E1B400D2870E /* SourceSansPro-It.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8762901A1C187DD700D2870E /* SourceSansPro-It.ttf */; };
+		8762902B1C18E1B400D2870E /* SourceSansPro-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8762901B1C187DD700D2870E /* SourceSansPro-Light.ttf */; };
+		8762902C1C18E1B400D2870E /* SourceSansPro-LightIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8762901C1C187DD700D2870E /* SourceSansPro-LightIt.ttf */; };
+		8762902D1C18E1B400D2870E /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8762901D1C187DD700D2870E /* SourceSansPro-Regular.ttf */; };
+		8762902E1C18E1B400D2870E /* SourceSansPro-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8762901E1C187DD700D2870E /* SourceSansPro-Semibold.ttf */; };
+		8762902F1C18E1B400D2870E /* SourceSansPro-SemiboldIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8762901F1C187DD700D2870E /* SourceSansPro-SemiboldIt.ttf */; };
 		87F14D7B1C18604B00682709 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F14D7A1C18604B00682709 /* AppDelegate.swift */; };
 		87F14D7D1C18604B00682709 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F14D7C1C18604B00682709 /* WelcomeVC.swift */; };
 		87F14D801C18604B00682709 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87F14D7E1C18604B00682709 /* Main.storyboard */; };
@@ -200,6 +212,18 @@
 				87F14D881C18604B00682709 /* LaunchScreen.storyboard in Resources */,
 				87F14D851C18604B00682709 /* Assets.xcassets in Resources */,
 				87F14D801C18604B00682709 /* Main.storyboard in Resources */,
+				876290241C18E1B400D2870E /* SourceSansPro-Black.ttf in Resources */,
+				876290251C18E1B400D2870E /* SourceSansPro-BlackIt.ttf in Resources */,
+				876290261C18E1B400D2870E /* SourceSansPro-Bold.ttf in Resources */,
+				876290271C18E1B400D2870E /* SourceSansPro-BoldIt.ttf in Resources */,
+				876290281C18E1B400D2870E /* SourceSansPro-ExtraLight.ttf in Resources */,
+				876290291C18E1B400D2870E /* SourceSansPro-ExtraLightIt.ttf in Resources */,
+				8762902A1C18E1B400D2870E /* SourceSansPro-It.ttf in Resources */,
+				8762902B1C18E1B400D2870E /* SourceSansPro-Light.ttf in Resources */,
+				8762902C1C18E1B400D2870E /* SourceSansPro-LightIt.ttf in Resources */,
+				8762902D1C18E1B400D2870E /* SourceSansPro-Regular.ttf in Resources */,
+				8762902E1C18E1B400D2870E /* SourceSansPro-Semibold.ttf in Resources */,
+				8762902F1C18E1B400D2870E /* SourceSansPro-SemiboldIt.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
