@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		623DE8F3F2CEAA896CFA50AC /* Pods_locator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F065E9F82669863AC08B17B /* Pods_locator.framework */; };
 		87F14D7B1C18604B00682709 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F14D7A1C18604B00682709 /* AppDelegate.swift */; };
-		87F14D7D1C18604B00682709 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F14D7C1C18604B00682709 /* ViewController.swift */; };
+		87F14D7D1C18604B00682709 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F14D7C1C18604B00682709 /* WelcomeVC.swift */; };
 		87F14D801C18604B00682709 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87F14D7E1C18604B00682709 /* Main.storyboard */; };
 		87F14D831C18604B00682709 /* locator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 87F14D811C18604B00682709 /* locator.xcdatamodeld */; };
 		87F14D851C18604B00682709 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87F14D841C18604B00682709 /* Assets.xcassets */; };
@@ -19,9 +19,21 @@
 /* Begin PBXFileReference section */
 		2A2D73A983D85F52E3CE00E5 /* Pods-locator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-locator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-locator/Pods-locator.debug.xcconfig"; sourceTree = "<group>"; };
 		6452E77853577A731ADE8C86 /* Pods-locator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-locator.release.xcconfig"; path = "Pods/Target Support Files/Pods-locator/Pods-locator.release.xcconfig"; sourceTree = "<group>"; };
+		876290141C187DD700D2870E /* SourceSansPro-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Black.ttf"; sourceTree = "<group>"; };
+		876290151C187DD700D2870E /* SourceSansPro-BlackIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-BlackIt.ttf"; sourceTree = "<group>"; };
+		876290161C187DD700D2870E /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Bold.ttf"; sourceTree = "<group>"; };
+		876290171C187DD700D2870E /* SourceSansPro-BoldIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-BoldIt.ttf"; sourceTree = "<group>"; };
+		876290181C187DD700D2870E /* SourceSansPro-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-ExtraLight.ttf"; sourceTree = "<group>"; };
+		876290191C187DD700D2870E /* SourceSansPro-ExtraLightIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-ExtraLightIt.ttf"; sourceTree = "<group>"; };
+		8762901A1C187DD700D2870E /* SourceSansPro-It.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-It.ttf"; sourceTree = "<group>"; };
+		8762901B1C187DD700D2870E /* SourceSansPro-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Light.ttf"; sourceTree = "<group>"; };
+		8762901C1C187DD700D2870E /* SourceSansPro-LightIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-LightIt.ttf"; sourceTree = "<group>"; };
+		8762901D1C187DD700D2870E /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
+		8762901E1C187DD700D2870E /* SourceSansPro-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Semibold.ttf"; sourceTree = "<group>"; };
+		8762901F1C187DD700D2870E /* SourceSansPro-SemiboldIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiboldIt.ttf"; sourceTree = "<group>"; };
 		87F14D771C18604B00682709 /* locator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = locator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87F14D7A1C18604B00682709 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		87F14D7C1C18604B00682709 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		87F14D7C1C18604B00682709 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		87F14D7F1C18604B00682709 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		87F14D821C18604B00682709 /* locator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = locator.xcdatamodel; sourceTree = "<group>"; };
 		87F14D841C18604B00682709 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,10 +71,43 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		876290121C18797B00D2870E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				876290131C187DB000D2870E /* Fonts */,
+				87F14D861C18604B00682709 /* LaunchScreen.storyboard */,
+				87F14D891C18604B00682709 /* Info.plist */,
+				87F14D811C18604B00682709 /* locator.xcdatamodeld */,
+			);
+			name = "Supporting Files";
+			path = locator;
+			sourceTree = "<group>";
+		};
+		876290131C187DB000D2870E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				876290141C187DD700D2870E /* SourceSansPro-Black.ttf */,
+				876290151C187DD700D2870E /* SourceSansPro-BlackIt.ttf */,
+				876290161C187DD700D2870E /* SourceSansPro-Bold.ttf */,
+				876290171C187DD700D2870E /* SourceSansPro-BoldIt.ttf */,
+				876290181C187DD700D2870E /* SourceSansPro-ExtraLight.ttf */,
+				876290191C187DD700D2870E /* SourceSansPro-ExtraLightIt.ttf */,
+				8762901A1C187DD700D2870E /* SourceSansPro-It.ttf */,
+				8762901B1C187DD700D2870E /* SourceSansPro-Light.ttf */,
+				8762901C1C187DD700D2870E /* SourceSansPro-LightIt.ttf */,
+				8762901D1C187DD700D2870E /* SourceSansPro-Regular.ttf */,
+				8762901E1C187DD700D2870E /* SourceSansPro-Semibold.ttf */,
+				8762901F1C187DD700D2870E /* SourceSansPro-SemiboldIt.ttf */,
+			);
+			name = Fonts;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		87F14D6E1C18604B00682709 = {
 			isa = PBXGroup;
 			children = (
 				87F14D791C18604B00682709 /* locator */,
+				876290121C18797B00D2870E /* Supporting Files */,
 				87F14D781C18604B00682709 /* Products */,
 				0C379E5A93285B69727480FF /* Pods */,
 				28C8E3043479B3786F84B281 /* Frameworks */,
@@ -81,12 +126,9 @@
 			isa = PBXGroup;
 			children = (
 				87F14D7A1C18604B00682709 /* AppDelegate.swift */,
-				87F14D7C1C18604B00682709 /* ViewController.swift */,
+				87F14D7C1C18604B00682709 /* WelcomeVC.swift */,
 				87F14D7E1C18604B00682709 /* Main.storyboard */,
 				87F14D841C18604B00682709 /* Assets.xcassets */,
-				87F14D861C18604B00682709 /* LaunchScreen.storyboard */,
-				87F14D891C18604B00682709 /* Info.plist */,
-				87F14D811C18604B00682709 /* locator.xcdatamodeld */,
 			);
 			path = locator;
 			sourceTree = "<group>";
@@ -214,7 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87F14D831C18604B00682709 /* locator.xcdatamodeld in Sources */,
-				87F14D7D1C18604B00682709 /* ViewController.swift in Sources */,
+				87F14D7D1C18604B00682709 /* WelcomeVC.swift in Sources */,
 				87F14D7B1C18604B00682709 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,7 +300,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: s.birklin@gmail.com (5B7YK5HHD3)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -302,7 +344,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: s.birklin@gmail.com (5B7YK5HHD3)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
