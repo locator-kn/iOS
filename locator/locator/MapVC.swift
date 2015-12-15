@@ -8,34 +8,37 @@
 
 import UIKit
 import GoogleMaps
+import CoreLocation
 
-class MapVC: UIViewController {
+class MapVC: UIViewController, CLLocationManagerDelegate {
 
+    var locationManager: CLLocationManager = CLLocationManager()
+    var lastLocation: CLLocation!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let mapView = self.view as! GMSMapView
-        mapView.camera = GMSCameraPosition.cameraWithLatitude(-33.8600, longitude: 151.2094, zoom: 10)
+        mapView.camera = GMSCameraPosition.cameraWithLatitude(47.66492492654014, longitude: 9.199697971343934, zoom: 10)
         
-        let locationManager: CLLocationManager = CLLocationManager()
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.distanceFilter = 20
-        
+        locationManager.distanceFilter = 5.0
+        locationManager.delegate = self
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location: CLLocation? = locations.last
+        print(location?.coordinate.latitude, location?.coordinate.longitude)
+        locationManager.stopUpdatingLocation()
+    }
+    
+
+
+    @IBAction func buttonUp(sender: AnyObject) {
         locationManager.startUpdatingLocation()
-    
-    }
-    
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        print("update");
-    }
-    
-    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
-        print(error);
     }
 
-  
     
 
 }
