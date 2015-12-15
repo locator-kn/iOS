@@ -119,12 +119,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4fM-eQ-3gY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="4Mp-XX-Glu" customClass="MapVC" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="uAk-ke-A5a"/>
-                        <viewControllerLayoutGuide type="bottom" id="V52-89-FHK"/>
+                        <viewControllerLayoutGuide type="top" id="FEp-9v-0Jh"/>
+                        <viewControllerLayoutGuide type="bottom" id="Na0-o0-8lP"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Cs5-mB-ZSF" customClass="GMSMapView">
+                    <view key="view" contentMode="scaleToFill" id="v1V-7X-nyy" userLabel="view" customClass="GMSMapView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gve-15-CuT">
+                                <rect key="frame" x="249" y="272" width="101" height="56"/>
+                                <state key="normal" title="Schönbier"/>
+                                <connections>
+                                    <action selector="buttonUp:" destination="4Mp-XX-Glu" eventType="touchUpInside" id="VK4-Bq-nRe"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
