@@ -62,18 +62,6 @@
                                 </constraints>
                                 <state key="normal" image="Nö"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqs-Ky-OxC">
-                                <rect key="frame" x="271" y="522" width="58" height="58"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="58" id="EYI-aM-cA7"/>
-                                    <constraint firstAttribute="width" constant="58" id="yH3-7z-epc"/>
-                                </constraints>
-                                <state key="normal" image="Ja"/>
-                                <connections>
-                                    <action selector="showLoginView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fax-ds-H6r"/>
-                                    <segue destination="jO7-pV-bbR" kind="show" id="ggl-0m-EsF"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Möchtest du dich anmelden oder registieren?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TDD-Er-t1h">
                                 <rect key="frame" x="20" y="212" width="560" height="195"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="35"/>
@@ -85,6 +73,17 @@
                                 <state key="normal" title="gotomap"/>
                                 <connections>
                                     <segue destination="4Mp-XX-Glu" kind="show" id="Dge-4W-7Ya"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqs-Ky-OxC">
+                                <rect key="frame" x="271" y="522" width="58" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="EYI-aM-cA7"/>
+                                    <constraint firstAttribute="width" constant="58" id="yH3-7z-epc"/>
+                                </constraints>
+                                <state key="normal" image="Ja"/>
+                                <connections>
+                                    <segue destination="jO7-pV-bbR" kind="show" id="ggl-0m-EsF"/>
                                 </connections>
                             </button>
                         </subviews>

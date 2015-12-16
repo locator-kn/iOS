@@ -23,11 +23,6 @@ class WelcomeVC: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    @IBAction func showLoginView(sender: UIButton) {
-        //performSegueWithIdentifier("showLoginScreen", sender: self)
-    }
-
 }
 
 

@@ -62,8 +62,6 @@ class LoginVC: UIViewController {
         self.navigationController?.popViewControllerAnimated(true)
     }
     
-    
-    
     /*
     // MARK: - Navigation
 
