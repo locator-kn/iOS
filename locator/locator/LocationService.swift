@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class LocationService {
     
-    static func getNearby(lat: Double, long:Double, maxDistance:Int, limit:Int) -> [Location] {
+    static func getNearby(lat: Double, long:Double, maxDistance:Int, limit:Int, callback: (([Location]) -> Void)) {
         
         var nearbyLocations = [Location]()
         
@@ -31,6 +31,7 @@ class LocationService {
                         nearbyLocations.append(Location(title: title!, long: long!, lat: lat!))
                         
                     }
+                    callback(nearbyLocations)
                     
                 }
                 
@@ -39,7 +40,7 @@ class LocationService {
             }
            
         }
-         return nearbyLocations
+        
 
     }
 
