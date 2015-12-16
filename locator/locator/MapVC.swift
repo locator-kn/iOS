@@ -22,13 +22,14 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         
         mapView = self.view as! GMSMapView
-        mapView.camera = GMSCameraPosition.cameraWithLatitude(47.66492492654014, longitude: 9.199697971343934, zoom: 10)
+        mapView.camera = GMSCameraPosition.cameraWithLatitude(47.66492492654014, longitude: 9.199697971343934, zoom: 15)
         
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = 5.0
         locationManager.delegate = self
         
+        print("fetch gps")
         locationManager.startUpdatingLocation()
         
         
@@ -45,8 +46,10 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
         
         print("gps")
         
-        showMarker(lat!, long: long!)
-        mapView.animateToCameraPosition(GMSCameraPosition.cameraWithLatitude(lat!, longitude: long!, zoom: 10))
+        showMarker(lat!, long: long!, location: false)
+        getNearby(lat!, long: long!, maxDistance: 3, limit: 15)
+        
+        mapView.animateToCameraPosition(GMSCameraPosition.cameraWithLatitude(lat!, longitude: long!, zoom: 15))
     }
     
 
@@ -55,7 +58,7 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
     }
 
-    func showMarker(lat:Double, long:Double) {
+    func showMarker(lat:Double, long:Double, location:Bool) {
         
         print("lat", lat)
         print("long", long)
@@ -66,10 +69,11 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
         marker.appearAnimation = kGMSMarkerAnimationPop
         marker.map = mapView
         
-        self.view = mapView
-        
-        
-        getNearby(lat, long: long, maxDistance: 2, limit: 5)
+        if (location) {
+            marker.icon = GMSMarker.markerImageWithColor(UIColor.blackColor())
+            marker.opacity = 0.8
+        }
+
     }
     
     func getNearby(lat: Double, long:Double, maxDistance:Int, limit:Int) {
@@ -83,10 +87,9 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
                     
                     for (_,subJson):(String, JSON) in json["results"] {
                     
-                        let lat = subJson["geotag"]["coordinates"][1].double
-                        let long = subJson["geotag"]["coordinates"][0].double
-                        
-                        //self.showMarker(lat!, long: long!)
+                        let lat = subJson["obj"]["geotag"]["coordinates"][1].double
+                        let long = subJson["obj"]["geotag"]["coordinates"][0].double
+                        self.showMarker(lat!, long: long!, location: true)
                     }
                 }
                 
