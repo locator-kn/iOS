@@ -14,19 +14,16 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
     
     var locationManager: CLLocationManager = CLLocationManager()
     var lastLocation: CLLocation!
-    var mapView: GMSMapView!
+    @IBOutlet weak var mapView: GMSMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        mapView = self.view as! GMSMapView
         
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = 5.0
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
-        
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -39,13 +36,12 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
 
         showMarker(lat!, long: long!, location: false)
         
-        let nearbyLocations = LocationService.getNearby(lat!, long: long!, maxDistance: 3, limit: 15)
-        
-        for location in nearbyLocations {
-            print("Location: ", location)
-            showMarker(location.getGeoPosition().lat, long: location.getGeoPosition().long, location: true)
+        LocationService.getNearby(lat!, long: long!, maxDistance: 3, limit: 15) { (locations) -> Void in
+            
+            for location in locations {
+                self.showMarker(location.getGeoPosition().lat, long: location.getGeoPosition().long, location: true)
+            }
         }
-        
         mapView.animateToCameraPosition(GMSCameraPosition.cameraWithLatitude(lat!, longitude: long!, zoom: 15))
     }
     
@@ -67,6 +63,4 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
             marker.opacity = 0.8
         }
     }
-    
-    
 }
