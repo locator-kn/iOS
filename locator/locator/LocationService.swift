@@ -31,13 +31,15 @@ class LocationService {
                         nearbyLocations.append(Location(title: title!, long: long!, lat: lat!))
                         
                     }
-                    return nearbyLocations
+                    
                 }
                 
             case .Failure(let error):
                 print(error)
             }
+           
         }
+         return nearbyLocations
 
     }
 

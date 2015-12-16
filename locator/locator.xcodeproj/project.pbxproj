@@ -101,6 +101,7 @@
 				5B4475081C2167BE00C30445 /* Location.swift */,
 			);
 			name = model;
+			path = locator;
 			sourceTree = "<group>";
 		};
 		5B44750B1C216E7A00C30445 /* service */ = {
@@ -109,6 +110,7 @@
 				5B44750C1C216E9600C30445 /* LocationService.swift */,
 			);
 			name = service;
+			path = locator;
 			sourceTree = "<group>";
 		};
 		876290121C18797B00D2870E /* Supporting Files */ = {
@@ -147,7 +149,9 @@
 		87F14D6E1C18604B00682709 = {
 			isa = PBXGroup;
 			children = (
-				87F14D791C18604B00682709 /* locator */,
+				5B44750B1C216E7A00C30445 /* service */,
+				5B44750A1C216A2600C30445 /* model */,
+				87F14D791C18604B00682709 /* controller */,
 				876290121C18797B00D2870E /* Supporting Files */,
 				87F14D781C18604B00682709 /* Products */,
 				0C379E5A93285B69727480FF /* Pods */,
@@ -163,11 +167,9 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		87F14D791C18604B00682709 /* locator */ = {
+		87F14D791C18604B00682709 /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				5B44750B1C216E7A00C30445 /* service */,
-				5B44750A1C216A2600C30445 /* model */,
 				876290221C1893DE00D2870E /* LoginVC.swift */,
 				87F14D7C1C18604B00682709 /* WelcomeVC.swift */,
 				872DA7C71C1F06A10041C9D6 /* EmailLoginVC1.swift */,
@@ -176,6 +178,7 @@
 				87F14D841C18604B00682709 /* Assets.xcassets */,
 				5B495C4D1C2061B5000D8974 /* MapVC.swift */,
 			);
+			name = controller;
 			path = locator;
 			sourceTree = "<group>";
 		};
