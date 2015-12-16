@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B4475091C2167BE00C30445 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4475081C2167BE00C30445 /* Location.swift */; };
+		5B44750D1C216E9600C30445 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44750C1C216E9600C30445 /* LocationService.swift */; };
 		5B495C4E1C2061B5000D8974 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B495C4D1C2061B5000D8974 /* MapVC.swift */; };
 		623DE8F3F2CEAA896CFA50AC /* Pods_locator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F065E9F82669863AC08B17B /* Pods_locator.framework */; };
 		872DA7C81C1F06A10041C9D6 /* EmailLoginVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872DA7C71C1F06A10041C9D6 /* EmailLoginVC1.swift */; };
@@ -34,6 +36,8 @@
 
 /* Begin PBXFileReference section */
 		2A2D73A983D85F52E3CE00E5 /* Pods-locator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-locator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-locator/Pods-locator.debug.xcconfig"; sourceTree = "<group>"; };
+		5B4475081C2167BE00C30445 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		5B44750C1C216E9600C30445 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		5B495C4D1C2061B5000D8974 /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		6452E77853577A731ADE8C86 /* Pods-locator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-locator.release.xcconfig"; path = "Pods/Target Support Files/Pods-locator/Pods-locator.release.xcconfig"; sourceTree = "<group>"; };
 		872DA7C71C1F06A10041C9D6 /* EmailLoginVC1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailLoginVC1.swift; sourceTree = "<group>"; };
@@ -91,6 +95,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5B44750A1C216A2600C30445 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				5B4475081C2167BE00C30445 /* Location.swift */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		5B44750B1C216E7A00C30445 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				5B44750C1C216E9600C30445 /* LocationService.swift */,
+			);
+			name = service;
+			sourceTree = "<group>";
+		};
 		876290121C18797B00D2870E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +166,8 @@
 		87F14D791C18604B00682709 /* locator */ = {
 			isa = PBXGroup;
 			children = (
+				5B44750B1C216E7A00C30445 /* service */,
+				5B44750A1C216A2600C30445 /* model */,
 				876290221C1893DE00D2870E /* LoginVC.swift */,
 				87F14D7C1C18604B00682709 /* WelcomeVC.swift */,
 				872DA7C71C1F06A10041C9D6 /* EmailLoginVC1.swift */,
@@ -296,7 +318,9 @@
 				872DA7C81C1F06A10041C9D6 /* EmailLoginVC1.swift in Sources */,
 				87F14D7D1C18604B00682709 /* WelcomeVC.swift in Sources */,
 				5B495C4E1C2061B5000D8974 /* MapVC.swift in Sources */,
+				5B4475091C2167BE00C30445 /* Location.swift in Sources */,
 				876290231C1893DE00D2870E /* LoginVC.swift in Sources */,
+				5B44750D1C216E9600C30445 /* LocationService.swift in Sources */,
 				87F14D7B1C18604B00682709 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
