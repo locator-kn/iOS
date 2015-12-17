@@ -16,9 +16,9 @@ class MapVC: UIViewController, MKMapViewDelegate {
     var locationManager: CLLocationManager = CLLocationManager()
     var nearLocations = [String: Location]()
     var nearSchoenHiers = [String: SchoenHier]()
-
-
+    
     @IBOutlet weak var mapView: MKMapView!
+    var previousRegion: CLLocationCoordinate2D!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +28,24 @@ class MapVC: UIViewController, MKMapViewDelegate {
     }
     
     func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        
+        let latitudeTollerance:Double = 1
+        let longitudeTollerance:Double = 1
+        
+        if ((previousRegion == nil)) {
+            previousRegion = mapView.region.center
+        }
+        
+        /* if (mapView.region.center.latitude > previousRegion.latitude + latitudeTollerance
+            || mapView.region.center.longitude < previousRegion.longitude + longitudeTollerance
+            || mapView.region.center.latitude > previousRegion.latitude - latitudeTollerance
+            || mapView.region.center.longitude < previousRegion.longitude - longitudeTollerance) {
+              
+                previousRegion = mapView.region.center
+                print("Update")
+        } else {
+            return
+        } */
         
         let lat1 = mapView.region.center.latitude - mapView.region.span.latitudeDelta * 0.5
         let long1 = mapView.region.center.longitude
