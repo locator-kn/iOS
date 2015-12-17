@@ -57,9 +57,6 @@ class LocationService {
                     let json = JSON(value)
                     
                     for (_,subJson):(String, JSON) in json["results"] {
-                        
-                        print(subJson)
-                        
                         let lat = subJson["obj"]["geotag"]["coordinates"][1].double
                         let long = subJson["obj"]["geotag"]["coordinates"][0].double
                         let createDate = "todo"
