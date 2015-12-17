@@ -42,10 +42,5 @@ class LocationService {
             }
            
         }
-        
-
     }
-
-    
-    
 }
