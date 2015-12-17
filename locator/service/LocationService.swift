@@ -43,4 +43,39 @@ class LocationService {
            
         }
     }
+    
+    
+    static func getSchoenHiers(lat: Double, long:Double, maxDistance:Double, limit:Int, callback: (([SchoenHier]) -> Void)) {
+        
+        var nearbySchoenHiers = [SchoenHier]()
+        
+        Alamofire.request(.GET, "https://locator-app.com/api/v2/schoenhiers/nearby", parameters: ["lat": lat, "long": long, "maxDistance":maxDistance, "limit":limit]).validate().responseJSON { response in
+            switch response.result {
+            case .Success:
+                
+                if let value = response.result.value {
+                    let json = JSON(value)
+                    
+                    for (_,subJson):(String, JSON) in json["results"] {
+                        
+                        print(subJson)
+                        
+                        let lat = subJson["obj"]["geotag"]["coordinates"][1].double
+                        let long = subJson["obj"]["geotag"]["coordinates"][0].double
+                        let createDate = "todo"
+                        let id = subJson["obj"]["_id"].string
+                        
+                        nearbySchoenHiers.append(SchoenHier(id: id!, createDate: createDate, long: long!, lat: lat!))
+                        
+                    }
+                    callback(nearbySchoenHiers)
+                }
+                
+            case .Failure(let error):
+                print(error)
+            }
+            
+        }
+    }
+
 }
