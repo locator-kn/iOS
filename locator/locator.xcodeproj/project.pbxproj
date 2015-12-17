@@ -100,8 +100,7 @@
 			children = (
 				5B4475081C2167BE00C30445 /* Location.swift */,
 			);
-			name = model;
-			path = locator;
+			path = model;
 			sourceTree = "<group>";
 		};
 		5B44750B1C216E7A00C30445 /* service */ = {
@@ -109,13 +108,13 @@
 			children = (
 				5B44750C1C216E9600C30445 /* LocationService.swift */,
 			);
-			name = service;
-			path = locator;
+			path = service;
 			sourceTree = "<group>";
 		};
 		876290121C18797B00D2870E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				87F14D841C18604B00682709 /* Assets.xcassets */,
 				876290131C187DB000D2870E /* Fonts */,
 				87F14D7A1C18604B00682709 /* AppDelegate.swift */,
 				87F14D861C18604B00682709 /* LaunchScreen.storyboard */,
@@ -149,6 +148,7 @@
 		87F14D6E1C18604B00682709 = {
 			isa = PBXGroup;
 			children = (
+				87F14D7E1C18604B00682709 /* Main.storyboard */,
 				5B44750B1C216E7A00C30445 /* service */,
 				5B44750A1C216A2600C30445 /* model */,
 				87F14D791C18604B00682709 /* controller */,
@@ -174,8 +174,6 @@
 				87F14D7C1C18604B00682709 /* WelcomeVC.swift */,
 				872DA7C71C1F06A10041C9D6 /* EmailLoginVC1.swift */,
 				872DA7C91C1F156A0041C9D6 /* EmailLoginVC2.swift */,
-				87F14D7E1C18604B00682709 /* Main.storyboard */,
-				87F14D841C18604B00682709 /* Assets.xcassets */,
 				5B495C4D1C2061B5000D8974 /* MapVC.swift */,
 			);
 			name = controller;
@@ -217,6 +215,7 @@
 				TargetAttributes = {
 					87F14D761C18604B00682709 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 969HK8WJ4Z;
 					};
 				};
 			};
@@ -337,6 +336,7 @@
 				87F14D7F1C18604B00682709 /* Base */,
 			);
 			name = Main.storyboard;
+			path = locator;
 			sourceTree = "<group>";
 		};
 		87F14D861C18604B00682709 /* LaunchScreen.storyboard */ = {
@@ -436,10 +436,13 @@
 			baseConfigurationReference = 2A2D73A983D85F52E3CE00E5 /* Pods-locator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = locator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.htwg.com.locator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -448,10 +451,13 @@
 			baseConfigurationReference = 6452E77853577A731ADE8C86 /* Pods-locator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = locator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.htwg.com.locator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -125,34 +125,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3oC-3s-zC6" customClass="GMSMapView">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0mA-fM-JJu">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gve-15-CuT">
-                                <rect key="frame" x="496" y="542" width="101" height="56"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="101" id="8gJ-bE-gUr"/>
-                                    <constraint firstAttribute="height" constant="56" id="xtU-3C-atW"/>
-                                </constraints>
-                                <state key="normal" title="Schönbier"/>
-                                <connections>
-                                    <action selector="buttonUp:" destination="4Mp-XX-Glu" eventType="touchUpInside" id="VK4-Bq-nRe"/>
-                                </connections>
-                            </button>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="3oC-3s-zC6" firstAttribute="bottom" secondItem="Na0-o0-8lP" secondAttribute="top" id="76R-Rd-Qsa"/>
-                            <constraint firstItem="Na0-o0-8lP" firstAttribute="top" secondItem="Gve-15-CuT" secondAttribute="bottom" constant="2" id="Cx3-Dr-LBb"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Gve-15-CuT" secondAttribute="trailing" constant="-17" id="KKV-0e-OTn"/>
-                            <constraint firstAttribute="trailing" secondItem="3oC-3s-zC6" secondAttribute="trailing" id="WMq-OV-q8P"/>
-                            <constraint firstItem="3oC-3s-zC6" firstAttribute="top" secondItem="FEp-9v-0Jh" secondAttribute="bottom" id="YlY-Qq-iB6"/>
-                            <constraint firstItem="3oC-3s-zC6" firstAttribute="leading" secondItem="v1V-7X-nyy" secondAttribute="leading" id="dsX-jw-u7c"/>
+                            <constraint firstItem="0mA-fM-JJu" firstAttribute="leading" secondItem="v1V-7X-nyy" secondAttribute="leading" id="CA8-gE-zc0"/>
+                            <constraint firstAttribute="trailing" secondItem="0mA-fM-JJu" secondAttribute="trailing" id="iZh-vD-0Hx"/>
+                            <constraint firstItem="0mA-fM-JJu" firstAttribute="top" secondItem="FEp-9v-0Jh" secondAttribute="bottom" id="m00-A8-Fzs"/>
+                            <constraint firstItem="0mA-fM-JJu" firstAttribute="bottom" secondItem="Na0-o0-8lP" secondAttribute="top" id="too-Yc-ISN"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="mapView" destination="3oC-3s-zC6" id="UvN-Ga-tQw"/>
+                        <outlet property="mapView" destination="0mA-fM-JJu" id="yE2-in-p4d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4fM-eQ-3gY" userLabel="First Responder" sceneMemberID="firstResponder"/>
