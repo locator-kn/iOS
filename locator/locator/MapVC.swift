@@ -9,21 +9,21 @@
 import UIKit
 import GoogleMaps
 import CoreLocation
+import MapKit
 
-class MapVC: UIViewController, CLLocationManagerDelegate {
+class MapVC: UIViewController, MKMapViewDelegate {
     
     var locationManager: CLLocationManager = CLLocationManager()
-    var lastLocation: CLLocation!
-    @IBOutlet weak var mapView: GMSMapView!
+    var nearLocations = [String: Location]()
+    var currentVisibleWidthInKilometers:Double = 3
+
+    @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.distanceFilter = 5.0
-        locationManager.delegate = self
-        locationManager.startUpdatingLocation()
+        mapView.showsUserLocation = true
+        mapView.setUserTrackingMode(MKUserTrackingMode.Follow, animated: true)
+        mapView.delegate = self
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -34,33 +34,63 @@ class MapVC: UIViewController, CLLocationManagerDelegate {
         let lat = location?.coordinate.latitude
         let long = location?.coordinate.longitude
 
-        showMarker(lat!, long: long!, location: false)
-        
-        LocationService.getNearby(lat!, long: long!, maxDistance: 3, limit: 15) { (locations) -> Void in
+        LocationService.getNearby(lat!, long: long!, maxDistance: 1, limit: 5) { (locations) -> Void in
             
             for location in locations {
-                self.showMarker(location.getGeoPosition().lat, long: location.getGeoPosition().long, location: true)
+                self.showMarker(location.getGeoPosition().lat, long: location.getGeoPosition().long, location: location)
             }
         }
-        mapView.animateToCameraPosition(GMSCameraPosition.cameraWithLatitude(lat!, longitude: long!, zoom: 15))
+    }
+    
+    func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        getNearLocations()
+        
+        let lat1 = mapView.region.center.latitude - mapView.region.span.latitudeDelta * 0.5
+        let long1 = mapView.region.center.longitude
+        
+        let lat2 = mapView.region.center.latitude + mapView.region.span.latitudeDelta * 0.5
+        let long2 = mapView.region.center.longitude
+        
+        
+        let location1 = CLLocation(latitude: lat1, longitude: long1)
+        let location2 = CLLocation(latitude: lat2, longitude: long2)
+        
+        currentVisibleWidthInKilometers = location1.distanceFromLocation(location2) / 1000
+        print(currentVisibleWidthInKilometers)
+    }
+
+    
+    func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
+    
     }
     
     
-    
-    @IBAction func buttonUp(sender: AnyObject) {
-        locationManager.startUpdatingLocation()
+   
+    func showMarker(lat:Double, long:Double, location:Location!) {
+        
+        let anotation = MKPointAnnotation()
+        anotation.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
+        anotation.title = location.title
+        mapView.addAnnotation(anotation)
     }
     
-    func showMarker(lat:Double, long:Double, location:Bool) {
-        
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2DMake(lat, long)
-        marker.appearAnimation = kGMSMarkerAnimationPop
-        marker.map = mapView
-        
-        if (location) {
-            marker.icon = GMSMarker.markerImageWithColor(UIColor.blackColor())
-            marker.opacity = 0.8
+    func getNearLocations() {
+        LocationService.getNearby(mapView.region.center.latitude, long: mapView.region.center.longitude, maxDistance: currentVisibleWidthInKilometers, limit: 15) { (locations) -> Void in
+            
+            for location in locations {
+                
+                if (self.nearLocations[location.id] == nil) {
+                    self.nearLocations[location.id] = location
+                    self.showMarker(location.getGeoPosition().lat, long: location.getGeoPosition().long, location:location)
+                }
+                
+            }
         }
+        
     }
+    
+    func mapUpdate() {
+        print("update")
+    }
+    
 }
