@@ -64,8 +64,6 @@ class MapVC: UIViewController, MKMapViewDelegate {
     
     }
     
-    
-   
     func showMarker(lat:Double, long:Double, location:Location!) {
         
         let anotation = MKPointAnnotation()
@@ -83,14 +81,8 @@ class MapVC: UIViewController, MKMapViewDelegate {
                     self.nearLocations[location.id] = location
                     self.showMarker(location.getGeoPosition().lat, long: location.getGeoPosition().long, location:location)
                 }
-                
             }
         }
-        
-    }
-    
-    func mapUpdate() {
-        print("update")
     }
     
 }
