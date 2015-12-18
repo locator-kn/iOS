@@ -74,10 +74,8 @@ class MapVC: UIViewController, MKMapViewDelegate, UITextFieldDelegate {
     }
     
     func showMarker(lat:Double, long:Double, location:Location!) {
-        let anotation = MKPointAnnotation()
-        anotation.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
-        anotation.title = location.title
-        mapView.addAnnotation(anotation)
+        let annotation = LocationAnnotation(coordinate: CLLocationCoordinate2D(latitude: lat, longitude: long), title: location.title)
+        mapView.addAnnotation(annotation)
     }
     
     func addHeatmap(lat:Double, long:Double, schoenHier:SchoenHier!) {
@@ -125,5 +123,25 @@ class MapVC: UIViewController, MKMapViewDelegate, UITextFieldDelegate {
         }
         return true
     }
+    
+    // MARK: - MapView Delegate
+    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+        if (annotation is LocationAnnotation) {
+            var mapView = mapView.dequeueReusableAnnotationViewWithIdentifier("view")
+            if mapView == nil {
+                mapView = MKAnnotationView(annotation: annotation, reuseIdentifier: "view")
+                mapView!.image = UIImage(named:"location")
+                mapView!.canShowCallout = true
+            } else {
+                //we are re-using a view, update its annotation reference...
+                mapView!.annotation = annotation
+            }
+            return mapView
+        } else {
+            return nil
+        }
+        
+    }
+    
 
 }
