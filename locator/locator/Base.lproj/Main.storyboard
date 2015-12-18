@@ -124,6 +124,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qGG-7k-18j" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQb-PR-2qf">
+                                <rect key="frame" x="248" y="489" width="103" height="103"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="103" id="QWT-14-CIP"/>
+                                    <constraint firstAttribute="width" constant="103" id="VtN-j1-7nC"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="schoen_hier"/>
+                                <connections>
+                                    <action selector="schoenHier:" destination="4Mp-XX-Glu" eventType="touchUpInside" id="FSi-y3-0dO"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hOT-iS-u8P" userLabel="searchField">
                                 <rect key="frame" x="6" y="20" width="586" height="30"/>
                                 <accessibility key="accessibilityConfiguration">
@@ -132,10 +147,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qGG-7k-18j" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -452,5 +463,6 @@
         <image name="back" width="35" height="60"/>
         <image name="cross" width="59" height="59"/>
         <image name="locator_logo" width="660" height="319"/>
+        <image name="schoen_hier" width="560" height="560"/>
     </resources>
 </document>
