@@ -11,12 +11,13 @@ import GoogleMaps
 import CoreLocation
 import MapKit
 
-class MapVC: UIViewController, MKMapViewDelegate {
+class MapVC: UIViewController, MKMapViewDelegate, UITextFieldDelegate {
     
     var locationManager: CLLocationManager = CLLocationManager()
     var nearLocations = [String: Location]()
     var nearSchoenHiers = [String: SchoenHier]()
     
+    @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var mapView: MKMapView!
     var previousRegion: CLLocationCoordinate2D!
     
@@ -25,6 +26,10 @@ class MapVC: UIViewController, MKMapViewDelegate {
         mapView.showsUserLocation = true
         mapView.setUserTrackingMode(MKUserTrackingMode.Follow, animated: true)
         mapView.delegate = self
+        
+        searchField.delegate = self
+        
+        searchField.attributedPlaceholder = NSAttributedString(string: "Suche")
     }
     
     func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
@@ -107,4 +112,18 @@ class MapVC: UIViewController, MKMapViewDelegate {
         }
     }
     
+    func textFieldShouldReturn(searchField: UITextField) -> Bool {
+        let localSearchRequest = MKLocalSearchRequest()
+        localSearchRequest.naturalLanguageQuery = searchField.text
+        let localSearch = MKLocalSearch(request: localSearchRequest)
+        localSearch.startWithCompletionHandler { (localSearchResponse, error) -> Void in
+            if localSearchResponse != nil{
+                self.mapView.setRegion(localSearchResponse!.boundingRegion, animated: true)
+            } else {
+                print(error)
+            }
+        }
+        return true
+    }
+
 }
