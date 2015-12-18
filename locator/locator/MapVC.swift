@@ -69,18 +69,13 @@ class MapVC: UIViewController, MKMapViewDelegate, UITextFieldDelegate {
     }
 
     
-    func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
-    
-    }
-    
-    func showMarker(lat:Double, long:Double, location:Location!) {
+    func showLocationMarker(lat:Double, long:Double, location:Location!) {
         let annotation = LocationAnnotation(coordinate: CLLocationCoordinate2D(latitude: lat, longitude: long), title: location.title)
         mapView.addAnnotation(annotation)
     }
     
-    func addHeatmap(lat:Double, long:Double, schoenHier:SchoenHier!) {
-        let anotation = MKPointAnnotation()
-        anotation.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
+    func showHeatMapMarker(lat:Double, long:Double, schoenHier:SchoenHier!) {
+        let anotation = HeatMapAnnotation(coordinate: CLLocationCoordinate2D(latitude: lat, longitude: long))
         mapView.addAnnotation(anotation)
     }
     
@@ -91,7 +86,7 @@ class MapVC: UIViewController, MKMapViewDelegate, UITextFieldDelegate {
                 
                 if (self.nearLocations[location.id] == nil) {
                     self.nearLocations[location.id] = location
-                    self.showMarker(location.getGeoPosition().lat, long: location.getGeoPosition().long, location:location)
+                    self.showLocationMarker(location.getGeoPosition().lat, long: location.getGeoPosition().long, location:location)
                 }
             }
         }
@@ -104,7 +99,7 @@ class MapVC: UIViewController, MKMapViewDelegate, UITextFieldDelegate {
             
                 if (self.nearSchoenHiers[schoenHier.id] == nil) {
                     self.nearSchoenHiers[schoenHier.id] = schoenHier
-                    self.addHeatmap(schoenHier.getGeoPosition().lat, long: schoenHier.getGeoPosition().long, schoenHier: schoenHier)
+                    self.showHeatMapMarker(schoenHier.getGeoPosition().lat, long: schoenHier.getGeoPosition().long, schoenHier: schoenHier)
                 }
             }
         }
@@ -123,25 +118,25 @@ class MapVC: UIViewController, MKMapViewDelegate, UITextFieldDelegate {
         }
         return true
     }
-    
-    // MARK: - MapView Delegate
-    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
-        if (annotation is LocationAnnotation) {
-            var mapView = mapView.dequeueReusableAnnotationViewWithIdentifier("view")
-            if mapView == nil {
-                mapView = MKAnnotationView(annotation: annotation, reuseIdentifier: "view")
-                mapView!.image = UIImage(named:"location")
-                mapView!.canShowCallout = true
+
+
+    func mapView (mapView: MKMapView,
+        viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+            
+            let annotationView:MKAnnotationView = MKAnnotationView()
+            annotationView.annotation = annotation
+            annotationView.canShowCallout = true
+            
+            if (annotation is LocationAnnotation) {
+                annotationView.image = UIImage(named:"location")
+                return annotationView
+            } else if (annotation is HeatMapAnnotation) {
+                annotationView.image = UIImage(named:"heatmap")
+                return annotationView
             } else {
-                //we are re-using a view, update its annotation reference...
-                mapView!.annotation = annotation
+                return nil
             }
-            return mapView
-        } else {
-            return nil
-        }
-        
     }
-    
+
 
 }
