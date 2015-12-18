@@ -124,9 +124,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0mA-fM-JJu">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </mapView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hOT-iS-u8P" userLabel="searchField">
                                 <rect key="frame" x="6" y="20" width="586" height="30"/>
                                 <accessibility key="accessibilityConfiguration">
@@ -135,20 +132,24 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qGG-7k-18j" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="hOT-iS-u8P" secondAttribute="trailing" id="Prf-cB-3Mh"/>
-                            <constraint firstItem="0mA-fM-JJu" firstAttribute="leading" secondItem="v1V-7X-nyy" secondAttribute="leading" id="dwf-L7-PjM"/>
+                            <constraint firstItem="qGG-7k-18j" firstAttribute="leading" secondItem="v1V-7X-nyy" secondAttribute="leading" id="Yc2-ta-NhG"/>
                             <constraint firstItem="hOT-iS-u8P" firstAttribute="leading" secondItem="v1V-7X-nyy" secondAttribute="leadingMargin" id="h7H-DR-aDx"/>
-                            <constraint firstItem="0mA-fM-JJu" firstAttribute="top" secondItem="FEp-9v-0Jh" secondAttribute="bottom" id="lyl-5D-hKr"/>
-                            <constraint firstAttribute="trailing" secondItem="0mA-fM-JJu" secondAttribute="trailing" id="pIF-cv-6CP"/>
+                            <constraint firstAttribute="trailing" secondItem="qGG-7k-18j" secondAttribute="trailing" id="jnn-XB-Ltu"/>
+                            <constraint firstItem="qGG-7k-18j" firstAttribute="bottom" secondItem="Na0-o0-8lP" secondAttribute="top" id="kV6-3L-axM"/>
                             <constraint firstItem="hOT-iS-u8P" firstAttribute="top" secondItem="FEp-9v-0Jh" secondAttribute="bottom" constant="25" id="qKX-lX-6bR"/>
-                            <constraint firstItem="0mA-fM-JJu" firstAttribute="bottom" secondItem="Na0-o0-8lP" secondAttribute="top" id="zam-Bd-J5N"/>
+                            <constraint firstItem="qGG-7k-18j" firstAttribute="top" secondItem="FEp-9v-0Jh" secondAttribute="bottom" id="s8r-hi-X7O"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="mapView" destination="0mA-fM-JJu" id="yE2-in-p4d"/>
+                        <outlet property="googleMap" destination="qGG-7k-18j" id="m7k-J0-X18"/>
                         <outlet property="searchField" destination="hOT-iS-u8P" id="HjU-6x-Xou"/>
                     </connections>
                 </viewController>
