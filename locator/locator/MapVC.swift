@@ -31,7 +31,6 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         
         googleMap.delegate = self
         googleMap.myLocationEnabled = true
-        googleMap.animateToLocation(googleMap.myLocation.coordinate)
         
         searchField.delegate = self
         searchField.attributedPlaceholder = NSAttributedString(string: "Suche")
@@ -59,7 +58,6 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     /* delegate on user position update */
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
-            
             googleMap.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
             locationManager.stopUpdatingLocation()
         }
@@ -81,7 +79,7 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2DMake(lat, long)
         marker.icon = UIImage(named: "heatmap")
-        marker.opacity = 0.4
+        marker.opacity = 0.3
         marker.groundAnchor = CGPoint(x: 0.5,y: 0.5)
         marker.flat = true
         marker.zIndex = 5
@@ -124,7 +122,7 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
             if (result) {
                 print("Success")
                 self.getNearSchoenHiers(self.googleMap.myLocation.coordinate, maxDistance: 0.2)
-                self.googleMap.animateToLocation(self.googleMap.myLocation.coordinate)
+                self.googleMap.animateToCameraPosition(GMSCameraPosition(target: self.googleMap.myLocation.coordinate, zoom: 17, bearing: 0, viewingAngle: 0))
             }
         })
     }
