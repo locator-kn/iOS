@@ -30,6 +30,8 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         locationManager.delegate = self
         
         googleMap.delegate = self
+        googleMap.myLocationEnabled = true
+        googleMap.animateToLocation(googleMap.myLocation.coordinate)
         
         searchField.delegate = self
         searchField.attributedPlaceholder = NSAttributedString(string: "Suche")
@@ -46,19 +48,19 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     }
     
     /* delegate on gpsAuthorizationStatus change */
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        // 3
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status:CLAuthorizationStatus) {
+    
         if status == .AuthorizedWhenInUse {
             locationManager.startUpdatingLocation()
+            print("startUpdatingLocation")
         }
     }
     
     /* delegate on user position update */
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
-        
-            googleMap.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
             
+            googleMap.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
             locationManager.stopUpdatingLocation()
         }
     }
@@ -68,6 +70,10 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         marker.position = CLLocationCoordinate2DMake(lat, long)
         marker.icon = UIImage(named: "location")
         marker.appearAnimation = kGMSMarkerAnimationPop
+        marker.groundAnchor = CGPoint(x: 0.5,y: 0.5)
+        marker.flat = true
+        marker.zIndex = 10
+        marker.title = location.title
         marker.map = googleMap
     }
     
@@ -75,7 +81,10 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2DMake(lat, long)
         marker.icon = UIImage(named: "heatmap")
-        marker.opacity = 0.5
+        marker.opacity = 0.4
+        marker.groundAnchor = CGPoint(x: 0.5,y: 0.5)
+        marker.flat = true
+        marker.zIndex = 5
         marker.map = googleMap
     }
     
@@ -106,7 +115,18 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     }
     
     func textFieldShouldReturn(searchField: UITextField) -> Bool {
+        
         return true
+    }
+    
+    @IBAction func schoenHier(sender: AnyObject) {
+        LocationService.schonHier(googleMap.myLocation.coordinate.latitude, long: googleMap.myLocation.coordinate.longitude, callback: {(result) -> Void in
+            if (result) {
+                print("Success")
+                self.getNearSchoenHiers(self.googleMap.myLocation.coordinate, maxDistance: 0.2)
+                self.googleMap.animateToLocation(self.googleMap.myLocation.coordinate)
+            }
+        })
     }
 
 
