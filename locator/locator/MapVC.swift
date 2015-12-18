@@ -9,78 +9,78 @@
 import UIKit
 import GoogleMaps
 import CoreLocation
-import MapKit
 
-class MapVC: UIViewController, MKMapViewDelegate, UITextFieldDelegate {
+class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, GMSMapViewDelegate {
     
     var locationManager: CLLocationManager = CLLocationManager()
     var nearLocations = [String: Location]()
     var nearSchoenHiers = [String: SchoenHier]()
     
     @IBOutlet weak var searchField: UITextField!
-    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var googleMap: GMSMapView!
+    
     var previousRegion: CLLocationCoordinate2D!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        mapView.showsUserLocation = true
-        mapView.setUserTrackingMode(MKUserTrackingMode.Follow, animated: true)
-        mapView.delegate = self
+
+        locationManager = CLLocationManager()
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter = 5.0
+        locationManager.delegate = self
+        
+        googleMap.delegate = self
         
         searchField.delegate = self
-        
         searchField.attributedPlaceholder = NSAttributedString(string: "Suche")
+        
+        super.viewDidLoad()
     }
     
-    func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+    /* delegate on map camerachange */
+    func mapView(mapView: GMSMapView!, idleAtCameraPosition position: GMSCameraPosition!) {
         
-        let latitudeTollerance:Double = 1
-        let longitudeTollerance:Double = 1
-        
-        if ((previousRegion == nil)) {
-            previousRegion = mapView.region.center
+        print("didChangeCameraPosition")
+        getNearLocations(position.target, maxDistance: 0.5)
+        getNearSchoenHiers(position.target, maxDistance: 0.5)
+    }
+    
+    /* delegate on gpsAuthorizationStatus change */
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        // 3
+        if status == .AuthorizedWhenInUse {
+            locationManager.startUpdatingLocation()
         }
+    }
+    
+    /* delegate on user position update */
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
         
-        /* if (mapView.region.center.latitude > previousRegion.latitude + latitudeTollerance
-            || mapView.region.center.longitude < previousRegion.longitude + longitudeTollerance
-            || mapView.region.center.latitude > previousRegion.latitude - latitudeTollerance
-            || mapView.region.center.longitude < previousRegion.longitude - longitudeTollerance) {
-              
-                previousRegion = mapView.region.center
-                print("Update")
-        } else {
-            return
-        } */
-        
-        let lat1 = mapView.region.center.latitude - mapView.region.span.latitudeDelta * 0.5
-        let long1 = mapView.region.center.longitude
-        
-        let lat2 = mapView.region.center.latitude + mapView.region.span.latitudeDelta * 0.5
-        let long2 = mapView.region.center.longitude
-        
-        
-        let location1 = CLLocation(latitude: lat1, longitude: long1)
-        let location2 = CLLocation(latitude: lat2, longitude: long2)
-        
-        let currentVisibleWidthInKilometers = location1.distanceFromLocation(location2) / 1000
-        
-        getNearLocations(currentVisibleWidthInKilometers)
-        getNearSchoenHiers(currentVisibleWidthInKilometers)
+            googleMap.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+            
+            locationManager.stopUpdatingLocation()
+        }
     }
 
-    
     func showLocationMarker(lat:Double, long:Double, location:Location!) {
-        let annotation = LocationAnnotation(coordinate: CLLocationCoordinate2D(latitude: lat, longitude: long), title: location.title)
-        mapView.addAnnotation(annotation)
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2DMake(lat, long)
+        marker.icon = UIImage(named: "location")
+        marker.appearAnimation = kGMSMarkerAnimationPop
+        marker.map = googleMap
     }
     
     func showHeatMapMarker(lat:Double, long:Double, schoenHier:SchoenHier!) {
-        let anotation = HeatMapAnnotation(coordinate: CLLocationCoordinate2D(latitude: lat, longitude: long))
-        mapView.addAnnotation(anotation)
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2DMake(lat, long)
+        marker.icon = UIImage(named: "heatmap")
+        marker.opacity = 0.5
+        marker.map = googleMap
     }
     
-    func getNearLocations(maxDistance: Double) {
-        LocationService.getNearby(mapView.region.center.latitude, long: mapView.region.center.longitude, maxDistance: maxDistance, limit: 15) { (locations) -> Void in
+    func getNearLocations(target: CLLocationCoordinate2D, maxDistance: Float) {
+        LocationService.getNearby(target.latitude, long: target.longitude, maxDistance: maxDistance, limit: 15) { (locations) -> Void in
             
             for location in locations {
                 
@@ -92,8 +92,8 @@ class MapVC: UIViewController, MKMapViewDelegate, UITextFieldDelegate {
         }
     }
     
-    func getNearSchoenHiers(maxDistance:Double) {
-        LocationService.getSchoenHiers(mapView.region.center.latitude, long: mapView.region.center.longitude, maxDistance: maxDistance, limit: 15) { (schoenHiers) -> Void in
+    func getNearSchoenHiers(target: CLLocationCoordinate2D, maxDistance:Float) {
+        LocationService.getSchoenHiers(target.latitude, long: target.longitude, maxDistance: maxDistance, limit: 15) { (schoenHiers) -> Void in
             
             for schoenHier in schoenHiers {
             
@@ -106,36 +106,7 @@ class MapVC: UIViewController, MKMapViewDelegate, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(searchField: UITextField) -> Bool {
-        let localSearchRequest = MKLocalSearchRequest()
-        localSearchRequest.naturalLanguageQuery = searchField.text
-        let localSearch = MKLocalSearch(request: localSearchRequest)
-        localSearch.startWithCompletionHandler { (localSearchResponse, error) -> Void in
-            if localSearchResponse != nil{
-                self.mapView.setRegion(localSearchResponse!.boundingRegion, animated: true)
-            } else {
-                print(error)
-            }
-        }
         return true
-    }
-
-
-    func mapView (mapView: MKMapView,
-        viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-            
-            let annotationView:MKAnnotationView = MKAnnotationView()
-            annotationView.annotation = annotation
-            annotationView.canShowCallout = true
-            
-            if (annotation is LocationAnnotation) {
-                annotationView.image = UIImage(named:"location")
-                return annotationView
-            } else if (annotation is HeatMapAnnotation) {
-                annotationView.image = UIImage(named:"heatmap")
-                return annotationView
-            } else {
-                return nil
-            }
     }
 
 
