@@ -76,17 +76,25 @@ class LocationService {
     }
     
     
-    static func schonHier(lat: Double, long:Double, callback: ((Bool) -> Void)) {
+    static func schonHier(lat: Double, long:Double, callback: ((SchoenHier) -> Void)) {
         
         Alamofire.request(.POST, "https://locator-app.com/api/v2/schoenhiers", parameters: ["lat": lat, "long": long]).validate().responseJSON { response in
             switch response.result {
             case .Success:
-                print(lat, long)
-                callback(true)
+                
+                if let value = response.result.value {
+                    let json = JSON(value)
+                
+                    let id = json["_id"].string
+                    let lat = json["geotag"]["coordinates"][1].double
+                    let long = json["geotag"]["coordinates"][0].double
+
+                    callback(SchoenHier(id: id!, createDate: "todo", long: long!, lat: lat!))
+                    
+                }
                 
             case .Failure(let error):
                 print(error)
-                callback(false)
             }
         }
     }
