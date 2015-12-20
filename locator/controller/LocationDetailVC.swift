@@ -13,21 +13,20 @@ class LocationDetailVC: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var locationTitle: UILabel!
     
+    var location:Location!
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
 
-        LocationService.locationById("90dd0bb7f23c628dddf94ba236ed5e25") { (location) -> Void in
-            print(location.id)
-            print(location.imagePath)
-         
+        LocationService.locationById(location.id) { (result) -> Void in
+            print(self.location.title)
            
-    
             let url  = NSURL(string: "https://locator-app.com" + "/api/v1/locations/90dd0bb7f23c628dddf94ba236ed5e25/supertrip.jpeg?size=max&key=AIzaSyCveLtBw4QozQIkMstvefLSTd3_opSvHS4"),
             data = NSData(contentsOfURL: url!)
             print(url)
             self.imageView.image = UIImage(data: data!)
-            self.locationTitle.text = location.title
+            self.locationTitle.text = result.title
         }
     }
 
