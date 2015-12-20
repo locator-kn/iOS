@@ -46,6 +46,17 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         getNearSchoenHiers(position.target, maxDistance: 0.5)
     }
     
+    func mapView(mapView: GMSMapView!, didTapInfoWindowOfMarker marker: GMSMarker!) {
+        print(marker.userData)
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("LocationDetailVC") as! LocationDetailVC
+        nextViewController.location = self.nearLocations[String(marker.userData)]
+        
+        
+        self.presentViewController(nextViewController, animated:true, completion:nil)
+    }
+    
     /* delegate on gpsAuthorizationStatus change */
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status:CLAuthorizationStatus) {
     
@@ -72,6 +83,7 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         marker.flat = true
         marker.zIndex = 10
         marker.title = location.title
+        marker.userData = location.id
         marker.map = googleMap
     }
     
@@ -126,6 +138,6 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
             self.googleMap.animateToCameraPosition(GMSCameraPosition(target: self.googleMap.myLocation.coordinate, zoom: 17, bearing: 0, viewingAngle: 0))
         })
     }
-
+    
 
 }
