@@ -80,7 +80,6 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         marker.icon = UIImage(named: "location")
         marker.appearAnimation = kGMSMarkerAnimationPop
         marker.groundAnchor = CGPoint(x: 0.5,y: 0.5)
-        marker.flat = true
         marker.zIndex = 10
         marker.title = location.title
         marker.userData = location.id
