@@ -14,7 +14,6 @@ class Location {
     let geoPosition:(lat :Double, long :Double)
 
     var title:String
-    var description:String!
     var city:String!
     var imagePath:String!
     
@@ -24,11 +23,10 @@ class Location {
         self.geoPosition = (lat: lat, long: long)
     }
     
-    init(id: String, title: String, long: Double, lat: Double, description: String, city:String, imagePath: String) {
+    init(id: String, title: String, long: Double, lat: Double, city:String, imagePath: String) {
         self.id = id
         self.title = title
         self.geoPosition = (lat: lat, long: long)
-        self.description = description
         self.imagePath = imagePath
         self.city = city
     }
@@ -39,6 +37,14 @@ class Location {
     
     func getGeoPosition() -> (lat :Double, long :Double) {
         return self.geoPosition
+    }
+    
+    func getData() {
+        LocationService.locationById(self.id) { (location) -> Void in
+            self.title = location.title
+            self.imagePath = location.imagePath
+            self.city = location.city
+        }
     }
     
     
