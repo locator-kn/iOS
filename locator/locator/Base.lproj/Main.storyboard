@@ -438,6 +438,50 @@
             </objects>
             <point key="canvasLocation" x="4175" y="201"/>
         </scene>
+        <!--LocationDetailVC-->
+        <scene sceneID="88y-mP-Qj7">
+            <objects>
+                <viewController storyboardIdentifier="LocationDetailVC" title="LocationDetailVC" id="PYf-I9-SYD" userLabel="LocationDetailVC" customClass="LocationDetailVC" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qCz-hv-8xs"/>
+                        <viewControllerLayoutGuide type="bottom" id="pSa-3s-kxC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="np5-ZU-hzf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="41J-gR-YgM">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="351"/>
+                                <color key="backgroundColor" red="1" green="0.92541564989721481" blue="0.52998247791872444" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78x-uX-9dy" userLabel="locationTitle">
+                                <rect key="frame" x="20" y="53" width="560" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="41J-gR-YgM" firstAttribute="leading" secondItem="np5-ZU-hzf" secondAttribute="leading" id="ADz-h6-sOR"/>
+                            <constraint firstItem="78x-uX-9dy" firstAttribute="leading" secondItem="np5-ZU-hzf" secondAttribute="leadingMargin" id="Gf6-1x-4Qn"/>
+                            <constraint firstItem="78x-uX-9dy" firstAttribute="centerX" secondItem="41J-gR-YgM" secondAttribute="centerX" id="IT6-SH-mwP"/>
+                            <constraint firstAttribute="trailing" secondItem="41J-gR-YgM" secondAttribute="trailing" id="MtI-ex-Gub"/>
+                            <constraint firstItem="78x-uX-9dy" firstAttribute="top" secondItem="qCz-hv-8xs" secondAttribute="bottom" constant="33" id="O2H-Yj-5pV"/>
+                            <constraint firstItem="41J-gR-YgM" firstAttribute="top" secondItem="np5-ZU-hzf" secondAttribute="top" id="RPT-2t-Jxe"/>
+                            <constraint firstItem="pSa-3s-kxC" firstAttribute="top" secondItem="41J-gR-YgM" secondAttribute="bottom" constant="249" id="lHd-Uj-EXq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="41J-gR-YgM" id="LbF-lm-ePg"/>
+                        <outlet property="locationTitle" destination="78x-uX-9dy" id="4XW-hd-11c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xQ2-MW-om9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2587" y="-555"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="CaI-Rj-3Q3">
             <objects>
