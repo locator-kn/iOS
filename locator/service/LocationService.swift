@@ -98,5 +98,31 @@ class LocationService {
             }
         }
     }
+    
+    static func locationById(id: String, callback: ((Location) -> Void)) {
+        
+        Alamofire.request(.GET, "https://locator-app.com/api/v2/locations", parameters: ["locationId": id]).validate().responseJSON { response in
+            switch response.result {
+            case .Success:
+                
+                if let value = response.result.value {
+                    let json = JSON(value)
+                    
+                    let id = json["_id"].string
+                    let title = json["title"].string
+                    let lat = json["geotag"]["coordinates"][1].double
+                    let long = json["geotag"]["coordinates"][0].double
+                    let description = json["description"].string
+                    let imagePath = json["images"]["normal"].string
+                    let city = json["city"]["title"].string
+                    
+                    callback(Location(id: id!, title: title!, long: long!, lat: lat!, description: description!, city: city!, imagePath: imagePath!))
+                }
+                
+            case .Failure(let error):
+                print(error)
+            }
+        }
+    }
 
 }
