@@ -16,7 +16,6 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     var nearLocations = [String: Location]()
     var nearSchoenHiers = [String: SchoenHier]()
     
-    @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var googleMap: GMSMapView!
     
     var previousRegion: CLLocationCoordinate2D!
@@ -31,9 +30,6 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         
         googleMap.delegate = self
         googleMap.myLocationEnabled = true
-        
-        searchField.delegate = self
-        searchField.attributedPlaceholder = NSAttributedString(string: "Suche")
         
         super.viewDidLoad()
     }
@@ -120,11 +116,6 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
                 }
             }
         }
-    }
-    
-    func textFieldShouldReturn(searchField: UITextField) -> Bool {
-        
-        return true
     }
     
     @IBAction func schoenHier(sender: AnyObject) {
