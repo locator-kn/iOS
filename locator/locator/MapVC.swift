@@ -62,7 +62,6 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     
         if status == .AuthorizedWhenInUse {
             locationManager.startUpdatingLocation()
-            print("startUpdatingLocation")
         }
     }
     
