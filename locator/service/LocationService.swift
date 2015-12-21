@@ -113,6 +113,7 @@ class LocationService {
                     let lat = json["geotag"]["coordinates"][1].double
                     let long = json["geotag"]["coordinates"][0].double
                     let city = json["city"]["title"].string
+                    let description = json["description"].string
                     
                     var imagePath = ""
                     
@@ -120,7 +121,7 @@ class LocationService {
                         imagePath = json["images"]["normal"].string!
                     }
                     
-                    callback(Location(id: id!, title: title!, long: long!, lat: lat!, city: city!, imagePath: imagePath))
+                    callback(Location(id: id!, title: title!, description: description!, long: long!, lat: lat!, city: city!, imagePath: imagePath))
                 }
                 
             case .Failure(let error):
