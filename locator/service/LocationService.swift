@@ -59,10 +59,10 @@ class LocationService {
                     for (_,subJson):(String, JSON) in json["results"] {
                         let lat = subJson["obj"]["geotag"]["coordinates"][1].double
                         let long = subJson["obj"]["geotag"]["coordinates"][0].double
-                        let createDate = "todo"
+                        let createDate = subJson["obj"]["create_date"].string
                         let id = subJson["obj"]["_id"].string
                         
-                        nearbySchoenHiers.append(SchoenHier(id: id!, createDate: createDate, long: long!, lat: lat!))
+                        nearbySchoenHiers.append(SchoenHier(id: id!, createDate: createDate!, long: long!, lat: lat!))
                         
                     }
                     callback(nearbySchoenHiers)
@@ -88,8 +88,9 @@ class LocationService {
                     let id = json["_id"].string
                     let lat = json["geotag"]["coordinates"][1].double
                     let long = json["geotag"]["coordinates"][0].double
+                    let createDate = json["create_date"].string
 
-                    callback(SchoenHier(id: id!, createDate: "todo", long: long!, lat: lat!))
+                    callback(SchoenHier(id: id!, createDate: createDate!, long: long!, lat: lat!))
                     
                 }
                 
@@ -111,10 +112,15 @@ class LocationService {
                     let title = json["title"].string
                     let lat = json["geotag"]["coordinates"][1].double
                     let long = json["geotag"]["coordinates"][0].double
-                    let imagePath = json["images"]["normal"].string
                     let city = json["city"]["title"].string
                     
-                    callback(Location(id: id!, title: title!, long: long!, lat: lat!, city: city!, imagePath: imagePath!))
+                    var imagePath = ""
+                    
+                    if (json["images"]["normal"].string != nil) {
+                        imagePath = json["images"]["normal"].string!
+                    }
+                    
+                    callback(Location(id: id!, title: title!, long: long!, lat: lat!, city: city!, imagePath: imagePath))
                 }
                 
             case .Failure(let error):
