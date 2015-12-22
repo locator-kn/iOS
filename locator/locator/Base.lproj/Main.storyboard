@@ -15,7 +15,6 @@
             <string>SourceSansPro-Regular</string>
             <string>SourceSansPro-Regular</string>
             <string>SourceSansPro-Regular</string>
-            <string>SourceSansPro-Regular</string>
         </mutableArray>
         <mutableArray key="SourceSansPro-Semibold.ttf">
             <string>SourceSansPro-Semibold</string>
@@ -381,15 +380,6 @@
                                     <action selector="backButtonPressed:" destination="VR4-Ta-tyv" eventType="touchUpInside" id="TEV-Wz-FsG"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Passwort wiederholen" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="7iH-Q2-334">
-                                <rect key="frame" x="20" y="130" width="560" height="27"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="21"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
-                                <connections>
-                                    <action selector="passwordRepeatTextFieldDidEndOnExit:" destination="VR4-Ta-tyv" eventType="editingDidEndOnExit" id="5GX-P7-anE"/>
-                                </connections>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Passwort wählen" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fzu-pS-sg2">
                                 <rect key="frame" x="20" y="95" width="560" height="27"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -402,9 +392,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="leadingMargin" secondItem="7iH-Q2-334" secondAttribute="leading" id="1JD-ZI-0N6"/>
                             <constraint firstItem="sIh-D7-HNP" firstAttribute="centerX" secondItem="ULp-X9-vq8" secondAttribute="centerX" id="9nT-TC-3MB"/>
-                            <constraint firstItem="7iH-Q2-334" firstAttribute="top" secondItem="fzu-pS-sg2" secondAttribute="bottom" constant="8" id="9qZ-lP-xIo"/>
                             <constraint firstAttribute="leadingMargin" secondItem="fzu-pS-sg2" secondAttribute="leading" id="PeD-ZA-Ywk"/>
                             <constraint firstItem="fzu-pS-sg2" firstAttribute="top" secondItem="sIh-D7-HNP" secondAttribute="bottom" constant="40.5" id="fDc-zj-zhJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PtR-zo-vD5" secondAttribute="trailing" id="hOL-sd-TMd"/>
@@ -412,13 +400,11 @@
                             <constraint firstAttribute="leadingMargin" secondItem="uNb-sb-MlJ" secondAttribute="leading" id="rbu-k1-gR5"/>
                             <constraint firstItem="uNb-sb-MlJ" firstAttribute="top" secondItem="Blf-oK-8uM" secondAttribute="bottom" constant="28" id="tCp-PK-BxN"/>
                             <constraint firstItem="PtR-zo-vD5" firstAttribute="top" secondItem="Blf-oK-8uM" secondAttribute="bottom" constant="30" id="tUn-q5-Z1Q"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="7iH-Q2-334" secondAttribute="trailing" id="tdQ-Jq-xYa"/>
                             <constraint firstItem="sIh-D7-HNP" firstAttribute="top" secondItem="Blf-oK-8uM" secondAttribute="bottom" constant="28" id="yAH-dG-9Rp"/>
                         </constraints>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="passwordRepeatTextField" destination="7iH-Q2-334" id="Dgv-jP-F6J"/>
                         <outlet property="passwordTextField" destination="fzu-pS-sg2" id="d62-VT-Sk8"/>
                     </connections>
                 </viewController>

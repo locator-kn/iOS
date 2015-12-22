@@ -11,15 +11,14 @@ import UIKit
 class EmailLoginVC2: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var passwordRepeatTextField: UITextField!
-    
-    
+    var email:String!
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(email)
         passwordTextField.delegate = self
-        passwordRepeatTextField.delegate = self
         passwordTextField.becomeFirstResponder()
+       
 
         // Do any additional setup after loading the view.
     }
@@ -41,20 +40,16 @@ class EmailLoginVC2: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func passwordTextFieldDidEndOnExit(sender: UITextField) {
-        passwordRepeatTextField.becomeFirstResponder()
+        UserService.login(email, password: passwordTextField.text!).then {
+            user -> Void in
+            print("Login Success: " + user.name)
+        }
     }
     
     @IBAction func passwordRepeatTextFieldDidEndOnExit(sender: UITextField) {
         
     }
-    
-    func validatePassword() -> Bool {
-        if passwordTextField.text != nil && passwordRepeatTextField.text != nil && passwordTextField.text == passwordRepeatTextField.text {
-            return true
-        }
-        
-        return false
-    }
+
     
     
 

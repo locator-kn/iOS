@@ -59,6 +59,17 @@ class EmailLoginVC1: UIViewController, UITextFieldDelegate {
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showEmailLoginVC2"
+        {
+            if let destinationVC = segue.destinationViewController as? EmailLoginVC2{
+                destinationVC.email = emailTextField.text
+            }
+        }
+    }
+    
+
+    
     
     /*
     // MARK: - Navigation
