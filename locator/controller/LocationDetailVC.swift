@@ -23,10 +23,10 @@ class LocationDetailVC: UIViewController {
         
         super.viewDidLoad()
 
-        LocationService.locationById(location.id) { (result) -> Void in
-            print(self.location.title)
-           
-            let url  = NSURL(string: "https://locator-app.com" + "/api/v1/locations/" + self.location.id + "/supertrip.jpeg?size=max&key=AIzaSyCveLtBw4QozQIkMstvefLSTd3_opSvHS4"),
+        LocationService.locationById(location.id).then {
+            result -> Void in
+
+            let url  = NSURL(string: "https://locator-app.com/api/v1/locations/90dd0bb7f23c628dddf94ba236ed5e25/supertrip.jpeg?size=mobile&key=AIzaSyCveLtBw4QozQIkMstvefLSTd3_opSvHS4"),
             data = NSData(contentsOfURL: url!)
             print(url)
             self.imageView.image = UIImage(data: data!)
@@ -38,7 +38,12 @@ class LocationDetailVC: UIViewController {
             gradient.colors = [UIColor.blackColor().CGColor, UIColor.clearColor().CGColor]
             gradient.locations = [0.0, 0.5, 1]
             self.imageView.layer.insertSublayer(gradient, atIndex: 0)
+            
+        }.error {
+            err -> Void in
+            print(err)
         }
+        
     }
 
     override func didReceiveMemoryWarning() {
