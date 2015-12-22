@@ -42,7 +42,7 @@ class Location {
     }
     
     func getData() {
-        LocationService.locationById(self.id) { (location) -> Void in
+        LocationService.locationById(self.id).then { (location) -> Void in
             self.title = location.title
             self.imagePath = location.imagePath
             self.city = location.city
