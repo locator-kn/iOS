@@ -93,7 +93,7 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     }
     
     func getNearLocations(target: CLLocationCoordinate2D, maxDistance: Float) {
-        LocationService.getNearby(target.latitude, long: target.longitude, maxDistance: maxDistance, limit: 15) { (locations) -> Void in
+        LocationService.getNearby(target.latitude, long: target.longitude, maxDistance: maxDistance, limit: 15).then { locations -> Void in
             
             for location in locations {
                 
@@ -106,7 +106,7 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     }
     
     func getNearSchoenHiers(target: CLLocationCoordinate2D, maxDistance:Float) {
-        LocationService.getSchoenHiers(target.latitude, long: target.longitude, maxDistance: maxDistance, limit: 100) { (schoenHiers) -> Void in
+        LocationService.getSchoenHiers(target.latitude, long: target.longitude, maxDistance: maxDistance, limit: 100).then { schoenHiers -> Void in
             
             for schoenHier in schoenHiers {
             
@@ -119,13 +119,14 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     }
     
     @IBAction func schoenHier(sender: AnyObject) {
-        LocationService.schonHier(googleMap.myLocation.coordinate.latitude, long: googleMap.myLocation.coordinate.longitude, callback: {(schoenHier) -> Void in
+        LocationService.schonHier(googleMap.myLocation.coordinate.latitude, long: googleMap.myLocation.coordinate.longitude).then {
+            schoenHier -> Void in
             print("Success")
             self.getNearSchoenHiers(self.googleMap.myLocation.coordinate, maxDistance: 0.2)
             self.nearSchoenHiers[schoenHier.id] = schoenHier
             self.showHeatMapMarker(schoenHier.getGeoPosition().lat, long: schoenHier.getGeoPosition().long, schoenHier: schoenHier)
             self.googleMap.animateToCameraPosition(GMSCameraPosition(target: self.googleMap.myLocation.coordinate, zoom: 17, bearing: 0, viewingAngle: 0))
-        })
+        }
     }
     
 
