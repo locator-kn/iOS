@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class EmailLoginVC2: UIViewController, UITextFieldDelegate {
 
@@ -14,13 +15,9 @@ class EmailLoginVC2: UIViewController, UITextFieldDelegate {
     var email:String!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         print(email)
         passwordTextField.delegate = self
         passwordTextField.becomeFirstResponder()
-       
-
-        // Do any additional setup after loading the view.
     }
     
     override func prefersStatusBarHidden() -> Bool {
@@ -45,11 +42,6 @@ class EmailLoginVC2: UIViewController, UITextFieldDelegate {
             print("Login Success: " + user.name)
         }
     }
-    
-    @IBAction func passwordRepeatTextFieldDidEndOnExit(sender: UITextField) {
-        
-    }
-
     
     
 
