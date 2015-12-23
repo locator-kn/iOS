@@ -12,6 +12,7 @@
 		5B495C4E1C2061B5000D8974 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B495C4D1C2061B5000D8974 /* MapVC.swift */; };
 		5B90CCAF1C299A2400108693 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B90CCAE1C299A2400108693 /* UserService.swift */; };
 		5B90CCB11C29A56A00108693 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B90CCB01C29A56A00108693 /* User.swift */; };
+		5B90CCB31C2A220F00108693 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B90CCB21C2A220F00108693 /* DashboardVC.swift */; };
 		5BAC93D11C23385600FE502F /* SchoenHier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAC93D01C23385600FE502F /* SchoenHier.swift */; };
 		5BAC93DF1C26C18500FE502F /* LocationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAC93DE1C26C18500FE502F /* LocationDetailVC.swift */; };
 		5BAC93E11C2824A500FE502F /* UtilService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAC93E01C2824A500FE502F /* UtilService.swift */; };
@@ -47,6 +48,7 @@
 		5B495C4D1C2061B5000D8974 /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		5B90CCAE1C299A2400108693 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		5B90CCB01C29A56A00108693 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5B90CCB21C2A220F00108693 /* DashboardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardVC.swift; path = controller/DashboardVC.swift; sourceTree = SOURCE_ROOT; };
 		5BAC93D01C23385600FE502F /* SchoenHier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoenHier.swift; sourceTree = "<group>"; };
 		5BAC93DE1C26C18500FE502F /* LocationDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationDetailVC.swift; path = controller/LocationDetailVC.swift; sourceTree = SOURCE_ROOT; };
 		5BAC93E01C2824A500FE502F /* UtilService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilService.swift; sourceTree = "<group>"; };
@@ -68,7 +70,7 @@
 		876290221C1893DE00D2870E /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		87ACAD251C21C9B900651B18 /* HttpService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpService.swift; sourceTree = "<group>"; };
 		87F14D771C18604B00682709 /* locator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = locator.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		87F14D7A1C18604B00682709 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		87F14D7A1C18604B00682709 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = locator/AppDelegate.swift; sourceTree = "<group>"; };
 		87F14D7C1C18604B00682709 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		87F14D7F1C18604B00682709 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		87F14D821C18604B00682709 /* locator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = locator.xcdatamodel; sourceTree = "<group>"; };
@@ -133,7 +135,6 @@
 			children = (
 				87F14D841C18604B00682709 /* Assets.xcassets */,
 				876290131C187DB000D2870E /* Fonts */,
-				87F14D7A1C18604B00682709 /* AppDelegate.swift */,
 				87F14D861C18604B00682709 /* LaunchScreen.storyboard */,
 				87F14D891C18604B00682709 /* Info.plist */,
 				87F14D811C18604B00682709 /* locator.xcdatamodeld */,
@@ -166,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				87F14D7E1C18604B00682709 /* Main.storyboard */,
+				87F14D7A1C18604B00682709 /* AppDelegate.swift */,
 				5B44750B1C216E7A00C30445 /* service */,
 				5B44750A1C216A2600C30445 /* model */,
 				87F14D791C18604B00682709 /* controller */,
@@ -193,6 +195,7 @@
 				872DA7C91C1F156A0041C9D6 /* EmailLoginVC2.swift */,
 				5B495C4D1C2061B5000D8974 /* MapVC.swift */,
 				5BAC93DE1C26C18500FE502F /* LocationDetailVC.swift */,
+				5B90CCB21C2A220F00108693 /* DashboardVC.swift */,
 			);
 			name = controller;
 			path = locator;
@@ -346,6 +349,7 @@
 				876290231C1893DE00D2870E /* LoginVC.swift in Sources */,
 				5B44750D1C216E9600C30445 /* LocationService.swift in Sources */,
 				87F14D7B1C18604B00682709 /* AppDelegate.swift in Sources */,
+				5B90CCB31C2A220F00108693 /* DashboardVC.swift in Sources */,
 				87ACAD261C21C9B900651B18 /* HttpService.swift in Sources */,
 				5BAC93E11C2824A500FE502F /* UtilService.swift in Sources */,
 			);
