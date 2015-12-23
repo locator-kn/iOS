@@ -19,6 +19,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         GMSServices.provideAPIKey("AIzaSyCAweq9kifxj3KO8lU_Z7oZFZlOO8MgsBQ")
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+        
+        print(NSUserDefaults.standardUserDefaults().stringForKey("me"))
+        
+        // if a user is set in defaults, redirect to dashboard
+        if (NSUserDefaults.standardUserDefaults().stringForKey("me") != nil) {
+            let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewControllerWithIdentifier("dashboard") as UIViewController
+            self.window?.rootViewController = initialViewControlleripad
+            self.window?.makeKeyAndVisible()
+        }
         return true
     }
 
