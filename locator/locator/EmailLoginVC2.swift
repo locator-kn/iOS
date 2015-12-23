@@ -40,6 +40,9 @@ class EmailLoginVC2: UIViewController, UITextFieldDelegate {
         UserService.login(email, password: passwordTextField.text!).then {
             user -> Void in
             print("Login Success: " + user.name)
+            User.setMe(user)
+            print(User.getMe().name)
+            NSUserDefaults.standardUserDefaults().setValue(User.getMe().id, forKey: "me")
         }
     }
     
