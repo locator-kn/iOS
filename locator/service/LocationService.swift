@@ -121,8 +121,8 @@ class LocationService {
                         
                         var imagePath = ""
                         
-                        if (json["images"]["normal"].string != nil) {
-                            imagePath = json["images"]["normal"].string!
+                        if (json["images"]["xlarge"].string != nil) {
+                            imagePath = "https://locator-app.com/" + json["images"]["xlarge"].string!
                         }
                         
                         fulfill((Location(id: id!, title: title!, description: description!, long: long!, lat: lat!, city: city!, imagePath: imagePath)))

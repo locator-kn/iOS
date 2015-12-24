@@ -25,8 +25,10 @@ class LocationDetailVC: UIViewController {
 
         LocationService.locationById(location.id).then {
             result -> Void in
-            self.location.imagePath = result.imagePath
-            let url  = NSURL(string: "https://locator-app.com" + result.imagePath),
+
+            let path = result.imagePath;
+            let url  = NSURL(string: path),
+
             data = NSData(contentsOfURL: url!)
             self.imageView.image = UIImage(data: data!)
             self.locationTitle.text = result.title
