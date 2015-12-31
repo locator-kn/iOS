@@ -8,14 +8,6 @@
 
 import Foundation
 
-class pictures: AbstractImpression {
+class ImageImpression: AbstractImpression {
     
-    let path:String
-    
-    init(id:String, date:NSDate, user:User, path:String) {
-        
-        self.path = path
-        super.init(id: id, date: date, user: user)
-        
-    }
 }
