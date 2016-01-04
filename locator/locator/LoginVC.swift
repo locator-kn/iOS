@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
 class LoginVC: UIViewController {
 
@@ -17,6 +18,10 @@ class LoginVC: UIViewController {
     let borderWidth = 2.0
     let borderColor = UIColor.whiteColor().CGColor
     let borderCornerRadius = 15.0
+    
+    let facebookReadPermissions = ["public_profile", "email", "user_friends"]
+    
+    let facebookManager = FBSDKLoginManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +58,17 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func loginFacebookButtonPressed(sender: UIButton) {
+        
+        facebookManager.logInWithReadPermissions(facebookReadPermissions, fromViewController: self) { (result, error) -> Void in
+            if (error != nil) {
+                print("Process error")
+            } else if (result.isCancelled) {
+                print("Cancelled")
+            } else {
+                print("Logged in")
+                self.returnUserData()
+            }
+        }
     }
     
     @IBAction func registerButtonPressed(sender: UIButton) {
@@ -60,6 +76,27 @@ class LoginVC: UIViewController {
     
     @IBAction func crossButtonPressed(sender: UIButton) {
         self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func returnUserData()
+    {
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"id,email,name,first_name,last_name"])
+        graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
+            
+            if ((error) != nil)
+            {
+                // Process error
+                print("Error: \(error)")
+            }
+            else
+            {
+                print("fetched user: \(result)")
+                let userName : NSString = result.valueForKey("name") as! NSString
+                print("User Name is: \(userName)")
+                let userEmail : NSString = result .valueForKey("email") as! NSString
+                print("User Email is: \(userEmail)")
+            }
+        })
     }
     
     /*
