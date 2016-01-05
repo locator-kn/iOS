@@ -36,6 +36,11 @@
 		8762902D1C18E1B400D2870E /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8762901D1C187DD700D2870E /* SourceSansPro-Regular.ttf */; };
 		8762902E1C18E1B400D2870E /* SourceSansPro-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8762901E1C187DD700D2870E /* SourceSansPro-Semibold.ttf */; };
 		8762902F1C18E1B400D2870E /* SourceSansPro-SemiboldIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8762901F1C187DD700D2870E /* SourceSansPro-SemiboldIt.ttf */; };
+		876CAA7E1C3BFEAF002A36FF /* RegisterVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876CAA7D1C3BFEAF002A36FF /* RegisterVC1.swift */; };
+		876CAA801C3C03F8002A36FF /* RegisterVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876CAA7F1C3C03F8002A36FF /* RegisterVC2.swift */; };
+		876CAA821C3C0411002A36FF /* RegisterVC3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876CAA811C3C0411002A36FF /* RegisterVC3.swift */; };
+		876CAA841C3C0422002A36FF /* RegisterVC4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876CAA831C3C0422002A36FF /* RegisterVC4.swift */; };
+		876CAA861C3C0431002A36FF /* RegisterVC5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876CAA851C3C0431002A36FF /* RegisterVC5.swift */; };
 		87ACAD261C21C9B900651B18 /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ACAD251C21C9B900651B18 /* HttpService.swift */; };
 		87F14D7B1C18604B00682709 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F14D7A1C18604B00682709 /* AppDelegate.swift */; };
 		87F14D7D1C18604B00682709 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F14D7C1C18604B00682709 /* WelcomeVC.swift */; };
@@ -76,6 +81,11 @@
 		8762901E1C187DD700D2870E /* SourceSansPro-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Semibold.ttf"; sourceTree = "<group>"; };
 		8762901F1C187DD700D2870E /* SourceSansPro-SemiboldIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiboldIt.ttf"; sourceTree = "<group>"; };
 		876290221C1893DE00D2870E /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		876CAA7D1C3BFEAF002A36FF /* RegisterVC1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterVC1.swift; sourceTree = "<group>"; };
+		876CAA7F1C3C03F8002A36FF /* RegisterVC2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterVC2.swift; sourceTree = "<group>"; };
+		876CAA811C3C0411002A36FF /* RegisterVC3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterVC3.swift; sourceTree = "<group>"; };
+		876CAA831C3C0422002A36FF /* RegisterVC4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterVC4.swift; sourceTree = "<group>"; };
+		876CAA851C3C0431002A36FF /* RegisterVC5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterVC5.swift; sourceTree = "<group>"; };
 		87ACAD251C21C9B900651B18 /* HttpService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpService.swift; sourceTree = "<group>"; };
 		87F14D771C18604B00682709 /* locator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = locator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87F14D7A1C18604B00682709 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = locator/AppDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +193,22 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		876CAA7C1C3BFE5E002A36FF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				872DA7C71C1F06A10041C9D6 /* EmailLoginVC1.swift */,
+				872DA7C91C1F156A0041C9D6 /* EmailLoginVC2.swift */,
+				876290221C1893DE00D2870E /* LoginVC.swift */,
+				876CAA7D1C3BFEAF002A36FF /* RegisterVC1.swift */,
+				876CAA7F1C3C03F8002A36FF /* RegisterVC2.swift */,
+				876CAA811C3C0411002A36FF /* RegisterVC3.swift */,
+				876CAA831C3C0422002A36FF /* RegisterVC4.swift */,
+				876CAA851C3C0431002A36FF /* RegisterVC5.swift */,
+				87F14D7C1C18604B00682709 /* WelcomeVC.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
 		87F14D6E1C18604B00682709 = {
 			isa = PBXGroup;
 			children = (
@@ -209,10 +235,7 @@
 		87F14D791C18604B00682709 /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				876290221C1893DE00D2870E /* LoginVC.swift */,
-				87F14D7C1C18604B00682709 /* WelcomeVC.swift */,
-				872DA7C71C1F06A10041C9D6 /* EmailLoginVC1.swift */,
-				872DA7C91C1F156A0041C9D6 /* EmailLoginVC2.swift */,
+				876CAA7C1C3BFE5E002A36FF /* Login */,
 				5B495C4D1C2061B5000D8974 /* MapVC.swift */,
 				5BAC93DE1C26C18500FE502F /* LocationDetailVC.swift */,
 				5B90CCB21C2A220F00108693 /* DashboardVC.swift */,
@@ -366,14 +389,19 @@
 				5BEA72B81C34B206005220CD /* AbstractImpression.swift in Sources */,
 				872DA7C81C1F06A10041C9D6 /* EmailLoginVC1.swift in Sources */,
 				87F14D7D1C18604B00682709 /* WelcomeVC.swift in Sources */,
+				876CAA801C3C03F8002A36FF /* RegisterVC2.swift in Sources */,
 				5B495C4E1C2061B5000D8974 /* MapVC.swift in Sources */,
+				876CAA821C3C0411002A36FF /* RegisterVC3.swift in Sources */,
 				5B90CCB11C29A56A00108693 /* User.swift in Sources */,
+				876CAA841C3C0422002A36FF /* RegisterVC4.swift in Sources */,
 				5B4475091C2167BE00C30445 /* Location.swift in Sources */,
 				876290231C1893DE00D2870E /* LoginVC.swift in Sources */,
 				5B44750D1C216E9600C30445 /* LocationService.swift in Sources */,
 				87F14D7B1C18604B00682709 /* AppDelegate.swift in Sources */,
+				876CAA861C3C0431002A36FF /* RegisterVC5.swift in Sources */,
 				5B90CCB31C2A220F00108693 /* DashboardVC.swift in Sources */,
 				87ACAD261C21C9B900651B18 /* HttpService.swift in Sources */,
+				876CAA7E1C3BFEAF002A36FF /* RegisterVC1.swift in Sources */,
 				5BAC93E11C2824A500FE502F /* UtilService.swift in Sources */,
 				5BEA72BE1C34B530005220CD /* AudioImpression.swift in Sources */,
 			);
