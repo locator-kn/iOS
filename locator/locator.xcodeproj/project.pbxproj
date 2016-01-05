@@ -82,7 +82,7 @@
 		87F14D7C1C18604B00682709 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		87F14D7F1C18604B00682709 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		87F14D821C18604B00682709 /* locator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = locator.xcdatamodel; sourceTree = "<group>"; };
-		87F14D841C18604B00682709 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		87F14D841C18604B00682709 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = locator/Assets.xcassets; sourceTree = "<group>"; };
 		87F14D871C18604B00682709 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87F14D891C18604B00682709 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F065E9F82669863AC08B17B /* Pods_locator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_locator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,7 +153,6 @@
 		876290121C18797B00D2870E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				87F14D841C18604B00682709 /* Assets.xcassets */,
 				876290131C187DB000D2870E /* Fonts */,
 				87F14D861C18604B00682709 /* LaunchScreen.storyboard */,
 				87F14D891C18604B00682709 /* Info.plist */,
@@ -188,6 +187,7 @@
 			children = (
 				87F14D7E1C18604B00682709 /* Main.storyboard */,
 				87F14D7A1C18604B00682709 /* AppDelegate.swift */,
+				87F14D841C18604B00682709 /* Assets.xcassets */,
 				5B44750B1C216E7A00C30445 /* service */,
 				5B44750A1C216A2600C30445 /* model */,
 				87F14D791C18604B00682709 /* controller */,
