@@ -16,6 +16,7 @@
 		5BAC93D11C23385600FE502F /* SchoenHier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAC93D01C23385600FE502F /* SchoenHier.swift */; };
 		5BAC93DF1C26C18500FE502F /* LocationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAC93DE1C26C18500FE502F /* LocationDetailVC.swift */; };
 		5BAC93E11C2824A500FE502F /* UtilService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAC93E01C2824A500FE502F /* UtilService.swift */; };
+		5BC5F2F81C3BE55A0092E0E9 /* MapSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5F2F71C3BE55A0092E0E9 /* MapSearchVC.swift */; };
 		5BEA72B81C34B206005220CD /* AbstractImpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEA72B71C34B206005220CD /* AbstractImpression.swift */; };
 		5BEA72BA1C34B28D005220CD /* ImageImpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEA72B91C34B28D005220CD /* ImageImpression.swift */; };
 		5BEA72BC1C34B527005220CD /* VideoImpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEA72BB1C34B527005220CD /* VideoImpression.swift */; };
@@ -56,6 +57,7 @@
 		5BAC93D01C23385600FE502F /* SchoenHier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoenHier.swift; sourceTree = "<group>"; };
 		5BAC93DE1C26C18500FE502F /* LocationDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationDetailVC.swift; path = controller/LocationDetailVC.swift; sourceTree = SOURCE_ROOT; };
 		5BAC93E01C2824A500FE502F /* UtilService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilService.swift; sourceTree = "<group>"; };
+		5BC5F2F71C3BE55A0092E0E9 /* MapSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapSearchVC.swift; path = controller/MapSearchVC.swift; sourceTree = SOURCE_ROOT; };
 		5BEA72B71C34B206005220CD /* AbstractImpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractImpression.swift; sourceTree = "<group>"; };
 		5BEA72B91C34B28D005220CD /* ImageImpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageImpression.swift; sourceTree = "<group>"; };
 		5BEA72BB1C34B527005220CD /* VideoImpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoImpression.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				5B495C4D1C2061B5000D8974 /* MapVC.swift */,
 				5BAC93DE1C26C18500FE502F /* LocationDetailVC.swift */,
 				5B90CCB21C2A220F00108693 /* DashboardVC.swift */,
+				5BC5F2F71C3BE55A0092E0E9 /* MapSearchVC.swift */,
 			);
 			name = controller;
 			path = locator;
@@ -256,7 +259,7 @@
 				TargetAttributes = {
 					87F14D761C18604B00682709 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = 9C35NDXQYB;
+						DevelopmentTeam = 969HK8WJ4Z;
 					};
 				};
 			};
@@ -376,6 +379,7 @@
 				87ACAD261C21C9B900651B18 /* HttpService.swift in Sources */,
 				5BAC93E11C2824A500FE502F /* UtilService.swift in Sources */,
 				5BEA72BE1C34B530005220CD /* AudioImpression.swift in Sources */,
+				5BC5F2F81C3BE55A0092E0E9 /* MapSearchVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
