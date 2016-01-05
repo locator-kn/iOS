@@ -136,5 +136,27 @@ class LocationService {
             
         }
     }
+    
+    static func favLocation(id: String) -> Promise<Location> {
+        return Promise { fulfill, reject in
+            
+            Alamofire.request(.POST, "POST /locations/" + id + "/favor").validate().responseJSON { response in
+                switch response.result {
+                case .Success:
+                    
+                    if let value = response.result.value {
+                        let json = JSON(value)
+                        print(json)
+                    }
+                    
+                case .Failure(let error):
+                    reject(error)
+                }
+            }
+            
+            
+        }
+    }
+
 
 }
