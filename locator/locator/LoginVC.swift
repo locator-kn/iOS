@@ -20,14 +20,12 @@ class LoginVC: UIViewController {
     let borderCornerRadius = 15.0
     
     let facebookReadPermissions = ["public_profile", "email", "user_friends"]
-    
     let facebookManager = FBSDKLoginManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setButtons()
-        
         // Do any additional setup after loading the view.
     }
     
