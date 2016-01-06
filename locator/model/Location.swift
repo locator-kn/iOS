@@ -17,7 +17,7 @@ class Location {
     var city:String!
     var imagePath:String!
     var description:String!
-    var favoured:Bool!
+    var favored:Bool!
     
     init(id: String, title: String, long: Double, lat: Double ) {
         self.id = id
@@ -25,14 +25,14 @@ class Location {
         self.geoPosition = (lat: lat, long: long)
     }
     
-    init(id: String, title: String, description:String, long: Double, lat: Double, city:String, imagePath: String, favoured: Bool) {
+    init(id: String, title: String, description:String, long: Double, lat: Double, city:String, imagePath: String, favored: Bool) {
         self.id = id
         self.title = title
         self.geoPosition = (lat: lat, long: long)
         self.imagePath = imagePath
         self.city = city
         self.description = description
-        self.favoured = favoured
+        self.favored = favored
     }
     
     func getTitle() -> String {
