@@ -195,6 +195,41 @@
             </objects>
             <point key="canvasLocation" x="3456" y="934"/>
         </scene>
+        <!--Map SearchVC-->
+        <scene sceneID="p3K-vv-xwz">
+            <objects>
+                <viewController id="n1t-QA-BcP" customClass="MapSearchVC" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tS9-hx-yDk"/>
+                        <viewControllerLayoutGuide type="bottom" id="N9c-f5-1zM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hjk-uE-3ye">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L56-lv-MVl">
+                                <rect key="frame" x="558" y="28" width="22" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="MQu-vd-dMG"/>
+                                    <constraint firstAttribute="width" constant="22" id="Yfu-kE-s1B"/>
+                                </constraints>
+                                <state key="normal" image="cross"/>
+                                <connections>
+                                    <action selector="closeModal:" destination="n1t-QA-BcP" eventType="touchUpInside" id="pMv-vz-tN8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.78410560344827585" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="L56-lv-MVl" firstAttribute="top" secondItem="tS9-hx-yDk" secondAttribute="bottom" constant="15" id="7Ts-Am-0zl"/>
+                            <constraint firstItem="L56-lv-MVl" firstAttribute="trailing" secondItem="hjk-uE-3ye" secondAttribute="trailingMargin" id="Oda-O1-kEs"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gb3-Ob-jKm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1735" y="-1384"/>
+        </scene>
         <!--MapVC-->
         <scene sceneID="SbJ-7x-eXs">
             <objects>
@@ -240,6 +275,9 @@
                                     <constraint firstAttribute="height" constant="51" id="Yib-VI-C0t"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="search"/>
+                                <connections>
+                                    <segue destination="n1t-QA-BcP" kind="presentation" modalPresentationStyle="overCurrentContext" id="qmc-tU-Ywx"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -975,6 +1013,6 @@
         <image name="show_friends" width="340" height="340"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Dge-4W-7Ya"/>
+        <segue reference="EDW-cV-fVU"/>
     </inferredMetricsTieBreakers>
 </document>
