@@ -141,8 +141,6 @@ class LocationService {
                     reject(error)
                 }
             }
-
-            
         }
     }
     
