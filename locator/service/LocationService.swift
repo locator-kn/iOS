@@ -163,10 +163,7 @@ class LocationService {
                     reject(error)
                 }
             }
-            
-            
         }
     }
-
-
+    
 }
