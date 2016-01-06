@@ -137,7 +137,7 @@ class LocationService {
         }
     }
     
-    static func favLocation(id: String) -> Promise<Location> {
+    static func favLocation(id: String) -> Promise<(Int, Bool)> {
         return Promise { fulfill, reject in
             
             Alamofire.request(.POST, "POST /locations/" + id + "/favor").validate().responseJSON { response in
@@ -147,6 +147,7 @@ class LocationService {
                     if let value = response.result.value {
                         let json = JSON(value)
                         print(json)
+                        fulfill((json["favorites"].int!, json["added"].bool!))
                     }
                     
                 case .Failure(let error):
