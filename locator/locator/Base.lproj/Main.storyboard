@@ -700,6 +700,9 @@
                                     <constraint firstAttribute="height" constant="64" id="oFe-ba-iVE"/>
                                 </constraints>
                                 <state key="normal" image="favorite_icon"/>
+                                <connections>
+                                    <action selector="favorLocation:" destination="PYf-I9-SYD" eventType="touchUpInside" id="6ef-Fd-Inn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -738,6 +741,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="favorIcon" destination="mek-wv-1ou" id="IVs-Yz-Hez"/>
                         <outlet property="imageView" destination="41J-gR-YgM" id="LbF-lm-ePg"/>
                         <outlet property="locationDescription" destination="tJz-R4-W5o" id="SZ9-C1-ZZz"/>
                         <outlet property="locationTitle" destination="78x-uX-9dy" id="4XW-hd-11c"/>
