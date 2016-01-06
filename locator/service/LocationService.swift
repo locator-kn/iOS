@@ -125,7 +125,7 @@ class LocationService {
                             imagePath = "https://locator-app.com/" + json["images"]["xlarge"].string!
                         }
                         
-                        //if location favoured by myself
+                        //if location favored by myself
                         var favored = false
                         for (index,subJson):(String, JSON) in json["favorites"] {
                             
