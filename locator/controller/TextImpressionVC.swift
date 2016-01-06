@@ -8,10 +8,13 @@
 
 import UIKit
 
-class TextImpressionVC: UIViewController {
+class TextImpressionVC: UIViewController, UITextFieldDelegate {
+    
+    @IBOutlet weak var textField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        textField.delegate = self //set delegate to textfile
 
         // Do any additional setup after loading the view.
     }
@@ -21,15 +24,14 @@ class TextImpressionVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func closeModal(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: {});
     }
-    */
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {   //delegate method
+        self.closeModal(self)
+        print("close")
+        return true
+    }
 
 }
