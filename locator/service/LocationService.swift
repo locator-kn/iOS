@@ -125,7 +125,16 @@ class LocationService {
                             imagePath = "https://locator-app.com/" + json["images"]["xlarge"].string!
                         }
                         
-                        fulfill((Location(id: id!, title: title!, description: description!, long: long!, lat: lat!, city: city!, imagePath: imagePath)))
+                        //if location favoured by myself
+                        var favored = false
+                        for (index,subJson):(String, JSON) in json["favorites"] {
+                            
+                            if (subJson[index].string == UtilService.getMyId()) {
+                                favored = true
+                            }
+                        }
+                        
+                        fulfill((Location(id: id!, title: title!, description: description!, long: long!, lat: lat!, city: city!, imagePath: imagePath, favored: favored)))
                     }
                     
                 case .Failure(let error):
