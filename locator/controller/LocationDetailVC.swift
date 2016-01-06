@@ -12,10 +12,8 @@ class LocationDetailVC: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var locationTitle: UILabel!
-
     @IBOutlet weak var locationDescription: UITextView!
-
-    
+    @IBOutlet weak var favorIcon: UIButton!
     @IBOutlet weak var opacity: UIImageView!
     var location:Location!
     
@@ -52,6 +50,18 @@ class LocationDetailVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func favorLocation(sender: UIButton) {
+        LocationService.favLocation(location.id).then {
+            favors,favor -> Void in
+            
+            self.location.favorites = favors
+            self.location.favored = favor
+            
+            }.error {
+                err -> Void in
+                print(err)
+        }
+    }
 
     /*
     // MARK: - Navigation
