@@ -41,6 +41,10 @@ class LocationDetailVC: UIViewController {
             gradient.locations = [0.0, 0.5, 1]
             self.imageView.layer.insertSublayer(gradient, atIndex: 0)
             
+            if (result.favored == true) {
+                self.favorIcon.setImage(self.favoriteIconActive, forState: .Normal)
+            }
+            
         }.error {
             err -> Void in
             print(err)
