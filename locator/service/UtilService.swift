@@ -34,4 +34,8 @@ class UtilService {
         return num * M_PI / 180;
     }
     
+    static func getMyId() -> String {
+        return NSUserDefaults.standardUserDefaults().stringForKey("me")!
+    }
+    
 }
