@@ -134,7 +134,7 @@ class LocationService {
                             }
                         }
                         
-                        fulfill((Location(id: id!, title: title!, description: description!, long: long!, lat: lat!, city: city!, imagePath: imagePath, favored: favored)))
+                        fulfill((Location(id: id!, title: title!, description: description!, long: long!, lat: lat!, city: city!, imagePath: imagePath, favored: favored, favorites: 0)))
                     }
                     
                 case .Failure(let error):
