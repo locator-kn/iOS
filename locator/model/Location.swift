@@ -17,6 +17,7 @@ class Location {
     var city:String!
     var imagePath:String!
     var description:String!
+    //favored by me
     var favored:Bool!
     
     init(id: String, title: String, long: Double, lat: Double ) {
