@@ -129,8 +129,9 @@ class LocationService {
                         var favored = false
                         for (index,subJson):(String, JSON) in json["favorites"] {
                             
-                            if (subJson[index].string == UtilService.getMyId()) {
+                            if (subJson.string == UtilService.getMyId()) {
                                 favored = true
+                                break
                             }
                         }
                         
@@ -147,7 +148,7 @@ class LocationService {
     static func favLocation(id: String) -> Promise<(Int, Bool)> {
         return Promise { fulfill, reject in
             
-            Alamofire.request(.POST, "POST /locations/" + id + "/favor").validate().responseJSON { response in
+            Alamofire.request(.POST, "https://locator-app.com/api/v2/locations/" + id + "/favor").validate().responseJSON { response in
                 switch response.result {
                 case .Success:
                     
