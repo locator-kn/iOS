@@ -10,12 +10,15 @@ import UIKit
 
 class LocationDetailVC: UIViewController {
     
+    var location:Location!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var locationTitle: UILabel!
     @IBOutlet weak var locationDescription: UITextView!
     @IBOutlet weak var favorIcon: UIButton!
     @IBOutlet weak var opacity: UIImageView!
-    var location:Location!
+    
+    let favoriteIcon = UIImage(named: "favorite_icon") as UIImage?
+    let favoriteIconActive = UIImage(named: "favorite_icon_active") as UIImage?
     
     override func viewDidLoad() {
         
@@ -56,6 +59,12 @@ class LocationDetailVC: UIViewController {
             
             self.location.favorites = favors
             self.location.favored = favor
+            
+            if (favor) {
+                self.favorIcon.setImage(self.favoriteIconActive, forState: .Normal)
+            } else {
+                self.favorIcon.setImage(self.favoriteIcon, forState: .Normal)
+            }
             
             }.error {
                 err -> Void in
