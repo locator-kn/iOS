@@ -9,5 +9,7 @@
 import Foundation
 
 class TextImpression:AbstractImpression {
-    
+    func getData() -> String {
+        return String(data: data, encoding: NSUTF8StringEncoding)!
+    }
 }
