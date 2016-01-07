@@ -26,10 +26,12 @@ class LocationDetailVC: UIViewController {
 
         LocationService.locationById(location.id).then {
             result -> Void in
+            
+            self.location = result
 
-            self.imageView.image = UIImage(data: UtilService.dataFromPath(result.imagePath))
-            self.locationTitle.text = result.title
-            self.locationDescription.text = result.description
+            self.imageView.image = UIImage(data: UtilService.dataFromPath(self.location.imagePath))
+            self.locationTitle.text = self.location.title
+            self.locationDescription.text = self.location.description
             
             let gradient: CAGradientLayer = CAGradientLayer()
             gradient.frame = self.imageView.frame
@@ -37,7 +39,7 @@ class LocationDetailVC: UIViewController {
             gradient.locations = [0.0, 0.5, 1]
             self.imageView.layer.insertSublayer(gradient, atIndex: 0)
             
-            if (result.favored == true) {
+            if (self.location.favored == true) {
                 self.favorIcon.setImage(self.favoriteIconActive, forState: .Normal)
             }
             
@@ -50,6 +52,9 @@ class LocationDetailVC: UIViewController {
             result -> Void in
             
             print(result)
+            for item in result {
+                print(item.getData())
+            }
         }
         
     }
