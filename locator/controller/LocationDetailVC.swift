@@ -51,6 +51,8 @@ class LocationDetailVC: UIViewController {
         LocationService.getStream(location.id).then {
             result -> Void in
             
+            self.location.stream = result
+            
             print(result)
             for item in result {
                 print(item.getData())

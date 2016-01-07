@@ -20,6 +20,7 @@ class Location {
     //favored by me
     var favored:Bool!
     var favorites:Int!
+    var stream:[AbstractImpression]!
     
     init(id: String, title: String, long: Double, lat: Double) {
         self.id = id
