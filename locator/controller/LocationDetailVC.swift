@@ -27,11 +27,7 @@ class LocationDetailVC: UIViewController {
         LocationService.locationById(location.id).then {
             result -> Void in
 
-            let path = result.imagePath;
-            let url  = NSURL(string: path),
-
-            data = NSData(contentsOfURL: url!)
-            self.imageView.image = UIImage(data: data!)
+            self.imageView.image = UIImage(data: UtilService.dataFromPath(result.imagePath))
             self.locationTitle.text = result.title
             self.locationDescription.text = result.description
             
@@ -48,6 +44,12 @@ class LocationDetailVC: UIViewController {
         }.error {
             err -> Void in
             print(err)
+        }
+        
+        LocationService.getStream(location.id).then {
+            result -> Void in
+            
+            print(result)
         }
         
     }
