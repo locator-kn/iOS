@@ -16,6 +16,10 @@ class UtilService {
         return formatter.dateFromString(iso)!
     }
     
+    static func dataFromPath(path:String) -> NSData {
+        return NSData(contentsOfURL: NSURL(string: path)!)!
+    }
+    
     static func distanceBetweenCoords(lat1:Double, lon1:Double, lat2:Double, lon2:Double) -> Double {
         let R = 6371000.0; // metres
         let _lat1 = toRadian(lat1);
