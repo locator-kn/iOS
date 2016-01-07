@@ -10,10 +10,14 @@ import Foundation
 
 class User {
     let id:String
-    let name:String
-    let email:String
+    var name:String!
+    var email:String!
     
     static var me:User!
+    
+    init(id:String) {
+        self.id = id
+    }
     
     init(id:String, name:String, email:String) {
         self.id = id
