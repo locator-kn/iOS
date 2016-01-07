@@ -127,7 +127,7 @@ class LocationService {
                         
                         //if location favored by myself
                         var favored = false
-                        for (index,subJson):(String, JSON) in json["favorites"] {
+                        for (_,subJson):(String, JSON) in json["favorites"] {
                             
                             if (subJson.string == UtilService.getMyId()) {
                                 favored = true
