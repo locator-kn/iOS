@@ -26,7 +26,7 @@ class AbstractImpression {
         self.data = data
     }
     
-    func getData() -> NSData {
+    func getData() -> AnyObject {
         return data
     }
     
