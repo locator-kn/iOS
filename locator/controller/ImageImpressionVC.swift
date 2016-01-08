@@ -46,9 +46,18 @@ class ImageImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
         } else {
             return
         }
+    
+        image = self.addFilter(image!)
         imageView.image = image
         
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func addFilter(rawImage:UIImage) -> UIImage {
+        let filter = CIFilter(name: "CIColorControls")!
+        filter.setValue(CIImage(image: rawImage), forKey: kCIInputImageKey)
+        filter.setValue(0.5, forKey: kCIInputIntensityKey)
+        return UIImage(CIImage: filter.outputImage!)
     }
     
     func takePicture() {
