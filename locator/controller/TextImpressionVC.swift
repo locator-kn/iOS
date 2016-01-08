@@ -10,11 +10,13 @@ import UIKit
 
 class TextImpressionVC: UIViewController, UITextFieldDelegate {
     
+    var locationId:String!
     @IBOutlet weak var textField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         textField.delegate = self //set delegate to textfile
+        print("open textimpression for location: " + self.locationId)
 
         // Do any additional setup after loading the view.
     }
@@ -25,12 +27,16 @@ class TextImpressionVC: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func closeModal(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: {});
+        self.dismissViewControllerAnimated(true, completion: nil);
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {   //delegate method
         self.closeModal(self)
-        print("close")
+        
+        if textField.text?.characters.count > 3 {
+            LocationService.addTextImpression(self.locationId, data: textField.text!)
+        }
+        
         return true
     }
 
