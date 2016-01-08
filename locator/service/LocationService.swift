@@ -180,7 +180,7 @@ class LocationService {
                         
                         for (_,subJson):(String, JSON) in json {
                             
-                            let user = subJson["user"].string
+                            let user = subJson["user_id"].string
                             let date = subJson["create_date"].string
                             let type = subJson["type"].string
                             let dataPath = subJson["data"].string
@@ -206,6 +206,22 @@ class LocationService {
                         fulfill(impressions)
                         
                     }
+                    
+                case .Failure(let error):
+                    reject(error)
+                }
+            }
+        }
+    }
+    
+    static func addTextImpression(id: String, data:String) -> Promise<Bool> {
+        return Promise { fulfill, reject in
+            
+            Alamofire.request(.POST, "https://locator-app.com/api/v2/locations/" + id + "/stream/text", parameters: ["data": data]).validate().responseJSON { response in
+                switch response.result {
+                case .Success:
+                    
+                    fulfill(true)
                     
                 case .Failure(let error):
                     reject(error)
