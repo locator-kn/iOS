@@ -572,10 +572,10 @@
             </objects>
             <point key="canvasLocation" x="3456" y="201"/>
         </scene>
-        <!--DashboardVC-->
+        <!--LocationDetailVC-->
         <scene sceneID="b9w-ul-OE8">
             <objects>
-                <viewController storyboardIdentifier="dashboard" id="7jn-ok-tDo" customClass="DashboardVC" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="dashboard" title="LocationDetailVC" id="7jn-ok-tDo" customClass="DashboardVC" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1rc-vd-al0"/>
                         <viewControllerLayoutGuide type="bottom" id="UaP-WI-J8i"/>
@@ -677,6 +677,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="passwordTextField" destination="fzu-pS-sg2" id="d62-VT-Sk8"/>
+                        <segue destination="7jn-ok-tDo" kind="show" identifier="dashboard" id="hTK-WV-rqw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s67-zn-TWX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1159,6 +1160,6 @@
         <image name="text" width="42" height="37"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EDW-cV-fVU"/>
+        <segue reference="fiC-UR-uUa"/>
     </inferredMetricsTieBreakers>
 </document>
