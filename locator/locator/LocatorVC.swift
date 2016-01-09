@@ -1,17 +1,15 @@
 //
-//  RegisterVC5.swift
+//  LocatorVC.swift
 //  locator
 //
-//  Created by Sergej Birklin on 05/01/16.
+//  Created by Sergej Birklin on 09/01/16.
 //  Copyright © 2016 Sergej Birklin. All rights reserved.
 //
 
 import UIKit
 
-class RegisterVC5: UIViewController {
+class LocatorVC: UIViewController {
 
-    @IBOutlet weak var profilImageButton: UIButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,27 +21,7 @@ class RegisterVC5: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
-    
-    @IBAction func backButtonPressed(sender: UIButton) {
-        self.navigationController?.popViewControllerAnimated(true)
-    }
-    
-    @IBAction func crossButtonPressed(sender: UIButton) {
-        self.navigationController?.popToRootViewControllerAnimated(true)
-    }
-    
-    @IBAction func profilImageButtonPressed(sender: UIButton) {
-        
-    }
-    
-    @IBAction func decline(sender: UIButton) {
-        self.performSegueWithIdentifier("showWelcomeRegisteredView", sender: self)
-    }
-    
-    
+
     /*
     // MARK: - Navigation
 

@@ -1,49 +1,32 @@
 //
-//  RegisterVC5.swift
+//  WelcomeRegisteredVC.swift
 //  locator
 //
-//  Created by Sergej Birklin on 05/01/16.
+//  Created by Sergej Birklin on 09/01/16.
 //  Copyright © 2016 Sergej Birklin. All rights reserved.
 //
 
 import UIKit
 
-class RegisterVC5: UIViewController {
-
-    @IBOutlet weak var profilImageButton: UIButton!
+class WelcomeRegisteredVC: UIViewController {
     
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
-    
-    @IBAction func backButtonPressed(sender: UIButton) {
-        self.navigationController?.popViewControllerAnimated(true)
-    }
-    
-    @IBAction func crossButtonPressed(sender: UIButton) {
-        self.navigationController?.popToRootViewControllerAnimated(true)
-    }
-    
-    @IBAction func profilImageButtonPressed(sender: UIButton) {
-        
-    }
-    
-    @IBAction func decline(sender: UIButton) {
-        self.performSegueWithIdentifier("showWelcomeRegisteredView", sender: self)
-    }
-    
-    
+
     /*
     // MARK: - Navigation
 
