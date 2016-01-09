@@ -23,7 +23,6 @@ class MapSearchVC: UIViewController {
     @IBAction func closeModal(sender: UIButton) {
          self.dismissViewControllerAnimated(true, completion: {});
     }
-
     /*
     // MARK: - Navigation
 

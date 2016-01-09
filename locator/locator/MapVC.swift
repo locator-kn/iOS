@@ -117,6 +117,9 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
             }
         }
     }
+    @IBAction func locate(sender: AnyObject) {
+        self.googleMap.animateToCameraPosition(GMSCameraPosition(target: self.googleMap.myLocation.coordinate, zoom: 17, bearing: 0, viewingAngle: 0))
+    }
     
     @IBAction func schoenHier(sender: AnyObject) {
         LocationService.schonHier(googleMap.myLocation.coordinate.latitude, long: googleMap.myLocation.coordinate.longitude).then {
@@ -125,7 +128,7 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
             self.getNearSchoenHiers(self.googleMap.myLocation.coordinate, maxDistance: 0.2)
             self.nearSchoenHiers[schoenHier.id] = schoenHier
             self.showHeatMapMarker(schoenHier.getGeoPosition().lat, long: schoenHier.getGeoPosition().long, schoenHier: schoenHier)
-            self.googleMap.animateToCameraPosition(GMSCameraPosition(target: self.googleMap.myLocation.coordinate, zoom: 17, bearing: 0, viewingAngle: 0))
+            self.locate(self)
         }
     }
     

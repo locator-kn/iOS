@@ -10,14 +10,15 @@ import UIKit
 
 class LocationDetailVC: UIViewController {
     
+    var location:Location!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var locationTitle: UILabel!
-
     @IBOutlet weak var locationDescription: UITextView!
-
-    
+    @IBOutlet weak var favorIcon: UIButton!
     @IBOutlet weak var opacity: UIImageView!
-    var location:Location!
+    
+    let favoriteIcon = UIImage(named: "favorite_icon") as UIImage?
+    let favoriteIconActive = UIImage(named: "favorite_icon_active") as UIImage?
     
     override func viewDidLoad() {
         
@@ -25,14 +26,12 @@ class LocationDetailVC: UIViewController {
 
         LocationService.locationById(location.id).then {
             result -> Void in
+            
+            self.location = result
 
-            let path = result.imagePath;
-            let url  = NSURL(string: path),
-
-            data = NSData(contentsOfURL: url!)
-            self.imageView.image = UIImage(data: data!)
-            self.locationTitle.text = result.title
-            self.locationDescription.text = result.description
+            self.imageView.image = UIImage(data: UtilService.dataFromPath(self.location.imagePath))
+            self.locationTitle.text = self.location.title
+            self.locationDescription.text = self.location.description
             
             let gradient: CAGradientLayer = CAGradientLayer()
             gradient.frame = self.imageView.frame
@@ -40,9 +39,24 @@ class LocationDetailVC: UIViewController {
             gradient.locations = [0.0, 0.5, 1]
             self.imageView.layer.insertSublayer(gradient, atIndex: 0)
             
+            if (self.location.favored == true) {
+                self.favorIcon.setImage(self.favoriteIconActive, forState: .Normal)
+            }
+            
         }.error {
             err -> Void in
             print(err)
+        }
+        
+        LocationService.getStream(location.id).then {
+            result -> Void in
+            
+            self.location.stream = result
+            
+            print(result)
+            for item in result {
+                print(item.getData())
+            }
         }
         
     }
@@ -52,15 +66,31 @@ class LocationDetailVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func favorLocation(sender: UIButton) {
+        LocationService.favLocation(location.id).then {
+            favors,favor -> Void in
+            
+            self.location.favorites = favors
+            self.location.favored = favor
+            
+            if (favor) {
+                self.favorIcon.setImage(self.favoriteIconActive, forState: .Normal)
+            } else {
+                self.favorIcon.setImage(self.favoriteIcon, forState: .Normal)
+            }
+            
+            }.error {
+                err -> Void in
+                print(err)
+        }
     }
-    */
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print(segue.identifier)
+        if (segue.identifier == "textImpression") {
+            let controller = segue.destinationViewController as! TextImpressionVC
+            controller.locationId = self.location.id
+        }
+    }
 
 }

@@ -43,6 +43,9 @@ class EmailLoginVC2: UIViewController, UITextFieldDelegate {
             User.setMe(user)
             print(User.getMe().name)
             NSUserDefaults.standardUserDefaults().setValue(User.getMe().id, forKey: "me")
+            
+            self.performSegueWithIdentifier("dashboard", sender: self)
+            
         }
     }
     

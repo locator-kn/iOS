@@ -17,20 +17,26 @@ class Location {
     var city:String!
     var imagePath:String!
     var description:String!
+    //favored by me
+    var favored:Bool!
+    var favorites:Int!
+    var stream:[AbstractImpression]!
     
-    init(id: String, title: String, long: Double, lat: Double ) {
+    init(id: String, title: String, long: Double, lat: Double) {
         self.id = id
         self.title = title
         self.geoPosition = (lat: lat, long: long)
     }
     
-    init(id: String, title: String, description:String, long: Double, lat: Double, city:String, imagePath: String) {
+    init(id: String, title: String, description:String, long: Double, lat: Double, city:String, imagePath: String, favored: Bool, favorites:Int) {
         self.id = id
         self.title = title
         self.geoPosition = (lat: lat, long: long)
         self.imagePath = imagePath
         self.city = city
         self.description = description
+        self.favored = favored
+        self.favorites = favorites
     }
     
     func getTitle() -> String {

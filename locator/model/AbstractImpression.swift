@@ -10,16 +10,24 @@ import Foundation
 
 class AbstractImpression {
     
-    let id:String
     let date:NSDate
     let user:User
     let data:NSData
     
-    init(id:String, date:NSDate, user:User, path:String) {
-        self.id = id
+    init(date:String, userId:String, data:NSData) {
+        self.date = UtilService.dateFromIso(date)
+        self.user = User(id: userId)
+        self.data = data
+    }
+    
+    init(date:NSDate, user:User, data:NSData) {
         self.date = date
         self.user = user
-        self.data = NSData(contentsOfURL: NSURL(string: path)!)!
+        self.data = data
+    }
+    
+    func getData() -> AnyObject {
+        return data
     }
     
 }

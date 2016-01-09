@@ -125,16 +125,109 @@ class LocationService {
                             imagePath = "https://locator-app.com/" + json["images"]["xlarge"].string!
                         }
                         
-                        fulfill((Location(id: id!, title: title!, description: description!, long: long!, lat: lat!, city: city!, imagePath: imagePath)))
+                        //if location favored by myself
+                        var favored = false
+                        for (_,subJson):(String, JSON) in json["favorites"] {
+                            
+                            if (subJson.string == UtilService.getMyId()) {
+                                favored = true
+                                break
+                            }
+                        }
+                        
+                        fulfill((Location(id: id!, title: title!, description: description!, long: long!, lat: lat!, city: city!, imagePath: imagePath, favored: favored, favorites: 0)))
                     }
                     
                 case .Failure(let error):
                     reject(error)
                 }
             }
-
-            
         }
     }
-
+    
+    static func favLocation(id: String) -> Promise<(Int, Bool)> {
+        return Promise { fulfill, reject in
+            
+            Alamofire.request(.POST, "https://locator-app.com/api/v2/locations/" + id + "/favor").validate().responseJSON { response in
+                switch response.result {
+                case .Success:
+                    
+                    if let value = response.result.value {
+                        let json = JSON(value)
+                        print(json)
+                        fulfill((json["favorites"].int!, json["added"].bool!))
+                    }
+                    
+                case .Failure(let error):
+                    reject(error)
+                }
+            }
+        }
+    }
+    
+    static func getStream(id: String) -> Promise<[AbstractImpression]> {
+        return Promise { fulfill, reject in
+            
+            Alamofire.request(.GET, "https://locator-app.com/api/v2/locations/" + id + "/stream").validate().responseJSON { response in
+                switch response.result {
+                case .Success:
+                    
+                    if let value = response.result.value {
+                        let json = JSON(value)
+                        print(json)
+                        
+                        var impressions = [AbstractImpression]()
+                        
+                        for (_,subJson):(String, JSON) in json {
+                            
+                            let user = subJson["user_id"].string
+                            let date = subJson["create_date"].string
+                            let type = subJson["type"].string
+                            let dataPath = subJson["data"].string
+                            
+                            if type == "text" {
+                                let data = dataPath!.dataUsingEncoding(NSUTF8StringEncoding)
+                                impressions.append(TextImpression(date:date!, userId: user!, data: data!))
+                                break
+                                
+                            } else if type == "image" {
+                                let data = UtilService.dataFromPath(dataPath!)
+                                impressions.append(ImageImpression(date:date!, userId: user!, data: data))
+                                break
+                            
+                            } else if type == "audio" {
+                                // TODO
+                                
+                            } else if type == "video" {
+                                //TODO
+                                
+                            }
+                        }
+                        fulfill(impressions)
+                        
+                    }
+                    
+                case .Failure(let error):
+                    reject(error)
+                }
+            }
+        }
+    }
+    
+    static func addTextImpression(id: String, data:String) -> Promise<Bool> {
+        return Promise { fulfill, reject in
+            
+            Alamofire.request(.POST, "https://locator-app.com/api/v2/locations/" + id + "/stream/text", parameters: ["data": data]).validate().responseJSON { response in
+                switch response.result {
+                case .Success:
+                    
+                    fulfill(true)
+                    
+                case .Failure(let error):
+                    reject(error)
+                }
+            }
+        }
+    }
+    
 }
