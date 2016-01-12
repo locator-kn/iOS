@@ -11,7 +11,7 @@ import Foundation
 public class Questions {
     
     struct First {
-        let question = "Was schmeichelt deinem Gaumen?"
+        let question = "Wie sieht dein Wochende aus?"
         let firstAnswer = "Was? Schon Montag? Lass mal lieber afterhourn!"
         let secondAnswer = "Hauptsache Couch!"
         let color = Color.violet()

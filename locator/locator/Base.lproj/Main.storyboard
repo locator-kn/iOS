@@ -13,6 +13,7 @@
         <mutableArray key="SourceSansPro-Light.ttf">
             <string>SourceSansPro-Light</string>
             <string>SourceSansPro-Light</string>
+            <string>SourceSansPro-Light</string>
         </mutableArray>
         <mutableArray key="SourceSansPro-Regular.ttf">
             <string>SourceSansPro-Regular</string>
@@ -27,6 +28,7 @@
             <string>SourceSansPro-Regular</string>
         </mutableArray>
         <mutableArray key="SourceSansPro-Semibold.ttf">
+            <string>SourceSansPro-Semibold</string>
             <string>SourceSansPro-Semibold</string>
             <string>SourceSansPro-Semibold</string>
             <string>SourceSansPro-Semibold</string>
@@ -1083,7 +1085,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dk0-oc-Lkb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5580" y="1824"/>
+            <point key="canvasLocation" x="5580" y="1764"/>
         </scene>
         <!--Welcome RegisteredVC-->
         <scene sceneID="wdB-Wx-3AB">
@@ -1122,8 +1124,11 @@
                                     <constraint firstAttribute="width" constant="58" id="eTa-rc-Neg"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="Nö"/>
+                                <connections>
+                                    <segue destination="QpN-yJ-0WM" kind="show" id="WG6-zk-XfW"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi Sebastian! Willkommen bei" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Jg-HK-NPx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi Sebastian! Willkommen bei" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6Jg-HK-NPx">
                                 <rect key="frame" x="48" y="28" width="505" height="27"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Semibold" family="Source Sans Pro" pointSize="21"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1181,6 +1186,9 @@
                                             <constraint firstAttribute="height" constant="22" id="tsc-by-2b5"/>
                                         </constraints>
                                         <state key="normal" image="cross"/>
+                                        <connections>
+                                            <action selector="crossButtonPressed:" destination="MQa-ky-caL" eventType="touchUpInside" id="DsH-6e-5zy"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffh-Z2-PPF">
                                         <rect key="frame" x="20" y="28" width="17" height="26"/>
@@ -1194,7 +1202,7 @@
                                             <action selector="backButtonPressed:" destination="qxr-V7-qqt" eventType="touchUpInside" id="DlN-QN-P5e"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jLM-Hd-equ">
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jLM-Hd-equ">
                                         <rect key="frame" x="44" y="62" width="513" height="158"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Light" family="Source Sans Pro" pointSize="60"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1217,7 +1225,7 @@
                             <view contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="Nsd-Wn-zXg">
                                 <rect key="frame" x="0.0" y="269" width="600" height="165"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9T6-ML-qdL">
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9T6-ML-qdL">
                                         <rect key="frame" x="8" y="8" width="584" height="149"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Semibold" family="Source Sans Pro" pointSize="30"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1235,7 +1243,7 @@
                             <view contentMode="scaleToFill" verticalCompressionResistancePriority="752" translatesAutoresizingMaskIntoConstraints="NO" id="Ktc-cR-yVB">
                                 <rect key="frame" x="0.0" y="434" width="600" height="166"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="I8g-bJ-l2k">
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="I8g-bJ-l2k">
                                         <rect key="frame" x="8" y="9" width="584" height="149"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Semibold" family="Source Sans Pro" pointSize="30"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1274,12 +1282,64 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="questionLabel" destination="jLM-Hd-equ" id="l5x-gq-cdc"/>
+                        <outlet property="firstLabel" destination="jLM-Hd-equ" id="D2q-95-VG9"/>
+                        <outlet property="firstView" destination="suJ-R7-tpi" id="dSr-sO-x1s"/>
+                        <outlet property="secondLabel" destination="9T6-ML-qdL" id="9VM-fN-wXk"/>
+                        <outlet property="secondView" destination="Nsd-Wn-zXg" id="eiK-PI-JNn"/>
+                        <outlet property="thirdLabel" destination="I8g-bJ-l2k" id="7Kf-IY-b4t"/>
+                        <outlet property="thirdView" destination="Ktc-cR-yVB" id="fSX-zx-rx3"/>
+                        <segue destination="QpN-yJ-0WM" kind="show" identifier="showPreLogin" id="CwG-iy-Y3j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XiF-qa-QEO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7688" y="934"/>
+        </scene>
+        <!--Pre LoginVC-->
+        <scene sceneID="5tH-GS-qyQ">
+            <objects>
+                <viewController id="QpN-yJ-0WM" customClass="PreLoginVC" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Opw-Nu-dL8"/>
+                        <viewControllerLayoutGuide type="bottom" id="fPm-Co-5v0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hnf-Ua-em8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Na endlich! You did it!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIh-5z-TK3">
+                                <rect key="frame" x="20" y="20" width="560" height="38"/>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Semibold" family="Source Sans Pro" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jetzt geht's los! Viel Spaß!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0XL-lI-cB1">
+                                <rect key="frame" x="51" y="224" width="498" height="151"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="151" id="UW8-Oz-0Jx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Light" family="Source Sans Pro" pointSize="60"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="BIh-5z-TK3" firstAttribute="top" secondItem="Opw-Nu-dL8" secondAttribute="bottom" constant="20" id="2Wm-8Q-Za1"/>
+                            <constraint firstItem="0XL-lI-cB1" firstAttribute="leading" secondItem="hnf-Ua-em8" secondAttribute="leadingMargin" constant="31" id="MNe-9t-cms"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BIh-5z-TK3" secondAttribute="trailing" id="OhI-Gp-TL3"/>
+                            <constraint firstItem="0XL-lI-cB1" firstAttribute="centerX" secondItem="hnf-Ua-em8" secondAttribute="centerX" id="Q2c-54-JMO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0XL-lI-cB1" secondAttribute="trailing" constant="31" id="fB4-wz-G0q"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="BIh-5z-TK3" secondAttribute="leading" id="z2F-gS-VkQ"/>
+                            <constraint firstItem="0XL-lI-cB1" firstAttribute="centerY" secondItem="hnf-Ua-em8" secondAttribute="centerY" id="znT-1P-w1K"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sNa-lI-qhq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8403" y="934"/>
         </scene>
         <!--RegisterVC5-->
         <scene sceneID="t3n-UO-nau">
@@ -1382,6 +1442,23 @@
             </objects>
             <point key="canvasLocation" x="6286" y="934"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="dHN-Zh-yRY">
+            <objects>
+                <viewController id="ZdN-b1-E8J" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="h5V-5K-33T"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gwh-en-Ccd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FTQ-i1-BWw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VU4-nz-ZYe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
     <resources>
         <image name="Ja" width="273" height="273"/>
@@ -1398,5 +1475,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Dge-4W-7Ya"/>
+        <segue reference="WG6-zk-XfW"/>
     </inferredMetricsTieBreakers>
 </document>

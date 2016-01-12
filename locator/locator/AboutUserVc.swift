@@ -10,9 +10,12 @@ import UIKit
 
 class AboutUserVc: UIViewController {
     
-    @IBOutlet weak var firstButton: UIButton!
-    @IBOutlet weak var secondButton: UIButton!
-    @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var firstView: UIView!
+    @IBOutlet weak var firstLabel: UILabel!
+    @IBOutlet weak var secondView: UIView!
+    @IBOutlet weak var secondLabel: UILabel!
+    @IBOutlet weak var thirdView: UIView!
+    @IBOutlet weak var thirdLabel: UILabel!
     
     let questions = Questions()
     
@@ -21,6 +24,13 @@ class AboutUserVc: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let firstTapGesture = UITapGestureRecognizer(target: self, action: Selector("firstAnswerPressed:"))
+        let secondTapGesture = UITapGestureRecognizer(target: self, action: Selector("secondAnswerPressed:"))
+        secondLabel.userInteractionEnabled = true
+        secondLabel.addGestureRecognizer(firstTapGesture)
+        thirdLabel.userInteractionEnabled = true
+        thirdLabel.addGestureRecognizer(secondTapGesture)
+        changeViews()
     }
     
     override func prefersStatusBarHidden() -> Bool {
@@ -31,18 +41,22 @@ class AboutUserVc: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func crossButtonPressed(sender: UIButton) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
 
     @IBAction func backButtonPressed(sender: UIButton) {
         counter -= 1
         changeViews()
     }
     
-    @IBAction func firstButtonPressed(sender: UIButton) {
+    func firstAnswerPressed(sender:UITapGestureRecognizer){
         counter += 1
         changeViews()
     }
     
-    @IBAction func secondButtonPressed(sender: UIButton) {
+    func secondAnswerPressed(sender:UITapGestureRecognizer){
         counter += 1
         changeViews()
     }
@@ -50,39 +64,35 @@ class AboutUserVc: UIViewController {
     func changeViews() {
         switch counter {
         case 0:
-            print("First View")
             let question = Questions.First()
             setViews(question.color.first, secondColor: question.color.second, thirdColor: question.color.third, question: question.question, firstAnswer: question.firstAnswer, secondAnswer: question.secondAnswer)
         case 1:
-            print("Second View")
             let question = Questions.Second()
             setViews(question.color.first, secondColor: question.color.second, thirdColor: question.color.third, question: question.question, firstAnswer: question.firstAnswer, secondAnswer: question.secondAnswer)
             
         case 2:
-            print("Third View")
             let question = Questions.Third()
             setViews(question.color.first, secondColor: question.color.second, thirdColor: question.color.third, question: question.question, firstAnswer: question.firstAnswer, secondAnswer: question.secondAnswer)
         case 3:
-            print("Fourth View")
             let question = Questions.Fourth()
             setViews(question.color.first, secondColor: question.color.second, thirdColor: question.color.third, question: question.question, firstAnswer: question.firstAnswer, secondAnswer: question.secondAnswer)
         case 4:
-            print("Fifth View")
             let question = Questions.Fifth()
             setViews(question.color.first, secondColor: question.color.second, thirdColor: question.color.third, question: question.question, firstAnswer: question.firstAnswer, secondAnswer: question.secondAnswer)
+        case 5:
+            performSegueWithIdentifier("showPreLogin", sender: self)
         default:
-            print("Error")
             self.navigationController?.popViewControllerAnimated(true)
         }
     }
     
     func setViews(firstColor: UIColor, secondColor: UIColor, thirdColor: UIColor, question: String, firstAnswer: String, secondAnswer: String) {
-        self.view.backgroundColor = firstColor
-        questionLabel.text = question
-        firstButton.setTitle(firstAnswer, forState: .Normal)
-        firstButton.backgroundColor = secondColor
-        secondButton.setTitle(secondAnswer, forState: .Normal)
-        secondButton.backgroundColor = thirdColor
+        firstView.backgroundColor = firstColor
+        firstLabel.text = question
+        secondView.backgroundColor = secondColor
+        secondLabel.text = firstAnswer
+        thirdView.backgroundColor = thirdColor
+        thirdLabel.text = secondAnswer
     }
 
     /*

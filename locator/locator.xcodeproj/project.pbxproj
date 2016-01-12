@@ -49,6 +49,7 @@
 		876CAA821C3C0411002A36FF /* RegisterVC3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876CAA811C3C0411002A36FF /* RegisterVC3.swift */; };
 		876CAA841C3C0422002A36FF /* RegisterVC4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876CAA831C3C0422002A36FF /* RegisterVC4.swift */; };
 		876CAA861C3C0431002A36FF /* RegisterVC5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876CAA851C3C0431002A36FF /* RegisterVC5.swift */; };
+		879DC7BA1C459A8E004726BF /* PreLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879DC7B91C459A8E004726BF /* PreLoginVC.swift */; };
 		87ACAD261C21C9B900651B18 /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ACAD251C21C9B900651B18 /* HttpService.swift */; };
 		87EED3861C4571BE00939E07 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EED3851C4571BE00939E07 /* Questions.swift */; };
 		87F14D7B1C18604B00682709 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F14D7A1C18604B00682709 /* AppDelegate.swift */; };
@@ -103,6 +104,7 @@
 		876CAA811C3C0411002A36FF /* RegisterVC3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterVC3.swift; sourceTree = "<group>"; };
 		876CAA831C3C0422002A36FF /* RegisterVC4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterVC4.swift; sourceTree = "<group>"; };
 		876CAA851C3C0431002A36FF /* RegisterVC5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterVC5.swift; sourceTree = "<group>"; };
+		879DC7B91C459A8E004726BF /* PreLoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreLoginVC.swift; sourceTree = "<group>"; };
 		87ACAD251C21C9B900651B18 /* HttpService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpService.swift; sourceTree = "<group>"; };
 		87EED3851C4571BE00939E07 /* Questions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 		87F14D771C18604B00682709 /* locator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = locator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,6 +231,7 @@
 				872DA7C71C1F06A10041C9D6 /* EmailLoginVC1.swift */,
 				872DA7C91C1F156A0041C9D6 /* EmailLoginVC2.swift */,
 				876290221C1893DE00D2870E /* LoginVC.swift */,
+				879DC7B91C459A8E004726BF /* PreLoginVC.swift */,
 				876CAA7D1C3BFEAF002A36FF /* RegisterVC1.swift */,
 				876CAA7F1C3C03F8002A36FF /* RegisterVC2.swift */,
 				876CAA811C3C0411002A36FF /* RegisterVC3.swift */,
@@ -433,6 +436,7 @@
 				5B495C4E1C2061B5000D8974 /* MapVC.swift in Sources */,
 				876CAA821C3C0411002A36FF /* RegisterVC3.swift in Sources */,
 				5B90CCB11C29A56A00108693 /* User.swift in Sources */,
+				879DC7BA1C459A8E004726BF /* PreLoginVC.swift in Sources */,
 				876CAA841C3C0422002A36FF /* RegisterVC4.swift in Sources */,
 				5B4475091C2167BE00C30445 /* Location.swift in Sources */,
 				876290231C1893DE00D2870E /* LoginVC.swift in Sources */,
