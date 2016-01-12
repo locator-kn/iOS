@@ -12,6 +12,7 @@
         </mutableArray>
         <mutableArray key="SourceSansPro-Light.ttf">
             <string>SourceSansPro-Light</string>
+            <string>SourceSansPro-Light</string>
         </mutableArray>
         <mutableArray key="SourceSansPro-Regular.ttf">
             <string>SourceSansPro-Regular</string>
@@ -23,8 +24,11 @@
             <string>SourceSansPro-Regular</string>
             <string>SourceSansPro-Regular</string>
             <string>SourceSansPro-Regular</string>
+            <string>SourceSansPro-Regular</string>
         </mutableArray>
         <mutableArray key="SourceSansPro-Semibold.ttf">
+            <string>SourceSansPro-Semibold</string>
+            <string>SourceSansPro-Semibold</string>
             <string>SourceSansPro-Semibold</string>
             <string>SourceSansPro-Semibold</string>
             <string>SourceSansPro-Semibold</string>
@@ -354,7 +358,7 @@
                                     <action selector="schoenHier:" destination="4Mp-XX-Glu" eventType="touchUpInside" id="FSi-y3-0dO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGo-Di-6bH" userLabel="search">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGo-Di-6bH" userLabel="search">
                                 <rect key="frame" x="501" y="25" width="57" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="23" id="5KS-U5-NxB"/>
@@ -1175,19 +1179,80 @@
                                 </constraints>
                                 <state key="normal" image="cross"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWz-C9-PgM">
+                                <rect key="frame" x="0.0" y="461" width="600" height="139"/>
+                                <color key="backgroundColor" red="0.59999999999999998" green="0.58823529411764708" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="139" id="Ueg-AM-B7a"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Semibold" family="Source Sans Pro" pointSize="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="secondButtonPressed:" destination="MQa-ky-caL" eventType="touchUpInside" id="7NP-1m-9cX"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wie sieht dein Wochende aus?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jLM-Hd-equ">
+                                <rect key="frame" x="20" y="63" width="560" height="224"/>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Light" family="Source Sans Pro" pointSize="60"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oGU-wH-1ZK">
+                                <rect key="frame" x="0.0" y="322" width="600" height="139"/>
+                                <color key="backgroundColor" red="0.49803921568627452" green="0.48627450980392156" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Semibold" family="Source Sans Pro" pointSize="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="firstButtonPressed:" destination="MQa-ky-caL" eventType="touchUpInside" id="fey-0P-Qza"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffh-Z2-PPF">
+                                <rect key="frame" x="20" y="28" width="17" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="B9t-aF-aZr"/>
+                                    <constraint firstAttribute="width" constant="17" id="s8o-sf-5ek"/>
+                                </constraints>
+                                <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="MQa-ky-caL" eventType="touchUpInside" id="CSr-xX-ZqT"/>
+                                    <action selector="backButtonPressed:" destination="qxr-V7-qqt" eventType="touchUpInside" id="DlN-QN-P5e"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.81176470590000005" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.40000000000000002" green="0.38823529410000002" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="jLM-Hd-equ" secondAttribute="leading" id="6e1-oe-mFb"/>
+                            <constraint firstItem="OWz-C9-PgM" firstAttribute="leading" secondItem="Shp-Wy-ebj" secondAttribute="leadingMargin" constant="-20" id="9sk-mt-4sU"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="ffh-Z2-PPF" secondAttribute="leading" id="AoM-oE-ObL"/>
+                            <constraint firstItem="ffh-Z2-PPF" firstAttribute="top" secondItem="i70-KU-oCN" secondAttribute="bottom" constant="28" id="Kj0-Ji-wXe"/>
+                            <constraint firstItem="oGU-wH-1ZK" firstAttribute="leading" secondItem="Shp-Wy-ebj" secondAttribute="leadingMargin" constant="-20" id="RIg-GT-hfS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jLM-Hd-equ" secondAttribute="trailing" id="W1Q-Wy-cqB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OWz-C9-PgM" secondAttribute="trailing" constant="-20" id="X69-b4-iWQ"/>
+                            <constraint firstItem="jLM-Hd-equ" firstAttribute="top" secondItem="nWS-cQ-kcJ" secondAttribute="bottom" constant="11" id="YeH-I0-hah"/>
+                            <constraint firstItem="OWz-C9-PgM" firstAttribute="top" secondItem="oGU-wH-1ZK" secondAttribute="bottom" id="aL2-pj-boI"/>
+                            <constraint firstItem="OWz-C9-PgM" firstAttribute="height" secondItem="oGU-wH-1ZK" secondAttribute="height" id="atb-1N-85s"/>
+                            <constraint firstItem="oGU-wH-1ZK" firstAttribute="top" secondItem="jLM-Hd-equ" secondAttribute="bottom" constant="35" id="cEV-93-Egn"/>
+                            <constraint firstItem="Dss-Mk-9Ib" firstAttribute="top" secondItem="OWz-C9-PgM" secondAttribute="bottom" id="g6h-Ue-zYQ"/>
                             <constraint firstItem="nWS-cQ-kcJ" firstAttribute="top" secondItem="i70-KU-oCN" secondAttribute="bottom" constant="30" id="gSe-Fw-SPl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nWS-cQ-kcJ" secondAttribute="trailing" id="qaY-nU-6Ra"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oGU-wH-1ZK" secondAttribute="trailing" constant="-20" id="s5z-LP-0yY"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="firstButton" destination="oGU-wH-1ZK" id="kFy-xp-Djd"/>
+                        <outlet property="questionLabel" destination="jLM-Hd-equ" id="l5x-gq-cdc"/>
+                        <outlet property="secondButton" destination="OWz-C9-PgM" id="Ce2-oh-YV0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XiF-qa-QEO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7765" y="937"/>
+            <point key="canvasLocation" x="7688" y="934"/>
         </scene>
         <!--RegisterVC5-->
         <scene sceneID="t3n-UO-nau">
@@ -1302,10 +1367,9 @@
         <image name="navigate" width="148" height="398"/>
         <image name="profil" width="396" height="396"/>
         <image name="schoen_hier" width="560" height="560"/>
-        <image name="search" width="160" height="398"/>
         <image name="text" width="42" height="37"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fiC-UR-uUa"/>
+        <segue reference="Dge-4W-7Ya"/>
     </inferredMetricsTieBreakers>
 </document>

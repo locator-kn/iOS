@@ -11,13 +11,13 @@ import UIKit
 
 public class Color {
     
-    struct violet {
+    public struct violet {
         let first = UIColor(netHex: 0x6663af)
         let second = UIColor(netHex: 0x7f7cdd)
         let third = UIColor(netHex: 0x9996e2)
     }
     
-    struct cyan {
+    public struct cyan {
         let first = UIColor(netHex: 0x5e91a3)
         let second = UIColor(netHex: 0x75b5cc)
         let third = UIColor(netHex: 0x91c4d6)
