@@ -12,6 +12,8 @@ class EmailLoginVC1: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailTextField: UITextField!
     
+    let inputChecker = ValidateInputService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         emailTextField.becomeFirstResponder()
@@ -37,20 +39,13 @@ class EmailLoginVC1: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {   //delegate method
-        if (isValidEmail(textField.text!) == true) {
+        if (inputChecker.checkEmailInput(textField.text!) == true) {
             performSegueWithIdentifier("showEmailLoginVC2", sender: self)
             return true
         } else {
             alertFalseInput()
         }
         return false
-    }
-    
-    func isValidEmail(testStr:String) -> Bool {
-        let emailRegEx = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
-        
-        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailTest.evaluateWithObject(testStr)
     }
     
     func alertFalseInput() {
@@ -67,9 +62,6 @@ class EmailLoginVC1: UIViewController, UITextFieldDelegate {
             }
         }
     }
-    
-
-    
     
     /*
     // MARK: - Navigation

@@ -33,6 +33,7 @@ class HttpService {
         success: ((AnyObject) -> Void)!,
         failure: ((NSError, AnyObject?) -> Void)!) {
             
+            
             Alamofire.request(.POST, withURL, parameters: jsonString)
                 .responseJSON { response in
                     //print(response.description)
@@ -44,4 +45,12 @@ class HttpService {
                     }
             }
     }
+}
+
+struct API {
+    static let BASE_URL = "https://locator-app.com/api/v2"
+    static let USER_LOGIN = "\(BASE_URL)/users/login"
+    static let USER_REGISTER = "\(BASE_URL)/users/register"
+    static let USER_LOGOUT = "\(BASE_URL)/users/logout"
+    static let USER_PROTECTED = "\(BASE_URL)/users/protected"
 }

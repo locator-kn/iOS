@@ -51,6 +51,8 @@
 		876CAA861C3C0431002A36FF /* RegisterVC5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876CAA851C3C0431002A36FF /* RegisterVC5.swift */; };
 		879DC7BA1C459A8E004726BF /* PreLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879DC7B91C459A8E004726BF /* PreLoginVC.swift */; };
 		87ACAD261C21C9B900651B18 /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ACAD251C21C9B900651B18 /* HttpService.swift */; };
+		87B6DB6E1C46723E00CE97DC /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B6DB6D1C46723E00CE97DC /* LoginService.swift */; };
+		87B6DB721C4674E600CE97DC /* ValidateInputService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B6DB711C4674E600CE97DC /* ValidateInputService.swift */; };
 		87EED3861C4571BE00939E07 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EED3851C4571BE00939E07 /* Questions.swift */; };
 		87F14D7B1C18604B00682709 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F14D7A1C18604B00682709 /* AppDelegate.swift */; };
 		87F14D7D1C18604B00682709 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F14D7C1C18604B00682709 /* WelcomeVC.swift */; };
@@ -106,6 +108,8 @@
 		876CAA851C3C0431002A36FF /* RegisterVC5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterVC5.swift; sourceTree = "<group>"; };
 		879DC7B91C459A8E004726BF /* PreLoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreLoginVC.swift; sourceTree = "<group>"; };
 		87ACAD251C21C9B900651B18 /* HttpService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpService.swift; sourceTree = "<group>"; };
+		87B6DB6D1C46723E00CE97DC /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		87B6DB711C4674E600CE97DC /* ValidateInputService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateInputService.swift; sourceTree = "<group>"; };
 		87EED3851C4571BE00939E07 /* Questions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 		87F14D771C18604B00682709 /* locator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = locator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87F14D7A1C18604B00682709 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = locator/AppDelegate.swift; sourceTree = "<group>"; };
@@ -173,9 +177,11 @@
 			isa = PBXGroup;
 			children = (
 				5B44750C1C216E9600C30445 /* LocationService.swift */,
+				87B6DB6D1C46723E00CE97DC /* LoginService.swift */,
 				87ACAD251C21C9B900651B18 /* HttpService.swift */,
 				5BAC93E01C2824A500FE502F /* UtilService.swift */,
 				5B90CCAE1C299A2400108693 /* UserService.swift */,
+				87B6DB711C4674E600CE97DC /* ValidateInputService.swift */,
 			);
 			path = service;
 			sourceTree = "<group>";
@@ -428,6 +434,7 @@
 				874AF1F21C415B1300F386B0 /* WelcomeRegisteredVC.swift in Sources */,
 				874AF1F41C415BC300F386B0 /* LocatorVC.swift in Sources */,
 				874AF1F61C415D7F00F386B0 /* AboutUserVc.swift in Sources */,
+				87B6DB721C4674E600CE97DC /* ValidateInputService.swift in Sources */,
 				5BAC93D11C23385600FE502F /* SchoenHier.swift in Sources */,
 				5BEA72B81C34B206005220CD /* AbstractImpression.swift in Sources */,
 				872DA7C81C1F06A10041C9D6 /* EmailLoginVC1.swift in Sources */,
@@ -448,6 +455,7 @@
 				5B90CCB31C2A220F00108693 /* DashboardVC.swift in Sources */,
 				5B0C0D9C1C3FE2F80090FB17 /* ImageImpressionVC.swift in Sources */,
 				87ACAD261C21C9B900651B18 /* HttpService.swift in Sources */,
+				87B6DB6E1C46723E00CE97DC /* LoginService.swift in Sources */,
 				876CAA7E1C3BFEAF002A36FF /* RegisterVC1.swift in Sources */,
 				5BAC93E11C2824A500FE502F /* UtilService.swift in Sources */,
 				5BEA72BE1C34B530005220CD /* AudioImpression.swift in Sources */,
