@@ -26,20 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // if a user is set in defaults, redirect to dashboard
         if (NSUserDefaults.standardUserDefaults().stringForKey("me") != nil) {
-            UserService.protected()
-                .then {
-                    result -> Void in
-                    self.redirectToDashboard()
-                }.error {
-                error -> Void in
-                let err = error as NSError
-                print(err.code)
-                
-                if (err.code == 401) {
-                    print("401")
-                    return
-                } else {
-                    self.redirectToDashboard()
+            UserService.protected().then {
+                result -> Void in
+                print("Statuscode Protected", result)
+                if (result != 401) {
+                     self.redirectToDashboard()
                 }
             }
         }
