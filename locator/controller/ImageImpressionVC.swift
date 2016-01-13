@@ -47,7 +47,6 @@ class ImageImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
             return
         }
     
-        image = self.addFilter(image!)
         imageView.image = image
         
         dismissViewControllerAnimated(true, completion: nil)
