@@ -39,4 +39,22 @@ class UserService {
             }
         }
     }
+    
+
+    static func protected() -> Promise<Bool> {
+        
+        return Promise { fulfill, reject in
+            
+            Alamofire.request(.GET, "https://locator-app.com/api/v2/users/protected").validate().responseJSON {
+                response in
+                
+                switch response.result {
+                case .Success:
+                    fulfill(true)
+                case .Failure(let error):
+                    reject(error)
+                }
+            }
+        }
+    }
 }
