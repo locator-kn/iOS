@@ -12,7 +12,10 @@ import Alamofire
 class EmailLoginVC2: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var passwordTextField: UITextField!
+    
     var email:String!
+    let inputValidation = ValidateInputService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(email)
@@ -32,25 +35,30 @@ class EmailLoginVC2: UIViewController, UITextFieldDelegate {
     @IBAction func backButtonPressed(sender: UIButton) {
         self.navigationController?.popViewControllerAnimated(true)
     }
+    
     @IBAction func crossButtonPressed(sender: UIButton) {
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
     @IBAction func passwordTextFieldDidEndOnExit(sender: UITextField) {
-        UserService.login(email, password: passwordTextField.text!).then {
-            user -> Void in
-            print("Login Success: " + user.name)
-            User.setMe(user)
-            print(User.getMe().name)
-            NSUserDefaults.standardUserDefaults().setValue(User.getMe().id, forKey: "me")
-            
-            self.performSegueWithIdentifier("dashboard", sender: self)
-            
+        
+        if inputValidation.checkPasswordInput(sender.text!) == true {
+            UserService.login(email, password: passwordTextField.text!).then {
+                user -> Void in
+                print("Login Success: " + user.name!)
+                User.setMe(user)
+                print(User.getMe().name)
+                NSUserDefaults.standardUserDefaults().setValue(User.getMe().id, forKey: "me")
+                
+                self.performSegueWithIdentifier("dashboard", sender: self)
+            }
+        } else {
+            let alert = UIAlertController(title: "Ups", message: "Bitte überprüfe deine Login Daten", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
         }
     }
     
-    
-
     /*
     // MARK: - Navigation
 

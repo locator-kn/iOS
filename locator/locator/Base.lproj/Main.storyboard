@@ -42,6 +42,7 @@
             <string>SourceSansPro-Semibold</string>
             <string>SourceSansPro-Semibold</string>
             <string>SourceSansPro-Semibold</string>
+            <string>SourceSansPro-Semibold</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -1047,7 +1048,7 @@
                                 <rect key="frame" x="20" y="66" width="560" height="36"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="28"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.97647058819999999" green="0.67843137249999996" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -1381,17 +1382,6 @@
                                     <action selector="crossButtonPressed:" destination="qxr-V7-qqt" eventType="touchUpInside" id="d5z-SB-NCU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWD-M5-C4e">
-                                <rect key="frame" x="271" y="522" width="58" height="58"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="58" id="6F6-8H-xNM"/>
-                                    <constraint firstAttribute="width" constant="58" id="6eb-D4-h3l"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="Nö"/>
-                                <connections>
-                                    <action selector="decline:" destination="qxr-V7-qqt" eventType="touchUpInside" id="1hF-V8-rMZ"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLC-y1-Gfj">
                                 <rect key="frame" x="242" y="242" width="116" height="116"/>
                                 <constraints>
@@ -1403,7 +1393,7 @@
                                     <action selector="profilImageButtonPressed:" destination="qxr-V7-qqt" eventType="touchUpInside" id="kxt-NT-1rR"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profilbild auswählen?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="jcF-Rn-hVh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profilbild auswählen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="jcF-Rn-hVh">
                                 <rect key="frame" x="20" y="93" width="560" height="61"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Light" family="Source Sans Pro" pointSize="48"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1418,6 +1408,15 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="py5-Qx-pat">
+                                <rect key="frame" x="20" y="530" width="560" height="50"/>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Semibold" family="Source Sans Pro" pointSize="30"/>
+                                <state key="normal" title="Jetzt registrieren!"/>
+                                <connections>
+                                    <action selector="registerButtonPressed:" destination="jO7-pV-bbR" eventType="touchUpInside" id="9pU-FA-YPu"/>
+                                    <action selector="registerButtonPressed:" destination="qxr-V7-qqt" eventType="touchUpInside" id="iWL-FS-Lwf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.97647058819999999" green="0.67843137249999996" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1425,16 +1424,17 @@
                             <constraint firstItem="eLC-y1-Gfj" firstAttribute="centerX" secondItem="7gu-hp-BFI" secondAttribute="centerX" id="Auh-MW-yFi"/>
                             <constraint firstItem="jcF-Rn-hVh" firstAttribute="top" secondItem="5kO-Ys-PcH" secondAttribute="bottom" constant="35" id="BAr-WQ-tGv"/>
                             <constraint firstItem="zDq-xd-s6N" firstAttribute="leading" secondItem="5kO-Ys-PcH" secondAttribute="trailing" constant="5" id="Mws-r2-e5B"/>
-                            <constraint firstItem="fWD-M5-C4e" firstAttribute="centerX" secondItem="7gu-hp-BFI" secondAttribute="centerX" id="Ns6-na-wGd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zDq-xd-s6N" secondAttribute="trailing" id="S6q-Vr-jU2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="py5-Qx-pat" secondAttribute="trailing" id="TeO-bK-V8V"/>
                             <constraint firstItem="5kO-Ys-PcH" firstAttribute="top" secondItem="QGY-IU-ND2" secondAttribute="bottom" constant="28" id="Tpz-32-Qok"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="py5-Qx-pat" secondAttribute="leading" id="j2l-uu-j0O"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Vj7-J7-co8" secondAttribute="leading" id="ktw-Ex-THg"/>
-                            <constraint firstItem="lTk-CP-S1W" firstAttribute="top" secondItem="fWD-M5-C4e" secondAttribute="bottom" constant="20" id="qdp-vI-KvL"/>
                             <constraint firstAttribute="leadingMargin" secondItem="jcF-Rn-hVh" secondAttribute="leading" id="tau-dR-zet"/>
                             <constraint firstItem="5kO-Ys-PcH" firstAttribute="leading" secondItem="Vj7-J7-co8" secondAttribute="trailing" constant="11" id="u4O-TU-ejK"/>
                             <constraint firstItem="eLC-y1-Gfj" firstAttribute="centerY" secondItem="7gu-hp-BFI" secondAttribute="centerY" id="u7K-jo-S0d"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jcF-Rn-hVh" secondAttribute="trailing" id="viZ-sG-JVl"/>
                             <constraint firstItem="zDq-xd-s6N" firstAttribute="top" secondItem="QGY-IU-ND2" secondAttribute="bottom" constant="30" id="ycZ-ty-7NY"/>
+                            <constraint firstItem="lTk-CP-S1W" firstAttribute="top" secondItem="py5-Qx-pat" secondAttribute="bottom" constant="20" id="zPn-NK-TAJ"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>

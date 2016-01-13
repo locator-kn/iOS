@@ -7,11 +7,16 @@
 //
 
 import Foundation
+import UIKit
 
 class User {
-    let id:String
-    var name:String!
-    var email:String!
+    
+    let id:String?
+    var name:String?
+    var email:String?
+    var residence: String?
+    var password: String?
+    var profilImage: UIImage?
     
     static var me:User!
     
@@ -23,6 +28,15 @@ class User {
         self.id = id
         self.name = name
         self.email = email
+    }
+    
+    init(name: String, email: String, residence: String, password: String, profilImage: UIImage) {
+        self.id = nil
+        self.name = name
+        self.email = email
+        self.residence = residence
+        self.password = password
+        self.profilImage = profilImage
     }
     
     static func setMe(me:User) {

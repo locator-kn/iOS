@@ -17,7 +17,7 @@ class UserService {
         
         return Promise { fulfill, reject in
         
-            Alamofire.request(.POST, "https://locator-app.com/api/v2/users/login", parameters: ["mail": mail, "password": password]).validate().responseJSON {
+            Alamofire.request(.POST, API.USER_LOGIN, parameters: ["mail": mail, "password": password]).validate().responseJSON {
                 response in
                 
                 switch response.result {
@@ -40,12 +40,48 @@ class UserService {
         }
     }
     
+    static func register(mail:String, password:String, name: String, residence: String) -> Promise<AnyObject> {
+        
+        return Promise { fulfill, reject in
+            
+            Alamofire.request(.POST, API.USER_REGISTER, parameters: ["mail": mail, "password": password, "name": name, "residence": residence])
+                .validate()
+                .responseJSON {
+                response in
+                
+                print(response.response?.statusCode)
+                print(response.description)
+                
+                switch response.result {
+                case .Success:
+                    
+                    print("User successfully registered")
+                    
+//                    if let value = response.result.value {
+//                        let json = JSON(value)
+//                        
+//                        let id = json["_id"].string
+//                        let name = json["name"].string
+//                        let email = json["mail"].string
+//                        
+                        fulfill("josjfo")
+//                    }
+                    
+                case .Failure(let error):
+                    print(error.description)
+                    reject(error)
+                    
+                }
+            }
+        }
+    }
+    
 
     static func protected() -> Promise<Int> {
         
         return Promise { fulfill, reject in
             
-            Alamofire.request(.GET, "https://locator-app.com/api/v2/users/protected").validate().responseJSON {
+            Alamofire.request(.GET, API.USER_PROTECTED).validate().responseJSON {
                 response in
                 fulfill((response.response?.statusCode)!)
             }

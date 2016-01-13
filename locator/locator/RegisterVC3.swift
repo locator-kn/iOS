@@ -11,6 +11,11 @@ import UIKit
 class RegisterVC3: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailTextField: UITextField!
+    
+    let inputChecker = ValidateInputService()
+    
+    var name: String?
+    var residence: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,11 +42,30 @@ class RegisterVC3: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {   //delegate method
-        if emailTextField.text != nil {
+        if inputChecker.checkEmailInput(textField.text! ?? "") == true {
             performSegueWithIdentifier("showRegisterVC4", sender: self)
             return true
+        } else {
+            alertFalseInput()
         }
         return false
+    }
+    
+    func alertFalseInput() {
+        let alert = UIAlertController(title: "Ups", message: "Falsche Email", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showRegisterVC4"
+        {
+            if let destinationVC = segue.destinationViewController as? RegisterVC4 {
+                destinationVC.name = self.name
+                destinationVC.residence = self.residence
+                destinationVC.email = self.emailTextField.text
+            }
+        }
     }
     
     /*

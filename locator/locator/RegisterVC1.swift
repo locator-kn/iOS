@@ -12,6 +12,8 @@ class RegisterVC1: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var nameTextField: UITextField!
     
+    let inputChecker = ValidateInputService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         nameTextField.becomeFirstResponder()
@@ -37,11 +39,28 @@ class RegisterVC1: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {   //delegate method
-        if nameTextField.text != nil {
+        if inputChecker.checkInput(textField.text! ?? "0", minLength: 3) {
             performSegueWithIdentifier("showRegisterVC2", sender: self)
             return true
+        } else {
+            alertFalseInput()
         }
         return false
+    }
+    
+    func alertFalseInput() {
+        let alert = UIAlertController(title: "Ups", message: "Zu kurzer Name", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showRegisterVC2"
+        {
+            if let destinationVC = segue.destinationViewController as? RegisterVC2 {
+                destinationVC.name = nameTextField.text
+            }
+        }
     }
     
     /*

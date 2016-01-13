@@ -12,6 +12,12 @@ class RegisterVC4: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var passwordTextField: UITextField!
     
+    let inputChecker = ValidateInputService()
+    
+    var name: String?
+    var residence: String?
+    var email: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         passwordTextField.becomeFirstResponder()
@@ -37,11 +43,31 @@ class RegisterVC4: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {   //delegate method
-        if passwordTextField.text != nil {
+        if inputChecker.checkPasswordInput(textField.text! ?? "") == true {
             performSegueWithIdentifier("showRegisterVC5", sender: self)
             return true
+        } else {
+            alertFalseInput()
+            return false
         }
-        return false
+    }
+    
+    func alertFalseInput() {
+        let alert = UIAlertController(title: "Ups", message: "Zu kurzes Passwort", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showRegisterVC5"
+        {
+            if let destinationVC = segue.destinationViewController as? RegisterVC5 {
+                destinationVC.name = self.name
+                destinationVC.residence = self.residence
+                destinationVC.email = self.email
+                destinationVC.password = self.passwordTextField.text
+            }
+        }
     }
     
     /*
