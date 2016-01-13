@@ -15,6 +15,7 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     var locationManager: CLLocationManager = CLLocationManager()
     var nearLocations = [String: Location]()
     var nearSchoenHiers = [String: SchoenHier]()
+    var pickedLocationDetail:Location!
     
     @IBOutlet weak var googleMap: GMSMapView!
     
@@ -44,13 +45,8 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     
     func mapView(mapView: GMSMapView!, didTapInfoWindowOfMarker marker: GMSMarker!) {
         print(marker.userData)
-        
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("LocationDetailVC") as! LocationDetailVC
-        nextViewController.location = self.nearLocations[String(marker.userData)]
-        
-        
-        self.presentViewController(nextViewController, animated:true, completion:nil)
+        pickedLocationDetail = marker.userData as! Location
+        performSegueWithIdentifier("locationDetail", sender: self)
     }
     
     /* delegate on gpsAuthorizationStatus change */
@@ -77,7 +73,7 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         marker.groundAnchor = CGPoint(x: 0.5,y: 0.5)
         marker.zIndex = 10
         marker.title = location.title
-        marker.userData = location.id
+        marker.userData = location
         marker.map = googleMap
     }
     
@@ -129,6 +125,14 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
             self.nearSchoenHiers[schoenHier.id] = schoenHier
             self.showHeatMapMarker(schoenHier.getGeoPosition().lat, long: schoenHier.getGeoPosition().long, schoenHier: schoenHier)
             self.locate(self)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print(segue.identifier)
+        if (segue.identifier == "locationDetail") {
+            let controller = segue.destinationViewController as! LocationDetailVC
+            controller.location = pickedLocationDetail
         }
     }
     
