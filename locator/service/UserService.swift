@@ -49,13 +49,8 @@ class UserService {
                 .responseJSON {
                 response in
                 
-                print(response.response?.statusCode)
-                print(response.description)
-                
                 switch response.result {
                 case .Success:
-                    
-                    print("User successfully registered")
                     
 //                    if let value = response.result.value {
 //                        let json = JSON(value)
@@ -64,13 +59,11 @@ class UserService {
 //                        let name = json["name"].string
 //                        let email = json["mail"].string
 //                        
-                        fulfill("josjfo")
+                        fulfill("Success")
 //                    }
                     
                 case .Failure(let error):
-                    print(error.description)
                     reject(error)
-                    
                 }
             }
         }
@@ -87,4 +80,9 @@ class UserService {
             }
         }
     }
+}
+
+
+extension NSError {
+    
 }
