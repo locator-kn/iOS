@@ -94,6 +94,9 @@ class LocationDetailVC: UIViewController {
         if (segue.identifier == "textImpression") {
             let controller = segue.destinationViewController as! TextImpressionVC
             controller.locationId = self.location.id
+        } else if (segue.identifier == "imageImpression") {
+            let controller = segue.destinationViewController as! ImageImpressionVC
+            controller.locationId = self.location.id
         }
     }
 
