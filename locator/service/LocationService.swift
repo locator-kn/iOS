@@ -233,19 +233,24 @@ class LocationService {
     static func addImageImpression(id: String, data:UIImage) -> Promise<Bool> {
         return Promise { fulfill, reject in
             
-            Alamofire.upload(.POST, "https://locator-app.com/api/v2/locations/" + id + "/stream/image", headers: ["Content-Type":"image/jpeg"], data: UIImageJPEGRepresentation(data, 1.0)!).validate().responseJSON {
-                response in
-                print(response.request)
-                
-                switch response.result {
-                case .Success:
-                    
-                    fulfill(true)
-                    
-                case .Failure(let error):
-                    reject(error)
+            Alamofire.upload(
+                .POST,
+                "https://locator-app.com/api/v2/locations/" + id + "/stream/image",
+                multipartFormData: { multipartFormData in
+                    multipartFormData.appendBodyPart(data: UIImageJPEGRepresentation(data, 1.0)!, name: "file")
+                },
+                encodingCompletion: { encodingResult in
+                    switch encodingResult {
+                    case .Success(let upload, _, _):
+                        upload.responseJSON { response in
+                            debugPrint(response)
+                        }
+                    case .Failure(let encodingError):
+                        print(encodingError)
+                    }
                 }
-            }
+            )
+            
         }
     }
     
