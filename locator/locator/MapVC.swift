@@ -153,9 +153,21 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     }
 
     @IBAction func toggleLocations(sender: AnyObject) {
+        iterateAndToggleMapReference(locationMarkers)
     }
     
     @IBAction func toggleHeatMap(sender: AnyObject) {
+        iterateAndToggleMapReference(schoenHierMarkers)
+    }
+    
+    func iterateAndToggleMapReference(markers: [GMSMarker]) {
+        var targetMap:GMSMapView? = nil
+        if (markers[0].map == nil) {
+            targetMap = googleMap
+        }
+        for marker in markers {
+            marker.map = targetMap
+        }
     }
     
 }
