@@ -35,6 +35,55 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         super.viewDidLoad()
     }
     
+    func getNearLocations(target: CLLocationCoordinate2D, maxDistance: Float) {
+        LocationService.getNearby(target.latitude, long: target.longitude, maxDistance: maxDistance, limit: 15).then { locations -> Void in
+            
+            for location in locations {
+                
+                if (self.nearLocations[location.id] == nil) {
+                    self.nearLocations[location.id] = location
+                    self.showLocationMarker(location.getGeoPosition().lat, long: location.getGeoPosition().long, location:location)
+                }
+            }
+        }
+    }
+    
+    func getNearSchoenHiers(target: CLLocationCoordinate2D, maxDistance:Float) {
+        LocationService.getSchoenHiers(target.latitude, long: target.longitude, maxDistance: maxDistance, limit: 100).then { schoenHiers -> Void in
+            
+            for schoenHier in schoenHiers {
+                
+                if (self.nearSchoenHiers[schoenHier.id] == nil) {
+                    self.nearSchoenHiers[schoenHier.id] = schoenHier
+                    self.showHeatMapMarker(schoenHier.getGeoPosition().lat, long: schoenHier.getGeoPosition().long, schoenHier: schoenHier)
+                }
+            }
+        }
+    }
+    
+    func showLocationMarker(lat:Double, long:Double, location:Location!) {
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2DMake(lat, long)
+        marker.icon = UIImage(named: "location")
+        marker.appearAnimation = kGMSMarkerAnimationPop
+        marker.groundAnchor = CGPoint(x: 0.5,y: 0.5)
+        marker.zIndex = 10
+        marker.title = location.title
+        marker.userData = location
+        marker.map = googleMap
+    }
+    
+    func showHeatMapMarker(lat:Double, long:Double, schoenHier:SchoenHier!) {
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2DMake(lat, long)
+        marker.icon = UIImage(named: "heatmap")
+        marker.opacity = 0.3
+        marker.groundAnchor = CGPoint(x: 0.5,y: 0.5)
+        marker.flat = true
+        marker.zIndex = 5
+        marker.map = googleMap
+    }
+    
     /* delegate on map camerachange */
     func mapView(mapView: GMSMapView!, idleAtCameraPosition position: GMSCameraPosition!) {
         
@@ -64,55 +113,7 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
             locationManager.stopUpdatingLocation()
         }
     }
-
-    func showLocationMarker(lat:Double, long:Double, location:Location!) {
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2DMake(lat, long)
-        marker.icon = UIImage(named: "location")
-        marker.appearAnimation = kGMSMarkerAnimationPop
-        marker.groundAnchor = CGPoint(x: 0.5,y: 0.5)
-        marker.zIndex = 10
-        marker.title = location.title
-        marker.userData = location
-        marker.map = googleMap
-    }
     
-    func showHeatMapMarker(lat:Double, long:Double, schoenHier:SchoenHier!) {
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2DMake(lat, long)
-        marker.icon = UIImage(named: "heatmap")
-        marker.opacity = 0.3
-        marker.groundAnchor = CGPoint(x: 0.5,y: 0.5)
-        marker.flat = true
-        marker.zIndex = 5
-        marker.map = googleMap
-    }
-    
-    func getNearLocations(target: CLLocationCoordinate2D, maxDistance: Float) {
-        LocationService.getNearby(target.latitude, long: target.longitude, maxDistance: maxDistance, limit: 15).then { locations -> Void in
-            
-            for location in locations {
-                
-                if (self.nearLocations[location.id] == nil) {
-                    self.nearLocations[location.id] = location
-                    self.showLocationMarker(location.getGeoPosition().lat, long: location.getGeoPosition().long, location:location)
-                }
-            }
-        }
-    }
-    
-    func getNearSchoenHiers(target: CLLocationCoordinate2D, maxDistance:Float) {
-        LocationService.getSchoenHiers(target.latitude, long: target.longitude, maxDistance: maxDistance, limit: 100).then { schoenHiers -> Void in
-            
-            for schoenHier in schoenHiers {
-            
-                if (self.nearSchoenHiers[schoenHier.id] == nil) {
-                    self.nearSchoenHiers[schoenHier.id] = schoenHier
-                    self.showHeatMapMarker(schoenHier.getGeoPosition().lat, long: schoenHier.getGeoPosition().long, schoenHier: schoenHier)
-                }
-            }
-        }
-    }
     @IBAction func locate(sender: AnyObject) {
         self.googleMap.animateToCameraPosition(GMSCameraPosition(target: self.googleMap.myLocation.coordinate, zoom: 17, bearing: 0, viewingAngle: 0))
     }
