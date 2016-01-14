@@ -29,6 +29,8 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     let locationsActiveIcon = UIImage(named: "show_locations_active") as UIImage?
     let optionsActiveIcon = UIImage(named: "show_options_active") as UIImage?
     
+    var toggleOptionsActive:Bool = false
+    
     /* constraint outlets for options animation */
     @IBOutlet weak var locationBottomSpace: NSLayoutConstraint!
     @IBOutlet weak var heatMapBottomSpace: NSLayoutConstraint!
@@ -42,6 +44,12 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     var previousRegion: CLLocationCoordinate2D!
     
     override func viewDidLoad() {
+        
+        /* hide optionmenu on load */
+        self.locationBottomSpace.constant = 11
+        self.heatMapBottomSpace.constant = 11
+        self.heatMapButton.alpha = 0
+        self.locationButton.alpha = 0
 
         locationManager = CLLocationManager()
         locationManager.requestWhenInUseAuthorization()
@@ -163,6 +171,29 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     
     @IBAction func toggleMapOptions(sender: AnyObject) {
         
+        if toggleOptionsActive {
+            self.locationBottomSpace.constant = 11
+            self.heatMapBottomSpace.constant = 11
+    
+            UIView.animateWithDuration(0.3) {
+                self.view.layoutIfNeeded()
+                self.heatMapButton.alpha = 0
+                self.locationButton.alpha = 0
+            }
+            toggleOptionsActive = false
+            
+            
+        } else {
+            self.locationBottomSpace.constant = 67
+            self.heatMapBottomSpace.constant = 127
+            
+            UIView.animateWithDuration(0.3) {
+                self.view.layoutIfNeeded()
+                self.heatMapButton.alpha = 1
+                self.locationButton.alpha = 1
+            }
+            toggleOptionsActive = true
+        }
     }
 
     @IBAction func toggleLocations(sender: AnyObject) {
