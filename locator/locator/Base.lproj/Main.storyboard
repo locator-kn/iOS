@@ -449,6 +449,7 @@
                         <outlet property="heatMapButton" destination="zdt-da-1cq" id="AJL-iq-tvW"/>
                         <outlet property="locationBottomSpace" destination="eeD-dN-zqY" id="VU0-ug-0Nd"/>
                         <outlet property="locationButton" destination="1TB-2Q-CWr" id="40C-75-5G8"/>
+                        <outlet property="optionButton" destination="TRT-34-oxv" id="1PP-aQ-Igj"/>
                         <segue destination="PYf-I9-SYD" kind="show" identifier="locationDetail" id="i9g-4m-Scy"/>
                     </connections>
                 </viewController>

@@ -172,6 +172,7 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     @IBAction func toggleMapOptions(sender: AnyObject) {
         
         if toggleOptionsActive {
+            self.optionButton.setImage(self.optionsIcon, forState: .Normal)
             self.locationBottomSpace.constant = 11
             self.heatMapBottomSpace.constant = 11
     
@@ -182,8 +183,8 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
             }
             toggleOptionsActive = false
             
-            
         } else {
+            self.optionButton.setImage(self.optionsActiveIcon, forState: .Normal)
             self.locationBottomSpace.constant = 67
             self.heatMapBottomSpace.constant = 127
             
