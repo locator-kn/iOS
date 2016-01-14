@@ -648,17 +648,10 @@
             </objects>
             <point key="canvasLocation" x="3456" y="201"/>
         </scene>
-<<<<<<< HEAD
-        <!--DashboardVC-->
-        <scene sceneID="b9w-ul-OE8">
-            <objects>
-                <viewController storyboardIdentifier="dashboard" id="7jn-ok-tDo" customClass="DashboardVC" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
-=======
         <!--Dashboard-->
         <scene sceneID="b9w-ul-OE8">
             <objects>
                 <viewController storyboardIdentifier="dashboard" title="Dashboard" id="7jn-ok-tDo" customClass="DashboardVC" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
->>>>>>> 82c79c2fa9692b937c284ec21891809d7e9ead43
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1rc-vd-al0"/>
                         <viewControllerLayoutGuide type="bottom" id="UaP-WI-J8i"/>
