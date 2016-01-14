@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -337,7 +338,46 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qGG-7k-18j" customClass="GMSMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdt-da-1cq">
+                                        <rect key="frame" x="557" y="471" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="CdT-R0-XFY"/>
+                                            <constraint firstAttribute="height" constant="35" id="ev5-Lk-hd7"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="show_heatmap"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRT-34-oxv">
+                                        <rect key="frame" x="557" y="557" width="35" height="35"/>
+                                        <state key="normal" title="Button" image="show_options"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AjN-b2-iSV">
+                                        <rect key="frame" x="557" y="557" width="35" height="35"/>
+                                        <state key="normal" title="Button" image="show_options"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TB-2Q-CWr">
+                                        <rect key="frame" x="557" y="514" width="35" height="35"/>
+                                        <state key="normal" title="Button" image="show_locations"/>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="1TB-2Q-CWr" firstAttribute="width" secondItem="zdt-da-1cq" secondAttribute="width" id="0yh-1C-k89"/>
+                                    <constraint firstItem="TRT-34-oxv" firstAttribute="trailing" secondItem="AjN-b2-iSV" secondAttribute="trailing" id="2IV-x8-quQ"/>
+                                    <constraint firstItem="TRT-34-oxv" firstAttribute="top" secondItem="AjN-b2-iSV" secondAttribute="top" id="4o1-4s-LGj"/>
+                                    <constraint firstItem="AjN-b2-iSV" firstAttribute="bottom" secondItem="qGG-7k-18j" secondAttribute="bottomMargin" id="GAI-mb-PzW"/>
+                                    <constraint firstItem="TRT-34-oxv" firstAttribute="height" secondItem="zdt-da-1cq" secondAttribute="height" id="GDF-CQ-1Hf"/>
+                                    <constraint firstItem="TRT-34-oxv" firstAttribute="leading" secondItem="AjN-b2-iSV" secondAttribute="leading" id="TgT-6J-Yws"/>
+                                    <constraint firstItem="TRT-34-oxv" firstAttribute="trailing" secondItem="qGG-7k-18j" secondAttribute="trailingMargin" id="ZdQ-cb-6jd"/>
+                                    <constraint firstItem="1TB-2Q-CWr" firstAttribute="trailing" secondItem="qGG-7k-18j" secondAttribute="trailingMargin" id="coS-mn-DZs"/>
+                                    <constraint firstItem="TRT-34-oxv" firstAttribute="width" secondItem="zdt-da-1cq" secondAttribute="width" id="fa1-rh-sB7"/>
+                                    <constraint firstItem="zdt-da-1cq" firstAttribute="trailing" secondItem="qGG-7k-18j" secondAttribute="trailingMargin" id="nUw-PN-NTi"/>
+                                    <constraint firstItem="1TB-2Q-CWr" firstAttribute="top" secondItem="zdt-da-1cq" secondAttribute="bottom" constant="8" symbolic="YES" id="p3j-47-GbY"/>
+                                    <constraint firstItem="TRT-34-oxv" firstAttribute="baseline" secondItem="AjN-b2-iSV" secondAttribute="baseline" id="u3z-7Y-czn"/>
+                                    <constraint firstItem="TRT-34-oxv" firstAttribute="firstBaseline" secondItem="AjN-b2-iSV" secondAttribute="firstBaseline" id="wZv-PP-xTH"/>
+                                    <constraint firstItem="1TB-2Q-CWr" firstAttribute="height" secondItem="zdt-da-1cq" secondAttribute="height" id="y3Q-Sd-i98"/>
+                                    <constraint firstItem="TRT-34-oxv" firstAttribute="top" secondItem="1TB-2Q-CWr" secondAttribute="bottom" constant="8" symbolic="YES" id="zgY-cz-dmX"/>
+                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ET-td-Hb3" userLabel="navigate">
                                 <rect key="frame" x="557" y="15" width="23" height="51"/>
@@ -1479,6 +1519,9 @@
         <image name="profil" width="396" height="396"/>
         <image name="schoen_hier" width="560" height="560"/>
         <image name="search" width="160" height="398"/>
+        <image name="show_heatmap" width="340" height="340"/>
+        <image name="show_locations" width="340" height="340"/>
+        <image name="show_options" width="340" height="340"/>
         <image name="text" width="42" height="37"/>
     </resources>
     <inferredMetricsTieBreakers>
