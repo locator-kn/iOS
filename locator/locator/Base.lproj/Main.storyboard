@@ -364,6 +364,9 @@
                                     <constraint firstAttribute="width" constant="35" id="2fj-1M-Bem"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="show_options"/>
+                                <connections>
+                                    <action selector="toggleMapOptions:" destination="4Mp-XX-Glu" eventType="touchUpInside" id="3nk-0j-gGj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ET-td-Hb3" userLabel="navigate">
                                 <rect key="frame" x="557" y="15" width="23" height="51"/>
