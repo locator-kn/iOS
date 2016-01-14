@@ -789,7 +789,7 @@
                                 </constraints>
                                 <state key="normal" image="back"/>
                                 <connections>
-                                    <action selector="back:" destination="PYf-I9-SYD" eventType="touchUpInside" id="k6U-7i-xTO"/>
+                                    <action selector="back:" destination="PYf-I9-SYD" eventType="touchUpInside" id="MN6-pd-Hcv"/>
                                     <action selector="backButtonPressed:" destination="EFJ-gN-wRa" eventType="touchUpInside" id="hkl-XF-i8X"/>
                                 </connections>
                             </button>
