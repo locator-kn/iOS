@@ -306,10 +306,19 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O1e-dq-SM2" userLabel="imageView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="360"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdX-sK-dr5">
+                                <rect key="frame" x="275" y="453" width="51" height="30"/>
+                                <state key="normal" title="FUEGO"/>
+                                <connections>
+                                    <action selector="submitImage:" destination="Gka-Qg-i3J" eventType="touchUpInside" id="Why-QQ-ZIh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.97647058819999999" green="0.67843137249999996" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="O1e-dq-SM2" secondAttribute="trailing" id="26l-np-twa"/>
+                            <constraint firstItem="vdX-sK-dr5" firstAttribute="top" secondItem="O1e-dq-SM2" secondAttribute="bottom" constant="93" id="GaH-XZ-thq"/>
+                            <constraint firstItem="vdX-sK-dr5" firstAttribute="centerX" secondItem="O1e-dq-SM2" secondAttribute="centerX" id="gRZ-ly-8xC"/>
                             <constraint firstItem="vM2-Af-bnA" firstAttribute="top" secondItem="O1e-dq-SM2" secondAttribute="bottom" constant="240" id="gxU-pr-fq0"/>
                             <constraint firstItem="O1e-dq-SM2" firstAttribute="leading" secondItem="dCQ-Gf-Pnd" secondAttribute="leading" id="mPj-HI-v1O"/>
                             <constraint firstItem="O1e-dq-SM2" firstAttribute="top" secondItem="dCQ-Gf-Pnd" secondAttribute="top" id="n3p-rH-Vil"/>
@@ -828,7 +837,7 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="foto"/>
                                 <connections>
-                                    <segue destination="Gka-Qg-i3J" kind="presentation" id="I0V-vS-ucQ"/>
+                                    <segue destination="Gka-Qg-i3J" kind="presentation" identifier="imageImpression" id="I0V-vS-ucQ"/>
                                 </connections>
                             </button>
                         </subviews>
