@@ -63,12 +63,12 @@ class UserService {
 //                    }
                     
                 case .Failure(let error):
+                    
                     reject(error)
                 }
             }
         }
     }
-    
 
     static func protected() -> Promise<Int> {
         
@@ -80,9 +80,4 @@ class UserService {
             }
         }
     }
-}
-
-
-extension NSError {
-    
 }

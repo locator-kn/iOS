@@ -586,10 +586,10 @@
             </objects>
             <point key="canvasLocation" x="3456" y="201"/>
         </scene>
-        <!--LocationDetailVC-->
+        <!--DashboardVC-->
         <scene sceneID="b9w-ul-OE8">
             <objects>
-                <viewController storyboardIdentifier="dashboard" title="LocationDetailVC" id="7jn-ok-tDo" customClass="DashboardVC" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="dashboard" id="7jn-ok-tDo" customClass="DashboardVC" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1rc-vd-al0"/>
                         <viewControllerLayoutGuide type="bottom" id="UaP-WI-J8i"/>
@@ -1076,24 +1076,6 @@
             </objects>
             <point key="canvasLocation" x="5580" y="934"/>
         </scene>
-        <!--LocatorVC-->
-        <scene sceneID="I88-j8-4Tl">
-            <objects>
-                <viewController id="erk-hs-JYq" customClass="LocatorVC" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="XR7-Dv-Zr5"/>
-                        <viewControllerLayoutGuide type="bottom" id="y0q-Ps-RFR"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Yjl-b1-as8">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Dk0-oc-Lkb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5580" y="1764"/>
-        </scene>
         <!--Welcome RegisteredVC-->
         <scene sceneID="wdB-Wx-3AB">
             <objects>
@@ -1343,10 +1325,13 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <segue destination="7jn-ok-tDo" kind="show" identifier="showDashboard" id="LDE-d0-p7C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sNa-lI-qhq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8403" y="934"/>
+            <point key="canvasLocation" x="8433" y="934"/>
         </scene>
         <!--RegisterVC5-->
         <scene sceneID="t3n-UO-nau">
@@ -1413,7 +1398,6 @@
                                 <fontDescription key="fontDescription" name="SourceSansPro-Semibold" family="Source Sans Pro" pointSize="30"/>
                                 <state key="normal" title="Jetzt registrieren!"/>
                                 <connections>
-                                    <action selector="registerButtonPressed:" destination="jO7-pV-bbR" eventType="touchUpInside" id="9pU-FA-YPu"/>
                                     <action selector="registerButtonPressed:" destination="qxr-V7-qqt" eventType="touchUpInside" id="iWL-FS-Lwf"/>
                                 </connections>
                             </button>
@@ -1482,6 +1466,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fiC-UR-uUa"/>
+        <segue reference="hTK-WV-rqw"/>
         <segue reference="WG6-zk-XfW"/>
     </inferredMetricsTieBreakers>
 </document>

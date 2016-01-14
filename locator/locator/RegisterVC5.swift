@@ -8,9 +8,12 @@
 
 import UIKit
 
-class RegisterVC5: UIViewController {
+class RegisterVC5: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var profilImageButton: UIButton!
+    
+    let imageFromSource = UIImagePickerController()
+    var imageView: UIImageView!
     
     var name: String?
     var residence: String?
@@ -19,6 +22,9 @@ class RegisterVC5: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        imageFromSource.delegate = self
+        imageFromSource.allowsEditing = true
         
         // Do any additional setup after loading the view.
     }
@@ -41,7 +47,15 @@ class RegisterVC5: UIViewController {
     }
     
     @IBAction func profilImageButtonPressed(sender: UIButton) {
+        let alert = UIAlertController(title: "Select Image", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
         
+        alert.addAction(UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) in
+            self.captureImage()
+        }))
+        alert.addAction(UIAlertAction(title: "Gallery", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) in
+            self.getFromGallery()
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     @IBAction func registerButtonPressed(sender: UIButton) {
@@ -63,6 +77,27 @@ class RegisterVC5: UIViewController {
         let alert = UIAlertController(title: "Ups", message: "Fehlerhafte Registrierung", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func captureImage() {
+        
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+            imageFromSource.sourceType = UIImagePickerControllerSourceType.Camera
+            self.presentViewController(imageFromSource, animated: true) {}
+        }
+    }
+    
+    @IBAction func getFromGallery()  {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
+            imageFromSource.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            self.presentViewController(imageFromSource, animated: true) {}
+        }
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        let tmp: UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        profilImageButton.setImage(tmp, forState: .Normal)
+        self.dismissViewControllerAnimated(true) { () -> Void in }
     }
     
 }
