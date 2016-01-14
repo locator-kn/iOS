@@ -20,6 +20,10 @@ class LocationDetailVC: UIViewController {
     let favoriteIcon = UIImage(named: "favorite_icon") as UIImage?
     let favoriteIconActive = UIImage(named: "favorite_icon_active") as UIImage?
     
+    @IBAction func back(sender: UIButton) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -89,6 +93,9 @@ class LocationDetailVC: UIViewController {
         print(segue.identifier)
         if (segue.identifier == "textImpression") {
             let controller = segue.destinationViewController as! TextImpressionVC
+            controller.locationId = self.location.id
+        } else if (segue.identifier == "imageImpression") {
+            let controller = segue.destinationViewController as! ImageImpressionVC
             controller.locationId = self.location.id
         }
     }

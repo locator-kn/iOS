@@ -10,6 +10,7 @@ import UIKit
 
 class ImageImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    var locationId:String!
     let imagePicker = UIImagePickerController()
     var image:UIImage?
     @IBOutlet weak var imageView: UIImageView!
@@ -21,6 +22,7 @@ class ImageImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
         imagePicker.delegate = self
         imagePicker.allowsEditing = true
         imagePicker.sourceType = UIImagePickerControllerSourceType.Camera;
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -61,6 +63,13 @@ class ImageImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
     
     func takePicture() {
         presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func submitImage(sender: AnyObject) {
+        LocationService.addImageImpression(self.locationId, data: image!).then{
+            result -> Void in
+            print("image upload success")
+        }
     }
 
 }
