@@ -43,7 +43,7 @@ class RegisterVC4: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {   //delegate method
-        if inputChecker.checkPasswordInput(textField.text! ?? "") == true {
+        if inputChecker.checkPasswordInput(textField.text! ?? "Konstanz") == true {
             performSegueWithIdentifier("showRegisterVC5", sender: self)
             return true
         } else {

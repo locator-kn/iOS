@@ -10,10 +10,10 @@ import UIKit
 
 class RegisterVC5: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
-    @IBOutlet weak var profilImageButton: UIButton!
+    @IBOutlet weak var profilImageView: UIImageView!
     
     let imageFromSource = UIImagePickerController()
-    var imageView: UIImageView!
+//    var imageView: UIImageView!
     
     var name: String?
     var residence: String?
@@ -25,6 +25,12 @@ class RegisterVC5: UIViewController, UINavigationControllerDelegate, UIImagePick
         
         imageFromSource.delegate = self
         imageFromSource.allowsEditing = true
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("imageTapped:"))
+        profilImageView.userInteractionEnabled = true
+        profilImageView.addGestureRecognizer(tapGestureRecognizer)
+        profilImageView.layer.cornerRadius = profilImageView.frame.size.width / 2
+        profilImageView.clipsToBounds = true
         
         // Do any additional setup after loading the view.
     }
@@ -46,7 +52,8 @@ class RegisterVC5: UIViewController, UINavigationControllerDelegate, UIImagePick
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
-    @IBAction func profilImageButtonPressed(sender: UIButton) {
+    func imageTapped(img: AnyObject)
+    {
         let alert = UIAlertController(title: "Select Image", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
         
         alert.addAction(UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) in
@@ -96,7 +103,7 @@ class RegisterVC5: UIViewController, UINavigationControllerDelegate, UIImagePick
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         let tmp: UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        profilImageButton.setImage(tmp, forState: .Normal)
+        profilImageView.image = tmp
         self.dismissViewControllerAnimated(true) { () -> Void in }
     }
     

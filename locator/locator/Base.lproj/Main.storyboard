@@ -1429,17 +1429,6 @@
                                     <action selector="crossButtonPressed:" destination="qxr-V7-qqt" eventType="touchUpInside" id="d5z-SB-NCU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLC-y1-Gfj">
-                                <rect key="frame" x="242" y="242" width="116" height="116"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="116" id="MCj-6i-GCm"/>
-                                    <constraint firstAttribute="height" constant="116" id="wxl-e6-hdk"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="profil"/>
-                                <connections>
-                                    <action selector="profilImageButtonPressed:" destination="qxr-V7-qqt" eventType="touchUpInside" id="kxt-NT-1rR"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profilbild auswählen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="jcF-Rn-hVh">
                                 <rect key="frame" x="20" y="93" width="560" height="61"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Light" family="Source Sans Pro" pointSize="48"/>
@@ -1463,21 +1452,28 @@
                                     <action selector="registerButtonPressed:" destination="qxr-V7-qqt" eventType="touchUpInside" id="iWL-FS-Lwf"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profil" translatesAutoresizingMaskIntoConstraints="NO" id="vtp-pb-BeO">
+                                <rect key="frame" x="242" y="242" width="116" height="116"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="116" id="Hmt-xE-fc5"/>
+                                    <constraint firstAttribute="height" constant="116" id="K9S-Nk-uOa"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.97647058819999999" green="0.67843137249999996" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Vj7-J7-co8" firstAttribute="top" secondItem="QGY-IU-ND2" secondAttribute="bottom" constant="28" id="1cW-DY-0Wb"/>
-                            <constraint firstItem="eLC-y1-Gfj" firstAttribute="centerX" secondItem="7gu-hp-BFI" secondAttribute="centerX" id="Auh-MW-yFi"/>
                             <constraint firstItem="jcF-Rn-hVh" firstAttribute="top" secondItem="5kO-Ys-PcH" secondAttribute="bottom" constant="35" id="BAr-WQ-tGv"/>
+                            <constraint firstItem="vtp-pb-BeO" firstAttribute="centerX" secondItem="7gu-hp-BFI" secondAttribute="centerX" id="MaS-23-U1r"/>
                             <constraint firstItem="zDq-xd-s6N" firstAttribute="leading" secondItem="5kO-Ys-PcH" secondAttribute="trailing" constant="5" id="Mws-r2-e5B"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zDq-xd-s6N" secondAttribute="trailing" id="S6q-Vr-jU2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="py5-Qx-pat" secondAttribute="trailing" id="TeO-bK-V8V"/>
                             <constraint firstItem="5kO-Ys-PcH" firstAttribute="top" secondItem="QGY-IU-ND2" secondAttribute="bottom" constant="28" id="Tpz-32-Qok"/>
+                            <constraint firstItem="vtp-pb-BeO" firstAttribute="centerY" secondItem="7gu-hp-BFI" secondAttribute="centerY" id="c9K-ao-0yy"/>
                             <constraint firstAttribute="leadingMargin" secondItem="py5-Qx-pat" secondAttribute="leading" id="j2l-uu-j0O"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Vj7-J7-co8" secondAttribute="leading" id="ktw-Ex-THg"/>
                             <constraint firstAttribute="leadingMargin" secondItem="jcF-Rn-hVh" secondAttribute="leading" id="tau-dR-zet"/>
                             <constraint firstItem="5kO-Ys-PcH" firstAttribute="leading" secondItem="Vj7-J7-co8" secondAttribute="trailing" constant="11" id="u4O-TU-ejK"/>
-                            <constraint firstItem="eLC-y1-Gfj" firstAttribute="centerY" secondItem="7gu-hp-BFI" secondAttribute="centerY" id="u7K-jo-S0d"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jcF-Rn-hVh" secondAttribute="trailing" id="viZ-sG-JVl"/>
                             <constraint firstItem="zDq-xd-s6N" firstAttribute="top" secondItem="QGY-IU-ND2" secondAttribute="bottom" constant="30" id="ycZ-ty-7NY"/>
                             <constraint firstItem="lTk-CP-S1W" firstAttribute="top" secondItem="py5-Qx-pat" secondAttribute="bottom" constant="20" id="zPn-NK-TAJ"/>
@@ -1486,7 +1482,7 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="profilImageButton" destination="eLC-y1-Gfj" id="ejs-Rj-tVN"/>
+                        <outlet property="profilImageView" destination="vtp-pb-BeO" id="kuM-qF-Gis"/>
                         <segue destination="EZm-2G-H9D" kind="show" identifier="showWelcomeRegisteredView" id="Vjf-W9-zB6"/>
                     </connections>
                 </viewController>
