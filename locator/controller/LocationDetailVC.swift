@@ -21,6 +21,7 @@ class LocationDetailVC: UIViewController {
     let favoriteIconActive = UIImage(named: "favorite_icon_active") as UIImage?
     
     @IBAction func back(sender: UIButton) {
+        print("back")
         self.navigationController?.popViewControllerAnimated(true)
     }
     
