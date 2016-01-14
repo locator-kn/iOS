@@ -17,6 +17,10 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     var nearSchoenHiers = [String: SchoenHier]()
     var pickedLocationDetail:Location!
     
+    let heatmapActiveIcon = UIImage(named: "show_heatmap_active") as UIImage?
+    let locationsActiveIcon = UIImage(named: "show_locations_active") as UIImage?
+    let optionsActiveIcon = UIImage(named: "show_options_active") as UIImage?
+    
     @IBOutlet weak var googleMap: GMSMapView!
     
     var previousRegion: CLLocationCoordinate2D!
