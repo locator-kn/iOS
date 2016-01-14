@@ -340,7 +340,7 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdt-da-1cq">
-                                <rect key="frame" x="552" y="438" width="35" height="35"/>
+                                <rect key="frame" x="545" y="438" width="35" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="CdT-R0-XFY"/>
                                     <constraint firstAttribute="height" constant="35" id="ev5-Lk-hd7"/>
@@ -351,14 +351,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TB-2Q-CWr">
-                                <rect key="frame" x="552" y="498" width="35" height="35"/>
+                                <rect key="frame" x="545" y="498" width="35" height="35"/>
                                 <state key="normal" title="Button" image="show_locations_active"/>
                                 <connections>
                                     <action selector="toggleLocations:" destination="4Mp-XX-Glu" eventType="touchUpInside" id="k7n-6a-2dP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRT-34-oxv" userLabel="optionButton">
-                                <rect key="frame" x="552" y="554" width="35" height="35"/>
+                                <rect key="frame" x="545" y="554" width="35" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="1fQ-VG-B9h"/>
                                     <constraint firstAttribute="width" constant="35" id="2fj-1M-Bem"/>
@@ -403,24 +403,26 @@
                         <constraints>
                             <constraint firstItem="Na0-o0-8lP" firstAttribute="top" secondItem="zdt-da-1cq" secondAttribute="bottom" constant="127" id="3t2-2I-5bH"/>
                             <constraint firstItem="1TB-2Q-CWr" firstAttribute="width" secondItem="TRT-34-oxv" secondAttribute="width" id="8Cq-x8-kuL"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="TRT-34-oxv" secondAttribute="trailing" constant="-7" id="8au-gC-uNS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TRT-34-oxv" secondAttribute="trailing" id="8au-gC-uNS"/>
+                            <constraint firstItem="1TB-2Q-CWr" firstAttribute="width" secondItem="TRT-34-oxv" secondAttribute="width" id="Ax7-fg-vBd"/>
                             <constraint firstItem="qGG-7k-18j" firstAttribute="centerX" secondItem="RQb-PR-2qf" secondAttribute="centerX" id="C6J-xW-bGl"/>
                             <constraint firstAttribute="trailing" secondItem="qGG-7k-18j" secondAttribute="trailing" id="FCu-xN-Dmy"/>
                             <constraint firstItem="Na0-o0-8lP" firstAttribute="top" secondItem="RQb-PR-2qf" secondAttribute="bottom" constant="8" symbolic="YES" id="ROe-cT-OnH"/>
                             <constraint firstItem="qGG-7k-18j" firstAttribute="bottom" secondItem="Na0-o0-8lP" secondAttribute="top" id="UQZ-U7-lAb"/>
                             <constraint firstItem="TRT-34-oxv" firstAttribute="top" secondItem="1TB-2Q-CWr" secondAttribute="bottom" constant="21" id="Yz9-iM-6At"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="zdt-da-1cq" secondAttribute="trailing" constant="-7" id="aVa-TU-4DP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zdt-da-1cq" secondAttribute="trailing" id="aVa-TU-4DP"/>
                             <constraint firstItem="tGo-Di-6bH" firstAttribute="width" secondItem="0ET-td-Hb3" secondAttribute="width" id="bTM-73-Kp7"/>
                             <constraint firstItem="0ET-td-Hb3" firstAttribute="top" secondItem="FEp-9v-0Jh" secondAttribute="bottom" constant="8" id="c7F-wL-scj"/>
                             <constraint firstItem="tGo-Di-6bH" firstAttribute="top" secondItem="v1V-7X-nyy" secondAttribute="topMargin" constant="15" id="dAk-9o-VXg"/>
                             <constraint firstItem="Na0-o0-8lP" firstAttribute="top" secondItem="1TB-2Q-CWr" secondAttribute="bottom" constant="67" id="eeD-dN-zqY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="1TB-2Q-CWr" secondAttribute="trailing" constant="-7" id="gVU-dc-4LT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1TB-2Q-CWr" secondAttribute="trailing" id="gVU-dc-4LT"/>
                             <constraint firstItem="0ET-td-Hb3" firstAttribute="top" secondItem="v1V-7X-nyy" secondAttribute="topMargin" constant="15" id="h9b-ic-N0m"/>
                             <constraint firstItem="1TB-2Q-CWr" firstAttribute="height" secondItem="TRT-34-oxv" secondAttribute="height" id="igk-tS-Faf"/>
                             <constraint firstItem="qGG-7k-18j" firstAttribute="top" secondItem="v1V-7X-nyy" secondAttribute="top" id="j8q-Hg-bAX"/>
                             <constraint firstItem="qGG-7k-18j" firstAttribute="leading" secondItem="v1V-7X-nyy" secondAttribute="leading" id="m66-mf-c0w"/>
                             <constraint firstItem="zdt-da-1cq" firstAttribute="width" secondItem="TRT-34-oxv" secondAttribute="width" id="m6G-Gb-zjH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0ET-td-Hb3" secondAttribute="trailing" id="mfK-Gm-SiR"/>
+                            <constraint firstItem="1TB-2Q-CWr" firstAttribute="height" secondItem="TRT-34-oxv" secondAttribute="height" id="pwF-Gu-FIL"/>
                             <constraint firstItem="Na0-o0-8lP" firstAttribute="top" secondItem="TRT-34-oxv" secondAttribute="bottom" constant="11" id="s7A-fm-5c8"/>
                             <constraint firstItem="0ET-td-Hb3" firstAttribute="leading" secondItem="tGo-Di-6bH" secondAttribute="trailing" constant="14" id="xy6-4Q-jKa"/>
                             <constraint firstItem="tGo-Di-6bH" firstAttribute="height" secondItem="0ET-td-Hb3" secondAttribute="height" id="yHu-r1-D2H"/>
@@ -430,12 +432,19 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="c7F-wL-scj"/>
+                                <exclude reference="m6G-Gb-zjH"/>
+                                <exclude reference="ydS-l5-IuQ"/>
+                                <exclude reference="8Cq-x8-kuL"/>
+                                <exclude reference="igk-tS-Faf"/>
+                                <exclude reference="Yz9-iM-6At"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="googleMap" destination="qGG-7k-18j" id="m7k-J0-X18"/>
+                        <outlet property="heatMapBottomSpace" destination="3t2-2I-5bH" id="RM8-35-mb8"/>
                         <outlet property="heatMapButton" destination="zdt-da-1cq" id="AJL-iq-tvW"/>
+                        <outlet property="locationBottomSpace" destination="eeD-dN-zqY" id="VU0-ug-0Nd"/>
                         <outlet property="locationButton" destination="1TB-2Q-CWr" id="40C-75-5G8"/>
                         <segue destination="PYf-I9-SYD" kind="show" identifier="locationDetail" id="i9g-4m-Scy"/>
                     </connections>

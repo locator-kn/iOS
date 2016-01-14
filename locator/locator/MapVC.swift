@@ -29,6 +29,10 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     let locationsActiveIcon = UIImage(named: "show_locations_active") as UIImage?
     let optionsActiveIcon = UIImage(named: "show_options_active") as UIImage?
     
+    /* constraint outlets for options animation */
+    @IBOutlet weak var locationBottomSpace: NSLayoutConstraint!
+    @IBOutlet weak var heatMapBottomSpace: NSLayoutConstraint!
+    
     @IBOutlet weak var heatMapButton: UIButton!
     @IBOutlet weak var locationButton: UIButton!
     @IBOutlet weak var optionButton: UIButton!
@@ -158,6 +162,7 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     }
     
     @IBAction func toggleMapOptions(sender: AnyObject) {
+        
     }
 
     @IBAction func toggleLocations(sender: AnyObject) {
