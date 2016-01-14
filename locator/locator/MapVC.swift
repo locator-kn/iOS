@@ -21,9 +21,17 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     
     var pickedLocationDetail:Location!
     
+    let heatmapIcon = UIImage(named: "show_heatmap") as UIImage?
+    let locationsIcon = UIImage(named: "show_locations") as UIImage?
+    let optionsIcon = UIImage(named: "show_options") as UIImage?
+    
     let heatmapActiveIcon = UIImage(named: "show_heatmap_active") as UIImage?
     let locationsActiveIcon = UIImage(named: "show_locations_active") as UIImage?
     let optionsActiveIcon = UIImage(named: "show_options_active") as UIImage?
+    
+    @IBOutlet weak var heatMapButton: UIButton!
+    @IBOutlet weak var locationButton: UIButton!
+    @IBOutlet weak var optionButton: UIButton!
     
     @IBOutlet weak var googleMap: GMSMapView!
     
@@ -153,14 +161,23 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     }
 
     @IBAction func toggleLocations(sender: AnyObject) {
-        iterateAndToggleMapReference(locationMarkers)
+        if iterateAndToggleMapReference(locationMarkers) {
+            self.locationButton.setImage(self.locationsActiveIcon, forState: .Normal)
+        } else {
+            self.locationButton.setImage(self.locationsIcon, forState: .Normal)
+        }
     }
     
     @IBAction func toggleHeatMap(sender: AnyObject) {
-        iterateAndToggleMapReference(schoenHierMarkers)
+        if iterateAndToggleMapReference(schoenHierMarkers) {
+            self.heatMapButton.setImage(self.heatmapActiveIcon, forState: .Normal)
+        } else {
+            self.heatMapButton.setImage(self.heatmapIcon, forState: .Normal)
+        }
     }
     
-    func iterateAndToggleMapReference(markers: [GMSMarker]) {
+    /* returns true if markers are visible */
+    func iterateAndToggleMapReference(markers: [GMSMarker]) -> Bool {
         var targetMap:GMSMapView? = nil
         if (markers[0].map == nil) {
             targetMap = googleMap
@@ -168,6 +185,7 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         for marker in markers {
             marker.map = targetMap
         }
+        return targetMap != nil
     }
     
 }
