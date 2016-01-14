@@ -15,6 +15,10 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     var locationManager: CLLocationManager = CLLocationManager()
     var nearLocations = [String: Location]()
     var nearSchoenHiers = [String: SchoenHier]()
+    
+    var locationMarkers = [GMSMarker]()
+    var schoenHierMarkers = [GMSMarker]()
+    
     var pickedLocationDetail:Location!
     
     let heatmapActiveIcon = UIImage(named: "show_heatmap_active") as UIImage?
@@ -75,6 +79,8 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         marker.title = location.title
         marker.userData = location
         marker.map = googleMap
+        
+        locationMarkers.append(marker)
     }
     
     func showHeatMapMarker(lat:Double, long:Double, schoenHier:SchoenHier!) {
@@ -86,6 +92,8 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         marker.flat = true
         marker.zIndex = 5
         marker.map = googleMap
+        
+        schoenHierMarkers.append(marker)
     }
     
     /* delegate on map camerachange */
