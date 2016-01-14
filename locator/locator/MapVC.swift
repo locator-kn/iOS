@@ -141,5 +141,13 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         }
     }
     
+    @IBAction func toggleMapOptions(sender: AnyObject) {
+    }
 
+    @IBAction func toggleLocations(sender: AnyObject) {
+    }
+    
+    @IBAction func toggleHeatMap(sender: AnyObject) {
+    }
+    
 }

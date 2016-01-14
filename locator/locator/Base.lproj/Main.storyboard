@@ -346,6 +346,9 @@
                                             <constraint firstAttribute="height" constant="35" id="ev5-Lk-hd7"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="show_heatmap"/>
+                                        <connections>
+                                            <action selector="toggleHeatMap:" destination="4Mp-XX-Glu" eventType="touchUpInside" id="D9m-CE-Wwv"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRT-34-oxv">
                                         <rect key="frame" x="557" y="557" width="35" height="35"/>
@@ -354,10 +357,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AjN-b2-iSV">
                                         <rect key="frame" x="557" y="557" width="35" height="35"/>
                                         <state key="normal" title="Button" image="show_options"/>
+                                        <connections>
+                                            <action selector="toggleMapOptions:" destination="4Mp-XX-Glu" eventType="touchUpInside" id="JrY-pG-0O5"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TB-2Q-CWr">
                                         <rect key="frame" x="557" y="514" width="35" height="35"/>
                                         <state key="normal" title="Button" image="show_locations"/>
+                                        <connections>
+                                            <action selector="toggleLocations:" destination="4Mp-XX-Glu" eventType="touchUpInside" id="k7n-6a-2dP"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
