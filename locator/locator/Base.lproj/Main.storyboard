@@ -345,7 +345,7 @@
                                             <constraint firstAttribute="width" constant="35" id="CdT-R0-XFY"/>
                                             <constraint firstAttribute="height" constant="35" id="ev5-Lk-hd7"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="show_heatmap"/>
+                                        <state key="normal" title="Button" image="show_heatmap_active"/>
                                         <connections>
                                             <action selector="toggleHeatMap:" destination="4Mp-XX-Glu" eventType="touchUpInside" id="D9m-CE-Wwv"/>
                                         </connections>
@@ -363,7 +363,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TB-2Q-CWr">
                                         <rect key="frame" x="557" y="514" width="35" height="35"/>
-                                        <state key="normal" title="Button" image="show_locations"/>
+                                        <state key="normal" title="Button" image="show_locations_active"/>
                                         <connections>
                                             <action selector="toggleLocations:" destination="4Mp-XX-Glu" eventType="touchUpInside" id="k7n-6a-2dP"/>
                                         </connections>
@@ -447,6 +447,9 @@
                     </view>
                     <connections>
                         <outlet property="googleMap" destination="qGG-7k-18j" id="m7k-J0-X18"/>
+                        <outlet property="heatMapButton" destination="zdt-da-1cq" id="AJL-iq-tvW"/>
+                        <outlet property="locationButton" destination="1TB-2Q-CWr" id="40C-75-5G8"/>
+                        <outlet property="optionButton" destination="AjN-b2-iSV" id="sgL-cA-zWj"/>
                         <segue destination="PYf-I9-SYD" kind="show" identifier="locationDetail" id="i9g-4m-Scy"/>
                     </connections>
                 </viewController>
@@ -1528,8 +1531,8 @@
         <image name="profil" width="396" height="396"/>
         <image name="schoen_hier" width="560" height="560"/>
         <image name="search" width="160" height="398"/>
-        <image name="show_heatmap" width="340" height="340"/>
-        <image name="show_locations" width="340" height="340"/>
+        <image name="show_heatmap_active" width="340" height="340"/>
+        <image name="show_locations_active" width="340" height="340"/>
         <image name="show_options" width="340" height="340"/>
         <image name="text" width="42" height="37"/>
     </resources>
