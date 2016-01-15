@@ -28,6 +28,8 @@ class LocationDetailVC: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        print(location.id)
 
         LocationService.locationById(location.id).then {
             result -> Void in
