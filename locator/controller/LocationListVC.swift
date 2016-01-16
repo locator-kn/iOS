@@ -10,6 +10,8 @@ import UIKit
 
 class LocationListVC: UITableViewController {
 
+    var locations:[Location]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +20,8 @@ class LocationListVC: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        print(locations)
     }
 
     override func didReceiveMemoryWarning() {
