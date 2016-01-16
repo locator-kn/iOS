@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Location {
     
@@ -16,6 +17,7 @@ class Location {
     var title:String
     var city:String!
     var imagePath:String!
+    var thumb:UIImage!
     var description:String!
     //favored by me
     var favored:Bool!
@@ -26,6 +28,13 @@ class Location {
         self.id = id
         self.title = title
         self.geoPosition = (lat: lat, long: long)
+    }
+    
+    init(id: String, title: String, long: Double, lat: Double, thumb:UIImage) {
+        self.id = id
+        self.title = title
+        self.geoPosition = (lat: lat, long: long)
+        self.thumb = thumb
     }
     
     init(id: String, title: String, description:String, long: Double, lat: Double, city:String, imagePath: String, favored: Bool, favorites:Int) {
