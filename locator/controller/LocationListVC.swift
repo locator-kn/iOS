@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LocationList: UITableViewController {
+class LocationListVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,13 +28,12 @@ class LocationList: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2
+        return 3
     }
 
     /*
@@ -46,6 +45,8 @@ class LocationList: UITableViewController {
         return cell
     }
     */
+    
+
 
     /*
     // Override to support conditional editing of the table view.
