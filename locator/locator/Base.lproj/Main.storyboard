@@ -349,7 +349,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0H4-fT-IyP">
                                 <rect key="frame" x="0.0" y="216" width="600" height="384"/>
                                 <connections>
-                                    <segue destination="tjs-56-aus" kind="embed" id="ZYb-HJ-zaO"/>
+                                    <segue destination="tjs-56-aus" kind="embed" identifier="tabBarVC" id="ZYb-HJ-zaO"/>
                                 </connections>
                             </containerView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-mint" translatesAutoresizingMaskIntoConstraints="NO" id="Yxg-Pb-2PJ">
@@ -601,10 +601,10 @@
             </objects>
             <point key="canvasLocation" x="5344" y="-2962.5"/>
         </scene>
-        <!--Generic Tab BarVC-->
+        <!--User TabVC-->
         <scene sceneID="ocO-gK-84j">
             <objects>
-                <tabBarController id="tjs-56-aus" customClass="GenericTabBarVC" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="tjs-56-aus" customClass="UserTabVC" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedTopBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="zkx-An-RGM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
