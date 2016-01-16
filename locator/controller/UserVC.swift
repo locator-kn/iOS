@@ -17,12 +17,25 @@ class UserVC: UIViewController {
     override func viewDidLoad() {
         print("userid", self.user.id)
         super.viewDidLoad()
+        
+        // fetch user information
         UserService.getUser(user.id!)
             .then {
                 result -> Void in
                 print("request user success", self.user.id)
                 self.user = result
                 self.updateView()
+            }
+            .error {
+                error -> Void in
+                print(error)
+        }
+        
+        //fetch user locations
+        LocationService.getLocationsByUser(user.id!)
+            .then {
+                result -> Void in
+                
             }
             .error {
                 error -> Void in
