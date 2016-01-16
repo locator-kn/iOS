@@ -10,20 +10,45 @@ import UIKit
 
 class UserVC: UIViewController {
 
+    var user:User = User(id: "56786fe35227864133663978")
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var userName: UILabel!
+    
     override func viewDidLoad() {
+        print("userid", self.user.id)
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        UserService.getUser(user.id!)
+            .then {
+                result -> Void in
+                print("request user success", self.user.id)
+                self.user = result
+                self.updateView()
+            }
+            .error {
+                error -> Void in
+                print(error)
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-        
-        UITabBar.appearance().barTintColor = UIColor.whiteColor()
     }
     
-
+    @IBAction func back(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func updateView() {
+        self.profileImage.image = self.user.profilImage
+        
+        self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2
+        self.profileImage.clipsToBounds = true
+        
+        self.userName.text = self.user.name
+    }
+    
     /*
     // MARK: - Navigation
 
