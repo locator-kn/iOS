@@ -565,12 +565,12 @@
             </objects>
             <point key="canvasLocation" x="5344" y="-2962.5"/>
         </scene>
-        <!--UserDetail-->
+        <!--Generic Tab BarVC-->
         <scene sceneID="ocO-gK-84j">
             <objects>
-                <tabBarController title="UserDetail" id="tjs-56-aus" sceneMemberID="viewController">
+                <tabBarController id="tjs-56-aus" customClass="GenericTabBarVC" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedTopBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="zkx-An-RGM">
+                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="zkx-An-RGM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
