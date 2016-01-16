@@ -393,7 +393,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Follower" badgeValue="58" id="290-wp-rSv">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-20"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
                     </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LMo-Bo-Nr6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -414,7 +414,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Ich folge" badgeValue="301" id="Abd-gd-SJ7">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-20"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
@@ -450,7 +450,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Locations" id="LR0-1l-MWM">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-20"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
                     </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="neb-2J-0LL" userLabel="First Responder" sceneMemberID="firstResponder"/>
