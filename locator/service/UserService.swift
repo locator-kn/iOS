@@ -80,4 +80,35 @@ class UserService {
             }
         }
     }
+    
+    static func getUser(id:String) -> Promise<User> {
+        
+        return Promise { fulfill, reject in
+            
+            Alamofire.request(.GET, API.BASE_URL + "/users/" + id).validate().responseJSON {
+                response in
+                
+                switch response.result {
+                case .Success:
+                    
+                    if let value = response.result.value {
+                        let json = JSON(value)
+                        let id = json["_id"].string!
+                        let name = json["name"].string!
+                        //let imagePath = json["picture"].string!
+                        
+                        // TODO: remove image dummy
+                        let imagePath = "https://scontent.xx.fbcdn.net/hprofile-xpt1/v/t1.0-1/p160x160/11139987_10207678795748383_6785037833618997135_n.jpg?oh=e9068aaa509fa14930371fa2cbb621e9&oe=56FC8D43"
+                        
+                        let image = UIImage(data: UtilService.dataFromPath(imagePath))!
+                        fulfill(User(id: id, name: name, profileImage: image))
+                    }
+                    
+                case .Failure(let error):
+                    reject(error)
+                }
+            }
+        }
+    }
+
 }
