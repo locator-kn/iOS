@@ -333,10 +333,10 @@
             </objects>
             <point key="canvasLocation" x="3267" y="-1301"/>
         </scene>
-        <!--View Controller-->
+        <!--UserVC-->
         <scene sceneID="TKx-LO-X6N">
             <objects>
-                <viewController id="G1J-vh-MOc" sceneMemberID="viewController">
+                <viewController id="G1J-vh-MOc" customClass="UserVC" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZJv-YQ-Sxt"/>
                         <viewControllerLayoutGuide type="bottom" id="Onr-Ya-Ys2"/>
