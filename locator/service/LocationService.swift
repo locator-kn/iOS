@@ -145,6 +145,39 @@ class LocationService {
         }
     }
     
+    static func getLocationsByUser(userId:String) -> Promise<[Location]> {
+        
+        return Promise { fulfill, reject in
+            
+            var userLocations = [Location]()
+            
+            Alamofire.request(.GET, "https://locator-app.com/api/v2/locations/user" + userId).validate().responseJSON { response in
+                switch response.result {
+                case .Success:
+                    
+                    if let value = response.result.value {
+                        let json = JSON(value)
+                        for (_,subJson):(String, JSON) in json["results"] {
+                            
+                            let lat = subJson["geotag"]["coordinates"][1].double!
+                            let long = subJson["geotag"]["coordinates"][0].double!
+                            let title = subJson["title"].string!
+                            let id = subJson["_id"].string!
+                            
+                            let imagePath = subJson["images"]["small"].string!
+                            let thumb = UIImage(data: UtilService.dataFromPath(imagePath))!
+                            
+                            userLocations.append(Location(id: id, title: title, long: long, lat: lat, thumb:thumb))
+                        }
+                        fulfill(userLocations)
+                    }
+                case .Failure(let error):
+                    reject(error)
+                }
+            }
+        }
+    }
+    
     static func favLocation(id: String) -> Promise<(Int, Bool)> {
         return Promise { fulfill, reject in
             
