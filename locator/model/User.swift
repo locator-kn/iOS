@@ -30,6 +30,12 @@ class User {
         self.email = email
     }
     
+    init(id:String, name:String, profileImage:UIImage) {
+        self.id = id
+        self.name = name
+        self.profilImage = profileImage
+    }
+    
     init(name: String, email: String, residence: String, password: String, profilImage: UIImage) {
         self.id = nil
         self.name = name
