@@ -35,7 +35,6 @@ class UserVC: UIViewController {
         LocationService.getLocationsByUser(user.id!)
             .then {
                 result -> Void in
-                
             }
             .error {
                 error -> Void in
@@ -62,7 +61,7 @@ class UserVC: UIViewController {
         self.userName.text = self.user.name
     }
     
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -70,6 +69,5 @@ class UserVC: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
 
 }

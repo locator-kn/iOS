@@ -8,7 +8,11 @@
 
 import UIKit
 
-class GenericTabBarVC: UITabBarController {
+class UserTabVC: UITabBarController {
+    
+    var locations:[Location]?
+    var follower:[User]?
+    var following:[User]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
