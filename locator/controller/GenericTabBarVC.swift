@@ -13,7 +13,14 @@ class GenericTabBarVC: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        UITabBar.appearance().barTintColor = UIColor.blackColor()
+        // barbackgroundcolor
+        UITabBar.appearance().barTintColor = UIColor(red: 38, green: 38, blue: 38)
+        
+        // font and fontsize
+        UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName:UIFont(name: "Source Sans Pro", size: 16)!], forState: .Normal)
+        
+        // active item font color
+        UITabBar.appearance().tintColor = UIColor(red: 192, green: 206, blue: 202)
     }
 
     override func didReceiveMemoryWarning() {
