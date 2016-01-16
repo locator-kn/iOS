@@ -11,6 +11,8 @@ import UIKit
 class UserVC: UIViewController {
 
     var user:User = User(id: "56786fe35227864133663978")
+    var userLocations: [Location]?
+    
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
     
@@ -66,8 +68,10 @@ class UserVC: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if (segue.identifier == "tabBarVC") {
+            let ctrl = segue.destinationViewController as! UserTabVC
+            ctrl.locations = self.userLocations
+        }
     }
 
 }
