@@ -26,11 +26,12 @@ class UserTabVC: UITabBarController {
         // active item font color
         UITabBar.appearance().tintColor = UIColor(red: 192, green: 206, blue: 202)
         
-        let locationTab = self.tabBarController?.viewControllers![0] as! LocationListVC
-        let followerTab = self.tabBarController?.viewControllers![1]
-        let followingTab = self.tabBarController?.viewControllers![2]
         
-        locationTab.locations = self.locations
+        print(self.tabBarController?.viewControllers?[0])
+        
+        /*let followerTab = self.tabBarController?.viewControllers![1]
+        let followingTab = self.tabBarController?.viewControllers![2]*/
+        
     }
 
     override func didReceiveMemoryWarning() {
