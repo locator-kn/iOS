@@ -8,26 +8,29 @@
 
 import UIKit
 
-class UserTabVC: UITabBarController {
+class UserTabVC: UIViewController {
     
     var locations:[Location]?
     var follower:[User]?
     var following:[User]?
 
+    @IBOutlet weak var tabBar: UITabBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // barbackgroundcolor
-        UITabBar.appearance().barTintColor = UIColor(red: 38, green: 38, blue: 38)
+        //UITabBar.appearance().barTintColor = UIColor.clearColor()
+        
+
+        // set new blank images as background and shadow, great hack, like this.
+        UITabBar.appearance().backgroundImage = UIImage()
+        UITabBar.appearance().shadowImage = UIImage()
         
         // font and fontsize
         UITabBarItem.appearance().setTitleTextAttributes([NSFontAttributeName:UIFont(name: "Source Sans Pro", size: 16)!], forState: .Normal)
         
-        // active item font color
-        UITabBar.appearance().tintColor = UIColor(red: 192, green: 206, blue: 202)
         
-        
-        print(self.tabBarController?.viewControllers?[0])
         
         /*let followerTab = self.tabBarController?.viewControllers![1]
         let followingTab = self.tabBarController?.viewControllers![2]*/
