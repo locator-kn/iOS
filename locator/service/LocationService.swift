@@ -272,7 +272,7 @@ class LocationService {
                 .POST,
                 "https://locator-app.com/api/v2/locations/" + id + "/stream/image",
                 multipartFormData: { multipartFormData in
-                    multipartFormData.appendBodyPart(data: UIImageJPEGRepresentation(data, 1.0)!, name: "file")
+                    multipartFormData.appendBodyPart(data: UIImageJPEGRepresentation(data, 1.0)!, name: "file", fileName: "impression.jpg", mimeType: "image/jpeg")
                 },
                 encodingCompletion: { encodingResult in
                     switch encodingResult {
