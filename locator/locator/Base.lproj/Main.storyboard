@@ -428,7 +428,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Follower" badgeValue="58" id="290-wp-rSv">
+                    <tabBarItem key="tabBarItem" tag="2" title="Follower" id="290-wp-rSv">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
                     </tabBarItem>
                 </viewController>
@@ -449,7 +449,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Ich folge" badgeValue="301" id="Abd-gd-SJ7">
+                    <tabBarItem key="tabBarItem" tag="3" title="Ich folge" id="Abd-gd-SJ7">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -561,7 +561,7 @@
                             <outlet property="delegate" destination="hVN-WS-D69" id="JWb-r5-teM"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Locations" id="yPw-AH-v2D">
+                    <tabBarItem key="tabBarItem" tag="1" title="Locations" id="yPw-AH-v2D">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
                     </tabBarItem>
                 </tableViewController>
@@ -580,9 +580,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="DvU-0u-f06" kind="relationship" relationship="viewControllers" id="XYV-0q-nCh"/>
-                        <segue destination="kfT-4W-bLA" kind="relationship" relationship="viewControllers" id="zEk-Nb-9cR"/>
                         <segue destination="hVN-WS-D69" kind="relationship" relationship="viewControllers" id="Tqk-I8-wVH"/>
+                        <segue destination="DvU-0u-f06" kind="relationship" relationship="viewControllers" id="7rl-pw-lfz"/>
+                        <segue destination="kfT-4W-bLA" kind="relationship" relationship="viewControllers" id="LIU-H7-6Fw"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Sz-jN-w1F" userLabel="First Responder" sceneMemberID="firstResponder"/>
