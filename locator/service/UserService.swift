@@ -110,5 +110,41 @@ class UserService {
             }
         }
     }
+    
+    static func getFollower(userId:String) -> Promise<[User]> {
+        
+        return Promise { fulfill, reject in
+            
+            var follower = [User]()
+            
+            Alamofire.request(.GET, API.BASE_URL + "/users/" + userId + "/follower").validate().responseJSON {
+                response in
+                
+                switch response.result {
+                case .Success:
+                    
+                    if let value = response.result.value {
+                        let json = JSON(value)
+                        for (_,subJson):(String, JSON) in json {
+                            let id = subJson["_id"].string!
+                            let name = subJson["name"].string!
+                            //let imagePath = subJson["picture"].string!
+                            
+                            // TODO: remove image dummy
+                            let imagePath = "https://scontent.xx.fbcdn.net/hprofile-xpt1/v/t1.0-1/p160x160/11139987_10207678795748383_6785037833618997135_n.jpg?oh=e9068aaa509fa14930371fa2cbb621e9&oe=56FC8D43"
+                            
+                            let image = UIImage(data: UtilService.dataFromPath(imagePath))!
+                            follower.append(User(id: id, name: name, profileImage: image))
+                        }
+                        fulfill(follower)
+                    }
+                    
+                case .Failure(let error):
+                    reject(error)
+                }
+            }
+        }
+        
+    }
 
 }
