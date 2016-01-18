@@ -69,6 +69,7 @@ class LocationListVC: UITableViewController {
 
         cell.locationTitle.text = location.title
         cell.locationImage.image = location.thumb
+        cell.locationImage = UtilService.roundImageView(cell.locationImage)
         
         return cell
     }
