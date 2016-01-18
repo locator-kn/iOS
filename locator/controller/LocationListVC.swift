@@ -74,6 +74,16 @@ class LocationListVC: UITableViewController {
         return cell
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "locationDetail" {
+            if let destination = segue.destinationViewController as? LocationDetailVC {
+                if let location = tableView.indexPathForSelectedRow?.row {
+                    destination.location = locations![location]
+                }
+            }
+        }
+    }
+    
 
 
     /*
@@ -111,14 +121,5 @@ class LocationListVC: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

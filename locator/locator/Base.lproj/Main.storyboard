@@ -497,6 +497,7 @@
                                 <connections>
                                     <outlet property="locationImage" destination="4eQ-Ud-NA7" id="25m-J5-jVc"/>
                                     <outlet property="locationTitle" destination="k1g-PW-ymf" id="WUD-UD-bGj"/>
+                                    <segue destination="PYf-I9-SYD" kind="show" identifier="locationDetail" id="EdB-og-2CF"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -972,24 +973,24 @@
                         <viewControllerLayoutGuide type="bottom" id="pSa-3s-kxC"/>
                     </layoutGuides>
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="np5-ZU-hzf">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="384"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tJz-R4-W5o">
-                                <rect key="frame" x="20" y="404" width="560" height="108"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tJz-R4-W5o">
+                                <rect key="frame" x="-65" y="404" width="560" height="108"/>
                                 <color key="backgroundColor" red="1" green="0.92541564990000003" blue="0.52998247789999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="41J-gR-YgM">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="41J-gR-YgM">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="351"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="41J-gR-YgM" secondAttribute="height" multiplier="200:117" id="gF9-6k-qYk"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kds-ee-QSs">
-                                <rect key="frame" x="20" y="31" width="17" height="26"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kds-ee-QSs">
+                                <rect key="frame" x="-65" y="31" width="17" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="k8Y-KF-D5L"/>
                                 </constraints>
@@ -999,13 +1000,13 @@
                                     <action selector="backButtonPressed:" destination="EFJ-gN-wRa" eventType="touchUpInside" id="hkl-XF-i8X"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dummy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="78x-uX-9dy" userLabel="locationTitle">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Dummy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="78x-uX-9dy" userLabel="locationTitle">
                                 <rect key="frame" x="95" y="31" width="411" height="26"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cU-wj-81d" userLabel="textButton">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cU-wj-81d" userLabel="textButton">
                                 <rect key="frame" x="548" y="363" width="32" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="dQx-C6-uNr"/>
@@ -1016,7 +1017,7 @@
                                     <segue destination="p32-8u-Eh9" kind="presentation" identifier="textImpression" id="q1n-ao-jiJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mek-wv-1ou" userLabel="favorButton">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mek-wv-1ou" userLabel="favorButton">
                                 <rect key="frame" x="527" y="287" width="64" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="64" id="CyF-Jc-GcQ"/>
@@ -1027,14 +1028,14 @@
                                     <action selector="favorLocation:" destination="PYf-I9-SYD" eventType="touchUpInside" id="6ef-Fd-Inn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTo-Rt-FNh" userLabel="imageButton">
-                                <rect key="frame" x="20" y="363" width="31" height="27"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTo-Rt-FNh" userLabel="imageButton">
+                                <rect key="frame" x="-65" y="363" width="31" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="31" id="1t1-ip-IZw"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="foto"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3T-Ct-y1Z" userLabel="imageButton">
+                            <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3T-Ct-y1Z" userLabel="imageButton">
                                 <rect key="frame" x="20" y="363" width="31" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="31" id="5NB-iF-AIK"/>
@@ -1735,8 +1736,9 @@
         <image name="text" width="42" height="37"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fiC-UR-uUa"/>
-        <segue reference="hTK-WV-rqw"/>
         <segue reference="WG6-zk-XfW"/>
+        <segue reference="hTK-WV-rqw"/>
+        <segue reference="fiC-UR-uUa"/>
+        <segue reference="EdB-og-2CF"/>
     </inferredMetricsTieBreakers>
 </document>
