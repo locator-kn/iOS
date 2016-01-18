@@ -334,50 +334,6 @@
             </objects>
             <point key="canvasLocation" x="3267" y="-1301"/>
         </scene>
-        <!--User TabVC-->
-        <scene sceneID="NQa-NF-R0i">
-            <objects>
-                <viewController id="BBF-hG-qEU" customClass="UserTabVC" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="qkj-6c-MK2"/>
-                        <viewControllerLayoutGuide type="bottom" id="73D-gy-w6Q"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="OCS-u5-bN3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="384"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tabBar alpha="0.59999999999999998" contentMode="scaleToFill" itemPositioning="centered" translatesAutoresizingMaskIntoConstraints="NO" id="j2O-8i-vyK">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="49"/>
-                                <items>
-                                    <tabBarItem title="Locations" id="ze9-AN-Zm4" userLabel="Locations">
-                                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
-                                    </tabBarItem>
-                                    <tabBarItem title="Follower" id="6NP-nx-5jy">
-                                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
-                                    </tabBarItem>
-                                    <tabBarItem title="Following" id="w5q-HI-rhd">
-                                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
-                                    </tabBarItem>
-                                </items>
-                                <color key="barTintColor" red="0.97647058819999999" green="0.67843137249999996" blue="0.086274509799999996" alpha="0.0" colorSpace="calibratedRGB"/>
-                                <color key="selectedImageTintColor" red="0.6165320889" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </tabBar>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="j2O-8i-vyK" firstAttribute="leading" secondItem="OCS-u5-bN3" secondAttribute="leading" id="1Eo-Oe-wiC"/>
-                            <constraint firstItem="j2O-8i-vyK" firstAttribute="top" secondItem="qkj-6c-MK2" secondAttribute="bottom" id="On0-FC-L7j"/>
-                            <constraint firstAttribute="trailing" secondItem="j2O-8i-vyK" secondAttribute="trailing" id="y9d-QY-LqV"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="tabBar" destination="j2O-8i-vyK" id="u1e-3X-BJg"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NvX-k7-OAk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3812" y="-2718"/>
-        </scene>
         <!--UserVC-->
         <scene sceneID="TKx-LO-X6N">
             <objects>
@@ -391,7 +347,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-mint" translatesAutoresizingMaskIntoConstraints="NO" id="Yxg-Pb-2PJ">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="302"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="246"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J70-5L-uNL">
                                 <rect key="frame" x="20" y="30" width="17" height="26"/>
@@ -417,34 +373,49 @@
                                 <rect key="frame" x="260" y="74" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1vC-Kz-1OR" secondAttribute="height" multiplier="1:1" id="EwE-mf-Dvn"/>
+                                    <constraint firstAttribute="height" constant="80" id="iT5-5t-Gb1"/>
                                 </constraints>
                             </imageView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0H4-fT-IyP">
-                                <rect key="frame" x="0.0" y="216" width="600" height="384"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <segue destination="BBF-hG-qEU" kind="embed" id="Vpf-lW-qEh"/>
-                                </connections>
-                            </containerView>
+                            <tabBar alpha="0.60000002384185791" contentMode="scaleToFill" itemPositioning="centered" translatesAutoresizingMaskIntoConstraints="NO" id="Mqs-1V-gt6">
+                                <rect key="frame" x="0.0" y="197" width="600" height="49"/>
+                                <items>
+                                    <tabBarItem title="Locations" id="wFw-Qm-tiU" userLabel="Locations">
+                                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
+                                    </tabBarItem>
+                                    <tabBarItem title="Follower" id="MGi-zm-XlE">
+                                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
+                                    </tabBarItem>
+                                    <tabBarItem title="Following" id="ZAA-MB-zkJ">
+                                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-15"/>
+                                    </tabBarItem>
+                                </items>
+                                <color key="barTintColor" red="0.97647058819999999" green="0.67843137249999996" blue="0.086274509799999996" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <color key="selectedImageTintColor" red="0.6165320889" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </tabBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NEH-OX-byF">
+                                <rect key="frame" x="0.0" y="246" width="600" height="354"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="0H4-fT-IyP" firstAttribute="leading" secondItem="Yxg-Pb-2PJ" secondAttribute="leading" id="41N-Us-iSl"/>
-                            <constraint firstItem="0H4-fT-IyP" firstAttribute="bottom" secondItem="Onr-Ya-Ys2" secondAttribute="top" id="5Rh-WW-jSl"/>
+                            <constraint firstAttribute="trailing" secondItem="NEH-OX-byF" secondAttribute="trailing" id="3fA-gU-g9M"/>
                             <constraint firstAttribute="trailing" secondItem="Yxg-Pb-2PJ" secondAttribute="trailing" id="8qT-Qa-VFI"/>
                             <constraint firstItem="AmX-xK-xdD" firstAttribute="centerX" secondItem="Yxg-Pb-2PJ" secondAttribute="centerX" id="9sV-Zq-HY9"/>
                             <constraint firstItem="J70-5L-uNL" firstAttribute="top" secondItem="ZJv-YQ-Sxt" secondAttribute="bottom" constant="10" id="AoK-8s-hft"/>
-                            <constraint firstItem="0H4-fT-IyP" firstAttribute="top" secondItem="Yxg-Pb-2PJ" secondAttribute="bottom" constant="-86" id="BXu-bW-shk"/>
+                            <constraint firstItem="Onr-Ya-Ys2" firstAttribute="top" secondItem="NEH-OX-byF" secondAttribute="bottom" id="DJQ-iy-zbB"/>
                             <constraint firstItem="J70-5L-uNL" firstAttribute="leading" secondItem="O0A-8Z-wUN" secondAttribute="leadingMargin" id="E9o-8b-wmV"/>
                             <constraint firstItem="AmX-xK-xdD" firstAttribute="top" secondItem="ZJv-YQ-Sxt" secondAttribute="bottom" constant="10" id="EBM-fg-mGg"/>
-                            <constraint firstItem="Onr-Ya-Ys2" firstAttribute="top" secondItem="Yxg-Pb-2PJ" secondAttribute="bottom" constant="298" id="KCV-66-vyW"/>
-                            <constraint firstItem="0H4-fT-IyP" firstAttribute="top" secondItem="1vC-Kz-1OR" secondAttribute="bottom" constant="62" id="Nn9-xG-d9Z"/>
+                            <constraint firstItem="NEH-OX-byF" firstAttribute="leading" secondItem="O0A-8Z-wUN" secondAttribute="leading" id="Ewu-pV-OAC"/>
+                            <constraint firstItem="Onr-Ya-Ys2" firstAttribute="top" secondItem="Yxg-Pb-2PJ" secondAttribute="bottom" constant="354" id="KCV-66-vyW"/>
                             <constraint firstItem="Yxg-Pb-2PJ" firstAttribute="top" secondItem="O0A-8Z-wUN" secondAttribute="top" id="OTq-pz-u4q"/>
-                            <constraint firstItem="0H4-fT-IyP" firstAttribute="top" secondItem="1vC-Kz-1OR" secondAttribute="bottom" constant="62" id="QC8-Oc-6Er"/>
                             <constraint firstItem="1vC-Kz-1OR" firstAttribute="top" secondItem="ZJv-YQ-Sxt" secondAttribute="bottom" constant="54" id="Tof-Yf-pAC"/>
                             <constraint firstItem="1vC-Kz-1OR" firstAttribute="top" secondItem="AmX-xK-xdD" secondAttribute="bottom" constant="18" id="UgD-cd-4Jz"/>
+                            <constraint firstItem="1vC-Kz-1OR" firstAttribute="centerX" secondItem="Mqs-1V-gt6" secondAttribute="centerX" id="ZZG-78-85E"/>
                             <constraint firstItem="1vC-Kz-1OR" firstAttribute="centerX" secondItem="O0A-8Z-wUN" secondAttribute="centerX" id="etd-bY-Rso"/>
-                            <constraint firstItem="0H4-fT-IyP" firstAttribute="trailing" secondItem="Yxg-Pb-2PJ" secondAttribute="trailing" id="pe4-wh-t1p"/>
+                            <constraint firstItem="Mqs-1V-gt6" firstAttribute="top" secondItem="1vC-Kz-1OR" secondAttribute="bottom" constant="43" id="eu8-8R-Gdw"/>
+                            <constraint firstItem="NEH-OX-byF" firstAttribute="top" secondItem="Mqs-1V-gt6" secondAttribute="bottom" id="fy8-bf-MT6"/>
+                            <constraint firstItem="Mqs-1V-gt6" firstAttribute="leading" secondItem="Yxg-Pb-2PJ" secondAttribute="leading" id="g04-TK-dJ8"/>
                             <constraint firstItem="AmX-xK-xdD" firstAttribute="leading" secondItem="J70-5L-uNL" secondAttribute="trailing" constant="71" id="sgY-gQ-3g1"/>
                             <constraint firstItem="Yxg-Pb-2PJ" firstAttribute="leading" secondItem="O0A-8Z-wUN" secondAttribute="leading" id="twl-V1-chq"/>
                         </constraints>
@@ -453,6 +424,8 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="profileImage" destination="1vC-Kz-1OR" id="mCs-1T-SeV"/>
+                        <outlet property="subView" destination="NEH-OX-byF" id="Oaj-zo-miR"/>
+                        <outlet property="tabBar" destination="Mqs-1V-gt6" id="A37-pd-3zd"/>
                         <outlet property="userName" destination="AmX-xK-xdD" id="7u6-cn-Cjy"/>
                     </connections>
                 </viewController>
