@@ -13,6 +13,7 @@ class UserTabVC: UITabBarController {
     var locations:[Location]?
     var follower:[User]?
     var following:[User]?
+    var user:User?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +28,10 @@ class UserTabVC: UITabBarController {
         UITabBar.appearance().tintColor = UIColor(red: 192, green: 206, blue: 202)
         
         
-        print(self.tabBarController?.viewControllers?[0])
+   
+        
+        let locationList = self.viewControllers?[0] as! LocationListVC
+        locationList.user = user
         
         /*let followerTab = self.tabBarController?.viewControllers![1]
         let followingTab = self.tabBarController?.viewControllers![2]*/
