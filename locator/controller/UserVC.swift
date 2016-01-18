@@ -16,6 +16,7 @@ class UserVC: UIViewController {
     //tab references
     @IBOutlet weak var tabBar: UITabBar!
     @IBOutlet weak var subView: UIView!
+    var currentViewController: UIViewController?
     
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
@@ -75,11 +76,14 @@ class UserVC: UIViewController {
     }
     
 
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func shouldAutorotate() -> Bool {
+        return true
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
+        let availableIdentifiers = ["FirstVcIdentifier", "SecondVcIdentifier"]
+      
     }
 
 }
