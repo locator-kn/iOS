@@ -151,21 +151,23 @@ class LocationService {
             
             var userLocations = [Location]()
             
-            Alamofire.request(.GET, "https://locator-app.com/api/v2/locations/user" + userId).validate().responseJSON { response in
+            Alamofire.request(.GET, "https://locator-app.com/api/v2/locations/users/" + userId).validate().responseJSON { response in
                 switch response.result {
                 case .Success:
                     
                     if let value = response.result.value {
                         let json = JSON(value)
-                        for (_,subJson):(String, JSON) in json["results"] {
+                        for (_,subJson):(String, JSON) in json {
                             
                             let lat = subJson["geotag"]["coordinates"][1].double!
                             let long = subJson["geotag"]["coordinates"][0].double!
                             let title = subJson["title"].string!
                             let id = subJson["_id"].string!
                             
-                            let imagePath = subJson["images"]["small"].string!
-                            let thumb = UIImage(data: UtilService.dataFromPath(imagePath))!
+                            var thumb = UIImage()
+                            if let imagePath = subJson["images"]["small"].string {
+                                thumb = UIImage(data: UtilService.dataFromPath(API.IMAGE_URL + imagePath))!
+                            }
                             
                             userLocations.append(Location(id: id, title: title, long: long, lat: lat, thumb:thumb))
                         }
