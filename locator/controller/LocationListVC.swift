@@ -11,6 +11,7 @@ import UIKit
 class LocationListVC: UITableViewController {
 
     var locations:[Location]?
+    var user:User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,25 @@ class LocationListVC: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        print(locations)
+        self.getLocationsByUser()
+    }
+    
+    func getLocationsByUser() {
+        
+        //fetch user locations
+        LocationService.getLocationsByUser((user?.id)!)
+            .then {
+                result -> Void in
+                self.locations = result
+                self.tableView.reloadData()
+                print("Fetch Locations By user success", self.user?.id)
+                print(self.locations)
+            }
+            .error {
+                error -> Void in
+                print("Buff buff, rauchwolken, kaputt")
+                print(error)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,19 +55,23 @@ class LocationListVC: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 3
+        if locations == nil {
+            return 0
+        }
+        return locations!.count
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cellIdentifier = "LocationCell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! LocationCell
 
-        // Configure the cell...
+        let location = locations![indexPath.row]
 
+        cell.locationTitle.text = location.title
+        cell.locationImage.image = location.thumb
+        
         return cell
     }
-    */
     
 
 
