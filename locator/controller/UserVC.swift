@@ -36,16 +36,6 @@ class UserVC: UIViewController {
                 print(error)
         }
         
-        //fetch user locations
-        LocationService.getLocationsByUser(user.id!)
-            .then {
-                result -> Void in
-            }
-            .error {
-                error -> Void in
-                print(error)
-        }
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,6 +63,7 @@ class UserVC: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "tabBarVC") {
             self.tabVC = segue.destinationViewController as? UserTabVC
+            self.tabVC!.user = self.user
         }
     }
 
