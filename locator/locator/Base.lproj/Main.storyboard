@@ -1699,23 +1699,6 @@
             </objects>
             <point key="canvasLocation" x="6286" y="934"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="dHN-Zh-yRY">
-            <objects>
-                <viewController id="ZdN-b1-E8J" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="h5V-5K-33T"/>
-                        <viewControllerLayoutGuide type="bottom" id="Gwh-en-Ccd"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="FTQ-i1-BWw">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VU4-nz-ZYe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
     </scenes>
     <resources>
         <image name="Ja" width="273" height="273"/>
@@ -1737,8 +1720,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Dge-4W-7Ya"/>
-        <segue reference="i9g-4m-Scy"/>
         <segue reference="hTK-WV-rqw"/>
         <segue reference="WG6-zk-XfW"/>
+        <segue reference="EdB-og-2CF"/>
     </inferredMetricsTieBreakers>
 </document>
