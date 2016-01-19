@@ -252,7 +252,7 @@ class LocationService {
     static func addTextImpression(id: String, data:String) -> Promise<Bool> {
         return Promise { fulfill, reject in
             
-            Alamofire.request(.POST, "https://locator-app.com/api/v2/locations/" + id + "/stream/text", parameters: ["data": data]).validate().responseJSON { response in
+            Alamofire.request(.POST, "https://locator-app.com/api/v2/locations/" + id + "/impression/text", parameters: ["data": data]).validate().responseJSON { response in
                 switch response.result {
                 case .Success:
                     
@@ -270,7 +270,7 @@ class LocationService {
             
             Alamofire.upload(
                 .POST,
-                "https://locator-app.com/api/v2/locations/" + id + "/stream/image",
+                "https://locator-app.com/api/v2/locations/" + id + "/impression/image",
                 multipartFormData: { multipartFormData in
                     multipartFormData.appendBodyPart(data: UIImageJPEGRepresentation(data, 1.0)!, name: "file", fileName: "impression.jpg", mimeType: "image/jpeg")
                 },
