@@ -63,17 +63,22 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         googleMap.delegate = self
         googleMap.myLocationEnabled = true
         
-        
         if (locationsOfInterest.count > 0) {
-            self.toggleHeatMap(self)
             self.toggleLocations(self)
+            let coordinate = CLLocationCoordinate2D(latitude: locationsOfInterest.values.first!.geoPosition.lat,
+                longitude: locationsOfInterest.values.first!.geoPosition.long)
             
-            for (_, location) in locationsOfInterest {
-                self.showLocationMarker(location.getGeoPosition().lat, long: location.getGeoPosition().long, location:location, interesting:true)
+            if locationsOfInterest.count == 1 {
+                googleMap.camera = GMSCameraPosition(target: coordinate, zoom: 16, bearing: 0, viewingAngle: 0)
+            } else {
+                googleMap.camera = GMSCameraPosition(target: coordinate, zoom: 12, bearing: 0, viewingAngle: 0)
             }
             
+            for (_, location) in locationsOfInterest {
+                self.showLocationMarker(location.getGeoPosition().lat, long: location.getGeoPosition().long,
+                    location:location, interesting:true)
+            }
         }
-        
         super.viewDidLoad()
     }
     
@@ -140,9 +145,8 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     
     /* delegate on map camerachange */
     func mapView(mapView: GMSMapView!, idleAtCameraPosition position: GMSCameraPosition!) {
-        if (self.heatmapVisible) {
-            getNearSchoenHiers(position.target, maxDistance: 0.5)
-        }
+        
+        getNearSchoenHiers(position.target, maxDistance: 0.5)
         if (self.locationsVisible) {
             getNearLocations(position.target, maxDistance: 0.5)
         }
@@ -164,7 +168,12 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     
     /* delegate on user position update */
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
+        
+        if (locationsOfInterest.count > 0) {
+            return
+        }
+        
+        if let location = locations.first{
             googleMap.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
             locationManager.stopUpdatingLocation()
         }
