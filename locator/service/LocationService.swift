@@ -116,7 +116,7 @@ class LocationService {
                         let title = json["title"].string
                         let lat = json["geotag"]["coordinates"][1].double
                         let long = json["geotag"]["coordinates"][0].double
-                        let city = json["city"]["title"].string
+        
                         let description = json["description"].string
                         
                         var imagePath = ""
@@ -124,6 +124,8 @@ class LocationService {
                         if (json["images"]["xlarge"].string != nil) {
                             imagePath = "https://locator-app.com/" + json["images"]["xlarge"].string!
                         }
+                        
+                        let userId = json["user_id"].string!
                         
                         //if location favored by myself
                         var favored = false
@@ -135,7 +137,16 @@ class LocationService {
                             }
                         }
                         
-                        fulfill((Location(id: id!, title: title!, description: description!, long: long!, lat: lat!, city: city!, imagePath: imagePath, favored: favored, favorites: 0)))
+                        let cityTitle = json["city"]["title"].string!
+                        let cityId = json["city"]["place_id"].string!
+                        let city = City(id: cityId, title: cityTitle)
+                        
+                        UserService.getUser(userId).then {
+                            user -> Void in
+                            
+                            fulfill((Location(id: id!, title: title!, description: description!, long: long!, lat: lat!, city: city, imagePath: imagePath, favored: favored, favorites: 0, user: user)))
+                            
+                        }
                     }
                     
                 case .Failure(let error):
