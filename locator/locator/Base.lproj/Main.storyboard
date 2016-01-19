@@ -1036,8 +1036,8 @@
                                     <segue destination="Gka-Qg-i3J" kind="presentation" identifier="imageImpression" id="I0V-vS-ucQ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Titel" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78x-uX-9dy" userLabel="locationTitle">
-                                <rect key="frame" x="51" y="31" width="463" height="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Titel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78x-uX-9dy" userLabel="locationTitle">
+                                <rect key="frame" x="69" y="31" width="463" height="26"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Semibold" family="Source Sans Pro" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1062,7 +1062,7 @@
                             <constraint firstItem="41J-gR-YgM" firstAttribute="top" secondItem="qCz-hv-8xs" secondAttribute="bottom" id="SVC-L4-2TO"/>
                             <constraint firstItem="tJz-R4-W5o" firstAttribute="top" secondItem="2cU-wj-81d" secondAttribute="bottom" constant="8" symbolic="YES" id="Wbm-Pz-til"/>
                             <constraint firstItem="tJz-R4-W5o" firstAttribute="leading" secondItem="np5-ZU-hzf" secondAttribute="leadingMargin" id="Xo7-0z-IOT"/>
-                            <constraint firstItem="78x-uX-9dy" firstAttribute="leading" secondItem="Kds-ee-QSs" secondAttribute="trailing" constant="14" id="aCl-Mx-i7P"/>
+                            <constraint firstItem="78x-uX-9dy" firstAttribute="leading" secondItem="Kds-ee-QSs" secondAttribute="trailing" constant="32" id="aCl-Mx-i7P"/>
                             <constraint firstItem="78x-uX-9dy" firstAttribute="centerX" secondItem="tJz-R4-W5o" secondAttribute="centerX" id="bo7-T3-oEL"/>
                             <constraint firstItem="2cU-wj-81d" firstAttribute="top" secondItem="41J-gR-YgM" secondAttribute="bottom" constant="12" id="foB-3g-UWc"/>
                             <constraint firstItem="2cU-wj-81d" firstAttribute="top" secondItem="41J-gR-YgM" secondAttribute="bottom" id="g6f-NF-gym"/>
@@ -1074,7 +1074,7 @@
                             <constraint firstItem="78x-uX-9dy" firstAttribute="leading" secondItem="Kds-ee-QSs" secondAttribute="trailing" constant="16" id="ouc-kg-wh8"/>
                             <constraint firstItem="D3T-Ct-y1Z" firstAttribute="top" secondItem="41J-gR-YgM" secondAttribute="bottom" constant="12" id="qR2-Yp-CYc"/>
                             <constraint firstItem="tJz-R4-W5o" firstAttribute="trailing" secondItem="np5-ZU-hzf" secondAttribute="trailingMargin" id="tno-z3-JO2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="78x-uX-9dy" secondAttribute="trailing" constant="66" id="y20-xQ-zRJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="78x-uX-9dy" secondAttribute="trailing" constant="48" id="y20-xQ-zRJ"/>
                             <constraint firstItem="41J-gR-YgM" firstAttribute="leading" secondItem="np5-ZU-hzf" secondAttribute="leading" id="z3Y-gk-0hD"/>
                         </constraints>
                         <variation key="default">
