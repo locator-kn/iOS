@@ -216,13 +216,17 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     /* returns true if markers are visible */
     func iterateAndToggleMapReference(markers: [GMSMarker]) -> Bool {
         var targetMap:GMSMapView? = nil
-        if (markers[0].map == nil) {
-            targetMap = googleMap
+        
+        if (markers.count > 0) {
+            if (markers[0].map == nil) {
+                targetMap = googleMap
+            }
+            for marker in markers {
+                marker.map = targetMap
+            }
+            return targetMap != nil
         }
-        for marker in markers {
-            marker.map = targetMap
-        }
-        return targetMap != nil
+        return false
     }
     
 }
