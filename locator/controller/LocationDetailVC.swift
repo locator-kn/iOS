@@ -16,6 +16,8 @@ class LocationDetailVC: UIViewController {
     @IBOutlet weak var locationDescription: UITextView!
     @IBOutlet weak var favorIcon: UIButton!
     @IBOutlet weak var opacity: UIImageView!
+    @IBOutlet weak var userName: UIButton!
+    @IBOutlet weak var cityTitle: UILabel!
     
     let favoriteIcon = UIImage(named: "favorite_icon") as UIImage?
     let favoriteIconActive = UIImage(named: "favorite_icon_active") as UIImage?
@@ -39,6 +41,9 @@ class LocationDetailVC: UIViewController {
             self.imageView.image = UIImage(data: UtilService.dataFromPath(self.location.imagePath))
             self.locationTitle.text = self.location.title
             self.locationDescription.text = self.location.description
+     
+            self.userName.setTitle(result.user.name, forState: UIControlState.Normal)
+            self.cityTitle.text = result.city.title
             
             let gradient: CAGradientLayer = CAGradientLayer()
             gradient.frame = self.imageView.frame
