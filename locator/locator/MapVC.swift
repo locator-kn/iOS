@@ -267,7 +267,7 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
             }
             return targetMap != nil
         }
-        return false
+        return !flag
     }
     
 }
