@@ -108,6 +108,9 @@ class LocationDetailVC: UIViewController {
         } else if (segue.identifier == "user") {
             let controller = segue.destinationViewController as! UserVC
             controller.user = self.location.user
+        } else if (segue.identifier == "map") {
+            let controller = segue.destinationViewController as! MapVC
+            controller.locationsOfInterest[location.id] = location
         }
     }
 
