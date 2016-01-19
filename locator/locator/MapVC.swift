@@ -231,6 +231,11 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     }
 
     @IBAction func toggleLocations(sender: AnyObject) {
+        
+        if self.nearLocations.count == 0 {
+            getNearLocations(googleMap.camera.target, maxDistance: 0.5)
+        }
+        
         if iterateAndToggleMapReference(locationMarkers, flag: self.locationsVisible) {
             self.locationButton.setImage(self.locationsActiveIcon, forState: .Normal)
         } else {
@@ -240,6 +245,7 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     }
     
     @IBAction func toggleHeatMap(sender: AnyObject) {
+        
         if iterateAndToggleMapReference(schoenHierMarkers, flag: self.heatmapVisible) {
             self.heatMapButton.setImage(self.heatmapActiveIcon, forState: .Normal)
         } else {
