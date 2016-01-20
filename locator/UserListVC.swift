@@ -9,6 +9,10 @@
 import UIKit
 
 class UserListVC: UITableViewController {
+    
+    var follower:[User]?
+    var user:User?
+    var showFollower:Bool = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +22,52 @@ class UserListVC: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.tableView.estimatedRowHeight = 60.0
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        
+        if showFollower {
+            self.getFollower()
+        } else {
+            self.getFollowedBy()
+        }
     }
+    
+    func getFollower() {
+        
+        //fetch user locations
+        UserService.getFollower((user?.id!)!)
+            .then {
+                result -> Void in
+                self.follower = result
+                self.tableView.reloadData()
+                print("Fetch Follower By user success", self.user?.id)
+                print(self.follower)
+            }
+            .error {
+                error -> Void in
+                print("Buff buff, rauchwolken, kaputt")
+                print(error)
+        }
+    }
+    
+    func getFollowedBy() {
+        
+        //fetch user locations
+        UserService.getFollower((user?.id!)!)
+            .then {
+                result -> Void in
+                self.follower = result
+                self.tableView.reloadData()
+                print("Fetch FollowedBy success", self.user?.id)
+                print(self.follower)
+            }
+            .error {
+                error -> Void in
+                print("Buff buff, rauchwolken, kaputt")
+                print(error)
+        }
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -29,23 +78,28 @@ class UserListVC: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        if follower == nil {
+            return 0
+        }
+        return follower!.count
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+        let cellIdentifier = "UserCell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! UserCell
+    
+        let singleFollower = follower![indexPath.row]
+    
+        cell.userName.text = singleFollower.name
+        cell.userImage.image = singleFollower.profilImage
+        cell.userImage = UtilService.roundImageView(cell.userImage)
+    
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
