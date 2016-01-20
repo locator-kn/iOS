@@ -31,6 +31,7 @@
 		5BEA72BE1C34B530005220CD /* AudioImpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEA72BD1C34B530005220CD /* AudioImpression.swift */; };
 		623DE8F3F2CEAA896CFA50AC /* Pods_locator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F065E9F82669863AC08B17B /* Pods_locator.framework */; };
 		8705071E1C4FC4C4008641BF /* GravityObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8705071D1C4FC4C4008641BF /* GravityObject.swift */; };
+		870507201C4FC6D1008641BF /* GravitySimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8705071F1C4FC6D1008641BF /* GravitySimulator.swift */; };
 		872DA7C81C1F06A10041C9D6 /* EmailLoginVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872DA7C71C1F06A10041C9D6 /* EmailLoginVC1.swift */; };
 		872DA7CA1C1F156A0041C9D6 /* EmailLoginVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872DA7C91C1F156A0041C9D6 /* EmailLoginVC2.swift */; };
 		874AF1F21C415B1300F386B0 /* WelcomeRegisteredVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874AF1F11C415B1300F386B0 /* WelcomeRegisteredVC.swift */; };
@@ -93,6 +94,7 @@
 		5BEA72BD1C34B530005220CD /* AudioImpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioImpression.swift; sourceTree = "<group>"; };
 		6452E77853577A731ADE8C86 /* Pods-locator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-locator.release.xcconfig"; path = "Pods/Target Support Files/Pods-locator/Pods-locator.release.xcconfig"; sourceTree = "<group>"; };
 		8705071D1C4FC4C4008641BF /* GravityObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravityObject.swift; sourceTree = "<group>"; };
+		8705071F1C4FC6D1008641BF /* GravitySimulator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravitySimulator.swift; sourceTree = "<group>"; };
 		872DA7C71C1F06A10041C9D6 /* EmailLoginVC1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailLoginVC1.swift; sourceTree = "<group>"; };
 		872DA7C91C1F156A0041C9D6 /* EmailLoginVC2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailLoginVC2.swift; sourceTree = "<group>"; };
 		874AF1F11C415B1300F386B0 /* WelcomeRegisteredVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeRegisteredVC.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				8705071D1C4FC4C4008641BF /* GravityObject.swift */,
+				8705071F1C4FC6D1008641BF /* GravitySimulator.swift */,
 			);
 			name = BubbleScreen;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				876290231C1893DE00D2870E /* LoginVC.swift in Sources */,
 				5B0C0D981C3D505A0090FB17 /* TextImpressionVC.swift in Sources */,
 				5B44750D1C216E9600C30445 /* LocationService.swift in Sources */,
+				870507201C4FC6D1008641BF /* GravitySimulator.swift in Sources */,
 				87F14D7B1C18604B00682709 /* AppDelegate.swift in Sources */,
 				876CAA861C3C0431002A36FF /* RegisterVC5.swift in Sources */,
 				874AF1F81C415EA300F386B0 /* Color.swift in Sources */,
