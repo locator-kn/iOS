@@ -214,21 +214,6 @@ class LocationService {
         }
     }
     
-    static func addTextImpression(id: String, data:String) -> Promise<Bool> {
-        return Promise { fulfill, reject in
-            
-            Alamofire.request(.POST, "https://locator-app.com/api/v2/locations/" + id + "/stream/text", parameters: ["data": data]).validate().responseJSON { response in
-                switch response.result {
-                case .Success:
-                    
-                    fulfill(true)
-                    
-                case .Failure(let error):
-                    reject(error)
-                }
-            }
-        }
-    }
     
     static func addImageImpression(id: String, data:UIImage) -> Promise<Bool> {
         return Promise { fulfill, reject in
