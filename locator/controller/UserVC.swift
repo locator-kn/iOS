@@ -20,14 +20,13 @@ class UserVC: UIViewController {
     @IBOutlet weak var userName: UILabel!
     
     override func viewDidLoad() {
-        print("userid", self.user.id)
+        print("User with ID: " + self.user.id!)
         super.viewDidLoad()
         
         // fetch user information
         UserService.getUser(user.id!)
             .then {
                 result -> Void in
-                print("request user success", self.user.id)
                 self.user = result
                 self.updateView()
             }
