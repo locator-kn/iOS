@@ -107,13 +107,18 @@ class UserService {
         }
     }
     
-    static func getFollower(userId:String) -> Promise<[User]> {
+    static func getFollower(userId:String, following:Bool) -> Promise<[User]> {
         
         return Promise { fulfill, reject in
             
             var follower = [User]()
             
-            Alamofire.request(.GET, API.BASE_URL + "/users/" + userId + "/follower").validate().responseJSON {
+            var routePath = "follower"
+            if following {
+                routePath = "following"
+            }
+            
+            Alamofire.request(.GET, API.BASE_URL + "/users/" + userId + "/" + routePath).validate().responseJSON {
                 response in
                 
                 switch response.result {
@@ -144,5 +149,4 @@ class UserService {
         }
         
     }
-
 }
