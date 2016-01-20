@@ -275,6 +275,7 @@ class LocationService {
             }
         }
     }
+
     
     static func addImageImpression(id: String, data:UIImage) -> Promise<Bool> {
         return Promise { fulfill, reject in
