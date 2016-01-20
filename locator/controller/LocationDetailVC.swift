@@ -47,7 +47,7 @@ class LocationDetailVC: UIViewController {
             
             let gradient: CAGradientLayer = CAGradientLayer()
             gradient.frame = self.imageView.frame
-            gradient.colors = [UIColor.blackColor().CGColor, UIColor.clearColor().CGColor]
+            gradient.colors = [UIColor(red: 29/255, green: 29/255, blue: 29/255, alpha: 0.8) .CGColor, UIColor.clearColor().CGColor]
             gradient.locations = [0.0, 0.5, 1]
             self.imageView.layer.insertSublayer(gradient, atIndex: 0)
             

@@ -10,7 +10,7 @@ import UIKit
 
 class UserVC: UIViewController {
 
-    var user:User = User(id: "56786fe35227864133663978")
+    var user:User = User(id: "569e4a83a6e5bb503b838306")
     var userLocations: [Location]?
     
     //keep UserTabVC reference

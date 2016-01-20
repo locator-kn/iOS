@@ -124,8 +124,14 @@ class UserService {
                         for (_,subJson):(String, JSON) in json {
                             let id = subJson["_id"].string!
                             let name = subJson["name"].string!
-                            let imagePath = API.IMAGE_URL + subJson["picture"].string!
-                            let image = UIImage(data: UtilService.dataFromPath(imagePath))!
+                            var image = UIImage()
+                            
+                            if var imagePath = subJson["picture"].string {
+                                if !imagePath.hasPrefix("https://") {
+                                    imagePath = API.IMAGE_URL + imagePath
+                                }
+                                image = UIImage(data: UtilService.dataFromPath(imagePath))!
+                            }
                             follower.append(User(id: id, name: name, profileImage: image))
                         }
                         fulfill(follower)
