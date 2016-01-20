@@ -116,7 +116,7 @@ class LocationService {
                         let title = json["title"].string
                         let lat = json["geotag"]["coordinates"][1].double
                         let long = json["geotag"]["coordinates"][0].double
-                        let city = json["city"]["title"].string
+        
                         let description = json["description"].string
                         
                         var imagePath = ""
@@ -124,6 +124,8 @@ class LocationService {
                         if (json["images"]["xlarge"].string != nil) {
                             imagePath = "https://locator-app.com/" + json["images"]["xlarge"].string!
                         }
+                        
+                        let userId = json["user_id"].string!
                         
                         //if location favored by myself
                         var favored = false
@@ -135,9 +137,53 @@ class LocationService {
                             }
                         }
                         
-                        fulfill((Location(id: id!, title: title!, description: description!, long: long!, lat: lat!, city: city!, imagePath: imagePath, favored: favored, favorites: 0)))
+                        let cityTitle = json["city"]["title"].string!
+                        let cityId = json["city"]["place_id"].string!
+                        let city = City(id: cityId, title: cityTitle)
+                        
+                        UserService.getUser(userId).then {
+                            user -> Void in
+                            
+                            fulfill((Location(id: id!, title: title!, description: description!, long: long!, lat: lat!, city: city, imagePath: imagePath, favored: favored, favorites: 0, user: user)))
+                            
+                        }
                     }
                     
+                case .Failure(let error):
+                    reject(error)
+                }
+            }
+        }
+    }
+    
+    static func getLocationsByUser(userId:String) -> Promise<[Location]> {
+        
+        return Promise { fulfill, reject in
+            
+            var userLocations = [Location]()
+            
+            Alamofire.request(.GET, "https://locator-app.com/api/v2/locations/users/" + userId).validate().responseJSON { response in
+                switch response.result {
+                case .Success:
+                    
+                    if let value = response.result.value {
+                        let json = JSON(value)
+                        for (_,subJson):(String, JSON) in json {
+                            
+                            let lat = subJson["geotag"]["coordinates"][1].double!
+                            let long = subJson["geotag"]["coordinates"][0].double!
+                            let title = subJson["title"].string!
+                            let id = subJson["_id"].string!
+                            
+                            var thumb = UIImage()
+                            if let imagePath = subJson["images"]["small"].string {
+                                thumb = UIImage(data: UtilService.dataFromPath(API.IMAGE_URL + imagePath))!
+                            }
+                            
+                            userLocations.append(Location(id: id, title: title, long: long, lat: lat, thumb:thumb))
+                        }
+                        fulfill(userLocations)
+                    }
                 case .Failure(let error):
                     reject(error)
                 }
@@ -214,15 +260,10 @@ class LocationService {
         }
     }
     
-    
-    static func addImageImpression(id: String, data:UIImage) -> Promise<Bool> {
+    static func addTextImpression(id: String, data:String) -> Promise<Bool> {
         return Promise { fulfill, reject in
             
-            Alamofire.upload(.POST, "https://locator-app.com/api/v2/locations/" + id + "/stream/image", data: UIImageJPEGRepresentation(data, 1.0)!).validate().responseJSON {
-                response in
-                
-                print(data)
-                
+            Alamofire.request(.POST, "https://locator-app.com/api/v2/locations/" + id + "/impression/text", parameters: ["data": data]).validate().responseJSON { response in
                 switch response.result {
                 case .Success:
                     
@@ -232,6 +273,31 @@ class LocationService {
                     reject(error)
                 }
             }
+        }
+    }
+
+    
+    static func addImageImpression(id: String, data:UIImage) -> Promise<Bool> {
+        return Promise { fulfill, reject in
+            
+            Alamofire.upload(
+                .POST,
+                "https://locator-app.com/api/v2/locations/" + id + "/impression/image",
+                multipartFormData: { multipartFormData in
+                    multipartFormData.appendBodyPart(data: UIImageJPEGRepresentation(data, 1.0)!, name: "file", fileName: "impression.jpg", mimeType: "image/jpeg")
+                },
+                encodingCompletion: { encodingResult in
+                    switch encodingResult {
+                    case .Success(let upload, _, _):
+                        upload.responseJSON { response in
+                            debugPrint(response)
+                        }
+                    case .Failure(let encodingError):
+                        print(encodingError)
+                    }
+                }
+            )
+            
         }
     }
     

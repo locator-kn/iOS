@@ -49,6 +49,7 @@ class HttpService {
 
 struct API {
     static let BASE_URL = "https://locator-app.com/api/v2"
+    static let IMAGE_URL = "https://locator-app.com"
     static let USER_LOGIN = "\(BASE_URL)/users/login"
     static let USER_REGISTER = "\(BASE_URL)/users/register"
     static let USER_LOGOUT = "\(BASE_URL)/users/logout"

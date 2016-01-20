@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class UtilService {
  
@@ -18,6 +19,17 @@ class UtilService {
     
     static func dataFromPath(path:String) -> NSData {
         return NSData(contentsOfURL: NSURL(string: path)!)!
+    }
+    
+    static func roundImageView(imageview: UIImageView) -> UIImageView {
+        imageview.layer.cornerRadius = imageview.frame.size.width / 2
+        imageview.clipsToBounds = true
+        
+        imageview.layer.borderWidth = 3
+        imageview.layer.borderColor = UIColor(red:222/255.0, green:225/255.0, blue:227/255.0, alpha: 1.0).CGColor
+        
+        
+        return imageview
     }
     
     static func distanceBetweenCoords(lat1:Double, lon1:Double, lat2:Double, lon2:Double) -> Double {

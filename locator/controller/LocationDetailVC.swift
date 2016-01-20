@@ -16,17 +16,22 @@ class LocationDetailVC: UIViewController {
     @IBOutlet weak var locationDescription: UITextView!
     @IBOutlet weak var favorIcon: UIButton!
     @IBOutlet weak var opacity: UIImageView!
+    @IBOutlet weak var userName: UIButton!
+    @IBOutlet weak var cityTitle: UILabel!
     
     let favoriteIcon = UIImage(named: "favorite_icon") as UIImage?
     let favoriteIconActive = UIImage(named: "favorite_icon_active") as UIImage?
     
     @IBAction func back(sender: UIButton) {
+        print("back")
         self.navigationController?.popViewControllerAnimated(true)
     }
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        print(location.id)
 
         LocationService.locationById(location.id).then {
             result -> Void in
@@ -36,6 +41,9 @@ class LocationDetailVC: UIViewController {
             self.imageView.image = UIImage(data: UtilService.dataFromPath(self.location.imagePath))
             self.locationTitle.text = self.location.title
             self.locationDescription.text = self.location.description
+     
+            self.userName.setTitle(result.user.name, forState: UIControlState.Normal)
+            self.cityTitle.text = result.city.title
             
             let gradient: CAGradientLayer = CAGradientLayer()
             gradient.frame = self.imageView.frame
@@ -97,6 +105,12 @@ class LocationDetailVC: UIViewController {
         } else if (segue.identifier == "imageImpression") {
             let controller = segue.destinationViewController as! ImageImpressionVC
             controller.locationId = self.location.id
+        } else if (segue.identifier == "user") {
+            let controller = segue.destinationViewController as! UserVC
+            controller.user = self.location.user
+        } else if (segue.identifier == "map") {
+            let controller = segue.destinationViewController as! MapVC
+            controller.locationsOfInterest[location.id] = location
         }
     }
 

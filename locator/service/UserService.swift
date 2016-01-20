@@ -80,4 +80,63 @@ class UserService {
             }
         }
     }
+    
+    static func getUser(id:String) -> Promise<User> {
+        
+        return Promise { fulfill, reject in
+            
+            Alamofire.request(.GET, API.BASE_URL + "/users/" + id).validate().responseJSON {
+                response in
+                
+                switch response.result {
+                case .Success:
+                    
+                    if let value = response.result.value {
+                        let json = JSON(value)
+                        let id = json["_id"].string!
+                        let name = json["name"].string!
+                        let imagePath = API.IMAGE_URL + json["picture"].string!
+                        let image = UIImage(data: UtilService.dataFromPath(imagePath))!
+                        fulfill(User(id: id, name: name, profileImage: image))
+                    }
+                    
+                case .Failure(let error):
+                    reject(error)
+                }
+            }
+        }
+    }
+    
+    static func getFollower(userId:String) -> Promise<[User]> {
+        
+        return Promise { fulfill, reject in
+            
+            var follower = [User]()
+            
+            Alamofire.request(.GET, API.BASE_URL + "/users/" + userId + "/follower").validate().responseJSON {
+                response in
+                
+                switch response.result {
+                case .Success:
+                    
+                    if let value = response.result.value {
+                        let json = JSON(value)
+                        for (_,subJson):(String, JSON) in json {
+                            let id = subJson["_id"].string!
+                            let name = subJson["name"].string!
+                            let imagePath = API.IMAGE_URL + subJson["picture"].string!
+                            let image = UIImage(data: UtilService.dataFromPath(imagePath))!
+                            follower.append(User(id: id, name: name, profileImage: image))
+                        }
+                        fulfill(follower)
+                    }
+                    
+                case .Failure(let error):
+                    reject(error)
+                }
+            }
+        }
+        
+    }
+
 }

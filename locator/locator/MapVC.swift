@@ -15,6 +15,7 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     var locationManager: CLLocationManager = CLLocationManager()
     var nearLocations = [String: Location]()
     var nearSchoenHiers = [String: SchoenHier]()
+    var locationsOfInterest = [String: Location]()
     
     var locationMarkers = [GMSMarker]()
     var schoenHierMarkers = [GMSMarker]()
@@ -30,6 +31,8 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     let optionsActiveIcon = UIImage(named: "show_options_active") as UIImage?
     
     var toggleOptionsActive:Bool = false
+    var locationsVisible:Bool = true
+    var heatmapVisible:Bool = true
     
     /* constraint outlets for options animation */
     @IBOutlet weak var locationBottomSpace: NSLayoutConstraint!
@@ -60,6 +63,22 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         googleMap.delegate = self
         googleMap.myLocationEnabled = true
         
+        if (locationsOfInterest.count > 0) {
+            self.toggleLocations(self)
+            let coordinate = CLLocationCoordinate2D(latitude: locationsOfInterest.values.first!.geoPosition.lat,
+                longitude: locationsOfInterest.values.first!.geoPosition.long)
+            
+            if locationsOfInterest.count == 1 {
+                googleMap.camera = GMSCameraPosition(target: coordinate, zoom: 16, bearing: 0, viewingAngle: 0)
+            } else {
+                googleMap.camera = GMSCameraPosition(target: coordinate, zoom: 12, bearing: 0, viewingAngle: 0)
+            }
+            
+            for (_, location) in locationsOfInterest {
+                self.showLocationMarker(location.getGeoPosition().lat, long: location.getGeoPosition().long,
+                    location:location, interesting:true)
+            }
+        }
         super.viewDidLoad()
     }
     
@@ -68,9 +87,9 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
             
             for location in locations {
                 
-                if (self.nearLocations[location.id] == nil) {
+                if (self.nearLocations[location.id] == nil && self.locationsOfInterest[location.id] == nil) {
                     self.nearLocations[location.id] = location
-                    self.showLocationMarker(location.getGeoPosition().lat, long: location.getGeoPosition().long, location:location)
+                    self.showLocationMarker(location.getGeoPosition().lat, long: location.getGeoPosition().long, location:location, interesting: false)
                 }
             }
         }
@@ -89,10 +108,10 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         }
     }
     
-    func showLocationMarker(lat:Double, long:Double, location:Location!) {
+    func showLocationMarker(lat:Double, long:Double, location:Location!, interesting:Bool) {
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2DMake(lat, long)
-        marker.icon = UIImage(named: "location")
+       
         marker.appearAnimation = kGMSMarkerAnimationPop
         marker.groundAnchor = CGPoint(x: 0.5,y: 0.5)
         marker.zIndex = 10
@@ -100,7 +119,15 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         marker.userData = location
         marker.map = googleMap
         
-        locationMarkers.append(marker)
+        if interesting {
+            marker.icon = UIImage(named: "location_red")
+            if locationsOfInterest.count == 1 {
+                self.googleMap.selectedMarker = marker
+            }
+        } else {
+            marker.icon = UIImage(named: "location")
+            locationMarkers.append(marker)
+        }
     }
     
     func showHeatMapMarker(lat:Double, long:Double, schoenHier:SchoenHier!) {
@@ -119,9 +146,10 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     /* delegate on map camerachange */
     func mapView(mapView: GMSMapView!, idleAtCameraPosition position: GMSCameraPosition!) {
         
-        print("didChangeCameraPosition")
-        getNearLocations(position.target, maxDistance: 0.5)
         getNearSchoenHiers(position.target, maxDistance: 0.5)
+        if (self.locationsVisible) {
+            getNearLocations(position.target, maxDistance: 0.5)
+        }
     }
     
     func mapView(mapView: GMSMapView!, didTapInfoWindowOfMarker marker: GMSMarker!) {
@@ -140,7 +168,12 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     
     /* delegate on user position update */
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
+        
+        if (locationsOfInterest.count > 0) {
+            return
+        }
+        
+        if let location = locations.first{
             googleMap.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
             locationManager.stopUpdatingLocation()
         }
@@ -198,31 +231,43 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     }
 
     @IBAction func toggleLocations(sender: AnyObject) {
-        if iterateAndToggleMapReference(locationMarkers) {
+        
+        if self.nearLocations.count == 0 {
+            getNearLocations(googleMap.camera.target, maxDistance: 0.5)
+        }
+        
+        if iterateAndToggleMapReference(locationMarkers, flag: self.locationsVisible) {
             self.locationButton.setImage(self.locationsActiveIcon, forState: .Normal)
         } else {
             self.locationButton.setImage(self.locationsIcon, forState: .Normal)
         }
+        self.locationsVisible = !self.locationsVisible
     }
     
     @IBAction func toggleHeatMap(sender: AnyObject) {
-        if iterateAndToggleMapReference(schoenHierMarkers) {
+        
+        if iterateAndToggleMapReference(schoenHierMarkers, flag: self.heatmapVisible) {
             self.heatMapButton.setImage(self.heatmapActiveIcon, forState: .Normal)
         } else {
             self.heatMapButton.setImage(self.heatmapIcon, forState: .Normal)
         }
+        self.heatmapVisible = !self.heatmapVisible
     }
     
     /* returns true if markers are visible */
-    func iterateAndToggleMapReference(markers: [GMSMarker]) -> Bool {
+    func iterateAndToggleMapReference(markers: [GMSMarker], flag:Bool) -> Bool {
         var targetMap:GMSMapView? = nil
-        if (markers[0].map == nil) {
-            targetMap = googleMap
+        
+        if (markers.count > 0) {
+            if (!flag) {
+                targetMap = googleMap
+            }
+            for marker in markers {
+                marker.map = targetMap
+            }
+            return targetMap != nil
         }
-        for marker in markers {
-            marker.map = targetMap
-        }
-        return targetMap != nil
+        return !flag
     }
     
 }
