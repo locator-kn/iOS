@@ -27,14 +27,16 @@ class UserTabVC: UITabBarController {
         // active item font color
         UITabBar.appearance().tintColor = UIColor(red: 192, green: 206, blue: 202)
         
-        
-   
-        
         let locationList = self.viewControllers?[0] as! LocationListVC
         locationList.user = user
         
-        /*let followerTab = self.tabBarController?.viewControllers![1]
-        let followingTab = self.tabBarController?.viewControllers![2]*/
+        let followerList = self.viewControllers?[1] as! UserListVC
+        followerList.user = user
+        followerList.showFollower = true
+        
+        let followedByList = self.viewControllers?[2] as! UserListVC
+        followedByList.user = user
+        followedByList.showFollower = false
         
     }
 
