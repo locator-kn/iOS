@@ -29,13 +29,12 @@ class LocationListVC: UITableViewController {
     func getLocationsByUser() {
         
         //fetch user locations
-        LocationService.getLocationsByUser((user?.id)!)
+        user?.getLocations()
             .then {
                 result -> Void in
                 self.locations = result
                 self.tableView.reloadData()
                 print("Fetch Locations By user success", self.user?.id)
-                print(self.locations)
             }
             .error {
                 error -> Void in

@@ -21,7 +21,6 @@ class UserVC: UIViewController {
     
     override func viewDidLoad() {
         print("User with ID: " + self.user.id!)
-        super.viewDidLoad()
         
         // fetch user information
         UserService.getUser(user.id!)
@@ -34,6 +33,8 @@ class UserVC: UIViewController {
                 error -> Void in
                 print(error)
         }
+        
+        super.viewDidLoad()
         
     }
 
@@ -48,10 +49,8 @@ class UserVC: UIViewController {
     
     func updateView() {
         self.profileImage.image = self.user.profilImage
-        
         self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2
         self.profileImage.clipsToBounds = true
-        
         self.userName.text = self.user.name
     }
     

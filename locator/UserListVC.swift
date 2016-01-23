@@ -25,19 +25,35 @@ class UserListVC: UITableViewController {
         self.tableView.estimatedRowHeight = 60.0
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
-        self.getFollower()
+        if (showFollower) {
+            self.getFollower()
+        } else {
+            self.getFollowedBy()
+        }
     }
     
     func getFollower() {
-        
-        //fetch user locations
-        UserService.getFollower((user?.id!)!, following: !showFollower)
+        user?.getFollower()
             .then {
                 result -> Void in
                 self.follower = result
                 self.tableView.reloadData()
                 print("Fetch Follower By user success", self.user?.id)
-                print(self.follower)
+            }
+            .error {
+                error -> Void in
+                print("Buff buff, rauchwolken, kaputt")
+                print(error)
+        }
+    }
+    
+    func getFollowedBy() {
+        user?.getFollowedBy()
+            .then {
+                result -> Void in
+                self.follower = result
+                self.tableView.reloadData()
+                print("Fetch getFollowedBy success", self.user?.id)
             }
             .error {
                 error -> Void in
