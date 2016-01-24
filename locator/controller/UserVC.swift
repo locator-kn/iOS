@@ -20,6 +20,9 @@ class UserVC: UIViewController {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
     
+    @IBOutlet weak var followButton: UIButton!
+    @IBOutlet weak var sendMessageButton: UIButton!
+    
     override func viewDidLoad() {
         print("User with ID: " + self.user.id!)
         
@@ -55,6 +58,21 @@ class UserVC: UIViewController {
         self.userName.text = self.user.name
         self.locationsCount.text = "\(self.user.locationCount!)"
         self.followersCount.text = "\(self.user.followerCount!)"
+    }
+    
+    @IBAction func followButton(sender: UIButton) {
+        self.user.follow().then {
+            result -> Void in
+            print("Follow" + self.user.id!)
+            
+            let origImage = UIImage(named: "follow");
+            let tintedImage = origImage?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+            self.followButton.setImage(tintedImage, forState: .Normal)
+            self.followButton.tintColor = UIColor.redColor()
+        }
+    }
+    
+    @IBAction func sendMessageButton(sender: UIButton) {
     }
     
 
