@@ -270,4 +270,8 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         return !flag
     }
     
+    @IBAction func back(sender: UIButton) {
+        self.navigationController!.popViewControllerAnimated(true)
+    }
+    
 }
