@@ -20,7 +20,6 @@ PODS:
     - OMGHTTPURLRQ/FormURLEncode
     - OMGHTTPURLRQ/UserAgent
   - OMGHTTPURLRQ/UserAgent (3.0.2)
-  - PageMenu (1.2.8)
   - PromiseKit (3.0.1):
     - PromiseKit/Foundation (= 3.0.1)
     - PromiseKit/QuartzCore (= 3.0.1)
@@ -41,7 +40,6 @@ DEPENDENCIES:
   - FBSDKLoginKit (= 4.9.0-beta2)
   - FBSDKShareKit (= 4.9.0-beta2)
   - GoogleMaps
-  - PageMenu
   - PromiseKit (~> 3.0)
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
 
@@ -62,7 +60,6 @@ SPEC CHECKSUMS:
   FBSDKShareKit: 2bd88d784d1d95e4b6e561da3a7b8d448f386ca3
   GoogleMaps: c947160008f414c66707a5ea60f35e92055c7670
   OMGHTTPURLRQ: 8376dc887d76a5a7e2a67881dc788f917a2f437c
-  PageMenu: 703e82e173f54a4626ab88fcdca7703ee52e0cbe
   PromiseKit: 19d12914484a15c25a46f72fde38579204a5dac6
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
