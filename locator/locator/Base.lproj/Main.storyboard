@@ -225,7 +225,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L56-lv-MVl">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L56-lv-MVl">
                                 <rect key="frame" x="558" y="28" width="22" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="MQu-vd-dMG"/>
@@ -260,13 +260,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Schreib was" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="LGZ-Bu-5uq">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Schreib was" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="LGZ-Bu-5uq">
                                 <rect key="frame" x="15" y="79" width="560" height="27"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vaQ-FT-TMT">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vaQ-FT-TMT">
                                 <rect key="frame" x="558" y="35" width="22" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="8Nw-hP-tkg"/>
@@ -699,6 +699,7 @@
                                 <connections>
                                     <outlet property="userImage" destination="Ad2-6Q-BFy" id="e8Q-O2-4O4"/>
                                     <outlet property="userName" destination="zbv-OJ-qrv" id="kcm-rp-GTb"/>
+                                    <segue destination="G1J-vh-MOc" kind="show" identifier="user" id="ryZ-VE-cuy"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -713,7 +714,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mk3-ZF-Yya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4559" y="-2658"/>
+            <point key="canvasLocation" x="4846" y="-2535"/>
         </scene>
         <!--MapVC-->
         <scene sceneID="SbJ-7x-eXs">
@@ -742,7 +743,7 @@
                                     <action selector="toggleHeatMap:" destination="4Mp-XX-Glu" eventType="touchUpInside" id="D9m-CE-Wwv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfd-XY-2TD" userLabel="back">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfd-XY-2TD" userLabel="back">
                                 <rect key="frame" x="20" y="30" width="17" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="17" id="yCV-2B-GJl"/>
@@ -1237,7 +1238,7 @@
                                     <segue destination="G1J-vh-MOc" kind="show" identifier="user" id="nuc-8H-RaZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSm-80-qOv">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSm-80-qOv">
                                 <rect key="frame" x="554" y="31" width="26" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="5Fn-Ss-2PG"/>
@@ -1949,9 +1950,10 @@
         <image name="text" width="42" height="37"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="i9g-4m-Scy"/>
-        <segue reference="m5n-0C-6QV"/>
+        <segue reference="ryZ-VE-cuy"/>
         <segue reference="ngF-gl-Sbv"/>
         <segue reference="WG6-zk-XfW"/>
+        <segue reference="m5n-0C-6QV"/>
+        <segue reference="EdB-og-2CF"/>
     </inferredMetricsTieBreakers>
 </document>
