@@ -28,7 +28,6 @@
 		5BAC93E11C2824A500FE502F /* UtilService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAC93E01C2824A500FE502F /* UtilService.swift */; };
 		5BC5F2F81C3BE55A0092E0E9 /* MapSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5F2F71C3BE55A0092E0E9 /* MapSearchVC.swift */; };
 		5BDAB6141C5514D600A4D38E /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDAB6131C5514D600A4D38E /* CAPSPageMenu.swift */; };
-		5BDAB6161C5517A500A4D38E /* LocationList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BDAB6151C5517A500A4D38E /* LocationList.xib */; };
 		5BEA72B81C34B206005220CD /* AbstractImpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEA72B71C34B206005220CD /* AbstractImpression.swift */; };
 		5BEA72BA1C34B28D005220CD /* ImageImpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEA72B91C34B28D005220CD /* ImageImpression.swift */; };
 		5BEA72BC1C34B527005220CD /* VideoImpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEA72BB1C34B527005220CD /* VideoImpression.swift */; };
@@ -97,7 +96,6 @@
 		5BAC93E01C2824A500FE502F /* UtilService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilService.swift; sourceTree = "<group>"; };
 		5BC5F2F71C3BE55A0092E0E9 /* MapSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapSearchVC.swift; path = controller/MapSearchVC.swift; sourceTree = SOURCE_ROOT; };
 		5BDAB6131C5514D600A4D38E /* CAPSPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CAPSPageMenu.swift; path = ../CAPSPageMenu.swift; sourceTree = "<group>"; };
-		5BDAB6151C5517A500A4D38E /* LocationList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationList.xib; sourceTree = "<group>"; };
 		5BEA72B71C34B206005220CD /* AbstractImpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractImpression.swift; sourceTree = "<group>"; };
 		5BEA72B91C34B28D005220CD /* ImageImpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageImpression.swift; sourceTree = "<group>"; };
 		5BEA72BB1C34B527005220CD /* VideoImpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoImpression.swift; sourceTree = "<group>"; };
@@ -218,7 +216,6 @@
 				5B410D6F1C4CF78500B11471 /* LocationCell.swift */,
 				5B410D731C4F989600B11471 /* UserCell.swift */,
 				5B410D751C4F98B000B11471 /* UserListVC.swift */,
-				5BDAB6151C5517A500A4D38E /* LocationList.xib */,
 			);
 			name = TableViews;
 			path = ..;
@@ -417,7 +414,6 @@
 				876290241C18E1B400D2870E /* SourceSansPro-Black.ttf in Resources */,
 				876290251C18E1B400D2870E /* SourceSansPro-BlackIt.ttf in Resources */,
 				876290261C18E1B400D2870E /* SourceSansPro-Bold.ttf in Resources */,
-				5BDAB6161C5517A500A4D38E /* LocationList.xib in Resources */,
 				876290271C18E1B400D2870E /* SourceSansPro-BoldIt.ttf in Resources */,
 				876290281C18E1B400D2870E /* SourceSansPro-ExtraLight.ttf in Resources */,
 				876290291C18E1B400D2870E /* SourceSansPro-ExtraLightIt.ttf in Resources */,
