@@ -10,12 +10,13 @@ import UIKit
 
 class UserVC: UIViewController {
 
+    var tabVC:UserTabVC?
+    
     var user:User = User(id: "569e4a83a6e5bb503b838306")
     var userLocations: [Location]?
     
-    //keep UserTabVC reference
-    var tabVC:UserTabVC?
-    
+    @IBOutlet weak var locationsCount: UILabel!
+    @IBOutlet weak var followersCount: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
     
@@ -52,6 +53,8 @@ class UserVC: UIViewController {
         self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2
         self.profileImage.clipsToBounds = true
         self.userName.text = self.user.name
+        self.locationsCount.text = "\(self.user.locationCount!)"
+        self.followersCount.text = "\(self.user.followerCount!)"
     }
     
 
