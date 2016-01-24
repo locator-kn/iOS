@@ -405,6 +405,9 @@
                                     <constraint firstAttribute="height" constant="16" id="Wl4-Fj-cKF"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="follow"/>
+                                <connections>
+                                    <action selector="followButton:" destination="G1J-vh-MOc" eventType="touchUpInside" id="sYs-b9-IxE"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3b-5S-bA6" userLabel="message">
                                 <rect key="frame" x="520" y="242" width="20" height="16"/>
@@ -413,6 +416,9 @@
                                     <constraint firstAttribute="height" constant="16" id="qKn-fj-usI"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="message"/>
+                                <connections>
+                                    <action selector="sendMessageButton:" destination="G1J-vh-MOc" eventType="touchUpInside" id="dfq-sz-1VA"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="70b-WD-Cs7">
                                 <rect key="frame" x="20" y="245" width="84" height="13"/>
@@ -540,9 +546,11 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="followButton" destination="Ohi-hV-ckE" id="Sxw-9C-Pug"/>
                         <outlet property="followersCount" destination="OsS-vF-js4" id="bxN-ko-jPz"/>
                         <outlet property="locationsCount" destination="xol-eP-mwD" id="dCk-nP-AyX"/>
                         <outlet property="profileImage" destination="1vC-Kz-1OR" id="mCs-1T-SeV"/>
+                        <outlet property="sendMessageButton" destination="A3b-5S-bA6" id="qe7-Pc-P9V"/>
                         <outlet property="userName" destination="AmX-xK-xdD" id="7u6-cn-Cjy"/>
                     </connections>
                 </viewController>
@@ -1309,10 +1317,10 @@
             </objects>
             <point key="canvasLocation" x="2587" y="-555"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Main NavigationVC-->
         <scene sceneID="CaI-Rj-3Q3">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="U8m-eU-1FD" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="U8m-eU-1FD" customClass="MainNavigationVC" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="X0b-b2-nqe">
@@ -1322,6 +1330,7 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ItB-To-HKa"/>
+                        <segue destination="7jn-ok-tDo" kind="show" identifier="dashboard" id="MIt-5w-2Dv"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xbo-2h-uaj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1951,9 +1960,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ryZ-VE-cuy"/>
-        <segue reference="ngF-gl-Sbv"/>
+        <segue reference="MIt-5w-2Dv"/>
+        <segue reference="fiC-UR-uUa"/>
         <segue reference="WG6-zk-XfW"/>
-        <segue reference="m5n-0C-6QV"/>
         <segue reference="EdB-og-2CF"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -22,19 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey("AIzaSyCAweq9kifxj3KO8lU_Z7oZFZlOO8MgsBQ")
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         
-        print(NSUserDefaults.standardUserDefaults().stringForKey("me"))
-        
-        // if a user is set in defaults, redirect to dashboard
-        if (NSUserDefaults.standardUserDefaults().stringForKey("me") != nil) {
-            UserService.protected().then {
-                result -> Void in
-                print("Statuscode Protected", result)
-                if (result != 401) {
-                     self.redirectToDashboard()
-                }
-            }
-        }
-        
         // Facebook
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         FBSDKLoginManager.renewSystemCredentials { (result:ACAccountCredentialRenewResult, error:NSError!) -> Void in
@@ -42,13 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         return true
-    }
-    
-    func redirectToDashboard() {
-        let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewControllerWithIdentifier("dashboard") as UIViewController
-        self.window?.rootViewController = initialViewControlleripad
-        self.window?.makeKeyAndVisible()
     }
 
     func applicationWillResignActive(application: UIApplication) {
