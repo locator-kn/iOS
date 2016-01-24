@@ -31,7 +31,7 @@ class UserTabVC: UIViewController {
         
         locationListCtrl!.title = "Locations"
         followerListCtrl!.title = "Follower"
-        followedByListCtrl!.title = "Followed By"
+        followedByListCtrl!.title = "Folgt"
         
         locationListCtrl?.user = self.user
         followerListCtrl?.user = self.user
@@ -49,7 +49,8 @@ class UserTabVC: UIViewController {
             .MenuItemSeparatorPercentageHeight(0.1),
             .ViewBackgroundColor(UIColor(red: 255/0, green: 255/0, blue: 255/0, alpha: 0)),
             .ScrollMenuBackgroundColor(UIColor(red: 255/0, green: 255/0, blue: 255/0, alpha: 0)),
-            .MenuItemFont(UIFont(name: "SourceSansPro-Regular", size: 18)!)
+            .MenuItemFont(UIFont(name: "SourceSansPro-Regular", size: 18)!),
+            .MenuHeight (50)
         ]
         
         // Initialize page menu with controller array, frame, and optional parameters
