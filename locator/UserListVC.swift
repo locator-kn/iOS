@@ -25,7 +25,7 @@ class UserListVC: UITableViewController {
         self.tableView.estimatedRowHeight = 60.0
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
-        if showFollower {
+        if (showFollower) {
             self.getFollower()
         } else {
             self.getFollowedBy()
@@ -33,15 +33,12 @@ class UserListVC: UITableViewController {
     }
     
     func getFollower() {
-        
-        //fetch user locations
-        UserService.getFollower((user?.id!)!)
+        user?.getFollower()
             .then {
                 result -> Void in
                 self.follower = result
                 self.tableView.reloadData()
                 print("Fetch Follower By user success", self.user?.id)
-                print(self.follower)
             }
             .error {
                 error -> Void in
@@ -51,15 +48,12 @@ class UserListVC: UITableViewController {
     }
     
     func getFollowedBy() {
-        
-        //fetch user locations
-        UserService.getFollower((user?.id!)!)
+        user?.getFollowedBy()
             .then {
                 result -> Void in
                 self.follower = result
                 self.tableView.reloadData()
-                print("Fetch FollowedBy success", self.user?.id)
-                print(self.follower)
+                print("Fetch getFollowedBy success", self.user?.id)
             }
             .error {
                 error -> Void in
@@ -67,7 +61,6 @@ class UserListVC: UITableViewController {
                 print(error)
         }
     }
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

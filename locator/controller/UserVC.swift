@@ -20,14 +20,12 @@ class UserVC: UIViewController {
     @IBOutlet weak var userName: UILabel!
     
     override func viewDidLoad() {
-        print("userid", self.user.id)
-        super.viewDidLoad()
+        print("User with ID: " + self.user.id!)
         
         // fetch user information
         UserService.getUser(user.id!)
             .then {
                 result -> Void in
-                print("request user success", self.user.id)
                 self.user = result
                 self.updateView()
             }
@@ -35,6 +33,8 @@ class UserVC: UIViewController {
                 error -> Void in
                 print(error)
         }
+        
+        super.viewDidLoad()
         
     }
 
@@ -49,10 +49,8 @@ class UserVC: UIViewController {
     
     func updateView() {
         self.profileImage.image = self.user.profilImage
-        
         self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2
         self.profileImage.clipsToBounds = true
-        
         self.userName.text = self.user.name
     }
     

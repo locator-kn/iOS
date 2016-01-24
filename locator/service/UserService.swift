@@ -85,7 +85,7 @@ class UserService {
         
         return Promise { fulfill, reject in
             
-            Alamofire.request(.GET, API.BASE_URL + "/users/" + id).validate().responseJSON {
+            Alamofire.request(.GET, API.BASE_URL + "/users/" + id + "?count=followers,locations").validate().responseJSON {
                 response in
                 
                 switch response.result {
@@ -97,7 +97,9 @@ class UserService {
                         let name = json["name"].string!
                         let imagePath = API.IMAGE_URL + json["picture"].string!
                         let image = UIImage(data: UtilService.dataFromPath(imagePath))!
-                        fulfill(User(id: id, name: name, profileImage: image))
+                        let locationCount = json["location_count"].int!
+                        let followerCount = json["follower_count"].int!
+                        fulfill(User(id: id, name: name, profileImage: image, locationCount: locationCount, followerCount: followerCount))
                     }
                     
                 case .Failure(let error):
@@ -107,13 +109,18 @@ class UserService {
         }
     }
     
-    static func getFollower(userId:String) -> Promise<[User]> {
+    static func getFollower(userId:String, following:Bool) -> Promise<[User]> {
         
         return Promise { fulfill, reject in
             
             var follower = [User]()
             
-            Alamofire.request(.GET, API.BASE_URL + "/users/" + userId + "/follower").validate().responseJSON {
+            var routePath = "follower"
+            if following {
+                routePath = "following"
+            }
+            
+            Alamofire.request(.GET, API.BASE_URL + "/users/" + userId + "/" + routePath).validate().responseJSON {
                 response in
                 
                 switch response.result {
@@ -143,6 +150,23 @@ class UserService {
             }
         }
         
+    }
+    
+    static func follow(userId:String) -> Promise<Bool> {
+        
+        return Promise { fulfill, reject in
+            
+            Alamofire.request(.POST, API.BASE_URL + "/users/" + userId + "/follow").validate().responseJSON {
+                response in
+                
+                switch response.result {
+                case .Success:
+                    fulfill(true)
+                case .Failure(let error):
+                    reject(error)
+                }
+            }
+        }
     }
 
 }
