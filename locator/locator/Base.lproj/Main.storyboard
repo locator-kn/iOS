@@ -742,14 +742,14 @@
                                     <action selector="toggleHeatMap:" destination="4Mp-XX-Glu" eventType="touchUpInside" id="D9m-CE-Wwv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfd-XY-2TD" userLabel="back">
-                                <rect key="frame" x="20" y="10" width="17" height="26"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfd-XY-2TD" userLabel="back">
+                                <rect key="frame" x="20" y="30" width="17" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="17" id="yCV-2B-GJl"/>
                                     <constraint firstAttribute="height" constant="26" id="yjI-JH-Ogg"/>
                                 </constraints>
                                 <inset key="contentEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
-                                <state key="normal" backgroundImage="back"/>
+                                <state key="normal" image="back"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TB-2Q-CWr">
                                 <rect key="frame" x="545" y="498" width="35" height="35"/>
@@ -1234,7 +1234,7 @@
                                     <segue destination="G1J-vh-MOc" kind="show" identifier="user" id="nuc-8H-RaZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSm-80-qOv">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSm-80-qOv">
                                 <rect key="frame" x="554" y="31" width="26" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="5Fn-Ss-2PG"/>
