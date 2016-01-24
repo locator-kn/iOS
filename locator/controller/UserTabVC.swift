@@ -35,7 +35,9 @@ class UserTabVC: UIViewController {
         
         locationListCtrl?.user = self.user
         followerListCtrl?.user = self.user
+        followerListCtrl?.showFollower = true
         followedByListCtrl?.user = self.user
+        followerListCtrl?.showFollower = false
         
         controllerArray.append(locationListCtrl!)
         controllerArray.append(followerListCtrl!)
