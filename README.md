@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/locator-kn/ios-app.png?label=ready&title=Ready)](https://waffle.io/locator-kn/ios-app)
 # iOS
 Native app built for iOS devices
 
