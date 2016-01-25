@@ -38,6 +38,13 @@ class Location {
         self.thumb = thumb
     }
     
+    init(id: String, title: String, long: Double, lat: Double, imagePath: String) {
+        self.id = id
+        self.title = title
+        self.geoPosition = (lat: lat, long: long)
+        self.imagePath = imagePath
+    }
+    
     init(id: String, title: String, description:String, long: Double, lat: Double, imagePath: String, favored: Bool, favorites:Int) {
         self.id = id
         self.title = title

@@ -122,12 +122,10 @@ class BubbleVC: UIViewController {
             widthFactor = 0.07
         }
         return Int(widthFactor * Double(width))
-        
     }
     
     func setFrameToRealPosition(frame: CGRect) -> CGRect {
         let realX = frame.origin.x - (frame.width / 2)
-        //let realY = frame.origin.y - (frame.height / 2)
         
         return CGRect(x: realX, y: frame.origin.y, width: frame.width, height: frame.height)
     }
