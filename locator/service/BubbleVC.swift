@@ -15,8 +15,8 @@ class BubbleVC: UIViewController {
     let height = UIScreen.mainScreen().bounds.size.height
     
     let backgroundImage = UIImage(named: "Background-rot.png")
+    let schoenHierImage = UIImage(named: "schoen_hier.png")
     
-    var bubble = BubbleView(frame: CGRect(x: 10, y: 100, width: 100, height: 100))
     var bubbles: [Bubble]?
     var schoenHierBubble: Bubble?
     var userProfileBubble: Bubble?
@@ -27,7 +27,35 @@ class BubbleVC: UIViewController {
         backgroundImageView.image = backgroundImage
         backgroundImageView.contentMode = .ScaleAspectFit
         view.addSubview(backgroundImageView)
-        view.addSubview(bubble)
+        
+        schoenHierBubble = Bubble()
+        schoenHierBubble!.priority = -1
+        schoenHierBubble!.positionFixed = true
+        initSchoenHierBubble()
+        view.addSubview((schoenHierBubble?.view)!)
+        //schoenHierBubble!.view = (BubbleView)layout.findViewById(R.id.schoenHierBubble);
+        
+        userProfileBubble = Bubble()
+        userProfileBubble!.priority = -1
+        userProfileBubble!.positionFixed = true
+        initUserProfileBubble()
+        view.addSubview((userProfileBubble?.view)!)
+        //userProfileBubble!.view = (BubbleView)layout.findViewById(R.id.userProfileBubble);
+    }
+    
+    func initSchoenHierBubble() {
+        let radius = getRadiusByPriority((schoenHierBubble?.priority)!)
+        let frame = setFrameToRealPosition(CGRect(x: 0.5 * width, y: 0.38 * height, width: CGFloat(2 * radius), height: CGFloat(2 * radius)))
+        schoenHierBubble?.view = BubbleView(frame: frame)
+        schoenHierBubble?.view?.radius = Double(radius)
+        schoenHierBubble?.view?.myimageView.image = schoenHierImage
+    }
+    
+    func initUserProfileBubble() {
+        let radius = getRadiusByPriority(2)
+        let frame = setFrameToRealPosition(CGRect(x: 0.5 * width, y: 0.89 * height, width: CGFloat(2 * radius), height: CGFloat(2 * radius)))
+        userProfileBubble?.view = BubbleView(frame: frame)
+        userProfileBubble?.view?.radius = Double(radius)
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,10 +102,33 @@ class BubbleVC: UIViewController {
             let bubble = gravityObject.payload as! Bubble
             if (!bubble.positionFixed) {
                 let posX = gravityObject.x
-                let poxY = gravityObject.y
-                print("Position of bubble: X: \(posX) Y: \(poxY)")
+                let posY = gravityObject.y
+                print("Position of bubble: X: \(posX) Y: \(posY)")
+                bubble.view?.center = CGPoint(x: CGFloat(posX), y: CGFloat(posY))
                 //    layout.setBubbleCenter(bubble.view, posX, posY); "Java"
             }
         }
+    }
+    
+    func getRadiusByPriority(priority: Int) -> Int {
+        var widthFactor = 0.0
+        if (priority == -1) {
+            widthFactor = 0.2
+        } else if (priority == 0) {
+            widthFactor = 0.13
+        } else if (priority == 1) {
+            widthFactor = 0.10
+        } else if (priority == 2) {
+            widthFactor = 0.07
+        }
+        return Int(widthFactor * Double(width))
+        
+    }
+    
+    func setFrameToRealPosition(frame: CGRect) -> CGRect {
+        let realX = frame.origin.x - (frame.width / 2)
+        //let realY = frame.origin.y - (frame.height / 2)
+        
+        return CGRect(x: realX, y: frame.origin.y, width: frame.width, height: frame.height)
     }
 }
