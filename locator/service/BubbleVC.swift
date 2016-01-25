@@ -17,7 +17,9 @@ class BubbleVC: UIViewController {
     let backgroundImage = UIImage(named: "Background-rot.png")
     
     var bubble = BubbleView(frame: CGRect(x: 10, y: 100, width: 100, height: 100))
-    //let backgroundImageView = UIImageView(image: UIImage(named: "Background-rot.png"))
+    var bubbles: [Bubble]?
+    var schoenHierBubble: Bubble?
+    var userProfileBubble: Bubble?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +35,49 @@ class BubbleVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prefersStatusBarHidden() -> Bool {
-        return true
+    class Bubble {
+        var view: BubbleView?
+        var data: AnyObject?
+        var priority: Int?
+        var positionFixed = false
     }
     
+    func toGravityObject(bubble: Bubble) -> GravityObject {
+        let gravityObject = GravityObject(fixedPosition: bubble.positionFixed)
+        gravityObject.payload = bubble
+        gravityObject.radius = Double((bubble.view?.frame.width)!) / 2.0
+        gravityObject.mass = gravityObject.radius * 2
+        gravityObject.x = Double((bubble.view?.center.x)!)
+        gravityObject.y = Double((bubble.view?.center.y)!)
+        return gravityObject
+    }
     
-    
-
+    func simulateGravity() {
+        var gravityObjects = [GravityObject]()
+        for bubble in bubbles! {
+            let gravityObject = toGravityObject(bubble)
+            gravityObjects.append(gravityObject)
+        }
+        
+        let userProfileGravityObject = toGravityObject(userProfileBubble!)
+        userProfileGravityObject.mass = -100
+        gravityObjects.append(userProfileGravityObject)
+        
+        let schoenHierGravityObject = toGravityObject(schoenHierBubble!)
+        schoenHierGravityObject.mass = -100
+        gravityObjects.append(schoenHierGravityObject)
+        
+        let simulator = GravitySimulator(worldGravity: 10.0, width: Double(width), height: Double(height))
+        simulator.simulateGravity(gravityObjects, times: 200)
+        
+        for gravityObject in gravityObjects {
+            let bubble = gravityObject.payload as! Bubble
+            if (!bubble.positionFixed) {
+                let posX = gravityObject.x
+                let poxY = gravityObject.y
+                print("Position of bubble: X: \(posX) Y: \(poxY)")
+                //    layout.setBubbleCenter(bubble.view, posX, posY); "Java"
+            }
+        }
+    }
 }
