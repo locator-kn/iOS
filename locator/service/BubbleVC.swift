@@ -17,7 +17,12 @@ class BubbleVC: UIViewController {
     let backgroundImage = UIImage(named: "Background-rot.png")
     let schoenHierImage = UIImage(named: "schoen_hier.png")
     
-    var bubbles: [Bubble]?
+    let long = 9.169753789901733
+    let lat = 47.66868204997508
+    let maxDistance: Float = 2.0
+    let limit = 20
+    
+    var bubbles = [Bubble]()
     var schoenHierBubble: Bubble?
     var userProfileBubble: Bubble?
 
@@ -41,6 +46,29 @@ class BubbleVC: UIViewController {
         initUserProfileBubble()
         view.addSubview((userProfileBubble?.view)!)
         //userProfileBubble!.view = (BubbleView)layout.findViewById(R.id.userProfileBubble);
+        
+        BubbleService.getBubbles(lat, long: long, maxDistance: maxDistance, limit: limit).then { bubbles -> Void in
+            let messageArray = bubbles[0]
+            let locationArray = bubbles[1]
+            
+            let messages = messageArray as! [Message]
+            let locations = locationArray as! [Location]
+            
+            for var i = 0; i < 3; ++i { // maximum amount of bubbles
+                let bubble = Bubble()
+                bubble.data = messages[i]
+                self.bubbles.append(bubble)
+            }
+            
+            for var i = 0; i < 3; ++i { // maximum amount of bubbles
+                let bubble = Bubble()
+                bubble.data = locations[i]
+                self.bubbles.append(bubble)
+            }
+            
+            self.positionBubblesInDifferentQuadrants()
+            self.simulateGravity()
+        }
     }
     
     func initSchoenHierBubble() {
@@ -71,6 +99,7 @@ class BubbleVC: UIViewController {
     }
     
     func toGravityObject(bubble: Bubble) -> GravityObject {
+        bubble.view = BubbleView()
         let gravityObject = GravityObject(fixedPosition: bubble.positionFixed)
         gravityObject.payload = bubble
         gravityObject.radius = Double((bubble.view?.frame.width)!) / 2.0
@@ -82,7 +111,7 @@ class BubbleVC: UIViewController {
     
     func simulateGravity() {
         var gravityObjects = [GravityObject]()
-        for bubble in bubbles! {
+        for bubble in bubbles {
             let gravityObject = toGravityObject(bubble)
             gravityObjects.append(gravityObject)
         }
@@ -105,6 +134,7 @@ class BubbleVC: UIViewController {
                 let posY = gravityObject.y
                 print("Position of bubble: X: \(posX) Y: \(posY)")
                 bubble.view?.center = CGPoint(x: CGFloat(posX), y: CGFloat(posY))
+                self.view.addSubview(bubble.view!)
                 //    layout.setBubbleCenter(bubble.view, posX, posY); "Java"
             }
         }
@@ -128,5 +158,51 @@ class BubbleVC: UIViewController {
         let realX = frame.origin.x - (frame.width / 2)
         
         return CGRect(x: realX, y: frame.origin.y, width: frame.width, height: frame.height)
+    }
+    
+    func positionBubblesInDifferentQuadrants() {
+        let startQuadrant = 1
+        var nextQuadrant = positionBubbles(0, startQuadrant: startQuadrant)
+        nextQuadrant = positionBubbles(1, startQuadrant: nextQuadrant)
+        nextQuadrant = positionBubbles(2, startQuadrant: nextQuadrant)
+    }
+    
+    func positionBubbles(priority: Int, startQuadrant: Int) -> Int {
+        
+        var quadrant = startQuadrant
+        for i in bubbles {
+            if (i.priority == priority) {
+                let bubbleCenter = getInitialBubbleCenter(quadrant)
+                i.view?.frame.origin = bubbleCenter
+                quadrant = ((quadrant) % 4) + 1
+            }
+        }
+        
+        return quadrant
+    }
+    
+    func getInitialBubbleCenter(quadrant: Int) -> CGPoint {
+        let distanceFromBorder: CGFloat = 0.2
+        var distanceFromLeftInPercent: CGFloat = 0.0
+        var distanceFromTopInPercent: CGFloat = 0.0
+        
+        if (quadrant == 1) {
+            distanceFromLeftInPercent = 1.0 - distanceFromBorder
+            distanceFromTopInPercent = distanceFromBorder
+        } else if (quadrant == 2) {
+            distanceFromLeftInPercent = distanceFromBorder
+            distanceFromTopInPercent = distanceFromBorder
+        } else if (quadrant == 3) {
+            distanceFromLeftInPercent = distanceFromBorder
+            distanceFromTopInPercent = 0.9 - distanceFromBorder
+        } else if (quadrant == 4) {
+            distanceFromLeftInPercent = 1.0 - distanceFromBorder
+            distanceFromTopInPercent = 0.9 - distanceFromBorder
+        }
+        
+        let x = distanceFromLeftInPercent * width
+        let y = distanceFromTopInPercent * height
+        
+        return CGPoint(x: x, y: y)
     }
 }
