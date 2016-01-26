@@ -487,11 +487,30 @@
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="jee-TL-oJx"/>
+                                        <exclude reference="A1v-6u-wMu"/>
+                                        <exclude reference="A2Z-pL-meW"/>
+                                        <exclude reference="MLw-rE-fW0"/>
+                                        <exclude reference="PET-55-Kgh"/>
+                                        <exclude reference="WVv-tl-F2M"/>
+                                        <exclude reference="XkW-AJ-2VG"/>
+                                        <exclude reference="daf-yc-Ynq"/>
+                                        <exclude reference="hp1-NP-O6F"/>
+                                        <exclude reference="qLx-Dl-fJY"/>
                                         <exclude reference="7bz-nn-NhV"/>
                                         <exclude reference="8gq-jU-fR4"/>
                                         <exclude reference="H8k-pW-jXy"/>
                                         <exclude reference="Tbl-TB-A69"/>
+                                        <exclude reference="XMS-FZ-geS"/>
+                                        <exclude reference="d26-ai-xLO"/>
+                                        <exclude reference="fSK-GM-DL3"/>
+                                        <exclude reference="hwD-KB-xJP"/>
+                                        <exclude reference="nrr-54-vcT"/>
+                                        <exclude reference="p9N-ni-g8D"/>
                                         <exclude reference="sUg-Wh-kal"/>
+                                        <exclude reference="u1r-0g-kmW"/>
+                                        <exclude reference="w9D-1E-6Dq"/>
+                                        <exclude reference="wvo-QL-hiY"/>
+                                        <exclude reference="y1d-tJ-X9x"/>
                                     </mask>
                                 </variation>
                             </stackView>
@@ -579,20 +598,20 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="schoen_hier" translatesAutoresizingMaskIntoConstraints="NO" id="4eQ-Ud-NA7">
                                             <rect key="frame" x="8" y="8" width="50" height="50"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="2om-vc-Jvg"/>
-                                                <constraint firstAttribute="width" constant="50" id="iIk-VT-YgS"/>
+                                                <constraint firstAttribute="width" constant="50" id="9o9-Cc-CdV"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="MRU-id-WYZ"/>
+                                                <constraint firstAttribute="height" constant="50" id="vFm-q2-ALu"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="k1g-PW-ymf" firstAttribute="leading" secondItem="4eQ-Ud-NA7" secondAttribute="trailing" constant="10" id="0Bq-VL-luE"/>
                                         <constraint firstItem="k1g-PW-ymf" firstAttribute="top" secondItem="t71-m8-jXz" secondAttribute="topMargin" constant="7" id="3f8-Re-tQC"/>
-                                        <constraint firstItem="k1g-PW-ymf" firstAttribute="leading" secondItem="4eQ-Ud-NA7" secondAttribute="trailing" constant="10" id="60Z-mu-1cz"/>
-                                        <constraint firstItem="4eQ-Ud-NA7" firstAttribute="leading" secondItem="t71-m8-jXz" secondAttribute="leadingMargin" id="7bi-70-k4T"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="k1g-PW-ymf" secondAttribute="trailing" constant="-13" id="GJZ-3K-4Ig"/>
+                                        <constraint firstItem="4eQ-Ud-NA7" firstAttribute="centerY" secondItem="t71-m8-jXz" secondAttribute="centerY" id="HNQ-lU-WH4"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="k1g-PW-ymf" secondAttribute="bottom" constant="20" id="Yk5-WQ-BQg"/>
-                                        <constraint firstItem="4eQ-Ud-NA7" firstAttribute="top" secondItem="t71-m8-jXz" secondAttribute="topMargin" id="fJs-ae-eKD"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="4eQ-Ud-NA7" secondAttribute="bottom" constant="-1" id="qLo-jp-ihz"/>
-                                        <constraint firstItem="4eQ-Ud-NA7" firstAttribute="centerY" secondItem="t71-m8-jXz" secondAttribute="centerY" id="wPh-0U-ZjZ"/>
+                                        <constraint firstItem="4eQ-Ud-NA7" firstAttribute="leading" secondItem="t71-m8-jXz" secondAttribute="leadingMargin" id="dv5-iu-Uvw"/>
+                                        <constraint firstItem="4eQ-Ud-NA7" firstAttribute="top" secondItem="t71-m8-jXz" secondAttribute="topMargin" id="ubx-Xp-Mwe"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="70" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -648,18 +667,26 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="schoen_hier" translatesAutoresizingMaskIntoConstraints="NO" id="Ad2-6Q-BFy">
                                             <rect key="frame" x="10" y="5" width="50" height="50"/>
                                             <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="8nr-F6-bJ3"/>
                                                 <constraint firstAttribute="width" constant="50" id="HWw-D0-w0I"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="gQg-gW-jAw"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="zbv-OJ-qrv" firstAttribute="leading" secondItem="Ad2-6Q-BFy" secondAttribute="trailing" constant="10" id="DqR-gy-vkM"/>
+                                        <constraint firstItem="zbv-OJ-qrv" firstAttribute="top" secondItem="Ad2-6Q-BFy" secondAttribute="top" id="Bg6-oQ-1DB"/>
+                                        <constraint firstItem="zbv-OJ-qrv" firstAttribute="leading" secondItem="Ad2-6Q-BFy" secondAttribute="trailing" constant="10" id="LK4-xD-9Cg"/>
                                         <constraint firstItem="Ad2-6Q-BFy" firstAttribute="top" secondItem="9Ky-MU-V4v" secondAttribute="topMargin" constant="-3" id="Lv8-jo-lGk"/>
                                         <constraint firstItem="Ad2-6Q-BFy" firstAttribute="leading" secondItem="9Ky-MU-V4v" secondAttribute="leadingMargin" constant="2" id="WeX-0W-8im"/>
+                                        <constraint firstItem="zbv-OJ-qrv" firstAttribute="top" secondItem="9Ky-MU-V4v" secondAttribute="topMargin" constant="-3" id="ZFE-A2-xZa"/>
+                                        <constraint firstAttribute="trailing" secondItem="zbv-OJ-qrv" secondAttribute="trailing" id="dS0-dP-9Uj"/>
                                         <constraint firstItem="Ad2-6Q-BFy" firstAttribute="centerY" secondItem="9Ky-MU-V4v" secondAttribute="centerY" id="ejZ-bw-XhS"/>
-                                        <constraint firstItem="zbv-OJ-qrv" firstAttribute="top" secondItem="Ad2-6Q-BFy" secondAttribute="top" id="klx-6I-qeg"/>
-                                        <constraint firstAttribute="trailing" secondItem="zbv-OJ-qrv" secondAttribute="trailing" id="tej-pO-Ndu"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="Lv8-jo-lGk"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="70" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
