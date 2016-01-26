@@ -420,16 +420,16 @@
                                     <action selector="sendMessageButton:" destination="G1J-vh-MOc" eventType="touchUpInside" id="dfq-sz-1VA"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="70b-WD-Cs7">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="70b-WD-Cs7">
                                 <rect key="frame" x="20" y="245" width="84" height="13"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xol-eP-mwD" userLabel="locations Count">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xol-eP-mwD" userLabel="locations Count">
                                         <rect key="frame" x="0.0" y="0.0" width="17" height="13"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locations" translatesAutoresizingMaskIntoConstraints="NO" id="DUR-Am-62t">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="locations" translatesAutoresizingMaskIntoConstraints="NO" id="DUR-Am-62t">
                                         <rect key="frame" x="17" y="0.0" width="25" height="13"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="13" id="HcJ-gD-RXe"/>
@@ -442,13 +442,13 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsS-vF-js4">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsS-vF-js4">
                                         <rect key="frame" x="42" y="0.0" width="17" height="13"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="follower" translatesAutoresizingMaskIntoConstraints="NO" id="HPi-Sg-Di2">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="follower" translatesAutoresizingMaskIntoConstraints="NO" id="HPi-Sg-Di2">
                                         <rect key="frame" x="59" y="0.0" width="25" height="13"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="GVG-4x-jYD"/>
@@ -1202,10 +1202,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mek-wv-1ou" userLabel="favorButton">
-                                <rect key="frame" x="536" y="236" width="64" height="64"/>
+                                <rect key="frame" x="548" y="251" width="32" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="64" id="F2s-1n-Dir"/>
-                                    <constraint firstAttribute="height" constant="64" id="nQd-Ec-khc"/>
+                                    <constraint firstAttribute="width" constant="32" id="F2s-1n-Dir"/>
+                                    <constraint firstAttribute="height" constant="32" id="nQd-Ec-khc"/>
                                 </constraints>
                                 <state key="normal" image="favorite_icon"/>
                                 <connections>
@@ -1246,18 +1246,6 @@
                                     <segue destination="G1J-vh-MOc" kind="show" identifier="user" id="nuc-8H-RaZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSm-80-qOv">
-                                <rect key="frame" x="554" y="31" width="26" height="26"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="26" id="5Fn-Ss-2PG"/>
-                                    <constraint firstAttribute="width" constant="26" id="daQ-v0-lgR"/>
-                                </constraints>
-                                <inset key="contentEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
-                                <state key="normal" title="Button" image="map_icon_white"/>
-                                <connections>
-                                    <segue destination="4Mp-XX-Glu" kind="show" identifier="map" id="m5n-0C-6QV"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kds-ee-QSs">
                                 <rect key="frame" x="20" y="31" width="17" height="26"/>
                                 <constraints>
@@ -1271,25 +1259,36 @@
                                     <action selector="backButtonPressed:" destination="EFJ-gN-wRa" eventType="touchUpInside" id="hkl-XF-i8X"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSm-80-qOv" userLabel="mapButton">
+                                <rect key="frame" x="500" y="251" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="J9i-m3-chV"/>
+                                    <constraint firstAttribute="height" constant="32" id="Pf7-Fv-DhA"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
+                                <state key="normal" title="Button" image="map_icon_white"/>
+                                <connections>
+                                    <segue destination="4Mp-XX-Glu" kind="show" identifier="map" id="m5n-0C-6QV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="41J-gR-YgM" firstAttribute="top" secondItem="Kds-ee-QSs" secondAttribute="bottom" constant="-57" id="3f7-jd-1I4"/>
                             <constraint firstItem="2cU-wj-81d" firstAttribute="trailing" secondItem="np5-ZU-hzf" secondAttribute="trailingMargin" id="49D-WY-MPn"/>
-                            <constraint firstItem="mek-wv-1ou" firstAttribute="bottom" secondItem="41J-gR-YgM" secondAttribute="bottom" id="4ct-h8-l3U"/>
+                            <constraint firstItem="mek-wv-1ou" firstAttribute="bottom" secondItem="41J-gR-YgM" secondAttribute="bottom" constant="-17" id="4ct-h8-l3U"/>
                             <constraint firstAttribute="leadingMargin" secondItem="D3T-Ct-y1Z" secondAttribute="leading" id="4hD-VV-mae"/>
+                            <constraint firstItem="NSm-80-qOv" firstAttribute="top" secondItem="mek-wv-1ou" secondAttribute="top" id="6en-ca-bl9"/>
                             <constraint firstItem="pSa-3s-kxC" firstAttribute="top" secondItem="tJz-R4-W5o" secondAttribute="bottom" constant="88" id="76D-Ys-NjH"/>
                             <constraint firstItem="D3T-Ct-y1Z" firstAttribute="leading" secondItem="np5-ZU-hzf" secondAttribute="leadingMargin" id="BiV-qi-bQr"/>
                             <constraint firstItem="78x-uX-9dy" firstAttribute="top" secondItem="Kds-ee-QSs" secondAttribute="top" id="EJZ-EX-cVO"/>
                             <constraint firstItem="D3T-Ct-y1Z" firstAttribute="top" secondItem="hYT-6h-4rW" secondAttribute="bottom" constant="8" symbolic="YES" id="HZ6-VF-Ciq"/>
                             <constraint firstAttribute="trailing" secondItem="41J-gR-YgM" secondAttribute="trailing" id="JOX-6G-nJ8"/>
                             <constraint firstItem="41J-gR-YgM" firstAttribute="top" secondItem="np5-ZU-hzf" secondAttribute="top" id="RPT-2t-Jxe"/>
-                            <constraint firstItem="NSm-80-qOv" firstAttribute="top" secondItem="qCz-hv-8xs" secondAttribute="bottom" constant="11" id="Sa7-Od-JJd"/>
                             <constraint firstItem="tJz-R4-W5o" firstAttribute="top" secondItem="2cU-wj-81d" secondAttribute="bottom" constant="8" symbolic="YES" id="Wbm-Pz-til"/>
                             <constraint firstItem="tJz-R4-W5o" firstAttribute="leading" secondItem="np5-ZU-hzf" secondAttribute="leadingMargin" id="Xo7-0z-IOT"/>
                             <constraint firstItem="78x-uX-9dy" firstAttribute="leading" secondItem="Kds-ee-QSs" secondAttribute="trailing" constant="32" id="aCl-Mx-i7P"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="NSm-80-qOv" secondAttribute="trailing" id="alX-Xr-Vnf"/>
-                            <constraint firstAttribute="trailing" secondItem="mek-wv-1ou" secondAttribute="trailing" id="exY-G7-ddt"/>
+                            <constraint firstAttribute="trailing" secondItem="mek-wv-1ou" secondAttribute="trailing" constant="20" id="exY-G7-ddt"/>
                             <constraint firstItem="2cU-wj-81d" firstAttribute="top" secondItem="41J-gR-YgM" secondAttribute="bottom" constant="63" id="foB-3g-UWc"/>
                             <constraint firstItem="Qc8-Xg-nef" firstAttribute="top" secondItem="41J-gR-YgM" secondAttribute="bottom" constant="8" id="fww-Py-su9"/>
                             <constraint firstItem="hYT-6h-4rW" firstAttribute="leading" secondItem="Qc8-Xg-nef" secondAttribute="leading" id="k7F-fo-3t0"/>
@@ -1297,6 +1296,7 @@
                             <constraint firstItem="Kds-ee-QSs" firstAttribute="leading" secondItem="np5-ZU-hzf" secondAttribute="leadingMargin" id="oKW-Jk-pf0"/>
                             <constraint firstItem="D3T-Ct-y1Z" firstAttribute="top" secondItem="41J-gR-YgM" secondAttribute="bottom" constant="63" id="qR2-Yp-CYc"/>
                             <constraint firstItem="Qc8-Xg-nef" firstAttribute="leading" secondItem="np5-ZU-hzf" secondAttribute="leadingMargin" id="r6E-O3-bFu"/>
+                            <constraint firstItem="mek-wv-1ou" firstAttribute="leading" secondItem="NSm-80-qOv" secondAttribute="trailing" constant="16" id="rkU-iT-LdU"/>
                             <constraint firstItem="tJz-R4-W5o" firstAttribute="trailing" secondItem="np5-ZU-hzf" secondAttribute="trailingMargin" id="tno-z3-JO2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="78x-uX-9dy" secondAttribute="trailing" constant="48" id="y20-xQ-zRJ"/>
                             <constraint firstItem="41J-gR-YgM" firstAttribute="leading" secondItem="np5-ZU-hzf" secondAttribute="leading" id="z3Y-gk-0hD"/>
@@ -1959,10 +1959,10 @@
         <image name="text" width="42" height="37"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ryZ-VE-cuy"/>
         <segue reference="MIt-5w-2Dv"/>
-        <segue reference="fiC-UR-uUa"/>
         <segue reference="WG6-zk-XfW"/>
         <segue reference="EdB-og-2CF"/>
+        <segue reference="m5n-0C-6QV"/>
+        <segue reference="nuc-8H-RaZ"/>
     </inferredMetricsTieBreakers>
 </document>
