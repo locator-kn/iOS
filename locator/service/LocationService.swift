@@ -58,7 +58,7 @@ class LocationService {
                     if let value = response.result.value {
                         let json = JSON(value)
                         for (_,subJson):(String, JSON) in json["results"] {
-                                let lat = subJson["obj"]["geotag"]["coordinates"][1].double
+                            let lat = subJson["obj"]["geotag"]["coordinates"][1].double
                             let long = subJson["obj"]["geotag"]["coordinates"][0].double
                             let createDate = subJson["obj"]["create_date"].string
                             let id = subJson["obj"]["_id"].string

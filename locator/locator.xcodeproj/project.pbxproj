@@ -44,6 +44,8 @@
 		874AF1F41C415BC300F386B0 /* LocatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874AF1F31C415BC300F386B0 /* LocatorVC.swift */; };
 		874AF1F61C415D7F00F386B0 /* AboutUserVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874AF1F51C415D7F00F386B0 /* AboutUserVc.swift */; };
 		874AF1F81C415EA300F386B0 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874AF1F71C415EA300F386B0 /* Color.swift */; };
+		875AF7B61C563F6E000F76AE /* BubbleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875AF7B51C563F6E000F76AE /* BubbleService.swift */; };
+		875AF7B81C56459F000F76AE /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875AF7B71C56459F000F76AE /* Message.swift */; };
 		876290231C1893DE00D2870E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876290221C1893DE00D2870E /* LoginVC.swift */; };
 		876290241C18E1B400D2870E /* SourceSansPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 876290141C187DD700D2870E /* SourceSansPro-Black.ttf */; };
 		876290251C18E1B400D2870E /* SourceSansPro-BlackIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 876290151C187DD700D2870E /* SourceSansPro-BlackIt.ttf */; };
@@ -113,6 +115,8 @@
 		874AF1F31C415BC300F386B0 /* LocatorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocatorVC.swift; sourceTree = "<group>"; };
 		874AF1F51C415D7F00F386B0 /* AboutUserVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUserVc.swift; sourceTree = "<group>"; };
 		874AF1F71C415EA300F386B0 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		875AF7B51C563F6E000F76AE /* BubbleService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleService.swift; sourceTree = "<group>"; };
+		875AF7B71C56459F000F76AE /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		876290141C187DD700D2870E /* SourceSansPro-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Black.ttf"; sourceTree = "<group>"; };
 		876290151C187DD700D2870E /* SourceSansPro-BlackIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-BlackIt.ttf"; sourceTree = "<group>"; };
 		876290161C187DD700D2870E /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Bold.ttf"; sourceTree = "<group>"; };
@@ -189,6 +193,7 @@
 			children = (
 				5BEA72B21C34AFA3005220CD /* impression */,
 				5B4475081C2167BE00C30445 /* Location.swift */,
+				875AF7B71C56459F000F76AE /* Message.swift */,
 				5BAC93D01C23385600FE502F /* SchoenHier.swift */,
 				5B90CCB01C29A56A00108693 /* User.swift */,
 				874AF1F71C415EA300F386B0 /* Color.swift */,
@@ -252,6 +257,7 @@
 				8705071F1C4FC6D1008641BF /* GravitySimulator.swift */,
 				870507211C4FD278008641BF /* BubbleView.swift */,
 				870507231C4FD82B008641BF /* BubbleVC.swift */,
+				875AF7B51C563F6E000F76AE /* BubbleService.swift */,
 			);
 			name = BubbleScreen;
 			sourceTree = "<group>";
@@ -487,6 +493,7 @@
 				5B90CCAF1C299A2400108693 /* UserService.swift in Sources */,
 				5BEA72BC1C34B527005220CD /* VideoImpression.swift in Sources */,
 				5B608C991C49DF2500F5F0DA /* LocationListVC.swift in Sources */,
+				875AF7B81C56459F000F76AE /* Message.swift in Sources */,
 				5BEA72BA1C34B28D005220CD /* ImageImpression.swift in Sources */,
 				87EED3861C4571BE00939E07 /* Questions.swift in Sources */,
 				872DA7CA1C1F156A0041C9D6 /* EmailLoginVC2.swift in Sources */,
@@ -497,6 +504,7 @@
 				5BAC93DF1C26C18500FE502F /* LocationDetailVC.swift in Sources */,
 				874AF1F21C415B1300F386B0 /* WelcomeRegisteredVC.swift in Sources */,
 				874AF1F41C415BC300F386B0 /* LocatorVC.swift in Sources */,
+				875AF7B61C563F6E000F76AE /* BubbleService.swift in Sources */,
 				874AF1F61C415D7F00F386B0 /* AboutUserVc.swift in Sources */,
 				87B6DB721C4674E600CE97DC /* ValidateInputService.swift in Sources */,
 				5BAC93D11C23385600FE502F /* SchoenHier.swift in Sources */,

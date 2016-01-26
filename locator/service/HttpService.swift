@@ -54,4 +54,8 @@ struct API {
     static let USER_REGISTER = "\(BASE_URL)/users/register"
     static let USER_LOGOUT = "\(BASE_URL)/users/logout"
     static let USER_PROTECTED = "\(BASE_URL)/users/protected"
+    static let BUBBLE_INPUT = "\(BASE_URL)/my/bubblescreen"
 }
+
+
+

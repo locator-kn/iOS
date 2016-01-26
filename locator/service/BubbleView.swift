@@ -22,6 +22,12 @@ public class BubbleView: UIView {
         super.init(coder: aDecoder)!
     }
     
+    init() {
+        let frame = CGRect(x: 50, y: 50, width: 50, height: 50)
+        super.init(frame: frame)
+        self.backgroundColor = UIColor.clearColor()
+    }
+    
     public var mycenter = CGPoint(x: 0, y: 0)
     public var radius = 80.0
     
