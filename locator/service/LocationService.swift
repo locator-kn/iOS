@@ -31,7 +31,13 @@ class LocationService {
                             let long = subJson["obj"]["geotag"]["coordinates"][0].double
                             let title = subJson["obj"]["title"].string
                             let id = subJson["obj"]["_id"].string
-                            nearbyLocations.append(Location(id: id!, title: title!, long: long!, lat: lat!))
+                            
+                            var gmapImage = UIImage()
+                            if let imagePath = subJson["obj"]["images"]["normal"].string {
+                                print(imagePath)
+                                gmapImage = UIImage(data: UtilService.dataFromPath(API.IMAGE_URL + imagePath))!
+                            }
+                            nearbyLocations.append(Location(id: id!, title: title!, long: long!, lat: lat!, gmapImage: gmapImage))
                         }
                         fulfill(nearbyLocations)
                     
