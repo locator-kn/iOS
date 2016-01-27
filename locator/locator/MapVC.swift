@@ -274,4 +274,13 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         self.navigationController!.popViewControllerAnimated(true)
     }
     
+    func mapView(mapView: GMSMapView!, markerInfoWindow marker: GMSMarker!) -> UIView! {
+        let infoWindow = NSBundle.mainBundle().loadNibNamed("InfoWindow", owner: self, options: nil).first as! InfoWindow
+        
+        let locationData = marker.userData as? Location
+        infoWindow.title.text = locationData?.title
+        infoWindow.image.image = locationData?.gmapImage
+        return infoWindow
+    }
+    
 }
