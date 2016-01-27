@@ -28,6 +28,7 @@ class BubbleVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let backgroundImageView = UIImageView(frame: CGRectMake(0, 0, width, height))
         backgroundImageView.image = backgroundImage
         backgroundImageView.contentMode = .ScaleAspectFit
@@ -47,6 +48,9 @@ class BubbleVC: UIViewController {
         view.addSubview((userProfileBubble?.view)!)
         //userProfileBubble!.view = (BubbleView)layout.findViewById(R.id.userProfileBubble);
         
+        bubbles.append(schoenHierBubble!)
+        bubbles.append(userProfileBubble!)
+        
         BubbleService.getBubbles(lat, long: long, maxDistance: maxDistance, limit: limit).then { bubbles -> Void in
             let messageArray = bubbles[0]
             let locationArray = bubbles[1]
@@ -55,13 +59,13 @@ class BubbleVC: UIViewController {
             let locations = locationArray as! [Location]
             
             for var i = 0; i < 3; ++i { // maximum amount of bubbles
-                let bubble = Bubble()
+                let bubble = self.makeMessageBubble(messages[i], priority: i)
                 bubble.data = messages[i]
                 self.bubbles.append(bubble)
             }
             
             for var i = 0; i < 3; ++i { // maximum amount of bubbles
-                let bubble = Bubble()
+                let bubble = self.makeLocationBubble(locations[i], priority: i)
                 bubble.data = locations[i]
                 self.bubbles.append(bubble)
             }
@@ -69,11 +73,14 @@ class BubbleVC: UIViewController {
             self.positionBubblesInDifferentQuadrants()
             self.simulateGravity()
         }
+            .then {
+                self.reloadInputViews()
+        }
     }
     
     func initSchoenHierBubble() {
         let radius = getRadiusByPriority((schoenHierBubble?.priority)!)
-        let frame = setFrameToRealPosition(CGRect(x: 0.5 * width, y: 0.38 * height, width: CGFloat(2 * radius), height: CGFloat(2 * radius)))
+        let frame = setFrameToRealPosition(CGRect(x: (0.5 * width), y: 0.38 * height, width: CGFloat(2 * radius), height: CGFloat(2 * radius)))
         schoenHierBubble?.view = BubbleView(frame: frame)
         schoenHierBubble?.view?.radius = Double(radius)
         schoenHierBubble?.view?.myimageView.image = schoenHierImage
@@ -99,13 +106,14 @@ class BubbleVC: UIViewController {
     }
     
     func toGravityObject(bubble: Bubble) -> GravityObject {
-        bubble.view = BubbleView()
         let gravityObject = GravityObject(fixedPosition: bubble.positionFixed)
         gravityObject.payload = bubble
-        gravityObject.radius = Double((bubble.view?.frame.width)!) / 2.0
+        
+        let minimum = min((Double((bubble.view?.frame.width)!)), Double((bubble.view?.frame.height)!))
+        gravityObject.radius = minimum / 2.0
         gravityObject.mass = gravityObject.radius * 2
-        gravityObject.x = Double((bubble.view?.center.x)!)
-        gravityObject.y = Double((bubble.view?.center.y)!)
+        gravityObject.x = Double(((bubble.view?.frame.origin.x)!))
+        gravityObject.y = Double((bubble.view?.frame.origin.y)!)
         return gravityObject
     }
     
@@ -121,7 +129,7 @@ class BubbleVC: UIViewController {
         gravityObjects.append(userProfileGravityObject)
         
         let schoenHierGravityObject = toGravityObject(schoenHierBubble!)
-        schoenHierGravityObject.mass = -100
+        schoenHierGravityObject.mass = 400
         gravityObjects.append(schoenHierGravityObject)
         
         let simulator = GravitySimulator(worldGravity: 10.0, width: Double(width), height: Double(height))
@@ -133,9 +141,8 @@ class BubbleVC: UIViewController {
                 let posX = gravityObject.x
                 let posY = gravityObject.y
                 print("Position of bubble: X: \(posX) Y: \(posY)")
-                bubble.view?.center = CGPoint(x: CGFloat(posX), y: CGFloat(posY))
+                bubble.view?.frame.origin = CGPoint(x: CGFloat(posX), y: CGFloat(posY))
                 self.view.addSubview(bubble.view!)
-                //    layout.setBubbleCenter(bubble.view, posX, posY); "Java"
             }
         }
     }
@@ -174,10 +181,10 @@ class BubbleVC: UIViewController {
             if (i.priority == priority) {
                 let bubbleCenter = getInitialBubbleCenter(quadrant)
                 i.view?.frame.origin = bubbleCenter
+                print("Origin of Bubble \(bubbleCenter)")
                 quadrant = ((quadrant) % 4) + 1
             }
         }
-        
         return quadrant
     }
     
@@ -195,7 +202,7 @@ class BubbleVC: UIViewController {
         } else if (quadrant == 3) {
             distanceFromLeftInPercent = distanceFromBorder
             distanceFromTopInPercent = 0.9 - distanceFromBorder
-        } else if (quadrant == 4) {
+        } else {
             distanceFromLeftInPercent = 1.0 - distanceFromBorder
             distanceFromTopInPercent = 0.9 - distanceFromBorder
         }
@@ -204,5 +211,41 @@ class BubbleVC: UIViewController {
         let y = distanceFromTopInPercent * height
         
         return CGPoint(x: x, y: y)
+    }
+    
+    func makeMessageBubble(message: Message, priority: Int) -> Bubble {
+        
+        let view = BubbleView()
+        view.radius = Double(getRadiusByPriority(priority))
+        print("Radius of Message Bubble: \(view.radius)")
+        view.layer.borderColor = UIColor.yellowColor().CGColor
+        view.layer.borderWidth = getStrokeWidthByPriority(priority)
+        
+        let bubble = Bubble()
+        bubble.data = message
+        bubble.priority = priority
+        bubble.view = view
+        return bubble
+        
+    }
+    
+    func makeLocationBubble(location: Location, priority: Int) -> Bubble {
+        
+        let view = BubbleView()
+        view.radius = Double(getRadiusByPriority(priority))
+        print("Radius of Location Bubble: \(view.radius)")
+        view.layer.borderColor = UIColor.redColor().CGColor
+        view.layer.borderWidth = getStrokeWidthByPriority(priority)
+        
+        let bubble = Bubble()
+        bubble.data = location
+        bubble.priority = priority
+        bubble.view = view
+        return bubble
+        
+    }
+    
+    func getStrokeWidthByPriority(priority: Int) -> CGFloat {
+        return CGFloat(width * 0.013)
     }
 }

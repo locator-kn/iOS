@@ -15,14 +15,14 @@ public class GravityObject {
     var vx = 0.0, vy = 0.0
     var radius = 0.0, mass = 0.0
     var payload: AnyObject?
-    var fixedPosition = false;
+    var fixedPosition = false
     
     init (fixedPosition: Bool) {
-    self.fixedPosition = fixedPosition;
+    self.fixedPosition = fixedPosition
     // todo determine smart initial values for velocity vector
-    self.vx = 0;
-    self.vy = 0;
-    self.payload = nil;
+    self.vx = 0
+    self.vy = 0
+    self.payload = nil
     }
     
     func fixed() -> Bool {
@@ -30,9 +30,9 @@ public class GravityObject {
     }
     
     func distanceTo(other: GravityObject) -> Double {
-    let xDelta = x - other.x;
-    let yDelta = y - other.y;
-    let distance = sqrt(xDelta * xDelta + yDelta * yDelta);
-    return distance;
+    let xDelta = x - other.x
+    let yDelta = y - other.y
+    let distance = sqrt((xDelta * xDelta) + (yDelta * yDelta))
+    return distance
     }
 }
