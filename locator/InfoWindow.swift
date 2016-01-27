@@ -8,7 +8,7 @@
 
 import UIKit
 
-class infoWindow: UIView {
+class InfoWindow: UIView {
 
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var title: UILabel!
