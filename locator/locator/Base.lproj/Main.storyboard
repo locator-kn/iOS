@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7uN-XN-bTP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="U8m-eU-1FD">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -517,7 +517,7 @@
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0H4-fT-IyP">
                                 <rect key="frame" x="0.0" y="266" width="600" height="334"/>
                                 <connections>
-                                    <segue destination="TZr-82-eDo" kind="embed" identifier="tabBarVC" id="r2c-ab-WeE"/>
+                                    <segue destination="TZr-82-eDo" kind="embed" id="duB-uZ-5u4"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -563,7 +563,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mf8-SU-Wd0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3863" y="-1979"/>
+            <point key="canvasLocation" x="3869" y="-2112"/>
         </scene>
         <!--Locations-->
         <scene sceneID="mjm-jW-f3H">
@@ -578,7 +578,7 @@
                                 <rect key="frame" x="0.0" y="28" width="600" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v1j-Kd-2Ju" id="t71-m8-jXz">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="65.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="65"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Headline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1g-PW-ymf">
@@ -656,7 +656,6 @@
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ymJ-MU-S9J" id="9Ky-MU-V4v">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
-
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Headline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbv-OJ-qrv">
@@ -1945,10 +1944,10 @@
         <image name="text" width="42" height="37"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MIt-5w-2Dv"/>
-        <segue reference="WG6-zk-XfW"/>
         <segue reference="EdB-og-2CF"/>
         <segue reference="m5n-0C-6QV"/>
+        <segue reference="MIt-5w-2Dv"/>
+        <segue reference="WG6-zk-XfW"/>
         <segue reference="ryZ-VE-cuy"/>
     </inferredMetricsTieBreakers>
 </document>
