@@ -16,8 +16,12 @@ class Location {
 
     var title:String
     var city:City!
+    
     var imagePath:String!
+    var image: UIImage!
+    var gmapImage:UIImage!
     var thumb:UIImage!
+    
     var description:String!
     var user:User!
     //favored by me
@@ -25,10 +29,11 @@ class Location {
     var favorites:Int!
     var stream:[AbstractImpression]!
     
-    init(id: String, title: String, long: Double, lat: Double) {
+    init(id: String, title: String, long: Double, lat: Double, gmapImage: UIImage) {
         self.id = id
         self.title = title
         self.geoPosition = (lat: lat, long: long)
+        self.gmapImage = gmapImage
     }
     
     init(id: String, title: String, long: Double, lat: Double, thumb:UIImage) {
