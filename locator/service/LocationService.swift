@@ -26,10 +26,10 @@ class LocationService {
         var imagePathXlarge = ""
         
         if (json["images"]["xlarge"].string != nil) {
-            imagePathSmall = API.IMAGE_URL + json["images"]["imagePathSmall"].string!
-            imagePathNormal = API.IMAGE_URL + json["images"]["imagePathNormal"].string!
-            imagePathLarge = API.IMAGE_URL + json["images"]["imagePathLarge"].string!
-            imagePathXlarge = API.IMAGE_URL + json["images"]["imagePathXlarge"].string!
+            imagePathSmall = API.IMAGE_URL + json["images"]["small"].string!
+            imagePathNormal = API.IMAGE_URL + json["images"]["normal"].string!
+            imagePathLarge = API.IMAGE_URL + json["images"]["large"].string!
+            imagePathXlarge = API.IMAGE_URL + json["images"]["xlarge"].string!
         }
         
         let userId = json["user_id"].string!
