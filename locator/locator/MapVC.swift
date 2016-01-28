@@ -12,6 +12,8 @@ import CoreLocation
 
 class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, GMSMapViewDelegate {
     
+    var infoWindow: InfoWindow?
+    
     var locationManager: CLLocationManager = CLLocationManager()
     var nearLocations = [String: Location]()
     var nearSchoenHiers = [String: SchoenHier]()
@@ -75,7 +77,7 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
             }
             
             for (_, location) in locationsOfInterest {
-                self.showLocationMarker(location.getGeoPosition().lat, long: location.getGeoPosition().long,
+                self.showLocationMarker(location.geoPosition.lat, long: location.geoPosition.long,
                     location:location, interesting:true)
             }
         }
@@ -89,7 +91,7 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
                 
                 if (self.nearLocations[location.id] == nil && self.locationsOfInterest[location.id] == nil) {
                     self.nearLocations[location.id] = location
-                    self.showLocationMarker(location.getGeoPosition().lat, long: location.getGeoPosition().long, location:location, interesting: false)
+                    self.showLocationMarker(location.geoPosition.lat, long: location.geoPosition.long, location:location, interesting: false)
                 }
             }
         }
@@ -275,12 +277,16 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     }
     
     func mapView(mapView: GMSMapView!, markerInfoWindow marker: GMSMarker!) -> UIView! {
-        let infoWindow = NSBundle.mainBundle().loadNibNamed("InfoWindow", owner: self, options: nil).first as! InfoWindow
+        infoWindow = NSBundle.mainBundle().loadNibNamed("InfoWindow", owner: self, options: nil).first as? InfoWindow
         
         let locationData = marker.userData as? Location
-        infoWindow.title.text = locationData?.title
-        infoWindow.image.image = locationData?.gmapImage
+        infoWindow!.title.text = locationData?.title
+        infoWindow!.location = locationData
+        infoWindow!.image.image = UIImage(data: UtilService.dataFromPath((locationData!.imagePathNormal)!))
+        print("returned")
+        
         return infoWindow
     }
+    
     
 }
