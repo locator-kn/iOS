@@ -63,11 +63,11 @@ public class GravitySimulator {
             if (distance == 0) {
                 continue
             }
-            let dx = -gravityObject.x + other.x
-            let dy = -gravityObject.y + other.y
+            let dx = (-gravityObject.x + other.x) /// 2
+            let dy = (-gravityObject.y + other.y) /// 2
             let cos = dx / distance
             let sin = dy / distance
-            let forceGravity = worldGravity * (gravityObject.mass * other.mass) / (distance * distance)
+            let forceGravity = (worldGravity * (gravityObject.mass * other.mass) / (distance * distance))
             
             let vx = gravityObject.vx + (cos * forceGravity)
             let vy = gravityObject.vy + (sin * forceGravity)
@@ -80,9 +80,9 @@ public class GravitySimulator {
             }
         }
         
-        gravityObject.x = bound(gravityObject.radius,
+        gravityObject.x = bound(gravityObject.radius / 2,
             val: gravityObject.x + gravityObject.vx, max: width - gravityObject.radius)
-        gravityObject.y = bound(gravityObject.radius,
+        gravityObject.y = bound(gravityObject.radius / 2,
             val: gravityObject.y + gravityObject.vy, max: height - gravityObject.radius)
     }
     

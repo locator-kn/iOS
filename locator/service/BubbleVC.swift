@@ -141,7 +141,7 @@ class BubbleVC: UIViewController {
                 let posX = gravityObject.x
                 let posY = gravityObject.y
                 print("Position of bubble: X: \(posX) Y: \(posY)")
-                bubble.view?.frame.origin = CGPoint(x: CGFloat(posX), y: CGFloat(posY))
+                bubble.view?.center = CGPoint(x: CGFloat(posX), y: CGFloat(posY))
                 self.view.addSubview(bubble.view!)
             }
         }
