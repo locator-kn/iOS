@@ -34,24 +34,13 @@ class LocationService {
         
         let userId = json["user_id"].string!
         
-        //if location favored by myself
-        var favored = false
-        for (_,subJson):(String, JSON) in json["favorites"] {
-            
-            if (subJson.string == UtilService.getMyId()) {
-                favored = true
-                break
-            }
-        }
-        
         let cityTitle = json["city"]["title"].string!
         let cityId = json["city"]["place_id"].string!
         let city = City(id: cityId, title: cityTitle)
         
-        return Location(id: id!, title: title!, description: description!, long: long!, lat: lat!, city: city, imagePathSmall: imagePathSmall, imagePathNormal: imagePathNormal, imagePathLarge: imagePathLarge, imagePathXlarge: imagePathXlarge, favored: favored, favorites: 0, user: User(id: userId))
+        return Location(id: id!, title: title!, description: description!, long: long!, lat: lat!, city: city, imagePathSmall: imagePathSmall, imagePathNormal: imagePathNormal, imagePathLarge: imagePathLarge, imagePathXlarge: imagePathXlarge, favored: false, favorites: 0, user: User(id: userId))
         
     }
-    
     
     static func getNearby(lat: Double, long:Double, maxDistance:Float, limit:Int) -> Promise<[Location]> {
         
@@ -136,11 +125,10 @@ class LocationService {
         }
     }
     
-
     static func locationById(id: String) -> Promise<Location> {
         return Promise { fulfill, reject in
             
-            Alamofire.request(.GET, "https://locator-app.com/api/v2/locations/" + id).validate().responseJSON { response in
+            Alamofire.request(.GET, API.BASE_URL + "/locations/" + id).validate().responseJSON { response in
                 switch response.result {
                 case .Success:
                     
@@ -148,6 +136,14 @@ class LocationService {
                         let json = JSON(value)
                         
                         let location = self.jsonToLocation(json)
+                        
+                        //if location favored by myself
+                        for (_,subJson):(String, JSON) in json["favorites"] {
+                            if (subJson.string == UtilService.getMyId()) {
+                                location.favored = true
+                                break
+                            }
+                        }
                         
                         UserService.getUser(location.user.id!).then {
                             result -> Void in
