@@ -13,6 +13,46 @@ import PromiseKit
 
 class LocationService {
     
+    static func jsonToLocation(json: JSON) -> Location {
+        let id = json["_id"].string
+        let title = json["title"].string
+        let lat = json["geotag"]["coordinates"][1].double
+        let long = json["geotag"]["coordinates"][0].double
+        let description = json["description"].string
+        
+        var imagePathSmall = ""
+        var imagePathNormal = ""
+        var imagePathLarge = ""
+        var imagePathXlarge = ""
+        
+        if (json["images"]["xlarge"].string != nil) {
+            imagePathSmall = API.IMAGE_URL + json["images"]["imagePathSmall"].string!
+            imagePathNormal = API.IMAGE_URL + json["images"]["imagePathNormal"].string!
+            imagePathLarge = API.IMAGE_URL + json["images"]["imagePathLarge"].string!
+            imagePathXlarge = API.IMAGE_URL + json["images"]["imagePathXlarge"].string!
+        }
+        
+        let userId = json["user_id"].string!
+        
+        //if location favored by myself
+        var favored = false
+        for (_,subJson):(String, JSON) in json["favorites"] {
+            
+            if (subJson.string == UtilService.getMyId()) {
+                favored = true
+                break
+            }
+        }
+        
+        let cityTitle = json["city"]["title"].string!
+        let cityId = json["city"]["place_id"].string!
+        let city = City(id: cityId, title: cityTitle)
+        
+        return Location(id: id!, title: title!, description: description!, long: long!, lat: lat!, city: city, imagePathSmall: imagePathSmall, imagePathNormal: imagePathNormal, imagePathLarge: imagePathLarge, imagePathXlarge: imagePathXlarge, favored: favored, favorites: 0, user: User(id: userId))
+        
+    }
+    
+    
     static func getNearby(lat: Double, long:Double, maxDistance:Float, limit:Int) -> Promise<[Location]> {
         
         return Promise { fulfill, reject in
@@ -26,21 +66,9 @@ class LocationService {
                     if let value = response.result.value {
                         let json = JSON(value)
                         for (_,subJson):(String, JSON) in json["results"] {
-                        
-                            let lat = subJson["obj"]["geotag"]["coordinates"][1].double
-                            let long = subJson["obj"]["geotag"]["coordinates"][0].double
-                            let title = subJson["obj"]["title"].string
-                            let id = subJson["obj"]["_id"].string
-                            
-                            var gmapImage = UIImage()
-                            if let imagePath = subJson["obj"]["images"]["normal"].string {
-                                print(imagePath)
-                                gmapImage = UIImage(data: UtilService.dataFromPath(API.IMAGE_URL + imagePath))!
-                            }
-                            nearbyLocations.append(Location(id: id!, title: title!, long: long!, lat: lat!, gmapImage: gmapImage))
+                            nearbyLocations.append(self.jsonToLocation(subJson["obj"]))
                         }
                         fulfill(nearbyLocations)
-                    
                     }
                 case .Failure(let error):
                     reject(error)
@@ -118,40 +146,13 @@ class LocationService {
                     
                     if let value = response.result.value {
                         let json = JSON(value)
-                        let id = json["_id"].string
-                        let title = json["title"].string
-                        let lat = json["geotag"]["coordinates"][1].double
-                        let long = json["geotag"]["coordinates"][0].double
-        
-                        let description = json["description"].string
                         
-                        var imagePath = ""
+                        let location = self.jsonToLocation(json)
                         
-                        if (json["images"]["xlarge"].string != nil) {
-                            imagePath = "https://locator-app.com/" + json["images"]["xlarge"].string!
-                        }
-                        
-                        let userId = json["user_id"].string!
-                        
-                        //if location favored by myself
-                        var favored = false
-                        for (_,subJson):(String, JSON) in json["favorites"] {
-                            
-                            if (subJson.string == UtilService.getMyId()) {
-                                favored = true
-                                break
-                            }
-                        }
-                        
-                        let cityTitle = json["city"]["title"].string!
-                        let cityId = json["city"]["place_id"].string!
-                        let city = City(id: cityId, title: cityTitle)
-                        
-                        UserService.getUser(userId).then {
-                            user -> Void in
-                            
-                            fulfill((Location(id: id!, title: title!, description: description!, long: long!, lat: lat!, city: city, imagePath: imagePath, favored: favored, favorites: 0, user: user)))
-                            
+                        UserService.getUser(location.user.id!).then {
+                            result -> Void in
+                            location.user = result
+                            fulfill(location)
                         }
                     }
                     
@@ -168,25 +169,14 @@ class LocationService {
             
             var userLocations = [Location]()
             
-            Alamofire.request(.GET, "https://locator-app.com/api/v2/locations/users/" + userId).validate().responseJSON { response in
+            Alamofire.request(.GET, API.BASE_URL + "/locations/users/" + userId).validate().responseJSON { response in
                 switch response.result {
                 case .Success:
                     
                     if let value = response.result.value {
                         let json = JSON(value)
                         for (_,subJson):(String, JSON) in json {
-                            
-                            let lat = subJson["geotag"]["coordinates"][1].double!
-                            let long = subJson["geotag"]["coordinates"][0].double!
-                            let title = subJson["title"].string!
-                            let id = subJson["_id"].string!
-                            
-                            var thumb = UIImage()
-                            if let imagePath = subJson["images"]["small"].string {
-                                thumb = UIImage(data: UtilService.dataFromPath(API.IMAGE_URL + imagePath))!
-                            }
-                            
-                            userLocations.append(Location(id: id, title: title, long: long, lat: lat, thumb:thumb))
+                            userLocations.append(self.jsonToLocation(subJson))
                         }
                         fulfill(userLocations)
                     }
@@ -200,7 +190,7 @@ class LocationService {
     static func favLocation(id: String) -> Promise<(Int, Bool)> {
         return Promise { fulfill, reject in
             
-            Alamofire.request(.POST, "https://locator-app.com/api/v2/locations/" + id + "/favor").validate().responseJSON { response in
+            Alamofire.request(.POST, API.BASE_URL + "/locations/" + id + "/favor").validate().responseJSON { response in
                 switch response.result {
                 case .Success:
                     
@@ -220,7 +210,7 @@ class LocationService {
     static func getStream(id: String) -> Promise<[AbstractImpression]> {
         return Promise { fulfill, reject in
             
-            Alamofire.request(.GET, "https://locator-app.com/api/v2/locations/" + id + "/stream").validate().responseJSON { response in
+            Alamofire.request(.GET, API.BASE_URL + "/locations/" + id + "/stream").validate().responseJSON { response in
                 switch response.result {
                 case .Success:
                     
@@ -269,7 +259,7 @@ class LocationService {
     static func addTextImpression(id: String, data:String) -> Promise<Bool> {
         return Promise { fulfill, reject in
             
-            Alamofire.request(.POST, "https://locator-app.com/api/v2/locations/" + id + "/impression/text", parameters: ["data": data]).validate().responseJSON { response in
+            Alamofire.request(.POST, API.BASE_URL + "/locations/" + id + "/impression/text", parameters: ["data": data]).validate().responseJSON { response in
                 switch response.result {
                 case .Success:
                     
@@ -288,7 +278,7 @@ class LocationService {
             
             Alamofire.upload(
                 .POST,
-                "https://locator-app.com/api/v2/locations/" + id + "/impression/image",
+                API.BASE_URL + "/locations/" + id + "/impression/image",
                 multipartFormData: { multipartFormData in
                     multipartFormData.appendBodyPart(data: UIImageJPEGRepresentation(data, 1.0)!, name: "file", fileName: "impression.jpg", mimeType: "image/jpeg")
                 },
