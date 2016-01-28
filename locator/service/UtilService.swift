@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import Haneke
+import PromiseKit
 
 class UtilService {
  
@@ -19,6 +21,15 @@ class UtilService {
     
     static func dataFromPath(path:String) -> NSData {
         return NSData(contentsOfURL: NSURL(string: path)!)!
+    }
+    
+    static func dataFromCache(path:String) -> Promise<NSData> {
+        return Promise { fulfill, reject in
+            let cache = Shared.dataCache
+            cache.fetch(URL: NSURL(string: path)!).onSuccess { data in
+                fulfill(data)
+            }
+        }
     }
     
     static func roundImageView(imageview: UIImageView) -> UIImageView {
