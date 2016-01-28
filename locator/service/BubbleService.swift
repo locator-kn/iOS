@@ -40,16 +40,7 @@ class BubbleService {
                         }
                         
                         for (_,subJson):(String, JSON) in json["locations"] {
-                            let id = subJson["obj"]["_id"].string
-                            let title = subJson["obj"]["title"].string
-                            let lat = subJson["obj"]["geotag"]["coordinates"][1].double
-                            let long = subJson["obj"]["geotag"]["coordinates"][0].double
-                            var imagePath = ""
-                            if (subJson["obj"]["images"]["normal"].string != nil) {
-                                imagePath = "https://locator-app.com/" + subJson["obj"]["images"]["normal"].string!
-                            }
-                            let location = Location(id: id!, title: title!, long: long!, lat: lat!, imagePath: imagePath)
-                            locations.append(location)
+                            locations.append(LocationService.jsonToLocation(subJson["obj"]))
                         }
                         
                         bubbles.append(messages)
