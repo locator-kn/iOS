@@ -37,7 +37,7 @@ class LocationDetailVC: UIViewController {
             
             self.location = result
 
-            UtilService.dataFromCache(self.location.imagePath).then {
+            UtilService.dataFromCache(self.location.imagePathNormal).then {
                 result -> Void in
                 self.imageView.image = UIImage(data: result)
             }
