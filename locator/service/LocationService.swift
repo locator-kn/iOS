@@ -214,7 +214,7 @@ class LocationService {
     static func getStream(id: String) -> Promise<[AbstractImpression]> {
         return Promise { fulfill, reject in
             
-            Alamofire.request(.GET, "https://locator-app.com/api/v2/locations/" + id + "/stream").validate().responseJSON { response in
+            Alamofire.request(.GET, "https://locator-app.com/api/v2/locations/" + id + "/impressions").validate().responseJSON { response in
                 switch response.result {
                 case .Success:
                     
