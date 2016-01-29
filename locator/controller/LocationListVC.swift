@@ -68,8 +68,15 @@ class LocationListVC: UITableViewController {
         let location = locations![indexPath.row]
 
         cell.locationTitle.text = location.title
-        cell.locationImage.image = UIImage(data: UtilService.dataFromPath(location.imagePathSmall))
-        cell.locationImage = UtilService.roundImageView(cell.locationImage)
+        cell.locationImage.hnk_setImageFromURL(NSURL(fileURLWithPath: location.imagePathSmall))
+        
+        UtilService.dataFromCache(location.imagePathSmall).then {
+            result -> Void in
+                if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? LocationCell {
+                    cellToUpdate.locationImage.image = UIImage(data: result)
+                    cell.locationImage = UtilService.roundImageView(cell.locationImage)
+                }
+        }
         
         return cell
     }
