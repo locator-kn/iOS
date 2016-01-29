@@ -13,6 +13,16 @@ import SwiftyJSON
 
 class UserService {
     
+    static func jsonToUser(json: JSON) -> User {
+        let id = json["_id"].string!
+        let email = json["mail"].string!
+        let name = json["name"].string!
+        let residence = json["residence"].string!
+        let imagePathNormal = API.IMAGE_URL + json["picture"].string!
+        let imagePathThumb = API.IMAGE_URL + json["thumb"].string!
+        return User(id: id, email: email, name: name, imagePathNormal: imagePathNormal, imagePathThumb: imagePathThumb, residence: residence)
+    }
+    
     static func login(mail:String, password:String) -> Promise<User> {
         
         return Promise { fulfill, reject in
@@ -25,12 +35,7 @@ class UserService {
                     
                     if let value = response.result.value {
                         let json = JSON(value)
-                            
-                        let id = json["_id"].string
-                        let name = json["name"].string
-                        let email = json["mail"].string
-                       
-                        fulfill(User(id: id!, name: name!, email: email!))
+                        fulfill(self.jsonToUser(json))
                     }
                     
                 case .Failure(let error):
@@ -93,13 +98,15 @@ class UserService {
                     
                     if let value = response.result.value {
                         let json = JSON(value)
-                        let id = json["_id"].string!
-                        let name = json["name"].string!
-                        let imagePath = API.IMAGE_URL + json["picture"].string!
-                        let image = UIImage(data: UtilService.dataFromPath(imagePath))!
+                        
+                        let user = jsonToUser(json)
                         let locationCount = json["location_count"].int!
                         let followerCount = json["follower_count"].int!
-                        fulfill(User(id: id, name: name, profileImage: image, locationCount: locationCount, followerCount: followerCount))
+                        
+                        user.locationCount = locationCount
+                        user.followerCount = followerCount
+                        
+                        fulfill(user)
                     }
                     
                 case .Failure(let error):
@@ -129,17 +136,7 @@ class UserService {
                     if let value = response.result.value {
                         let json = JSON(value)
                         for (_,subJson):(String, JSON) in json {
-                            let id = subJson["_id"].string!
-                            let name = subJson["name"].string!
-                            var image = UIImage()
-                            
-                            if var imagePath = subJson["picture"].string {
-                                if !imagePath.hasPrefix("https://") {
-                                    imagePath = API.IMAGE_URL + imagePath
-                                }
-                                image = UIImage(data: UtilService.dataFromPath(imagePath))!
-                            }
-                            follower.append(User(id: id, name: name, profileImage: image))
+                            follower.append(self.jsonToUser(subJson))
                         }
                         fulfill(follower)
                     }
