@@ -281,9 +281,7 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         
         let locationData = marker.userData as? Location
         infoWindow!.title.text = locationData?.title
-        infoWindow!.location = locationData
         infoWindow!.image.image = UIImage(data: UtilService.dataFromPath((locationData!.imagePathNormal)!))
-        print("returned")
         
         return infoWindow
     }
