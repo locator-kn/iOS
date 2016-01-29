@@ -29,7 +29,7 @@ class LocationListVC: UITableViewController {
     func getLocationsByUser() {
         
         //fetch user locations
-        user?.getLocations()
+        self.user!.getLocations()
             .then {
                 result -> Void in
                 self.locations = result
