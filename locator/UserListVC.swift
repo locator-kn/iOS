@@ -89,14 +89,13 @@ class UserListVC: UITableViewController {
         let singleFollower = follower![indexPath.row]
     
         cell.userName.text = singleFollower.name
+        cell.userImage = UtilService.roundImageView(cell.userImage)
         
         UtilService.dataFromCache(singleFollower.imagePathThumb!).then {
             result -> Void in
             
             if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? UserCell {
-                print(singleFollower.imagePathThumb!)
                 cellToUpdate.userImage.image = UIImage(data: result)
-                cell.userImage = UtilService.roundImageView(cell.userImage)
             }
         }
         

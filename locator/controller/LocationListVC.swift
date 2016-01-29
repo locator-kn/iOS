@@ -68,12 +68,12 @@ class LocationListVC: UITableViewController {
         let location = locations![indexPath.row]
 
         cell.locationTitle.text = location.title
+        cell.locationImage = UtilService.roundImageView(cell.locationImage)
         
         UtilService.dataFromCache(location.imagePathSmall).then {
             result -> Void in
             if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? LocationCell {
                 cellToUpdate.locationImage.image = UIImage(data: result)
-                cell.locationImage = UtilService.roundImageView(cell.locationImage)
             }
         }
         
