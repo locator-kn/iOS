@@ -68,7 +68,6 @@ class LocationListVC: UITableViewController {
         let location = locations![indexPath.row]
 
         cell.locationTitle.text = location.title
-        cell.locationImage.hnk_setImageFromURL(NSURL(fileURLWithPath: location.imagePathSmall))
         
         UtilService.dataFromCache(location.imagePathSmall).then {
             result -> Void in
