@@ -48,9 +48,7 @@ class ImageImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
         } else {
             return
         }
-    
         imageView.image = image
-        
         dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -69,6 +67,7 @@ class ImageImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
         LocationService.addImageImpression(self.locationId, data: image!).then{
             result -> Void in
             print("image upload success")
+            self.navigationController?.popViewControllerAnimated(true)
         }
     }
 
