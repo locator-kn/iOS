@@ -36,7 +36,7 @@ class UserListVC: UITableViewController {
     }
     
     func getFollower() {
-        user?.getFollower()
+        self.user!.getFollower()
             .then {
                 result -> Void in
                 self.follower = result
@@ -50,7 +50,7 @@ class UserListVC: UITableViewController {
     }
     
     func getFollowedBy() {
-        user?.getFollowedBy()
+        self.user!.getFollowedBy()
             .then {
                 result -> Void in
                 self.follower = result
