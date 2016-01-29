@@ -13,6 +13,8 @@ import CoreLocation
 class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, GMSMapViewDelegate {
     
     var infoWindow: InfoWindow?
+    var mapThumb:UIImage?
+    var mapThumbId:String?
     
     var locationManager: CLLocationManager = CLLocationManager()
     var nearLocations = [String: Location]()
@@ -281,7 +283,21 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         
         let locationData = marker.userData as? Location
         infoWindow!.title.text = locationData?.title
-        infoWindow!.image.image = UIImage(data: UtilService.dataFromPath((locationData!.imagePathNormal)!))
+        //infoWindow!.image.image = UIImage(data: UtilService.dataFromPath((locationData!.imagePathNormal)!))
+        
+        
+        if (self.mapThumb != nil && self.mapThumbId == locationData?.id) {
+            infoWindow!.image.image = self.mapThumb
+        } else {
+            UtilService.dataFromCache(locationData!.imagePathNormal).then {
+                result -> Void in
+                self.mapThumb = UIImage(data: result)
+                self.mapThumbId = locationData?.id
+                self.googleMap.selectedMarker = self.googleMap.selectedMarker
+            }
+        }
+        
+        print("Infowindow returned")
         
         return infoWindow
     }
