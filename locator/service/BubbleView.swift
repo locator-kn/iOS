@@ -23,7 +23,7 @@ public class BubbleView: UIView {
     }
     
     init() {
-        let frame = CGRect(x: 50, y: 50, width: 50, height: 50)
+        let frame = CGRect(x: 0, y: 0, width: 50, height: 50) // it seems like priority doesnt affect frame size
         super.init(frame: frame)
         self.backgroundColor = UIColor.clearColor()
     }
@@ -40,12 +40,10 @@ public class BubbleView: UIView {
         self.addSubview(myimageView)
         
         // Shadow
-        self.layer.shadowColor = UIColor.redColor().CGColor
         self.layer.shadowOpacity = 1
         self.layer.shadowOffset = CGSize(width: 0, height: 0)
         
         // Border
-        self.layer.borderColor = UIColor.greenColor().CGColor
         self.layer.borderWidth = 2
         self.layer.cornerRadius = min(rect.width, rect.height) / 2
     }
