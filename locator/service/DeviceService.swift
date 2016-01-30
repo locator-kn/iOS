@@ -16,10 +16,10 @@ class DeviceService {
     static func getDeviceData() -> [String: String] {
         var deviceData = [String: String]()
         deviceData["deviceId"] = UIDevice.currentDevice().identifierForVendor!.UUIDString
-        deviceData["manufacturer"] = "apple"
         deviceData["deviceModel"] = UIDevice.currentDevice().model
         deviceData["version"] = UIDevice.currentDevice().systemVersion
         deviceData["type"] = "ios"
+        deviceData["manufacturer"] = "apple"
         return deviceData
     }
 
