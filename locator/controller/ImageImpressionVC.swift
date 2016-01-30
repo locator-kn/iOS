@@ -7,21 +7,33 @@
 //
 
 import UIKit
+import MediaPlayer
+import MobileCoreServices
+import AVFoundation
 
 class ImageImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     var locationId:String!
     let imagePicker = UIImagePickerController()
+    
     var image:UIImage?
+    var videoData:NSData?
+    var video:Bool = true
+    
     @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // camera configuration
-        imagePicker.delegate = self
-        imagePicker.allowsEditing = true
-        imagePicker.sourceType = UIImagePickerControllerSourceType.Camera;
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+            // camera configuration
+            imagePicker.delegate = self
+            imagePicker.allowsEditing = true
+            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera;
+            if video {
+                imagePicker.mediaTypes = [kUTTypeMovie as String]
+            }
+        }
         
     }
     
@@ -45,13 +57,13 @@ class ImageImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
             image = possibleImage
         } else if let possibleImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
             image = possibleImage
-        } else {
-            return
+        } else if let possibleVideo = info[UIImagePickerControllerMediaURL] as? NSURL! {
+            let tempImage = possibleVideo
+            videoData = NSData(contentsOfURL: tempImage)
         }
-    
         imageView.image = image
-        
         dismissViewControllerAnimated(true, completion: nil)
+
     }
     
     func addFilter(rawImage:UIImage) -> UIImage {
