@@ -13,7 +13,7 @@ import PromiseKit
 
 class ImpressionService {
 
-    static func getStream(id: String) -> Promise<[AbstractImpression]> {
+    static func getImpressions(id: String) -> Promise<[AbstractImpression]> {
         return Promise { fulfill, reject in
             
             Alamofire.request(.GET, API.BASE_URL + "/locations/" + id + "/impressions").validate().responseJSON { response in
