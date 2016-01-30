@@ -32,6 +32,13 @@ class UtilService {
         }
     }
     
+    static func trimPushToken(deviceToken:NSData) -> String {
+        var token = NSString(format: "%@", deviceToken)
+        token = token.stringByReplacingOccurrencesOfString("<",withString: "")
+        token = token.stringByReplacingOccurrencesOfString(">",withString: "")
+        return token.stringByReplacingOccurrencesOfString(" ", withString: "")
+    }
+    
     static func roundImageView(imageview: UIImageView) -> UIImageView {
         imageview.layer.cornerRadius = imageview.frame.size.width / 2
         imageview.clipsToBounds = true
