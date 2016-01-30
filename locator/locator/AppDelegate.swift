@@ -28,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         }
         
+        let settings = UIUserNotificationSettings(forTypes: .Alert, categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+        UIApplication.sharedApplication().registerForRemoteNotifications()
         return true
     }
 
@@ -120,7 +123,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     // MARK: - Facebook
-    
     func application(application: UIApplication,
         openURL url: NSURL,
         sourceApplication: String?,
@@ -130,6 +132,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 openURL: url,
                 sourceApplication: sourceApplication,
                 annotation: annotation)
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        var deviceData = DeviceService.getDeviceData()
+        deviceData["pushToken"] = UtilService.trimPushToken(deviceToken)
+        DeviceService.registerDevice(deviceData)
+            .then {
+                result -> Void in
+                print("Successful device post")
+            }.error {
+                err -> Void in
+                print("error during device post")
+        }
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        print("Couldn't register: \(error)")
     }
 
 }
