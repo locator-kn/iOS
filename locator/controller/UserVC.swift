@@ -52,9 +52,13 @@ class UserVC: UIViewController {
     }
     
     func updateView() {
-        self.profileImage.image = self.user.profilImage
-        self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2
-        self.profileImage.clipsToBounds = true
+    
+        UtilService.dataFromCache(self.user.imagePathNormal!).then {
+            result -> Void in
+            self.profileImage.image = UIImage(data: result)
+            self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2
+            self.profileImage.clipsToBounds = true
+        }
         self.userName.text = self.user.name
         self.locationsCount.text = "\(self.user.locationCount!)"
         self.followersCount.text = "\(self.user.followerCount!)"

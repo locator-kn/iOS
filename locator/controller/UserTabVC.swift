@@ -11,9 +11,9 @@ import UIKit
 class UserTabVC: UIViewController {
     
     var locations:[Location]?
-    var follower:[User]?
-    var following:[User]?
-    var user:User?
+    var follower:[User]!
+    var following:[User]!
+    var user:User!
     
     var pageMenu : CAPSPageMenu?
 
@@ -33,11 +33,11 @@ class UserTabVC: UIViewController {
         followerListCtrl!.title = "Follower"
         followedByListCtrl!.title = "Folgt"
         
-        locationListCtrl?.user = self.user
-        followerListCtrl?.user = self.user
-        followerListCtrl?.showFollower = true
-        followedByListCtrl?.user = self.user
-        followerListCtrl?.showFollower = false
+        locationListCtrl!.user = self.user
+        followerListCtrl!.user = self.user
+        followerListCtrl!.showFollower = true
+        followedByListCtrl!.user = self.user
+        followerListCtrl!.showFollower = false
         
         controllerArray.append(locationListCtrl!)
         controllerArray.append(followerListCtrl!)

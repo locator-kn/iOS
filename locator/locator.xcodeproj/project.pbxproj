@@ -29,6 +29,8 @@
 		5BC5F2F81C3BE55A0092E0E9 /* MapSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5F2F71C3BE55A0092E0E9 /* MapSearchVC.swift */; };
 		5BDAB6141C5514D600A4D38E /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDAB6131C5514D600A4D38E /* CAPSPageMenu.swift */; };
 		5BDAB61A1C5594D300A4D38E /* MainNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDAB6191C5594D300A4D38E /* MainNavigationVC.swift */; };
+		5BDAB61D1C58D38800A4D38E /* InfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BDAB61C1C58D38800A4D38E /* InfoWindow.xib */; };
+		5BDAB61F1C58D6A000A4D38E /* InfoWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDAB61E1C58D6A000A4D38E /* InfoWindow.swift */; };
 		5BEA72B81C34B206005220CD /* AbstractImpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEA72B71C34B206005220CD /* AbstractImpression.swift */; };
 		5BEA72BA1C34B28D005220CD /* ImageImpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEA72B91C34B28D005220CD /* ImageImpression.swift */; };
 		5BEA72BC1C34B527005220CD /* VideoImpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEA72BB1C34B527005220CD /* VideoImpression.swift */; };
@@ -100,6 +102,8 @@
 		5BC5F2F71C3BE55A0092E0E9 /* MapSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapSearchVC.swift; path = controller/MapSearchVC.swift; sourceTree = SOURCE_ROOT; };
 		5BDAB6131C5514D600A4D38E /* CAPSPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CAPSPageMenu.swift; path = ../CAPSPageMenu.swift; sourceTree = "<group>"; };
 		5BDAB6191C5594D300A4D38E /* MainNavigationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainNavigationVC.swift; path = controller/MainNavigationVC.swift; sourceTree = SOURCE_ROOT; };
+		5BDAB61C1C58D38800A4D38E /* InfoWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoWindow.xib; sourceTree = "<group>"; };
+		5BDAB61E1C58D6A000A4D38E /* InfoWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoWindow.swift; sourceTree = "<group>"; };
 		5BEA72B71C34B206005220CD /* AbstractImpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractImpression.swift; sourceTree = "<group>"; };
 		5BEA72B91C34B28D005220CD /* ImageImpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageImpression.swift; sourceTree = "<group>"; };
 		5BEA72BB1C34B527005220CD /* VideoImpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoImpression.swift; sourceTree = "<group>"; };
@@ -238,6 +242,15 @@
 			name = user;
 			sourceTree = "<group>";
 		};
+		5BDAB61B1C58D34F00A4D38E /* nib */ = {
+			isa = PBXGroup;
+			children = (
+				5BDAB61C1C58D38800A4D38E /* InfoWindow.xib */,
+				5BDAB61E1C58D6A000A4D38E /* InfoWindow.swift */,
+			);
+			name = nib;
+			sourceTree = "<group>";
+		};
 		5BEA72B21C34AFA3005220CD /* impression */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,6 +336,7 @@
 				5B44750B1C216E7A00C30445 /* service */,
 				5B44750A1C216A2600C30445 /* model */,
 				87F14D791C18604B00682709 /* controller */,
+				5BDAB61B1C58D34F00A4D38E /* nib */,
 				876290121C18797B00D2870E /* Supporting Files */,
 				87F14D781C18604B00682709 /* Products */,
 				0C379E5A93285B69727480FF /* Pods */,
@@ -420,6 +434,7 @@
 				87F14D881C18604B00682709 /* LaunchScreen.storyboard in Resources */,
 				87F14D851C18604B00682709 /* Assets.xcassets in Resources */,
 				87F14D801C18604B00682709 /* Main.storyboard in Resources */,
+				5BDAB61D1C58D38800A4D38E /* InfoWindow.xib in Resources */,
 				876290241C18E1B400D2870E /* SourceSansPro-Black.ttf in Resources */,
 				876290251C18E1B400D2870E /* SourceSansPro-BlackIt.ttf in Resources */,
 				876290261C18E1B400D2870E /* SourceSansPro-Bold.ttf in Resources */,
@@ -537,6 +552,7 @@
 				5B90CCB31C2A220F00108693 /* DashboardVC.swift in Sources */,
 				5B0C0D9C1C3FE2F80090FB17 /* ImageImpressionVC.swift in Sources */,
 				87ACAD261C21C9B900651B18 /* HttpService.swift in Sources */,
+				5BDAB61F1C58D6A000A4D38E /* InfoWindow.swift in Sources */,
 				876CAA7E1C3BFEAF002A36FF /* RegisterVC1.swift in Sources */,
 				5BAC93E11C2824A500FE502F /* UtilService.swift in Sources */,
 				5BEA72BE1C34B530005220CD /* AudioImpression.swift in Sources */,

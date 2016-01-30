@@ -36,7 +36,7 @@ class UserListVC: UITableViewController {
     }
     
     func getFollower() {
-        user?.getFollower()
+        self.user!.getFollower()
             .then {
                 result -> Void in
                 self.follower = result
@@ -50,7 +50,7 @@ class UserListVC: UITableViewController {
     }
     
     func getFollowedBy() {
-        user?.getFollowedBy()
+        self.user!.getFollowedBy()
             .then {
                 result -> Void in
                 self.follower = result
@@ -89,9 +89,16 @@ class UserListVC: UITableViewController {
         let singleFollower = follower![indexPath.row]
     
         cell.userName.text = singleFollower.name
-        cell.userImage.image = singleFollower.profilImage
         cell.userImage = UtilService.roundImageView(cell.userImage)
-    
+        
+        UtilService.dataFromCache(singleFollower.imagePathThumb!).then {
+            result -> Void in
+            
+            if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? UserCell {
+                cellToUpdate.userImage.image = UIImage(data: result)
+            }
+        }
+        
         return cell
     }
     

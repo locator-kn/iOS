@@ -19,9 +19,12 @@ class User {
     var email:String?
     var residence: String?
     var password: String?
-    var profilImage: UIImage?
+    
     var locationCount:Int?
     var followerCount:Int?
+    
+    var imagePathNormal: String?
+    var imagePathThumb:String?
     
     var locations:[Location]?
     var follower:[User]?
@@ -30,34 +33,14 @@ class User {
     init(id:String) {
         self.id = id
     }
-    
-    init(id:String, name:String, email:String) {
+        
+    init(id: String, email:String, name: String, imagePathNormal: String, imagePathThumb: String, residence: String) {
         self.id = id
-        self.name = name
         self.email = email
-    }
-    
-    init(id:String, name:String, profileImage:UIImage) {
-        self.id = id
         self.name = name
-        self.profilImage = profileImage
-    }
-    
-    init(id:String, name:String, profileImage:UIImage, locationCount:Int, followerCount:Int) {
-        self.id = id
-        self.name = name
-        self.profilImage = profileImage
-        self.locationCount = locationCount
-        self.followerCount = followerCount
-    }
-    
-    init(name: String, email: String, residence: String, password: String, profilImage: UIImage) {
-        self.id = nil
-        self.name = name
-        self.email = email
+        self.imagePathNormal = imagePathNormal
+        self.imagePathThumb = imagePathThumb
         self.residence = residence
-        self.password = password
-        self.profilImage = profilImage
     }
     
     func getFollower() -> Promise<[User]> {

@@ -13,6 +13,7 @@ PODS:
   - FBSDKShareKit (4.9.0-beta2):
     - FBSDKCoreKit (~> 4.9.0-beta)
   - GoogleMaps (1.11.1)
+  - HanekeSwift (0.10.1)
   - OMGHTTPURLRQ (3.0.2):
     - OMGHTTPURLRQ/RQ (= 3.0.2)
   - OMGHTTPURLRQ/FormURLEncode (3.0.2)
@@ -40,6 +41,7 @@ DEPENDENCIES:
   - FBSDKLoginKit (= 4.9.0-beta2)
   - FBSDKShareKit (= 4.9.0-beta2)
   - GoogleMaps
+  - HanekeSwift
   - PromiseKit (~> 3.0)
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
 
@@ -59,6 +61,7 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: d32e83c0d2d39ef74a942543cacae2dc4de7d088
   FBSDKShareKit: 2bd88d784d1d95e4b6e561da3a7b8d448f386ca3
   GoogleMaps: c947160008f414c66707a5ea60f35e92055c7670
+  HanekeSwift: 08e47d3d0f2899ec58e5d257beba0de619aca9e8
   OMGHTTPURLRQ: 8376dc887d76a5a7e2a67881dc788f917a2f437c
   PromiseKit: 19d12914484a15c25a46f72fde38579204a5dac6
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a

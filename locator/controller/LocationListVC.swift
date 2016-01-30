@@ -29,7 +29,7 @@ class LocationListVC: UITableViewController {
     func getLocationsByUser() {
         
         //fetch user locations
-        user?.getLocations()
+        self.user!.getLocations()
             .then {
                 result -> Void in
                 self.locations = result
@@ -68,8 +68,14 @@ class LocationListVC: UITableViewController {
         let location = locations![indexPath.row]
 
         cell.locationTitle.text = location.title
-        cell.locationImage.image = location.thumb
         cell.locationImage = UtilService.roundImageView(cell.locationImage)
+        
+        UtilService.dataFromCache(location.imagePathSmall).then {
+            result -> Void in
+            if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? LocationCell {
+                cellToUpdate.locationImage.image = UIImage(data: result)
+            }
+        }
         
         return cell
     }
