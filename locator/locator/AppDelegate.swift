@@ -140,7 +140,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DeviceService.registerDevice(deviceData)
             .then {
                 result -> Void in
-                print("Successful device post")
+                print("device post success")
             }.error {
                 err -> Void in
                 print("error during device post")
