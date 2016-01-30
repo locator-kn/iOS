@@ -78,7 +78,7 @@ class ImageImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
     }
     
     @IBAction func submitImage(sender: AnyObject) {
-        LocationService.addImageImpression(self.locationId, data: image!).then{
+        ImpressionService.addImageImpression(self.locationId, data: image!).then{
             result -> Void in
             print("image upload success")
             self.navigationController?.popViewControllerAnimated(true)

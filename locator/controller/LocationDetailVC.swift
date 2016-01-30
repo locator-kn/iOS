@@ -63,7 +63,7 @@ class LocationDetailVC: UIViewController {
             print(err)
         }
         
-        LocationService.getStream(location.id).then {
+        ImpressionService.getStream(location.id).then {
             result -> Void in
             
             self.location.stream = result
