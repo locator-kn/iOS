@@ -17,6 +17,7 @@
 		5B4475091C2167BE00C30445 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4475081C2167BE00C30445 /* Location.swift */; };
 		5B44750D1C216E9600C30445 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44750C1C216E9600C30445 /* LocationService.swift */; };
 		5B495C4E1C2061B5000D8974 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B495C4D1C2061B5000D8974 /* MapVC.swift */; };
+		5B4EF1111C5E2559005D8612 /* GpsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4EF1101C5E2559005D8612 /* GpsService.swift */; };
 		5B514AD71C5D3447001B3C17 /* ImpressionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B514AD61C5D3447001B3C17 /* ImpressionService.swift */; };
 		5B514AD91C5D63F7001B3C17 /* DeviceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B514AD81C5D63F7001B3C17 /* DeviceService.swift */; };
 		5B608C991C49DF2500F5F0DA /* LocationListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B608C981C49DF2500F5F0DA /* LocationListVC.swift */; };
@@ -92,6 +93,7 @@
 		5B4475081C2167BE00C30445 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		5B44750C1C216E9600C30445 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		5B495C4D1C2061B5000D8974 /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		5B4EF1101C5E2559005D8612 /* GpsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GpsService.swift; sourceTree = "<group>"; };
 		5B514AD61C5D3447001B3C17 /* ImpressionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImpressionService.swift; sourceTree = "<group>"; };
 		5B514AD81C5D63F7001B3C17 /* DeviceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceService.swift; sourceTree = "<group>"; };
 		5B608C981C49DF2500F5F0DA /* LocationListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationListVC.swift; path = controller/LocationListVC.swift; sourceTree = SOURCE_ROOT; };
@@ -222,6 +224,7 @@
 				5B90CCAE1C299A2400108693 /* UserService.swift */,
 				87B6DB711C4674E600CE97DC /* ValidateInputService.swift */,
 				5B514AD81C5D63F7001B3C17 /* DeviceService.swift */,
+				5B4EF1101C5E2559005D8612 /* GpsService.swift */,
 			);
 			path = service;
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 				872DA7C81C1F06A10041C9D6 /* EmailLoginVC1.swift in Sources */,
 				87F14D7D1C18604B00682709 /* WelcomeVC.swift in Sources */,
 				876CAA801C3C03F8002A36FF /* RegisterVC2.swift in Sources */,
+				5B4EF1111C5E2559005D8612 /* GpsService.swift in Sources */,
 				5B410D741C4F989600B11471 /* UserCell.swift in Sources */,
 				5B495C4E1C2061B5000D8974 /* MapVC.swift in Sources */,
 				876CAA821C3C0411002A36FF /* RegisterVC3.swift in Sources */,
