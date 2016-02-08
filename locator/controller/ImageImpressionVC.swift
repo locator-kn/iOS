@@ -78,11 +78,21 @@ class ImageImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
     }
     
     @IBAction func submitImage(sender: AnyObject) {
-        ImpressionService.addImageImpression(self.locationId, data: image!).then{
-            result -> Void in
-            print("image upload success")
-            self.navigationController?.popViewControllerAnimated(true)
+        
+        if !video {
+            ImpressionService.addImageImpression(self.locationId, data: image!).then{
+                result -> Void in
+                print("image upload success")
+                self.navigationController?.popViewControllerAnimated(true)
+            }
+        } else {
+            ImpressionService.addVideoImpression(self.locationId, data: videoData!).then{
+                result -> Void in
+                print("video upload success")
+                self.navigationController?.popViewControllerAnimated(true)
+            }
         }
+        
     }
 
 }

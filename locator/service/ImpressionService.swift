@@ -102,6 +102,31 @@ class ImpressionService {
             
         }
     }
+    
+    static func addVideoImpression(id: String, data: NSData) -> Promise<Bool> {
+        return Promise { fulfill, reject in
+            
+            Alamofire.upload(
+                .POST,
+                API.BASE_URL + "/locations/" + id + "/impression/video",
+                multipartFormData: { multipartFormData in
+                    multipartFormData.appendBodyPart(data: data, name: "file", fileName: "impression.mov", mimeType: "video/quicktime")
+                },
+                encodingCompletion: { encodingResult in
+                    switch encodingResult {
+                    case .Success(let upload, _, _):
+                        upload.responseJSON { response in
+                            debugPrint(response)
+                        }
+                    case .Failure(let encodingError):
+                        print(encodingError)
+                    }
+                }
+            )
+            
+        }
+    }
+
 
     
 }
