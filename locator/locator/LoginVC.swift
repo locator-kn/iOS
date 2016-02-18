@@ -26,7 +26,7 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "cross"), style: .Plain, target: self, action: "addTapped")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "cross"), style: .Plain, target: self, action: "close")
         
         setButtons()
         // Do any additional setup after loading the view.
@@ -39,6 +39,10 @@ class LoginVC: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func close() {
+        print("close")
     }
     
     func setButtons() {
