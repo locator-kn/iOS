@@ -13,16 +13,8 @@ class MainNavigationVC: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        self.navigationBar.shadowImage = UIImage()
-        self.navigationBar.translucent = true
-        self.navigationBar.barStyle = UIBarStyle.Black
-        self.navigationBar.tintColor = UIColor.whiteColor()
-        self.navigationBar.barTintColor = UIColor.whiteColor()
-        self.navigationBar.backIndicatorImage = UIImage(named: "back")
-        self.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "back")
-        self.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "SourceSansPro-Bold", size: 20)!]
-        
+        styleNaviBar()
+    
         print(NSUserDefaults.standardUserDefaults().stringForKey("me"))
         // if a user is set in defaults, redirect to dashboard
         if (NSUserDefaults.standardUserDefaults().stringForKey("me") != nil) {
@@ -45,7 +37,18 @@ class MainNavigationVC: UINavigationController {
         self.performSegueWithIdentifier("dashboard", sender: self)
     }
     
-
+    func styleNaviBar() {
+        self.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.navigationBar.shadowImage = UIImage()
+        self.navigationBar.translucent = true
+        self.navigationBar.barStyle = UIBarStyle.Black
+        self.navigationBar.tintColor = UIColor.whiteColor()
+        self.navigationBar.barTintColor = UIColor.whiteColor()
+        self.navigationBar.backIndicatorImage = UIImage(named: "back")
+        self.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "back")
+        self.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "SourceSansPro-Bold", size: 20)!]
+    }
+    
     /*
     // MARK: - Navigation
 
