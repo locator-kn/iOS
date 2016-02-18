@@ -13,6 +13,15 @@ class MainNavigationVC: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.navigationBar.shadowImage = UIImage()
+        self.navigationBar.translucent = true
+        
+        self.navigationBar.tintColor = UIColor.whiteColor()
+
+        self.navigationBar.backIndicatorImage = UIImage(named: "back")
+        self.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "back")
+        
         print(NSUserDefaults.standardUserDefaults().stringForKey("me"))
         // if a user is set in defaults, redirect to dashboard
         if (NSUserDefaults.standardUserDefaults().stringForKey("me") != nil) {
