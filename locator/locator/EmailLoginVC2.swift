@@ -56,17 +56,13 @@ class EmailLoginVC2: UIViewController, UITextFieldDelegate {
                 print("Login Error")
                 self.showError()
             }
-            
-            
         } else {
             self.showError()
         }
     }
     
     func showError() {
-        let alert = UIAlertController(title: "Ups", message: "Bitte überprüfe deine Login Daten", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
+        AlertService.simpleAlert(self, title: "ups", message: "Überprüfe deine Login Daten")
     }
     
     /*
