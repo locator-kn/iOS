@@ -47,6 +47,9 @@ class MainNavigationVC: UINavigationController {
         self.navigationBar.backIndicatorImage = UIImage(named: "back")
         self.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "back")
         self.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "SourceSansPro-Bold", size: 20)!]
+        
+        // hide back button text my moving out of view
+        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffsetMake(0, -60), forBarMetrics: .Default)
     }
     
     /*
