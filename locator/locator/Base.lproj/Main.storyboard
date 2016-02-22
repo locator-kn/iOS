@@ -827,14 +827,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="locator_logo" translatesAutoresizingMaskIntoConstraints="NO" id="PiN-jk-PD7">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locator_logo" translatesAutoresizingMaskIntoConstraints="NO" id="PiN-jk-PD7">
                                 <rect key="frame" x="202" y="90" width="196" height="95"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="95" id="naq-sw-x8s"/>
                                     <constraint firstAttribute="width" constant="196" id="qcg-8b-c1X"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" ambiguous="YES" misplaced="YES" text="Wie möchtest du fortfahren?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kT8-HS-qwN">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Wie möchtest du fortfahren?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kT8-HS-qwN">
                                 <rect key="frame" x="20" y="216" width="560" height="95"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="95" id="8zx-Sd-fU4"/>
@@ -843,16 +843,16 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMM-Jb-Txm">
-                                <rect key="frame" x="20" y="474" width="560" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMM-Jb-Txm">
+                                <rect key="frame" x="20" y="470" width="560" height="35"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Semibold" family="Source Sans Pro" pointSize="18"/>
                                 <state key="normal" title="Mit Facebook anmelden"/>
                                 <connections>
                                     <action selector="loginFacebookButtonPressed:" destination="jO7-pV-bbR" eventType="touchUpInside" id="xMH-8e-F8w"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxh-In-BWJ">
-                                <rect key="frame" x="20" y="547" width="560" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxh-In-BWJ">
+                                <rect key="frame" x="20" y="545" width="560" height="35"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Semibold" family="Source Sans Pro" pointSize="18"/>
                                 <state key="normal" title="Neu registrieren"/>
                                 <connections>
@@ -860,8 +860,8 @@
                                     <segue destination="kLY-ZH-3rV" kind="show" id="4T3-le-AMz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ThM-aS-l8j">
-                                <rect key="frame" x="21" y="399" width="560" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ThM-aS-l8j">
+                                <rect key="frame" x="21" y="399" width="560" height="29"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Semibold" family="Source Sans Pro" pointSize="18"/>
                                 <state key="normal" title="Anmelden"/>
                                 <connections>
@@ -873,7 +873,9 @@
                         <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="kT8-HS-qwN" firstAttribute="top" secondItem="PiN-jk-PD7" secondAttribute="bottom" constant="31" id="7hj-Vb-8X0"/>
+                            <constraint firstItem="ThM-aS-l8j" firstAttribute="top" secondItem="kT8-HS-qwN" secondAttribute="bottom" constant="88" id="9vJ-KN-NmK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sMM-Jb-Txm" secondAttribute="trailing" id="O1j-ID-3SB"/>
+                            <constraint firstItem="PiN-jk-PD7" firstAttribute="top" secondItem="A99-uX-Htb" secondAttribute="bottom" constant="90" id="VZt-qF-SB6"/>
                             <constraint firstItem="kxh-In-BWJ" firstAttribute="top" secondItem="sMM-Jb-Txm" secondAttribute="bottom" constant="40" id="XqL-ah-uvx"/>
                             <constraint firstItem="sMM-Jb-Txm" firstAttribute="top" secondItem="ThM-aS-l8j" secondAttribute="bottom" constant="42" id="bOa-RA-S5Z"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kT8-HS-qwN" secondAttribute="trailing" id="bly-bz-KeV"/>
