@@ -79,6 +79,11 @@
 		87F14D831C18604B00682709 /* locator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 87F14D811C18604B00682709 /* locator.xcdatamodeld */; };
 		87F14D851C18604B00682709 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87F14D841C18604B00682709 /* Assets.xcassets */; };
 		87F14D881C18604B00682709 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87F14D861C18604B00682709 /* LaunchScreen.storyboard */; };
+		CCAAF1F41C7B73F6006DF626 /* ConversationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF1F31C7B73F6006DF626 /* ConversationsVC.swift */; };
+		CCAAF1F61C7B749F006DF626 /* ConversationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF1F51C7B749F006DF626 /* ConversationsCell.swift */; };
+		CCAAF1F81C7B788C006DF626 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF1F71C7B788C006DF626 /* Conversation.swift */; };
+		CCAAF1FA1C7B79D0006DF626 /* Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF1F91C7B79D0006DF626 /* Participant.swift */; };
+		CCAAF1FC1C7B7AB8006DF626 /* ConversationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF1FB1C7B7AB8006DF626 /* ConversationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -158,6 +163,11 @@
 		87F14D871C18604B00682709 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87F14D891C18604B00682709 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F065E9F82669863AC08B17B /* Pods_locator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_locator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCAAF1F31C7B73F6006DF626 /* ConversationsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConversationsVC.swift; path = controller/ConversationsVC.swift; sourceTree = SOURCE_ROOT; };
+		CCAAF1F51C7B749F006DF626 /* ConversationsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConversationsCell.swift; path = controller/ConversationsCell.swift; sourceTree = SOURCE_ROOT; };
+		CCAAF1F71C7B788C006DF626 /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
+		CCAAF1F91C7B79D0006DF626 /* Participant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Participant.swift; sourceTree = "<group>"; };
+		CCAAF1FB1C7B7AB8006DF626 /* ConversationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +219,8 @@
 				874AF1F71C415EA300F386B0 /* Color.swift */,
 				87EED3851C4571BE00939E07 /* Questions.swift */,
 				5B410D711C4E4A3000B11471 /* City.swift */,
+				CCAAF1F71C7B788C006DF626 /* Conversation.swift */,
+				CCAAF1F91C7B79D0006DF626 /* Participant.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -225,6 +237,7 @@
 				87B6DB711C4674E600CE97DC /* ValidateInputService.swift */,
 				5B514AD81C5D63F7001B3C17 /* DeviceService.swift */,
 				5B4EF1101C5E2559005D8612 /* GpsService.swift */,
+				CCAAF1FB1C7B7AB8006DF626 /* ConversationService.swift */,
 			);
 			path = service;
 			sourceTree = "<group>";
@@ -373,6 +386,8 @@
 				5BC5F2F71C3BE55A0092E0E9 /* MapSearchVC.swift */,
 				5B608CA11C4A935200F5F0DA /* user */,
 				5BDAB6191C5594D300A4D38E /* MainNavigationVC.swift */,
+				CCAAF1F31C7B73F6006DF626 /* ConversationsVC.swift */,
+				CCAAF1F51C7B749F006DF626 /* ConversationsCell.swift */,
 			);
 			name = controller;
 			path = locator;
@@ -516,6 +531,7 @@
 			files = (
 				5B90CCAF1C299A2400108693 /* UserService.swift in Sources */,
 				5BEA72BC1C34B527005220CD /* VideoImpression.swift in Sources */,
+				CCAAF1F81C7B788C006DF626 /* Conversation.swift in Sources */,
 				5B608C991C49DF2500F5F0DA /* LocationListVC.swift in Sources */,
 				875AF7B81C56459F000F76AE /* Message.swift in Sources */,
 				5BEA72BA1C34B28D005220CD /* ImageImpression.swift in Sources */,
@@ -528,6 +544,7 @@
 				5B514AD71C5D3447001B3C17 /* ImpressionService.swift in Sources */,
 				5BAC93DF1C26C18500FE502F /* LocationDetailVC.swift in Sources */,
 				874AF1F21C415B1300F386B0 /* WelcomeRegisteredVC.swift in Sources */,
+				CCAAF1FA1C7B79D0006DF626 /* Participant.swift in Sources */,
 				874AF1F41C415BC300F386B0 /* LocatorVC.swift in Sources */,
 				875AF7B61C563F6E000F76AE /* BubbleService.swift in Sources */,
 				874AF1F61C415D7F00F386B0 /* AboutUserVc.swift in Sources */,
@@ -546,6 +563,7 @@
 				876CAA821C3C0411002A36FF /* RegisterVC3.swift in Sources */,
 				5B90CCB11C29A56A00108693 /* User.swift in Sources */,
 				5B410D761C4F98B000B11471 /* UserListVC.swift in Sources */,
+				CCAAF1F61C7B749F006DF626 /* ConversationsCell.swift in Sources */,
 				5B410D721C4E4A3000B11471 /* City.swift in Sources */,
 				5B608C9C1C49E4C100F5F0DA /* UserVC.swift in Sources */,
 				8705071E1C4FC4C4008641BF /* GravityObject.swift in Sources */,
@@ -555,12 +573,14 @@
 				876290231C1893DE00D2870E /* LoginVC.swift in Sources */,
 				870507221C4FD278008641BF /* BubbleView.swift in Sources */,
 				5B0C0D981C3D505A0090FB17 /* TextImpressionVC.swift in Sources */,
+				CCAAF1FC1C7B7AB8006DF626 /* ConversationService.swift in Sources */,
 				5B44750D1C216E9600C30445 /* LocationService.swift in Sources */,
 				870507201C4FC6D1008641BF /* GravitySimulator.swift in Sources */,
 				87F14D7B1C18604B00682709 /* AppDelegate.swift in Sources */,
 				5BDAB6141C5514D600A4D38E /* CAPSPageMenu.swift in Sources */,
 				876CAA861C3C0431002A36FF /* RegisterVC5.swift in Sources */,
 				874AF1F81C415EA300F386B0 /* Color.swift in Sources */,
+				CCAAF1F41C7B73F6006DF626 /* ConversationsVC.swift in Sources */,
 				5B90CCB31C2A220F00108693 /* DashboardVC.swift in Sources */,
 				5B0C0D9C1C3FE2F80090FB17 /* ImageImpressionVC.swift in Sources */,
 				87ACAD261C21C9B900651B18 /* HttpService.swift in Sources */,
