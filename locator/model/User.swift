@@ -12,7 +12,7 @@ import PromiseKit
 
 class User {
     
-    static var me:User!
+    static var me:User?
     
     let id:String?
     var name:String?
@@ -83,6 +83,6 @@ class User {
     }
     
     static func getMe() -> User {
-        return self.me
+        return self.me!
     }
 }

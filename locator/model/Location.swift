@@ -27,6 +27,7 @@ class Location {
     //favored by me
     var favored:Bool!
     var favorites:Int!
+    var userWhoFavored:[String]!
     var stream:[AbstractImpression]!
     
     init(id: String, title: String, description:String, long: Double, lat: Double, city:City, imagePathSmall: String, imagePathNormal:String, imagePathLarge: String, imagePathXlarge:String, favored: Bool, favorites:Int, user: User) {

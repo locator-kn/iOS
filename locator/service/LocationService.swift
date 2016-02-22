@@ -38,8 +38,18 @@ class LocationService {
         let cityId = json["city"]["place_id"].string!
         let city = City(id: cityId, title: cityTitle)
         
-        return Location(id: id!, title: title!, description: description!, long: long!, lat: lat!, city: city, imagePathSmall: imagePathSmall, imagePathNormal: imagePathNormal, imagePathLarge: imagePathLarge, imagePathXlarge: imagePathXlarge, favored: false, favorites: 0, user: User(id: userId))
+        //if location favored by myself
         
+        let location = Location(id: id!, title: title!, description: description!, long: long!, lat: lat!, city: city, imagePathSmall: imagePathSmall, imagePathNormal: imagePathNormal, imagePathLarge: imagePathLarge, imagePathXlarge: imagePathXlarge, favored: false, favorites: 0, user: User(id: userId))
+        
+        var favorites = [String]()
+        for (_,subJson):(String, JSON) in json["favorites"] {
+                favorites.append(subJson.string!)
+        }
+        location.userWhoFavored = favorites
+        location.favorites = location.userWhoFavored.count
+        
+        return location
     }
     
     static func getNearby(lat: Double, long:Double, maxDistance:Float, limit:Int) -> Promise<[Location]> {
@@ -137,18 +147,15 @@ class LocationService {
                         
                         let location = self.jsonToLocation(json)
                         
-                        //if location favored by myself
-                        for (_,subJson):(String, JSON) in json["favorites"] {
-                            if (subJson.string == UtilService.getMyId()) {
-                                location.favored = true
-                                break
-                            }
-                        }
-                        
                         UserService.getUser(location.user.id!).then {
                             result -> Void in
                             location.user = result
                             fulfill(location)
+                        }
+                        
+                        // check if favored by myself
+                        if (User.me != nil && location.userWhoFavored.contains(User.getMe().id!)) {
+                            location.favored = true
                         }
                     }
                     
