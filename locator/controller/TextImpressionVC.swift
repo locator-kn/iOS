@@ -34,7 +34,7 @@ class TextImpressionVC: UIViewController, UITextFieldDelegate {
         self.closeModal(self)
         
         if textField.text?.characters.count > 3 {
-            LocationService.addTextImpression(self.locationId, data: textField.text!).then {
+            ImpressionService.addTextImpression(self.locationId, data: textField.text!).then {
                 result -> Void in
                 print("post textimpression success")
             }

@@ -38,7 +38,7 @@ class ImageImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
     }
     
     override func viewDidAppear(animated: Bool) {
-        if image == nil {
+        if image == nil && videoData == nil {
             self.takePicture()
         }
     }
@@ -59,6 +59,7 @@ class ImageImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
             image = possibleImage
         } else if let possibleVideo = info[UIImagePickerControllerMediaURL] as? NSURL! {
             let tempImage = possibleVideo
+            print(tempImage)
             videoData = NSData(contentsOfURL: tempImage)
         }
         imageView.image = image
@@ -78,11 +79,22 @@ class ImageImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
     }
     
     @IBAction func submitImage(sender: AnyObject) {
-        LocationService.addImageImpression(self.locationId, data: image!).then{
-            result -> Void in
-            print("image upload success")
-            self.navigationController?.popViewControllerAnimated(true)
+        
+        if !video {
+            ImpressionService.addImageImpression(self.locationId, data: image!).then{
+                result -> Void in
+                print("image upload success")
+                self.navigationController?.popViewControllerAnimated(true)
+            }
+        } else {
+            print(videoData!.length)
+            ImpressionService.addVideoImpression(self.locationId, data: videoData!).then{
+                result -> Void in
+                print("video upload success")
+                self.navigationController?.popViewControllerAnimated(true)
+            }
         }
+        
     }
 
 }
