@@ -43,7 +43,6 @@
             <string>SourceSansPro-Semibold</string>
             <string>SourceSansPro-Semibold</string>
             <string>SourceSansPro-Semibold</string>
-            <string>SourceSansPro-Semibold</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -213,8 +212,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Schreib was" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="LGZ-Bu-5uq">
-                                <rect key="frame" x="15" y="79" width="560" height="25"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Schreib was" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="LGZ-Bu-5uq">
+                                <rect key="frame" x="15" y="79" width="560" height="27"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
@@ -692,18 +691,6 @@
                                     <action selector="toggleHeatMap:" destination="4Mp-XX-Glu" eventType="touchUpInside" id="D9m-CE-Wwv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfd-XY-2TD" userLabel="back">
-                                <rect key="frame" x="20" y="30" width="17" height="26"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="17" id="yCV-2B-GJl"/>
-                                    <constraint firstAttribute="height" constant="26" id="yjI-JH-Ogg"/>
-                                </constraints>
-                                <inset key="contentEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
-                                <state key="normal" image="back"/>
-                                <connections>
-                                    <action selector="back:" destination="4Mp-XX-Glu" eventType="touchUpInside" id="StH-4r-htx"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1TB-2Q-CWr">
                                 <rect key="frame" x="545" y="498" width="35" height="35"/>
                                 <state key="normal" title="Button" image="show_locations_active"/>
@@ -758,15 +745,12 @@
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hfd-XY-2TD" firstAttribute="top" secondItem="FEp-9v-0Jh" secondAttribute="bottom" constant="10" id="0gm-AP-nBJ"/>
                             <constraint firstItem="Na0-o0-8lP" firstAttribute="top" secondItem="zdt-da-1cq" secondAttribute="bottom" constant="127" id="3t2-2I-5bH"/>
                             <constraint firstItem="1TB-2Q-CWr" firstAttribute="width" secondItem="TRT-34-oxv" secondAttribute="width" id="8Cq-x8-kuL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="TRT-34-oxv" secondAttribute="trailing" id="8au-gC-uNS"/>
                             <constraint firstItem="1TB-2Q-CWr" firstAttribute="width" secondItem="TRT-34-oxv" secondAttribute="width" id="Ax7-fg-vBd"/>
                             <constraint firstItem="qGG-7k-18j" firstAttribute="centerX" secondItem="RQb-PR-2qf" secondAttribute="centerX" id="C6J-xW-bGl"/>
                             <constraint firstAttribute="trailing" secondItem="qGG-7k-18j" secondAttribute="trailing" id="FCu-xN-Dmy"/>
-                            <constraint firstItem="hfd-XY-2TD" firstAttribute="leading" secondItem="v1V-7X-nyy" secondAttribute="leadingMargin" id="OV3-BW-ER3"/>
-                            <constraint firstItem="hfd-XY-2TD" firstAttribute="top" secondItem="FEp-9v-0Jh" secondAttribute="bottom" constant="28" id="QjF-A2-gqj"/>
                             <constraint firstItem="Na0-o0-8lP" firstAttribute="top" secondItem="RQb-PR-2qf" secondAttribute="bottom" constant="8" symbolic="YES" id="ROe-cT-OnH"/>
                             <constraint firstItem="qGG-7k-18j" firstAttribute="bottom" secondItem="Na0-o0-8lP" secondAttribute="top" id="UQZ-U7-lAb"/>
                             <constraint firstItem="TRT-34-oxv" firstAttribute="top" secondItem="1TB-2Q-CWr" secondAttribute="bottom" constant="21" id="Yz9-iM-6At"/>
@@ -791,7 +775,6 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="QjF-A2-gqj"/>
                                 <exclude reference="c7F-wL-scj"/>
                                 <exclude reference="m6G-Gb-zjH"/>
                                 <exclude reference="ydS-l5-IuQ"/>
@@ -1071,39 +1054,20 @@
                                     <segue destination="Gka-Qg-i3J" kind="presentation" identifier="imageImpression" id="I0V-vS-ucQ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Location Titel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78x-uX-9dy" userLabel="locationTitle">
-                                <rect key="frame" x="69" y="31" width="463" height="24"/>
-                                <fontDescription key="fontDescription" name="SourceSansPro-Semibold" family="Source Sans Pro" pointSize="20"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qc8-Xg-nef">
                                 <rect key="frame" x="20" y="308" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Semibold" family="Source Sans Pro" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYT-6h-4rW" userLabel="userName">
-                                <rect key="frame" x="20" y="325" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYT-6h-4rW" userLabel="userName">
+                                <rect key="frame" x="20" y="324" width="30" height="31"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Semibold" family="Source Sans Pro" pointSize="15"/>
                                 <state key="normal">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="G1J-vh-MOc" kind="show" identifier="user" id="nuc-8H-RaZ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kds-ee-QSs">
-                                <rect key="frame" x="20" y="31" width="17" height="26"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="17" id="idy-sb-Bxk"/>
-                                    <constraint firstAttribute="height" constant="26" id="kFu-zs-Y2S"/>
-                                </constraints>
-                                <inset key="contentEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
-                                <state key="normal" image="back"/>
-                                <connections>
-                                    <action selector="back:" destination="PYf-I9-SYD" eventType="touchUpInside" id="MN6-pd-Hcv"/>
-                                    <action selector="backButtonPressed:" destination="EFJ-gN-wRa" eventType="touchUpInside" id="hkl-XF-i8X"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSm-80-qOv" userLabel="mapButton">
@@ -1121,31 +1085,26 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="41J-gR-YgM" firstAttribute="top" secondItem="Kds-ee-QSs" secondAttribute="bottom" constant="-57" id="3f7-jd-1I4"/>
                             <constraint firstItem="2cU-wj-81d" firstAttribute="trailing" secondItem="np5-ZU-hzf" secondAttribute="trailingMargin" id="49D-WY-MPn"/>
                             <constraint firstItem="mek-wv-1ou" firstAttribute="bottom" secondItem="41J-gR-YgM" secondAttribute="bottom" constant="-17" id="4ct-h8-l3U"/>
                             <constraint firstAttribute="leadingMargin" secondItem="D3T-Ct-y1Z" secondAttribute="leading" id="4hD-VV-mae"/>
                             <constraint firstItem="NSm-80-qOv" firstAttribute="top" secondItem="mek-wv-1ou" secondAttribute="top" id="6en-ca-bl9"/>
                             <constraint firstItem="pSa-3s-kxC" firstAttribute="top" secondItem="tJz-R4-W5o" secondAttribute="bottom" constant="88" id="76D-Ys-NjH"/>
                             <constraint firstItem="D3T-Ct-y1Z" firstAttribute="leading" secondItem="np5-ZU-hzf" secondAttribute="leadingMargin" id="BiV-qi-bQr"/>
-                            <constraint firstItem="78x-uX-9dy" firstAttribute="top" secondItem="Kds-ee-QSs" secondAttribute="top" id="EJZ-EX-cVO"/>
                             <constraint firstItem="D3T-Ct-y1Z" firstAttribute="top" secondItem="hYT-6h-4rW" secondAttribute="bottom" constant="8" symbolic="YES" id="HZ6-VF-Ciq"/>
                             <constraint firstAttribute="trailing" secondItem="41J-gR-YgM" secondAttribute="trailing" id="JOX-6G-nJ8"/>
                             <constraint firstItem="41J-gR-YgM" firstAttribute="top" secondItem="np5-ZU-hzf" secondAttribute="top" id="RPT-2t-Jxe"/>
                             <constraint firstItem="tJz-R4-W5o" firstAttribute="top" secondItem="2cU-wj-81d" secondAttribute="bottom" constant="8" symbolic="YES" id="Wbm-Pz-til"/>
                             <constraint firstItem="tJz-R4-W5o" firstAttribute="leading" secondItem="np5-ZU-hzf" secondAttribute="leadingMargin" id="Xo7-0z-IOT"/>
-                            <constraint firstItem="78x-uX-9dy" firstAttribute="leading" secondItem="Kds-ee-QSs" secondAttribute="trailing" constant="32" id="aCl-Mx-i7P"/>
                             <constraint firstAttribute="trailing" secondItem="mek-wv-1ou" secondAttribute="trailing" constant="20" id="exY-G7-ddt"/>
                             <constraint firstItem="2cU-wj-81d" firstAttribute="top" secondItem="41J-gR-YgM" secondAttribute="bottom" constant="63" id="foB-3g-UWc"/>
                             <constraint firstItem="Qc8-Xg-nef" firstAttribute="top" secondItem="41J-gR-YgM" secondAttribute="bottom" constant="8" id="fww-Py-su9"/>
                             <constraint firstItem="hYT-6h-4rW" firstAttribute="leading" secondItem="Qc8-Xg-nef" secondAttribute="leading" id="k7F-fo-3t0"/>
                             <constraint firstItem="pSa-3s-kxC" firstAttribute="top" secondItem="41J-gR-YgM" secondAttribute="bottom" constant="300" id="lHd-Uj-EXq"/>
-                            <constraint firstItem="Kds-ee-QSs" firstAttribute="leading" secondItem="np5-ZU-hzf" secondAttribute="leadingMargin" id="oKW-Jk-pf0"/>
                             <constraint firstItem="D3T-Ct-y1Z" firstAttribute="top" secondItem="41J-gR-YgM" secondAttribute="bottom" constant="63" id="qR2-Yp-CYc"/>
                             <constraint firstItem="Qc8-Xg-nef" firstAttribute="leading" secondItem="np5-ZU-hzf" secondAttribute="leadingMargin" id="r6E-O3-bFu"/>
                             <constraint firstItem="mek-wv-1ou" firstAttribute="leading" secondItem="NSm-80-qOv" secondAttribute="trailing" constant="16" id="rkU-iT-LdU"/>
                             <constraint firstItem="tJz-R4-W5o" firstAttribute="trailing" secondItem="np5-ZU-hzf" secondAttribute="trailingMargin" id="tno-z3-JO2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="78x-uX-9dy" secondAttribute="trailing" constant="48" id="y20-xQ-zRJ"/>
                             <constraint firstItem="41J-gR-YgM" firstAttribute="leading" secondItem="np5-ZU-hzf" secondAttribute="leading" id="z3Y-gk-0hD"/>
                         </constraints>
                     </view>
@@ -1156,7 +1115,6 @@
                         <outlet property="favorIcon" destination="mek-wv-1ou" id="IVs-Yz-Hez"/>
                         <outlet property="imageView" destination="41J-gR-YgM" id="LbF-lm-ePg"/>
                         <outlet property="locationDescription" destination="tJz-R4-W5o" id="SZ9-C1-ZZz"/>
-                        <outlet property="locationTitle" destination="78x-uX-9dy" id="4XW-hd-11c"/>
                         <outlet property="userName" destination="hYT-6h-4rW" id="nHA-2E-D6U"/>
                     </connections>
                 </viewController>
@@ -1621,10 +1579,10 @@
         <image name="text" width="42" height="37"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ryZ-VE-cuy"/>
         <segue reference="CwG-iy-Y3j"/>
         <segue reference="hTK-WV-rqw"/>
-        <segue reference="EdB-og-2CF"/>
+        <segue reference="i9g-4m-Scy"/>
         <segue reference="m5n-0C-6QV"/>
+        <segue reference="nuc-8H-RaZ"/>
     </inferredMetricsTieBreakers>
 </document>
