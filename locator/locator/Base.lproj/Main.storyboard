@@ -911,7 +911,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="e-Mail eingeben" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Wg6-ns-gcx">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="e-Mail eingeben" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Wg6-ns-gcx">
                                 <rect key="frame" x="20" y="95" width="560" height="25"/>
                                 <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -921,7 +921,9 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="cq6-uP-yCx" firstAttribute="top" secondItem="Wg6-ns-gcx" secondAttribute="bottom" constant="480" id="gkZ-7K-u06"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Wg6-ns-gcx" secondAttribute="leading" id="oGZ-pe-cem"/>
+                            <constraint firstItem="Wg6-ns-gcx" firstAttribute="top" secondItem="dtC-qI-mdW" secondAttribute="bottom" constant="95" id="rdH-7P-eyK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Wg6-ns-gcx" secondAttribute="trailing" id="vLF-ZE-RII"/>
                         </constraints>
                     </view>
@@ -985,7 +987,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Passwort wählen" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fzu-pS-sg2">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Passwort wählen" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fzu-pS-sg2">
                                 <rect key="frame" x="20" y="93" width="560" height="25"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="21"/>
@@ -997,7 +999,9 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="pM4-Vn-kxA" firstAttribute="top" secondItem="fzu-pS-sg2" secondAttribute="bottom" constant="482" id="8Sg-5v-4os"/>
                             <constraint firstAttribute="leadingMargin" secondItem="fzu-pS-sg2" secondAttribute="leading" id="PeD-ZA-Ywk"/>
+                            <constraint firstItem="fzu-pS-sg2" firstAttribute="top" secondItem="Blf-oK-8uM" secondAttribute="bottom" constant="93" id="ToB-k3-6Mt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fzu-pS-sg2" secondAttribute="trailing" id="nSf-BT-j9M"/>
                         </constraints>
                     </view>
@@ -1617,9 +1621,9 @@
         <image name="text" width="42" height="37"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MIt-5w-2Dv"/>
-        <segue reference="CwG-iy-Y3j"/>
         <segue reference="ryZ-VE-cuy"/>
+        <segue reference="CwG-iy-Y3j"/>
+        <segue reference="hTK-WV-rqw"/>
         <segue reference="EdB-og-2CF"/>
         <segue reference="m5n-0C-6QV"/>
     </inferredMetricsTieBreakers>
