@@ -51,12 +51,22 @@ class EmailLoginVC2: UIViewController, UITextFieldDelegate {
                 NSUserDefaults.standardUserDefaults().setValue(User.getMe().id, forKey: "me")
                 
                 self.performSegueWithIdentifier("dashboard", sender: self)
+            }.error {
+                err -> Void in
+                print("Login Error")
+                self.showError()
             }
+            
+            
         } else {
-            let alert = UIAlertController(title: "Ups", message: "Bitte überprüfe deine Login Daten", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
+            self.showError()
         }
+    }
+    
+    func showError() {
+        let alert = UIAlertController(title: "Ups", message: "Bitte überprüfe deine Login Daten", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     /*
