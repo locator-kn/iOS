@@ -86,8 +86,6 @@ class LocationListVC: UITableViewController {
         self.parentCtrl!.performSegueWithIdentifier("locationDetail", sender: self)
     }
 
-
-
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

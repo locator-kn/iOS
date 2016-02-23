@@ -103,14 +103,9 @@ class UserListVC: UITableViewController {
         return cell
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "user" {
-            if let destination = segue.destinationViewController as? UserVC {
-                if let user = tableView.indexPathForSelectedRow?.row {
-                    destination.user = follower![user]
-                }
-            }
-        }
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.parentCtrl!.userForSegue = self.follower![indexPath.row]
+        self.parentCtrl!.performSegueWithIdentifier("user", sender: self)
     }
 
     /*

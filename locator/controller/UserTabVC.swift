@@ -16,6 +16,7 @@ class UserTabVC: UIViewController {
     var user:User!
     
     var locationForSegue: Location?
+    var userForSegue: User?
     
     var pageMenu : CAPSPageMenu?
 
@@ -76,11 +77,13 @@ class UserTabVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "locationDetail") {
             let locationDetail = segue.destinationViewController as? LocationDetailVC
-            locationDetail?.location = locationForSegue
+            locationDetail?.location = self.locationForSegue
+        } else if (segue.identifier == "user") {
+            let user = segue.destinationViewController as? UserVC
+            user?.user = self.userForSegue!
         }
     }
 

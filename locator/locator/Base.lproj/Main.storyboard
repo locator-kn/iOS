@@ -287,6 +287,7 @@
                     </view>
                     <connections>
                         <segue destination="PYf-I9-SYD" kind="show" identifier="locationDetail" id="Aku-cP-ssD"/>
+                        <segue destination="G1J-vh-MOc" kind="show" identifier="user" id="5RN-GM-6MA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UnT-hl-6xa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -604,7 +605,6 @@
                                 <connections>
                                     <outlet property="userImage" destination="Ad2-6Q-BFy" id="e8Q-O2-4O4"/>
                                     <outlet property="userName" destination="zbv-OJ-qrv" id="kcm-rp-GTb"/>
-                                    <segue destination="G1J-vh-MOc" kind="show" identifier="user" id="ryZ-VE-cuy"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1537,7 +1537,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Aku-cP-ssD"/>
-        <segue reference="nuc-8H-RaZ"/>
+        <segue reference="5RN-GM-6MA"/>
         <segue reference="m5n-0C-6QV"/>
         <segue reference="ngF-gl-Sbv"/>
         <segue reference="CwG-iy-Y3j"/>
