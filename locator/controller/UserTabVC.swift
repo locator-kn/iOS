@@ -14,7 +14,8 @@ class UserTabVC: UIViewController {
     var follower:[User]!
     var following:[User]!
     var user:User!
-    var parentCtrl: UserVC!
+    
+    var locationForSegue: Location?
     
     var pageMenu : CAPSPageMenu?
 
@@ -41,9 +42,9 @@ class UserTabVC: UIViewController {
         followedByListCtrl!.user = self.user
         followerListCtrl!.showFollower = false
         
-        locationListCtrl!.parentCtrl = parentCtrl
-        followerListCtrl!.parentCtrl = parentCtrl
-        followedByListCtrl!.parentCtrl = parentCtrl
+        locationListCtrl!.parentCtrl = self
+        followerListCtrl!.parentCtrl = self
+        followedByListCtrl!.parentCtrl = self
         
         controllerArray.append(locationListCtrl!)
         controllerArray.append(followerListCtrl!)
@@ -76,12 +77,11 @@ class UserTabVC: UIViewController {
     }
     
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if (segue.identifier == "locationDetail") {
+            let locationDetail = segue.destinationViewController as? LocationDetailVC
+            locationDetail?.location = locationForSegue
+        }
     }
 
 

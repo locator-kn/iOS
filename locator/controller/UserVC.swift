@@ -89,10 +89,6 @@ class UserVC: UIViewController {
         if (segue.identifier == "tabBarVC") {
             self.tabVC = segue.destinationViewController as? UserTabVC
             self.tabVC!.user = self.user
-            self.tabVC!.parentCtrl = self
-        } else if (segue.identifier == "locationDetail") {
-            let locationDetail = segue.destinationViewController as? LocationDetailVC
-            locationDetail?.location = locationForSegue
         }
     }
 

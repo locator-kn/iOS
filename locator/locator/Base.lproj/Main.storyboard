@@ -285,6 +285,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="357"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
+                    <connections>
+                        <segue destination="PYf-I9-SYD" kind="show" identifier="locationDetail" id="Aku-cP-ssD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UnT-hl-6xa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -467,7 +470,6 @@
                         <outlet property="locationsCount" destination="xol-eP-mwD" id="dCk-nP-AyX"/>
                         <outlet property="profileImage" destination="1vC-Kz-1OR" id="mCs-1T-SeV"/>
                         <outlet property="sendMessageButton" destination="A3b-5S-bA6" id="qe7-Pc-P9V"/>
-                        <segue destination="PYf-I9-SYD" kind="push" identifier="locationDetail" id="mWm-2A-y2u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mf8-SU-Wd0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1534,7 +1536,7 @@
         <image name="text" width="42" height="37"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mWm-2A-y2u"/>
+        <segue reference="Aku-cP-ssD"/>
         <segue reference="nuc-8H-RaZ"/>
         <segue reference="m5n-0C-6QV"/>
         <segue reference="ngF-gl-Sbv"/>

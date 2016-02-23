@@ -12,7 +12,7 @@ class LocationListVC: UITableViewController {
 
     var locations:[Location]?
     var user:User?
-    var parentCtrl: UserVC?
+    var parentCtrl: UserTabVC?
     
     override func viewDidLoad() {
         super.viewDidLoad()
