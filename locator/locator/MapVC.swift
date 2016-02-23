@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMaps
 import CoreLocation
+import PromiseKit
 
 class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, GMSMapViewDelegate {
     
@@ -283,15 +284,21 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         
         let locationData = marker.userData as? Location
         infoWindow!.title.text = locationData?.title
-        //infoWindow!.image.image = UIImage(data: UtilService.dataFromPath((locationData!.imagePathNormal)!))
-        
-        
+        infoWindow!.favorites.text = String(locationData!.favorites!)
+        infoWindow!.author.text = locationData?.user.name
+     
         if (self.mapThumb != nil && self.mapThumbId == locationData?.id) {
             infoWindow!.image.image = self.mapThumb
+            
+            
         } else {
-            UtilService.dataFromCache(locationData!.imagePathNormal).then {
-                result -> Void in
-                self.mapThumb = UIImage(data: result)
+            let imagePromise = UtilService.dataFromCache(locationData!.imagePathNormal)
+            let userPromise = UserService.getUser(locationData!.user.id!)
+            
+            when(imagePromise, userPromise).then {
+                image, user -> Void in
+                self.mapThumb = UIImage(data: image)
+                locationData?.user = user
                 self.mapThumbId = locationData?.id
                 self.googleMap.selectedMarker = self.googleMap.selectedMarker
             }
