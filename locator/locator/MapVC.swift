@@ -284,8 +284,11 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         
         let locationData = marker.userData as? Location
         infoWindow!.title.text = locationData?.title
-        infoWindow!.favorites.text = String(locationData!.favorites!)
+        infoWindow!.favorites.text = String(locationData!.favorites!)        
         infoWindow!.author.text = locationData?.user.name
+        
+        infoWindow!.author.sizeToFit()
+        infoWindow!.favorites.sizeToFit()
      
         if (self.mapThumb != nil && self.mapThumbId == locationData?.id) {
             infoWindow!.image.image = self.mapThumb
