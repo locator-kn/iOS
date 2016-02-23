@@ -58,7 +58,7 @@ class UserVC: UIViewController {
             result -> Void in
             self.profileImage.image = UIImage(data: result)
         }
-        self.userName.text = self.user.name
+        self.title = self.user.name
         self.locationsCount.text = "\(self.user.locationCount!)"
         self.followersCount.text = "\(self.user.followerCount!)"
     }

@@ -16,6 +16,7 @@ class EmailLoginVC1: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "cross"), style: .Plain, target: self, action: "close")
         emailTextField.becomeFirstResponder()
         emailTextField.delegate = self
         // Do any additional setup after loading the view.
@@ -61,6 +62,10 @@ class EmailLoginVC1: UIViewController, UITextFieldDelegate {
                 destinationVC.email = emailTextField.text
             }
         }
+    }
+    
+    func close() {
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
     /*

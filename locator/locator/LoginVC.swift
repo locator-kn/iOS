@@ -41,7 +41,7 @@ class LoginVC: UIViewController {
     }
     
     func close() {
-        print("close")
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
     func setButtons() {

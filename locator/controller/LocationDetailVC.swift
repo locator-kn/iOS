@@ -42,7 +42,7 @@ class LocationDetailVC: UIViewController {
                 self.imageView.image = UIImage(data: result)
             }
             
-            self.locationTitle.text = self.location.title
+            self.title = self.location.title
             self.locationDescription.text = self.location.description
      
             self.userName.setTitle(result.user.name, forState: UIControlState.Normal)

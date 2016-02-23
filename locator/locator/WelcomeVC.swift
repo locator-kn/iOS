@@ -10,12 +10,9 @@ import UIKit
 
 class WelcomeVC: UIViewController {
     
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Willkommen bei"
         // Do any additional setup after loading the view, typically from a nib.
     }
     

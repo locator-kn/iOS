@@ -44,10 +44,15 @@ class MainNavigationVC: UINavigationController {
         self.navigationBar.barTintColor = UIColor.whiteColor()
         self.navigationBar.backIndicatorImage = UIImage(named: "back")
         self.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "back")
-        self.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "SourceSansPro-Bold", size: 20)!]
+        
+        let font = UIFont(name: "SourceSansPro-Bold", size: 18)!
+        self.navigationBar.titleTextAttributes = [ NSFontAttributeName: font]
         
         // hide back button text my moving out of view
         UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffsetMake(0, -60), forBarMetrics: .Default)
+        let barbuttonFont = UIFont(name: "Helvetica-Neue", size: 0.1) ?? UIFont.systemFontOfSize(0.1)
+        
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: barbuttonFont, NSForegroundColorAttributeName:UIColor.whiteColor()], forState: UIControlState.Normal)
     }
     
     /*
