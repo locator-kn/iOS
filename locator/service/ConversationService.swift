@@ -1,10 +1,4 @@
-//
-//  ConversationService.swift
-//  locator
-//
-//  Created by Timo Weiß on 22.02.16.
-//  Copyright © 2016 Sergej Birklin. All rights reserved.
-//
+
 
 import Foundation
 import Alamofire
