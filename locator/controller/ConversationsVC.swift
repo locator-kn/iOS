@@ -10,23 +10,28 @@ import UIKit
 
 class ConversationsVC: UITableViewController {
     
-    var users:[User]?
+    var conversations:[Conversation]?
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.estimatedRowHeight = 60.0
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        
         ConversationService.getShit().then {
             result -> Void in
             print(result)
+            self.conversations = result
+            self.tableView.reloadData()
         }
 
-        UserService.getUser("569e4a83a6e5bb503b838301").then {
-            result -> Void in
+        //UserService.getUser("569e4a83a6e5bb503b838301").then {
+        /*    result -> Void in
             
             self.users?.append(result)
             
-        }
+        }*/
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,18 +48,37 @@ class ConversationsVC: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        if conversations == nil {
+            return 0
+        }
+        return conversations!.count
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+        let cellIdentifier = "ConversationsCell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ConversationsCell
+        
+        
+//        cell.username.text = "alksdjlkasdj"//singleConversation._id
+        
+        let singleConversation = conversations![indexPath.row]
+        
+        if let label = cell.username {
+            label.text = singleConversation._id
+        }
+        
+        //cell.userImage = UtilService.roundImageView(cell.userImage)
+        
+//        UtilService.dataFromCache(singleFollower.imagePathThumb!).then {
+//            result -> Void in
+//            
+//            if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? UserCell {
+//                cellToUpdate.userImage.image = UIImage(data: result)
+//            }
+//        }
+        
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
