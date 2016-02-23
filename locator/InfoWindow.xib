@@ -10,6 +10,7 @@
         <mutableArray key="SourceSansPro-Regular.ttf">
             <string>SourceSansPro-Regular</string>
             <string>SourceSansPro-Regular</string>
+            <string>SourceSansPro-Regular</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -36,9 +37,36 @@
                         </mask>
                     </variation>
                 </imageView>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vwp-t0-kHP" userLabel="whiteBack">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vwp-t0-kHP" userLabel="whiteBack">
                     <rect key="frame" x="0.0" y="173" width="348" height="39"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite_icon_active" translatesAutoresizingMaskIntoConstraints="NO" id="zrK-HE-b0Z">
+                            <rect key="frame" x="77" y="22" width="22" height="12"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="22" id="Krs-aW-iXw"/>
+                                <constraint firstAttribute="height" constant="12" id="RbB-mk-TcV"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="304" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSq-2K-NXM">
+                            <rect key="frame" x="61" y="21" width="20" height="13"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="20" id="zvE-8V-I5Q"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="10"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="zrK-HE-b0Z" firstAttribute="top" secondItem="vwp-t0-kHP" secondAttribute="top" constant="22" id="8e4-GW-gZE"/>
+                        <constraint firstItem="zrK-HE-b0Z" firstAttribute="leading" secondItem="vwp-t0-kHP" secondAttribute="leading" constant="77" id="ACV-Z0-Uad"/>
+                        <constraint firstItem="zrK-HE-b0Z" firstAttribute="leading" secondItem="vwp-t0-kHP" secondAttribute="leading" constant="77" id="MsH-ZF-eyd"/>
+                        <constraint firstItem="zrK-HE-b0Z" firstAttribute="leading" secondItem="vwp-t0-kHP" secondAttribute="leading" constant="77" id="PVP-74-4PT"/>
+                        <constraint firstItem="BSq-2K-NXM" firstAttribute="leading" secondItem="vwp-t0-kHP" secondAttribute="leading" constant="61" id="Ycs-Mb-Mbz"/>
+                        <constraint firstItem="zrK-HE-b0Z" firstAttribute="bottom" secondItem="BSq-2K-NXM" secondAttribute="bottom" id="jux-Hg-Dwk"/>
+                        <constraint firstAttribute="bottom" secondItem="zrK-HE-b0Z" secondAttribute="bottom" constant="5" id="ram-JV-dgp"/>
+                    </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kantine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEZ-0Z-eEr">
                     <rect key="frame" x="8" y="174" width="340" height="21"/>
@@ -64,6 +92,7 @@
             <constraints>
                 <constraint firstItem="PEZ-0Z-eEr" firstAttribute="centerX" secondItem="MRY-4p-V1L" secondAttribute="centerX" constant="4" id="6qo-9P-9E4"/>
                 <constraint firstItem="Xg5-sE-5g6" firstAttribute="centerX" secondItem="MRY-4p-V1L" secondAttribute="centerX" id="7Q7-m8-QP6"/>
+                <constraint firstItem="BSq-2K-NXM" firstAttribute="baseline" secondItem="xPY-KM-kYy" secondAttribute="baseline" id="9cR-MU-KUr"/>
                 <constraint firstAttribute="bottom" secondItem="Xg5-sE-5g6" secondAttribute="bottom" id="9pR-Uq-KDY"/>
                 <constraint firstAttribute="bottom" secondItem="MRY-4p-V1L" secondAttribute="bottom" constant="45" id="DSO-W9-GmJ"/>
                 <constraint firstItem="MRY-4p-V1L" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="MKa-wc-cPW"/>
@@ -74,7 +103,9 @@
                 <constraint firstItem="MRY-4p-V1L" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="YLp-tg-kdO"/>
                 <constraint firstItem="PEZ-0Z-eEr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="ZiO-ra-XDM"/>
                 <constraint firstItem="PEZ-0Z-eEr" firstAttribute="top" secondItem="MRY-4p-V1L" secondAttribute="bottom" constant="1" id="eOH-hw-WAq"/>
+                <constraint firstItem="vwp-t0-kHP" firstAttribute="leading" secondItem="MRY-4p-V1L" secondAttribute="leading" id="jdd-ol-mmd"/>
                 <constraint firstAttribute="bottom" secondItem="PEZ-0Z-eEr" secondAttribute="bottom" constant="23" id="ujC-O9-M5l"/>
+                <constraint firstItem="vwp-t0-kHP" firstAttribute="trailing" secondItem="PEZ-0Z-eEr" secondAttribute="trailing" id="xYY-p6-hri"/>
                 <constraint firstItem="Xg5-sE-5g6" firstAttribute="top" secondItem="PEZ-0Z-eEr" secondAttribute="bottom" constant="6" id="zO0-T6-ATG"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
@@ -82,6 +113,8 @@
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="author" destination="xPY-KM-kYy" id="PMh-Du-8uY"/>
+                <outlet property="favorites" destination="BSq-2K-NXM" id="1HW-Rc-Qtx"/>
                 <outlet property="image" destination="MRY-4p-V1L" id="a2S-aW-cek"/>
                 <outlet property="title" destination="PEZ-0Z-eEr" id="hzf-mg-3zO"/>
             </connections>
@@ -89,6 +122,7 @@
         </view>
     </objects>
     <resources>
+        <image name="favorite_icon_active" width="173" height="141"/>
         <image name="infowindowicon" width="35" height="22"/>
     </resources>
 </document>
