@@ -39,6 +39,8 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     var locationsVisible:Bool = true
     var heatmapVisible:Bool = true
     
+    @IBOutlet weak var overlay: UIImageView!
+    
     /* constraint outlets for options animation */
     @IBOutlet weak var locationBottomSpace: NSLayoutConstraint!
     @IBOutlet weak var heatMapBottomSpace: NSLayoutConstraint!
@@ -67,6 +69,12 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         
         googleMap.delegate = self
         googleMap.myLocationEnabled = true
+        
+        let gradient: CAGradientLayer = CAGradientLayer()
+        gradient.frame = self.overlay.frame
+        gradient.colors = [UIColor(red: 29/255, green: 29/255, blue: 29/255, alpha: 0.5).CGColor, UIColor.clearColor().CGColor]
+        gradient.locations = [0.0, 1]
+        self.overlay.layer.insertSublayer(gradient, atIndex: 0)
         
         if (locationsOfInterest.count > 0) {
             self.toggleLocations(self)
