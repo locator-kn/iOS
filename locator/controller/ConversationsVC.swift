@@ -58,9 +58,6 @@ class ConversationsVC: UITableViewController {
         let cellIdentifier = "ConversationsCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ConversationsCell
         
-        
-//        cell.username.text = "alksdjlkasdj"//singleConversation._id
-        
         let singleConversation = conversations![indexPath.row]
         
         if let label = cell.username {
