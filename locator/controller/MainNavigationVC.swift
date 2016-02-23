@@ -13,7 +13,6 @@ class MainNavigationVC: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(NSUserDefaults.standardUserDefaults().stringForKey("me"))
         // if a user is set in defaults, redirect to dashboard
         if (NSUserDefaults.standardUserDefaults().stringForKey("me") != nil) {
             UserService.protected().then {

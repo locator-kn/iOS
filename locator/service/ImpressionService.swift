@@ -108,7 +108,7 @@ class ImpressionService {
             
             Alamofire.upload(
                 .POST,
-                API.BASE_URL + "/locations/" + id + "/impression/video",
+                API.BASE_URL + "/locations/" + id + "/impressions/video",
                 multipartFormData: { multipartFormData in
                     multipartFormData.appendBodyPart(data: data, name: "file", fileName: "impression.mov", mimeType: "video/quicktime")
                 },
