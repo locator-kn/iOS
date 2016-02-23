@@ -138,6 +138,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var deviceData = DeviceService.getDeviceData()
         deviceData["pushToken"] = UtilService.trimPushToken(deviceToken)
         print(deviceData["pushToken"])
+        registerDevice(deviceData)
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        #if (arch(i386) || arch(x86_64)) && os(iOS)
+            var deviceData = DeviceService.getDeviceData()
+            deviceData["pushToken"] = "EMULATOR_PUSH"
+            registerDevice(deviceData)
+        #endif
+    }
+    
+    func registerDevice(deviceData: [String: String]) {
+
         DeviceService.registerDevice(deviceData)
             .then {
                 result -> Void in
@@ -148,8 +161,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
-        print("Couldn't register: \(error)")
-    }
-
 }
