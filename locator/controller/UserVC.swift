@@ -15,6 +15,9 @@ class UserVC: UIViewController {
     var user:User = User(id: "569e4a83a6e5bb503b838306")
     var userLocations: [Location]?
     
+    var locationForSegue: Location?
+    var userForSegue: User?
+    
     @IBOutlet weak var locationsCount: UILabel!
     @IBOutlet weak var followersCount: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
@@ -86,6 +89,10 @@ class UserVC: UIViewController {
         if (segue.identifier == "tabBarVC") {
             self.tabVC = segue.destinationViewController as? UserTabVC
             self.tabVC!.user = self.user
+            self.tabVC!.parentCtrl = self
+        } else if (segue.identifier == "locationDetail") {
+            let locationDetail = segue.destinationViewController as? LocationDetailVC
+            locationDetail?.location = locationForSegue
         }
     }
 

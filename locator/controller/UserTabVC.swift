@@ -14,6 +14,7 @@ class UserTabVC: UIViewController {
     var follower:[User]!
     var following:[User]!
     var user:User!
+    var parentCtrl: UserVC!
     
     var pageMenu : CAPSPageMenu?
 
@@ -35,9 +36,14 @@ class UserTabVC: UIViewController {
         
         locationListCtrl!.user = self.user
         followerListCtrl!.user = self.user
+        
         followerListCtrl!.showFollower = true
         followedByListCtrl!.user = self.user
         followerListCtrl!.showFollower = false
+        
+        locationListCtrl!.parentCtrl = parentCtrl
+        followerListCtrl!.parentCtrl = parentCtrl
+        followedByListCtrl!.parentCtrl = parentCtrl
         
         controllerArray.append(locationListCtrl!)
         controllerArray.append(followerListCtrl!)

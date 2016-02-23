@@ -13,6 +13,7 @@ class UserListVC: UITableViewController {
     var follower:[User]?
     var user:User?
     var showFollower:Bool = true
+    var parentCtrl: UIViewController?
 
     override func viewDidLoad() {
         

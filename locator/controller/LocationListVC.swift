@@ -12,6 +12,7 @@ class LocationListVC: UITableViewController {
 
     var locations:[Location]?
     var user:User?
+    var parentCtrl: UserVC?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,16 +81,11 @@ class LocationListVC: UITableViewController {
         return cell
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "locationDetail" {
-            if let destination = segue.destinationViewController as? LocationDetailVC {
-                if let location = tableView.indexPathForSelectedRow?.row {
-                    destination.location = locations![location]
-                }
-            }
-        }
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.parentCtrl!.locationForSegue = self.locations![indexPath.row]
+        self.parentCtrl!.performSegueWithIdentifier("locationDetail", sender: self)
     }
-    
+
 
 
     /*
