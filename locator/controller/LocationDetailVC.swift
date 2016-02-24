@@ -12,7 +12,6 @@ class LocationDetailVC: UIViewController {
     
     var location:Location!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var locationTitle: UILabel!
     @IBOutlet weak var locationDescription: UITextView!
     @IBOutlet weak var favorIcon: UIButton!
     @IBOutlet weak var opacity: UIImageView!
@@ -21,10 +20,6 @@ class LocationDetailVC: UIViewController {
     
     let favoriteIcon = UIImage(named: "favorite_icon") as UIImage?
     let favoriteIconActive = UIImage(named: "favorite_icon_active") as UIImage?
-    
-    @IBAction func back(sender: UIButton) {
-        self.navigationController?.popViewControllerAnimated(true)
-    }
     
     override func viewDidLoad() {
         
