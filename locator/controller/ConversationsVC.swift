@@ -16,7 +16,7 @@ class ConversationsVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.estimatedRowHeight = 60.0
+        self.tableView.estimatedRowHeight = 160.0
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
         ConversationService.getShit().then {
@@ -62,6 +62,11 @@ class ConversationsVC: UITableViewController {
         
         if let label = cell.username {
             label.text = singleConversation._id
+        }
+        
+        if let label = cell.messageTeaser {
+            print(singleConversation.last_message.message)
+            label.text = singleConversation.last_message.message
         }
         
         //cell.userImage = UtilService.roundImageView(cell.userImage)
