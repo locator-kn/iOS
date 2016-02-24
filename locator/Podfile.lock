@@ -33,6 +33,7 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (3.0.1):
     - PromiseKit/CorePromise
+  - SlackTextViewController (1.9.1)
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
@@ -43,6 +44,7 @@ DEPENDENCIES:
   - GoogleMaps
   - HanekeSwift
   - PromiseKit (~> 3.0)
+  - SlackTextViewController (= 1.9.1)
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
 
 EXTERNAL SOURCES:
@@ -64,6 +66,7 @@ SPEC CHECKSUMS:
   HanekeSwift: 08e47d3d0f2899ec58e5d257beba0de619aca9e8
   OMGHTTPURLRQ: 8376dc887d76a5a7e2a67881dc788f917a2f437c
   PromiseKit: 19d12914484a15c25a46f72fde38579204a5dac6
+  SlackTextViewController: 6b0d1030c53937226fc5358f217af2a34fc211cf
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
 COCOAPODS: 0.39.0
