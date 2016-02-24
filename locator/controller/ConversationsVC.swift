@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SlackTextViewController
 
 class ConversationsVC: UITableViewController {
     
@@ -65,11 +66,9 @@ class ConversationsVC: UITableViewController {
                 if participant.user_id != User.me?.id {
                     print("set text to username:", participant.user?.name)
                     label.text = participant.user?.name
-                    print("imagepath:", participant.user!.imagePathThumb!)
-                    
                     UtilService.roundImageView(cell.userImage)
                     
-                    UtilService.dataFromCache(participant.user!.imagePathThumb!).then {
+                    UtilService.dataFromCache(participant.user!.imagePathNormal!).then {
                         result -> Void in
                         if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? ConversationsCell {
                             cellToUpdate.userImage.image = UIImage(data: result)
@@ -86,17 +85,18 @@ class ConversationsVC: UITableViewController {
             label.text = singleConversation.last_message.message
         }
         
-        //cell.userImage = UtilService.roundImageView(cell.userImage)
-        
-//        UtilService.dataFromCache(singleFollower.imagePathThumb!).then {
-//            result -> Void in
-//            
-//            if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? UserCell {
-//                cellToUpdate.userImage.image = UIImage(data: result)
-//            }
-//        }
-        
         return cell
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print(segue.identifier)
+        
+        if segue.identifier == "openMessenger" {
+            print("alarm")
+            let controller = segue.destinationViewController as! MessagesVC
+            print(controller.channels)
+        }
     }
 
     /*
