@@ -190,6 +190,7 @@
                                     <outlet property="messageTeaser" destination="iGd-JF-Vel" id="VCa-us-bCv"/>
                                     <outlet property="userImage" destination="LJz-xQ-v8v" id="kCu-XJ-bqE"/>
                                     <outlet property="username" destination="L7r-ga-8fH" id="vTN-A5-13R"/>
+                                    <segue destination="cCI-mR-VWp" kind="show" identifier="openMessenger" id="I8d-PC-rtC"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -202,6 +203,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ih-Re-qkQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1694" y="1369"/>
+        </scene>
+        <!--MessageDetail Controller-->
+        <scene sceneID="j21-yH-Mkq">
+            <objects>
+                <viewController title="MessageDetail Controller" id="cCI-mR-VWp" customClass="MessagesVC" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XAG-3f-OCW"/>
+                        <viewControllerLayoutGuide type="bottom" id="okZ-bk-ada"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="whg-yj-ciz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R5g-Yc-FcX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2433" y="1393"/>
         </scene>
         <!--RegisterVC1-->
         <scene sceneID="yuI-XZ-ipT">

@@ -84,6 +84,9 @@
 		CCAAF1F81C7B788C006DF626 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF1F71C7B788C006DF626 /* Conversation.swift */; };
 		CCAAF1FA1C7B79D0006DF626 /* Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF1F91C7B79D0006DF626 /* Participant.swift */; };
 		CCAAF1FC1C7B7AB8006DF626 /* ConversationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF1FB1C7B7AB8006DF626 /* ConversationService.swift */; };
+		CCAAF2011C7E13B9006DF626 /* MessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF2001C7E13B9006DF626 /* MessagesVC.swift */; };
+		CCAAF2031C7E1B98006DF626 /* MessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF2021C7E1B98006DF626 /* MessageCollectionViewCell.swift */; };
+		CCAAF2051C7E1C40006DF626 /* MessageCollectionViewDelegateLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAAF2041C7E1C40006DF626 /* MessageCollectionViewDelegateLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -168,6 +171,9 @@
 		CCAAF1F71C7B788C006DF626 /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		CCAAF1F91C7B79D0006DF626 /* Participant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Participant.swift; sourceTree = "<group>"; };
 		CCAAF1FB1C7B7AB8006DF626 /* ConversationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationService.swift; sourceTree = "<group>"; };
+		CCAAF2001C7E13B9006DF626 /* MessagesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessagesVC.swift; path = controller/MessagesVC.swift; sourceTree = SOURCE_ROOT; };
+		CCAAF2021C7E1B98006DF626 /* MessageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessageCollectionViewCell.swift; path = controller/MessageCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		CCAAF2041C7E1C40006DF626 /* MessageCollectionViewDelegateLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessageCollectionViewDelegateLayout.swift; path = controller/MessageCollectionViewDelegateLayout.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -377,6 +383,7 @@
 		87F14D791C18604B00682709 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				CCAAF1FD1C7E0FA7006DF626 /* Conversations */,
 				5B0C0D9D1C3FE2FE0090FB17 /* Impressions */,
 				876CAA7C1C3BFE5E002A36FF /* Login */,
 				5B495C4D1C2061B5000D8974 /* MapVC.swift */,
@@ -386,11 +393,21 @@
 				5BC5F2F71C3BE55A0092E0E9 /* MapSearchVC.swift */,
 				5B608CA11C4A935200F5F0DA /* user */,
 				5BDAB6191C5594D300A4D38E /* MainNavigationVC.swift */,
-				CCAAF1F31C7B73F6006DF626 /* ConversationsVC.swift */,
-				CCAAF1F51C7B749F006DF626 /* ConversationsCell.swift */,
 			);
 			name = controller;
 			path = locator;
+			sourceTree = "<group>";
+		};
+		CCAAF1FD1C7E0FA7006DF626 /* Conversations */ = {
+			isa = PBXGroup;
+			children = (
+				CCAAF1F31C7B73F6006DF626 /* ConversationsVC.swift */,
+				CCAAF1F51C7B749F006DF626 /* ConversationsCell.swift */,
+				CCAAF2001C7E13B9006DF626 /* MessagesVC.swift */,
+				CCAAF2021C7E1B98006DF626 /* MessageCollectionViewCell.swift */,
+				CCAAF2041C7E1C40006DF626 /* MessageCollectionViewDelegateLayout.swift */,
+			);
+			name = Conversations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -541,6 +558,7 @@
 				5BDAB61A1C5594D300A4D38E /* MainNavigationVC.swift in Sources */,
 				87F14D831C18604B00682709 /* locator.xcdatamodeld in Sources */,
 				5B0C0D9A1C3F13D90090FB17 /* TextImpression.swift in Sources */,
+				CCAAF2051C7E1C40006DF626 /* MessageCollectionViewDelegateLayout.swift in Sources */,
 				5B514AD71C5D3447001B3C17 /* ImpressionService.swift in Sources */,
 				5BAC93DF1C26C18500FE502F /* LocationDetailVC.swift in Sources */,
 				874AF1F21C415B1300F386B0 /* WelcomeRegisteredVC.swift in Sources */,
@@ -555,6 +573,7 @@
 				5BEA72B81C34B206005220CD /* AbstractImpression.swift in Sources */,
 				870507241C4FD82B008641BF /* BubbleVC.swift in Sources */,
 				872DA7C81C1F06A10041C9D6 /* EmailLoginVC1.swift in Sources */,
+				CCAAF2031C7E1B98006DF626 /* MessageCollectionViewCell.swift in Sources */,
 				87F14D7D1C18604B00682709 /* WelcomeVC.swift in Sources */,
 				876CAA801C3C03F8002A36FF /* RegisterVC2.swift in Sources */,
 				5B4EF1111C5E2559005D8612 /* GpsService.swift in Sources */,
@@ -569,6 +588,7 @@
 				8705071E1C4FC4C4008641BF /* GravityObject.swift in Sources */,
 				879DC7BA1C459A8E004726BF /* PreLoginVC.swift in Sources */,
 				876CAA841C3C0422002A36FF /* RegisterVC4.swift in Sources */,
+				CCAAF2011C7E13B9006DF626 /* MessagesVC.swift in Sources */,
 				5B4475091C2167BE00C30445 /* Location.swift in Sources */,
 				876290231C1893DE00D2870E /* LoginVC.swift in Sources */,
 				870507221C4FD278008641BF /* BubbleView.swift in Sources */,
