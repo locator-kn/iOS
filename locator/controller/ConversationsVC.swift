@@ -65,6 +65,18 @@ class ConversationsVC: UITableViewController {
                 if participant.user_id != User.me?.id {
                     print("set text to username:", participant.user?.name)
                     label.text = participant.user?.name
+                    print("imagepath:", participant.user!.imagePathThumb!)
+                    
+                    UtilService.roundImageView(cell.userImage)
+                    
+                    UtilService.dataFromCache(participant.user!.imagePathThumb!).then {
+                        result -> Void in
+                        if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? ConversationsCell {
+                            cellToUpdate.userImage.image = UIImage(data: result)
+                        }
+                        
+                    }
+                    
                 }
             }
         }
