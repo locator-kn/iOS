@@ -23,6 +23,7 @@ class ImpressionFeedVC: UITableViewController {
         
         tableView.estimatedRowHeight = 300.0
         tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.scrollEnabled = false;
         
         ImpressionService.getImpressions("569e4a9a4c9d7b5f3b400709").then {
             result -> Void in
