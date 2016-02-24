@@ -18,14 +18,31 @@ class ConversationService {
                         for (_, subJson):(String, JSON) in json {
                             conversations.append(jsonToConversation(subJson))
                         }
+
+                        
+                        var promisessss = [Promise<Bool>]()
+                        
                         for item in conversations {
                             for user in item.participants {
                                 if user.user_id == User.me?.id {
                                     print("its me")
+                                } else {
+                                    let a = UserService.getUser(user.user_id).then {
+                                        responseUser -> Bool in
+                                        print(responseUser.name)
+                                        user.user = responseUser
+                                        return true
+                                    }
+                                    promisessss.append(a)
                                 }
                             }
                         }
-                        fullfill(conversations)
+                        when(promisessss).then {
+                            b -> Void in
+                            fullfill(conversations)
+                        }
+                        
+                        
                     }
                     
                 case .Failure(let error):
