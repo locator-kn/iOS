@@ -142,34 +142,48 @@
         <scene sceneID="dcv-0Z-7DG">
             <objects>
                 <tableViewController id="FwT-TI-ewy" customClass="ConversationsVC" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="139" sectionHeaderHeight="28" sectionFooterHeight="28" id="f8W-ju-EFe">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" sectionHeaderHeight="20" sectionFooterHeight="20" id="f8W-ju-EFe">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ConversationsCell" rowHeight="139" id="BTt-es-gWg" customClass="ConversationsCell" customModule="locator" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="139"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ConversationsCell" id="BTt-es-gWg" customClass="ConversationsCell" customModule="locator" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="600" height="140"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BTt-es-gWg" id="DY4-vh-MgH">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="138"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="139"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LJz-xQ-v8v">
-                                            <rect key="frame" x="0.0" y="-42" width="240" height="128"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="schoen_hier" translatesAutoresizingMaskIntoConstraints="NO" id="LJz-xQ-v8v">
+                                            <rect key="frame" x="8" y="16" width="90" height="90"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="90" id="iLv-9T-Crw"/>
+                                                <constraint firstAttribute="height" constant="90" id="llB-65-oNS"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MessageText" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGd-JF-Vel">
-                                            <rect key="frame" x="250" y="50" width="100" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7r-ga-8fH">
+                                            <rect key="frame" x="122" y="24" width="79" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7r-ga-8fH">
-                                            <rect key="frame" x="250" y="0.0" width="79" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MessageText" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGd-JF-Vel">
+                                            <rect key="frame" x="122" y="53" width="100" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="LJz-xQ-v8v" secondAttribute="bottom" constant="25" id="5yh-m2-s66"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="LJz-xQ-v8v" secondAttribute="bottom" constant="25" id="ERx-09-omn"/>
+                                        <constraint firstItem="L7r-ga-8fH" firstAttribute="leading" secondItem="LJz-xQ-v8v" secondAttribute="trailing" constant="24" id="J30-7w-U1H"/>
+                                        <constraint firstItem="LJz-xQ-v8v" firstAttribute="leading" secondItem="DY4-vh-MgH" secondAttribute="leadingMargin" id="U3Y-tr-wHE"/>
+                                        <constraint firstItem="iGd-JF-Vel" firstAttribute="top" secondItem="L7r-ga-8fH" secondAttribute="bottom" constant="8" id="fji-fe-ZNn"/>
+                                        <constraint firstItem="iGd-JF-Vel" firstAttribute="leading" secondItem="LJz-xQ-v8v" secondAttribute="trailing" constant="24" id="hv2-To-3sg"/>
+                                        <constraint firstItem="L7r-ga-8fH" firstAttribute="top" secondItem="DY4-vh-MgH" secondAttribute="topMargin" constant="16" id="kL9-Du-Vl6"/>
+                                        <constraint firstItem="LJz-xQ-v8v" firstAttribute="top" secondItem="DY4-vh-MgH" secondAttribute="topMargin" constant="8" id="qT7-4S-JcQ"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="MessageTeaser" destination="iGd-JF-Vel" id="JIz-zQ-loS"/>
