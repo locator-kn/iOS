@@ -9,19 +9,8 @@ class ConversationService {
     static func getShit() -> Promise<[Conversation]> {
         var conversations=[Conversation]()
         
-        
-        
-        DeviceService.registerDevice(DeviceService.getDeviceData()).then {
-            result in
-            print(result)
-            
-        }
-        
-        UserService.login("info@timo-weiss.com", password: "spzzGlubb34L")
-        
-        
         return Promise { fullfill, reject in
-            Alamofire.request(.GET, API.BASE_URL + "/my/conversations").validate().responseJSON { response in
+            Alamofire.request(.GET, "http://localhost:8000" + "/my/conversations").validate().responseJSON { response in
                 switch response.result {
                 case .Success:
                     if let value = response.result.value {
@@ -56,7 +45,7 @@ class ConversationService {
             message = jsonToMessage(json["last_message"])
         }
         
-        
+        // TODO: message might be nil
         return Conversation(_id: _id!, participants: participants, last_message: message)
 
         
