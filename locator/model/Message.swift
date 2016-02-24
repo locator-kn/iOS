@@ -15,16 +15,14 @@ class Message {
     let from: String
     let message: String
     let timestamp: Int
-    let modified_date: String
     let message_type: String
     
-    init(id: String, conversation_id: String, from: String, message: String, timestamp: Int, modified_date: String, message_type: String) {
+    init(id: String, conversation_id: String, from: String, message: String, timestamp: Int, message_type: String) {
         self.id = id
         self.conversation_id = conversation_id
         self.from = from
         self.message = message
         self.timestamp = timestamp
-        self.modified_date = modified_date
         self.message_type = message_type
     }
     
