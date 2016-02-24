@@ -8,8 +8,10 @@
 
 import UIKit
 
-class ImageImpression: UITableViewCell {
+class ImageImpressionCell: UITableViewCell {
 
+    @IBOutlet weak var imageBox: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

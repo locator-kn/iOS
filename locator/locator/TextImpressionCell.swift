@@ -8,8 +8,10 @@
 
 import UIKit
 
-class TextImpression: UITableViewCell {
+class TextImpressionCell: UITableViewCell {
 
+    @IBOutlet weak var textView: UITextView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
