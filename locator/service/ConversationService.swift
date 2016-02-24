@@ -19,10 +19,7 @@ class ConversationService {
                             conversations.append(jsonToConversation(subJson))
                         }
                         for item in conversations {
-                            print("lalala conversations for")
-                            print("Item id", item._id)
                             for user in item.participants {
-                                print("my userid:", User.me?.id)
                                 if user.user_id == User.me?.id {
                                     print("its me")
                                 }
