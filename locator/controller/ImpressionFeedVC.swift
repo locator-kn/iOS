@@ -10,6 +10,8 @@ import UIKit
 
 class ImpressionFeedVC: UITableViewController {
 
+    var impressions: [AbstractImpression]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +20,18 @@ class ImpressionFeedVC: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        tableView.estimatedRowHeight = 300.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        ImpressionService.getImpressions("569e4a9a4c9d7b5f3b400709").then {
+            result -> Void in
+            self.impressions = result
+            self.tableView.reloadData()
+            self.tableView.rowHeight = UITableViewAutomaticDimension
+            
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,24 +42,42 @@ class ImpressionFeedVC: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        if self.impressions == nil {
+            return 0
+        }
+        return self.impressions!.count
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
+        
+        let impression = impressions![indexPath.row]
+        
+        if let imageImpression = impression as? ImageImpression {
+            let cell = tableView.dequeueReusableCellWithIdentifier("imageImpression", forIndexPath: indexPath) as! ImageImpressionCell
+            //cell.imageBox.image = UIImage(data: UtilService.dataFromPath("https://locator-app.com" + imageImpression.imagePath))
+            
+            UtilService.dataFromCache(API.IMAGE_URL + imageImpression.imagePath).then {
+                result -> Void in
+                print("start")
+                if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? ImageImpressionCell {
+                    cellToUpdate.imageBox.image = UIImage(data: result)
+                }
+            }
+            
+            return cell
+            
+        } else if let textImpression = impression as? TextImpression {
+            let cell = tableView.dequeueReusableCellWithIdentifier("textImpression", forIndexPath: indexPath) as! TextImpressionCell
+            cell.textView.text = textImpression.text
+            return cell
+        }
+        
+        return UITableViewCell()
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
