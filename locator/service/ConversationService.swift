@@ -7,8 +7,18 @@ import PromiseKit
 
 class ConversationService {
     static func getShit() -> Promise<[Conversation]> {
-        
         var conversations=[Conversation]()
+        
+        
+        
+        DeviceService.registerDevice(DeviceService.getDeviceData()).then {
+            result in
+            print(result)
+            
+        }
+        
+        UserService.login("info@timo-weiss.com", password: "spzzGlubb34L")
+        
         
         return Promise { fullfill, reject in
             Alamofire.request(.GET, API.BASE_URL + "/my/conversations").validate().responseJSON { response in
@@ -35,15 +45,34 @@ class ConversationService {
     
     static func jsonToConversation(json:JSON) -> Conversation {
         var participants = [Participant]()
+        var message:Message!
         
         let _id = json["_id"].string
         for (_, sub):(String, JSON) in json["participants"] {
             participants.append(jsonToParticipant(sub))
         }
-        return Conversation(_id: _id!, participants: participants)
+        
+        if json["last_message"] != "" && json["last_message"] != nil {
+            message = jsonToMessage(json["last_message"])
+        }
+        
+        
+        return Conversation(_id: _id!, participants: participants, last_message: message)
 
         
     }
+    
+    static func jsonToMessage(json:JSON) -> Message {
+        return Message(
+            id: json["_id"].string!,
+            conversation_id: json["conversation_id"].string!,
+            from: json["from"].string!,
+            message: json["message"].string!,
+            timestamp: json["timestamp"].int!,
+            message_type: json["message_type"].string!
+        )
+    }
+    
     static func jsonToParticipant(json:JSON) -> Participant {
         
         let user_id = json["user_id"].string
