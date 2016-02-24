@@ -34,9 +34,8 @@ class BubbleService {
                             let from = subJson["from"].string
                             let message = subJson["message"].string
                             let timestamp = subJson["timestamp"].int
-                            let modified_date = subJson["modified_date"].string
                             let message_type = subJson["message_type"].string
-                            messages.append(Message(id: id!, conversation_id: conversation_id!, from: from!, message: message!, timestamp: timestamp!, modified_date: modified_date!, message_type: message_type!))
+                            messages.append(Message(id: id!, conversation_id: conversation_id!, from: from!, message: message!, timestamp: timestamp!, message_type: message_type!))
                         }
                         
                         for (_,subJson):(String, JSON) in json["locations"] {
