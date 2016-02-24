@@ -61,7 +61,12 @@ class ConversationsVC: UITableViewController {
         let singleConversation = conversations![indexPath.row]
         
         if let label = cell.username {
-            label.text = singleConversation._id
+            for participant in singleConversation.participants {
+                if participant.user_id != User.me?.id {
+                    print("set text to username:", participant.user?.name)
+                    label.text = participant.user?.name
+                }
+            }
         }
         
         if let label = cell.messageTeaser {
