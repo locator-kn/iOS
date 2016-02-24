@@ -18,6 +18,16 @@ class ConversationService {
                         for (_, subJson):(String, JSON) in json {
                             conversations.append(jsonToConversation(subJson))
                         }
+                        for item in conversations {
+                            print("lalala conversations for")
+                            print("Item id", item._id)
+                            for user in item.participants {
+                                print("my userid:", User.me?.id)
+                                if user.user_id == User.me?.id {
+                                    print("its me")
+                                }
+                            }
+                        }
                         fullfill(conversations)
                     }
                     
@@ -34,7 +44,7 @@ class ConversationService {
     
     static func jsonToConversation(json:JSON) -> Conversation {
         var participants = [Participant]()
-        var message:Message!
+        var message: Optional<Message>
         
         let _id = json["_id"].string
         for (_, sub):(String, JSON) in json["participants"] {
@@ -46,7 +56,7 @@ class ConversationService {
         }
         
         // TODO: message might be nil
-        return Conversation(_id: _id!, participants: participants, last_message: message)
+        return Conversation(_id: _id!, participants: participants, last_message: message!)
 
         
     }
