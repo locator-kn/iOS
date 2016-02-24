@@ -10,7 +10,7 @@ class ConversationService {
         var conversations=[Conversation]()
         
         return Promise { fullfill, reject in
-            Alamofire.request(.GET, "http://localhost:8000" + "/my/conversations").validate().responseJSON { response in
+            Alamofire.request(.GET, API.BASE_URL + "/my/conversations").validate().responseJSON { response in
                 switch response.result {
                 case .Success:
                     if let value = response.result.value {
