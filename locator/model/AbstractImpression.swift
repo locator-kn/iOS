@@ -12,22 +12,15 @@ class AbstractImpression {
     
     let date:NSDate
     let user:User
-    let data:NSData
     
-    init(date:String, userId:String, data:NSData) {
+    init(date:String, userId:String) {
         self.date = UtilService.dateFromIso(date)
         self.user = User(id: userId)
-        self.data = data
     }
     
-    init(date:NSDate, user:User, data:NSData) {
+    init(date:NSDate, user:User) {
         self.date = date
         self.user = user
-        self.data = data
-    }
-    
-    func getData() -> AnyObject {
-        return data
     }
     
 }

@@ -9,5 +9,10 @@
 import Foundation
 
 class ImageImpression: AbstractImpression {
+    var imagePath: String
     
+    init(date:String, userId:String, imagePath: String) {
+        self.imagePath = imagePath
+        super.init(date: date, userId: userId)
+    }
 }

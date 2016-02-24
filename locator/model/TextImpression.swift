@@ -9,7 +9,10 @@
 import Foundation
 
 class TextImpression:AbstractImpression {
-    override func getData() -> AnyObject {
-        return String(data: data, encoding: NSUTF8StringEncoding)!
+    var text: String
+    
+    init(date:String, userId:String, text: String) {
+        self.text = text
+        super.init(date: date, userId: userId)
     }
 }

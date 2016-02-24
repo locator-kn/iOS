@@ -35,14 +35,10 @@ class ImpressionService {
                             let dataPath = subJson["data"].string
                             
                             if type == "text" {
-                                let data = dataPath!.dataUsingEncoding(NSUTF8StringEncoding)
-                                impressions.append(TextImpression(date:date!, userId: user!, data: data!))
-                                break
+                                impressions.append(TextImpression(date:date!, userId: user!, text: dataPath!))
                                 
                             } else if type == "image" {
-                                let data = UtilService.dataFromPath(dataPath!)
-                                impressions.append(ImageImpression(date:date!, userId: user!, data: data))
-                                break
+                                impressions.append(ImageImpression(date:date!, userId: user!, imagePath: dataPath!))
                                 
                             } else if type == "audio" {
                                 // TODO
