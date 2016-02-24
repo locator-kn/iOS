@@ -63,7 +63,7 @@ class LocationDetailVC: UIViewController {
             print(err)
         }
         
-        ImpressionService.getImpressions(location.id).then {
+        /*ImpressionService.getImpressions(location.id).then {
             result -> Void in
             
             self.location.stream = result
@@ -72,7 +72,7 @@ class LocationDetailVC: UIViewController {
             for item in result {
                 print(item.getData())
             }
-        }
+        }*/
         
     }
 
