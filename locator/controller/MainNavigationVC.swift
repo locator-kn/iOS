@@ -14,11 +14,13 @@ class MainNavigationVC: UINavigationController {
         super.viewDidLoad()
         
         // if a user is set in defaults, redirect to dashboard
-        if (NSUserDefaults.standardUserDefaults().stringForKey("me") != nil) {
+        let me = NSUserDefaults.standardUserDefaults().stringForKey("me")
+        if (me != nil) {
             UserService.protected().then {
                 result -> Void in
                 print("Statuscode Protected", result)
                 if (result != 401) {
+                    User.me = User(id: me!)
                     self.redirectToDashboard()
                 }
             }
