@@ -210,7 +210,7 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         print(segue.identifier)
         if (segue.identifier == "locationDetail") {
-            let controller = segue.destinationViewController as! LocationDetailVC
+            let controller = segue.destinationViewController as! ImpressionFeedVC
             controller.location = pickedLocationDetail
         }
     }
