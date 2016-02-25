@@ -41,7 +41,7 @@ class NameYourLocationViewController: UIViewController, UITextFieldDelegate {
             print("whoop whoop")
             
             
-            self.performSegueWithIdentifier("chooseCategories", sender: true)
+            performSegueWithIdentifier("chooseCategories", sender: true)
             return true
         } else {
             print("nonono")
@@ -53,7 +53,13 @@ class NameYourLocationViewController: UIViewController, UITextFieldDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         print("going to leave")
         if (segue.identifier == "chooseCategories") {
-            //let controller = segue.destinationViewController as! NameYourLocationViewController
+            //let controller = segue.destinationViewController as! AddCategoriesViewController
+                let controller = segue.destinationViewController as? AddCategoriesViewController
+                controller!.locationTitle = String(self.locationTitle)
+                controller!.uiimage = self.uiimage
+            
+            
+            
             
         }
         // Get the new view controller using segue.destinationViewController.
