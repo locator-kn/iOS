@@ -193,7 +193,7 @@ class LocationService {
     static func favLocation(id: String) -> Promise<(Int, Bool)> {
         return Promise { fulfill, reject in
             
-            Alamofire.request(.POST, API.BASE_URL + "/locations/" + id + "/favor").validate().responseJSON { response in
+            Alamofire.request(.POST, API.BASE_URL + "/locations/" + id + "/favor/toggle").validate().responseJSON { response in
                 switch response.result {
                 case .Success:
                     
