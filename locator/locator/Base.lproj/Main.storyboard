@@ -194,10 +194,10 @@
             </objects>
             <point key="canvasLocation" x="2891" y="1891"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Categories View Controller-->
         <scene sceneID="WNU-7V-pRy">
             <objects>
-                <viewController id="3b4-4g-E5P" sceneMemberID="viewController">
+                <viewController id="3b4-4g-E5P" customClass="AddCategoriesViewController" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Nh9-h5-Xer"/>
                         <viewControllerLayoutGuide type="bottom" id="E0S-AM-tmY"/>
