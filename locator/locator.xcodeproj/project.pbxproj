@@ -85,6 +85,7 @@
 		87F14D881C18604B00682709 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87F14D861C18604B00682709 /* LaunchScreen.storyboard */; };
 		CC18FAA31C7F57D200A346BE /* TakePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC18FAA21C7F57D200A346BE /* TakePhotoViewController.swift */; };
 		CC4075E21C7F776D00364331 /* NameYourLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4075E11C7F776D00364331 /* NameYourLocationViewController.swift */; };
+		CC4075E41C7F8CB000364331 /* AddCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4075E31C7F8CB000364331 /* AddCategoriesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -170,6 +171,7 @@
 		9F065E9F82669863AC08B17B /* Pods_locator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_locator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC18FAA21C7F57D200A346BE /* TakePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TakePhotoViewController.swift; path = controller/TakePhotoViewController.swift; sourceTree = SOURCE_ROOT; };
 		CC4075E11C7F776D00364331 /* NameYourLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NameYourLocationViewController.swift; path = controller/NameYourLocationViewController.swift; sourceTree = SOURCE_ROOT; };
+		CC4075E31C7F8CB000364331 /* AddCategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddCategoriesViewController.swift; path = controller/AddCategoriesViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -408,6 +410,7 @@
 			children = (
 				CC18FAA21C7F57D200A346BE /* TakePhotoViewController.swift */,
 				CC4075E11C7F776D00364331 /* NameYourLocationViewController.swift */,
+				CC4075E31C7F8CB000364331 /* AddCategoriesViewController.swift */,
 			);
 			name = createLocation;
 			sourceTree = "<group>";
@@ -564,6 +567,7 @@
 				874AF1F21C415B1300F386B0 /* WelcomeRegisteredVC.swift in Sources */,
 				874AF1F41C415BC300F386B0 /* LocatorVC.swift in Sources */,
 				875AF7B61C563F6E000F76AE /* BubbleService.swift in Sources */,
+				CC4075E41C7F8CB000364331 /* AddCategoriesViewController.swift in Sources */,
 				874AF1F61C415D7F00F386B0 /* AboutUserVc.swift in Sources */,
 				5B514AD91C5D63F7001B3C17 /* DeviceService.swift in Sources */,
 				87B6DB721C4674E600CE97DC /* ValidateInputService.swift in Sources */,
