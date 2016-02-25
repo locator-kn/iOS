@@ -18,8 +18,14 @@ class UserService {
         let email = json["mail"].string!
         let name = json["name"].string!
         let residence = json["residence"].string!
-        let imagePathNormal = API.IMAGE_URL + json["picture"].string!
-        let imagePathThumb = API.IMAGE_URL + json["thumb"].string!
+        
+        var imagePathNormal = ""
+        var imagePathThumb = ""
+        
+        if (json["picture"].string != nil) {
+            imagePathNormal = API.IMAGE_URL + json["picture"].string!
+            imagePathThumb = API.IMAGE_URL + json["thumb"].string!
+        }
         return User(id: id, email: email, name: name, imagePathNormal: imagePathNormal, imagePathThumb: imagePathThumb, residence: residence)
     }
     
