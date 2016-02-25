@@ -97,11 +97,25 @@ class LocationDetailVC: UITableViewController {
         
         if let imageImpression = impression as? ImageImpression {
             let cell = tableView.dequeueReusableCellWithIdentifier("imageImpression", forIndexPath: indexPath) as! ImageImpressionCell
-            //cell.imageBox.image = UIImage(data: UtilService.dataFromPath("https://locator-app.com" + imageImpression.imagePath))
+          
+            cell.date.text = String(imageImpression.date)
+            
+            UserService.getUser(imageImpression.user.id!).then {
+                result -> Void in
+                if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? ImageImpressionCell {
+                    cellToUpdate.username.text = result.name
+                }
+                
+                UtilService.dataFromCache(result.imagePathThumb!).then {
+                    result -> Void in
+                    if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? ImageImpressionCell {
+                        cellToUpdate.userThumb.image = UIImage(data: result)
+                    }
+                }
+            }
             
             UtilService.dataFromCache(API.IMAGE_URL + imageImpression.imagePath).then {
                 result -> Void in
-                print("start")
                 if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? ImageImpressionCell {
                     cellToUpdate.imageBox.image = UIImage(data: result)
                 }
