@@ -8,16 +8,23 @@
 
 import UIKit
 
-class NameYourLocationViewController: UIViewController {
+class NameYourLocationViewController: UIViewController, UITextFieldDelegate {
     
     var uiimage:UIImage!
 
     @IBOutlet weak var locationTitle: UITextField!
+    
+    let inputChecker = ValidateInputService()
+
+    
     override func viewDidLoad() {
-        print("view did load")
-        print(uiimage)
+        
         locationTitle.attributedPlaceholder = NSAttributedString(string:"Name eintragen",
             attributes:[NSForegroundColorAttributeName: UIColor.init(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.4)])
+        
+        self.locationTitle.delegate = self
+        
+        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -28,6 +35,20 @@ class NameYourLocationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func textFieldShouldReturn(locationTitle: UITextField) -> Bool {   //delegate method
+        if inputChecker.checkInput(locationTitle.text! ?? "", minLength: 3) {
+            //performSegueWithIdentifier("showRegisterVC3", sender: self)
+            print("whoop whoop")
+            
+            
+            
+            return true
+        } else {
+            print("nonono")
+            return false
+        }
+    }
+
 
     /*
     // MARK: - Navigation
