@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="U8m-eU-1FD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="U8m-eU-1FD">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -14,6 +14,7 @@
             <string>SourceSansPro-Light</string>
         </mutableArray>
         <mutableArray key="SourceSansPro-Regular.ttf">
+            <string>SourceSansPro-Regular</string>
             <string>SourceSansPro-Regular</string>
             <string>SourceSansPro-Regular</string>
             <string>SourceSansPro-Regular</string>
@@ -137,11 +138,60 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="NlW-MM-Uz5" id="8vD-iG-e4l"/>
+                        <segue destination="v3D-1b-zpU" kind="show" identifier="nameYourLocation" id="qCW-ge-Hld"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Rx-gN-ISZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2209" y="1891"/>
+        </scene>
+        <!--Name Your Location View Controller-->
+        <scene sceneID="fXZ-32-Hg0">
+            <objects>
+                <viewController id="v3D-1b-zpU" customClass="NameYourLocationViewController" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n2F-AY-V6b"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wp0-6k-cmg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YYN-Oq-mqO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="Ytr-wP-Z4G">
+                                <rect key="frame" x="40" y="20" width="520" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="GdF-k7-gHT"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="22"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                        <color key="value" red="0.97066580966430815" green="1" blue="0.96350548471204056" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ytr-wP-Z4G" firstAttribute="leading" secondItem="YYN-Oq-mqO" secondAttribute="leadingMargin" constant="20" id="3EJ-vB-aOf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ytr-wP-Z4G" secondAttribute="trailing" constant="20" id="4JH-kZ-QoN"/>
+                            <constraint firstItem="Ytr-wP-Z4G" firstAttribute="top" secondItem="n2F-AY-V6b" secondAttribute="bottom" id="UAi-6S-4KT"/>
+                            <constraint firstItem="Ytr-wP-Z4G" firstAttribute="top" secondItem="n2F-AY-V6b" secondAttribute="bottom" constant="20" id="n4d-lL-Utc"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="UAi-6S-4KT"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="locationTitle" destination="Ytr-wP-Z4G" id="ojL-3Z-Moh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oc5-GS-KJM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2891" y="1891"/>
         </scene>
         <!--Wie heißt du?-->
         <scene sceneID="yuI-XZ-ipT">
@@ -1711,7 +1761,7 @@
         <image name="text" width="42" height="37"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MIt-5w-2Dv"/>
+        <segue reference="hTK-WV-rqw"/>
         <segue reference="CwG-iy-Y3j"/>
         <segue reference="Aku-cP-ssD"/>
     </inferredMetricsTieBreakers>

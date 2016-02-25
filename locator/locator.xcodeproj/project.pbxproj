@@ -84,6 +84,7 @@
 		87F14D851C18604B00682709 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87F14D841C18604B00682709 /* Assets.xcassets */; };
 		87F14D881C18604B00682709 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87F14D861C18604B00682709 /* LaunchScreen.storyboard */; };
 		CC18FAA31C7F57D200A346BE /* TakePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC18FAA21C7F57D200A346BE /* TakePhotoViewController.swift */; };
+		CC4075E21C7F776D00364331 /* NameYourLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4075E11C7F776D00364331 /* NameYourLocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -168,6 +169,7 @@
 		87F14D891C18604B00682709 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F065E9F82669863AC08B17B /* Pods_locator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_locator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC18FAA21C7F57D200A346BE /* TakePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TakePhotoViewController.swift; path = controller/TakePhotoViewController.swift; sourceTree = SOURCE_ROOT; };
+		CC4075E11C7F776D00364331 /* NameYourLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NameYourLocationViewController.swift; path = controller/NameYourLocationViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -405,6 +407,7 @@
 			isa = PBXGroup;
 			children = (
 				CC18FAA21C7F57D200A346BE /* TakePhotoViewController.swift */,
+				CC4075E11C7F776D00364331 /* NameYourLocationViewController.swift */,
 			);
 			name = createLocation;
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 				5BEA72B81C34B206005220CD /* AbstractImpression.swift in Sources */,
 				870507241C4FD82B008641BF /* BubbleVC.swift in Sources */,
 				872DA7C81C1F06A10041C9D6 /* EmailLoginVC1.swift in Sources */,
+				CC4075E21C7F776D00364331 /* NameYourLocationViewController.swift in Sources */,
 				87F14D7D1C18604B00682709 /* WelcomeVC.swift in Sources */,
 				876CAA801C3C03F8002A36FF /* RegisterVC2.swift in Sources */,
 				5B42BB6A1C7DD96F004F16D2 /* ImageImpressionCell.swift in Sources */,
@@ -723,7 +727,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.locator-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2edca15f-93dc-4dca-983c-8c99c7596680";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -738,7 +742,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.locator-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2edca15f-93dc-4dca-983c-8c99c7596680";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
