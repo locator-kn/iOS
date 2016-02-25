@@ -11,6 +11,8 @@ import UIKit
 class AddCategoriesViewController: UIViewController {
 
     override func viewDidLoad() {
+        
+        print("AddCategoriesViewController")
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
