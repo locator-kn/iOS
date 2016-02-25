@@ -12,6 +12,8 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
     
     var imagePicker: UIImagePickerController!
     @IBOutlet var imageView: UIImageView!
+    
+    var uiimage: UIImage!
 
     override func viewDidLoad() {
         print("view did load")
@@ -37,18 +39,27 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         print("imagePickerController called")
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
+        uiimage = info[UIImagePickerControllerOriginalImage] as? UIImage
+        print(uiimage)
         imageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        self.performSegueWithIdentifier("nameYourLocation", sender: true)
+        
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print("asdjhkajsdhashdkjas")
+        if (segue.identifier == "nameYourLocation") {
+            let controller = segue.destinationViewController as! NameYourLocationViewController
+            controller.uiimage = self.uiimage
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }
