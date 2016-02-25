@@ -187,6 +187,7 @@
                     </view>
                     <connections>
                         <outlet property="locationTitle" destination="Ytr-wP-Z4G" id="ojL-3Z-Moh"/>
+                        <segue destination="3b4-4g-E5P" kind="show" identifier="chooseCategories" id="FUu-9F-ddI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oc5-GS-KJM" userLabel="First Responder" sceneMemberID="firstResponder"/>
