@@ -10,6 +10,7 @@
 		5B0C0D981C3D505A0090FB17 /* TextImpressionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0C0D971C3D505A0090FB17 /* TextImpressionVC.swift */; };
 		5B0C0D9A1C3F13D90090FB17 /* TextImpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0C0D991C3F13D90090FB17 /* TextImpression.swift */; };
 		5B0C0D9C1C3FE2F80090FB17 /* ImageImpressionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0C0D9B1C3FE2F80090FB17 /* ImageImpressionVC.swift */; };
+		5B1E6B8A1C7F57840016B404 /* LocationDetailHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E6B891C7F57840016B404 /* LocationDetailHeaderCell.swift */; };
 		5B410D701C4CF78500B11471 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B410D6F1C4CF78500B11471 /* LocationCell.swift */; };
 		5B410D721C4E4A3000B11471 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B410D711C4E4A3000B11471 /* City.swift */; };
 		5B410D741C4F989600B11471 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B410D731C4F989600B11471 /* UserCell.swift */; };
@@ -90,6 +91,7 @@
 		5B0C0D971C3D505A0090FB17 /* TextImpressionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextImpressionVC.swift; path = controller/TextImpressionVC.swift; sourceTree = SOURCE_ROOT; };
 		5B0C0D991C3F13D90090FB17 /* TextImpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextImpression.swift; sourceTree = "<group>"; };
 		5B0C0D9B1C3FE2F80090FB17 /* ImageImpressionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageImpressionVC.swift; path = controller/ImageImpressionVC.swift; sourceTree = SOURCE_ROOT; };
+		5B1E6B891C7F57840016B404 /* LocationDetailHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailHeaderCell.swift; sourceTree = "<group>"; };
 		5B410D6F1C4CF78500B11471 /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationCell.swift; path = locator/LocationCell.swift; sourceTree = "<group>"; };
 		5B410D711C4E4A3000B11471 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		5B410D731C4F989600B11471 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				5B42BB641C7DD6BE004F16D2 /* ImpressionFeedVC.swift */,
 				5B42BB671C7DD961004F16D2 /* TextImpressionCell.swift */,
 				5B42BB691C7DD96F004F16D2 /* ImageImpressionCell.swift */,
+				5B1E6B891C7F57840016B404 /* LocationDetailHeaderCell.swift */,
 			);
 			name = impressionFeed;
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 				875AF7B81C56459F000F76AE /* Message.swift in Sources */,
 				5BEA72BA1C34B28D005220CD /* ImageImpression.swift in Sources */,
 				87EED3861C4571BE00939E07 /* Questions.swift in Sources */,
+				5B1E6B8A1C7F57840016B404 /* LocationDetailHeaderCell.swift in Sources */,
 				872DA7CA1C1F156A0041C9D6 /* EmailLoginVC2.swift in Sources */,
 				5B410D701C4CF78500B11471 /* LocationCell.swift in Sources */,
 				5BDAB61A1C5594D300A4D38E /* MainNavigationVC.swift in Sources */,
