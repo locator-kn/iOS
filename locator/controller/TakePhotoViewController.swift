@@ -8,7 +8,10 @@
 
 import UIKit
 
-class TakePhotoViewController: UIViewController {
+class TakePhotoViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    
+    var imagePicker: UIImagePickerController!
+    @IBOutlet var imageView: UIImageView!
 
     override func viewDidLoad() {
         print("view did load")
@@ -20,6 +23,21 @@ class TakePhotoViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func takePhoto(sender: UIButton) {
+        print("takePhoto called")
+        imagePicker =  UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .Camera
+        
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        print("imagePickerController called")
+        imagePicker.dismissViewControllerAnimated(true, completion: nil)
+        imageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
     }
     
 
