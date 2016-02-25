@@ -83,6 +83,7 @@
 		87F14D831C18604B00682709 /* locator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 87F14D811C18604B00682709 /* locator.xcdatamodeld */; };
 		87F14D851C18604B00682709 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87F14D841C18604B00682709 /* Assets.xcassets */; };
 		87F14D881C18604B00682709 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87F14D861C18604B00682709 /* LaunchScreen.storyboard */; };
+		CC18FAA31C7F57D200A346BE /* TakePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC18FAA21C7F57D200A346BE /* TakePhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -166,6 +167,7 @@
 		87F14D871C18604B00682709 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87F14D891C18604B00682709 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F065E9F82669863AC08B17B /* Pods_locator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_locator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC18FAA21C7F57D200A346BE /* TakePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TakePhotoViewController.swift; path = controller/TakePhotoViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -383,6 +385,7 @@
 		87F14D791C18604B00682709 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				CC18FAA11C7F579100A346BE /* createLocation */,
 				5B42BB661C7DD93D004F16D2 /* impressionFeed */,
 				5B0C0D9D1C3FE2FE0090FB17 /* postImpressions */,
 				876CAA7C1C3BFE5E002A36FF /* Login */,
@@ -396,6 +399,14 @@
 			);
 			name = controller;
 			path = locator;
+			sourceTree = "<group>";
+		};
+		CC18FAA11C7F579100A346BE /* createLocation */ = {
+			isa = PBXGroup;
+			children = (
+				CC18FAA21C7F57D200A346BE /* TakePhotoViewController.swift */,
+			);
+			name = createLocation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -568,6 +579,7 @@
 				5B63B2601C7B53520070AC08 /* AlertService.swift in Sources */,
 				5B90CCB11C29A56A00108693 /* User.swift in Sources */,
 				5B410D761C4F98B000B11471 /* UserListVC.swift in Sources */,
+				CC18FAA31C7F57D200A346BE /* TakePhotoViewController.swift in Sources */,
 				5B410D721C4E4A3000B11471 /* City.swift in Sources */,
 				5B608C9C1C49E4C100F5F0DA /* UserVC.swift in Sources */,
 				8705071E1C4FC4C4008641BF /* GravityObject.swift in Sources */,

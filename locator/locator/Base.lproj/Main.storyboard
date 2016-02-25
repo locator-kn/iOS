@@ -110,10 +110,10 @@
             </objects>
             <point key="canvasLocation" x="1863" y="201"/>
         </scene>
-        <!--View Controller-->
+        <!--Take Photo View Controller-->
         <scene sceneID="nhv-9Y-C62">
             <objects>
-                <viewController id="jfr-tO-4Yb" sceneMemberID="viewController">
+                <viewController id="jfr-tO-4Yb" customClass="TakePhotoViewController" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="p97-Zg-Oih"/>
                         <viewControllerLayoutGuide type="bottom" id="nAr-hj-eaZ"/>
@@ -121,8 +121,23 @@
                     <view key="view" contentMode="scaleToFill" id="moO-gy-WfG">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u0n-xW-S2S">
+                                <rect key="frame" x="302" y="401" width="70" height="30"/>
+                                <state key="normal" title="takePhoto"/>
+                                <connections>
+                                    <action selector="takePhoto:" destination="jfr-tO-4Yb" eventType="touchUpInside" id="Zgs-Ir-dNB"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NlW-MM-Uz5">
+                                <rect key="frame" x="217" y="157" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="NlW-MM-Uz5" id="8vD-iG-e4l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Rx-gN-ISZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
