@@ -206,11 +206,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Anmelden" translatesAutoresizingMaskIntoConstraints="NO" id="r3u-8Z-4qT">
-                                <rect key="frame" x="161" y="315" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Anmelden" translatesAutoresizingMaskIntoConstraints="NO" id="r3u-8Z-4qT">
+                                <rect key="frame" x="91" y="480" width="419" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="paG-BK-zmC"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="paG-BK-zmC"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="r3u-8Z-4qT" secondAttribute="trailing" id="ESL-nh-cPT"/>
+                            <constraint firstItem="r3u-8Z-4qT" firstAttribute="leading" secondItem="4Qp-fS-YkQ" secondAttribute="leadingMargin" constant="71" id="Nem-71-DSR"/>
+                            <constraint firstItem="r3u-8Z-4qT" firstAttribute="centerX" secondItem="4Qp-fS-YkQ" secondAttribute="centerX" id="Nrc-cb-MgD"/>
+                            <constraint firstItem="r3u-8Z-4qT" firstAttribute="top" secondItem="Nh9-h5-Xer" secondAttribute="bottom" constant="480" id="OMF-fY-XeZ"/>
+                            <constraint firstAttribute="bottom" secondItem="r3u-8Z-4qT" secondAttribute="bottom" constant="20" symbolic="YES" id="OZY-Dh-osQ"/>
+                            <constraint firstItem="r3u-8Z-4qT" firstAttribute="leading" secondItem="4Qp-fS-YkQ" secondAttribute="leadingMargin" constant="141" id="csl-HH-BGG"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ESL-nh-cPT"/>
+                                <exclude reference="csl-HH-BGG"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Mh-PL-dK0" userLabel="First Responder" sceneMemberID="firstResponder"/>
