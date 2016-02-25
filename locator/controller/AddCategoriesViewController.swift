@@ -9,10 +9,15 @@
 import UIKit
 
 class AddCategoriesViewController: UIViewController {
+    
+    var uiimage:UIImage!
+    
+    var locationTitle:String!
+
 
     override func viewDidLoad() {
         
-        print("AddCategoriesViewController")
+        print("AddCategoriesViewController:", locationTitle)
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
