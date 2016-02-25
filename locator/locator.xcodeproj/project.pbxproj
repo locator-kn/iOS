@@ -15,7 +15,7 @@
 		5B410D721C4E4A3000B11471 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B410D711C4E4A3000B11471 /* City.swift */; };
 		5B410D741C4F989600B11471 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B410D731C4F989600B11471 /* UserCell.swift */; };
 		5B410D761C4F98B000B11471 /* UserListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B410D751C4F98B000B11471 /* UserListVC.swift */; };
-		5B42BB651C7DD6BE004F16D2 /* ImpressionFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B42BB641C7DD6BE004F16D2 /* ImpressionFeedVC.swift */; };
+		5B42BB651C7DD6BE004F16D2 /* LocationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B42BB641C7DD6BE004F16D2 /* LocationDetailVC.swift */; };
 		5B42BB681C7DD961004F16D2 /* TextImpressionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B42BB671C7DD961004F16D2 /* TextImpressionCell.swift */; };
 		5B42BB6A1C7DD96F004F16D2 /* ImageImpressionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B42BB691C7DD96F004F16D2 /* ImageImpressionCell.swift */; };
 		5B4475091C2167BE00C30445 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4475081C2167BE00C30445 /* Location.swift */; };
@@ -32,7 +32,6 @@
 		5B90CCB11C29A56A00108693 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B90CCB01C29A56A00108693 /* User.swift */; };
 		5B90CCB31C2A220F00108693 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B90CCB21C2A220F00108693 /* DashboardVC.swift */; };
 		5BAC93D11C23385600FE502F /* SchoenHier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAC93D01C23385600FE502F /* SchoenHier.swift */; };
-		5BAC93DF1C26C18500FE502F /* LocationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAC93DE1C26C18500FE502F /* LocationDetailVC.swift */; };
 		5BAC93E11C2824A500FE502F /* UtilService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAC93E01C2824A500FE502F /* UtilService.swift */; };
 		5BC5F2F81C3BE55A0092E0E9 /* MapSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5F2F71C3BE55A0092E0E9 /* MapSearchVC.swift */; };
 		5BDAB6141C5514D600A4D38E /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDAB6131C5514D600A4D38E /* CAPSPageMenu.swift */; };
@@ -96,7 +95,7 @@
 		5B410D711C4E4A3000B11471 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		5B410D731C4F989600B11471 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		5B410D751C4F98B000B11471 /* UserListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListVC.swift; sourceTree = "<group>"; };
-		5B42BB641C7DD6BE004F16D2 /* ImpressionFeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImpressionFeedVC.swift; path = controller/ImpressionFeedVC.swift; sourceTree = SOURCE_ROOT; };
+		5B42BB641C7DD6BE004F16D2 /* LocationDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationDetailVC.swift; path = controller/LocationDetailVC.swift; sourceTree = SOURCE_ROOT; };
 		5B42BB671C7DD961004F16D2 /* TextImpressionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextImpressionCell.swift; sourceTree = "<group>"; };
 		5B42BB691C7DD96F004F16D2 /* ImageImpressionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageImpressionCell.swift; sourceTree = "<group>"; };
 		5B4475081C2167BE00C30445 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -113,7 +112,6 @@
 		5B90CCB01C29A56A00108693 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5B90CCB21C2A220F00108693 /* DashboardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardVC.swift; path = controller/DashboardVC.swift; sourceTree = SOURCE_ROOT; };
 		5BAC93D01C23385600FE502F /* SchoenHier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoenHier.swift; sourceTree = "<group>"; };
-		5BAC93DE1C26C18500FE502F /* LocationDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationDetailVC.swift; path = controller/LocationDetailVC.swift; sourceTree = SOURCE_ROOT; };
 		5BAC93E01C2824A500FE502F /* UtilService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilService.swift; sourceTree = "<group>"; };
 		5BC5F2F71C3BE55A0092E0E9 /* MapSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapSearchVC.swift; path = controller/MapSearchVC.swift; sourceTree = SOURCE_ROOT; };
 		5BDAB6131C5514D600A4D38E /* CAPSPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CAPSPageMenu.swift; path = ../CAPSPageMenu.swift; sourceTree = "<group>"; };
@@ -208,15 +206,15 @@
 			name = postImpressions;
 			sourceTree = "<group>";
 		};
-		5B42BB661C7DD93D004F16D2 /* impressionFeed */ = {
+		5B42BB661C7DD93D004F16D2 /* LocationDetail */ = {
 			isa = PBXGroup;
 			children = (
-				5B42BB641C7DD6BE004F16D2 /* ImpressionFeedVC.swift */,
+				5B42BB641C7DD6BE004F16D2 /* LocationDetailVC.swift */,
 				5B42BB671C7DD961004F16D2 /* TextImpressionCell.swift */,
 				5B42BB691C7DD96F004F16D2 /* ImageImpressionCell.swift */,
 				5B1E6B891C7F57840016B404 /* LocationDetailHeaderCell.swift */,
 			);
-			name = impressionFeed;
+			name = LocationDetail;
 			sourceTree = "<group>";
 		};
 		5B44750A1C216A2600C30445 /* model */ = {
@@ -386,11 +384,10 @@
 		87F14D791C18604B00682709 /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				5B42BB661C7DD93D004F16D2 /* impressionFeed */,
+				5B42BB661C7DD93D004F16D2 /* LocationDetail */,
 				5B0C0D9D1C3FE2FE0090FB17 /* postImpressions */,
 				876CAA7C1C3BFE5E002A36FF /* Login */,
 				5B495C4D1C2061B5000D8974 /* MapVC.swift */,
-				5BAC93DE1C26C18500FE502F /* LocationDetailVC.swift */,
 				5B90CCB21C2A220F00108693 /* DashboardVC.swift */,
 				874AF1F31C415BC300F386B0 /* LocatorVC.swift */,
 				5BC5F2F71C3BE55A0092E0E9 /* MapSearchVC.swift */,
@@ -550,7 +547,6 @@
 				87F14D831C18604B00682709 /* locator.xcdatamodeld in Sources */,
 				5B0C0D9A1C3F13D90090FB17 /* TextImpression.swift in Sources */,
 				5B514AD71C5D3447001B3C17 /* ImpressionService.swift in Sources */,
-				5BAC93DF1C26C18500FE502F /* LocationDetailVC.swift in Sources */,
 				874AF1F21C415B1300F386B0 /* WelcomeRegisteredVC.swift in Sources */,
 				874AF1F41C415BC300F386B0 /* LocatorVC.swift in Sources */,
 				875AF7B61C563F6E000F76AE /* BubbleService.swift in Sources */,
@@ -596,7 +592,7 @@
 				5BAC93E11C2824A500FE502F /* UtilService.swift in Sources */,
 				5BEA72BE1C34B530005220CD /* AudioImpression.swift in Sources */,
 				5BC5F2F81C3BE55A0092E0E9 /* MapSearchVC.swift in Sources */,
-				5B42BB651C7DD6BE004F16D2 /* ImpressionFeedVC.swift in Sources */,
+				5B42BB651C7DD6BE004F16D2 /* LocationDetailVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
