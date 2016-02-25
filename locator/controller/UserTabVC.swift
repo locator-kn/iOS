@@ -79,7 +79,7 @@ class UserTabVC: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "locationDetail") {
-            let locationDetail = segue.destinationViewController as? ImpressionFeedVC
+            let locationDetail = segue.destinationViewController as? LocationDetailVC
             locationDetail?.location = self.locationForSegue
         } else if (segue.identifier == "user") {
             let user = segue.destinationViewController as? UserVC
