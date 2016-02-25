@@ -15,6 +15,7 @@ class LocationDetailHeaderCell: UITableViewCell {
     @IBOutlet weak var favorIcon: UIButton!
     @IBOutlet weak var impressionsCount: UILabel!
     @IBOutlet weak var username: UIButton!
+    @IBOutlet weak var city: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -73,6 +73,7 @@ class ImpressionFeedVC: UITableViewController {
                 header.favorCount.text = String(location.favorites)
                 header.impressionsCount.text = String(impressions!.count)
                 header.locationImage.image = UIImage(data: UtilService.dataFromPath(location.imagePathNormal))
+                header.city.text = location.city.title
                 
                 if location.favored == true {
                     header.favorIcon.setImage(self.favoriteIconActive, forState: .Normal)

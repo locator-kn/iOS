@@ -32,6 +32,7 @@
             <string>SourceSansPro-Regular</string>
             <string>SourceSansPro-Regular</string>
             <string>SourceSansPro-Regular</string>
+            <string>SourceSansPro-Regular</string>
         </mutableArray>
         <mutableArray key="SourceSansPro-Semibold.ttf">
             <string>SourceSansPro-Semibold</string>
@@ -278,32 +279,32 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Uv-6R-lJs" userLabel="favorcount">
-                                            <rect key="frame" x="78" y="268" width="14" height="20"/>
+                                            <rect key="frame" x="78" y="282" width="14" height="20"/>
                                             <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite_icon_active" translatesAutoresizingMaskIntoConstraints="NO" id="Kyk-PS-lC3">
-                                            <rect key="frame" x="95" y="272" width="13" height="13"/>
+                                            <rect key="frame" x="95" y="286" width="13" height="13"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="13" id="acY-e9-l2v"/>
                                                 <constraint firstAttribute="width" constant="13" id="qiV-xO-6S5"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Impression hinzufügen +" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8S-st-ZK4">
-                                            <rect key="frame" x="8" y="289" width="158" height="19"/>
+                                            <rect key="frame" x="8" y="312" width="158" height="19"/>
                                             <fontDescription key="fontDescription" name="SourceSansPro-Semibold" family="Source Sans Pro" pointSize="15"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Impressions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbi-3c-e8u">
-                                            <rect key="frame" x="520" y="290" width="72" height="18"/>
+                                            <rect key="frame" x="520" y="313" width="72" height="18"/>
                                             <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
                                             <color key="textColor" red="0.49581330128205126" green="0.49581330128205126" blue="0.49581330128205126" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDq-gz-AVD" userLabel="video">
-                                            <rect key="frame" x="488" y="324" width="100" height="37"/>
+                                            <rect key="frame" x="488" y="335" width="100" height="37"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="37" id="Ohl-Sv-Kns"/>
                                                 <constraint firstAttribute="width" constant="100" id="VPA-TA-mXa"/>
@@ -311,7 +312,7 @@
                                             <state key="normal" image="audio"/>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8CZ-Io-utv" userLabel="foto">
-                                            <rect key="frame" x="250" y="323" width="100" height="36"/>
+                                            <rect key="frame" x="250" y="334" width="100" height="36"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="36" id="6jJ-LW-VJE"/>
                                                 <constraint firstAttribute="width" constant="100" id="RA7-2Q-j1K"/>
@@ -322,7 +323,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vE5-IY-R4z" userLabel="text">
-                                            <rect key="frame" x="8" y="325" width="100" height="37"/>
+                                            <rect key="frame" x="8" y="336" width="100" height="37"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="37" id="TkC-Ti-6Cg"/>
                                                 <constraint firstAttribute="width" constant="100" id="uAf-MI-Jeh"/>
@@ -333,7 +334,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ckI-cM-stC">
-                                            <rect key="frame" x="8" y="263" width="61" height="30"/>
+                                            <rect key="frame" x="8" y="277" width="61" height="30"/>
                                             <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
                                             <state key="normal" title="Lukas Doe">
                                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -343,9 +344,15 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFD-cK-Myd" userLabel="impressionsCount">
-                                            <rect key="frame" x="502" y="290" width="14" height="18"/>
+                                            <rect key="frame" x="502" y="313" width="14" height="18"/>
                                             <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
                                             <color key="textColor" red="0.41268028846153848" green="0.41268028846153848" blue="0.41268028846153848" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Konstanz, Deutschland" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmP-I0-6Be">
+                                            <rect key="frame" x="8" y="261" width="177" height="21"/>
+                                            <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -359,13 +366,13 @@
                                         <constraint firstItem="pW9-vX-Di4" firstAttribute="top" secondItem="nb7-ZO-dd5" secondAttribute="top" constant="-1" id="AoY-pG-Nct"/>
                                         <constraint firstItem="Kyk-PS-lC3" firstAttribute="baseline" secondItem="2Uv-6R-lJs" secondAttribute="baseline" constant="1" id="C3c-8w-bOJ"/>
                                         <constraint firstItem="kbi-3c-e8u" firstAttribute="baseline" secondItem="K8S-st-ZK4" secondAttribute="baseline" id="FCp-Q8-OvV"/>
-                                        <constraint firstItem="K8S-st-ZK4" firstAttribute="top" secondItem="ckI-cM-stC" secondAttribute="top" constant="26" id="FSq-r8-x9D"/>
-                                        <constraint firstItem="ckI-cM-stC" firstAttribute="top" secondItem="ZSP-fm-YDO" secondAttribute="bottom" constant="4" id="M9i-X9-nSk"/>
+                                        <constraint firstItem="K8S-st-ZK4" firstAttribute="top" secondItem="ckI-cM-stC" secondAttribute="top" constant="35" id="FSq-r8-x9D"/>
+                                        <constraint firstItem="ckI-cM-stC" firstAttribute="top" secondItem="ZSP-fm-YDO" secondAttribute="bottom" constant="18" id="M9i-X9-nSk"/>
                                         <constraint firstItem="vE5-IY-R4z" firstAttribute="leading" secondItem="E6c-8O-3Ua" secondAttribute="leadingMargin" id="OXD-8t-Bsm"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="kbi-3c-e8u" secondAttribute="trailing" id="PD1-tF-y5k"/>
-                                        <constraint firstItem="vE5-IY-R4z" firstAttribute="top" secondItem="K8S-st-ZK4" secondAttribute="bottom" constant="17" id="Pvg-jE-rvA"/>
+                                        <constraint firstItem="vE5-IY-R4z" firstAttribute="top" secondItem="K8S-st-ZK4" secondAttribute="bottom" constant="5" id="Pvg-jE-rvA"/>
                                         <constraint firstItem="Kyk-PS-lC3" firstAttribute="leading" secondItem="2Uv-6R-lJs" secondAttribute="trailing" constant="3" id="Qxg-LV-YSJ"/>
-                                        <constraint firstItem="K8S-st-ZK4" firstAttribute="top" secondItem="Kyk-PS-lC3" secondAttribute="bottom" constant="4" id="VVr-PX-DBq"/>
+                                        <constraint firstItem="K8S-st-ZK4" firstAttribute="top" secondItem="Kyk-PS-lC3" secondAttribute="bottom" constant="13" id="VVr-PX-DBq"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="8CZ-Io-utv" secondAttribute="bottom" constant="19" id="W3m-HL-UnN"/>
                                         <constraint firstItem="ckI-cM-stC" firstAttribute="leading" secondItem="E6c-8O-3Ua" secondAttribute="leadingMargin" id="buv-sq-pPO"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="K8S-st-ZK4" secondAttribute="leading" id="gMm-YV-WUa"/>
@@ -388,6 +395,7 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="city" destination="lmP-I0-6Be" id="BdX-94-8NW"/>
                                     <outlet property="favorCount" destination="2Uv-6R-lJs" id="ODA-rA-3mG"/>
                                     <outlet property="favorIcon" destination="nb7-ZO-dd5" id="MuS-6h-u1s"/>
                                     <outlet property="impressionsCount" destination="PFD-cK-Myd" id="aTJ-gs-ijg"/>
