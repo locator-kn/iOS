@@ -10,6 +10,12 @@ import UIKit
 
 class LocationDetailHeaderCell: UITableViewCell {
 
+    @IBOutlet weak var locationImage: UIImageView!
+    @IBOutlet weak var favorCount: UILabel!
+    @IBOutlet weak var favorIcon: UIButton!
+    @IBOutlet weak var impressionsCount: UILabel!
+    @IBOutlet weak var username: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
