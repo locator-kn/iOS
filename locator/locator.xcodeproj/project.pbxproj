@@ -83,6 +83,9 @@
 		87F14D831C18604B00682709 /* locator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 87F14D811C18604B00682709 /* locator.xcdatamodeld */; };
 		87F14D851C18604B00682709 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87F14D841C18604B00682709 /* Assets.xcassets */; };
 		87F14D881C18604B00682709 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87F14D861C18604B00682709 /* LaunchScreen.storyboard */; };
+		CC18FAA31C7F57D200A346BE /* TakePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC18FAA21C7F57D200A346BE /* TakePhotoViewController.swift */; };
+		CC4075E21C7F776D00364331 /* NameYourLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4075E11C7F776D00364331 /* NameYourLocationViewController.swift */; };
+		CC4075E41C7F8CB000364331 /* AddCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4075E31C7F8CB000364331 /* AddCategoriesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -166,6 +169,9 @@
 		87F14D871C18604B00682709 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87F14D891C18604B00682709 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F065E9F82669863AC08B17B /* Pods_locator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_locator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC18FAA21C7F57D200A346BE /* TakePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TakePhotoViewController.swift; path = controller/TakePhotoViewController.swift; sourceTree = SOURCE_ROOT; };
+		CC4075E11C7F776D00364331 /* NameYourLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NameYourLocationViewController.swift; path = controller/NameYourLocationViewController.swift; sourceTree = SOURCE_ROOT; };
+		CC4075E31C7F8CB000364331 /* AddCategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddCategoriesViewController.swift; path = controller/AddCategoriesViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -384,7 +390,11 @@
 		87F14D791C18604B00682709 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+
+				CC18FAA11C7F579100A346BE /* createLocation */,
+
 				5B42BB661C7DD93D004F16D2 /* LocationDetail */,
+
 				5B0C0D9D1C3FE2FE0090FB17 /* postImpressions */,
 				876CAA7C1C3BFE5E002A36FF /* Login */,
 				5B495C4D1C2061B5000D8974 /* MapVC.swift */,
@@ -396,6 +406,16 @@
 			);
 			name = controller;
 			path = locator;
+			sourceTree = "<group>";
+		};
+		CC18FAA11C7F579100A346BE /* createLocation */ = {
+			isa = PBXGroup;
+			children = (
+				CC18FAA21C7F57D200A346BE /* TakePhotoViewController.swift */,
+				CC4075E11C7F776D00364331 /* NameYourLocationViewController.swift */,
+				CC4075E31C7F8CB000364331 /* AddCategoriesViewController.swift */,
+			);
+			name = createLocation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -550,6 +570,7 @@
 				874AF1F21C415B1300F386B0 /* WelcomeRegisteredVC.swift in Sources */,
 				874AF1F41C415BC300F386B0 /* LocatorVC.swift in Sources */,
 				875AF7B61C563F6E000F76AE /* BubbleService.swift in Sources */,
+				CC4075E41C7F8CB000364331 /* AddCategoriesViewController.swift in Sources */,
 				874AF1F61C415D7F00F386B0 /* AboutUserVc.swift in Sources */,
 				5B514AD91C5D63F7001B3C17 /* DeviceService.swift in Sources */,
 				87B6DB721C4674E600CE97DC /* ValidateInputService.swift in Sources */,
@@ -558,6 +579,7 @@
 				5BEA72B81C34B206005220CD /* AbstractImpression.swift in Sources */,
 				870507241C4FD82B008641BF /* BubbleVC.swift in Sources */,
 				872DA7C81C1F06A10041C9D6 /* EmailLoginVC1.swift in Sources */,
+				CC4075E21C7F776D00364331 /* NameYourLocationViewController.swift in Sources */,
 				87F14D7D1C18604B00682709 /* WelcomeVC.swift in Sources */,
 				876CAA801C3C03F8002A36FF /* RegisterVC2.swift in Sources */,
 				5B42BB6A1C7DD96F004F16D2 /* ImageImpressionCell.swift in Sources */,
@@ -568,6 +590,7 @@
 				5B63B2601C7B53520070AC08 /* AlertService.swift in Sources */,
 				5B90CCB11C29A56A00108693 /* User.swift in Sources */,
 				5B410D761C4F98B000B11471 /* UserListVC.swift in Sources */,
+				CC18FAA31C7F57D200A346BE /* TakePhotoViewController.swift in Sources */,
 				5B410D721C4E4A3000B11471 /* City.swift in Sources */,
 				5B608C9C1C49E4C100F5F0DA /* UserVC.swift in Sources */,
 				8705071E1C4FC4C4008641BF /* GravityObject.swift in Sources */,
@@ -711,7 +734,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.locator-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2edca15f-93dc-4dca-983c-8c99c7596680";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -726,7 +749,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.locator-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2edca15f-93dc-4dca-983c-8c99c7596680";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
