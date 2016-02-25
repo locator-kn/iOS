@@ -7,11 +7,16 @@
 //
 
 import UIKit
+import PromiseKit
 
 class ImpressionFeedVC: UITableViewController {
 
+    var location: Location!
     var impressions: [AbstractImpression]?
-    
+    @IBOutlet weak var favorIcon: UIButton!
+    let favoriteIcon = UIImage(named: "favorite_icon") as UIImage?
+    let favoriteIconActive = UIImage(named: "favorite_icon_active") as UIImage?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,16 +28,20 @@ class ImpressionFeedVC: UITableViewController {
         
         tableView.estimatedRowHeight = 300.0
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.scrollEnabled = false;
         
-        ImpressionService.getImpressions("569e4a9a4c9d7b5f3b400709").then {
-            result -> Void in
-            self.impressions = result
-            self.tableView.reloadData()
-            self.tableView.rowHeight = UITableViewAutomaticDimension
+        
+        let locationPromise = LocationService.locationById(location.id)
+        let impressionsPromise = ImpressionService.getImpressions(location.id)
+        
+        when(locationPromise, impressionsPromise).then {
+            location, impressions -> Void in
             
+            self.location = location
+            self.title = self.location.title
+            
+            self.impressions = impressions
+            self.tableView.reloadData()
         }
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,7 +54,35 @@ class ImpressionFeedVC: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-
+    
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if (section == 0) {
+            let  header = tableView.dequeueReusableCellWithIdentifier("headerCell") as! LocationDetailHeaderCell
+            header.layoutMargins = UIEdgeInsetsZero;
+            
+            let gradient: CAGradientLayer = CAGradientLayer()
+            gradient.frame = header.locationImage.frame
+            gradient.colors = [UIColor(red: 29/255, green: 29/255, blue: 29/255, alpha: 0.6) .CGColor, UIColor.clearColor().CGColor]
+            gradient.locations = [0.0, 0.5, 1]
+            header.locationImage.layer.insertSublayer(gradient, atIndex: 0)
+            
+            if self.impressions == nil {
+                header.locationImage!.image = UIImage()
+            } else {
+                header.username.setTitle(location.user.name, forState: UIControlState.Normal)
+                header.favorCount.text = String(location.favorites)
+                header.impressionsCount.text = String(impressions!.count)
+                header.locationImage.image = UIImage(data: UtilService.dataFromPath(location.imagePathNormal))
+                
+                if location.favored == true {
+                    header.favorIcon.setImage(self.favoriteIconActive, forState: .Normal)
+                }
+            }
+            return header
+        }
+        return UITableViewCell()
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if self.impressions == nil {
             return 0
@@ -78,6 +115,34 @@ class ImpressionFeedVC: UITableViewController {
         }
         
         return UITableViewCell()
+    }
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 380.0
+    }
+    
+    @IBAction func favorLocation(sender: UIButton) {
+        
+        LocationService.favLocation(location.id).then {
+            favors,favor -> Void in
+            
+            self.location.favorites = favors
+            self.location.favored = favor
+            
+            if (favor) {
+                self.favorIcon.setImage(self.favoriteIconActive, forState: .Normal)
+            } else {
+                self.favorIcon.setImage(self.favoriteIcon, forState: .Normal)
+            }
+            
+            self.tableView.reloadData()
+            
+            }.error {
+                err -> Void in
+                print(err)
+        }
+
+        
     }
 
     /*
@@ -115,14 +180,21 @@ class ImpressionFeedVC: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        print(segue.identifier)
+        if (segue.identifier == "text") {
+            let controller = segue.destinationViewController as! TextImpressionVC
+            controller.locationId = self.location.id
+        } else if (segue.identifier == "image") {
+            let controller = segue.destinationViewController as! ImageImpressionVC
+            controller.locationId = self.location.id
+        } else if (segue.identifier == "user") {
+            let controller = segue.destinationViewController as! UserVC
+            controller.user = self.location.user
+        } else if (segue.identifier == "map") {
+            let controller = segue.destinationViewController as! MapVC
+            controller.locationsOfInterest[location.id] = location
+        }
     }
-    */
 
 }
