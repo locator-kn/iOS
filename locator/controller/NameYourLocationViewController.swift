@@ -9,8 +9,15 @@
 import UIKit
 
 class NameYourLocationViewController: UIViewController {
+    
+    var uiimage:UIImage!
 
+    @IBOutlet weak var locationTitle: UITextField!
     override func viewDidLoad() {
+        print("view did load")
+        print(uiimage)
+        locationTitle.attributedPlaceholder = NSAttributedString(string:"Name eintragen",
+            attributes:[NSForegroundColorAttributeName: UIColor.init(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.4)])
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
