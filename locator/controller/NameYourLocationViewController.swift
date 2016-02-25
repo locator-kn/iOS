@@ -41,7 +41,7 @@ class NameYourLocationViewController: UIViewController, UITextFieldDelegate {
             print("whoop whoop")
             
             
-            
+            self.performSegueWithIdentifier("chooseCategories", sender: true)
             return true
         } else {
             print("nonono")
@@ -50,14 +50,14 @@ class NameYourLocationViewController: UIViewController, UITextFieldDelegate {
     }
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print("going to leave")
+        if (segue.identifier == "chooseCategories") {
+            //let controller = segue.destinationViewController as! NameYourLocationViewController
+            
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
 
 }
