@@ -20,15 +20,9 @@ class LocationDetailVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
+        self.clearsSelectionOnViewWillAppear = false
         tableView.estimatedRowHeight = 300.0
         tableView.rowHeight = UITableViewAutomaticDimension
-        
         
         let locationPromise = LocationService.locationById(location.id)
         let impressionsPromise = ImpressionService.getImpressions(location.id)
@@ -97,8 +91,10 @@ class LocationDetailVC: UITableViewController {
         
         if let imageImpression = impression as? ImageImpression {
             let cell = tableView.dequeueReusableCellWithIdentifier("imageImpression", forIndexPath: indexPath) as! ImageImpressionCell
+            cell.layoutMargins = UIEdgeInsetsZero;
           
             cell.date.text = imageImpression.getDate()
+            UtilService.roundImageView(cell.userThumb)
             
             UserService.getUser(imageImpression.user.id!).then {
                 result -> Void in
