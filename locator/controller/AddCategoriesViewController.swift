@@ -52,6 +52,11 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
     }
     
     
+    @IBAction func natureAction(sender: AnyObject) {
+        print("nature")
+    }
+    
+    
     override func viewDidLoad() {
         
         //print("AddCategoriesViewController:", locationTitle)
