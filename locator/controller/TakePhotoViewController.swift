@@ -46,6 +46,10 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
         
     }
     
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        print("cancel")
+        imagePicker.dismissViewControllerAnimated(false, completion: nil)
+    }
     
     // MARK: - Navigation
 
