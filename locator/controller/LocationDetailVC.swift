@@ -11,7 +11,7 @@ import PromiseKit
 
 class LocationDetailVC: UITableViewController {
 
-    var location: Location!
+    var location: Location = Location(id: "569e4a9a4c9d7b5f3b400709")
     var impressions: [AbstractImpression]?
     @IBOutlet weak var favorIcon: UIButton!
     let favoriteIcon = UIImage(named: "favorite_icon") as UIImage?
@@ -91,7 +91,6 @@ class LocationDetailVC: UITableViewController {
         
         if let imageImpression = impression as? ImageImpression {
             let cell = tableView.dequeueReusableCellWithIdentifier("imageImpression", forIndexPath: indexPath) as! ImageImpressionCell
-            cell.layoutMargins = UIEdgeInsetsZero;
           
             cell.date.text = imageImpression.getDate()
             UtilService.roundImageView(cell.userThumb)
@@ -121,7 +120,30 @@ class LocationDetailVC: UITableViewController {
             
         } else if let textImpression = impression as? TextImpression {
             let cell = tableView.dequeueReusableCellWithIdentifier("textImpression", forIndexPath: indexPath) as! TextImpressionCell
+            
+            cell.date.text = textImpression.getDate()
+            UtilService.roundImageView(cell.userThumb)
+            
+            UserService.getUser(textImpression.user.id!).then {
+                result -> Void in
+                if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? TextImpressionCell {
+                    cellToUpdate.username.text = result.name
+                }
+                
+                UtilService.dataFromCache(result.imagePathThumb!).then {
+                    result -> Void in
+                    if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? TextImpressionCell {
+                        cellToUpdate.userThumb.image = UIImage(data: result)
+                    }
+                }
+            }
+            
             cell.textView.text = textImpression.text
+            cell.textView.scrollEnabled = false
+            let contentSize = cell.textView.sizeThatFits(cell.textView.bounds.size)
+            var frame = cell.textView.frame
+            frame.size.height = contentSize.height
+            cell.textheight.constant = contentSize.height
             return cell
         }
         
@@ -129,7 +151,7 @@ class LocationDetailVC: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 380.0
+        return 420.0
     }
     
     @IBAction func favorLocation(sender: UIButton) {
