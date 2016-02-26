@@ -53,18 +53,6 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
         print(selectedCategories)
     }
     
-    func editSelectedCategories(ident: String) -> Bool {
-        if let index = selectedCategories.indexOf(ident) {
-            selectedCategories.removeAtIndex(index)
-            // return false if category was removed
-            return false
-        } else {
-            selectedCategories.append(ident)
-            // return true if category was selected
-            return true
-        }
-    }
-    
     func handleAlphaValueOfNext() {
         
     }
@@ -128,6 +116,18 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
     func setAlphaForButtons(button1: UIButton, button2: UIButton, alpha: CGFloat) {
         button1.alpha = alpha
         button2.alpha = alpha
+    }
+    
+    func editSelectedCategories(ident: String) -> Bool {
+        if let index = selectedCategories.indexOf(ident) {
+            selectedCategories.removeAtIndex(index)
+            // return false if category was removed
+            return false
+        } else {
+            selectedCategories.append(ident)
+            // return true if category was selected
+            return true
+        }
     }
 
     /*
