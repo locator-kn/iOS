@@ -98,7 +98,7 @@ class LocationDetailVC: UITableViewController {
         if let imageImpression = impression as? ImageImpression {
             let cell = tableView.dequeueReusableCellWithIdentifier("imageImpression", forIndexPath: indexPath) as! ImageImpressionCell
           
-            cell.date.text = String(imageImpression.date)
+            cell.date.text = imageImpression.getDate()
             
             UserService.getUser(imageImpression.user.id!).then {
                 result -> Void in
