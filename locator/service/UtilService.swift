@@ -70,15 +70,20 @@ class UtilService {
         return token.stringByReplacingOccurrencesOfString(" ", withString: "")
     }
     
-    static func roundImageView(imageview: UIImageView) -> UIImageView {
-        imageview.layer.cornerRadius = imageview.frame.size.width / 2
-        imageview.clipsToBounds = true
+    static func roundImageView(imageView: UIImageView) -> UIImageView {
+        imageView.layer.cornerRadius = imageView.frame.size.width / 2
+        imageView.clipsToBounds = true
+        return imageView
+    }
+    
+    static func roundImageView(var imageView: UIImageView, borderWidth: CGFloat, borderColor: UIColor = UIColor(red:222/255.0, green:225/255.0, blue:227/255.0, alpha: 1.0)) -> UIImageView {
         
-        imageview.layer.borderWidth = 3
-        imageview.layer.borderColor = UIColor(red:222/255.0, green:225/255.0, blue:227/255.0, alpha: 1.0).CGColor
+        imageView = roundImageView(imageView)
         
+        imageView.layer.borderWidth = borderWidth
+        imageView.layer.borderColor = borderColor.CGColor
         
-        return imageview
+        return imageView
     }
     
     static func distanceBetweenCoords(lat1:Double, lon1:Double, lat2:Double, lon2:Double) -> Double {
