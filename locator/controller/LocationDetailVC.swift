@@ -63,7 +63,7 @@ class LocationDetailVC: UITableViewController {
             if self.impressions == nil {
                 header.locationImage!.image = UIImage()
             } else {
-                header.username.setTitle(location.user.name, forState: UIControlState.Normal)
+                header.username.setTitle(location.user.name! + "  \u{2E31}", forState: UIControlState.Normal)
                 header.favorCount.text = String(location.favorites)
                 header.impressionsCount.text = String(impressions!.count)
                 header.locationImage.image = UIImage(data: UtilService.dataFromPath(location.imagePathNormal))
@@ -152,6 +152,19 @@ class LocationDetailVC: UITableViewController {
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 420.0
+    }
+    
+    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UITableViewCell? {
+        let cell = tableView.dequeueReusableCellWithIdentifier("placeholderCell")
+        return cell
+    }
+    
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        
+        if self.impressions != nil && self.impressions!.count == 0 {
+            return 120.0
+        }
+        return 0
     }
     
     @IBAction func favorLocation(sender: UIButton) {
