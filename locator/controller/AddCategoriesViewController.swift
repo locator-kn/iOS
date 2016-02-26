@@ -44,6 +44,9 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func cultureAction(sender: AnyObject) {
         culture.alpha = 1
+        cultureLabel.alpha = 1
+        //[UIView animateWithDuration:0.25 animations:^{cultureLabel.alpha = 1;}];
+        
         editSelectedCategories("culture")
         print(selectedCategories)
     }
@@ -91,7 +94,25 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
         //print("AddCategoriesViewController:", locationTitle)
         super.viewDidLoad()
         
-        culture.alpha = 0.1
+        culture.alpha = 0.4
+        cultureLabel.alpha = 0.4
+        
+        holiday.alpha = 0.4
+        holidayLabel.alpha = 0.4
+
+        nature.alpha = 0.4
+        natureLabel.alpha = 0.4
+        
+        secret.alpha = 0.4
+        secretLabel.alpha = 0.4
+        
+        gastro.alpha = 0.4
+        gastroLabel.alpha = 0.4
+        
+        nightlife.alpha = 0.4
+        nightlifeLabel.alpha = 0.4
+        
+        next.alpha = 0.4
 
         // Do any additional setup after loading the view.
     }
