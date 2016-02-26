@@ -14,17 +14,17 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
     
     var locationTitle:String!
 
-    @IBOutlet var gastro: UIView!
-    @IBOutlet var gastroLabel: UIView!
+    @IBOutlet var gastro: UIButton!
+    @IBOutlet var gastroLabel: UIButton!
 
-    @IBOutlet var holiday: UIView!
-    @IBOutlet var holidayLabel: UIView!
+    @IBOutlet var holiday: UIButton!
+    @IBOutlet var holidayLabel: UIButton!
     
-    @IBOutlet var culture: UIView!
-    @IBOutlet var cultureLabel: UIView!
+    @IBOutlet var culture: UIButton!
+    @IBOutlet var cultureLabel: UIButton!
     
-    @IBOutlet var secret: UIView!
-    @IBOutlet var secretLabel: UIView!
+    @IBOutlet var secret: UIButton!
+    @IBOutlet var secretLabel: UIButton!
     
     @IBOutlet weak var nature: UIButton!
     @IBOutlet weak var natureLabel: UIButton!
@@ -43,6 +43,7 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func cultureAction(sender: AnyObject) {
+        culture.alpha = 1
         editSelectedCategories("culture")
         print(selectedCategories)
     }
@@ -89,6 +90,8 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
         
         //print("AddCategoriesViewController:", locationTitle)
         super.viewDidLoad()
+        
+        culture.alpha = 0.1
 
         // Do any additional setup after loading the view.
     }
