@@ -22,7 +22,7 @@ class UserService {
         var imagePathNormal = ""
         var imagePathThumb = ""
         
-        if (json["picture"].string != nil) {
+        if (json["picture"].string != nil && json["thumb"].string != nil) {
             imagePathNormal = API.IMAGE_URL + json["picture"].string!
             imagePathThumb = API.IMAGE_URL + json["thumb"].string!
         }
