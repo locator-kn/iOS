@@ -14,18 +14,29 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
     @IBOutlet var imageView: UIImageView!
     
     var uiimage: UIImage!
+    var fromTheFront:Bool = true
 
     override func viewDidLoad() {
         print("view did load")
         super.viewDidLoad()
         
-        imagePicker =  UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .Camera
+        takePhoto()
         
-        presentViewController(imagePicker, animated: false, completion: nil)
-
+        
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        fromTheFront = false
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        print("viewDidAppear called")
+        if !fromTheFront {
+            print("calling takePhoto")
+            takePhoto()
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,8 +44,13 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func takePhoto(sender: UIButton) {
-        print("takePhoto called")
+    func takePhoto() {
+        imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .Camera
+        
+        presentViewController(imagePicker, animated: false, completion: nil)
+
         
     }
     
