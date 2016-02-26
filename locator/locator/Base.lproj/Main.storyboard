@@ -611,7 +611,7 @@
                                     <outlet property="username" destination="ckI-cM-stC" id="god-UV-IyR"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="placeholderCell" rowHeight="115" id="09q-W1-bym" userLabel="emptyCell" customClass="LocationDetailHeaderCell" customModule="locator" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="placeholderCell" rowHeight="115" id="09q-W1-bym" userLabel="emptyCell">
                                 <rect key="frame" x="0.0" y="966" width="600" height="115"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="09q-W1-bym" id="ASR-Wa-fjb">
@@ -650,6 +650,40 @@
                                     </variation>
                                 </tableViewCellContentView>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="videoimpression" rowHeight="203" id="eHb-I9-yqp" userLabel="videoImpression" customClass="VideoImpressionCell" customModule="locator" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="1081" width="600" height="203"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eHb-I9-yqp" id="fgq-Gl-q9p">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="202"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ac3-IU-nJw">
+                                            <rect key="frame" x="8" y="68" width="400" height="126"/>
+                                            <color key="backgroundColor" red="1" green="0.47374492375442978" blue="0.34889697047941359" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="186" id="jna-U7-gMy"/>
+                                                <constraint firstAttribute="width" constant="400" id="uqo-gR-yYM"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEB-HU-Frm">
+                                            <rect key="frame" x="8" y="8" width="19" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ac3-IU-nJw" firstAttribute="top" secondItem="fgq-Gl-q9p" secondAttribute="topMargin" id="3kq-RY-82x"/>
+                                        <constraint firstItem="ac3-IU-nJw" firstAttribute="leading" secondItem="fgq-Gl-q9p" secondAttribute="leadingMargin" id="Q9H-Bx-wZb"/>
+                                        <constraint firstItem="sEB-HU-Frm" firstAttribute="leading" secondItem="fgq-Gl-q9p" secondAttribute="leadingMargin" id="Xsb-Xw-dzU"/>
+                                        <constraint firstItem="ac3-IU-nJw" firstAttribute="bottom" secondItem="fgq-Gl-q9p" secondAttribute="bottomMargin" id="ofa-3t-oD7"/>
+                                        <constraint firstItem="sEB-HU-Frm" firstAttribute="top" secondItem="fgq-Gl-q9p" secondAttribute="topMargin" id="w6D-Sb-gst"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="videoView" destination="ac3-IU-nJw" id="wql-M6-uOM"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="1XA-Ef-cjY" id="rc2-X4-iA9"/>
@@ -661,7 +695,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dxC-xr-LeN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2955" y="-1873"/>
+            <point key="canvasLocation" x="2856" y="-1781"/>
         </scene>
         <!--Map SearchVC-->
         <scene sceneID="p3K-vv-xwz">
