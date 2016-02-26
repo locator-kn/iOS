@@ -32,6 +32,7 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nightlife: UIButton!
     @IBOutlet weak var nightlifeLabel: UIButton!
     
+    
     var selectedCategories:[String] = []
     
     @IBAction func cultureAction(sender: AnyObject) {
@@ -51,7 +52,7 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func handleAlphaValue() {
+    func handleAlphaValueOfNext() {
         
     }
     
