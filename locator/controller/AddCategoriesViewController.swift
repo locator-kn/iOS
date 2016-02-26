@@ -43,8 +43,7 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func cultureAction(sender: AnyObject) {
-                //[UIView animateWithDuration:0.25 animations:^{cultureLabel.alpha = 1;}];
-        
+
         if editSelectedCategories("culture") {
             setAlphaForButtons(culture, button2: cultureLabel, alpha: 1)
         } else {
