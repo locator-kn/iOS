@@ -352,6 +352,9 @@
                                     <constraint firstAttribute="width" constant="70" id="xdd-1z-dBE"/>
                                 </constraints>
                                 <state key="normal" image="Nö"/>
+                                <connections>
+                                    <action selector="nextAction:" destination="3b4-4g-E5P" eventType="touchUpInside" id="ISt-nU-anW"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -417,6 +420,7 @@
                         <outlet property="holidayLabel" destination="4Qp-fS-YkQ" id="suB-Vh-7bZ"/>
                         <outlet property="nature" destination="wAA-ht-gTP" id="qJh-Tg-xkF"/>
                         <outlet property="natureLabel" destination="HxA-AN-kUs" id="GiA-44-Y3H"/>
+                        <outlet property="next" destination="Cm0-8C-bzs" id="ptg-hh-97j"/>
                         <outlet property="nightlife" destination="1hQ-mj-M5a" id="Cn1-m4-9NU"/>
                         <outlet property="nightlifeLabel" destination="qGK-oy-2oY" id="CF4-Mj-Qde"/>
                         <outlet property="secret" destination="4Qp-fS-YkQ" id="Oyj-HE-Cg5"/>

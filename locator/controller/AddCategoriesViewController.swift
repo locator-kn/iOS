@@ -32,8 +32,15 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nightlife: UIButton!
     @IBOutlet weak var nightlifeLabel: UIButton!
     
-    
+    @IBOutlet weak var next: UIButton!
+   
     var selectedCategories:[String] = []
+    
+    
+    @IBAction func nextAction(sender: AnyObject) {
+        print("next")
+    }
+    
     
     @IBAction func cultureAction(sender: AnyObject) {
         editSelectedCategories("culture")
