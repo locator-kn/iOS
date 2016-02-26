@@ -19,6 +19,33 @@ class UtilService {
         return formatter.dateFromString(iso)!
     }
     
+    static func getReadableDateString(date: NSDate) -> String {
+        
+        let today = NSDate()
+        let todayCalendar = NSCalendar.currentCalendar()
+        let todayComponents = todayCalendar.components([.Day , .Month , .Year], fromDate: today)
+        let todayYear =  todayComponents.year
+        let todayMonth = todayComponents.month
+        let todayDay = todayComponents.day
+        
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components([.Day , .Month , .Year], fromDate: date)
+        let year =  components.year
+        let month = components.month
+        let day = components.day
+        
+        if (todayYear == year && todayMonth == month && todayDay == day) {
+            return "Heute"
+        } else if (todayYear == year && todayMonth == month && todayDay == day + 1) {
+            return "Gestern"
+        }
+        
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        let readableDate = formatter.stringFromDate(date)
+        return readableDate
+    }
+    
     static func dataFromPath(path:String) -> NSData {
         return NSData(contentsOfURL: NSURL(string: path)!)!
     }
