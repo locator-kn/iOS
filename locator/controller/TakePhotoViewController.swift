@@ -11,13 +11,11 @@ import UIKit
 class TakePhotoViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     var imagePicker: UIImagePickerController!
-    @IBOutlet var imageView: UIImageView!
     
     var uiimage: UIImage!
     var fromTheFront:Bool = true
 
     override func viewDidLoad() {
-        print("view did load")
         super.viewDidLoad()
         
         takePhoto()
@@ -31,9 +29,7 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
     }
     
     override func viewDidAppear(animated: Bool) {
-        print("viewDidAppear called")
         if !fromTheFront {
-            print("calling takePhoto")
             takePhoto()
         }
         
@@ -55,7 +51,6 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        print("imagePickerController called")
         imagePicker.dismissViewControllerAnimated(false, completion: nil)
         uiimage = info[UIImagePickerControllerOriginalImage] as? UIImage
         self.performSegueWithIdentifier("nameYourLocation", sender: true)
@@ -63,22 +58,15 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        print("cancel")
         imagePicker.dismissViewControllerAnimated(false, completion: nil)
         self.navigationController?.popViewControllerAnimated(false)
     }
-    
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        print("asdjhkajsdhashdkjas")
         if (segue.identifier == "nameYourLocation") {
             let controller = segue.destinationViewController as! NameYourLocationViewController
             controller.uiimage = self.uiimage
         }
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
     
 
