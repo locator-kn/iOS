@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddCategoriesViewController: UIViewController {
+class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
     
     var uiimage:UIImage!
     
@@ -31,6 +31,15 @@ class AddCategoriesViewController: UIViewController {
     
     @IBOutlet weak var nightlife: UIButton!
     @IBOutlet weak var nightlifeLabel: UIButton!
+    
+    
+    
+    @IBAction func cultureAction(sender: AnyObject) {
+        print("culture")
+    }
+    
+    
+    
     
     
     override func viewDidLoad() {
