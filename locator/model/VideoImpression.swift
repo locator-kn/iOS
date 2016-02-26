@@ -9,5 +9,11 @@
 import Foundation
 
 class VideoImpression:AbstractImpression {
+    var videoPath: String
+    
+    init(date:String, userId:String, videoPath: String) {
+        self.videoPath = videoPath
+        super.init(date: date, userId: userId)
+    }
     
 }
