@@ -18,6 +18,12 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
     override func viewDidLoad() {
         print("view did load")
         super.viewDidLoad()
+        
+        imagePicker =  UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .Camera
+        
+        presentViewController(imagePicker, animated: true, completion: nil)
 
         // Do any additional setup after loading the view.
     }
@@ -29,11 +35,7 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
     
     @IBAction func takePhoto(sender: UIButton) {
         print("takePhoto called")
-        imagePicker =  UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .Camera
         
-        presentViewController(imagePicker, animated: true, completion: nil)
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
