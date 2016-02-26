@@ -39,7 +39,11 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func nextAction(sender: AnyObject) {
-        print("next")
+        if nextEnabled {
+            print("weiter gehts")
+        } else {
+            print("next disabled")
+        }
     }
     
     
@@ -144,12 +148,18 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
     }
     
     func editSelectedCategories(ident: String) -> Bool {
+        
+        
+        
         if let index = selectedCategories.indexOf(ident) {
             selectedCategories.removeAtIndex(index)
             nextEnabled = checkForNextAvailablility()
             // return false if category was removed
             return false
         } else {
+            if selectedCategories.count == 3 {
+                return false
+            }
             selectedCategories.append(ident)
             nextEnabled = checkForNextAvailablility()
             // return true if category was selected
