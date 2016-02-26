@@ -144,14 +144,10 @@
                                     <action selector="takePhoto:" destination="jfr-tO-4Yb" eventType="touchUpInside" id="Zgs-Ir-dNB"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NlW-MM-Uz5">
-                                <rect key="frame" x="217" y="157" width="240" height="128"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="NlW-MM-Uz5" id="8vD-iG-e4l"/>
                         <segue destination="v3D-1b-zpU" kind="show" identifier="nameYourLocation" id="qCW-ge-Hld"/>
                     </connections>
                 </viewController>
