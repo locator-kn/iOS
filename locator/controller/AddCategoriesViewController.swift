@@ -17,7 +17,7 @@ class AddCategoriesViewController: UIViewController {
 
     override func viewDidLoad() {
         
-        print("AddCategoriesViewController:", locationTitle)
+        //print("AddCategoriesViewController:", locationTitle)
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
