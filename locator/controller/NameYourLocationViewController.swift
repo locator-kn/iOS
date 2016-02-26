@@ -19,6 +19,8 @@ class NameYourLocationViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         
+        self.title = "Bennene deine Location"
+        
         locationTitle.attributedPlaceholder = NSAttributedString(string:"Name eintragen",
             attributes:[NSForegroundColorAttributeName: UIColor.init(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.4)])
         
