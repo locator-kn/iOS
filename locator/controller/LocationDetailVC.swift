@@ -10,7 +10,7 @@ import UIKit
 import PromiseKit
 
 class LocationDetailVC: UITableViewController {
-
+    
     var location: Location!
     var impressions: [AbstractImpression]?
     @IBOutlet weak var favorIcon: UIButton!
@@ -145,6 +145,11 @@ class LocationDetailVC: UITableViewController {
             frame.size.height = contentSize.height
             cell.textheight.constant = contentSize.height
             return cell
+        } else if let videoImpression = impression as? VideoImpression {
+            let cell = tableView.dequeueReusableCellWithIdentifier("videoimpression", forIndexPath: indexPath) as! VideoImpressionCell
+            
+            
+            return cell
         }
         
         return UITableViewCell()
@@ -228,6 +233,7 @@ class LocationDetailVC: UITableViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         print(segue.identifier)
+        
         if (segue.identifier == "text") {
             let controller = segue.destinationViewController as! TextImpressionVC
             controller.locationId = self.location.id
