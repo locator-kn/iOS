@@ -11,7 +11,7 @@ import PromiseKit
 
 class LocationDetailVC: UITableViewController {
 
-    var location: Location = Location(id: "569e4a9a4c9d7b5f3b400709")
+    var location: Location!
     var impressions: [AbstractImpression]?
     @IBOutlet weak var favorIcon: UIButton!
     let favoriteIcon = UIImage(named: "favorite_icon") as UIImage?
