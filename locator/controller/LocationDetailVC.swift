@@ -20,15 +20,9 @@ class LocationDetailVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
+        self.clearsSelectionOnViewWillAppear = false
         tableView.estimatedRowHeight = 300.0
         tableView.rowHeight = UITableViewAutomaticDimension
-        
         
         let locationPromise = LocationService.locationById(location.id)
         let impressionsPromise = ImpressionService.getImpressions(location.id)
@@ -69,7 +63,7 @@ class LocationDetailVC: UITableViewController {
             if self.impressions == nil {
                 header.locationImage!.image = UIImage()
             } else {
-                header.username.setTitle(location.user.name, forState: UIControlState.Normal)
+                header.username.setTitle(location.user.name! + "  \u{2E31}", forState: UIControlState.Normal)
                 header.favorCount.text = String(location.favorites)
                 header.impressionsCount.text = String(impressions!.count)
                 header.locationImage.image = UIImage(data: UtilService.dataFromPath(location.imagePathNormal))
@@ -97,11 +91,26 @@ class LocationDetailVC: UITableViewController {
         
         if let imageImpression = impression as? ImageImpression {
             let cell = tableView.dequeueReusableCellWithIdentifier("imageImpression", forIndexPath: indexPath) as! ImageImpressionCell
-            //cell.imageBox.image = UIImage(data: UtilService.dataFromPath("https://locator-app.com" + imageImpression.imagePath))
+          
+            cell.date.text = imageImpression.getDate()
+            UtilService.roundImageView(cell.userThumb)
+            
+            UserService.getUser(imageImpression.user.id!).then {
+                result -> Void in
+                if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? ImageImpressionCell {
+                    cellToUpdate.username.text = result.name
+                }
+                
+                UtilService.dataFromCache(result.imagePathThumb!).then {
+                    result -> Void in
+                    if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? ImageImpressionCell {
+                        cellToUpdate.userThumb.image = UIImage(data: result)
+                    }
+                }
+            }
             
             UtilService.dataFromCache(API.IMAGE_URL + imageImpression.imagePath).then {
                 result -> Void in
-                print("start")
                 if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? ImageImpressionCell {
                     cellToUpdate.imageBox.image = UIImage(data: result)
                 }
@@ -111,7 +120,30 @@ class LocationDetailVC: UITableViewController {
             
         } else if let textImpression = impression as? TextImpression {
             let cell = tableView.dequeueReusableCellWithIdentifier("textImpression", forIndexPath: indexPath) as! TextImpressionCell
+            
+            cell.date.text = textImpression.getDate()
+            UtilService.roundImageView(cell.userThumb)
+            
+            UserService.getUser(textImpression.user.id!).then {
+                result -> Void in
+                if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? TextImpressionCell {
+                    cellToUpdate.username.text = result.name
+                }
+                
+                UtilService.dataFromCache(result.imagePathThumb!).then {
+                    result -> Void in
+                    if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? TextImpressionCell {
+                        cellToUpdate.userThumb.image = UIImage(data: result)
+                    }
+                }
+            }
+            
             cell.textView.text = textImpression.text
+            cell.textView.scrollEnabled = false
+            let contentSize = cell.textView.sizeThatFits(cell.textView.bounds.size)
+            var frame = cell.textView.frame
+            frame.size.height = contentSize.height
+            cell.textheight.constant = contentSize.height
             return cell
         }
         
@@ -119,7 +151,20 @@ class LocationDetailVC: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 380.0
+        return 420.0
+    }
+    
+    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UITableViewCell? {
+        let cell = tableView.dequeueReusableCellWithIdentifier("placeholderCell")
+        return cell
+    }
+    
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        
+        if self.impressions != nil && self.impressions!.count == 0 {
+            return 120.0
+        }
+        return 0
     }
     
     @IBAction func favorLocation(sender: UIButton) {

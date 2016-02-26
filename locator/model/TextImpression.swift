@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TextImpression:AbstractImpression {
+class TextImpression: AbstractImpression {
     var text: String
     
     init(date:String, userId:String, text: String) {

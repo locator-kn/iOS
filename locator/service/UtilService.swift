@@ -19,12 +19,43 @@ class UtilService {
         return formatter.dateFromString(iso)!
     }
     
+    static func getReadableDateString(date: NSDate) -> String {
+        
+        let today = NSDate()
+        let todayCalendar = NSCalendar.currentCalendar()
+        let todayComponents = todayCalendar.components([.Day , .Month , .Year], fromDate: today)
+        let todayYear =  todayComponents.year
+        let todayMonth = todayComponents.month
+        let todayDay = todayComponents.day
+        
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components([.Day , .Month , .Year], fromDate: date)
+        let year =  components.year
+        let month = components.month
+        let day = components.day
+        
+        if (todayYear == year && todayMonth == month && todayDay == day) {
+            return "Heute"
+        } else if (todayYear == year && todayMonth == month && todayDay == day + 1) {
+            return "Gestern"
+        }
+        
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        let readableDate = formatter.stringFromDate(date)
+        return readableDate
+    }
+    
     static func dataFromPath(path:String) -> NSData {
         return NSData(contentsOfURL: NSURL(string: path)!)!
     }
     
-    static func dataFromCache(path:String) -> Promise<NSData> {
+    static func dataFromCache(var path:String) -> Promise<NSData> {
         return Promise { fulfill, reject in
+            
+            if (path == "") {
+                path = "https://scontent.xx.fbcdn.net/hprofile-xta1/v/t1.0-1/p160x160/11139987_10207678795748383_6785037833618997135_n.jpg?oh=22615386cd6be5f63a502af325ede808&oe=57241A43"
+            }
             let cache = Shared.dataCache
             cache.fetch(URL: NSURL(string: path)!).onSuccess { data in
                 fulfill(data)
@@ -39,15 +70,20 @@ class UtilService {
         return token.stringByReplacingOccurrencesOfString(" ", withString: "")
     }
     
-    static func roundImageView(imageview: UIImageView) -> UIImageView {
-        imageview.layer.cornerRadius = imageview.frame.size.width / 2
-        imageview.clipsToBounds = true
+    static func roundImageView(imageView: UIImageView) -> UIImageView {
+        imageView.layer.cornerRadius = imageView.frame.size.width / 2
+        imageView.clipsToBounds = true
+        return imageView
+    }
+    
+    static func roundImageView(var imageView: UIImageView, borderWidth: CGFloat, borderColor: UIColor = UIColor(red:222/255.0, green:225/255.0, blue:227/255.0, alpha: 1.0)) -> UIImageView {
         
-        imageview.layer.borderWidth = 3
-        imageview.layer.borderColor = UIColor(red:222/255.0, green:225/255.0, blue:227/255.0, alpha: 1.0).CGColor
+        imageView = roundImageView(imageView)
         
+        imageView.layer.borderWidth = borderWidth
+        imageView.layer.borderColor = borderColor.CGColor
         
-        return imageview
+        return imageView
     }
     
     static func distanceBetweenCoords(lat1:Double, lon1:Double, lat2:Double, lon2:Double) -> Double {

@@ -11,6 +11,10 @@ import UIKit
 class TextImpressionCell: UITableViewCell {
 
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var userThumb: UIImageView!
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var username: UILabel!
+    @IBOutlet weak var textheight: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -23,4 +23,8 @@ class AbstractImpression {
         self.user = user
     }
     
+    func getDate() -> String {
+        return UtilService.getReadableDateString(self.date)
+    }
+    
 }

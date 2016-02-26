@@ -11,6 +11,9 @@ import UIKit
 class ImageImpressionCell: UITableViewCell {
 
     @IBOutlet weak var imageBox: UIImageView!
+    @IBOutlet weak var userThumb: UIImageView!
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var username: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
