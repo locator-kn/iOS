@@ -33,6 +33,7 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nightlifeLabel: UIButton!
     
     @IBOutlet weak var next: UIButton!
+    var nextEnabled: Bool = false
    
     var selectedCategories:[String] = []
     
@@ -59,23 +60,48 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func gastroAction(sender: AnyObject) {
         print("gastro")
+        if editSelectedCategories("gastro") {
+            setAlphaForButtons(gastro, button2: gastroLabel, alpha: 1)
+        } else {
+            setAlphaForButtons(gastro, button2: gastroLabel, alpha: 0.4)
+        }
     }
     
     @IBAction func holidayAction(sender: AnyObject) {
         print("holiday")
+        if editSelectedCategories("holiday") {
+            setAlphaForButtons(holiday, button2: holidayLabel, alpha: 1)
+        } else {
+            setAlphaForButtons(holiday, button2: holidayLabel, alpha: 0.4)
+        }
     }
     
     @IBAction func secretAction(sender: AnyObject) {
         print("secret")
+        if editSelectedCategories("secret") {
+            setAlphaForButtons(secret, button2: secretLabel, alpha: 1)
+        } else {
+            setAlphaForButtons(secret, button2: secretLabel, alpha: 0.4)
+        }
     }
     
     
     @IBAction func natureAction(sender: AnyObject) {
         print("nature")
+        if editSelectedCategories("nature") {
+            setAlphaForButtons(nature, button2: natureLabel, alpha: 1)
+        } else {
+            setAlphaForButtons(nature, button2: natureLabel, alpha: 0.4)
+        }
     }
     
     @IBAction func nightlifeAction(sender: AnyObject) {
         print("nightlife")
+        if editSelectedCategories("nightlife") {
+            setAlphaForButtons(nightlife, button2: nightlifeLabel, alpha: 1)
+        } else {
+            setAlphaForButtons(nightlife, button2: nightlifeLabel, alpha: 0.4)
+        }
     }
     
     override func viewDidLoad() {
@@ -120,13 +146,23 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
     func editSelectedCategories(ident: String) -> Bool {
         if let index = selectedCategories.indexOf(ident) {
             selectedCategories.removeAtIndex(index)
+            nextEnabled = checkForNextAvailablility()
             // return false if category was removed
             return false
         } else {
             selectedCategories.append(ident)
+            nextEnabled = checkForNextAvailablility()
             // return true if category was selected
             return true
         }
+    }
+    
+    func checkForNextAvailablility() -> Bool {
+        if selectedCategories.count == 0 {
+            print("disabled")
+            return false
+        }
+        return true
     }
 
     /*
