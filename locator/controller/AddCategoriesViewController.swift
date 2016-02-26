@@ -56,6 +56,9 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
         print("nature")
     }
     
+    @IBAction func nightlifeAction(sender: AnyObject) {
+        print("nightlife")
+    }
     
     override func viewDidLoad() {
         
