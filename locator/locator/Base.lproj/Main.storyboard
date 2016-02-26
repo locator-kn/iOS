@@ -273,6 +273,9 @@
                                     <constraint firstAttribute="width" constant="70" id="ZDr-yf-rKI"/>
                                 </constraints>
                                 <state key="normal" title="gastro" image="Category_Gastro"/>
+                                <connections>
+                                    <action selector="gastroAction:" destination="3b4-4g-E5P" eventType="touchUpInside" id="QcU-Gf-Ll3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oaK-C8-bVw">
                                 <rect key="frame" x="480" y="422" width="70" height="70"/>
@@ -298,6 +301,9 @@
                                 <state key="normal" title="Gastronomie">
                                     <color key="titleColor" red="0.99014752743512191" green="1" blue="0.9818165915866266" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="gastroAction:" destination="3b4-4g-E5P" eventType="touchUpInside" id="PM3-MQ-6Y2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ah-hv-7Np">
                                 <rect key="frame" x="492" y="495" width="46" height="31"/>

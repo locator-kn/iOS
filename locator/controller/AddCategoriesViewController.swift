@@ -39,6 +39,9 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
     }
     
     
+    @IBAction func gastroAction(sender: AnyObject) {
+        print("gastro")
+    }
     
     
     
