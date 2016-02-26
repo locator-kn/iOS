@@ -111,10 +111,12 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         
-        self.title = "Kategorien wählen"
         
         //print("AddCategoriesViewController:", locationTitle)
         super.viewDidLoad()
+        
+        
+        self.title = "Kategorien wählen"
         
         culture.alpha = 0.4
         cultureLabel.alpha = 0.4
