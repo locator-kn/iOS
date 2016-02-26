@@ -262,7 +262,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name eintragen" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mri-qZ-NCm">
-                                <rect key="frame" x="20" y="66" width="560" height="33"/>
+                                <rect key="frame" x="20" y="95" width="560" height="36"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="28"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
@@ -272,12 +272,9 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="mri-qZ-NCm" secondAttribute="trailing" id="AAa-Fr-z4K"/>
                             <constraint firstAttribute="leadingMargin" secondItem="mri-qZ-NCm" secondAttribute="leading" id="MV3-Lu-9s4"/>
-                            <constraint firstItem="xf4-Yp-SYQ" firstAttribute="top" secondItem="mri-qZ-NCm" secondAttribute="bottom" constant="501" id="Wdl-EW-e9y"/>
-                            <constraint firstItem="mri-qZ-NCm" firstAttribute="top" secondItem="XJk-cw-oMc" secondAttribute="bottom" constant="66" id="ZKU-2s-bzs"/>
+                            <constraint firstItem="mri-qZ-NCm" firstAttribute="top" secondItem="XJk-cw-oMc" secondAttribute="bottom" constant="51" id="ZKU-2s-bzs"/>
                         </constraints>
                     </view>
-                    <nil key="simulatedStatusBarMetrics"/>
-                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="nameTextField" destination="mri-qZ-NCm" id="6Z7-Oq-9pM"/>
                         <segue destination="qwr-Yj-3Gt" kind="show" identifier="showRegisterVC2" id="8g1-3Z-MfT"/>
@@ -754,16 +751,16 @@
                                     <action selector="sendMessageButton:" destination="G1J-vh-MOc" eventType="touchUpInside" id="dfq-sz-1VA"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="70b-WD-Cs7">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="70b-WD-Cs7">
                                 <rect key="frame" x="20" y="213" width="84" height="13"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xol-eP-mwD" userLabel="locations Count">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xol-eP-mwD" userLabel="locations Count">
                                         <rect key="frame" x="0.0" y="0.0" width="17" height="13"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locations" translatesAutoresizingMaskIntoConstraints="NO" id="DUR-Am-62t">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="locations" translatesAutoresizingMaskIntoConstraints="NO" id="DUR-Am-62t">
                                         <rect key="frame" x="17" y="0.0" width="25" height="13"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="13" id="HcJ-gD-RXe"/>
@@ -776,13 +773,13 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsS-vF-js4">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsS-vF-js4">
                                         <rect key="frame" x="42" y="0.0" width="17" height="13"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="follower" translatesAutoresizingMaskIntoConstraints="NO" id="HPi-Sg-Di2">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="follower" translatesAutoresizingMaskIntoConstraints="NO" id="HPi-Sg-Di2">
                                         <rect key="frame" x="59" y="0.0" width="25" height="13"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="GVG-4x-jYD"/>
@@ -1437,7 +1434,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Konstanz" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gOb-J3-wKN">
-                                <rect key="frame" x="20" y="66" width="560" height="33"/>
+                                <rect key="frame" x="20" y="95" width="560" height="36"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="28"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
@@ -1445,14 +1442,11 @@
                         </subviews>
                         <color key="backgroundColor" red="0.97647058819999999" green="0.67843137249999996" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="KKf-gM-ftY" firstAttribute="top" secondItem="gOb-J3-wKN" secondAttribute="bottom" constant="501" id="RY4-TM-SfE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gOb-J3-wKN" secondAttribute="trailing" id="esG-uC-a3f"/>
-                            <constraint firstItem="gOb-J3-wKN" firstAttribute="top" secondItem="UHb-dN-I2J" secondAttribute="bottom" constant="66" id="jJA-yp-fYK"/>
+                            <constraint firstItem="gOb-J3-wKN" firstAttribute="top" secondItem="UHb-dN-I2J" secondAttribute="bottom" constant="51" id="jJA-yp-fYK"/>
                             <constraint firstAttribute="leadingMargin" secondItem="gOb-J3-wKN" secondAttribute="leading" id="ue2-N7-UkY"/>
                         </constraints>
                     </view>
-                    <nil key="simulatedStatusBarMetrics"/>
-                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="residenceTextField" destination="gOb-J3-wKN" id="j04-7o-PgD"/>
                         <segue destination="EEd-DH-lrC" kind="show" identifier="showRegisterVC3" id="sSE-J4-nIE"/>
@@ -1475,7 +1469,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="e-Mail eingeben" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0Cj-eH-cI2">
-                                <rect key="frame" x="20" y="66" width="560" height="33"/>
+                                <rect key="frame" x="20" y="95" width="560" height="36"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="28"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
@@ -1485,12 +1479,9 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="0Cj-eH-cI2" secondAttribute="trailing" id="4Gj-V8-JuY"/>
                             <constraint firstAttribute="leadingMargin" secondItem="0Cj-eH-cI2" secondAttribute="leading" id="HWS-en-Oyh"/>
-                            <constraint firstItem="pNg-5l-MXy" firstAttribute="top" secondItem="0Cj-eH-cI2" secondAttribute="bottom" constant="501" id="Oji-CH-RcB"/>
-                            <constraint firstItem="0Cj-eH-cI2" firstAttribute="top" secondItem="KMw-5x-VSf" secondAttribute="bottom" constant="66" id="cwV-pT-hfR"/>
+                            <constraint firstItem="0Cj-eH-cI2" firstAttribute="top" secondItem="KMw-5x-VSf" secondAttribute="bottom" constant="51" id="cwV-pT-hfR"/>
                         </constraints>
                     </view>
-                    <nil key="simulatedStatusBarMetrics"/>
-                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="emailTextField" destination="0Cj-eH-cI2" id="SWI-gj-4lv"/>
                         <segue destination="ky3-wn-5IO" kind="show" identifier="showRegisterVC4" id="z7g-yE-rpo"/>
@@ -1513,7 +1504,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Passwort wählen" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mcO-4V-hIH">
-                                <rect key="frame" x="20" y="66" width="560" height="33"/>
+                                <rect key="frame" x="20" y="95" width="560" height="36"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="28"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
@@ -1521,14 +1512,11 @@
                         </subviews>
                         <color key="backgroundColor" red="0.97647058819999999" green="0.67843137249999996" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="mcO-4V-hIH" firstAttribute="top" secondItem="DQz-yl-REc" secondAttribute="bottom" constant="66" id="udi-I9-Xkd"/>
+                            <constraint firstItem="mcO-4V-hIH" firstAttribute="top" secondItem="DQz-yl-REc" secondAttribute="bottom" constant="51" id="udi-I9-Xkd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mcO-4V-hIH" secondAttribute="trailing" id="uhT-hb-VcE"/>
                             <constraint firstAttribute="leadingMargin" secondItem="mcO-4V-hIH" secondAttribute="leading" id="vYz-bI-wyg"/>
-                            <constraint firstItem="AaY-Oh-4hj" firstAttribute="top" secondItem="mcO-4V-hIH" secondAttribute="bottom" constant="501" id="z3V-xM-PPK"/>
                         </constraints>
                     </view>
-                    <nil key="simulatedStatusBarMetrics"/>
-                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="passwordTextField" destination="mcO-4V-hIH" id="dwF-ng-nVy"/>
                         <segue destination="qxr-V7-qqt" kind="show" identifier="showRegisterVC5" id="fJJ-MK-AfF"/>
