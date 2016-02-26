@@ -53,11 +53,6 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
         print(selectedCategories)
     }
     
-    func setAlphaForButtons(button1: UIButton, button2: UIButton, alpha: CGFloat) {
-        button1.alpha = alpha
-        button2.alpha = alpha
-    }
-    
     func editSelectedCategories(ident: String) -> Bool {
         if let index = selectedCategories.indexOf(ident) {
             selectedCategories.removeAtIndex(index)
@@ -129,6 +124,11 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func setAlphaForButtons(button1: UIButton, button2: UIButton, alpha: CGFloat) {
+        button1.alpha = alpha
+        button2.alpha = alpha
+    }
 
     /*
     // MARK: - Navigation
