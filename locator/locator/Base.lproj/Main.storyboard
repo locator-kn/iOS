@@ -381,6 +381,20 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="culture" destination="4Qp-fS-YkQ" id="Yjr-pI-mX7"/>
+                        <outlet property="cultureLabel" destination="4Qp-fS-YkQ" id="gSC-cb-OcP"/>
+                        <outlet property="gastro" destination="4Qp-fS-YkQ" id="LFH-70-Toj"/>
+                        <outlet property="gastroLabel" destination="4Qp-fS-YkQ" id="ut6-5v-1Vt"/>
+                        <outlet property="holiday" destination="4Qp-fS-YkQ" id="Qhy-bd-ytT"/>
+                        <outlet property="holidayLabel" destination="4Qp-fS-YkQ" id="suB-Vh-7bZ"/>
+                        <outlet property="nature" destination="wAA-ht-gTP" id="qJh-Tg-xkF"/>
+                        <outlet property="natureLabel" destination="HxA-AN-kUs" id="GiA-44-Y3H"/>
+                        <outlet property="nightlife" destination="1hQ-mj-M5a" id="Cn1-m4-9NU"/>
+                        <outlet property="nightlifeLabel" destination="qGK-oy-2oY" id="CF4-Mj-Qde"/>
+                        <outlet property="secret" destination="4Qp-fS-YkQ" id="Oyj-HE-Cg5"/>
+                        <outlet property="secretLabel" destination="4Qp-fS-YkQ" id="dFk-dW-ny6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Mh-PL-dK0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

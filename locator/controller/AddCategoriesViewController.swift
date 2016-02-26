@@ -14,7 +14,25 @@ class AddCategoriesViewController: UIViewController {
     
     var locationTitle:String!
 
+    @IBOutlet var gastro: UIView!
+    @IBOutlet var gastroLabel: UIView!
 
+    @IBOutlet var holiday: UIView!
+    @IBOutlet var holidayLabel: UIView!
+    
+    @IBOutlet var culture: UIView!
+    @IBOutlet var cultureLabel: UIView!
+    
+    @IBOutlet var secret: UIView!
+    @IBOutlet var secretLabel: UIView!
+    
+    @IBOutlet weak var nature: UIButton!
+    @IBOutlet weak var natureLabel: UIButton!
+    
+    @IBOutlet weak var nightlife: UIButton!
+    @IBOutlet weak var nightlifeLabel: UIButton!
+    
+    
     override func viewDidLoad() {
         
         //print("AddCategoriesViewController:", locationTitle)
