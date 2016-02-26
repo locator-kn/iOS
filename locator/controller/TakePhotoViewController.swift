@@ -23,7 +23,7 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
         imagePicker.delegate = self
         imagePicker.sourceType = .Camera
         
-        presentViewController(imagePicker, animated: true, completion: nil)
+        presentViewController(imagePicker, animated: false, completion: nil)
 
         // Do any additional setup after loading the view.
     }
@@ -40,15 +40,12 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         print("imagePickerController called")
-        imagePicker.dismissViewControllerAnimated(true, completion: nil)
+        imagePicker.dismissViewControllerAnimated(false, completion: nil)
         uiimage = info[UIImagePickerControllerOriginalImage] as? UIImage
-        print(uiimage)
-        imageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
         self.performSegueWithIdentifier("nameYourLocation", sender: true)
         
     }
     
-
     
     // MARK: - Navigation
 
