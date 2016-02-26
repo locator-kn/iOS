@@ -43,6 +43,13 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
         print("gastro")
     }
     
+    @IBAction func holidayAction(sender: AnyObject) {
+        print("holiday")
+    }
+    
+    @IBAction func secretAction(sender: AnyObject) {
+        print("secret")
+    }
     
     
     override func viewDidLoad() {

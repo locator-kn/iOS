@@ -265,6 +265,9 @@
                                     <constraint firstAttribute="height" constant="70" id="hf9-cV-z20"/>
                                 </constraints>
                                 <state key="normal" title="secret" image="Category_Secret"/>
+                                <connections>
+                                    <action selector="secretAction:" destination="3b4-4g-E5P" eventType="touchUpInside" id="FZ6-5j-Ml6"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ch-yz-gHg">
                                 <rect key="frame" x="480" y="278" width="70" height="70"/>
@@ -284,6 +287,9 @@
                                     <constraint firstAttribute="width" constant="70" id="hzG-kz-VFL"/>
                                 </constraints>
                                 <state key="normal" title="holiday" image="Category_Holiday"/>
+                                <connections>
+                                    <action selector="holidayAction:" destination="3b4-4g-E5P" eventType="touchUpInside" id="Hug-em-71C"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIB-KT-q6d">
                                 <rect key="frame" x="282" y="283" width="39" height="31"/>
@@ -311,6 +317,9 @@
                                 <state key="normal" title="Freizeit">
                                     <color key="titleColor" red="0.99014752743512191" green="1" blue="0.9818165915866266" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="holidayAction:" destination="3b4-4g-E5P" eventType="touchUpInside" id="BkO-xk-hkC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMa-X0-pgd">
                                 <rect key="frame" x="264" y="454" width="74" height="31"/>
@@ -318,6 +327,9 @@
                                 <state key="normal" title="Geheimtipp">
                                     <color key="titleColor" red="0.99014752743512191" green="1" blue="0.9818165915866266" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="secretAction:" destination="3b4-4g-E5P" eventType="touchUpInside" id="wix-3j-zQ6"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qGK-oy-2oY">
                                 <rect key="frame" x="58" y="495" width="54" height="31"/>
