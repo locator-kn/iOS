@@ -44,6 +44,8 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
         } else {
             print("next disabled")
         }
+        
+        print(selectedCategories)
     }
     
     
@@ -54,7 +56,6 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
         } else {
             setAlphaForButtons(culture, button2: cultureLabel, alpha: 0.4)
         }
-        print(selectedCategories)
     }
     
     func handleAlphaValueOfNext() {
@@ -169,9 +170,10 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
     
     func checkForNextAvailablility() -> Bool {
         if selectedCategories.count == 0 {
-            print("disabled")
+            next.alpha = 0.4
             return false
         }
+        next.alpha = 1
         return true
     }
 
