@@ -32,10 +32,27 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nightlife: UIButton!
     @IBOutlet weak var nightlifeLabel: UIButton!
     
-    
+    var selectedCategories:[String] = []
     
     @IBAction func cultureAction(sender: AnyObject) {
-        print("culture")
+        editSelectedCategories("culture")
+        print(selectedCategories)
+    }
+    
+    func editSelectedCategories(ident: String) -> Bool {
+        if let index = selectedCategories.indexOf(ident) {
+            selectedCategories.removeAtIndex(index)
+            // return false if category was removed
+            return false
+        } else {
+            selectedCategories.append(ident)
+            // return true if category was selected
+            return true
+        }
+    }
+    
+    func handleAlphaValue() {
+        
     }
     
     
