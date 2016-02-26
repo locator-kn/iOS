@@ -43,12 +43,19 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func cultureAction(sender: AnyObject) {
-        culture.alpha = 1
-        cultureLabel.alpha = 1
-        //[UIView animateWithDuration:0.25 animations:^{cultureLabel.alpha = 1;}];
+                //[UIView animateWithDuration:0.25 animations:^{cultureLabel.alpha = 1;}];
         
-        editSelectedCategories("culture")
+        if editSelectedCategories("culture") {
+            setAlphaForButtons(culture, button2: cultureLabel, alpha: 1)
+        } else {
+            setAlphaForButtons(culture, button2: cultureLabel, alpha: 0.4)
+        }
         print(selectedCategories)
+    }
+    
+    func setAlphaForButtons(button1: UIButton, button2: UIButton, alpha: CGFloat) {
+        button1.alpha = alpha
+        button2.alpha = alpha
     }
     
     func editSelectedCategories(ident: String) -> Bool {
