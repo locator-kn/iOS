@@ -218,18 +218,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Anmelden" translatesAutoresizingMaskIntoConstraints="NO" id="r3u-8Z-4qT">
-                                <rect key="frame" x="91" y="480" width="419" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="JI1-DJ-ohb"/>
-                                    <constraint firstAttribute="width" constant="100" id="paG-BK-zmC"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="paG-BK-zmC"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wAA-ht-gTP">
                                 <rect key="frame" x="50" y="278" width="70" height="70"/>
                                 <constraints>
@@ -365,11 +353,11 @@
                             <constraint firstItem="8ah-hv-7Np" firstAttribute="top" secondItem="oaK-C8-bVw" secondAttribute="bottom" constant="3" id="3La-7d-PzG"/>
                             <constraint firstItem="Gev-Ki-OLU" firstAttribute="top" secondItem="Nh9-h5-Xer" secondAttribute="bottom" constant="210" id="Ao4-bU-Bq3"/>
                             <constraint firstItem="rIB-KT-q6d" firstAttribute="centerX" secondItem="Gev-Ki-OLU" secondAttribute="centerX" id="CCU-jQ-kQB"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="r3u-8Z-4qT" secondAttribute="trailing" id="ESL-nh-cPT"/>
                             <constraint firstItem="bMa-X0-pgd" firstAttribute="top" secondItem="Bzw-Dr-dPE" secondAttribute="bottom" constant="3" id="HUe-vX-pe8"/>
                             <constraint firstItem="wAA-ht-gTP" firstAttribute="leading" secondItem="4Qp-fS-YkQ" secondAttribute="leadingMargin" constant="111" id="KiF-80-VAV"/>
                             <constraint firstItem="Gev-Ki-OLU" firstAttribute="leading" secondItem="4Qp-fS-YkQ" secondAttribute="leadingMargin" id="MvX-ml-VTw"/>
                             <constraint firstItem="8ah-hv-7Np" firstAttribute="centerX" secondItem="oaK-C8-bVw" secondAttribute="centerX" id="N9x-Yc-3gp"/>
+                            <constraint firstItem="Bzw-Dr-dPE" firstAttribute="centerX" secondItem="4Qp-fS-YkQ" secondAttribute="centerX" id="OWF-3Z-o4z"/>
                             <constraint firstItem="wAA-ht-gTP" firstAttribute="leading" secondItem="4Qp-fS-YkQ" secondAttribute="leadingMargin" constant="30" id="PUk-ZT-fb6"/>
                             <constraint firstItem="E0S-AM-tmY" firstAttribute="top" secondItem="wAA-ht-gTP" secondAttribute="bottom" constant="88" id="PW9-AH-E5C"/>
                             <constraint firstItem="wAA-ht-gTP" firstAttribute="leading" secondItem="4Qp-fS-YkQ" secondAttribute="leading" constant="-117" id="PXu-Rl-Nkg"/>
@@ -383,7 +371,6 @@
                             <constraint firstItem="wAA-ht-gTP" firstAttribute="leading" secondItem="4Qp-fS-YkQ" secondAttribute="leadingMargin" constant="30" id="X1I-d4-ccW"/>
                             <constraint firstItem="rIB-KT-q6d" firstAttribute="top" secondItem="Gev-Ki-OLU" secondAttribute="bottom" constant="3" id="YAD-D3-Mzp"/>
                             <constraint firstItem="1hQ-mj-M5a" firstAttribute="leading" secondItem="wAA-ht-gTP" secondAttribute="leading" id="cfr-5a-8sz"/>
-                            <constraint firstItem="r3u-8Z-4qT" firstAttribute="leading" secondItem="4Qp-fS-YkQ" secondAttribute="leadingMargin" constant="141" id="csl-HH-BGG"/>
                             <constraint firstItem="itR-5V-Fsh" firstAttribute="centerX" secondItem="0ch-yz-gHg" secondAttribute="centerX" id="czv-ap-LSe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0ch-yz-gHg" secondAttribute="trailing" constant="30" id="dHJ-i2-6EU"/>
                             <constraint firstItem="Gev-Ki-OLU" firstAttribute="leading" secondItem="4Qp-fS-YkQ" secondAttribute="leadingMargin" id="iMR-uu-109"/>
@@ -391,13 +378,9 @@
                             <constraint firstItem="Gev-Ki-OLU" firstAttribute="trailing" secondItem="4Qp-fS-YkQ" secondAttribute="trailingMargin" id="l4Z-Sp-z3W"/>
                             <constraint firstItem="oaK-C8-bVw" firstAttribute="baseline" secondItem="1hQ-mj-M5a" secondAttribute="baseline" id="lnZ-fQ-VBv"/>
                             <constraint firstItem="oaK-C8-bVw" firstAttribute="leading" secondItem="0ch-yz-gHg" secondAttribute="leading" id="ncS-Mb-Ztg"/>
-                            <constraint firstItem="r3u-8Z-4qT" firstAttribute="leading" secondItem="4Qp-fS-YkQ" secondAttribute="leadingMargin" constant="71" id="oUk-rY-0JH"/>
                             <constraint firstItem="Bzw-Dr-dPE" firstAttribute="top" secondItem="Gev-Ki-OLU" secondAttribute="bottom" constant="101" id="ojX-ex-pCc"/>
                             <constraint firstItem="Bzw-Dr-dPE" firstAttribute="leading" secondItem="Gev-Ki-OLU" secondAttribute="leading" constant="-1" id="sXe-rz-BmF"/>
-                            <constraint firstItem="r3u-8Z-4qT" firstAttribute="centerX" secondItem="Gev-Ki-OLU" secondAttribute="centerX" id="uzf-Q0-zIO"/>
-                            <constraint firstAttribute="bottom" secondItem="r3u-8Z-4qT" secondAttribute="bottom" constant="20" symbolic="YES" id="weg-Q4-SuG"/>
                             <constraint firstItem="1hQ-mj-M5a" firstAttribute="top" secondItem="wAA-ht-gTP" secondAttribute="bottom" constant="74" id="wfh-RA-Fu9"/>
-                            <constraint firstItem="r3u-8Z-4qT" firstAttribute="centerX" secondItem="4Qp-fS-YkQ" secondAttribute="centerX" id="x0o-sd-zSH"/>
                             <constraint firstItem="qGK-oy-2oY" firstAttribute="centerX" secondItem="1hQ-mj-M5a" secondAttribute="centerX" id="xbw-UV-P8U"/>
                         </constraints>
                         <variation key="default">
@@ -410,8 +393,6 @@
                                 <exclude reference="MvX-ml-VTw"/>
                                 <exclude reference="iMR-uu-109"/>
                                 <exclude reference="l4Z-Sp-z3W"/>
-                                <exclude reference="ESL-nh-cPT"/>
-                                <exclude reference="csl-HH-BGG"/>
                                 <exclude reference="PW9-AH-E5C"/>
                                 <exclude reference="lnZ-fQ-VBv"/>
                             </mask>
@@ -2154,7 +2135,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Anmelden" width="1206" height="273"/>
         <image name="Category_Culture" width="521" height="521"/>
         <image name="Category_Gastro" width="521" height="521"/>
         <image name="Category_Holiday" width="521" height="521"/>
