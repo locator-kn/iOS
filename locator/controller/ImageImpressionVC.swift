@@ -36,6 +36,9 @@ class ImageImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
         }
         
     }
+    @IBAction func close(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
     override func viewDidAppear(animated: Bool) {
         if image == nil && videoData == nil {
@@ -64,6 +67,8 @@ class ImageImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
         }
         imageView.image = image
         dismissViewControllerAnimated(true, completion: nil)
+        
+        self.submitImage(self)
 
     }
     
@@ -75,7 +80,7 @@ class ImageImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
     }
     
     func takePicture() {
-        presentViewController(imagePicker, animated: true, completion: nil)
+        presentViewController(imagePicker, animated: false, completion: nil)
     }
     
     @IBAction func submitImage(sender: AnyObject) {
@@ -84,7 +89,6 @@ class ImageImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
             ImpressionService.addImageImpression(self.locationId, data: image!).then{
                 result -> Void in
                 print("image upload success")
-                self.dismissViewControllerAnimated(true, completion: nil);
             }.always {
                 self.dismissViewControllerAnimated(true, completion: nil);
             }
