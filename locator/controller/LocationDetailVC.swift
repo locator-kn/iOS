@@ -10,20 +10,38 @@ import UIKit
 import PromiseKit
 
 class LocationDetailVC: UITableViewController {
-
+    
     var location: Location!
     var impressions: [AbstractImpression]?
     @IBOutlet weak var favorIcon: UIButton!
     let favoriteIcon = UIImage(named: "favorite_icon") as UIImage?
     let favoriteIconActive = UIImage(named: "favorite_icon_active") as UIImage?
-
+    var headerCell: LocationDetailHeaderCell!
+    var naviBack: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        naviBack = UIImageView(frame: CGRectMake(0, 0, 500, 60))
+        naviBack.backgroundColor = UIColor.blackColor()
+        self.naviBack.alpha = 0
+        view.addSubview(naviBack)
+        
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.backgroundColor = UIColor.blackColor()
+        self.refreshControl!.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
 
         self.clearsSelectionOnViewWillAppear = false
         tableView.estimatedRowHeight = 300.0
         tableView.rowHeight = UITableViewAutomaticDimension
-        
+        self.loadData()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.loadData()
+    }
+    
+    func loadData() {
         let locationPromise = LocationService.locationById(location.id)
         let impressionsPromise = ImpressionService.getImpressions(location.id)
         
@@ -35,7 +53,12 @@ class LocationDetailVC: UITableViewController {
             
             self.impressions = impressions
             self.tableView.reloadData()
+            self.refreshControl!.endRefreshing()
         }
+    }
+    
+    func refresh(sender:AnyObject) {
+        self.loadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,6 +96,7 @@ class LocationDetailVC: UITableViewController {
                     header.favorIcon.setImage(self.favoriteIconActive, forState: .Normal)
                 }
             }
+            headerCell = header
             return header
         }
         return UITableViewCell()
@@ -145,6 +169,11 @@ class LocationDetailVC: UITableViewController {
             frame.size.height = contentSize.height
             cell.textheight.constant = contentSize.height
             return cell
+        } else if let videoImpression = impression as? VideoImpression {
+            let cell = tableView.dequeueReusableCellWithIdentifier("videoimpression", forIndexPath: indexPath) as! VideoImpressionCell
+            
+            
+            return cell
         }
         
         return UITableViewCell()
@@ -169,19 +198,18 @@ class LocationDetailVC: UITableViewController {
     
     @IBAction func favorLocation(sender: UIButton) {
         
+        if (!self.location.favored) {
+            self.headerCell.favorIcon.setImage(self.favoriteIconActive, forState: .Normal)
+        } else {
+            self.headerCell.favorIcon.setImage(self.favoriteIcon, forState: .Normal)
+        }
+        
         LocationService.favLocation(location.id).then {
             favors,favor -> Void in
             
             self.location.favorites = favors
             self.location.favored = favor
-            
-            if (favor) {
-                self.favorIcon.setImage(self.favoriteIconActive, forState: .Normal)
-            } else {
-                self.favorIcon.setImage(self.favoriteIcon, forState: .Normal)
-            }
-            
-            self.tableView.reloadData()
+            self.headerCell.favorCount.text = String(favors)
             
             }.error {
                 err -> Void in
@@ -228,12 +256,17 @@ class LocationDetailVC: UITableViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         print(segue.identifier)
+        
         if (segue.identifier == "text") {
             let controller = segue.destinationViewController as! TextImpressionVC
             controller.locationId = self.location.id
         } else if (segue.identifier == "image") {
             let controller = segue.destinationViewController as! ImageImpressionVC
             controller.locationId = self.location.id
+        } else if (segue.identifier == "video") {
+            let controller = segue.destinationViewController as! ImageImpressionVC
+            controller.locationId = self.location.id
+            controller.video = true
         } else if (segue.identifier == "user") {
             let controller = segue.destinationViewController as! UserVC
             controller.user = self.location.user
@@ -241,6 +274,20 @@ class LocationDetailVC: UITableViewController {
             let controller = segue.destinationViewController as! MapVC
             controller.locationsOfInterest[location.id] = location
         }
+    }
+    
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        
+        if (scrollView.contentOffset.y < 230) {
+            UIView.animateWithDuration(0.3, animations: {
+                self.naviBack.alpha = 0
+            })
+        } else {
+            UIView.animateWithDuration(0.3, animations: {
+                self.naviBack.alpha = 1
+            })
+        }
+        naviBack.frame.origin.y = scrollView.contentOffset.y
     }
 
 }

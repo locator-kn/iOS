@@ -29,27 +29,22 @@ class ImpressionService {
                         
                         for (_,subJson):(String, JSON) in json {
                             
-                            let user = subJson["user_id"].string
+                            let user = subJson["user_id"].string!
                             let date = subJson["create_date"].string
                             let type = subJson["type"].string
-                            let dataPath = subJson["data"].string
+                            let dataPath = subJson["data"].string!
                             
                             if type == "text" {
-                                impressions.append(TextImpression(date:date!, userId: user!, text: dataPath!))
-                                
+                                impressions.append(TextImpression(date:date!, userId: user, text: dataPath))
                             } else if type == "image" {
-                                impressions.append(ImageImpression(date:date!, userId: user!, imagePath: dataPath!))
-                                
-                            } else if type == "audio" {
-                                // TODO
-                                
+                                impressions.append(ImageImpression(date:date!, userId: user, imagePath: dataPath))
                             } else if type == "video" {
+                                impressions.append(VideoImpression(date:date!, userId: user, videoPath: dataPath))
+                            } else if type == "audio" {
                                 //TODO
-                                
                             }
                         }
                         fulfill(impressions)
-                        
                     }
                     
                 case .Failure(let error):
@@ -62,7 +57,7 @@ class ImpressionService {
     static func addTextImpression(id: String, data:String) -> Promise<Bool> {
         return Promise { fulfill, reject in
             
-            Alamofire.request(.POST, API.BASE_URL + "/locations/" + id + "/impression/text", parameters: ["data": data]).validate().responseJSON { response in
+            Alamofire.request(.POST, API.BASE_URL + "/locations/" + id + "/impressions/text", parameters: ["data": data]).validate().responseJSON { response in
                 switch response.result {
                 case .Success:
                     
@@ -86,16 +81,13 @@ class ImpressionService {
                 },
                 encodingCompletion: { encodingResult in
                     switch encodingResult {
-                    case .Success(let upload, _, _):
-                        upload.responseJSON { response in
-                            debugPrint(response)
-                        }
+                    case .Success( _, _, _):
+                        fulfill(true)
                     case .Failure(let encodingError):
                         print(encodingError)
                     }
                 }
             )
-            
         }
     }
     
@@ -119,10 +111,7 @@ class ImpressionService {
                     }
                 }
             )
-            
         }
     }
-
-
     
 }
