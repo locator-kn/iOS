@@ -7,8 +7,14 @@
 //
 
 import UIKit
+import CoreLocation
 
-class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
+class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate {
+    
+    var locationManager: CLLocationManager = CLLocationManager()
+    
+    var lat:Double!
+    var long:Double!
     
     var uiimage:UIImage!
     
@@ -47,7 +53,7 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
             self.presentViewController(vc, animated: true, completion: nil)
             
             
-            LocationService.createNewLocation(uiimage, categories: selectedCategories, locationTitle: locationTitle).then{
+            LocationService.createNewLocation(uiimage, categories: selectedCategories, locationTitle: locationTitle, lat: String(format:"%f", lat), long: String(format:"%f", lat)).then{
                 result -> Void in
                 
                 self.dismissViewControllerAnimated(true, completion: nil)
@@ -132,6 +138,13 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         
+        locationManager = CLLocationManager()
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter = 5.0
+        locationManager.delegate = self
+        
+        
         self.title = "Kategorien wählen"
         
         culture.alpha = 0.4
@@ -155,6 +168,22 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
         next.alpha = 0.4
 
         // Do any additional setup after loading the view.
+    }
+    
+    /* delegate on gpsAuthorizationStatus change */
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status:CLAuthorizationStatus) {
+        print("locationManager didChangeAuthorizationStatus:", status)
+        if status == .AuthorizedWhenInUse {
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    /* delegate on user position update */
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        print("locationManager, didUpdateLocations", locations)
+        lat = locations.first?.coordinate.latitude
+        long = locations.first?.coordinate.longitude
     }
 
     override func didReceiveMemoryWarning() {
