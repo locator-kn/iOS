@@ -210,4 +210,10 @@ class LocationService {
         }
     }
     
+    static func createNewLocation(data:UIImage, categories:[String], locationTitle: String) -> Promise<Bool> {
+        return Promise { fulfill, reject in
+            fulfill(true)
+        }
+    }
+    
 }
