@@ -10,7 +10,7 @@ import UIKit
 import PromiseKit
 
 class LocationDetailVC: UITableViewController {
-
+    
     var location: Location!
     var impressions: [AbstractImpression]?
     @IBOutlet weak var favorIcon: UIButton!
@@ -63,7 +63,7 @@ class LocationDetailVC: UITableViewController {
             if self.impressions == nil {
                 header.locationImage!.image = UIImage()
             } else {
-                header.username.setTitle(location.user.name, forState: UIControlState.Normal)
+                header.username.setTitle(location.user.name! + "  \u{2E31}", forState: UIControlState.Normal)
                 header.favorCount.text = String(location.favorites)
                 header.impressionsCount.text = String(impressions!.count)
                 header.locationImage.image = UIImage(data: UtilService.dataFromPath(location.imagePathNormal))
@@ -91,7 +91,6 @@ class LocationDetailVC: UITableViewController {
         
         if let imageImpression = impression as? ImageImpression {
             let cell = tableView.dequeueReusableCellWithIdentifier("imageImpression", forIndexPath: indexPath) as! ImageImpressionCell
-            cell.layoutMargins = UIEdgeInsetsZero;
           
             cell.date.text = imageImpression.getDate()
             UtilService.roundImageView(cell.userThumb)
@@ -121,7 +120,35 @@ class LocationDetailVC: UITableViewController {
             
         } else if let textImpression = impression as? TextImpression {
             let cell = tableView.dequeueReusableCellWithIdentifier("textImpression", forIndexPath: indexPath) as! TextImpressionCell
+            
+            cell.date.text = textImpression.getDate()
+            UtilService.roundImageView(cell.userThumb)
+            
+            UserService.getUser(textImpression.user.id!).then {
+                result -> Void in
+                if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? TextImpressionCell {
+                    cellToUpdate.username.text = result.name
+                }
+                
+                UtilService.dataFromCache(result.imagePathThumb!).then {
+                    result -> Void in
+                    if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? TextImpressionCell {
+                        cellToUpdate.userThumb.image = UIImage(data: result)
+                    }
+                }
+            }
+            
             cell.textView.text = textImpression.text
+            cell.textView.scrollEnabled = false
+            let contentSize = cell.textView.sizeThatFits(cell.textView.bounds.size)
+            var frame = cell.textView.frame
+            frame.size.height = contentSize.height
+            cell.textheight.constant = contentSize.height
+            return cell
+        } else if let videoImpression = impression as? VideoImpression {
+            let cell = tableView.dequeueReusableCellWithIdentifier("videoimpression", forIndexPath: indexPath) as! VideoImpressionCell
+            
+            
             return cell
         }
         
@@ -129,7 +156,20 @@ class LocationDetailVC: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 380.0
+        return 420.0
+    }
+    
+    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UITableViewCell? {
+        let cell = tableView.dequeueReusableCellWithIdentifier("placeholderCell")
+        return cell
+    }
+    
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        
+        if self.impressions != nil && self.impressions!.count == 0 {
+            return 120.0
+        }
+        return 0
     }
     
     @IBAction func favorLocation(sender: UIButton) {
@@ -193,6 +233,7 @@ class LocationDetailVC: UITableViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         print(segue.identifier)
+        
         if (segue.identifier == "text") {
             let controller = segue.destinationViewController as! TextImpressionVC
             controller.locationId = self.location.id
