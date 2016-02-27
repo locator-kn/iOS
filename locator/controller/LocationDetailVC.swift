@@ -252,7 +252,7 @@ class LocationDetailVC: UITableViewController {
             controller.locationsOfInterest[location.id] = location
         } else if (segue.identifier == "videoImpression") {
             let destination = segue.destinationViewController as! AVPlayerViewController
-            let url = NSURL(string: "http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test8_voiceclip_mov_480x320.mov")
+            let url = NSURL(string: "https://locator-app.com/api/v2/locations/impression/video/56b907022f08ffcd26f8c13a/impression.mov")
             destination.player = AVPlayer(URL: url!)
         }
     }
