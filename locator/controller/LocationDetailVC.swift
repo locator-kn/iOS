@@ -17,9 +17,15 @@ class LocationDetailVC: UITableViewController {
     let favoriteIcon = UIImage(named: "favorite_icon") as UIImage?
     let favoriteIconActive = UIImage(named: "favorite_icon_active") as UIImage?
     var headerCell: LocationDetailHeaderCell!
-
+    var naviBack: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        naviBack = UIImageView(frame: CGRectMake(0, 0, 500, 60))
+        naviBack.backgroundColor = UIColor.blackColor()
+        self.naviBack.alpha = 0
+        view.addSubview(naviBack)
         
         self.refreshControl = UIRefreshControl()
         self.refreshControl?.backgroundColor = UIColor.blackColor()
@@ -264,6 +270,20 @@ class LocationDetailVC: UITableViewController {
             let controller = segue.destinationViewController as! MapVC
             controller.locationsOfInterest[location.id] = location
         }
+    }
+    
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        
+        if (scrollView.contentOffset.y < 230) {
+            UIView.animateWithDuration(0.3, animations: {
+                self.naviBack.alpha = 0
+            })
+        } else {
+            UIView.animateWithDuration(0.3, animations: {
+                self.naviBack.alpha = 1
+            })
+        }
+        naviBack.frame.origin.y = scrollView.contentOffset.y
     }
 
 }
