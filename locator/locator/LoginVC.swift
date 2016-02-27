@@ -94,6 +94,8 @@ class LoginVC: UIViewController {
             }
             else
             {
+                let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
+                print(accessToken)
                 print("fetched user: \(result)")
                 let userName : NSString = result.valueForKey("name") as! NSString
                 print("User Name is: \(userName)")

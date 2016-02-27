@@ -11,6 +11,9 @@ import UIKit
 
 public class BubbleView: UIView {
     
+    public var mycenter = CGPoint(x: 0, y: 0)
+    public var radius = 80.0
+    
     let myimageView = UIImageView(image: UIImage(named: "baum"))
     
     override init(frame: CGRect) {
@@ -25,13 +28,11 @@ public class BubbleView: UIView {
     init() {
         let frame = CGRect(x: 0, y: 0, width: 50, height: 50) // it seems like priority doesnt affect frame size
         super.init(frame: frame)
-        self.backgroundColor = UIColor.clearColor()
+        //self.backgroundColor = UIColor.clearColor()
     }
     
-    public var mycenter = CGPoint(x: 0, y: 0)
-    public var radius = 80.0
-    
     public override func drawRect(rect: CGRect) {
+        super.drawRect(rect)
         
         // ImageView
         myimageView.frame = CGRect(x: 0, y: 0, width: rect.width, height: rect.height)

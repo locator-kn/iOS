@@ -40,18 +40,20 @@ public class GravitySimulator {
             if (other.fixed()) {
                 continue
             }
-            let radiusSum = gravityObject.radius + other.radius + distanceToGravityItems
+            let radiusSum = (gravityObject.radius + other.radius + distanceToGravityItems)
             let distance = gravityObject.distanceTo(other)
             if (distance == 0 || distance >= radiusSum) {
                 continue
             }
-            let pen = distance - radiusSum
+            
+            let pen = (distance - radiusSum)
             let cos = (-gravityObject.x + other.x) / distance
             let sin = (-gravityObject.y + other.y) / distance
             
             // !!!!!!!!!!!!!!!!!!!!!!!
-            gravityObject.vx = (gravityObject.vx * 0.5) + (cos * pen)
-            gravityObject.vy = (gravityObject.vy * 0.5) + (sin * pen)
+            //gravityObject.vx = ((gravityObject.vx * 0.5) + (cos * pen))
+            //gravityObject.vy = ((gravityObject.vy * 0.5) + (sin * pen))
+            gravityObject.vx = gravityObject.vx * 0.5 + sin * pen
             
         }
         
@@ -63,8 +65,8 @@ public class GravitySimulator {
             if (distance == 0) {
                 continue
             }
-            let dx = (-gravityObject.x + other.x) /// 2
-            let dy = (-gravityObject.y + other.y) /// 2
+            let dx = (-gravityObject.x + other.x)
+            let dy = (-gravityObject.y + other.y)
             let cos = dx / distance
             let sin = dy / distance
             let forceGravity = (worldGravity * (gravityObject.mass * other.mass) / (distance * distance))
@@ -80,10 +82,10 @@ public class GravitySimulator {
             }
         }
         
-        gravityObject.x = bound(gravityObject.radius / 2,
-            val: gravityObject.x + gravityObject.vx, max: width - gravityObject.radius)
-        gravityObject.y = bound(gravityObject.radius / 2,
-            val: gravityObject.y + gravityObject.vy, max: height - gravityObject.radius)
+        gravityObject.x = bound(gravityObject.radius,
+            val: (gravityObject.x + gravityObject.vx), max: width - gravityObject.radius)
+        gravityObject.y = bound(gravityObject.radius,
+            val: (gravityObject.y + gravityObject.vy), max: height - gravityObject.radius)
     }
     
     func bound(min: Double, val: Double, max: Double) -> Double {

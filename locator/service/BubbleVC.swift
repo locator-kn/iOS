@@ -11,8 +11,9 @@ import UIKit
 class BubbleVC: UIViewController {
     
     // screen width and height:
-    let width = UIScreen.mainScreen().bounds.size.width
-    let height = UIScreen.mainScreen().bounds.size.height
+    
+    let width = UIScreen.mainScreen().bounds.width
+    let height = UIScreen.mainScreen().bounds.height
     
     let backgroundImage = UIImage(named: "Background-rot.png")
     let schoenHierImage = UIImage(named: "schoen_hier.png")
@@ -110,10 +111,10 @@ class BubbleVC: UIViewController {
         gravityObject.payload = bubble
         
         let minimum = min((Double((bubble.view?.frame.width)!)), Double((bubble.view?.frame.height)!))
-        gravityObject.radius = minimum / 2.0
+        gravityObject.radius = minimum / Double(pointToPixelScale) // #####!!!!!!!!!!!!!!!!!!!!!!!!!#####)
         gravityObject.mass = gravityObject.radius * 2
-        gravityObject.x = Double(((bubble.view?.frame.origin.x)!))
-        gravityObject.y = Double((bubble.view?.frame.origin.y)!)
+        gravityObject.x = Double(((bubble.view?.frame.origin.x)!)) * Double(pointToPixelScale) // #####!!!!!!!!!!!!!!!!!!!!!!!!!#####)
+        gravityObject.y = Double((bubble.view?.frame.origin.y)!) * Double(pointToPixelScale) // #####!!!!!!!!!!!!!!!!!!!!!!!!!#####)
         return gravityObject
     }
     
@@ -138,8 +139,8 @@ class BubbleVC: UIViewController {
         for gravityObject in gravityObjects {
             let bubble = gravityObject.payload as! Bubble
             if (!bubble.positionFixed) {
-                let posX = gravityObject.x
-                let posY = gravityObject.y
+                let posX = gravityObject.x / Double(pointToPixelScale)
+                let posY = gravityObject.y / Double(pointToPixelScale)
                 print("Position of bubble: X: \(posX) Y: \(posY)")
                 bubble.view?.center = CGPoint(x: CGFloat(posX), y: CGFloat(posY))
                 self.view.addSubview(bubble.view!)
@@ -162,7 +163,7 @@ class BubbleVC: UIViewController {
     }
     
     func setFrameToRealPosition(frame: CGRect) -> CGRect {
-        let realX = frame.origin.x - (frame.width / 2)
+        let realX = frame.origin.x  - (frame.width / 2)
         
         return CGRect(x: realX, y: frame.origin.y, width: frame.width, height: frame.height)
     }
@@ -189,7 +190,7 @@ class BubbleVC: UIViewController {
     }
     
     func getInitialBubbleCenter(quadrant: Int) -> CGPoint {
-        let distanceFromBorder: CGFloat = 0.2
+        let distanceFromBorder: CGFloat = 0.2 * pointToPixelScale           // #######!!!!!!!!!!!!!!!!!!!!!!
         var distanceFromLeftInPercent: CGFloat = 0.0
         var distanceFromTopInPercent: CGFloat = 0.0
         
@@ -207,8 +208,8 @@ class BubbleVC: UIViewController {
             distanceFromTopInPercent = 0.9 - distanceFromBorder
         }
         
-        let x = distanceFromLeftInPercent * width
-        let y = distanceFromTopInPercent * height
+        let x = (distanceFromLeftInPercent * width) * pointToPixelScale     // #######!!!!!!!!!!!!!!!!!!!!!!
+        let y = (distanceFromTopInPercent * height) * pointToPixelScale     // #######!!!!!!!!!!!!!!!!!!!!!!
         
         return CGPoint(x: x, y: y)
     }
@@ -249,3 +250,5 @@ class BubbleVC: UIViewController {
         return CGFloat(width * 0.013)
     }
 }
+
+public let pointToPixelScale = UIScreen.mainScreen().scale
