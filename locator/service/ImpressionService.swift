@@ -80,7 +80,7 @@ class ImpressionService {
             
             Alamofire.upload(
                 .POST,
-                API.BASE_URL + "/locations/" + id + "/impression/image",
+                API.BASE_URL + "/locations/" + id + "/impressions/image",
                 multipartFormData: { multipartFormData in
                     multipartFormData.appendBodyPart(data: UIImageJPEGRepresentation(data, 1.0)!, name: "file", fileName: "impression.jpg", mimeType: "image/jpeg")
                 },
