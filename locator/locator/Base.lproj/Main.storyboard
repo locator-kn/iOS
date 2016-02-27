@@ -736,6 +736,9 @@
                                                 <constraint firstAttribute="width" constant="54" id="VPA-TA-mXa"/>
                                             </constraints>
                                             <state key="normal" image="movie"/>
+                                            <connections>
+                                                <segue destination="Gka-Qg-i3J" kind="presentation" identifier="video" id="0yG-OH-eA0"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -2150,5 +2153,6 @@
         <segue reference="Q9G-yB-4zn"/>
         <segue reference="d1c-kL-o1Y"/>
         <segue reference="PBI-Q7-c1i"/>
+        <segue reference="0yG-OH-eA0"/>
     </inferredMetricsTieBreakers>
 </document>
