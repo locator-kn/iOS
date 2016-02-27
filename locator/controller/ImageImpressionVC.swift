@@ -18,7 +18,7 @@ class ImageImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
     
     var image:UIImage?
     var videoData:NSData?
-    var video:Bool = true
+    var video:Bool = false
     
     @IBOutlet weak var imageView: UIImageView!
     
@@ -35,6 +35,9 @@ class ImageImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
             }
         }
         
+    }
+    @IBAction func close(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -64,6 +67,8 @@ class ImageImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
         }
         imageView.image = image
         dismissViewControllerAnimated(true, completion: nil)
+        
+        self.submitImage(self)
 
     }
     
@@ -75,7 +80,7 @@ class ImageImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
     }
     
     func takePicture() {
-        presentViewController(imagePicker, animated: true, completion: nil)
+        presentViewController(imagePicker, animated: false, completion: nil)
     }
     
     @IBAction func submitImage(sender: AnyObject) {
@@ -84,14 +89,17 @@ class ImageImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
             ImpressionService.addImageImpression(self.locationId, data: image!).then{
                 result -> Void in
                 print("image upload success")
-                self.navigationController?.popViewControllerAnimated(true)
+            }.always {
+                self.dismissViewControllerAnimated(true, completion: nil);
             }
         } else {
             print(videoData!.length)
             ImpressionService.addVideoImpression(self.locationId, data: videoData!).then{
                 result -> Void in
                 print("video upload success")
-                self.navigationController?.popViewControllerAnimated(true)
+            }.always {
+                print("always called")
+                self.dismissViewControllerAnimated(true, completion: nil);
             }
         }
         

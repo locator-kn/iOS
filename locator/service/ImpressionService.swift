@@ -57,7 +57,7 @@ class ImpressionService {
     static func addTextImpression(id: String, data:String) -> Promise<Bool> {
         return Promise { fulfill, reject in
             
-            Alamofire.request(.POST, API.BASE_URL + "/locations/" + id + "/impression/text", parameters: ["data": data]).validate().responseJSON { response in
+            Alamofire.request(.POST, API.BASE_URL + "/locations/" + id + "/impressions/text", parameters: ["data": data]).validate().responseJSON { response in
                 switch response.result {
                 case .Success:
                     
@@ -75,16 +75,14 @@ class ImpressionService {
             
             Alamofire.upload(
                 .POST,
-                API.BASE_URL + "/locations/" + id + "/impression/image",
+                API.BASE_URL + "/locations/" + id + "/impressions/image",
                 multipartFormData: { multipartFormData in
                     multipartFormData.appendBodyPart(data: UIImageJPEGRepresentation(data, 1.0)!, name: "file", fileName: "impression.jpg", mimeType: "image/jpeg")
                 },
                 encodingCompletion: { encodingResult in
                     switch encodingResult {
-                    case .Success(let upload, _, _):
-                        upload.responseJSON { response in
-                            debugPrint(response)
-                        }
+                    case .Success( _, _, _):
+                        fulfill(true)
                     case .Failure(let encodingError):
                         print(encodingError)
                     }
