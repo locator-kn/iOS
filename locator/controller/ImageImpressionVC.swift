@@ -18,7 +18,7 @@ class ImageImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
     
     var image:UIImage?
     var videoData:NSData?
-    var video:Bool = true
+    var video:Bool = false
     
     @IBOutlet weak var imageView: UIImageView!
     
@@ -84,14 +84,18 @@ class ImageImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
             ImpressionService.addImageImpression(self.locationId, data: image!).then{
                 result -> Void in
                 print("image upload success")
-                self.navigationController?.popViewControllerAnimated(true)
+                self.dismissViewControllerAnimated(true, completion: nil);
+            }.always {
+                self.dismissViewControllerAnimated(true, completion: nil);
             }
         } else {
             print(videoData!.length)
             ImpressionService.addVideoImpression(self.locationId, data: videoData!).then{
                 result -> Void in
                 print("video upload success")
-                self.navigationController?.popViewControllerAnimated(true)
+            }.always {
+                print("always called")
+                self.dismissViewControllerAnimated(true, completion: nil);
             }
         }
         
