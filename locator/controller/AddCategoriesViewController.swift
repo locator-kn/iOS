@@ -47,7 +47,7 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
             self.presentViewController(vc, animated: true, completion: nil)
             
             
-            ImpressionService.addImageImpression("569e4a9a4c9d7b5f3b400709", data: uiimage!).then{
+            LocationService.createNewLocation(uiimage, categories: selectedCategories, locationTitle: locationTitle).then{
                 result -> Void in
                 
                 self.dismissViewControllerAnimated(true, completion: nil)
@@ -55,6 +55,8 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
                 
                 print("image upload success")
             }
+            
+            //ImpressionService.addImageImpression("569e4a9a4c9d7b5f3b400709", data: uiimage!)
         } else {
             print("next disabled")
         }
