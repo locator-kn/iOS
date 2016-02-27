@@ -18,6 +18,7 @@ class MainNavigationVC: UINavigationController {
         if (NSUserDefaults.standardUserDefaults().stringForKey("me") != nil) {
             UserService.protected().then {
                 result -> Void in
+                User.me = User(id: NSUserDefaults.standardUserDefaults().stringForKey("me")!)
                 print("Statuscode Protected", result)
                 if (result != 401) {
                     self.redirectToDashboard()
