@@ -31,8 +31,7 @@ class LocationDetailVC: UITableViewController {
         self.loadData()
     }
     
-    override func viewWillAppear(animated: Bool) {
-        
+    override func viewDidAppear(animated: Bool) {
         self.loadData()
     }
     
