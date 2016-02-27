@@ -37,6 +37,10 @@ class TextImpressionVC: UIViewController, UITextFieldDelegate {
             ImpressionService.addTextImpression(self.locationId, data: textField.text!).then {
                 result -> Void in
                 print("post textimpression success")
+            }.error {
+                err -> Void in
+                print("textimpression error")
+                print(err)
             }
         }
         
