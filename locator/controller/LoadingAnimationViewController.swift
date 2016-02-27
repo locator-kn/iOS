@@ -9,11 +9,15 @@
 import UIKit
 
 class LoadingAnimationViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let imageData = NSData(contentsOfURL: NSBundle.mainBundle().URLForResource("locator_preloader", withExtension: "gif")!)
+        let advTimeGif = UIImage.gifWithData(imageData!)
+        let imageView = UIImageView(image: advTimeGif)
+        imageView.frame = CGRect(x: CGRectGetMidX(self.view.frame) - (50.0 / 2.0), y: CGRectGetMidY(self.view.frame) - (50.0 / 2.0), width: 50.0, height: 50.0)
 
-        // Do any additional setup after loading the view.
+        view.addSubview(imageView)
     }
 
     override func didReceiveMemoryWarning() {
