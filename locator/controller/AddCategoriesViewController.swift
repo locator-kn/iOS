@@ -41,6 +41,20 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
     @IBAction func nextAction(sender: AnyObject) {
         if nextEnabled {
             print("weiter gehts")
+            //
+            
+            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("test") as! LoadingAnimationViewController
+            self.presentViewController(vc, animated: true, completion: nil)
+            
+            
+            ImpressionService.addImageImpression("569e4a9a4c9d7b5f3b400709", data: uiimage!).then{
+                result -> Void in
+                
+                self.dismissViewControllerAnimated(true, completion: nil)
+                self.performSegueWithIdentifier("showCreateLocationSuccess", sender: true)
+                
+                print("image upload success")
+            }
         } else {
             print("next disabled")
         }
@@ -181,14 +195,15 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
         return true
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print("going to leave")
+        if (segue.identifier == "showCreateLocationSuccess") {
+            
+            print("showCreateLocationSuccess")
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+
 
 }
