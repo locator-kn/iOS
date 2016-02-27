@@ -210,7 +210,7 @@ class LocationService {
         }
     }
     
-    static func createNewLocation(data:UIImage, categories:[String], locationTitle: String) -> Promise<Bool> {
+    static func createNewLocation(data:UIImage, categories:[String], locationTitle: String, lat: String, long: String) -> Promise<Bool> {
         
         // init paramters Dictionary
         print("categories:", categories.description)
@@ -218,8 +218,8 @@ class LocationService {
         
         let parameters2 = [
             "title": locationTitle,
-            "lat": "47.667679",
-            "long": "9.170612",
+            "lat": lat,
+            "long": long,
             "categories": categories.description
         ]
         
