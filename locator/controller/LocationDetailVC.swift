@@ -8,6 +8,8 @@
 
 import UIKit
 import PromiseKit
+import AVKit
+import AVFoundation
 
 class LocationDetailVC: UITableViewController {
     
@@ -16,10 +18,12 @@ class LocationDetailVC: UITableViewController {
     @IBOutlet weak var favorIcon: UIButton!
     let favoriteIcon = UIImage(named: "favorite_icon") as UIImage?
     let favoriteIconActive = UIImage(named: "favorite_icon_active") as UIImage?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       
+        performSegueWithIdentifier("videoImpression", sender: self)
+      
         self.clearsSelectionOnViewWillAppear = false
         tableView.estimatedRowHeight = 300.0
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -246,6 +250,10 @@ class LocationDetailVC: UITableViewController {
         } else if (segue.identifier == "map") {
             let controller = segue.destinationViewController as! MapVC
             controller.locationsOfInterest[location.id] = location
+        } else if (segue.identifier == "videoImpression") {
+            let destination = segue.destinationViewController as! AVPlayerViewController
+            let url = NSURL(string: "http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test8_voiceclip_mov_480x320.mov")
+            destination.player = AVPlayer(URL: url!)
         }
     }
 
