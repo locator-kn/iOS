@@ -16,14 +16,27 @@ class LocationDetailVC: UITableViewController {
     @IBOutlet weak var favorIcon: UIButton!
     let favoriteIcon = UIImage(named: "favorite_icon") as UIImage?
     let favoriteIconActive = UIImage(named: "favorite_icon_active") as UIImage?
+    var headerCell: LocationDetailHeaderCell!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.backgroundColor = UIColor.blackColor()
+        self.refreshControl!.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
 
         self.clearsSelectionOnViewWillAppear = false
         tableView.estimatedRowHeight = 300.0
         tableView.rowHeight = UITableViewAutomaticDimension
+        self.loadData()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         
+        self.loadData()
+    }
+    
+    func loadData() {
         let locationPromise = LocationService.locationById(location.id)
         let impressionsPromise = ImpressionService.getImpressions(location.id)
         
@@ -35,7 +48,12 @@ class LocationDetailVC: UITableViewController {
             
             self.impressions = impressions
             self.tableView.reloadData()
+            self.refreshControl!.endRefreshing()
         }
+    }
+    
+    func refresh(sender:AnyObject) {
+        self.loadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,6 +91,7 @@ class LocationDetailVC: UITableViewController {
                     header.favorIcon.setImage(self.favoriteIconActive, forState: .Normal)
                 }
             }
+            headerCell = header
             return header
         }
         return UITableViewCell()
@@ -174,19 +193,18 @@ class LocationDetailVC: UITableViewController {
     
     @IBAction func favorLocation(sender: UIButton) {
         
+        if (!self.location.favored) {
+            self.headerCell.favorIcon.setImage(self.favoriteIconActive, forState: .Normal)
+        } else {
+            self.headerCell.favorIcon.setImage(self.favoriteIcon, forState: .Normal)
+        }
+        
         LocationService.favLocation(location.id).then {
             favors,favor -> Void in
             
             self.location.favorites = favors
             self.location.favored = favor
-            
-            if (favor) {
-                self.favorIcon.setImage(self.favoriteIconActive, forState: .Normal)
-            } else {
-                self.favorIcon.setImage(self.favoriteIcon, forState: .Normal)
-            }
-            
-            self.tableView.reloadData()
+            self.headerCell.favorCount.text = String(favors)
             
             }.error {
                 err -> Void in
