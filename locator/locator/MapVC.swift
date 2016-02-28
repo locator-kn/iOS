@@ -159,7 +159,7 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     }
     
     /* delegate on map camerachange */
-    func mapView(mapView: GMSMapView!, idleAtCameraPosition position: GMSCameraPosition!) {
+    func mapView(mapView: GMSMapView, idleAtCameraPosition position: GMSCameraPosition) {
         
         getNearSchoenHiers(position.target, maxDistance: 0.5)
         if (self.locationsVisible) {
@@ -167,7 +167,7 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         }
     }
     
-    func mapView(mapView: GMSMapView!, didTapInfoWindowOfMarker marker: GMSMarker!) {
+    func mapView(mapView: GMSMapView, didTapInfoWindowOfMarker marker: GMSMarker) {
         print(marker.userData)
         pickedLocationDetail = marker.userData as! Location
         performSegueWithIdentifier("locationDetail", sender: self)
@@ -195,14 +195,14 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     }
     
     func locate() {
-        self.googleMap.animateToCameraPosition(GMSCameraPosition(target: self.googleMap.myLocation.coordinate, zoom: 17, bearing: 0, viewingAngle: 0))
+        self.googleMap.animateToCameraPosition(GMSCameraPosition(target: self.googleMap.myLocation!.coordinate, zoom: 17, bearing: 0, viewingAngle: 0))
     }
     
     @IBAction func schoenHier(sender: AnyObject) {
-        LocationService.schonHier(googleMap.myLocation.coordinate.latitude, long: googleMap.myLocation.coordinate.longitude).then {
+        LocationService.schonHier(googleMap.myLocation!.coordinate.latitude, long: googleMap.myLocation!.coordinate.longitude).then {
             schoenHier -> Void in
             print("Success")
-            self.getNearSchoenHiers(self.googleMap.myLocation.coordinate, maxDistance: 0.2)
+            self.getNearSchoenHiers(self.googleMap.myLocation!.coordinate, maxDistance: 0.2)
             self.nearSchoenHiers[schoenHier.id] = schoenHier
             self.showHeatMapMarker(schoenHier.getGeoPosition().lat, long: schoenHier.getGeoPosition().long, schoenHier: schoenHier)
             self.locate()
@@ -285,7 +285,7 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         return !flag
     }
     
-    func mapView(mapView: GMSMapView!, markerInfoWindow marker: GMSMarker!) -> UIView! {
+    func mapView(mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
         infoWindow = NSBundle.mainBundle().loadNibNamed("InfoWindow", owner: self, options: nil).first as? InfoWindow
         
         let locationData = marker.userData as? Location
