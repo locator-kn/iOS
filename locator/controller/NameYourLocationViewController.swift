@@ -29,7 +29,7 @@ class NameYourLocationViewController: UIViewController, UITextFieldDelegate {
         self.locationTitle.delegate = self
         
         
-        
+        locationTitle.becomeFirstResponder()
 
         // Do any additional setup after loading the view.
     }
