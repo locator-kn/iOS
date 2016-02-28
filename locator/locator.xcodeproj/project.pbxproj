@@ -86,6 +86,7 @@
 		CC4075E41C7F8CB000364331 /* AddCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4075E31C7F8CB000364331 /* AddCategoriesViewController.swift */; };
 		CC857BE41C81CC2700776731 /* LoadingAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC857BE31C81CC2700776731 /* LoadingAnimationViewController.swift */; };
 		CC857BE61C81E72900776731 /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC857BE51C81E72900776731 /* Gif.swift */; };
+		CC857BF61C8317AC00776731 /* locator_preloader.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC857BEB1C81EEEF00776731 /* locator_preloader.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -172,7 +173,7 @@
 		CC4075E31C7F8CB000364331 /* AddCategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddCategoriesViewController.swift; path = controller/AddCategoriesViewController.swift; sourceTree = SOURCE_ROOT; };
 		CC857BE31C81CC2700776731 /* LoadingAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingAnimationViewController.swift; path = controller/LoadingAnimationViewController.swift; sourceTree = SOURCE_ROOT; };
 		CC857BE51C81E72900776731 /* Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gif.swift; sourceTree = SOURCE_ROOT; };
-		CC857BEB1C81EEEF00776731 /* locator_preloader.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = locator_preloader.gif; path = ../../../../../../Media/GoogleDriveReal/Locator/Design/03_Animationen/AE/Preloader/GIF/locator_preloader.gif; sourceTree = "<group>"; };
+		CC857BEB1C81EEEF00776731 /* locator_preloader.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = locator_preloader.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -448,7 +449,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0710;
-				ORGANIZATIONNAME = "Sergej Birklin";
+				ORGANIZATIONNAME = Locator;
 				TargetAttributes = {
 					87F14D761C18604B00682709 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -491,6 +492,7 @@
 				876290291C18E1B400D2870E /* SourceSansPro-ExtraLightIt.ttf in Resources */,
 				8762902A1C18E1B400D2870E /* SourceSansPro-It.ttf in Resources */,
 				8762902B1C18E1B400D2870E /* SourceSansPro-Light.ttf in Resources */,
+				CC857BF61C8317AC00776731 /* locator_preloader.gif in Resources */,
 				8762902C1C18E1B400D2870E /* SourceSansPro-LightIt.ttf in Resources */,
 				8762902D1C18E1B400D2870E /* SourceSansPro-Regular.ttf in Resources */,
 				8762902E1C18E1B400D2870E /* SourceSansPro-Semibold.ttf in Resources */,

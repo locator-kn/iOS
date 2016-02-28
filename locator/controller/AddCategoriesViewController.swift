@@ -43,6 +43,8 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLoca
    
     var selectedCategories:[String] = []
     
+    var createdLocation:Location!
+    
     
     @IBAction func nextAction(sender: AnyObject) {
         if nextEnabled {
@@ -52,12 +54,18 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLoca
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("test") as! LoadingAnimationViewController
             self.presentViewController(vc, animated: true, completion: nil)
             
-            
+            // TODO handle nil of lat and long
             LocationService.createNewLocation(uiimage, categories: selectedCategories, locationTitle: locationTitle, lat: String(format:"%f", lat), long: String(format:"%f", lat)).then{
                 result -> Void in
                 
+                self.createdLocation = result
+                
+                let locationDetailVc = self.storyboard!.instantiateViewControllerWithIdentifier("locationDetailStoryboardID") as! LocationDetailVC
+                locationDetailVc.location = self.createdLocation
                 self.dismissViewControllerAnimated(true, completion: nil)
-                self.performSegueWithIdentifier("showCreateLocationSuccess", sender: true)
+                self.presentViewController(locationDetailVc, animated: true, completion: nil)
+                
+                //self.performSegueWithIdentifier("showCreateLocationSuccess", sender: true)
                 
                 print("image upload success")
             }

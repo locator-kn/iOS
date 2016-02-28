@@ -24,6 +24,14 @@ class BubbleVC: UIViewController {
     @IBOutlet weak var firstBubbleImageView: UIImageView!
     // Second Bubble
     @IBOutlet weak var secondBubbleImageView: UIImageView!
+    // Third Bubble
+    @IBOutlet weak var thirdBubbleImageView: UIImageView!
+    // Fourth Bubble
+    @IBOutlet weak var fourthBubbleImageView: UIImageView!
+    // Fifth Bubble
+    @IBOutlet weak var fifthBubbleImageView: UIImageView!
+    // Sixth Bubble
+    @IBOutlet weak var sixthBubbleImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,8 +47,12 @@ class BubbleVC: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         layoutUserProfilImageView()
-        layoutBubbles(firstBubbleImageView)
-        layoutBubbles(secondBubbleImageView)
+        layoutBubble(firstBubbleImageView)
+        layoutBubble(secondBubbleImageView)
+        layoutBubble(thirdBubbleImageView)
+        layoutBubble(fourthBubbleImageView)
+        layoutBubble(fifthBubbleImageView)
+        layoutBubble(sixthBubbleImageView)
     }
     
     func layoutUserProfilImageView() {
@@ -48,7 +60,7 @@ class BubbleVC: UIViewController {
         userProfilImageView.clipsToBounds = true
     }
     
-    func layoutBubbles(imageView: UIImageView) {
+    func layoutBubble(imageView: UIImageView) {
         imageView.layer.cornerRadius = imageView.frame.width / 2
         imageView.clipsToBounds = true
         imageView.layer.borderColor = colorRed.first.CGColor

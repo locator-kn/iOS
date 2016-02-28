@@ -210,7 +210,7 @@ class LocationService {
         }
     }
     
-    static func createNewLocation(data:UIImage, categories:[String], locationTitle: String, lat: String, long: String) -> Promise<Bool> {
+    static func createNewLocation(data:UIImage, categories:[String], locationTitle: String, lat: String, long: String) -> Promise<Location> {
         
         // init paramters Dictionary
         print("categories:", categories.description)
@@ -238,11 +238,10 @@ class LocationService {
                 response in
                 switch response.result {
                 case .Success:
-                    fulfill(true)
                     if let value = response.result.value {
                         let json = JSON(value)
                         print(json)
-                        fulfill(true)
+                        fulfill(jsonToLocation(json))
                     }
                     
                 case .Failure(let error):
