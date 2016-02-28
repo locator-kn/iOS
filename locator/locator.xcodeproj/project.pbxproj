@@ -44,9 +44,6 @@
 		5BEA72BC1C34B527005220CD /* VideoImpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEA72BB1C34B527005220CD /* VideoImpression.swift */; };
 		5BEA72BE1C34B530005220CD /* AudioImpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEA72BD1C34B530005220CD /* AudioImpression.swift */; };
 		623DE8F3F2CEAA896CFA50AC /* Pods_locator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F065E9F82669863AC08B17B /* Pods_locator.framework */; };
-		8705071E1C4FC4C4008641BF /* GravityObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8705071D1C4FC4C4008641BF /* GravityObject.swift */; };
-		870507201C4FC6D1008641BF /* GravitySimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8705071F1C4FC6D1008641BF /* GravitySimulator.swift */; };
-		870507221C4FD278008641BF /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870507211C4FD278008641BF /* BubbleView.swift */; };
 		870507241C4FD82B008641BF /* BubbleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870507231C4FD82B008641BF /* BubbleVC.swift */; };
 		872DA7C81C1F06A10041C9D6 /* EmailLoginVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872DA7C71C1F06A10041C9D6 /* EmailLoginVC1.swift */; };
 		872DA7CA1C1F156A0041C9D6 /* EmailLoginVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872DA7C91C1F156A0041C9D6 /* EmailLoginVC2.swift */; };
@@ -128,9 +125,6 @@
 		5BEA72BB1C34B527005220CD /* VideoImpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoImpression.swift; sourceTree = "<group>"; };
 		5BEA72BD1C34B530005220CD /* AudioImpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioImpression.swift; sourceTree = "<group>"; };
 		6452E77853577A731ADE8C86 /* Pods-locator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-locator.release.xcconfig"; path = "Pods/Target Support Files/Pods-locator/Pods-locator.release.xcconfig"; sourceTree = "<group>"; };
-		8705071D1C4FC4C4008641BF /* GravityObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravityObject.swift; sourceTree = "<group>"; };
-		8705071F1C4FC6D1008641BF /* GravitySimulator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravitySimulator.swift; sourceTree = "<group>"; };
-		870507211C4FD278008641BF /* BubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleView.swift; sourceTree = "<group>"; };
 		870507231C4FD82B008641BF /* BubbleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleVC.swift; sourceTree = "<group>"; };
 		872DA7C71C1F06A10041C9D6 /* EmailLoginVC1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailLoginVC1.swift; sourceTree = "<group>"; };
 		872DA7C91C1F156A0041C9D6 /* EmailLoginVC2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailLoginVC2.swift; sourceTree = "<group>"; };
@@ -304,9 +298,6 @@
 		8705071C1C4FC496008641BF /* BubbleScreen */ = {
 			isa = PBXGroup;
 			children = (
-				8705071D1C4FC4C4008641BF /* GravityObject.swift */,
-				8705071F1C4FC6D1008641BF /* GravitySimulator.swift */,
-				870507211C4FD278008641BF /* BubbleView.swift */,
 				870507231C4FD82B008641BF /* BubbleVC.swift */,
 				875AF7B51C563F6E000F76AE /* BubbleService.swift */,
 			);
@@ -593,16 +584,13 @@
 				CC18FAA31C7F57D200A346BE /* TakePhotoViewController.swift in Sources */,
 				5B410D721C4E4A3000B11471 /* City.swift in Sources */,
 				5B608C9C1C49E4C100F5F0DA /* UserVC.swift in Sources */,
-				8705071E1C4FC4C4008641BF /* GravityObject.swift in Sources */,
 				879DC7BA1C459A8E004726BF /* PreLoginVC.swift in Sources */,
 				876CAA841C3C0422002A36FF /* RegisterVC4.swift in Sources */,
 				5B4475091C2167BE00C30445 /* Location.swift in Sources */,
 				876290231C1893DE00D2870E /* LoginVC.swift in Sources */,
-				870507221C4FD278008641BF /* BubbleView.swift in Sources */,
 				5B0C0D981C3D505A0090FB17 /* TextImpressionVC.swift in Sources */,
 				5B44750D1C216E9600C30445 /* LocationService.swift in Sources */,
 				5B42BB681C7DD961004F16D2 /* TextImpressionCell.swift in Sources */,
-				870507201C4FC6D1008641BF /* GravitySimulator.swift in Sources */,
 				87F14D7B1C18604B00682709 /* AppDelegate.swift in Sources */,
 				5BDAB6141C5514D600A4D38E /* CAPSPageMenu.swift in Sources */,
 				876CAA861C3C0431002A36FF /* RegisterVC5.swift in Sources */,
