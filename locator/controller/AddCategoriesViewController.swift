@@ -59,6 +59,8 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLoca
                 result -> Void in
                 
                 self.createdLocation = result
+
+                self.locationManager.stopUpdatingLocation()
                 
                 //let locationDetailVc = self.storyboard!.instantiateViewControllerWithIdentifier("locationDetailStoryboardID") as! LocationDetailVC
                 //locationDetailVc.location = self.createdLocation
