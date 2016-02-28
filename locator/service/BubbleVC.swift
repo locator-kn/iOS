@@ -19,6 +19,7 @@ class BubbleVC: UIViewController {
     // Schoenhier
     @IBOutlet weak var schoenHierImageView: UIImageView!
     // UserProfil
+    @IBOutlet weak var userProfilImageView: UIImageView!
     // First Bubble
     @IBOutlet weak var firstBubbleImageView: UIImageView!
     // Second Bubble
@@ -37,8 +38,14 @@ class BubbleVC: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        layoutUserProfilImageView()
         layoutBubbles(firstBubbleImageView)
         layoutBubbles(secondBubbleImageView)
+    }
+    
+    func layoutUserProfilImageView() {
+        userProfilImageView.layer.cornerRadius = userProfilImageView.frame.width / 2
+        userProfilImageView.clipsToBounds = true
     }
     
     func layoutBubbles(imageView: UIImageView) {
