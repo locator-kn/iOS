@@ -60,12 +60,12 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLoca
                 
                 self.createdLocation = result
                 
-                let locationDetailVc = self.storyboard!.instantiateViewControllerWithIdentifier("locationDetailStoryboardID") as! LocationDetailVC
-                locationDetailVc.location = self.createdLocation
+                //let locationDetailVc = self.storyboard!.instantiateViewControllerWithIdentifier("locationDetailStoryboardID") as! LocationDetailVC
+                //locationDetailVc.location = self.createdLocation
                 self.dismissViewControllerAnimated(true, completion: nil)
-                self.presentViewController(locationDetailVc, animated: true, completion: nil)
+                //self.presentViewController(locationDetailVc, animated: true, completion: nil)
                 
-                //self.performSegueWithIdentifier("showCreateLocationSuccess", sender: true)
+                self.performSegueWithIdentifier("showNewLocation", sender: true)
                 
                 print("image upload success")
             }
@@ -239,6 +239,10 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLoca
         if (segue.identifier == "showCreateLocationSuccess") {
             
             print("showCreateLocationSuccess")
+        } else if segue.identifier == "showNewLocation" {
+            let controller = segue.destinationViewController as? LocationDetailVC
+            controller?.location = self.createdLocation
+            print("showNewLocation")
         }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
