@@ -938,7 +938,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L56-lv-MVl">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L56-lv-MVl">
                                 <rect key="frame" x="558" y="28" width="22" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="MQu-vd-dMG"/>
@@ -1505,17 +1505,6 @@
                                     <action selector="toggleMapOptions:" destination="4Mp-XX-Glu" eventType="touchUpInside" id="3nk-0j-gGj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ET-td-Hb3" userLabel="navigate">
-                                <rect key="frame" x="558" y="17" width="20" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="Wqw-7v-rNg"/>
-                                    <constraint firstAttribute="height" constant="45" id="p8w-vD-Hhp"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="navigate"/>
-                                <connections>
-                                    <action selector="locate:" destination="4Mp-XX-Glu" eventType="touchUpInside" id="ew0-R5-y95"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQb-PR-2qf">
                                 <rect key="frame" x="263" y="518" width="74" height="74"/>
                                 <constraints>
@@ -1525,17 +1514,6 @@
                                 <state key="normal" title="Button" image="schoen_hier"/>
                                 <connections>
                                     <action selector="schoenHier:" destination="4Mp-XX-Glu" eventType="touchUpInside" id="FSi-y3-0dO"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGo-Di-6bH" userLabel="search">
-                                <rect key="frame" x="523" y="15" width="20" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="5KS-U5-NxB"/>
-                                    <constraint firstAttribute="height" constant="45" id="Yib-VI-C0t"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="search"/>
-                                <connections>
-                                    <segue destination="n1t-QA-BcP" kind="presentation" modalPresentationStyle="overCurrentContext" id="e5a-0h-LSx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1555,28 +1533,19 @@
                             <constraint firstItem="qGG-7k-18j" firstAttribute="bottom" secondItem="Na0-o0-8lP" secondAttribute="top" id="UQZ-U7-lAb"/>
                             <constraint firstItem="TRT-34-oxv" firstAttribute="top" secondItem="1TB-2Q-CWr" secondAttribute="bottom" constant="21" id="Yz9-iM-6At"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zdt-da-1cq" secondAttribute="trailing" id="aVa-TU-4DP"/>
-                            <constraint firstItem="tGo-Di-6bH" firstAttribute="width" secondItem="0ET-td-Hb3" secondAttribute="width" id="bTM-73-Kp7"/>
-                            <constraint firstItem="0ET-td-Hb3" firstAttribute="top" secondItem="FEp-9v-0Jh" secondAttribute="bottom" constant="8" id="c7F-wL-scj"/>
-                            <constraint firstItem="tGo-Di-6bH" firstAttribute="top" secondItem="v1V-7X-nyy" secondAttribute="topMargin" constant="15" id="dAk-9o-VXg"/>
                             <constraint firstItem="Na0-o0-8lP" firstAttribute="top" secondItem="1TB-2Q-CWr" secondAttribute="bottom" constant="67" id="eeD-dN-zqY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1TB-2Q-CWr" secondAttribute="trailing" id="gVU-dc-4LT"/>
-                            <constraint firstItem="0ET-td-Hb3" firstAttribute="top" secondItem="v1V-7X-nyy" secondAttribute="topMargin" constant="17" id="h9b-ic-N0m"/>
                             <constraint firstItem="1TB-2Q-CWr" firstAttribute="height" secondItem="TRT-34-oxv" secondAttribute="height" id="igk-tS-Faf"/>
                             <constraint firstItem="qGG-7k-18j" firstAttribute="top" secondItem="v1V-7X-nyy" secondAttribute="top" id="j8q-Hg-bAX"/>
                             <constraint firstItem="qGG-7k-18j" firstAttribute="leading" secondItem="v1V-7X-nyy" secondAttribute="leading" id="m66-mf-c0w"/>
                             <constraint firstItem="zdt-da-1cq" firstAttribute="width" secondItem="TRT-34-oxv" secondAttribute="width" id="m6G-Gb-zjH"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="0ET-td-Hb3" secondAttribute="trailing" constant="2" id="mfK-Gm-SiR"/>
                             <constraint firstItem="1TB-2Q-CWr" firstAttribute="height" secondItem="TRT-34-oxv" secondAttribute="height" id="pwF-Gu-FIL"/>
                             <constraint firstItem="Na0-o0-8lP" firstAttribute="top" secondItem="TRT-34-oxv" secondAttribute="bottom" constant="11" id="s7A-fm-5c8"/>
-                            <constraint firstItem="0ET-td-Hb3" firstAttribute="leading" secondItem="tGo-Di-6bH" secondAttribute="trailing" constant="15" id="xy6-4Q-jKa"/>
-                            <constraint firstItem="tGo-Di-6bH" firstAttribute="height" secondItem="0ET-td-Hb3" secondAttribute="height" id="yHu-r1-D2H"/>
                             <constraint firstItem="YVY-JW-BsL" firstAttribute="leading" secondItem="v1V-7X-nyy" secondAttribute="leading" id="yNJ-k6-Mg5"/>
                             <constraint firstItem="zdt-da-1cq" firstAttribute="height" secondItem="TRT-34-oxv" secondAttribute="height" id="ydS-l5-IuQ"/>
-                            <constraint firstItem="tGo-Di-6bH" firstAttribute="top" secondItem="0ET-td-Hb3" secondAttribute="top" constant="-2" id="zgz-Uq-MTe"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="c7F-wL-scj"/>
                                 <exclude reference="m6G-Gb-zjH"/>
                                 <exclude reference="ydS-l5-IuQ"/>
                                 <exclude reference="8Cq-x8-kuL"/>
@@ -2544,10 +2513,8 @@
         <image name="map_icon_white" width="140" height="141"/>
         <image name="message" width="182" height="119"/>
         <image name="movie" width="179" height="128"/>
-        <image name="navigate" width="148" height="398"/>
         <image name="profil" width="396" height="396"/>
         <image name="schoen_hier" width="560" height="560"/>
-        <image name="search" width="160" height="398"/>
         <image name="show_heatmap_active" width="340" height="340"/>
         <image name="show_locations_active" width="340" height="340"/>
         <image name="show_options" width="340" height="340"/>

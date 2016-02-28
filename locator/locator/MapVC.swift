@@ -60,6 +60,8 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         self.heatMapBottomSpace.constant = 11
         self.heatMapButton.alpha = 0
         self.locationButton.alpha = 0
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "navigate"), style: .Plain, target: self, action: "locate")
 
         locationManager = CLLocationManager()
         locationManager.requestWhenInUseAuthorization()
@@ -192,7 +194,7 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         }
     }
     
-    @IBAction func locate(sender: AnyObject) {
+    func locate() {
         self.googleMap.animateToCameraPosition(GMSCameraPosition(target: self.googleMap.myLocation.coordinate, zoom: 17, bearing: 0, viewingAngle: 0))
     }
     
@@ -203,7 +205,7 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
             self.getNearSchoenHiers(self.googleMap.myLocation.coordinate, maxDistance: 0.2)
             self.nearSchoenHiers[schoenHier.id] = schoenHier
             self.showHeatMapMarker(schoenHier.getGeoPosition().lat, long: schoenHier.getGeoPosition().long, schoenHier: schoenHier)
-            self.locate(self)
+            self.locate()
         }
     }
     
@@ -281,10 +283,6 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
             return targetMap != nil
         }
         return !flag
-    }
-    
-    @IBAction func back(sender: UIButton) {
-        self.navigationController!.popViewControllerAnimated(true)
     }
     
     func mapView(mapView: GMSMapView!, markerInfoWindow marker: GMSMarker!) -> UIView! {
