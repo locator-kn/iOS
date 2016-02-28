@@ -210,4 +210,84 @@ class LocationService {
         }
     }
     
+    static func createNewLocation(data:UIImage, categories:[String], locationTitle: String, lat: String, long: String) -> Promise<Bool> {
+        
+        // init paramters Dictionary
+        print("categories:", categories.description)
+        print("locationTitle:", locationTitle)
+        
+        let parameters2 = [
+            "title": locationTitle,
+            "lat": lat,
+            "long": long,
+            "categories": categories.description
+        ]
+        
+        // example image data
+        let image = data
+        let imageData = UIImageJPEGRepresentation(image, 0.5)
+
+        let urlRequest = urlRequestWithComponents2(API.BASE_URL + "/locations", pars: parameters2, imageData: imageData!)
+        return Promise { fulfill, reject in
+            print("going to upload a location")
+            Alamofire.upload(urlRequest.0, data: urlRequest.1).validate()
+                .progress { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
+                    print("\(totalBytesWritten) / \(totalBytesExpectedToWrite)")
+                }
+                .responseJSON {
+                response in
+                switch response.result {
+                case .Success:
+                    fulfill(true)
+                    if let value = response.result.value {
+                        let json = JSON(value)
+                        print(json)
+                        fulfill(true)
+                    }
+                    
+                case .Failure(let error):
+                    print(error)
+                    reject(error)
+                }
+            }
+            
+            
+            
+        }
+    }
+    
+    // this function creates the required URLRequestConvertible and NSData we need to use Alamofire.upload
+    static func urlRequestWithComponents2(urlString:String, pars:Dictionary<String, String>, imageData:NSData) -> (URLRequestConvertible, NSData) {
+        
+        // create url request to send
+        let mutableURLRequest = NSMutableURLRequest(URL: NSURL(string: urlString)!)
+        mutableURLRequest.HTTPMethod = Alamofire.Method.POST.rawValue
+        let boundaryConstant = "myRandomBoundary12345";
+        let contentType = "multipart/form-data;boundary="+boundaryConstant
+        mutableURLRequest.setValue(contentType, forHTTPHeaderField: "Content-Type")
+        
+        
+        
+        // create upload data to send
+        let uploadData = NSMutableData()
+        
+        // add image
+        uploadData.appendData("\r\n--\(boundaryConstant)\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
+        uploadData.appendData("Content-Disposition: form-data; name=\"file\"; filename=\"file.png\"\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
+        uploadData.appendData("Content-Type: image/jpeg\r\n\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
+        uploadData.appendData(imageData)
+        
+        // add parameters
+        for (key, value) in pars {
+            uploadData.appendData("\r\n--\(boundaryConstant)\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
+            uploadData.appendData("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n\(value)".dataUsingEncoding(NSUTF8StringEncoding)!)
+        }
+        uploadData.appendData("\r\n--\(boundaryConstant)--\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
+        
+        
+        
+        // return URLRequestConvertible and NSData
+        return (Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: nil).0, uploadData)
+    }
+    
 }

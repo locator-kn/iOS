@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="U8m-eU-1FD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="U8m-eU-1FD">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -443,6 +443,7 @@
                         <outlet property="nightlifeLabel" destination="qGK-oy-2oY" id="dgx-nd-8Rx"/>
                         <outlet property="secret" destination="Bzw-Dr-dPE" id="2Hj-nC-Pll"/>
                         <outlet property="secretLabel" destination="bMa-X0-pgd" id="thH-DU-v4w"/>
+                        <segue destination="9zm-5u-czy" kind="show" identifier="showCreateLocationSuccess" id="5aF-3m-JfS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Mh-PL-dK0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1884,6 +1885,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bNK-l6-8FZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5796" y="933.75"/>
+        </scene>
+        <!--Loading Animation View Controller-->
+        <scene sceneID="2Ea-6S-yjb">
+            <objects>
+                <viewController storyboardIdentifier="test" id="Jvr-db-hqD" customClass="LoadingAnimationViewController" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="u8v-Cm-S8v"/>
+                        <viewControllerLayoutGuide type="bottom" id="nWZ-zh-A7I"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xVE-u2-6J0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vhG-Nz-8qk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3961" y="2731"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hu3-Rw-mPi">
+            <objects>
+                <viewController id="9zm-5u-czy" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ono-nL-GYm"/>
+                        <viewControllerLayoutGuide type="bottom" id="yQA-Dm-YAz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pKg-w2-e8C">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="kakjahsdkjashkasd" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IrP-d5-lcb">
+                                <rect key="frame" x="206" y="285" width="143" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IrP-d5-lcb" firstAttribute="centerY" secondItem="pKg-w2-e8C" secondAttribute="centerY" id="IK5-6a-k2n"/>
+                            <constraint firstItem="IrP-d5-lcb" firstAttribute="leading" secondItem="pKg-w2-e8C" secondAttribute="leading" constant="206" id="stV-IY-2eV"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JlB-wb-p9t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4659" y="2230"/>
         </scene>
         <!--Registrierung-->
         <scene sceneID="8u9-sU-DFj">

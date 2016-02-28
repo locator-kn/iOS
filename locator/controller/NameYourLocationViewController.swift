@@ -57,7 +57,7 @@ class NameYourLocationViewController: UIViewController, UITextFieldDelegate {
         if (segue.identifier == "chooseCategories") {
             //let controller = segue.destinationViewController as! AddCategoriesViewController
                 let controller = segue.destinationViewController as? AddCategoriesViewController
-                controller!.locationTitle = String(self.locationTitle)
+                controller!.locationTitle = self.locationTitle.text
                 controller!.uiimage = self.uiimage
             
             

@@ -7,8 +7,14 @@
 //
 
 import UIKit
+import CoreLocation
 
-class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
+class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate {
+    
+    var locationManager: CLLocationManager = CLLocationManager()
+    
+    var lat:Double!
+    var long:Double!
     
     var uiimage:UIImage!
     
@@ -41,6 +47,22 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
     @IBAction func nextAction(sender: AnyObject) {
         if nextEnabled {
             print("weiter gehts")
+            //
+            
+            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("test") as! LoadingAnimationViewController
+            self.presentViewController(vc, animated: true, completion: nil)
+            
+            
+            LocationService.createNewLocation(uiimage, categories: selectedCategories, locationTitle: locationTitle, lat: String(format:"%f", lat), long: String(format:"%f", lat)).then{
+                result -> Void in
+                
+                self.dismissViewControllerAnimated(true, completion: nil)
+                self.performSegueWithIdentifier("showCreateLocationSuccess", sender: true)
+                
+                print("image upload success")
+            }
+            
+            //ImpressionService.addImageImpression("569e4a9a4c9d7b5f3b400709", data: uiimage!)
         } else {
             print("next disabled")
         }
@@ -116,6 +138,13 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         
+        locationManager = CLLocationManager()
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter = 5.0
+        locationManager.delegate = self
+        
+        
         self.title = "Kategorien wählen"
         
         culture.alpha = 0.4
@@ -139,6 +168,22 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
         next.alpha = 0.4
 
         // Do any additional setup after loading the view.
+    }
+    
+    /* delegate on gpsAuthorizationStatus change */
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status:CLAuthorizationStatus) {
+        print("locationManager didChangeAuthorizationStatus:", status)
+        if status == .AuthorizedWhenInUse {
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    /* delegate on user position update */
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        print("locationManager, didUpdateLocations", locations)
+        lat = locations.first?.coordinate.latitude
+        long = locations.first?.coordinate.longitude
     }
 
     override func didReceiveMemoryWarning() {
@@ -181,14 +226,15 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
         return true
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print("going to leave")
+        if (segue.identifier == "showCreateLocationSuccess") {
+            
+            print("showCreateLocationSuccess")
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+
 
 }
