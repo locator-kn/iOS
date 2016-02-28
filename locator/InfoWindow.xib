@@ -4,23 +4,26 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="SourceSansPro-Regular.ttf">
             <string>SourceSansPro-Regular</string>
             <string>SourceSansPro-Regular</string>
-            <string>SourceSansPro-Regular</string>
+        </mutableArray>
+        <mutableArray key="SourceSansPro-Semibold.ttf">
+            <string>SourceSansPro-Semibold</string>
         </mutableArray>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="InfoWindow" customModule="locator" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="348" height="218"/>
+            <rect key="frame" x="0.0" y="0.0" width="280" height="188"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MRY-4p-V1L">
-                    <rect key="frame" x="0.0" y="0.0" width="348" height="173"/>
+                    <rect key="frame" x="0.0" y="0.0" width="280" height="133"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="113" id="4ir-vi-Y82"/>
                         <constraint firstAttribute="width" secondItem="MRY-4p-V1L" secondAttribute="height" multiplier="348:113" id="Kcf-dk-NyQ"/>
@@ -36,18 +39,25 @@
                         </mask>
                     </variation>
                 </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="infowindowicon" translatesAutoresizingMaskIntoConstraints="NO" id="Xg5-sE-5g6">
+                    <rect key="frame" x="123" y="165" width="35" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="35" id="yrn-QZ-fAu"/>
+                    </constraints>
+                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vwp-t0-kHP" userLabel="whiteBack">
-                    <rect key="frame" x="0.0" y="173" width="348" height="39"/>
+                    <rect key="frame" x="0.0" y="129" width="280" height="44"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite_icon_active" translatesAutoresizingMaskIntoConstraints="NO" id="zrK-HE-b0Z">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="favorite_icon_active" translatesAutoresizingMaskIntoConstraints="NO" id="zrK-HE-b0Z">
                             <rect key="frame" x="69" y="25" width="20" height="10"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="10" id="tGy-Lz-m1c"/>
                                 <constraint firstAttribute="width" constant="20" id="wv4-dm-wAs"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSq-2K-NXM">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSq-2K-NXM">
                             <rect key="frame" x="64" y="23" width="5" height="13"/>
+                            <color key="backgroundColor" red="1" green="0.20244636321367893" blue="0.24448724820506218" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="13" id="5tn-6Y-R0s"/>
                                 <constraint firstAttribute="width" constant="38" id="zvE-8V-I5Q"/>
@@ -61,8 +71,16 @@
                                 </mask>
                             </variation>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Lukas Doe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPY-KM-kYy">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kantine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEZ-0Z-eEr">
+                            <rect key="frame" x="8" y="2" width="58" height="22"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.60056573275862069" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" name="SourceSansPro-Semibold" family="Source Sans Pro" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="Lukas Doe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPY-KM-kYy">
                             <rect key="frame" x="9" y="23" width="50" height="13"/>
+                            <color key="backgroundColor" red="0.97737372002631417" green="0.56449440360587877" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="13" id="yFA-ET-8V9"/>
                             </constraints>
@@ -74,10 +92,12 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="zrK-HE-b0Z" firstAttribute="leading" secondItem="vwp-t0-kHP" secondAttribute="leading" constant="63" id="0zM-f3-ZwJ"/>
+                        <constraint firstItem="PEZ-0Z-eEr" firstAttribute="leading" secondItem="vwp-t0-kHP" secondAttribute="leadingMargin" id="6CS-Ks-rsy"/>
                         <constraint firstItem="zrK-HE-b0Z" firstAttribute="leading" secondItem="BSq-2K-NXM" secondAttribute="trailing" constant="-2" id="6xJ-zG-c0O"/>
                         <constraint firstItem="zrK-HE-b0Z" firstAttribute="top" secondItem="vwp-t0-kHP" secondAttribute="top" constant="23" id="8e4-GW-gZE"/>
                         <constraint firstItem="xPY-KM-kYy" firstAttribute="leading" secondItem="vwp-t0-kHP" secondAttribute="leading" constant="9" id="9N0-GU-D33"/>
                         <constraint firstItem="zrK-HE-b0Z" firstAttribute="leading" secondItem="vwp-t0-kHP" secondAttribute="leading" constant="64" id="ACV-Z0-Uad"/>
+                        <constraint firstItem="PEZ-0Z-eEr" firstAttribute="top" secondItem="vwp-t0-kHP" secondAttribute="topMargin" constant="-6" id="Bzv-MN-hdw"/>
                         <constraint firstItem="BSq-2K-NXM" firstAttribute="leading" secondItem="vwp-t0-kHP" secondAttribute="leading" constant="60" id="CvD-d4-5NY"/>
                         <constraint firstItem="zrK-HE-b0Z" firstAttribute="leading" secondItem="vwp-t0-kHP" secondAttribute="leading" constant="69" id="FgD-yz-baN"/>
                         <constraint firstItem="zrK-HE-b0Z" firstAttribute="leading" secondItem="BSq-2K-NXM" secondAttribute="trailing" constant="-2" id="IB9-vf-Gqj"/>
@@ -101,43 +121,29 @@
                             <exclude reference="6xJ-zG-c0O"/>
                             <exclude reference="8e4-GW-gZE"/>
                             <exclude reference="ACV-Z0-Uad"/>
+                            <exclude reference="FgD-yz-baN"/>
                             <exclude reference="IB9-vf-Gqj"/>
                             <exclude reference="MsH-ZF-eyd"/>
                             <exclude reference="PVP-74-4PT"/>
                             <exclude reference="Vwr-NE-SEJ"/>
+                            <exclude reference="gXp-If-C8l"/>
                             <exclude reference="ram-JV-dgp"/>
                         </mask>
                     </variation>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kantine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEZ-0Z-eEr">
-                    <rect key="frame" x="8" y="174" width="340" height="22"/>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.60056573275862069" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="infowindowicon" translatesAutoresizingMaskIntoConstraints="NO" id="Xg5-sE-5g6">
-                    <rect key="frame" x="157" y="202" width="35" height="22"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="35" id="yrn-QZ-fAu"/>
-                    </constraints>
-                </imageView>
             </subviews>
             <accessibility key="accessibilityConfiguration" identifier="InfoWindow"/>
             <constraints>
-                <constraint firstItem="PEZ-0Z-eEr" firstAttribute="centerX" secondItem="MRY-4p-V1L" secondAttribute="centerX" constant="4" id="6qo-9P-9E4"/>
+                <constraint firstAttribute="bottom" secondItem="Xg5-sE-5g6" secondAttribute="bottom" constant="1" id="5Ho-rt-yQU"/>
                 <constraint firstItem="Xg5-sE-5g6" firstAttribute="centerX" secondItem="MRY-4p-V1L" secondAttribute="centerX" id="7Q7-m8-QP6"/>
                 <constraint firstAttribute="trailing" secondItem="MRY-4p-V1L" secondAttribute="trailing" id="Ift-zN-fuw"/>
-                <constraint firstItem="vwp-t0-kHP" firstAttribute="top" secondItem="MRY-4p-V1L" secondAttribute="bottom" id="Kfj-FY-9oA"/>
-                <constraint firstItem="vwp-t0-kHP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="173" id="MXe-nO-foX"/>
+                <constraint firstItem="vwp-t0-kHP" firstAttribute="top" secondItem="MRY-4p-V1L" secondAttribute="bottom" constant="-4" id="Kfj-FY-9oA"/>
+                <constraint firstItem="vwp-t0-kHP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="129" id="MXe-nO-foX"/>
+                <constraint firstItem="Xg5-sE-5g6" firstAttribute="centerX" secondItem="vwp-t0-kHP" secondAttribute="centerX" id="Z0m-MV-MOb"/>
                 <constraint firstItem="MRY-4p-V1L" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="agt-Fa-zU1"/>
-                <constraint firstItem="PEZ-0Z-eEr" firstAttribute="top" secondItem="MRY-4p-V1L" secondAttribute="bottom" constant="1" id="eOH-hw-WAq"/>
-                <constraint firstItem="MRY-4p-V1L" firstAttribute="trailing" secondItem="PEZ-0Z-eEr" secondAttribute="trailing" id="hwb-g2-bNI"/>
                 <constraint firstItem="vwp-t0-kHP" firstAttribute="leading" secondItem="MRY-4p-V1L" secondAttribute="leading" id="jdd-ol-mmd"/>
-                <constraint firstAttribute="bottom" secondItem="vwp-t0-kHP" secondAttribute="bottom" constant="6" id="lxE-e6-cda"/>
-                <constraint firstItem="vwp-t0-kHP" firstAttribute="trailing" secondItem="PEZ-0Z-eEr" secondAttribute="trailing" id="xYY-p6-hri"/>
+                <constraint firstAttribute="bottom" secondItem="vwp-t0-kHP" secondAttribute="bottom" constant="15" id="lxE-e6-cda"/>
                 <constraint firstItem="MRY-4p-V1L" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="yq6-lt-OJb"/>
-                <constraint firstItem="Xg5-sE-5g6" firstAttribute="top" secondItem="PEZ-0Z-eEr" secondAttribute="bottom" constant="6" id="zO0-T6-ATG"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
@@ -149,7 +155,7 @@
                 <outlet property="image" destination="MRY-4p-V1L" id="a2S-aW-cek"/>
                 <outlet property="title" destination="PEZ-0Z-eEr" id="hzf-mg-3zO"/>
             </connections>
-            <point key="canvasLocation" x="408" y="217"/>
+            <point key="canvasLocation" x="408" y="202"/>
         </view>
     </objects>
     <resources>
