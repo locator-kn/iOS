@@ -42,13 +42,11 @@ class BubbleVC: UIViewController {
         
         BubbleService.getBubbles(lat, long: long, maxDistance: maxDistance, limit: limit).then { bubbles -> Void in
             
-            for i in bubbles {
-                self.locations.append(i)
+            for (index, element) in bubbles.enumerate() {
+                self.locations.append(element)
+                self.loadLocationImage(index, urlPath: element.imagePathNormal)
             }
             
-            }
-            .then {
-                print("Handle image download")
             }
             .then {
                 self.reloadInputViews()
@@ -106,26 +104,49 @@ class BubbleVC: UIViewController {
     }
     
     func firstBubbleTapped(imageView: UIImageView) {
+        let location = locations[0]
         
     }
     
     func secondBubbleTapped(imageView: UIImageView) {
-        
+        let location = locations[1]
     }
     
     func thirdBubbleTapped(imageView: UIImageView) {
-        
+        let location = locations[2]
     }
     
     func fourthBubbleTapped(imageView: UIImageView) {
-        
+        let location = locations[3]
     }
     
     func fifthBubbleTapped(imageView: UIImageView) {
-        
+        let location = locations[4]
     }
     
     func sixthBubbleTapped(imageView: UIImageView) {
+        let location = locations[5]
+    }
+    
+    func loadLocationImage(bubble: Int, urlPath: String) {
+        UtilService.dataFromCache(urlPath).then { image -> Void in
+            switch bubble{
+            case 0:
+                self.firstBubbleImageView.image = UIImage(data: image)
+            case 1:
+                self.secondBubbleImageView.image = UIImage(data: image)
+            case 2:
+                self.thirdBubbleImageView.image = UIImage(data: image)
+            case 3:
+                self.fourthBubbleImageView.image = UIImage(data: image)
+            case 4:
+                self.fifthBubbleImageView.image = UIImage(data: image)
+            case 5:
+                self.sixthBubbleImageView.image = UIImage(data: image)
+            default:
+                break
+            }
+        }
         
     }
     

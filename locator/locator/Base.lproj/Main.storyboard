@@ -2337,7 +2337,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="W8Q-D5-2ee">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="W8Q-D5-2ee">
                                 <rect key="frame" x="46" y="15" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="0hM-Zq-2Yy">
@@ -2360,7 +2360,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="UJf-Py-dXU">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="UJf-Py-dXU">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="BVm-1y-VHu">
@@ -2402,7 +2402,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="RFy-Bg-51N">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="RFy-Bg-51N">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="AEC-eQ-NTc"/>
@@ -2421,7 +2421,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="uai-va-mhn">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="uai-va-mhn">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="8mO-bJ-apu"/>
@@ -2440,7 +2440,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="Zwi-n6-4k8">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="Zwi-n6-4k8">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="9ro-iS-mSf"/>
@@ -2459,7 +2459,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="lhe-2R-F46">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="lhe-2R-F46">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="JnP-p6-pRt"/>
