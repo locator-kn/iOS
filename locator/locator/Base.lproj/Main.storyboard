@@ -89,7 +89,7 @@
                                 </constraints>
                                 <state key="normal" image="Nö"/>
                                 <connections>
-                                    <segue destination="7jn-ok-tDo" kind="show" id="ngF-gl-Sbv"/>
+                                    <segue destination="Pdv-Th-J2k" kind="show" id="5LS-PO-7IX"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Möchtest du dich anmelden oder registieren?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="TDD-Er-t1h">
@@ -488,7 +488,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ylq-AA-Tqj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4374" y="933.75"/>
+            <point key="canvasLocation" x="4422" y="1389.75"/>
         </scene>
         <!--Location DetailVC-->
         <scene sceneID="Eyn-e7-LFX">
@@ -1336,7 +1336,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mf8-SU-Wd0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3719" y="-2126"/>
+            <point key="canvasLocation" x="3726" y="-2067.75"/>
         </scene>
         <!--Locations-->
         <scene sceneID="mjm-jW-f3H">
@@ -1729,11 +1729,12 @@
                         <outlet property="loginButton" destination="ThM-aS-l8j" id="Qp3-cr-Nob"/>
                         <outlet property="loginFacebookButton" destination="sMM-Jb-Txm" id="7Hc-GQ-PmB"/>
                         <outlet property="registerButton" destination="kxh-In-BWJ" id="QTZ-l8-XwN"/>
+                        <segue destination="Pdv-Th-J2k" kind="show" identifier="showDashboard" id="n5V-k0-1OC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HQW-BL-npg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3567" y="201"/>
+            <point key="canvasLocation" x="3562.5" y="201"/>
         </scene>
         <!--Anmelden-->
         <scene sceneID="0g1-j0-nTt">
@@ -1802,9 +1803,6 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hk5-wr-LzS">
                                 <rect key="frame" x="188" y="442" width="105" height="30"/>
                                 <state key="normal" title="CreateLocation"/>
-                                <connections>
-                                    <segue destination="jfr-tO-4Yb" kind="show" id="QQk-iJ-0QT"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1816,7 +1814,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Sr-Ym-78M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5979" y="201"/>
+            <point key="canvasLocation" x="6013.5" y="201"/>
         </scene>
         <!--Anmelden-->
         <scene sceneID="6Df-bh-iNX">
@@ -1852,7 +1850,7 @@
                     </view>
                     <connections>
                         <outlet property="passwordTextField" destination="fzu-pS-sg2" id="d62-VT-Sk8"/>
-                        <segue destination="7jn-ok-tDo" kind="show" identifier="dashboard" id="hTK-WV-rqw"/>
+                        <segue destination="Pdv-Th-J2k" kind="show" identifier="dashboard" id="WoO-UQ-gKo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s67-zn-TWX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1872,12 +1870,12 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ItB-To-HKa"/>
-                        <segue destination="7jn-ok-tDo" kind="show" identifier="dashboard" id="MIt-5w-2Dv"/>
+                        <segue destination="Pdv-Th-J2k" kind="show" identifier="dashboard" id="LgZ-gd-7kD"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xbo-2h-uaj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1968" y="201"/>
+            <point key="canvasLocation" x="1998" y="201"/>
         </scene>
         <!--Wo wohnst du?-->
         <scene sceneID="eEE-Wz-Imt">
@@ -2266,7 +2264,7 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <segue destination="7jn-ok-tDo" kind="show" identifier="showDashboard" id="LDE-d0-p7C"/>
+                        <segue destination="Pdv-Th-J2k" kind="show" identifier="showDashboard" id="pqk-kP-sXI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sNa-lI-qhq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2334,10 +2332,10 @@
             </objects>
             <point key="canvasLocation" x="7203" y="933.75"/>
         </scene>
-        <!--BubbleVC-->
+        <!--Dashboard-->
         <scene sceneID="vTO-3T-fXw">
             <objects>
-                <viewController id="Pdv-Th-J2k" customClass="BubbleVC" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Dashboard" id="Pdv-Th-J2k" customClass="BubbleVC" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sJi-eu-cFB"/>
                         <viewControllerLayoutGuide type="bottom" id="VUj-Ox-pke"/>
@@ -2348,6 +2346,9 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background-rot" translatesAutoresizingMaskIntoConstraints="NO" id="cQS-UU-HuG">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="64" width="400" height="736"/>
+                                </variation>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1fR-e7-pl2">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -2392,7 +2393,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="W8Q-D5-2ee">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="W8Q-D5-2ee">
                                 <rect key="frame" x="46" y="15" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="0hM-Zq-2Yy">
@@ -2415,7 +2416,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="UJf-Py-dXU">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="UJf-Py-dXU">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="BVm-1y-VHu">
@@ -2438,26 +2439,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profil" translatesAutoresizingMaskIntoConstraints="NO" id="qQB-CT-UpR">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="gWc-o3-zPl"/>
-                                    <constraint firstAttribute="height" constant="75" id="myd-yb-GB2"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="gWc-o3-zPl"/>
-                                        <exclude reference="myd-yb-GB2"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="gWc-o3-zPl"/>
-                                        <include reference="myd-yb-GB2"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="RFy-Bg-51N">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="RFy-Bg-51N">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="AEC-eQ-NTc"/>
@@ -2476,7 +2458,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="uai-va-mhn">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="uai-va-mhn">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="8mO-bJ-apu"/>
@@ -2495,7 +2477,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="Zwi-n6-4k8">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="Zwi-n6-4k8">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="9ro-iS-mSf"/>
@@ -2514,7 +2496,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="lhe-2R-F46">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="lhe-2R-F46">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="JnP-p6-pRt"/>
@@ -2530,6 +2512,29 @@
                                     <mask key="constraints">
                                         <include reference="JnP-p6-pRt"/>
                                         <include reference="ftE-Pf-nnP"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profil" translatesAutoresizingMaskIntoConstraints="NO" id="qQB-CT-UpR">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="gWc-o3-zPl">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="75" id="myd-yb-GB2">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="gWc-o3-zPl"/>
+                                        <exclude reference="myd-yb-GB2"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="gWc-o3-zPl"/>
+                                        <include reference="myd-yb-GB2"/>
                                     </mask>
                                 </variation>
                             </imageView>
@@ -2552,7 +2557,9 @@
                                 <variation key="heightClass=regular-widthClass=compact" constant="1"/>
                             </constraint>
                             <constraint firstItem="1fR-e7-pl2" firstAttribute="centerX" secondItem="A2k-OK-pGt" secondAttribute="centerX" id="IAO-DS-lWX"/>
-                            <constraint firstItem="qQB-CT-UpR" firstAttribute="top" secondItem="cQS-UU-HuG" secondAttribute="bottom" constant="-95" id="Lbn-aZ-1jY"/>
+                            <constraint firstItem="qQB-CT-UpR" firstAttribute="top" secondItem="cQS-UU-HuG" secondAttribute="bottom" constant="-95" id="Lbn-aZ-1jY">
+                                <variation key="heightClass=regular-widthClass=compact" constant="-70"/>
+                            </constraint>
                             <constraint firstItem="1fR-e7-pl2" firstAttribute="leading" secondItem="W8Q-D5-2ee" secondAttribute="trailing" constant="-37" id="McX-33-Z67">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-81"/>
                             </constraint>
@@ -2584,11 +2591,11 @@
                                 <exclude reference="1fR-e7-pl2"/>
                                 <exclude reference="W8Q-D5-2ee"/>
                                 <exclude reference="UJf-Py-dXU"/>
-                                <exclude reference="qQB-CT-UpR"/>
                                 <exclude reference="RFy-Bg-51N"/>
                                 <exclude reference="uai-va-mhn"/>
                                 <exclude reference="Zwi-n6-4k8"/>
                                 <exclude reference="lhe-2R-F46"/>
+                                <exclude reference="qQB-CT-UpR"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="hwq-ES-w4j"/>
@@ -2617,11 +2624,11 @@
                                 <include reference="1fR-e7-pl2"/>
                                 <include reference="W8Q-D5-2ee"/>
                                 <include reference="UJf-Py-dXU"/>
-                                <include reference="qQB-CT-UpR"/>
                                 <include reference="RFy-Bg-51N"/>
                                 <include reference="uai-va-mhn"/>
                                 <include reference="Zwi-n6-4k8"/>
                                 <include reference="lhe-2R-F46"/>
+                                <include reference="qQB-CT-UpR"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="hwq-ES-w4j"/>
@@ -2655,29 +2662,14 @@
                         <outlet property="sixthBubbleImageView" destination="uai-va-mhn" id="1aH-EB-arb"/>
                         <outlet property="thirdBubbleImageView" destination="RFy-Bg-51N" id="yVO-r1-hDE"/>
                         <outlet property="userProfilImageView" destination="qQB-CT-UpR" id="kHr-4K-zcW"/>
+                        <segue destination="jfr-tO-4Yb" kind="show" identifier="createLocation" id="HC2-w8-Rke"/>
+                        <segue destination="1XA-Ef-cjY" kind="show" identifier="showDetailLocation" id="2oh-QA-SLC"/>
+                        <segue destination="G1J-vh-MOc" kind="show" identifier="showOwnProfil" id="sX6-Cx-Ga0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ei-wX-Tab" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5670" y="1802"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="UNN-Qq-r0x">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JoW-je-jhi" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bAO-NH-0IW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Pdv-Th-J2k" kind="relationship" relationship="rootViewController" id="keg-Vr-5aK"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mcj-pX-gss" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4928" y="1762"/>
+            <point key="canvasLocation" x="6966" y="201"/>
         </scene>
     </scenes>
     <resources>
@@ -2712,12 +2704,6 @@
         <image name="text" width="42" height="37"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ngF-gl-Sbv"/>
-        <segue reference="QQk-iJ-0QT"/>
-        <segue reference="C0z-Ed-tMO"/>
-        <segue reference="Q9G-yB-4zn"/>
-        <segue reference="PBI-Q7-c1i"/>
-        <segue reference="UEt-Gg-DkK"/>
-        <segue reference="CwG-iy-Y3j"/>
+
     </inferredMetricsTieBreakers>
 </document>

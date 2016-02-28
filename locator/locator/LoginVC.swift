@@ -71,6 +71,8 @@ class LoginVC: UIViewController {
             } else {
                 print("Logged in")
                 self.returnUserData()
+                // Temporäger: segue auf BubbleScreen
+                self.performSegueWithIdentifier("showDashboard", sender: self)
             }
         }
     }
