@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (3.1.5)
+  - Alamofire (3.2.1)
   - Bolts (1.6.0):
     - Bolts/AppLinks (= 1.6.0)
     - Bolts/Tasks (= 1.6.0)
@@ -12,26 +12,26 @@ PODS:
     - FBSDKCoreKit (~> 4.9.0-beta)
   - FBSDKShareKit (4.9.0-beta2):
     - FBSDKCoreKit (~> 4.9.0-beta)
-  - GoogleMaps (1.11.1)
+  - GoogleMaps (1.12.2)
   - HanekeSwift (0.10.1)
-  - OMGHTTPURLRQ (3.0.2):
-    - OMGHTTPURLRQ/RQ (= 3.0.2)
-  - OMGHTTPURLRQ/FormURLEncode (3.0.2)
-  - OMGHTTPURLRQ/RQ (3.0.2):
+  - OMGHTTPURLRQ (3.1.1):
+    - OMGHTTPURLRQ/RQ (= 3.1.1)
+  - OMGHTTPURLRQ/FormURLEncode (3.1.1)
+  - OMGHTTPURLRQ/RQ (3.1.1):
     - OMGHTTPURLRQ/FormURLEncode
     - OMGHTTPURLRQ/UserAgent
-  - OMGHTTPURLRQ/UserAgent (3.0.2)
-  - PromiseKit (3.0.1):
-    - PromiseKit/Foundation (= 3.0.1)
-    - PromiseKit/QuartzCore (= 3.0.1)
-    - PromiseKit/UIKit (= 3.0.1)
-  - PromiseKit/CorePromise (3.0.1)
-  - PromiseKit/Foundation (3.0.1):
-    - OMGHTTPURLRQ (~> 3.0.0)
+  - OMGHTTPURLRQ/UserAgent (3.1.1)
+  - PromiseKit (3.0.2):
+    - PromiseKit/Foundation (= 3.0.2)
+    - PromiseKit/QuartzCore (= 3.0.2)
+    - PromiseKit/UIKit (= 3.0.2)
+  - PromiseKit/CorePromise (3.0.2)
+  - PromiseKit/Foundation (3.0.2):
+    - OMGHTTPURLRQ (~> 3.1.0)
     - PromiseKit/CorePromise
-  - PromiseKit/QuartzCore (3.0.1):
+  - PromiseKit/QuartzCore (3.0.2):
     - PromiseKit/CorePromise
-  - PromiseKit/UIKit (3.0.1):
+  - PromiseKit/UIKit (3.0.2):
     - PromiseKit/CorePromise
   - SwiftyJSON (2.3.2)
 
@@ -55,15 +55,15 @@ CHECKOUT OPTIONS:
     :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 SPEC CHECKSUMS:
-  Alamofire: 5f730ba29fd113b7ddd71c1e65d0c630acf5d7b0
+  Alamofire: f11d8624a05f5d39e0c99309b3e600a3ba64298a
   Bolts: f52a250053bb517ca874523c3913776359ab3def
   FBSDKCoreKit: d49cbf69741e3c5732166ec9ff4cbd9b288dd53e
   FBSDKLoginKit: d32e83c0d2d39ef74a942543cacae2dc4de7d088
   FBSDKShareKit: 2bd88d784d1d95e4b6e561da3a7b8d448f386ca3
-  GoogleMaps: c947160008f414c66707a5ea60f35e92055c7670
+  GoogleMaps: cc76edaa94a4284e80ecd7089ed319d1cca5f37e
   HanekeSwift: 08e47d3d0f2899ec58e5d257beba0de619aca9e8
-  OMGHTTPURLRQ: 8376dc887d76a5a7e2a67881dc788f917a2f437c
-  PromiseKit: 19d12914484a15c25a46f72fde38579204a5dac6
+  OMGHTTPURLRQ: 633f98ee745aeda02345935a52eec1784cddb589
+  PromiseKit: ab1a380f7a30cf8cce663a2411e8b3580b10313d
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
 COCOAPODS: 0.39.0
