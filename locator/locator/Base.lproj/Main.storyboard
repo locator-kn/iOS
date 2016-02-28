@@ -2345,29 +2345,6 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="UJf-Py-dXU">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="BVm-1y-VHu">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="80"/>
-                                    </constraint>
-                                    <constraint firstAttribute="width" constant="100" id="EBw-mR-WNN">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="80"/>
-                                    </constraint>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="BVm-1y-VHu"/>
-                                        <exclude reference="EBw-mR-WNN"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="BVm-1y-VHu"/>
-                                        <include reference="EBw-mR-WNN"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profil" translatesAutoresizingMaskIntoConstraints="NO" id="qQB-CT-UpR">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
@@ -2425,10 +2402,54 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="Zwi-n6-4k8">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="9ro-iS-mSf"/>
+                                    <constraint firstAttribute="height" constant="80" id="oyO-Ye-nsg"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="9ro-iS-mSf"/>
+                                        <exclude reference="oyO-Ye-nsg"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="9ro-iS-mSf"/>
+                                        <include reference="oyO-Ye-nsg"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="UJf-Py-dXU">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="BVm-1y-VHu">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="80"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="100" id="EBw-mR-WNN">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="80"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="BVm-1y-VHu"/>
+                                        <exclude reference="EBw-mR-WNN"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="246" y="278" width="80" height="80"/>
+                                    <mask key="constraints">
+                                        <include reference="BVm-1y-VHu"/>
+                                        <include reference="EBw-mR-WNN"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cQS-UU-HuG" firstAttribute="leading" secondItem="A2k-OK-pGt" secondAttribute="leadingMargin" constant="-20" id="8Cj-7l-aFY"/>
+                            <constraint firstItem="Zwi-n6-4k8" firstAttribute="top" secondItem="1fR-e7-pl2" secondAttribute="bottom" constant="-34" id="Ccf-IO-7nQ"/>
                             <constraint firstItem="1fR-e7-pl2" firstAttribute="centerY" secondItem="A2k-OK-pGt" secondAttribute="centerY" id="DPZ-ZU-YbS"/>
                             <constraint firstItem="W8Q-D5-2ee" firstAttribute="leading" secondItem="A2k-OK-pGt" secondAttribute="leadingMargin" constant="22" id="FLP-1A-DEC"/>
                             <constraint firstItem="RFy-Bg-51N" firstAttribute="leading" secondItem="1fR-e7-pl2" secondAttribute="trailing" constant="-35" id="Fbl-LE-Rtp">
@@ -2456,6 +2477,7 @@
                             </constraint>
                             <constraint firstItem="uai-va-mhn" firstAttribute="top" secondItem="1fR-e7-pl2" secondAttribute="bottom" constant="-100" id="fLG-VX-5OB"/>
                             <constraint firstItem="VUj-Ox-pke" firstAttribute="top" secondItem="cQS-UU-HuG" secondAttribute="bottom" id="hwq-ES-w4j"/>
+                            <constraint firstItem="1fR-e7-pl2" firstAttribute="leading" secondItem="Zwi-n6-4k8" secondAttribute="trailing" constant="-26" id="x7s-lP-Voy"/>
                             <constraint firstItem="1fR-e7-pl2" firstAttribute="top" secondItem="UJf-Py-dXU" secondAttribute="bottom" constant="-23" id="xVy-DT-gYy">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-36"/>
                             </constraint>
@@ -2465,10 +2487,11 @@
                                 <exclude reference="cQS-UU-HuG"/>
                                 <exclude reference="1fR-e7-pl2"/>
                                 <exclude reference="W8Q-D5-2ee"/>
-                                <exclude reference="UJf-Py-dXU"/>
                                 <exclude reference="qQB-CT-UpR"/>
                                 <exclude reference="RFy-Bg-51N"/>
                                 <exclude reference="uai-va-mhn"/>
+                                <exclude reference="Zwi-n6-4k8"/>
+                                <exclude reference="UJf-Py-dXU"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="8Cj-7l-aFY"/>
@@ -2480,9 +2503,11 @@
                                 <exclude reference="IAO-DS-lWX"/>
                                 <exclude reference="McX-33-Z67"/>
                                 <exclude reference="OXu-5O-S4Y"/>
+                                <exclude reference="x7s-lP-Voy"/>
                                 <exclude reference="xVy-DT-gYy"/>
                                 <exclude reference="cpN-cT-vUp"/>
                                 <exclude reference="fLG-VX-5OB"/>
+                                <exclude reference="Ccf-IO-7nQ"/>
                                 <exclude reference="Fbl-LE-Rtp"/>
                                 <exclude reference="f9N-Kp-GHC"/>
                                 <exclude reference="Lbn-aZ-1jY"/>
@@ -2495,10 +2520,11 @@
                                 <include reference="cQS-UU-HuG"/>
                                 <include reference="1fR-e7-pl2"/>
                                 <include reference="W8Q-D5-2ee"/>
-                                <include reference="UJf-Py-dXU"/>
                                 <include reference="qQB-CT-UpR"/>
                                 <include reference="RFy-Bg-51N"/>
                                 <include reference="uai-va-mhn"/>
+                                <include reference="Zwi-n6-4k8"/>
+                                <include reference="UJf-Py-dXU"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="8Cj-7l-aFY"/>
@@ -2510,9 +2536,11 @@
                                 <include reference="IAO-DS-lWX"/>
                                 <include reference="McX-33-Z67"/>
                                 <include reference="OXu-5O-S4Y"/>
+                                <include reference="x7s-lP-Voy"/>
                                 <include reference="xVy-DT-gYy"/>
                                 <include reference="cpN-cT-vUp"/>
                                 <include reference="fLG-VX-5OB"/>
+                                <include reference="Ccf-IO-7nQ"/>
                                 <include reference="Fbl-LE-Rtp"/>
                                 <include reference="f9N-Kp-GHC"/>
                                 <include reference="Lbn-aZ-1jY"/>
@@ -2523,6 +2551,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="uvJ-ts-kBL"/>
                     <connections>
+                        <outlet property="fifthBubbleImageView" destination="Zwi-n6-4k8" id="bOr-kB-Afv"/>
                         <outlet property="firstBubbleImageView" destination="W8Q-D5-2ee" id="VFS-C4-pCH"/>
                         <outlet property="fourthBubbleImageView" destination="uai-va-mhn" id="drP-4S-vlV"/>
                         <outlet property="schoenHierImageView" destination="93p-aE-bBd" id="whE-WW-IAH"/>
