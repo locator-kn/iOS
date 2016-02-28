@@ -86,7 +86,6 @@
 		CC4075E41C7F8CB000364331 /* AddCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4075E31C7F8CB000364331 /* AddCategoriesViewController.swift */; };
 		CC857BE41C81CC2700776731 /* LoadingAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC857BE31C81CC2700776731 /* LoadingAnimationViewController.swift */; };
 		CC857BE61C81E72900776731 /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC857BE51C81E72900776731 /* Gif.swift */; };
-		CC857BEC1C81EEEF00776731 /* locator_preloader.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC857BEB1C81EEEF00776731 /* locator_preloader.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -492,7 +491,6 @@
 				876290291C18E1B400D2870E /* SourceSansPro-ExtraLightIt.ttf in Resources */,
 				8762902A1C18E1B400D2870E /* SourceSansPro-It.ttf in Resources */,
 				8762902B1C18E1B400D2870E /* SourceSansPro-Light.ttf in Resources */,
-				CC857BEC1C81EEEF00776731 /* locator_preloader.gif in Resources */,
 				8762902C1C18E1B400D2870E /* SourceSansPro-LightIt.ttf in Resources */,
 				8762902D1C18E1B400D2870E /* SourceSansPro-Regular.ttf in Resources */,
 				8762902E1C18E1B400D2870E /* SourceSansPro-Semibold.ttf in Resources */,
