@@ -60,7 +60,8 @@ class UserTabVC: UIViewController {
             .ViewBackgroundColor(UIColor(red: 255/0, green: 255/0, blue: 255/0, alpha: 0)),
             .ScrollMenuBackgroundColor(UIColor(red: 255/0, green: 255/0, blue: 255/0, alpha: 0)),
             .MenuItemFont(UIFont(name: "SourceSansPro-Regular", size: 18)!),
-            .MenuHeight (50)
+            .MenuHeight (50),
+            .EnableHorizontalBounce(false)
         ]
         
         // Initialize page menu with controller array, frame, and optional parameters
