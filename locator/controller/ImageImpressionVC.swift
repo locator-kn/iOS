@@ -12,7 +12,7 @@ import MobileCoreServices
 import AVFoundation
 import Fusuma
 
-class ImageImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, FusumaDelegate {
+class ImageImpressionVC: UIViewController, UINavigationControllerDelegate, FusumaDelegate {
 
     var locationId:String!
     var initial = false
