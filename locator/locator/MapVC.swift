@@ -286,6 +286,11 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     }
     
     func mapView(mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
+        
+        if (marker.userData == nil) {
+            return nil
+        }
+        
         infoWindow = NSBundle.mainBundle().loadNibNamed("InfoWindow", owner: self, options: nil).first as? InfoWindow
         
         let locationData = marker.userData as? Location
