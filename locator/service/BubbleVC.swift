@@ -101,7 +101,7 @@ class BubbleVC: UIViewController {
     }
     
     func userProfileTapped(imageView: UIImageView) {
-        
+        performSegueWithIdentifier("showOwnProfil", sender: self)
     }
     
     func firstBubbleTapped(imageView: UIImageView) {
@@ -164,6 +164,10 @@ class BubbleVC: UIViewController {
             
             if let destinationVC: LocationDetailVC = segue.destinationViewController as? LocationDetailVC {
                 destinationVC.location = detailLocation
+            }
+        } else if (segue.identifier == "showOwnProfil") {
+            if let destinationVC: UserVC = segue.destinationViewController as? UserVC {
+                
             }
         }
     }
