@@ -1674,11 +1674,12 @@
                         <outlet property="loginButton" destination="ThM-aS-l8j" id="Qp3-cr-Nob"/>
                         <outlet property="loginFacebookButton" destination="sMM-Jb-Txm" id="7Hc-GQ-PmB"/>
                         <outlet property="registerButton" destination="kxh-In-BWJ" id="QTZ-l8-XwN"/>
+                        <segue destination="Pdv-Th-J2k" kind="show" identifier="showDashboard" id="n5V-k0-1OC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HQW-BL-npg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3567" y="201"/>
+            <point key="canvasLocation" x="3562.5" y="201"/>
         </scene>
         <!--Anmelden-->
         <scene sceneID="0g1-j0-nTt">
@@ -2649,7 +2650,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="sX6-Cx-Ga0"/>
-        <segue reference="LgZ-gd-7kD"/>
+        <segue reference="n5V-k0-1OC"/>
         <segue reference="CwG-iy-Y3j"/>
         <segue reference="2oh-QA-SLC"/>
         <segue reference="HC2-w8-Rke"/>
