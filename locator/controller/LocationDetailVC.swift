@@ -39,7 +39,6 @@ class LocationDetailVC: UITableViewController {
         self.clearsSelectionOnViewWillAppear = false
         tableView.estimatedRowHeight = 300.0
         tableView.rowHeight = UITableViewAutomaticDimension
-        self.loadData()
     }
     
     func playVideo() {
