@@ -19,6 +19,8 @@ class NameYourLocationViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         
+        super.viewDidLoad()
+        
         self.title = "Bennene deine Location"
         
         locationTitle.attributedPlaceholder = NSAttributedString(string:"Name eintragen",
@@ -27,7 +29,7 @@ class NameYourLocationViewController: UIViewController, UITextFieldDelegate {
         self.locationTitle.delegate = self
         
         
-        super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
     }
