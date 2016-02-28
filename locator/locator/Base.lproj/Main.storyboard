@@ -2406,6 +2406,25 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="uai-va-mhn">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="8mO-bJ-apu"/>
+                                    <constraint firstAttribute="width" constant="50" id="tXn-bG-gbT"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="8mO-bJ-apu"/>
+                                        <exclude reference="tXn-bG-gbT"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="8mO-bJ-apu"/>
+                                        <include reference="tXn-bG-gbT"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -2416,6 +2435,9 @@
                                 <variation key="heightClass=regular-widthClass=compact" constant="-29"/>
                             </constraint>
                             <constraint firstItem="cQS-UU-HuG" firstAttribute="top" secondItem="sJi-eu-cFB" secondAttribute="bottom" id="HTA-eg-iI1"/>
+                            <constraint firstItem="1fR-e7-pl2" firstAttribute="leading" secondItem="uai-va-mhn" secondAttribute="trailing" constant="-10" id="HTV-9f-EOe">
+                                <variation key="heightClass=regular-widthClass=compact" constant="4"/>
+                            </constraint>
                             <constraint firstItem="1fR-e7-pl2" firstAttribute="centerX" secondItem="A2k-OK-pGt" secondAttribute="centerX" id="IAO-DS-lWX"/>
                             <constraint firstItem="qQB-CT-UpR" firstAttribute="top" secondItem="cQS-UU-HuG" secondAttribute="bottom" constant="-95" id="Lbn-aZ-1jY"/>
                             <constraint firstItem="1fR-e7-pl2" firstAttribute="leading" secondItem="W8Q-D5-2ee" secondAttribute="trailing" constant="-37" id="McX-33-Z67">
@@ -2432,6 +2454,7 @@
                             <constraint firstItem="RFy-Bg-51N" firstAttribute="top" secondItem="1fR-e7-pl2" secondAttribute="bottom" constant="-42" id="f9N-Kp-GHC">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-39"/>
                             </constraint>
+                            <constraint firstItem="uai-va-mhn" firstAttribute="top" secondItem="1fR-e7-pl2" secondAttribute="bottom" constant="-100" id="fLG-VX-5OB"/>
                             <constraint firstItem="VUj-Ox-pke" firstAttribute="top" secondItem="cQS-UU-HuG" secondAttribute="bottom" id="hwq-ES-w4j"/>
                             <constraint firstItem="1fR-e7-pl2" firstAttribute="top" secondItem="UJf-Py-dXU" secondAttribute="bottom" constant="-23" id="xVy-DT-gYy">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-36"/>
@@ -2445,6 +2468,7 @@
                                 <exclude reference="UJf-Py-dXU"/>
                                 <exclude reference="qQB-CT-UpR"/>
                                 <exclude reference="RFy-Bg-51N"/>
+                                <exclude reference="uai-va-mhn"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="8Cj-7l-aFY"/>
@@ -2452,11 +2476,13 @@
                                 <exclude reference="SQp-EE-3zf"/>
                                 <exclude reference="FLP-1A-DEC"/>
                                 <exclude reference="DPZ-ZU-YbS"/>
+                                <exclude reference="HTV-9f-EOe"/>
                                 <exclude reference="IAO-DS-lWX"/>
                                 <exclude reference="McX-33-Z67"/>
                                 <exclude reference="OXu-5O-S4Y"/>
                                 <exclude reference="xVy-DT-gYy"/>
                                 <exclude reference="cpN-cT-vUp"/>
+                                <exclude reference="fLG-VX-5OB"/>
                                 <exclude reference="Fbl-LE-Rtp"/>
                                 <exclude reference="f9N-Kp-GHC"/>
                                 <exclude reference="Lbn-aZ-1jY"/>
@@ -2472,6 +2498,7 @@
                                 <include reference="UJf-Py-dXU"/>
                                 <include reference="qQB-CT-UpR"/>
                                 <include reference="RFy-Bg-51N"/>
+                                <include reference="uai-va-mhn"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="8Cj-7l-aFY"/>
@@ -2479,11 +2506,13 @@
                                 <include reference="SQp-EE-3zf"/>
                                 <exclude reference="FLP-1A-DEC"/>
                                 <include reference="DPZ-ZU-YbS"/>
+                                <include reference="HTV-9f-EOe"/>
                                 <include reference="IAO-DS-lWX"/>
                                 <include reference="McX-33-Z67"/>
                                 <include reference="OXu-5O-S4Y"/>
                                 <include reference="xVy-DT-gYy"/>
                                 <include reference="cpN-cT-vUp"/>
+                                <include reference="fLG-VX-5OB"/>
                                 <include reference="Fbl-LE-Rtp"/>
                                 <include reference="f9N-Kp-GHC"/>
                                 <include reference="Lbn-aZ-1jY"/>
@@ -2495,6 +2524,7 @@
                     <navigationItem key="navigationItem" id="uvJ-ts-kBL"/>
                     <connections>
                         <outlet property="firstBubbleImageView" destination="W8Q-D5-2ee" id="VFS-C4-pCH"/>
+                        <outlet property="fourthBubbleImageView" destination="uai-va-mhn" id="drP-4S-vlV"/>
                         <outlet property="schoenHierImageView" destination="93p-aE-bBd" id="whE-WW-IAH"/>
                         <outlet property="secondBubbleImageView" destination="UJf-Py-dXU" id="aQb-Wn-f7M"/>
                         <outlet property="thirdBubbleImageView" destination="RFy-Bg-51N" id="yVO-r1-hDE"/>

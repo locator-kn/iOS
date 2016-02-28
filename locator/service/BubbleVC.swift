@@ -27,6 +27,7 @@ class BubbleVC: UIViewController {
     // Third Bubble
     @IBOutlet weak var thirdBubbleImageView: UIImageView!
     // Fourth Bubble
+    @IBOutlet weak var fourthBubbleImageView: UIImageView!
     
     
     override func viewDidLoad() {
@@ -46,6 +47,7 @@ class BubbleVC: UIViewController {
         layoutBubble(firstBubbleImageView)
         layoutBubble(secondBubbleImageView)
         layoutBubble(thirdBubbleImageView)
+        layoutBubble(fourthBubbleImageView)
     }
     
     func layoutUserProfilImageView() {
