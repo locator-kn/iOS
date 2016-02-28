@@ -104,7 +104,7 @@ class ImpressionService {
                     switch encodingResult {
                     case .Success(let upload, _, _):
                         upload.responseJSON { response in
-                            debugPrint(response)
+                            fulfill(true)
                         }
                     case .Failure(let encodingError):
                         print(encodingError)
