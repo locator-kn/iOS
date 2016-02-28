@@ -285,9 +285,8 @@ class LocationDetailVC: UITableViewController {
             let controller = segue.destinationViewController as! ImageImpressionVC
             controller.locationId = self.location.id
         } else if (segue.identifier == "video") {
-            let controller = segue.destinationViewController as! ImageImpressionVC
+            let controller = segue.destinationViewController as! VideoImpressionVC
             controller.locationId = self.location.id
-            controller.video = true
         } else if (segue.identifier == "user") {
             let controller = segue.destinationViewController as! UserVC
             controller.user = self.location.user
