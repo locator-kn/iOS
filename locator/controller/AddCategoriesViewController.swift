@@ -179,10 +179,22 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLoca
     
     /* delegate on gpsAuthorizationStatus change */
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status:CLAuthorizationStatus) {
-        print("locationManager didChangeAuthorizationStatus:", status)
+        
+        if status == .Denied {
+            
+            let alert = UIAlertController(title: "GPS aktivieren", message: "Du musst dein GPS aktivieren um eine Location zu erstellen.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Gerne", style: UIAlertActionStyle.Default, handler: openAppSettings))
+            self.presentViewController(alert, animated: true, completion: nil)
+
+        }
+        
         if status == .AuthorizedWhenInUse {
             locationManager.startUpdatingLocation()
         }
+    }
+    
+    func openAppSettings(a: UIAlertAction) {
+        UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
     }
     
     /* delegate on user position update */
