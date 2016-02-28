@@ -30,7 +30,17 @@ class ImageImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
     override func viewDidAppear(animated: Bool) {
         if image == nil && !self.initial {
             self.openCamera()
+        } else if image == nil && self.initial {
+            self.dismissViewControllerAnimated(false, completion: nil)
         }
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
     
     func openCamera() {
@@ -38,14 +48,6 @@ class ImageImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
         fusuma.delegate = self
         self.presentViewController(fusuma, animated: true, completion: nil)
         self.initial = true
-    }
-    
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     func fusumaDismissedWithImage(image: UIImage) {
@@ -62,7 +64,7 @@ class ImageImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
     }
 
     @IBAction func noeButton(sender: AnyObject) {
-        
+        self.openCamera()
     }
     
     @IBAction func submitImage(sender: AnyObject) {
