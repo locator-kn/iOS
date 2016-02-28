@@ -52,7 +52,7 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLoca
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("test") as! LoadingAnimationViewController
             self.presentViewController(vc, animated: true, completion: nil)
             
-            
+            // TODO handle nil of lat and long
             LocationService.createNewLocation(uiimage, categories: selectedCategories, locationTitle: locationTitle, lat: String(format:"%f", lat), long: String(format:"%f", lat)).then{
                 result -> Void in
                 
