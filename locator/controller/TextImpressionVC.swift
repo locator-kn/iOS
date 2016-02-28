@@ -20,6 +20,10 @@ class TextImpressionVC: UIViewController, UITextFieldDelegate {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
