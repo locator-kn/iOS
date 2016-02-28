@@ -23,6 +23,9 @@ class VideoImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
         super.viewDidLoad()
         
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+            imagePicker.delegate = self
+            imagePicker.allowsEditing = true
+            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera;
             imagePicker.mediaTypes = [kUTTypeMovie as String]
         }
     }
@@ -48,8 +51,8 @@ class VideoImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
             print(tempImage)
             videoData = NSData(contentsOfURL: tempImage)
         }
-        dismissViewControllerAnimated(true, completion: nil)
         self.submitVideo()
+        dismissViewControllerAnimated(true, completion: nil)
     
     }
     
