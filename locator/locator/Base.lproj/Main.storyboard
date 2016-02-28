@@ -798,7 +798,7 @@
                                                 <rect key="frame" x="513" y="363" width="54" height="34"/>
                                             </variation>
                                             <connections>
-                                                <segue destination="dJX-6C-xJc" kind="show" identifier="video" id="0Go-1C-qtD"/>
+                                                <segue destination="dJX-6C-xJc" kind="presentation" identifier="video" animates="NO" modalPresentationStyle="overCurrentContext" id="0Go-1C-qtD"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -1523,7 +1523,7 @@
                         <viewControllerLayoutGuide type="top" id="u5T-yi-KzT"/>
                         <viewControllerLayoutGuide type="bottom" id="a0T-nU-aRn"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="fj5-Cu-ixA">
+                    <view key="view" hidden="YES" contentMode="scaleToFill" id="fj5-Cu-ixA">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2728,7 +2728,7 @@
         <segue reference="pqk-kP-sXI"/>
         <segue reference="WG6-zk-XfW"/>
         <segue reference="2oh-QA-SLC"/>
-        <segue reference="PBI-Q7-c1i"/>
+        <segue reference="sX6-Cx-Ga0"/>
         <segue reference="Q9G-yB-4zn"/>
     </inferredMetricsTieBreakers>
 </document>
