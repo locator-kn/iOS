@@ -172,7 +172,7 @@
 		CC4075E31C7F8CB000364331 /* AddCategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddCategoriesViewController.swift; path = controller/AddCategoriesViewController.swift; sourceTree = SOURCE_ROOT; };
 		CC857BE31C81CC2700776731 /* LoadingAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingAnimationViewController.swift; path = controller/LoadingAnimationViewController.swift; sourceTree = SOURCE_ROOT; };
 		CC857BE51C81E72900776731 /* Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gif.swift; sourceTree = SOURCE_ROOT; };
-		CC857BEB1C81EEEF00776731 /* locator_preloader.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = locator_preloader.gif; path = ../../../../../../Media/GoogleDriveReal/Locator/Design/03_Animationen/AE/Preloader/GIF/locator_preloader.gif; sourceTree = "<group>"; };
+		CC857BEB1C81EEEF00776731 /* locator_preloader.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = locator_preloader.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
