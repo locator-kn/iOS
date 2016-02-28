@@ -36,6 +36,9 @@ class BubbleVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addGestureRecognizer()
+        
+        
 //        BubbleService.getBubbles(lat, long: long, maxDistance: maxDistance, limit: limit).then { bubbles -> Void in
 //            
 //            }
@@ -65,6 +68,25 @@ class BubbleVC: UIViewController {
         imageView.clipsToBounds = true
         imageView.layer.borderColor = colorRed.first.CGColor
         imageView.layer.borderWidth = 4
+    }
+    
+    func addGestureRecognizer() {
+        let schoenHierGesture = UITapGestureRecognizer(target:self, action:Selector("schoenHierTapped:"))
+        schoenHierImageView.addGestureRecognizer(schoenHierGesture)
+        let userProfileGesture = UITapGestureRecognizer(target:self, action:Selector("userProfileTapped:"))
+        userProfilImageView.addGestureRecognizer(userProfileGesture)
+        let firstBubbleGesture = UITapGestureRecognizer(target:self, action:Selector("firstBubbleTapped:"))
+        firstBubbleImageView.addGestureRecognizer(firstBubbleGesture)
+        let secondBubbleGesture = UITapGestureRecognizer(target:self, action:Selector("secondBubbleTapped:"))
+        secondBubbleImageView.addGestureRecognizer(secondBubbleGesture)
+        let thirdBubbleGesture = UITapGestureRecognizer(target:self, action:Selector("thirdBubbleTapped:"))
+        thirdBubbleImageView.addGestureRecognizer(thirdBubbleGesture)
+        let fourthBubbleGesture = UITapGestureRecognizer(target:self, action:Selector("fourthBubbleTapped:"))
+        fourthBubbleImageView.addGestureRecognizer(fourthBubbleGesture)
+        let fifthBubbleGesture = UITapGestureRecognizer(target:self, action:Selector("fifthTapped:"))
+        fifthBubbleImageView.addGestureRecognizer(fifthBubbleGesture)
+        let sixthBubbleGesture = UITapGestureRecognizer(target:self, action:Selector("sixthBubbleTapped:"))
+        sixthBubbleImageView.addGestureRecognizer(sixthBubbleGesture)
     }
     
 }
