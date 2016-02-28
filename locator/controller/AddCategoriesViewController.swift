@@ -61,12 +61,9 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLoca
                 self.createdLocation = result
 
                 self.locationManager.stopUpdatingLocation()
-                
-                //let locationDetailVc = self.storyboard!.instantiateViewControllerWithIdentifier("locationDetailStoryboardID") as! LocationDetailVC
-                //locationDetailVc.location = self.createdLocation
+
                 self.dismissViewControllerAnimated(true, completion: nil)
-                //self.presentViewController(locationDetailVc, animated: true, completion: nil)
-                
+
                 self.performSegueWithIdentifier("showNewLocation", sender: true)
                 
                 print("image upload success")
