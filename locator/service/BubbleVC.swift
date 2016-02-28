@@ -17,6 +17,7 @@ class BubbleVC: UIViewController {
     let colorRed = Color.red()
     
     var locations = [Location]()
+    var detailLocation: Location?
     
     // Schoenhier
     @IBOutlet weak var schoenHierImageView: UIImageView!
@@ -96,7 +97,7 @@ class BubbleVC: UIViewController {
     }
     
     func schoenHierTapped(imageView: UIImageView) {
-        
+        performSegueWithIdentifier("createLocation", sender: self)
     }
     
     func userProfileTapped(imageView: UIImageView) {
@@ -104,28 +105,33 @@ class BubbleVC: UIViewController {
     }
     
     func firstBubbleTapped(imageView: UIImageView) {
-        let location = locations[0]
-        
+        detailLocation = locations[0]
+        showDetailView()
     }
     
     func secondBubbleTapped(imageView: UIImageView) {
-        let location = locations[1]
+        detailLocation = locations[1]
+        showDetailView()
     }
     
     func thirdBubbleTapped(imageView: UIImageView) {
-        let location = locations[2]
+        detailLocation = locations[2]
+        showDetailView()
     }
     
     func fourthBubbleTapped(imageView: UIImageView) {
-        let location = locations[3]
+        detailLocation = locations[3]
+        showDetailView()
     }
     
     func fifthBubbleTapped(imageView: UIImageView) {
-        let location = locations[4]
+        detailLocation = locations[4]
+        showDetailView()
     }
     
     func sixthBubbleTapped(imageView: UIImageView) {
-        let location = locations[5]
+        detailLocation = locations[5]
+        showDetailView()
     }
     
     func loadLocationImage(bubble: Int, urlPath: String) {
@@ -147,7 +153,19 @@ class BubbleVC: UIViewController {
                 break
             }
         }
-        
+    }
+    
+    func showDetailView() {
+        performSegueWithIdentifier("showDetailLocation", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "showDetailLocation") {
+            
+            if let destinationVC: LocationDetailVC = segue.destinationViewController as? LocationDetailVC {
+                destinationVC.location = detailLocation
+            }
+        }
     }
     
 }
