@@ -59,13 +59,12 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLoca
                 result -> Void in
                 
                 self.createdLocation = result
-                
-                let locationDetailVc = self.storyboard!.instantiateViewControllerWithIdentifier("locationDetailStoryboardID") as! LocationDetailVC
-                locationDetailVc.location = self.createdLocation
+
+                self.locationManager.stopUpdatingLocation()
+
                 self.dismissViewControllerAnimated(true, completion: nil)
-                self.presentViewController(locationDetailVc, animated: true, completion: nil)
-                
-                //self.performSegueWithIdentifier("showCreateLocationSuccess", sender: true)
+
+                self.performSegueWithIdentifier("showNewLocation", sender: true)
                 
                 print("image upload success")
             }
@@ -94,7 +93,7 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLoca
     
     
     @IBAction func gastroAction(sender: AnyObject) {
-        print("gastro")
+
         if editSelectedCategories("gastro") {
             setAlphaForButtons(gastro, button2: gastroLabel, alpha: 1)
         } else {
@@ -103,7 +102,7 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLoca
     }
     
     @IBAction func holidayAction(sender: AnyObject) {
-        print("holiday")
+
         if editSelectedCategories("holiday") {
             setAlphaForButtons(holiday, button2: holidayLabel, alpha: 1)
         } else {
@@ -112,7 +111,7 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLoca
     }
     
     @IBAction func secretAction(sender: AnyObject) {
-        print("secret")
+
         if editSelectedCategories("secret") {
             setAlphaForButtons(secret, button2: secretLabel, alpha: 1)
         } else {
@@ -122,7 +121,7 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLoca
     
     
     @IBAction func natureAction(sender: AnyObject) {
-        print("nature")
+
         if editSelectedCategories("nature") {
             setAlphaForButtons(nature, button2: natureLabel, alpha: 1)
         } else {
@@ -131,7 +130,7 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLoca
     }
     
     @IBAction func nightlifeAction(sender: AnyObject) {
-        print("nightlife")
+
         if editSelectedCategories("nightlife") {
             setAlphaForButtons(nightlife, button2: nightlifeLabel, alpha: 1)
         } else {
@@ -140,9 +139,7 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLoca
     }
     
     override func viewDidLoad() {
-        
-        
-        //print("AddCategoriesViewController:", locationTitle)
+
         super.viewDidLoad()
         
         
@@ -151,7 +148,7 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLoca
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = 5.0
         locationManager.delegate = self
-        
+
         
         self.title = "Kategorien wählen"
         
@@ -175,28 +172,37 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLoca
         
         next.alpha = 0.4
 
-        // Do any additional setup after loading the view.
     }
     
     /* delegate on gpsAuthorizationStatus change */
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status:CLAuthorizationStatus) {
-        print("locationManager didChangeAuthorizationStatus:", status)
+        
+        if status == .Denied {
+            
+            let alert = UIAlertController(title: "GPS aktivieren", message: "Du musst dein GPS aktivieren um eine Location zu erstellen.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Gerne", style: UIAlertActionStyle.Default, handler: openAppSettings))
+            self.presentViewController(alert, animated: true, completion: nil)
+
+        }
+        
         if status == .AuthorizedWhenInUse {
             locationManager.startUpdatingLocation()
         }
     }
     
+    func openAppSettings(a: UIAlertAction) {
+        UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
+    }
+    
     /* delegate on user position update */
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        print("locationManager, didUpdateLocations", locations)
+
         lat = locations.first?.coordinate.latitude
         long = locations.first?.coordinate.longitude
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
@@ -206,9 +212,7 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLoca
     }
     
     func editSelectedCategories(ident: String) -> Bool {
-        
-        
-        
+
         if let index = selectedCategories.indexOf(ident) {
             selectedCategories.removeAtIndex(index)
             nextEnabled = checkForNextAvailablility()
@@ -239,6 +243,9 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLoca
         if (segue.identifier == "showCreateLocationSuccess") {
             
             print("showCreateLocationSuccess")
+        } else if segue.identifier == "showNewLocation" {
+            let controller = segue.destinationViewController as? LocationDetailVC
+            controller?.location = self.createdLocation
         }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.

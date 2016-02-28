@@ -19,6 +19,8 @@ class NameYourLocationViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         
+        super.viewDidLoad()
+        
         self.title = "Bennene deine Location"
         
         locationTitle.attributedPlaceholder = NSAttributedString(string:"Name eintragen",
@@ -27,7 +29,7 @@ class NameYourLocationViewController: UIViewController, UITextFieldDelegate {
         self.locationTitle.delegate = self
         
         
-        super.viewDidLoad()
+        locationTitle.becomeFirstResponder()
 
         // Do any additional setup after loading the view.
     }
@@ -39,14 +41,9 @@ class NameYourLocationViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(locationTitle: UITextField) -> Bool {   //delegate method
         if inputChecker.checkInput(locationTitle.text! ?? "", minLength: 3) {
-            //performSegueWithIdentifier("showRegisterVC3", sender: self)
-            print("whoop whoop")
-            
-            
             performSegueWithIdentifier("chooseCategories", sender: true)
             return true
         } else {
-            print("nonono")
             return false
         }
     }
@@ -55,17 +52,10 @@ class NameYourLocationViewController: UIViewController, UITextFieldDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         print("going to leave")
         if (segue.identifier == "chooseCategories") {
-            //let controller = segue.destinationViewController as! AddCategoriesViewController
-                let controller = segue.destinationViewController as? AddCategoriesViewController
-                controller!.locationTitle = self.locationTitle.text
-                controller!.uiimage = self.uiimage
-            
-            
-            
-            
+            let controller = segue.destinationViewController as? AddCategoriesViewController
+            controller!.locationTitle = self.locationTitle.text
+            controller!.uiimage = self.uiimage
         }
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
 
 }
