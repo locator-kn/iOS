@@ -8,8 +8,13 @@
 
 import UIKit
 import PromiseKit
+import AVKit
+import AVFoundation
 
 class LocationDetailVC: UITableViewController {
+    
+    var player: AVPlayer!
+    var playerController: AVPlayerViewController!
     
     var location: Location!
     var impressions: [AbstractImpression]?
@@ -35,6 +40,23 @@ class LocationDetailVC: UITableViewController {
         tableView.estimatedRowHeight = 300.0
         tableView.rowHeight = UITableViewAutomaticDimension
         self.loadData()
+    }
+    
+    func playVideo() {
+        
+        let myBaseUrl = "https://locator-app.com/api/v2/locations/impression/video/56b907022f08ffcd26f8c13a/impression.mov"
+        if let url = NSURL(string: myBaseUrl) {
+
+            self.player = AVPlayer(URL: url)
+            self.playerController = AVPlayerViewController()
+            self.playerController.player = self.player
+            
+            self.presentViewController(self.playerController, animated: true) {
+                () -> Void in
+                self.playerController.player?.play()
+            }
+        }
+
     }
     
     override func viewDidAppear(animated: Bool) {
