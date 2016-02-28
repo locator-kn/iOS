@@ -13,13 +13,11 @@ import SwiftyJSON
 
 class BubbleService {
     
-    static func getBubbles(lat: Double, long:Double, maxDistance:Float, limit:Int) -> Promise<[AnyObject]> {
+    static func getBubbles(lat: Double, long:Double, maxDistance:Float, limit:Int) -> Promise<[Location]> {
         
         return Promise { fulfill, reject in
-            
-            var messages = [Message]()
+
             var locations = [Location]()
-            var bubbles = [AnyObject]()
             
             Alamofire.request(.GET, API.BUBBLE_INPUT, parameters: ["lat": lat, "long": long, "maxDistance":maxDistance, "limit":limit]).validate().responseJSON { response in
                 switch response.result {
@@ -28,24 +26,11 @@ class BubbleService {
                     if let value = response.result.value {
                         let json = JSON(value)
                         
-                        for (_,subJson):(String, JSON) in json["messages"] {
-                            let id = subJson["_id"].string
-                            let conversation_id = subJson["conversation_id"].string
-                            let from = subJson["from"].string
-                            let message = subJson["message"].string
-                            let timestamp = subJson["timestamp"].int
-                            let modified_date = subJson["modified_date"].string
-                            let message_type = subJson["message_type"].string
-                            messages.append(Message(id: id!, conversation_id: conversation_id!, from: from!, message: message!, timestamp: timestamp!, modified_date: modified_date!, message_type: message_type!))
-                        }
-                        
                         for (_,subJson):(String, JSON) in json["locations"] {
                             locations.append(LocationService.jsonToLocation(subJson["obj"]))
                         }
                         
-                        bubbles.append(messages)
-                        bubbles.append(locations)
-                        fulfill(bubbles)
+                        fulfill(locations)
                     }
                     
                 case .Failure(let error):
