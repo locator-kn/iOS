@@ -93,7 +93,7 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLoca
     
     
     @IBAction func gastroAction(sender: AnyObject) {
-        print("gastro")
+
         if editSelectedCategories("gastro") {
             setAlphaForButtons(gastro, button2: gastroLabel, alpha: 1)
         } else {
@@ -102,7 +102,7 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLoca
     }
     
     @IBAction func holidayAction(sender: AnyObject) {
-        print("holiday")
+
         if editSelectedCategories("holiday") {
             setAlphaForButtons(holiday, button2: holidayLabel, alpha: 1)
         } else {
@@ -111,7 +111,7 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLoca
     }
     
     @IBAction func secretAction(sender: AnyObject) {
-        print("secret")
+
         if editSelectedCategories("secret") {
             setAlphaForButtons(secret, button2: secretLabel, alpha: 1)
         } else {
@@ -121,7 +121,7 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLoca
     
     
     @IBAction func natureAction(sender: AnyObject) {
-        print("nature")
+
         if editSelectedCategories("nature") {
             setAlphaForButtons(nature, button2: natureLabel, alpha: 1)
         } else {
@@ -130,7 +130,7 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLoca
     }
     
     @IBAction func nightlifeAction(sender: AnyObject) {
-        print("nightlife")
+
         if editSelectedCategories("nightlife") {
             setAlphaForButtons(nightlife, button2: nightlifeLabel, alpha: 1)
         } else {
@@ -139,9 +139,7 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLoca
     }
     
     override func viewDidLoad() {
-        
-        
-        //print("AddCategoriesViewController:", locationTitle)
+
         super.viewDidLoad()
         
         
@@ -150,7 +148,7 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLoca
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = 5.0
         locationManager.delegate = self
-        
+
         
         self.title = "Kategorien wählen"
         
@@ -174,7 +172,6 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLoca
         
         next.alpha = 0.4
 
-        // Do any additional setup after loading the view.
     }
     
     /* delegate on gpsAuthorizationStatus change */
@@ -199,15 +196,13 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLoca
     
     /* delegate on user position update */
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        print("locationManager, didUpdateLocations", locations)
+
         lat = locations.first?.coordinate.latitude
         long = locations.first?.coordinate.longitude
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
@@ -217,9 +212,7 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLoca
     }
     
     func editSelectedCategories(ident: String) -> Bool {
-        
-        
-        
+
         if let index = selectedCategories.indexOf(ident) {
             selectedCategories.removeAtIndex(index)
             nextEnabled = checkForNextAvailablility()
@@ -253,7 +246,6 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLoca
         } else if segue.identifier == "showNewLocation" {
             let controller = segue.destinationViewController as? LocationDetailVC
             controller?.location = self.createdLocation
-            print("showNewLocation")
         }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
