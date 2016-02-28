@@ -10,11 +10,13 @@ import UIKit
 
 class BubbleVC: UIViewController {
     
-//    let long = 9.169753789901733
-//    let lat = 47.66868204997508
-//    let maxDistance: Float = 2.0
-//    let limit = 20
+    let long = 9.169753789901733
+    let lat = 47.66868204997508
+    let maxDistance: Float = 2.0
+    let limit = 6
     let colorRed = Color.red()
+    
+    var locations = [Location]()
     
     // Schoenhier
     @IBOutlet weak var schoenHierImageView: UIImageView!
@@ -38,13 +40,19 @@ class BubbleVC: UIViewController {
         
         addGestureRecognizer()
         
-        
-//        BubbleService.getBubbles(lat, long: long, maxDistance: maxDistance, limit: limit).then { bubbles -> Void in
-//            
-//            }
-//            .then {
-//                self.reloadInputViews()
-//        }
+        BubbleService.getBubbles(lat, long: long, maxDistance: maxDistance, limit: limit).then { bubbles -> Void in
+            
+            for i in bubbles {
+                self.locations.append(i)
+            }
+            
+            }
+            .then {
+                print("Handle image download")
+            }
+            .then {
+                self.reloadInputViews()
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -110,7 +118,7 @@ class BubbleVC: UIViewController {
     }
     
     func fourthBubbleTapped(imageView: UIImageView) {
-        print("4")
+        
     }
     
     func fifthBubbleTapped(imageView: UIImageView) {
@@ -118,7 +126,7 @@ class BubbleVC: UIViewController {
     }
     
     func sixthBubbleTapped(imageView: UIImageView) {
-        print("6")
+        
     }
     
 }
