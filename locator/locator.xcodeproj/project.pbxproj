@@ -448,7 +448,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0710;
-				ORGANIZATIONNAME = "Sergej Birklin";
+				ORGANIZATIONNAME = Locator;
 				TargetAttributes = {
 					87F14D761C18604B00682709 = {
 						CreatedOnToolsVersion = 7.1.1;
