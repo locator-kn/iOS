@@ -13,5 +13,6 @@ pod 'FBSDKCoreKit', '4.9.0-beta2'
 pod 'FBSDKLoginKit', '4.9.0-beta2'
 pod 'FBSDKShareKit', '4.9.0-beta2'
 pod 'HanekeSwift'
+pod 'Fusuma'
 
 end

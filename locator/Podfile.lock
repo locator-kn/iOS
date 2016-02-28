@@ -12,6 +12,7 @@ PODS:
     - FBSDKCoreKit (~> 4.9.0-beta)
   - FBSDKShareKit (4.9.0-beta2):
     - FBSDKCoreKit (~> 4.9.0-beta)
+  - Fusuma (0.2.1)
   - GoogleMaps (1.12.2)
   - HanekeSwift (0.10.1)
   - OMGHTTPURLRQ (3.1.1):
@@ -40,6 +41,7 @@ DEPENDENCIES:
   - FBSDKCoreKit (= 4.9.0-beta2)
   - FBSDKLoginKit (= 4.9.0-beta2)
   - FBSDKShareKit (= 4.9.0-beta2)
+  - Fusuma
   - GoogleMaps
   - HanekeSwift
   - PromiseKit (~> 3.0)
@@ -60,6 +62,7 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: d49cbf69741e3c5732166ec9ff4cbd9b288dd53e
   FBSDKLoginKit: d32e83c0d2d39ef74a942543cacae2dc4de7d088
   FBSDKShareKit: 2bd88d784d1d95e4b6e561da3a7b8d448f386ca3
+  Fusuma: 4b71b2992773c3265b81327c966ee60db529aae8
   GoogleMaps: cc76edaa94a4284e80ecd7089ed319d1cca5f37e
   HanekeSwift: 08e47d3d0f2899ec58e5d257beba0de619aca9e8
   OMGHTTPURLRQ: 633f98ee745aeda02345935a52eec1784cddb589
