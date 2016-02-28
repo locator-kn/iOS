@@ -2283,7 +2283,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1fR-e7-pl2">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="schoen_hier" translatesAutoresizingMaskIntoConstraints="NO" id="93p-aE-bBd">
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="schoen_hier" translatesAutoresizingMaskIntoConstraints="NO" id="93p-aE-bBd">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                     </imageView>
                                 </subviews>
@@ -2369,7 +2369,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profil" translatesAutoresizingMaskIntoConstraints="NO" id="qQB-CT-UpR">
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profil" translatesAutoresizingMaskIntoConstraints="NO" id="qQB-CT-UpR">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="gWc-o3-zPl"/>
@@ -2580,10 +2580,10 @@
                     <connections>
                         <outlet property="fifthBubbleImageView" destination="Zwi-n6-4k8" id="bOr-kB-Afv"/>
                         <outlet property="firstBubbleImageView" destination="W8Q-D5-2ee" id="VFS-C4-pCH"/>
-                        <outlet property="fourthBubbleImageView" destination="uai-va-mhn" id="drP-4S-vlV"/>
+                        <outlet property="fourthBubbleImageView" destination="lhe-2R-F46" id="q6k-Y0-Qwz"/>
                         <outlet property="schoenHierImageView" destination="93p-aE-bBd" id="whE-WW-IAH"/>
                         <outlet property="secondBubbleImageView" destination="UJf-Py-dXU" id="aQb-Wn-f7M"/>
-                        <outlet property="sixthBubbleImageView" destination="lhe-2R-F46" id="hdZ-f8-QAc"/>
+                        <outlet property="sixthBubbleImageView" destination="uai-va-mhn" id="1aH-EB-arb"/>
                         <outlet property="thirdBubbleImageView" destination="RFy-Bg-51N" id="yVO-r1-hDE"/>
                         <outlet property="userProfilImageView" destination="qQB-CT-UpR" id="kHr-4K-zcW"/>
                     </connections>

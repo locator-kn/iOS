@@ -83,10 +83,42 @@ class BubbleVC: UIViewController {
         thirdBubbleImageView.addGestureRecognizer(thirdBubbleGesture)
         let fourthBubbleGesture = UITapGestureRecognizer(target:self, action:Selector("fourthBubbleTapped:"))
         fourthBubbleImageView.addGestureRecognizer(fourthBubbleGesture)
-        let fifthBubbleGesture = UITapGestureRecognizer(target:self, action:Selector("fifthTapped:"))
+        let fifthBubbleGesture = UITapGestureRecognizer(target:self, action:Selector("fifthBubbleTapped:"))
         fifthBubbleImageView.addGestureRecognizer(fifthBubbleGesture)
         let sixthBubbleGesture = UITapGestureRecognizer(target:self, action:Selector("sixthBubbleTapped:"))
         sixthBubbleImageView.addGestureRecognizer(sixthBubbleGesture)
+    }
+    
+    func schoenHierTapped(imageView: UIImageView) {
+        
+    }
+    
+    func userProfileTapped(imageView: UIImageView) {
+        
+    }
+    
+    func firstBubbleTapped(imageView: UIImageView) {
+        
+    }
+    
+    func secondBubbleTapped(imageView: UIImageView) {
+        
+    }
+    
+    func thirdBubbleTapped(imageView: UIImageView) {
+        
+    }
+    
+    func fourthBubbleTapped(imageView: UIImageView) {
+        print("4")
+    }
+    
+    func fifthBubbleTapped(imageView: UIImageView) {
+        
+    }
+    
+    func sixthBubbleTapped(imageView: UIImageView) {
+        print("6")
     }
     
 }
