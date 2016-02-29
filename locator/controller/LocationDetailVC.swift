@@ -29,10 +29,15 @@ class LocationDetailVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /*naviBack = UIImageView(frame: CGRectMake(0, 0, 500, 60))
-        naviBack.backgroundColor = UIColor.blackColor()
-        self.naviBack.alpha = 0
-        view.addSubview(naviBack)*/
+        naviBack = UIImageView(frame: CGRectMake(0, 0, 500, 90))
+        
+        let gradient: CAGradientLayer = CAGradientLayer()
+        gradient.frame = naviBack.frame
+        gradient.colors = [UIColor(red: 29/255, green: 29/255, blue: 29/255, alpha: 0.8) .CGColor, UIColor.clearColor().CGColor]
+        gradient.locations = [0.0, 0.8]
+        naviBack.layer.insertSublayer(gradient, atIndex: 0)
+        
+        view.addSubview(naviBack)
         
         self.refreshControl = UIRefreshControl()
         self.refreshControl?.backgroundColor = UIColor.blackColor()
@@ -107,12 +112,6 @@ class LocationDetailVC: UITableViewController {
             
             let  header = tableView.dequeueReusableCellWithIdentifier("headerCell") as! LocationDetailHeaderCell
             header.layoutMargins = UIEdgeInsetsZero;
-            
-            let gradient: CAGradientLayer = CAGradientLayer()
-            gradient.frame = header.locationImage.frame
-            gradient.colors = [UIColor(red: 29/255, green: 29/255, blue: 29/255, alpha: 0.6) .CGColor, UIColor.clearColor().CGColor]
-            gradient.locations = [0.0, 0.5, 1]
-            header.locationImage.layer.insertSublayer(gradient, atIndex: 0)
             
             headerCell = header
             return header
@@ -298,20 +297,9 @@ class LocationDetailVC: UITableViewController {
             controller.locationsOfInterest[location.id] = location
         }
     }
-    /*
     override func scrollViewDidScroll(scrollView: UIScrollView) {
-      
-        if (scrollView.contentOffset.y < 230) {
-            UIView.animateWithDuration(0.3, animations: {
-                self.naviBack.alpha = 0
-            })
-        } else {
-            UIView.animateWithDuration(0.3, animations: {
-                self.naviBack.alpha = 1
-            })
-        }
         naviBack.frame.origin.y = scrollView.contentOffset.y
-    } */
+    }
     
     func refreshHeader() {
         UtilService.dataFromCache(location.imagePathNormal).then {
