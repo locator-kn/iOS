@@ -59,7 +59,7 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         super.viewDidLoad()
         
         self.loader = LoadingView(frame: self.view.frame)
-        self.loader.backgroundColor = UIColor(red: 250, green: 102, blue: 75)
+        self.loader.backgroundColor = COLORS.red
         self.view.addSubview(loader)
         
         /* hide optionmenu on load */
