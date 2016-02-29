@@ -7,15 +7,13 @@
 //
 
 import UIKit
+import Fusuma
 
-class TakePhotoViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class TakePhotoViewController: UIViewController, UINavigationControllerDelegate, FusumaDelegate {
     
     var imagePicker: UIImagePickerController!
     
     var uiimage: UIImage!
-    
-    var fromTheFront:Bool = true
-    
     
     var gps:GpsService!
 
@@ -39,20 +37,7 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
     func openAppSettings(a: UIAlertAction) {
         UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
     }
-
     
-    override func viewDidDisappear(animated: Bool) {
-        fromTheFront = false
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        
-        print("view did appear")
-        if !fromTheFront {
-            takePhoto()
-        }
-        
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -60,24 +45,46 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
     }
     
     func takePhoto() {
-        imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        if UIImagePickerController.isSourceTypeAvailable(.Camera) {
-            imagePicker.sourceType = .Camera
-        } else {
-            imagePicker.sourceType = .PhotoLibrary
-        }
+//        imagePicker = UIImagePickerController()
+//        imagePicker.delegate = self
+//        if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+//            imagePicker.sourceType = .Camera
+//        } else {
+//            imagePicker.sourceType = .PhotoLibrary
+//        }
+        
+        let fusuma = FusumaViewController()
+        fusuma.delegate = self
+        self.presentViewController(fusuma, animated: false, completion: nil)
+        //self.initial = true
         
         
-        presentViewController(imagePicker, animated: false, completion: nil)
+       // presentViewController(imagePicker, animated: false, completion: nil)
 
         
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    
+    func fusumaDismissedWithImage(image: UIImage) {
+        print("fusumaDismissedWithImage")
+    }
+    
+    func fusumaImageSelected(image: UIImage) {
+        self.uiimage = image
+        //self.imageView.image = self.image
+        self.view.alpha = 1
+        self.performSegueWithIdentifier("showPasstSo", sender: true)
+    }
+    
+    func fusumaCameraRollUnauthorized() {
+        AlertService.simpleAlert(self, message: "Wir benötigen Rechte um deine Kamera zu nutzen")
+    }
+    
+    /*func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         imagePicker.dismissViewControllerAnimated(false, completion: nil)
         uiimage = info[UIImagePickerControllerOriginalImage] as? UIImage
-        self.performSegueWithIdentifier("nameYourLocation", sender: true)
+        
+        self.performSegueWithIdentifier("showPasstSo", sender: true)
         
         
     }
@@ -85,17 +92,18 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         imagePicker.dismissViewControllerAnimated(false, completion: nil)
         self.navigationController?.popViewControllerAnimated(false)
-    }
+    }*/
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "nameYourLocation") {
-            let controller = segue.destinationViewController as! NameYourLocationViewController
+        if segue.identifier == "showPasstSo" {
+            let controller = segue.destinationViewController as! PasstSoViewController
             controller.uiimage = self.uiimage
             let location = gps.getMaybeCurrentLocation()
             print("setting gps coords", location.keys.first, location.values.first)
             controller.lat = location.keys.first
             controller.long = location.values.first
             gps.unsubscribeGps()
+
         }
     }
     

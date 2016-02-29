@@ -54,7 +54,7 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
             self.presentViewController(vc, animated: true, completion: nil)
             
             // TODO handle nil of lat and long
-            LocationService.createNewLocation(uiimage, categories: selectedCategories, locationTitle: locationTitle, lat: String(format:"%f", lat), long: String(format:"%f", lat)).then{
+            LocationService.createNewLocation(uiimage, categories: selectedCategories, locationTitle: locationTitle, lat: String(format:"%f", lat), long: String(format:"%f", long)).then{
                 result -> Void in
                 
                 self.createdLocation = result
