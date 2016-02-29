@@ -1196,16 +1196,16 @@
                                     <action selector="sendMessageButton:" destination="G1J-vh-MOc" eventType="touchUpInside" id="dfq-sz-1VA"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="70b-WD-Cs7">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="70b-WD-Cs7">
                                 <rect key="frame" x="20" y="213" width="84" height="13"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xol-eP-mwD" userLabel="locations Count">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xol-eP-mwD" userLabel="locations Count">
                                         <rect key="frame" x="0.0" y="0.0" width="17" height="13"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locations" translatesAutoresizingMaskIntoConstraints="NO" id="DUR-Am-62t">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="locations" translatesAutoresizingMaskIntoConstraints="NO" id="DUR-Am-62t">
                                         <rect key="frame" x="17" y="0.0" width="25" height="13"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="13" id="HcJ-gD-RXe"/>
@@ -1218,13 +1218,13 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsS-vF-js4">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsS-vF-js4">
                                         <rect key="frame" x="42" y="0.0" width="17" height="13"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="follower" translatesAutoresizingMaskIntoConstraints="NO" id="HPi-Sg-Di2">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="follower" translatesAutoresizingMaskIntoConstraints="NO" id="HPi-Sg-Di2">
                                         <rect key="frame" x="59" y="0.0" width="25" height="13"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="GVG-4x-jYD"/>
@@ -2755,19 +2755,10 @@
         <image name="text" width="42" height="37"/>
     </resources>
     <inferredMetricsTieBreakers>
-<<<<<<< HEAD
-        <segue reference="HC2-w8-Rke"/>
-        <segue reference="LgZ-gd-7kD"/>
-        <segue reference="WG6-zk-XfW"/>
-        <segue reference="2oh-QA-SLC"/>
         <segue reference="sX6-Cx-Ga0"/>
-=======
-        <segue reference="2oh-QA-SLC"/>
-        <segue reference="LgZ-gd-7kD"/>
+        <segue reference="pqk-kP-sXI"/>
         <segue reference="WG6-zk-XfW"/>
-        <segue reference="sX6-Cx-Ga0"/>
         <segue reference="HC2-w8-Rke"/>
-        <segue reference="fiC-UR-uUa"/>
->>>>>>> refactor-navigation
+        <segue reference="d1c-kL-o1Y"/>
     </inferredMetricsTieBreakers>
 </document>
