@@ -964,7 +964,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gb3-Ob-jKm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2147" y="-1359"/>
+            <point key="canvasLocation" x="1975" y="-1369"/>
         </scene>
         <!--textImpression-->
         <scene sceneID="ael-k0-7JS">
@@ -1175,7 +1175,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-mint" translatesAutoresizingMaskIntoConstraints="NO" id="Yxg-Pb-2PJ">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="307"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1vC-Kz-1OR">
                                 <rect key="frame" x="235" y="50" width="130" height="130"/>
@@ -1196,16 +1196,16 @@
                                     <action selector="sendMessageButton:" destination="G1J-vh-MOc" eventType="touchUpInside" id="dfq-sz-1VA"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="70b-WD-Cs7">
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="70b-WD-Cs7">
                                 <rect key="frame" x="20" y="213" width="84" height="13"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xol-eP-mwD" userLabel="locations Count">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xol-eP-mwD" userLabel="locations Count">
                                         <rect key="frame" x="0.0" y="0.0" width="17" height="13"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="locations" translatesAutoresizingMaskIntoConstraints="NO" id="DUR-Am-62t">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locations" translatesAutoresizingMaskIntoConstraints="NO" id="DUR-Am-62t">
                                         <rect key="frame" x="17" y="0.0" width="25" height="13"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="13" id="HcJ-gD-RXe"/>
@@ -1218,13 +1218,13 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsS-vF-js4">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsS-vF-js4">
                                         <rect key="frame" x="42" y="0.0" width="17" height="13"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="follower" translatesAutoresizingMaskIntoConstraints="NO" id="HPi-Sg-Di2">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="follower" translatesAutoresizingMaskIntoConstraints="NO" id="HPi-Sg-Di2">
                                         <rect key="frame" x="59" y="0.0" width="25" height="13"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="GVG-4x-jYD"/>
@@ -1318,6 +1318,7 @@
                             <constraint firstItem="0H4-fT-IyP" firstAttribute="bottom" secondItem="Onr-Ya-Ys2" secondAttribute="top" id="5Rh-WW-jSl"/>
                             <constraint firstAttribute="trailing" secondItem="Yxg-Pb-2PJ" secondAttribute="trailing" id="8qT-Qa-VFI"/>
                             <constraint firstItem="70b-WD-Cs7" firstAttribute="leading" secondItem="O0A-8Z-wUN" secondAttribute="leadingMargin" id="Bkm-ih-gGY"/>
+                            <constraint firstItem="Onr-Ya-Ys2" firstAttribute="top" secondItem="Yxg-Pb-2PJ" secondAttribute="bottom" id="JEg-jj-x5h"/>
                             <constraint firstItem="Onr-Ya-Ys2" firstAttribute="top" secondItem="Yxg-Pb-2PJ" secondAttribute="bottom" constant="293" id="KCV-66-vyW"/>
                             <constraint firstItem="0H4-fT-IyP" firstAttribute="top" secondItem="1vC-Kz-1OR" secondAttribute="bottom" constant="63" id="Nn9-xG-d9Z"/>
                             <constraint firstItem="Yxg-Pb-2PJ" firstAttribute="top" secondItem="O0A-8Z-wUN" secondAttribute="top" id="OTq-pz-u4q"/>
@@ -1331,6 +1332,11 @@
                             <constraint firstItem="A3b-5S-bA6" firstAttribute="firstBaseline" secondItem="Ohi-hV-ckE" secondAttribute="firstBaseline" id="xjT-cG-ikt"/>
                             <constraint firstItem="A3b-5S-bA6" firstAttribute="leading" secondItem="Ohi-hV-ckE" secondAttribute="trailing" constant="-62" id="y3M-18-qMT"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="KCV-66-vyW"/>
+                            </mask>
+                        </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
                                 <exclude reference="KCV-66-vyW"/>
@@ -1350,7 +1356,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mf8-SU-Wd0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3726" y="-2067.75"/>
+            <point key="canvasLocation" x="3726" y="-2068"/>
         </scene>
         <!--Locations-->
         <scene sceneID="mjm-jW-f3H">
