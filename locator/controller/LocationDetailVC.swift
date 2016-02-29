@@ -164,7 +164,7 @@ class LocationDetailVC: UITableViewController {
                 }
             }
             
-            self.loaded[impression.id] = cell
+            self.loaded[impression.id] = tableView.cellForRowAtIndexPath(indexPath)
             return cell
             
         } else if let textImpression = impression as? TextImpression {
@@ -194,7 +194,7 @@ class LocationDetailVC: UITableViewController {
             frame.size.height = contentSize.height
             cell.textheight.constant = contentSize.height
             
-            self.loaded[impression.id] = cell
+            self.loaded[impression.id] = tableView.cellForRowAtIndexPath(indexPath)
             return cell
         
         } else if let videoImpression = impression as? VideoImpression {
