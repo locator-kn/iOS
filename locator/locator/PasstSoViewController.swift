@@ -22,6 +22,8 @@ class PasstSoViewController: UIViewController {
     
     @IBAction func noeButtonAction(sender: AnyObject) {
         print("nö")
+        
+        self.performSegueWithIdentifier("showImagePickerAgain", sender: true)
     }
 
     @IBAction func jaButtonAction(sender: AnyObject) {
@@ -32,6 +34,8 @@ class PasstSoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("lalala")
+        
+        self.navigationItem.setHidesBackButton(true, animated: false)
         
         uiImageView.image = uiimage
 
@@ -50,6 +54,8 @@ class PasstSoViewController: UIViewController {
             controller.uiimage = self.uiimage
             controller.lat = lat
             controller.long = long
+        } else if segue.identifier == "showImagePickerAgain" {
+            
         }
     }
 
