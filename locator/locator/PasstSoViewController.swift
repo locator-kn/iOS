@@ -26,6 +26,7 @@ class PasstSoViewController: UIViewController {
 
     @IBAction func jaButtonAction(sender: AnyObject) {
         print("Ja")
+        self.performSegueWithIdentifier("nameYourLocation", sender: true)
     }
 
     override func viewDidLoad() {
@@ -43,14 +44,13 @@ class PasstSoViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if (segue.identifier == "nameYourLocation") {
+            let controller = segue.destinationViewController as! NameYourLocationViewController
+            controller.uiimage = self.uiimage
+            controller.lat = lat
+            controller.long = long
+        }
     }
-    */
 
 }
