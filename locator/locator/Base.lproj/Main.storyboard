@@ -211,6 +211,7 @@
                                 <connections>
                                     <action selector="noeButton:" destination="Gka-Qg-i3J" eventType="touchUpInside" id="JW3-YO-lF8"/>
                                     <action selector="noeButtonAction:" destination="wHA-Vl-Stn" eventType="touchUpInside" id="LCg-Pj-HO9"/>
+                                    <segue destination="jfr-tO-4Yb" kind="show" identifier="showImagePickerAgain" id="Hxc-f3-ges"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2816,10 +2817,10 @@
         <image name="text" width="42" height="37"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HC2-w8-Rke"/>
-        <segue reference="pqk-kP-sXI"/>
-        <segue reference="WG6-zk-XfW"/>
-        <segue reference="sX6-Cx-Ga0"/>
+        <segue reference="Hxc-f3-ges"/>
         <segue reference="C0z-Ed-tMO"/>
+        <segue reference="WG6-zk-XfW"/>
+        <segue reference="pqk-kP-sXI"/>
+        <segue reference="sX6-Cx-Ga0"/>
     </inferredMetricsTieBreakers>
 </document>
