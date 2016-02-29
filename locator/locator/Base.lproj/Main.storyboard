@@ -1269,7 +1269,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-mint" translatesAutoresizingMaskIntoConstraints="NO" id="Yxg-Pb-2PJ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Yxg-Pb-2PJ">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1vC-Kz-1OR">
@@ -1542,7 +1542,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="800" height="77"/>
                                     </variation>
                                 </tableViewCellContentView>
-                                <inset key="separatorInset" minX="70" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="locationImage" destination="4eQ-Ud-NA7" id="25m-J5-jVc"/>
                                     <outlet property="locationTitle" destination="k1g-PW-ymf" id="WUD-UD-bGj"/>
@@ -1674,7 +1674,7 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="Ad2-6Q-BFy" secondAttribute="bottom" constant="8" id="1Lw-iE-5CT"/>
                                 </constraints>
-                                <inset key="separatorInset" minX="70" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="1Lw-iE-5CT"/>
@@ -2842,7 +2842,7 @@
         <image name="Category_Secret" width="521" height="521"/>
         <image name="Ja" width="273" height="273"/>
         <image name="Nö" width="260" height="260"/>
-        <image name="background-mint" width="640" height="1136"/>
+        <image name="background" width="640" height="1136"/>
         <image name="baum" width="150" height="150"/>
         <image name="cross" width="21" height="21"/>
         <image name="favorite_icon" width="173" height="141"/>

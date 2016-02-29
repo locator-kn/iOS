@@ -40,7 +40,7 @@ class LocationDetailVC: UITableViewController {
         view.addSubview(naviBack)
         
         self.refreshControl = UIRefreshControl()
-        self.refreshControl?.backgroundColor = UIColor.blackColor()
+        self.refreshControl?.backgroundColor = COLORS.red
         self.refreshControl!.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
 
         self.clearsSelectionOnViewWillAppear = false
@@ -72,6 +72,8 @@ class LocationDetailVC: UITableViewController {
     func loadData() {
         LocationService.locationById(location.id).then {
             location -> Void in
+            
+            self.loaded.removeAll()
             self.location = location
             self.title = self.location.title
             self.refreshHeader()
@@ -162,7 +164,7 @@ class LocationDetailVC: UITableViewController {
                 }
             }
             
-            self.loaded[impression.id] = cell
+            self.loaded[impression.id] = tableView.cellForRowAtIndexPath(indexPath)
             return cell
             
         } else if let textImpression = impression as? TextImpression {
@@ -192,7 +194,7 @@ class LocationDetailVC: UITableViewController {
             frame.size.height = contentSize.height
             cell.textheight.constant = contentSize.height
             
-            self.loaded[impression.id] = cell
+            self.loaded[impression.id] = tableView.cellForRowAtIndexPath(indexPath)
             return cell
         
         } else if let videoImpression = impression as? VideoImpression {
