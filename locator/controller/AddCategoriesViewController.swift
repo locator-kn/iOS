@@ -9,9 +9,8 @@
 import UIKit
 import CoreLocation
 
-class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate {
+class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
     
-    var locationManager: CLLocationManager = CLLocationManager()
     
     var lat:Double!
     var long:Double!
@@ -59,8 +58,6 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLoca
                 result -> Void in
                 
                 self.createdLocation = result
-
-                self.locationManager.stopUpdatingLocation()
 
                 self.dismissViewControllerAnimated(true, completion: nil)
 
@@ -142,14 +139,6 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLoca
 
         super.viewDidLoad()
         
-        
-        locationManager = CLLocationManager()
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.distanceFilter = 5.0
-        locationManager.delegate = self
-
-        
         self.title = "Kategorien wählen"
         
         culture.alpha = 0.4
@@ -175,31 +164,7 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate, CLLoca
     }
     
     /* delegate on gpsAuthorizationStatus change */
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status:CLAuthorizationStatus) {
-        
-        if status == .Denied {
-            
-            let alert = UIAlertController(title: "GPS aktivieren", message: "Du musst dein GPS aktivieren um eine Location zu erstellen.", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "Gerne", style: UIAlertActionStyle.Default, handler: openAppSettings))
-            self.presentViewController(alert, animated: true, completion: nil)
-
-        }
-        
-        if status == .AuthorizedWhenInUse {
-            locationManager.startUpdatingLocation()
-        }
-    }
     
-    func openAppSettings(a: UIAlertAction) {
-        UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
-    }
-    
-    /* delegate on user position update */
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-
-        lat = locations.first?.coordinate.latitude
-        long = locations.first?.coordinate.longitude
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
