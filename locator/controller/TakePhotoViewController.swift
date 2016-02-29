@@ -77,7 +77,9 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         imagePicker.dismissViewControllerAnimated(false, completion: nil)
         uiimage = info[UIImagePickerControllerOriginalImage] as? UIImage
-        self.performSegueWithIdentifier("nameYourLocation", sender: true)
+        
+        self.performSegueWithIdentifier("showPasstSo", sender: true)
+        //self.performSegueWithIdentifier("nameYourLocation", sender: true)
         
         
     }
@@ -96,6 +98,15 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
             controller.lat = location.keys.first
             controller.long = location.values.first
             gps.unsubscribeGps()
+        } else if segue.identifier == "showPasstSo" {
+            let controller = segue.destinationViewController as! PasstSoViewController
+            controller.uiimage = self.uiimage
+            let location = gps.getMaybeCurrentLocation()
+            print("setting gps coords", location.keys.first, location.values.first)
+            controller.lat = location.keys.first
+            controller.long = location.values.first
+            gps.unsubscribeGps()
+
         }
     }
     
