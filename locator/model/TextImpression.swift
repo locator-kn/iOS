@@ -11,8 +11,8 @@ import Foundation
 class TextImpression: AbstractImpression {
     var text: String
     
-    init(date:String, userId:String, text: String) {
+    init(id:String, date:String, userId:String, text: String) {
         self.text = text
-        super.init(date: date, userId: userId)
+        super.init(id: id, date: date, userId: userId)
     }
 }
