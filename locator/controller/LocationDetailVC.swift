@@ -72,11 +72,8 @@ class LocationDetailVC: UITableViewController {
             ImpressionService.getImpressions(location.id).then {
                 impressions -> Void in
                 self.impressions = impressions
-                
-                
                 self.location.favorites = impressions.count
-                self.headerCell.favorCount.text = String(self.location.favorites)
-                
+                self.headerCell.impressionsCount.text = String(self.location.favorites)
                 self.tableView.reloadData()
                 self.refreshControl!.endRefreshing()
             }
