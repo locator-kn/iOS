@@ -11,6 +11,8 @@ import UIKit
 class NameYourLocationViewController: UIViewController, UITextFieldDelegate {
     
     var uiimage:UIImage!
+    var lat:Double!
+    var long:Double!
 
     @IBOutlet weak var locationTitle: UITextField!
     
@@ -55,6 +57,8 @@ class NameYourLocationViewController: UIViewController, UITextFieldDelegate {
             let controller = segue.destinationViewController as? AddCategoriesViewController
             controller!.locationTitle = self.locationTitle.text
             controller!.uiimage = self.uiimage
+            controller!.lat = lat
+            controller!.long = long
         }
     }
 
