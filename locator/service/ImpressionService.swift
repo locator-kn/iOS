@@ -29,17 +29,18 @@ class ImpressionService {
                         
                         for (_,subJson):(String, JSON) in json {
                             
+                            let id = subJson["_id"].string!
                             let user = subJson["user_id"].string!
                             let date = subJson["create_date"].string
                             let type = subJson["type"].string
                             let dataPath = subJson["data"].string!
                             
                             if type == "text" {
-                                impressions.append(TextImpression(date:date!, userId: user, text: dataPath))
+                                impressions.append(TextImpression(id:id, date:date!, userId: user, text: dataPath))
                             } else if type == "image" {
-                                impressions.append(ImageImpression(date:date!, userId: user, imagePath: dataPath))
+                                impressions.append(ImageImpression(id:id, date:date!, userId: user, imagePath: dataPath))
                             } else if type == "video" {
-                                impressions.append(VideoImpression(date:date!, userId: user, videoPath: dataPath))
+                                impressions.append(VideoImpression(id:id, date:date!, userId: user, videoPath: dataPath))
                             } else if type == "audio" {
                                 //TODO
                             }

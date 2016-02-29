@@ -24,13 +24,15 @@ class LocationDetailVC: UITableViewController {
     var headerCell: LocationDetailHeaderCell!
     var naviBack: UIImageView!
     
+    var loaded = [String:UITableViewCell]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        naviBack = UIImageView(frame: CGRectMake(0, 0, 500, 60))
+        /*naviBack = UIImageView(frame: CGRectMake(0, 0, 500, 60))
         naviBack.backgroundColor = UIColor.blackColor()
         self.naviBack.alpha = 0
-        view.addSubview(naviBack)
+        view.addSubview(naviBack)*/
         
         self.refreshControl = UIRefreshControl()
         self.refreshControl?.backgroundColor = UIColor.blackColor()
@@ -63,19 +65,22 @@ class LocationDetailVC: UITableViewController {
     }
     
     func loadData() {
-        let locationPromise = LocationService.locationById(location.id)
-        let impressionsPromise = ImpressionService.getImpressions(location.id)
-        
-        when(locationPromise, impressionsPromise).then {
-            location, impressions -> Void in
-            
+        LocationService.locationById(location.id).then {
+            location -> Void in
             self.location = location
             self.title = self.location.title
+            self.refreshHeader()
             
-            self.impressions = impressions
-            self.tableView.reloadData()
-            self.refreshControl!.endRefreshing()
+            ImpressionService.getImpressions(location.id).then {
+                impressions -> Void in
+                self.impressions = impressions
+                self.location.favorites = impressions.count
+                self.headerCell.impressionsCount.text = String(self.location.favorites)
+                self.tableView.reloadData()
+                self.refreshControl!.endRefreshing()
+            }
         }
+
     }
     
     func refresh(sender:AnyObject) {
@@ -95,6 +100,11 @@ class LocationDetailVC: UITableViewController {
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if (section == 0) {
+            
+            if (self.headerCell != nil) {
+                return self.headerCell
+            }
+            
             let  header = tableView.dequeueReusableCellWithIdentifier("headerCell") as! LocationDetailHeaderCell
             header.layoutMargins = UIEdgeInsetsZero;
             
@@ -104,19 +114,6 @@ class LocationDetailVC: UITableViewController {
             gradient.locations = [0.0, 0.5, 1]
             header.locationImage.layer.insertSublayer(gradient, atIndex: 0)
             
-            if self.impressions == nil {
-                header.locationImage!.image = UIImage()
-            } else {
-                header.username.setTitle(location.user.name! + "  \u{2E31}", forState: UIControlState.Normal)
-                header.favorCount.text = String(location.favorites)
-                header.impressionsCount.text = String(impressions!.count)
-                header.locationImage.image = UIImage(data: UtilService.dataFromPath(location.imagePathNormal))
-                header.city.text = location.city.title
-                
-                if location.favored == true {
-                    header.favorIcon.setImage(self.favoriteIconActive, forState: .Normal)
-                }
-            }
             headerCell = header
             return header
         }
@@ -133,6 +130,9 @@ class LocationDetailVC: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let impression = impressions![indexPath.row]
+        if (self.loaded[impression.id] != nil) {
+            return self.loaded[impression.id]!
+        }
         
         if let imageImpression = impression as? ImageImpression {
             let cell = tableView.dequeueReusableCellWithIdentifier("imageImpression", forIndexPath: indexPath) as! ImageImpressionCell
@@ -142,6 +142,7 @@ class LocationDetailVC: UITableViewController {
             
             UserService.getUser(imageImpression.user.id!).then {
                 result -> Void in
+                print("user request")
                 if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? ImageImpressionCell {
                     cellToUpdate.username.text = result.name
                 }
@@ -156,11 +157,13 @@ class LocationDetailVC: UITableViewController {
             
             UtilService.dataFromCache(API.IMAGE_URL + imageImpression.imagePath).then {
                 result -> Void in
+                print("image impression request")
                 if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? ImageImpressionCell {
                     cellToUpdate.imageBox.image = UIImage(data: result)
                 }
             }
             
+            self.loaded[impression.id] = cell
             return cell
             
         } else if let textImpression = impression as? TextImpression {
@@ -295,9 +298,9 @@ class LocationDetailVC: UITableViewController {
             controller.locationsOfInterest[location.id] = location
         }
     }
-    
+    /*
     override func scrollViewDidScroll(scrollView: UIScrollView) {
-        
+      
         if (scrollView.contentOffset.y < 230) {
             UIView.animateWithDuration(0.3, animations: {
                 self.naviBack.alpha = 0
@@ -308,6 +311,18 @@ class LocationDetailVC: UITableViewController {
             })
         }
         naviBack.frame.origin.y = scrollView.contentOffset.y
+    } */
+    
+    func refreshHeader() {
+        UtilService.dataFromCache(location.imagePathNormal).then {
+            result -> Void in
+            self.headerCell.locationImage.image = UIImage(data: result)
+        }
+        self.headerCell.username.setTitle(location.user.name! + "  \u{2E31}", forState: UIControlState.Normal)
+        self.headerCell.favorCount.text = String(location.favorites)
+        self.headerCell.impressionsCount.text = "0"
+        self.headerCell.locationImage.image = UIImage(data: UtilService.dataFromPath(location.imagePathNormal))
+        self.headerCell.city.text = location.city.title
     }
 
 }

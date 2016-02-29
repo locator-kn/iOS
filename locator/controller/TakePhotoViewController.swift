@@ -43,7 +43,12 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
     func takePhoto() {
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        imagePicker.sourceType = .Camera
+        if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+            imagePicker.sourceType = .Camera
+        } else {
+            imagePicker.sourceType = .PhotoLibrary
+        }
+        
         
         presentViewController(imagePicker, animated: false, completion: nil)
 
