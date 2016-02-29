@@ -155,7 +155,6 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
-                        <segue destination="v3D-1b-zpU" kind="show" identifier="nameYourLocation" id="qCW-ge-Hld"/>
                         <segue destination="wHA-Vl-Stn" kind="show" identifier="showPasstSo" id="G97-Q0-RdY"/>
                     </connections>
                 </viewController>
@@ -199,6 +198,7 @@
                                 </constraints>
                                 <state key="normal" image="Ja"/>
                                 <connections>
+                                    <action selector="jaButtonAction:" destination="wHA-Vl-Stn" eventType="touchUpInside" id="RTW-OB-fOp"/>
                                     <action selector="submitImage:" destination="Gka-Qg-i3J" eventType="touchUpInside" id="y6L-30-j6b"/>
                                 </connections>
                             </button>
@@ -210,6 +210,7 @@
                                 <state key="normal" title="Button" image="Nö"/>
                                 <connections>
                                     <action selector="noeButton:" destination="Gka-Qg-i3J" eventType="touchUpInside" id="JW3-YO-lF8"/>
+                                    <action selector="noeButtonAction:" destination="wHA-Vl-Stn" eventType="touchUpInside" id="LCg-Pj-HO9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -235,7 +236,10 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="jaButton" destination="p3V-cM-RHC" id="fjF-xT-dKF"/>
+                        <outlet property="noeButton" destination="MOt-V6-6qT" id="7De-xy-ark"/>
                         <outlet property="uiImageView" destination="oX8-Ut-TJK" id="3FM-Pr-XCB"/>
+                        <segue destination="v3D-1b-zpU" kind="show" identifier="nameYourLocation" id="g6s-EJ-QOY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lxr-V9-P4d" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2812,10 +2816,10 @@
         <image name="text" width="42" height="37"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WG6-zk-XfW"/>
-        <segue reference="pqk-kP-sXI"/>
-        <segue reference="sX6-Cx-Ga0"/>
         <segue reference="HC2-w8-Rke"/>
+        <segue reference="pqk-kP-sXI"/>
+        <segue reference="WG6-zk-XfW"/>
+        <segue reference="sX6-Cx-Ga0"/>
         <segue reference="C0z-Ed-tMO"/>
     </inferredMetricsTieBreakers>
 </document>
