@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5B091F081C834FC80064F03A /* VideoImpressionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B091F071C834FC80064F03A /* VideoImpressionVC.swift */; };
+		5B091F0A1C83AA360064F03A /* SecondNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B091F091C83AA360064F03A /* SecondNavigationVC.swift */; };
+		5B091F0C1C83AA640064F03A /* AbstractNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B091F0B1C83AA640064F03A /* AbstractNavigationVC.swift */; };
 		5B0C0D981C3D505A0090FB17 /* TextImpressionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0C0D971C3D505A0090FB17 /* TextImpressionVC.swift */; };
 		5B0C0D9A1C3F13D90090FB17 /* TextImpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0C0D991C3F13D90090FB17 /* TextImpression.swift */; };
 		5B0C0D9C1C3FE2F80090FB17 /* ImageImpressionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0C0D9B1C3FE2F80090FB17 /* ImageImpressionVC.swift */; };
@@ -93,6 +95,8 @@
 /* Begin PBXFileReference section */
 		2A2D73A983D85F52E3CE00E5 /* Pods-locator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-locator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-locator/Pods-locator.debug.xcconfig"; sourceTree = "<group>"; };
 		5B091F071C834FC80064F03A /* VideoImpressionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoImpressionVC.swift; sourceTree = "<group>"; };
+		5B091F091C83AA360064F03A /* SecondNavigationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondNavigationVC.swift; sourceTree = "<group>"; };
+		5B091F0B1C83AA640064F03A /* AbstractNavigationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractNavigationVC.swift; sourceTree = "<group>"; };
 		5B0C0D971C3D505A0090FB17 /* TextImpressionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextImpressionVC.swift; path = controller/TextImpressionVC.swift; sourceTree = SOURCE_ROOT; };
 		5B0C0D991C3F13D90090FB17 /* TextImpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextImpression.swift; sourceTree = "<group>"; };
 		5B0C0D9B1C3FE2F80090FB17 /* ImageImpressionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageImpressionVC.swift; path = controller/ImageImpressionVC.swift; sourceTree = SOURCE_ROOT; };
@@ -207,6 +211,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5B091F0D1C83AB190064F03A /* navigation */ = {
+			isa = PBXGroup;
+			children = (
+				5BDAB6191C5594D300A4D38E /* MainNavigationVC.swift */,
+				5B091F091C83AA360064F03A /* SecondNavigationVC.swift */,
+				5B091F0B1C83AA640064F03A /* AbstractNavigationVC.swift */,
+			);
+			name = navigation;
+			sourceTree = "<group>";
+		};
 		5B0C0D9D1C3FE2FE0090FB17 /* postImpressions */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +239,7 @@
 				5B42BB691C7DD96F004F16D2 /* ImageImpressionCell.swift */,
 				5B1E6B891C7F57840016B404 /* LocationDetailHeaderCell.swift */,
 				5B1E6B8B1C80A48A0016B404 /* VideoImpressionCell.swift */,
+				5B0C0D9D1C3FE2FE0090FB17 /* postImpressions */,
 			);
 			name = LocationDetail;
 			sourceTree = "<group>";
@@ -290,6 +305,7 @@
 				5BDAB61E1C58D6A000A4D38E /* InfoWindow.swift */,
 			);
 			name = nib;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		5BEA72B21C34AFA3005220CD /* impression */ = {
@@ -366,7 +382,6 @@
 				5B44750B1C216E7A00C30445 /* service */,
 				5B44750A1C216A2600C30445 /* model */,
 				87F14D791C18604B00682709 /* controller */,
-				5BDAB61B1C58D34F00A4D38E /* nib */,
 				876290121C18797B00D2870E /* Supporting Files */,
 				87F14D781C18604B00682709 /* Products */,
 				0C379E5A93285B69727480FF /* Pods */,
@@ -385,19 +400,19 @@
 		87F14D791C18604B00682709 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				5B091F0D1C83AB190064F03A /* navigation */,
 				CC18FAA11C7F579100A346BE /* createLocation */,
 				5B42BB661C7DD93D004F16D2 /* LocationDetail */,
-				5B0C0D9D1C3FE2FE0090FB17 /* postImpressions */,
-				876CAA7C1C3BFE5E002A36FF /* Login */,
 				870507231C4FD82B008641BF /* BubbleVC.swift */,
+				876CAA7C1C3BFE5E002A36FF /* Login */,
 				5B495C4D1C2061B5000D8974 /* MapVC.swift */,
 				5B90CCB21C2A220F00108693 /* DashboardVC.swift */,
 				874AF1F31C415BC300F386B0 /* LocatorVC.swift */,
 				5BC5F2F71C3BE55A0092E0E9 /* MapSearchVC.swift */,
 				5B608CA11C4A935200F5F0DA /* user */,
-				5BDAB6191C5594D300A4D38E /* MainNavigationVC.swift */,
 				CC857BE31C81CC2700776731 /* LoadingAnimationViewController.swift */,
 				CC857BE51C81E72900776731 /* Gif.swift */,
+				5BDAB61B1C58D34F00A4D38E /* nib */,
 			);
 			name = controller;
 			path = locator;
@@ -578,6 +593,7 @@
 				872DA7C81C1F06A10041C9D6 /* EmailLoginVC1.swift in Sources */,
 				CC4075E21C7F776D00364331 /* NameYourLocationViewController.swift in Sources */,
 				87F14D7D1C18604B00682709 /* WelcomeVC.swift in Sources */,
+				5B091F0C1C83AA640064F03A /* AbstractNavigationVC.swift in Sources */,
 				876CAA801C3C03F8002A36FF /* RegisterVC2.swift in Sources */,
 				5B42BB6A1C7DD96F004F16D2 /* ImageImpressionCell.swift in Sources */,
 				5B4EF1111C5E2559005D8612 /* GpsService.swift in Sources */,
@@ -606,6 +622,7 @@
 				5B0C0D9C1C3FE2F80090FB17 /* ImageImpressionVC.swift in Sources */,
 				87ACAD261C21C9B900651B18 /* HttpService.swift in Sources */,
 				5BDAB61F1C58D6A000A4D38E /* InfoWindow.swift in Sources */,
+				5B091F0A1C83AA360064F03A /* SecondNavigationVC.swift in Sources */,
 				CC857BE61C81E72900776731 /* Gif.swift in Sources */,
 				876CAA7E1C3BFEAF002A36FF /* RegisterVC1.swift in Sources */,
 				5BAC93E11C2824A500FE502F /* UtilService.swift in Sources */,

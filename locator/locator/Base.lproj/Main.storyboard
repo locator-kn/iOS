@@ -89,7 +89,7 @@
                                 </constraints>
                                 <state key="normal" image="Nö"/>
                                 <connections>
-                                    <segue destination="Pdv-Th-J2k" kind="show" id="5LS-PO-7IX"/>
+                                    <segue destination="S2i-A3-nEi" kind="show" id="5LS-PO-7IX"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Möchtest du dich anmelden oder registieren?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="TDD-Er-t1h">
@@ -1799,7 +1799,7 @@
                         <outlet property="loginButton" destination="ThM-aS-l8j" id="Qp3-cr-Nob"/>
                         <outlet property="loginFacebookButton" destination="sMM-Jb-Txm" id="7Hc-GQ-PmB"/>
                         <outlet property="registerButton" destination="kxh-In-BWJ" id="QTZ-l8-XwN"/>
-                        <segue destination="Pdv-Th-J2k" kind="show" identifier="showDashboard" id="n5V-k0-1OC"/>
+                        <segue destination="S2i-A3-nEi" kind="show" identifier="showDashboard" id="n5V-k0-1OC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HQW-BL-npg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1879,7 +1879,7 @@
                     </view>
                     <connections>
                         <outlet property="passwordTextField" destination="fzu-pS-sg2" id="d62-VT-Sk8"/>
-                        <segue destination="Pdv-Th-J2k" kind="show" identifier="dashboard" id="WoO-UQ-gKo"/>
+                        <segue destination="S2i-A3-nEi" kind="show" identifier="dashboard" id="WoO-UQ-gKo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s67-zn-TWX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1899,7 +1899,7 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ItB-To-HKa"/>
-                        <segue destination="Pdv-Th-J2k" kind="show" identifier="dashboard" id="LgZ-gd-7kD"/>
+                        <segue destination="S2i-A3-nEi" kind="show" identifier="dashboard" id="LgZ-gd-7kD"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xbo-2h-uaj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2293,7 +2293,7 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <segue destination="Pdv-Th-J2k" kind="show" identifier="showDashboard" id="pqk-kP-sXI"/>
+                        <segue destination="S2i-A3-nEi" kind="show" identifier="showDashboard" id="pqk-kP-sXI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sNa-lI-qhq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2702,7 +2702,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ei-wX-Tab" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7203" y="235"/>
+            <point key="canvasLocation" x="8433" y="175.5"/>
+        </scene>
+        <!--Second NavigationVC-->
+        <scene sceneID="SLV-U7-Gji">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S2i-A3-nEi" customClass="SecondNavigationVC" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Sed-VK-VGq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Pdv-Th-J2k" kind="relationship" relationship="rootViewController" id="rIe-tD-rOv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dOD-9J-Yce" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7491" y="163.5"/>
         </scene>
     </scenes>
     <resources>
@@ -2737,10 +2755,19 @@
         <image name="text" width="42" height="37"/>
     </resources>
     <inferredMetricsTieBreakers>
+<<<<<<< HEAD
         <segue reference="HC2-w8-Rke"/>
         <segue reference="LgZ-gd-7kD"/>
         <segue reference="WG6-zk-XfW"/>
         <segue reference="2oh-QA-SLC"/>
         <segue reference="sX6-Cx-Ga0"/>
+=======
+        <segue reference="2oh-QA-SLC"/>
+        <segue reference="LgZ-gd-7kD"/>
+        <segue reference="WG6-zk-XfW"/>
+        <segue reference="sX6-Cx-Ga0"/>
+        <segue reference="HC2-w8-Rke"/>
+        <segue reference="fiC-UR-uUa"/>
+>>>>>>> refactor-navigation
     </inferredMetricsTieBreakers>
 </document>
