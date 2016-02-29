@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="U8m-eU-1FD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="U8m-eU-1FD">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -143,30 +143,9 @@
             <point key="canvasLocation" x="2781" y="201"/>
         </scene>
         <!--Take Photo View Controller-->
-        <scene sceneID="nhv-9Y-C62">
-            <objects>
-                <viewController id="jfr-tO-4Yb" customClass="TakePhotoViewController" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="p97-Zg-Oih"/>
-                        <viewControllerLayoutGuide type="bottom" id="nAr-hj-eaZ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="moO-gy-WfG">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <connections>
-                        <segue destination="wHA-Vl-Stn" kind="show" identifier="showPasstSo" id="G97-Q0-RdY"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Rx-gN-ISZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1262" y="1875"/>
-        </scene>
-        <!--Passt So View Controller-->
         <scene sceneID="Chf-7G-4tF">
             <objects>
-                <viewController id="wHA-Vl-Stn" customClass="PasstSoViewController" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wHA-Vl-Stn" customClass="TakePhotoViewController" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mES-fQ-MsE"/>
                         <viewControllerLayoutGuide type="bottom" id="bq2-d9-V8Z"/>
@@ -181,6 +160,9 @@
                                     <constraint firstAttribute="height" constant="261" id="1HG-S9-qLk"/>
                                     <constraint firstAttribute="width" constant="529" id="7BH-qg-uye"/>
                                 </constraints>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="-66" y="80" width="529" height="261"/>
+                                </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Schön so?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Js-FJ-Qbm">
                                 <rect key="frame" x="236" y="384" width="129" height="82"/>
@@ -189,6 +171,9 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="128" y="644" width="144" height="35"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="136" y="384" width="129" height="282"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3V-cM-RHC">
@@ -199,7 +184,7 @@
                                 </constraints>
                                 <state key="normal" image="Ja"/>
                                 <connections>
-                                    <action selector="jaButtonAction:" destination="wHA-Vl-Stn" eventType="touchUpInside" id="RTW-OB-fOp"/>
+                                    <action selector="jaButtonAction:" destination="wHA-Vl-Stn" eventType="touchUpInside" id="juO-Hg-cdV"/>
                                     <action selector="submitImage:" destination="Gka-Qg-i3J" eventType="touchUpInside" id="y6L-30-j6b"/>
                                 </connections>
                             </button>
@@ -211,8 +196,7 @@
                                 <state key="normal" title="Button" image="Nö"/>
                                 <connections>
                                     <action selector="noeButton:" destination="Gka-Qg-i3J" eventType="touchUpInside" id="JW3-YO-lF8"/>
-                                    <action selector="noeButtonAction:" destination="wHA-Vl-Stn" eventType="touchUpInside" id="LCg-Pj-HO9"/>
-                                    <segue destination="jfr-tO-4Yb" kind="show" identifier="showImagePickerAgain" id="Hxc-f3-ges"/>
+                                    <action selector="noeButtonAction:" destination="wHA-Vl-Stn" eventType="touchUpInside" id="DCE-Ud-kMb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -238,15 +222,13 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="jaButton" destination="p3V-cM-RHC" id="fjF-xT-dKF"/>
-                        <outlet property="noeButton" destination="MOt-V6-6qT" id="7De-xy-ark"/>
-                        <outlet property="uiImageView" destination="oX8-Ut-TJK" id="3FM-Pr-XCB"/>
+                        <outlet property="imageViewController" destination="oX8-Ut-TJK" id="YKT-qH-caU"/>
                         <segue destination="v3D-1b-zpU" kind="show" identifier="nameYourLocation" id="g6s-EJ-QOY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lxr-V9-P4d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2020" y="2323"/>
+            <point key="canvasLocation" x="1792" y="1891"/>
         </scene>
         <!--Name Your Location View Controller-->
         <scene sceneID="fXZ-32-Hg0">
@@ -273,6 +255,9 @@
                                         <color key="value" red="0.97066580966430815" green="1" blue="0.96350548471204056" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="40" y="40" width="320" height="54"/>
+                                </variation>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -339,6 +324,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="7"/>
                                 <state key="normal" title="Kultur" image="Category_Culture"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="166" y="166" width="70" height="70"/>
+                                </variation>
                                 <connections>
                                     <action selector="cultureAction:" destination="3b4-4g-E5P" eventType="touchUpInside" id="Ndl-Ia-DMR"/>
                                 </connections>
@@ -350,6 +338,9 @@
                                     <constraint firstAttribute="height" constant="70" id="hf9-cV-z20"/>
                                 </constraints>
                                 <state key="normal" title="secret" image="Category_Secret"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="165" y="337" width="70" height="70"/>
+                                </variation>
                                 <connections>
                                     <action selector="secretAction:" destination="3b4-4g-E5P" eventType="touchUpInside" id="FZ6-5j-Ml6"/>
                                 </connections>
@@ -361,6 +352,9 @@
                                     <constraint firstAttribute="width" constant="70" id="ZDr-yf-rKI"/>
                                 </constraints>
                                 <state key="normal" title="gastro" image="Category_Gastro"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="280" y="234" width="70" height="70"/>
+                                </variation>
                                 <connections>
                                     <action selector="gastroAction:" destination="3b4-4g-E5P" eventType="touchUpInside" id="QcU-Gf-Ll3"/>
                                 </connections>
@@ -372,6 +366,9 @@
                                     <constraint firstAttribute="width" constant="70" id="hzG-kz-VFL"/>
                                 </constraints>
                                 <state key="normal" title="holiday" image="Category_Holiday"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="280" y="378" width="70" height="70"/>
+                                </variation>
                                 <connections>
                                     <action selector="holidayAction:" destination="3b4-4g-E5P" eventType="touchUpInside" id="Hug-em-71C"/>
                                 </connections>
@@ -384,6 +381,9 @@
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="181" y="327" width="40" height="30"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="182" y="239" width="39" height="31"/>
                                 </variation>
                                 <connections>
                                     <action selector="cultureAction:" destination="3b4-4g-E5P" eventType="touchUpInside" id="oEp-lp-XvY"/>
@@ -398,6 +398,9 @@
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="272" y="395" width="87" height="30"/>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="274" y="307" width="82" height="31"/>
+                                </variation>
                                 <connections>
                                     <action selector="gastroAction:" destination="3b4-4g-E5P" eventType="touchUpInside" id="PM3-MQ-6Y2"/>
                                 </connections>
@@ -411,6 +414,9 @@
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="291" y="539" width="49" height="30"/>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="292" y="451" width="46" height="31"/>
+                                </variation>
                                 <connections>
                                     <action selector="holidayAction:" destination="3b4-4g-E5P" eventType="touchUpInside" id="BkO-xk-hkC"/>
                                 </connections>
@@ -423,6 +429,9 @@
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="162" y="498" width="78" height="30"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="164" y="410" width="74" height="31"/>
                                 </variation>
                                 <connections>
                                     <action selector="secretAction:" destination="3b4-4g-E5P" eventType="touchUpInside" id="wix-3j-zQ6"/>
@@ -1526,6 +1535,12 @@
                                             <exclude reference="l34-Tl-DX4"/>
                                         </mask>
                                     </variation>
+                                    <variation key="widthClass=compact" ambiguous="YES">
+                                        <rect key="frame" x="0.0" y="0.0" width="400" height="77"/>
+                                    </variation>
+                                    <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
+                                        <rect key="frame" x="0.0" y="0.0" width="800" height="77"/>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="70" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
@@ -1738,7 +1753,7 @@
                                 </constraints>
                                 <state key="normal" image="location"/>
                                 <connections>
-                                    <segue destination="jfr-tO-4Yb" kind="show" id="3M0-uW-oHF"/>
+                                    <segue destination="wHA-Vl-Stn" kind="show" id="dfM-kF-3kg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdt-da-1cq">
@@ -2789,7 +2804,6 @@
                         <outlet property="sixthBubbleImageView" destination="uai-va-mhn" id="1aH-EB-arb"/>
                         <outlet property="thirdBubbleImageView" destination="RFy-Bg-51N" id="yVO-r1-hDE"/>
                         <outlet property="userProfilImageView" destination="qQB-CT-UpR" id="kHr-4K-zcW"/>
-                        <segue destination="jfr-tO-4Yb" kind="show" identifier="createLocation" id="HC2-w8-Rke"/>
                         <segue destination="1XA-Ef-cjY" kind="show" identifier="showDetailLocation" id="2oh-QA-SLC"/>
                         <segue destination="G1J-vh-MOc" kind="show" identifier="showOwnProfil" id="sX6-Cx-Ga0"/>
                         <segue destination="4Mp-XX-Glu" kind="show" identifier="map" id="ela-Fj-2Fq"/>
@@ -2797,12 +2811,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ei-wX-Tab" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8310" y="163"/>
+            <point key="canvasLocation" x="8328" y="171.75"/>
         </scene>
         <!--Second NavigationVC-->
         <scene sceneID="SLV-U7-Gji">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S2i-A3-nEi" customClass="SecondNavigationVC" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="secondnavi" automaticallyAdjustsScrollViewInsets="NO" id="S2i-A3-nEi" customClass="SecondNavigationVC" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Sed-VK-VGq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -2850,11 +2864,10 @@
         <image name="text" width="42" height="37"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="C0z-Ed-tMO"/>
-        <segue reference="Hxc-f3-ges"/>
-        <segue reference="PBI-Q7-c1i"/>
-        <segue reference="Q9G-yB-4zn"/>
+        <segue reference="LgZ-gd-7kD"/>
+        <segue reference="sX6-Cx-Ga0"/>
+        <segue reference="ela-Fj-2Fq"/>
+        <segue reference="K3z-rv-EhQ"/>
         <segue reference="WG6-zk-XfW"/>
-        <segue reference="pqk-kP-sXI"/>
     </inferredMetricsTieBreakers>
 </document>
