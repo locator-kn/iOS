@@ -87,6 +87,7 @@
 		CC18FAA31C7F57D200A346BE /* TakePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC18FAA21C7F57D200A346BE /* TakePhotoViewController.swift */; };
 		CC4075E21C7F776D00364331 /* NameYourLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4075E11C7F776D00364331 /* NameYourLocationViewController.swift */; };
 		CC4075E41C7F8CB000364331 /* AddCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4075E31C7F8CB000364331 /* AddCategoriesViewController.swift */; };
+		CC6A38311C84965C00843293 /* PasstSoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6A38301C84965C00843293 /* PasstSoViewController.swift */; };
 		CC857BE41C81CC2700776731 /* LoadingAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC857BE31C81CC2700776731 /* LoadingAnimationViewController.swift */; };
 		CC857BE61C81E72900776731 /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC857BE51C81E72900776731 /* Gif.swift */; };
 		CC857BF61C8317AC00776731 /* locator_preloader.gif in Resources */ = {isa = PBXBuildFile; fileRef = CC857BEB1C81EEEF00776731 /* locator_preloader.gif */; };
@@ -177,6 +178,7 @@
 		CC18FAA21C7F57D200A346BE /* TakePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TakePhotoViewController.swift; path = controller/TakePhotoViewController.swift; sourceTree = SOURCE_ROOT; };
 		CC4075E11C7F776D00364331 /* NameYourLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NameYourLocationViewController.swift; path = controller/NameYourLocationViewController.swift; sourceTree = SOURCE_ROOT; };
 		CC4075E31C7F8CB000364331 /* AddCategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddCategoriesViewController.swift; path = controller/AddCategoriesViewController.swift; sourceTree = SOURCE_ROOT; };
+		CC6A38301C84965C00843293 /* PasstSoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasstSoViewController.swift; sourceTree = "<group>"; };
 		CC857BE31C81CC2700776731 /* LoadingAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingAnimationViewController.swift; path = controller/LoadingAnimationViewController.swift; sourceTree = SOURCE_ROOT; };
 		CC857BE51C81E72900776731 /* Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gif.swift; sourceTree = SOURCE_ROOT; };
 		CC857BEB1C81EEEF00776731 /* locator_preloader.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = locator_preloader.gif; sourceTree = "<group>"; };
@@ -421,6 +423,7 @@
 		CC18FAA11C7F579100A346BE /* createLocation */ = {
 			isa = PBXGroup;
 			children = (
+				CC6A38301C84965C00843293 /* PasstSoViewController.swift */,
 				CC18FAA21C7F57D200A346BE /* TakePhotoViewController.swift */,
 				CC4075E11C7F776D00364331 /* NameYourLocationViewController.swift */,
 				CC4075E31C7F8CB000364331 /* AddCategoriesViewController.swift */,
@@ -591,6 +594,7 @@
 				5BEA72B81C34B206005220CD /* AbstractImpression.swift in Sources */,
 				870507241C4FD82B008641BF /* BubbleVC.swift in Sources */,
 				872DA7C81C1F06A10041C9D6 /* EmailLoginVC1.swift in Sources */,
+				CC6A38311C84965C00843293 /* PasstSoViewController.swift in Sources */,
 				CC4075E21C7F776D00364331 /* NameYourLocationViewController.swift in Sources */,
 				87F14D7D1C18604B00682709 /* WelcomeVC.swift in Sources */,
 				5B091F0C1C83AA640064F03A /* AbstractNavigationVC.swift in Sources */,
