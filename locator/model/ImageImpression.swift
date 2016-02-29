@@ -11,8 +11,8 @@ import Foundation
 class ImageImpression: AbstractImpression {
     var imagePath: String
     
-    init(date:String, userId:String, imagePath: String) {
+    init(id:String, date:String, userId:String, imagePath: String) {
         self.imagePath = imagePath
-        super.init(date: date, userId: userId)
+        super.init(id: id, date: date, userId: userId)
     }
 }

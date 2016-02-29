@@ -24,13 +24,15 @@ class LocationDetailVC: UITableViewController {
     var headerCell: LocationDetailHeaderCell!
     var naviBack: UIImageView!
     
+    var loaded = [String:UITableViewCell]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        naviBack = UIImageView(frame: CGRectMake(0, 0, 500, 60))
+        /*naviBack = UIImageView(frame: CGRectMake(0, 0, 500, 60))
         naviBack.backgroundColor = UIColor.blackColor()
         self.naviBack.alpha = 0
-        view.addSubview(naviBack)
+        view.addSubview(naviBack)*/
         
         self.refreshControl = UIRefreshControl()
         self.refreshControl?.backgroundColor = UIColor.blackColor()
@@ -128,6 +130,9 @@ class LocationDetailVC: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let impression = impressions![indexPath.row]
+        if (self.loaded[impression.id] != nil) {
+            return self.loaded[impression.id]!
+        }
         
         if let imageImpression = impression as? ImageImpression {
             let cell = tableView.dequeueReusableCellWithIdentifier("imageImpression", forIndexPath: indexPath) as! ImageImpressionCell
@@ -137,6 +142,7 @@ class LocationDetailVC: UITableViewController {
             
             UserService.getUser(imageImpression.user.id!).then {
                 result -> Void in
+                print("user request")
                 if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? ImageImpressionCell {
                     cellToUpdate.username.text = result.name
                 }
@@ -151,11 +157,13 @@ class LocationDetailVC: UITableViewController {
             
             UtilService.dataFromCache(API.IMAGE_URL + imageImpression.imagePath).then {
                 result -> Void in
+                print("image impression request")
                 if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? ImageImpressionCell {
                     cellToUpdate.imageBox.image = UIImage(data: result)
                 }
             }
             
+            self.loaded[impression.id] = cell
             return cell
             
         } else if let textImpression = impression as? TextImpression {
@@ -290,9 +298,9 @@ class LocationDetailVC: UITableViewController {
             controller.locationsOfInterest[location.id] = location
         }
     }
-    
+    /*
     override func scrollViewDidScroll(scrollView: UIScrollView) {
-        
+      
         if (scrollView.contentOffset.y < 230) {
             UIView.animateWithDuration(0.3, animations: {
                 self.naviBack.alpha = 0
@@ -303,7 +311,7 @@ class LocationDetailVC: UITableViewController {
             })
         }
         naviBack.frame.origin.y = scrollView.contentOffset.y
-    }
+    } */
     
     func refreshHeader() {
         UtilService.dataFromCache(location.imagePathNormal).then {
