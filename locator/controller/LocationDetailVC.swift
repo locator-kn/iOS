@@ -63,19 +63,25 @@ class LocationDetailVC: UITableViewController {
     }
     
     func loadData() {
-        let locationPromise = LocationService.locationById(location.id)
-        let impressionsPromise = ImpressionService.getImpressions(location.id)
-        
-        when(locationPromise, impressionsPromise).then {
-            location, impressions -> Void in
-            
+        LocationService.locationById(location.id).then {
+            location -> Void in
             self.location = location
             self.title = self.location.title
+            self.refreshHeader()
             
-            self.impressions = impressions
-            self.tableView.reloadData()
-            self.refreshControl!.endRefreshing()
+            ImpressionService.getImpressions(location.id).then {
+                impressions -> Void in
+                self.impressions = impressions
+                
+                
+                self.location.favorites = impressions.count
+                self.headerCell.favorCount.text = String(self.location.favorites)
+                
+                self.tableView.reloadData()
+                self.refreshControl!.endRefreshing()
+            }
         }
+
     }
     
     func refresh(sender:AnyObject) {
@@ -95,6 +101,11 @@ class LocationDetailVC: UITableViewController {
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if (section == 0) {
+            
+            if (self.headerCell != nil) {
+                return self.headerCell
+            }
+            
             let  header = tableView.dequeueReusableCellWithIdentifier("headerCell") as! LocationDetailHeaderCell
             header.layoutMargins = UIEdgeInsetsZero;
             
@@ -104,19 +115,6 @@ class LocationDetailVC: UITableViewController {
             gradient.locations = [0.0, 0.5, 1]
             header.locationImage.layer.insertSublayer(gradient, atIndex: 0)
             
-            if self.impressions == nil {
-                header.locationImage!.image = UIImage()
-            } else {
-                header.username.setTitle(location.user.name! + "  \u{2E31}", forState: UIControlState.Normal)
-                header.favorCount.text = String(location.favorites)
-                header.impressionsCount.text = String(impressions!.count)
-                header.locationImage.image = UIImage(data: UtilService.dataFromPath(location.imagePathNormal))
-                header.city.text = location.city.title
-                
-                if location.favored == true {
-                    header.favorIcon.setImage(self.favoriteIconActive, forState: .Normal)
-                }
-            }
             headerCell = header
             return header
         }
@@ -308,6 +306,18 @@ class LocationDetailVC: UITableViewController {
             })
         }
         naviBack.frame.origin.y = scrollView.contentOffset.y
+    }
+    
+    func refreshHeader() {
+        UtilService.dataFromCache(location.imagePathNormal).then {
+            result -> Void in
+            self.headerCell.locationImage.image = UIImage(data: result)
+        }
+        self.headerCell.username.setTitle(location.user.name! + "  \u{2E31}", forState: UIControlState.Normal)
+        self.headerCell.favorCount.text = String(location.favorites)
+        self.headerCell.impressionsCount.text = "0"
+        self.headerCell.locationImage.image = UIImage(data: UtilService.dataFromPath(location.imagePathNormal))
+        self.headerCell.city.text = location.city.title
     }
 
 }
