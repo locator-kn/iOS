@@ -11,17 +11,42 @@ import Fusuma
 
 class TakePhotoViewController: UIViewController, UINavigationControllerDelegate, FusumaDelegate {
     
+    var warschonda:Bool = false
+    
+    @IBAction func jaButtonAction(sender: AnyObject) {
+        self.performSegueWithIdentifier("nameYourLocation", sender: true)
+    }
+    @IBAction func noeButtonAction(sender: AnyObject) {
+        
+        if uiimage == nil {
+            self.navigationController?.popViewControllerAnimated(true)
+        } else {
+            self.takePhoto()
+        }
+        
+        //self.performSegueWithIdentifier("showImagePickerAgain", sender: true)
+    }
+    @IBOutlet weak var imageViewController: UIImageView!
+    
+    
     var imagePicker: UIImagePickerController!
     
     var uiimage: UIImage!
     
     var gps:GpsService!
+    
+    var fusuma:FusumaViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         gps = GpsService(deniedHandler: gpsDeniedHandler)
-
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if uiimage == nil && warschonda {
+            self.navigationController?.popViewControllerAnimated(true)
+        }
     }
     
     func gpsDeniedHandler(accessGranted: Bool) {
@@ -30,6 +55,7 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
             alert.addAction(UIAlertAction(title: "Gerne", style: UIAlertActionStyle.Default, handler: openAppSettings))
             self.presentViewController(alert, animated: true, completion: takePhoto)
         } else {
+            print("open foto")
             takePhoto()
         }
     }
@@ -45,23 +71,10 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
     }
     
     func takePhoto() {
-//        imagePicker = UIImagePickerController()
-//        imagePicker.delegate = self
-//        if UIImagePickerController.isSourceTypeAvailable(.Camera) {
-//            imagePicker.sourceType = .Camera
-//        } else {
-//            imagePicker.sourceType = .PhotoLibrary
-//        }
-        
-        let fusuma = FusumaViewController()
+        fusuma = FusumaViewController()
         fusuma.delegate = self
+        self.warschonda = true
         self.presentViewController(fusuma, animated: false, completion: nil)
-        //self.initial = true
-        
-        
-       // presentViewController(imagePicker, animated: false, completion: nil)
-
-        
     }
     
     
@@ -71,38 +84,26 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
     
     func fusumaImageSelected(image: UIImage) {
         self.uiimage = image
-        //self.imageView.image = self.image
+        self.imageViewController.image = image
         self.view.alpha = 1
-        self.performSegueWithIdentifier("showPasstSo", sender: true)
+        
     }
     
     func fusumaCameraRollUnauthorized() {
         AlertService.simpleAlert(self, message: "Wir benötigen Rechte um deine Kamera zu nutzen")
     }
-    
-    /*func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        imagePicker.dismissViewControllerAnimated(false, completion: nil)
-        uiimage = info[UIImagePickerControllerOriginalImage] as? UIImage
-        
-        self.performSegueWithIdentifier("showPasstSo", sender: true)
-        
-        
-    }
-    
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        imagePicker.dismissViewControllerAnimated(false, completion: nil)
-        self.navigationController?.popViewControllerAnimated(false)
-    }*/
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showPasstSo" {
-            let controller = segue.destinationViewController as! PasstSoViewController
+        if segue.identifier == "nameYourLocation" {
+            let controller = segue.destinationViewController as! NameYourLocationViewController
             controller.uiimage = self.uiimage
             let location = gps.getMaybeCurrentLocation()
             print("setting gps coords", location.keys.first, location.values.first)
             controller.lat = location.keys.first
             controller.long = location.values.first
             gps.unsubscribeGps()
+            
+            self.uiimage = nil
 
         }
     }
