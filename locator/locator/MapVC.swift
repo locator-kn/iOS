@@ -53,7 +53,14 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     
     var previousRegion: CLLocationCoordinate2D!
     
+    var loader: LoadingView!
+    
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.loader = LoadingView(frame: self.view.frame)
+        self.loader.backgroundColor = UIColor(red: 250, green: 102, blue: 75)
+        self.view.addSubview(loader)
         
         /* hide optionmenu on load */
         self.locationBottomSpace.constant = 11
@@ -94,8 +101,10 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
                     location:location, interesting:true)
             }
         }
-        super.viewDidLoad()
+        
+       
     }
+
     
     func getNearLocations(target: CLLocationCoordinate2D, maxDistance: Float) {
         LocationService.getNearby(target.latitude, long: target.longitude, maxDistance: maxDistance, limit: 15).then { locations -> Void in
@@ -165,6 +174,10 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         if (self.locationsVisible) {
             getNearLocations(position.target, maxDistance: 0.5)
         }
+    }
+    
+    func mapViewDidFinishTileRendering(mapView: GMSMapView) {
+        self.loader.dismiss()
     }
     
     func mapView(mapView: GMSMapView, didTapInfoWindowOfMarker marker: GMSMarker) {

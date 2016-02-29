@@ -191,10 +191,12 @@ class LocationDetailVC: UITableViewController {
             var frame = cell.textView.frame
             frame.size.height = contentSize.height
             cell.textheight.constant = contentSize.height
+            
+            self.loaded[impression.id] = cell
             return cell
+        
         } else if let videoImpression = impression as? VideoImpression {
             let cell = tableView.dequeueReusableCellWithIdentifier("videoimpression", forIndexPath: indexPath) as! VideoImpressionCell
-            
             
             return cell
         }

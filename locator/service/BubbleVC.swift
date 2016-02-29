@@ -39,6 +39,8 @@ class BubbleVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "map_icon_white"), style: .Plain, target: self, action: "showMap")
+        
         addGestureRecognizer()
         
         BubbleService.getBubbles(lat, long: long, maxDistance: maxDistance, limit: limit).then { bubbles -> Void in
@@ -94,6 +96,10 @@ class BubbleVC: UIViewController {
         fifthBubbleImageView.addGestureRecognizer(fifthBubbleGesture)
         let sixthBubbleGesture = UITapGestureRecognizer(target:self, action:Selector("sixthBubbleTapped:"))
         sixthBubbleImageView.addGestureRecognizer(sixthBubbleGesture)
+        
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+        rightSwipe.direction = .Left
+        view.addGestureRecognizer(rightSwipe)
     }
     
     func schoenHierTapped(imageView: UIImageView) {
@@ -153,6 +159,17 @@ class BubbleVC: UIViewController {
                 break
             }
         }
+    }
+    
+    func handleSwipes(sender:UISwipeGestureRecognizer) {
+        if (sender.direction == .Left) {
+            print("Swipe left")
+            self.showMap()
+        }
+    }
+    
+    func showMap() {
+        self.performSegueWithIdentifier("map", sender: self)
     }
     
     func showDetailView() {

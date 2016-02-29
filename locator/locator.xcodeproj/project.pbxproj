@@ -32,6 +32,7 @@
 		5B608C9C1C49E4C100F5F0DA /* UserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B608C9B1C49E4C100F5F0DA /* UserVC.swift */; };
 		5B608CA01C4A5D3A00F5F0DA /* UserTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B608C9F1C4A5D3A00F5F0DA /* UserTabVC.swift */; };
 		5B63B2601C7B53520070AC08 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B63B25F1C7B53520070AC08 /* AlertService.swift */; };
+		5B6E10F21C84A01D00456501 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E10F11C84A01D00456501 /* LoadingView.swift */; };
 		5B90CCAF1C299A2400108693 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B90CCAE1C299A2400108693 /* UserService.swift */; };
 		5B90CCB11C29A56A00108693 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B90CCB01C29A56A00108693 /* User.swift */; };
 		5B90CCB31C2A220F00108693 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B90CCB21C2A220F00108693 /* DashboardVC.swift */; };
@@ -120,6 +121,7 @@
 		5B608C9B1C49E4C100F5F0DA /* UserVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserVC.swift; path = controller/UserVC.swift; sourceTree = SOURCE_ROOT; };
 		5B608C9F1C4A5D3A00F5F0DA /* UserTabVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserTabVC.swift; path = controller/UserTabVC.swift; sourceTree = SOURCE_ROOT; };
 		5B63B25F1C7B53520070AC08 /* AlertService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		5B6E10F11C84A01D00456501 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingView.swift; path = customViews/LoadingView.swift; sourceTree = "<group>"; };
 		5B90CCAE1C299A2400108693 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		5B90CCB01C29A56A00108693 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5B90CCB21C2A220F00108693 /* DashboardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardVC.swift; path = controller/DashboardVC.swift; sourceTree = SOURCE_ROOT; };
@@ -300,6 +302,14 @@
 			name = user;
 			sourceTree = "<group>";
 		};
+		5B6E10F01C849F9100456501 /* customView */ = {
+			isa = PBXGroup;
+			children = (
+				5B6E10F11C84A01D00456501 /* LoadingView.swift */,
+			);
+			name = customView;
+			sourceTree = "<group>";
+		};
 		5BDAB61B1C58D34F00A4D38E /* nib */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,6 +394,7 @@
 				5B44750B1C216E7A00C30445 /* service */,
 				5B44750A1C216A2600C30445 /* model */,
 				87F14D791C18604B00682709 /* controller */,
+				5B6E10F01C849F9100456501 /* customView */,
 				876290121C18797B00D2870E /* Supporting Files */,
 				87F14D781C18604B00682709 /* Products */,
 				0C379E5A93285B69727480FF /* Pods */,
@@ -616,6 +627,7 @@
 				876290231C1893DE00D2870E /* LoginVC.swift in Sources */,
 				5B0C0D981C3D505A0090FB17 /* TextImpressionVC.swift in Sources */,
 				5B44750D1C216E9600C30445 /* LocationService.swift in Sources */,
+				5B6E10F21C84A01D00456501 /* LoadingView.swift in Sources */,
 				5B42BB681C7DD961004F16D2 /* TextImpressionCell.swift in Sources */,
 				87F14D7B1C18604B00682709 /* AppDelegate.swift in Sources */,
 				5BDAB6141C5514D600A4D38E /* CAPSPageMenu.swift in Sources */,
