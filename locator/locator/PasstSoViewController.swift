@@ -12,6 +12,18 @@ class PasstSoViewController: UIViewController {
 
     @IBOutlet weak var uiImageView: UIImageView!
     
+    @IBOutlet weak var noeButton: UIButton!
+    
+    
+    @IBAction func noeButtonAction(sender: AnyObject) {
+    }
+    
+    @IBOutlet weak var jaButton: UIButton!
+    
+    @IBAction func jaButtonAction(sender: AnyObject) {
+    }
+    
+    
     var uiimage:UIImage!
     
     var lat:Double!
