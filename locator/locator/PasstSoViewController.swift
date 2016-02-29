@@ -10,25 +10,24 @@ import UIKit
 
 class PasstSoViewController: UIViewController {
 
-    @IBOutlet weak var uiImageView: UIImageView!
-    
-    @IBOutlet weak var noeButton: UIButton!
-    
-    
-    @IBAction func noeButtonAction(sender: AnyObject) {
-    }
-    
-    @IBOutlet weak var jaButton: UIButton!
-    
-    @IBAction func jaButtonAction(sender: AnyObject) {
-    }
-    
-    
     var uiimage:UIImage!
     
     var lat:Double!
     var long:Double!
     
+    @IBOutlet weak var uiImageView: UIImageView!
+    
+    @IBOutlet weak var noeButton: UIButton!
+    @IBOutlet weak var jaButton: UIButton!
+    
+    @IBAction func noeButtonAction(sender: AnyObject) {
+        print("nö")
+    }
+
+    @IBAction func jaButtonAction(sender: AnyObject) {
+        print("Ja")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         print("lalala")
