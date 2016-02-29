@@ -2704,11 +2704,12 @@
                         <segue destination="jfr-tO-4Yb" kind="show" identifier="createLocation" id="HC2-w8-Rke"/>
                         <segue destination="1XA-Ef-cjY" kind="show" identifier="showDetailLocation" id="2oh-QA-SLC"/>
                         <segue destination="G1J-vh-MOc" kind="show" identifier="showOwnProfil" id="sX6-Cx-Ga0"/>
+                        <segue destination="4Mp-XX-Glu" kind="show" identifier="map" id="ela-Fj-2Fq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ei-wX-Tab" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8433" y="175.5"/>
+            <point key="canvasLocation" x="8310" y="163"/>
         </scene>
         <!--Second NavigationVC-->
         <scene sceneID="SLV-U7-Gji">
@@ -2764,7 +2765,8 @@
         <segue reference="sX6-Cx-Ga0"/>
         <segue reference="pqk-kP-sXI"/>
         <segue reference="WG6-zk-XfW"/>
+        <segue reference="2oh-QA-SLC"/>
         <segue reference="HC2-w8-Rke"/>
-        <segue reference="d1c-kL-o1Y"/>
+        <segue reference="ela-Fj-2Fq"/>
     </inferredMetricsTieBreakers>
 </document>
