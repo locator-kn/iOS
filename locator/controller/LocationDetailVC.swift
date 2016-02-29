@@ -24,10 +24,16 @@ class LocationDetailVC: UITableViewController {
     var headerCell: LocationDetailHeaderCell!
     var naviBack: UIImageView!
     
+    var loader: LoadingView!
+    
     var loaded = [String:UITableViewCell]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.loader = LoadingView(frame: self.view.frame)
+        self.loader.backgroundColor = COLORS.blue
+        self.view.addSubview(loader)
         
         naviBack = UIImageView(frame: CGRectMake(0, 0, 500, 90))
         
@@ -41,10 +47,12 @@ class LocationDetailVC: UITableViewController {
         
         self.refreshControl = UIRefreshControl()
         self.refreshControl?.backgroundColor = COLORS.red
-        self.refreshControl!.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl?.tintColor = UIColor.whiteColor()
+        self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
 
         self.clearsSelectionOnViewWillAppear = false
         tableView.estimatedRowHeight = 300.0
+        
         tableView.rowHeight = UITableViewAutomaticDimension
     }
     
@@ -77,6 +85,7 @@ class LocationDetailVC: UITableViewController {
             self.location = location
             self.title = self.location.title
             self.refreshHeader()
+            self.loader.dismiss()
             
             ImpressionService.getImpressions(location.id).then {
                 impressions -> Void in
@@ -207,7 +216,10 @@ class LocationDetailVC: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 420.0
+        if (self.headerCell != nil) {
+                return 440.0 + self.headerCell._description.sizeThatFits(self.headerCell._description.bounds.size).height
+        }
+        return 430.0
     }
     
     override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UITableViewCell? {
