@@ -13,22 +13,41 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
     var imagePicker: UIImagePickerController!
     
     var uiimage: UIImage!
+    
     var fromTheFront:Bool = true
+    
+    
+    var gps:GpsService!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        takePhoto()
-        
-        
+        gps = GpsService(deniedHandler: gpsDeniedHandler)
+
         // Do any additional setup after loading the view.
     }
+    
+    func gpsDeniedHandler(accessGranted: Bool) {
+        if !accessGranted {
+            let alert = UIAlertController(title: "GPS aktivieren", message: "Du musst dein GPS aktivieren um eine Location zu erstellen.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Gerne", style: UIAlertActionStyle.Default, handler: openAppSettings))
+            self.presentViewController(alert, animated: true, completion: takePhoto)
+        } else {
+            takePhoto()
+        }
+    }
+    
+    func openAppSettings(a: UIAlertAction) {
+        UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
+    }
+
     
     override func viewDidDisappear(animated: Bool) {
         fromTheFront = false
     }
     
     override func viewDidAppear(animated: Bool) {
+        
+        print("view did appear")
         if !fromTheFront {
             takePhoto()
         }
@@ -60,6 +79,7 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
         uiimage = info[UIImagePickerControllerOriginalImage] as? UIImage
         self.performSegueWithIdentifier("nameYourLocation", sender: true)
         
+        
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
@@ -71,6 +91,11 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
         if (segue.identifier == "nameYourLocation") {
             let controller = segue.destinationViewController as! NameYourLocationViewController
             controller.uiimage = self.uiimage
+            let location = gps.getMaybeCurrentLocation()
+            print("setting gps coords", location.keys.first, location.values.first)
+            controller.lat = location.keys.first
+            controller.long = location.values.first
+            gps.unsubscribeGps()
         }
     }
     
