@@ -1527,7 +1527,7 @@
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
-                                <inset key="separatorInset" minX="70" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="locationImage" destination="4eQ-Ud-NA7" id="25m-J5-jVc"/>
                                     <outlet property="locationTitle" destination="k1g-PW-ymf" id="WUD-UD-bGj"/>
@@ -1659,7 +1659,7 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="Ad2-6Q-BFy" secondAttribute="bottom" constant="8" id="1Lw-iE-5CT"/>
                                 </constraints>
-                                <inset key="separatorInset" minX="70" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="1Lw-iE-5CT"/>
