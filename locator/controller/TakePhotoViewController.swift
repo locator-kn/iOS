@@ -79,7 +79,6 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
         uiimage = info[UIImagePickerControllerOriginalImage] as? UIImage
         
         self.performSegueWithIdentifier("showPasstSo", sender: true)
-        //self.performSegueWithIdentifier("nameYourLocation", sender: true)
         
         
     }
@@ -90,15 +89,7 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "nameYourLocation") {
-            let controller = segue.destinationViewController as! NameYourLocationViewController
-            controller.uiimage = self.uiimage
-            let location = gps.getMaybeCurrentLocation()
-            print("setting gps coords", location.keys.first, location.values.first)
-            controller.lat = location.keys.first
-            controller.long = location.values.first
-            gps.unsubscribeGps()
-        } else if segue.identifier == "showPasstSo" {
+        if segue.identifier == "showPasstSo" {
             let controller = segue.destinationViewController as! PasstSoViewController
             controller.uiimage = self.uiimage
             let location = gps.getMaybeCurrentLocation()
