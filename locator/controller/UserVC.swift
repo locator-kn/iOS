@@ -25,6 +25,7 @@ class UserVC: UIViewController {
     
     @IBOutlet weak var followButton: UIButton!
     @IBOutlet weak var sendMessageButton: UIButton!
+    @IBOutlet weak var gradient: UIImageView!
     
     override func viewDidLoad() {
         print("User with ID: " + self.user.id!)
@@ -40,6 +41,13 @@ class UserVC: UIViewController {
                 error -> Void in
                 print(error)
         }
+        
+        
+        let overlay: CAGradientLayer = CAGradientLayer()
+        overlay.frame = gradient.frame
+        overlay.colors = [UIColor.clearColor().CGColor, UIColor(red: 29/255, green: 29/255, blue: 29/255, alpha: 0.8).CGColor]
+        overlay.locations = [0.0, 1]
+        gradient.layer.insertSublayer(overlay, atIndex: 0)
         
         super.viewDidLoad()
         
