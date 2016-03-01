@@ -86,6 +86,10 @@ class LocationDetailVC: UITableViewController {
             self.title = self.location.title
             self.refreshHeader()
             self.loader.dismiss()
+        
+            UIView.animateWithDuration(0.5, animations: {
+                self.headerCell.alpha = 1
+            })
             
             ImpressionService.getImpressions(location.id).then {
                 impressions -> Void in
@@ -121,8 +125,9 @@ class LocationDetailVC: UITableViewController {
                 return self.headerCell
             }
             
-            let  header = tableView.dequeueReusableCellWithIdentifier("headerCell") as! LocationDetailHeaderCell
+            let header = tableView.dequeueReusableCellWithIdentifier("headerCell") as! LocationDetailHeaderCell
             header.layoutMargins = UIEdgeInsetsZero;
+            header.alpha = 0
             
             headerCell = header
             return header
@@ -327,6 +332,9 @@ class LocationDetailVC: UITableViewController {
         self.headerCell.impressionsCount.text = "0"
         self.headerCell.locationImage.image = UIImage(data: UtilService.dataFromPath(location.imagePathNormal))
         self.headerCell.city.text = location.city.title
+        self.headerCell._description.text = location.description
+        self.headerCell._description.contentInset = UIEdgeInsetsMake(-4,-5,0,0);
+        
     }
 
 }
