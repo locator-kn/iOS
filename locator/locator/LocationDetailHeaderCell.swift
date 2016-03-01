@@ -17,9 +17,6 @@ class LocationDetailHeaderCell: UITableViewCell {
     @IBOutlet weak var username: UIButton!
     @IBOutlet weak var city: UILabel!
     
-    @IBOutlet weak var _descriptionLabel: UILabel!
-    @IBOutlet weak var _description: UITextView!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

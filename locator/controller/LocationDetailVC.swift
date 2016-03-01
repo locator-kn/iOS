@@ -226,9 +226,6 @@ class LocationDetailVC: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if (self.headerCell != nil) {
-                return 440.0 + self.headerCell._description.sizeThatFits(self.headerCell._description.bounds.size).height
-        }
         return 430.0
     }
     
@@ -337,8 +334,6 @@ class LocationDetailVC: UITableViewController {
         self.headerCell.impressionsCount.text = "0"
         self.headerCell.locationImage.image = UIImage(data: UtilService.dataFromPath(location.imagePathNormal))
         self.headerCell.city.text = location.city.title
-        self.headerCell._description.text = location.description
-        self.headerCell._description.contentInset = UIEdgeInsetsMake(-4,-5,0,0);
         
     }
 
