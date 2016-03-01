@@ -59,7 +59,7 @@ class UserTabVC: UIViewController {
             .MenuItemSeparatorPercentageHeight(0.1),
             .ViewBackgroundColor(UIColor(red: 255/0, green: 255/0, blue: 255/0, alpha: 0)),
             .ScrollMenuBackgroundColor(UIColor(red: 255/0, green: 255/0, blue: 255/0, alpha: 0)),
-            .MenuItemFont(UIFont(name: "SourceSansPro-Regular", size: 18)!),
+            .MenuItemFont(UIFont(name: "SourceSansPro-Bold", size: 18)!),
             .MenuHeight (50),
             .EnableHorizontalBounce(false)
         ]
