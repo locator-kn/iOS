@@ -29,6 +29,7 @@ class User {
     var locations:[Location]?
     var follower:[User]?
     var followedBy:[User]?
+    var following: [String]?
     
     init(id:String) {
         self.id = id
