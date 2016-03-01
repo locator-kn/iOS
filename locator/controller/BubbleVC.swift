@@ -54,9 +54,8 @@ class BubbleVC: UIViewController {
         
         BubbleService.getBubbles(lat!, long: long!, maxDistance: maxDistance, limit: limit).then { bubbles -> Void in
 
-            
-            for (index, element) in bubbles.enumerate() {
-                self.locations.append(element)
+            self.locations = bubbles
+            for (index, element) in self.locations.enumerate() {
                 self.loadLocationImage(index, urlPath: element.imagePathNormal)
             }
             
