@@ -22,6 +22,8 @@ class NameYourLocationViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+
+        self.view.backgroundColor = COLORS.black
         
         self.title = "Bennene deine Location"
         

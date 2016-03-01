@@ -233,7 +233,7 @@ class BubbleVC: UIViewController {
                 destinationVC.location = detailLocation
             }
         } else if (segue.identifier == "showOwnProfil") {
-            if let destinationVC: UserVC = segue.destinationViewController as? UserVC {
+            if let _: UserVC = segue.destinationViewController as? UserVC {
                 
             }
         } else if let destinationVC: MapVC = segue.destinationViewController as? MapVC {
