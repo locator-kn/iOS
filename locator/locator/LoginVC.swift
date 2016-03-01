@@ -19,7 +19,7 @@ class LoginVC: UIViewController {
     let borderColor = UIColor.whiteColor().CGColor
     let borderCornerRadius = 15.0
     
-    let facebookReadPermissions = ["public_profile", "email", "user_friends"]
+    let facebookReadPermissions = ["public_profile", "email"]
     let facebookManager = FBSDKLoginManager()
     
     override func viewDidLoad() {
