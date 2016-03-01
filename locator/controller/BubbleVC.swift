@@ -11,9 +11,7 @@ import PromiseKit
 
 class BubbleVC: UIViewController {
     
-    //let long = 9.169753789901733
-    //let lat = 47.66868204997508
-    let maxDistance: Float = 2.0
+    let maxDistance: Float = 20000.0
     let limit = 6
     let colorRed = Color.red()
     
@@ -53,7 +51,7 @@ class BubbleVC: UIViewController {
         let location = gps.getMaybeCurrentLocation()
         let lat = location.keys.first
         let long = location.values.first
-                
+        
         BubbleService.getBubbles(lat!, long: long!, maxDistance: maxDistance, limit: limit).then { bubbles -> Void in
 
             
