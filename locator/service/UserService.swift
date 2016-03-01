@@ -95,7 +95,12 @@ class UserService {
             
             Alamofire.request(.GET, API.USER_PROTECTED).validate().responseJSON {
                 response in
-                fulfill((response.response?.statusCode)!)
+                
+                if response.response != nil {
+                    fulfill((response.response!.statusCode))
+                } else {
+                    fulfill(401)
+                }
             }
         }
     }
