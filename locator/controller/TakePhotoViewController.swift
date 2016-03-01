@@ -40,6 +40,8 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = COLORS.black
+        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "cross"), style: .Plain, target: self, action: "close")
         
         gps = GpsService(deniedHandler: gpsDeniedHandler)

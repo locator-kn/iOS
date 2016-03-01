@@ -145,6 +145,8 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
 
         super.viewDidLoad()
         
+        self.view.backgroundColor = COLORS.black
+        
         self.title = "Kategorien wählen"
         
         culture.alpha = 0.4

@@ -25,6 +25,7 @@ class ImageImpressionVC: UIViewController, UINavigationControllerDelegate, Fusum
     override func viewDidLoad() {
         self.view.alpha = 0
         super.viewDidLoad()
+        self.view.backgroundColor = COLORS.black
     }
     
     override func viewDidAppear(animated: Bool) {
