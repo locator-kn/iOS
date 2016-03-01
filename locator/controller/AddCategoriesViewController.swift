@@ -44,22 +44,28 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
     
     var createdLocation:Location!
     
+    var loader:LoadingView!
+    
     
     @IBAction func nextAction(sender: AnyObject) {
         if nextEnabled {
             print("weiter gehts")
             //
             
-            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("test") as! LoadingAnimationViewController
-            self.presentViewController(vc, animated: true, completion: nil)
+            //let vc = self.storyboard!.instantiateViewControllerWithIdentifier("test") as! LoadingAnimationViewController
+            //self.presentViewController(vc, animated: true, completion: nil)
+            
+            self.loader = LoadingView(frame: self.view.frame)
+            self.loader.backgroundColor = COLORS.red
+            self.view.addSubview(loader)
             
             // TODO handle nil of lat and long
             LocationService.createNewLocation(uiimage, categories: selectedCategories, locationTitle: locationTitle, lat: String(format:"%f", lat), long: String(format:"%f", long)).then{
                 result -> Void in
                 
                 self.createdLocation = result
-
-                self.dismissViewControllerAnimated(true, completion: nil)
+                self.loader.dismiss()
+                //self.dismissViewControllerAnimated(true, completion: nil)
 
                 self.performSegueWithIdentifier("showNewLocation", sender: true)
                 
