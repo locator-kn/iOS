@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PromiseKit
 
 class BubbleVC: UIViewController {
     
@@ -24,7 +25,7 @@ class BubbleVC: UIViewController {
     // Schoenhier
     @IBOutlet weak var schoenHierImageView: UIImageView!
     // UserProfil
-    @IBOutlet weak var userProfilImageView: BubbleView!
+    @IBOutlet weak var userProfilImageView: UIImageView!
     // First Bubble
     @IBOutlet weak var firstBubbleImageView: BubbleView!
     // Second Bubble
@@ -43,21 +44,25 @@ class BubbleVC: UIViewController {
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "map_icon_white"), style: .Plain, target: self, action: "showMap")
         
-        addGestureRecognizer()
-        
         gps = GpsService(deniedHandler: gpsDeniedHandler)
+        addGestureRecognizer()
+        self.loadBubbles()
+    }
+    
+    func loadBubbles() {
         let location = gps.getMaybeCurrentLocation()
         let lat = location.keys.first
         let long = location.values.first
+                
         BubbleService.getBubbles(lat!, long: long!, maxDistance: maxDistance, limit: limit).then { bubbles -> Void in
+
             
             for (index, element) in bubbles.enumerate() {
                 self.locations.append(element)
                 self.loadLocationImage(index, urlPath: element.imagePathNormal)
             }
             
-            }
-            .then {
+            }.then {
                 result -> Void in
                 self.reloadInputViews()
                 
@@ -67,8 +72,28 @@ class BubbleVC: UIViewController {
                 self.fourthBubbleImageView.show()
                 self.fifthBubbleImageView.show()
                 self.sixthBubbleImageView.show()
-                
-                
+        }
+    }
+    
+    override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        if motion == .MotionShake {
+            
+            let prom1 = self.firstBubbleImageView.hide()
+            let prom2 = self.secondBubbleImageView.hide()
+            let prom3 = self.thirdBubbleImageView.hide()
+            let prom4 = self.fourthBubbleImageView.hide()
+            let prom5 = self.fifthBubbleImageView.hide()
+            let prom6 = self.sixthBubbleImageView.hide()
+            
+            when(prom1, prom2, prom3, prom4, prom5, prom6).then {
+                result -> Void in
+                self.loadBubbles()
+            }
+            
         }
     }
     
