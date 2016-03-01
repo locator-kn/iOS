@@ -122,6 +122,15 @@
 		5B608C981C49DF2500F5F0DA /* LocationListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationListVC.swift; path = controller/LocationListVC.swift; sourceTree = SOURCE_ROOT; };
 		5B608C9B1C49E4C100F5F0DA /* UserVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserVC.swift; path = controller/UserVC.swift; sourceTree = SOURCE_ROOT; };
 		5B608C9F1C4A5D3A00F5F0DA /* UserTabVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserTabVC.swift; path = controller/UserTabVC.swift; sourceTree = SOURCE_ROOT; };
+		5B60DAA41C86362100303E98 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "Pods/../build/Debug-iphoneos/Bolts.framework"; sourceTree = "<group>"; };
+		5B60DAA51C86362100303E98 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		5B60DAA61C86362100303E98 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		5B60DAA71C86362100303E98 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKShareKit.framework"; sourceTree = "<group>"; };
+		5B60DAA81C86362100303E98 /* Fusuma.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fusuma.framework; path = "Pods/../build/Debug-iphoneos/Fusuma.framework"; sourceTree = "<group>"; };
+		5B60DAA91C86362100303E98 /* Haneke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Haneke.framework; path = "Pods/../build/Debug-iphoneos/Haneke.framework"; sourceTree = "<group>"; };
+		5B60DAAA1C86362100303E98 /* OMGHTTPURLRQ.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OMGHTTPURLRQ.framework; path = "Pods/../build/Debug-iphoneos/OMGHTTPURLRQ.framework"; sourceTree = "<group>"; };
+		5B60DAAB1C86362100303E98 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = "Pods/../build/Debug-iphoneos/PromiseKit.framework"; sourceTree = "<group>"; };
+		5B60DAAC1C86362100303E98 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		5B63B25F1C7B53520070AC08 /* AlertService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		5B6E10F11C84A01D00456501 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingView.swift; path = customViews/LoadingView.swift; sourceTree = "<group>"; };
 		5B90CCAE1C299A2400108693 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -212,6 +221,15 @@
 		28C8E3043479B3786F84B281 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5B60DAA41C86362100303E98 /* Bolts.framework */,
+				5B60DAA51C86362100303E98 /* FBSDKCoreKit.framework */,
+				5B60DAA61C86362100303E98 /* FBSDKLoginKit.framework */,
+				5B60DAA71C86362100303E98 /* FBSDKShareKit.framework */,
+				5B60DAA81C86362100303E98 /* Fusuma.framework */,
+				5B60DAA91C86362100303E98 /* Haneke.framework */,
+				5B60DAAA1C86362100303E98 /* OMGHTTPURLRQ.framework */,
+				5B60DAAB1C86362100303E98 /* PromiseKit.framework */,
+				5B60DAAC1C86362100303E98 /* SwiftyJSON.framework */,
 				9F065E9F82669863AC08B17B /* Pods_locator.framework */,
 			);
 			name = Frameworks;
@@ -764,11 +782,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = locator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.locator-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -779,11 +802,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = locator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.locator-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
