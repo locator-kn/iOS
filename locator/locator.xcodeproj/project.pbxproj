@@ -15,6 +15,7 @@
 		5B0C0D9C1C3FE2F80090FB17 /* ImageImpressionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0C0D9B1C3FE2F80090FB17 /* ImageImpressionVC.swift */; };
 		5B1E6B8A1C7F57840016B404 /* LocationDetailHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E6B891C7F57840016B404 /* LocationDetailHeaderCell.swift */; };
 		5B1E6B8C1C80A48A0016B404 /* VideoImpressionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E6B8B1C80A48A0016B404 /* VideoImpressionCell.swift */; };
+		5B2654C21C85E49800823EBF /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2654C11C85E49800823EBF /* BubbleView.swift */; };
 		5B410D701C4CF78500B11471 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B410D6F1C4CF78500B11471 /* LocationCell.swift */; };
 		5B410D721C4E4A3000B11471 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B410D711C4E4A3000B11471 /* City.swift */; };
 		5B410D741C4F989600B11471 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B410D731C4F989600B11471 /* UserCell.swift */; };
@@ -104,6 +105,7 @@
 		5B0C0D9B1C3FE2F80090FB17 /* ImageImpressionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageImpressionVC.swift; path = controller/ImageImpressionVC.swift; sourceTree = SOURCE_ROOT; };
 		5B1E6B891C7F57840016B404 /* LocationDetailHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailHeaderCell.swift; sourceTree = "<group>"; };
 		5B1E6B8B1C80A48A0016B404 /* VideoImpressionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoImpressionCell.swift; sourceTree = "<group>"; };
+		5B2654C11C85E49800823EBF /* BubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleView.swift; path = customViews/BubbleView.swift; sourceTree = "<group>"; };
 		5B410D6F1C4CF78500B11471 /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationCell.swift; path = locator/LocationCell.swift; sourceTree = "<group>"; };
 		5B410D711C4E4A3000B11471 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		5B410D731C4F989600B11471 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				5B6E10F11C84A01D00456501 /* LoadingView.swift */,
+				5B2654C11C85E49800823EBF /* BubbleView.swift */,
 			);
 			name = customView;
 			sourceTree = "<group>";
@@ -641,6 +644,7 @@
 				5B091F0A1C83AA360064F03A /* SecondNavigationVC.swift in Sources */,
 				CC857BE61C81E72900776731 /* Gif.swift in Sources */,
 				876CAA7E1C3BFEAF002A36FF /* RegisterVC1.swift in Sources */,
+				5B2654C21C85E49800823EBF /* BubbleView.swift in Sources */,
 				5BAC93E11C2824A500FE502F /* UtilService.swift in Sources */,
 				5BEA72BE1C34B530005220CD /* AudioImpression.swift in Sources */,
 				5B091F081C834FC80064F03A /* VideoImpressionVC.swift in Sources */,

@@ -103,6 +103,9 @@
                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="35"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="20" y="454" width="560" height="88"/>
+                                </variation>
                                 <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
                                     <rect key="frame" x="20" y="454" width="360" height="88"/>
                                 </variation>
@@ -2459,7 +2462,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="W8Q-D5-2ee">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="W8Q-D5-2ee" customClass="BubbleView" customModule="locator" customModuleProvider="target">
                                 <rect key="frame" x="46" y="15" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="0hM-Zq-2Yy">
@@ -2482,7 +2485,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="UJf-Py-dXU">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="UJf-Py-dXU" customClass="BubbleView" customModule="locator" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="BVm-1y-VHu">
@@ -2505,7 +2508,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="RFy-Bg-51N">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="RFy-Bg-51N" customClass="BubbleView" customModule="locator" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="AEC-eQ-NTc"/>
@@ -2524,7 +2527,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="uai-va-mhn">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="uai-va-mhn" customClass="BubbleView" customModule="locator" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="8mO-bJ-apu"/>
@@ -2543,7 +2546,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="Zwi-n6-4k8">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="Zwi-n6-4k8" customClass="BubbleView" customModule="locator" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="9ro-iS-mSf"/>
@@ -2562,7 +2565,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="lhe-2R-F46">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baum" translatesAutoresizingMaskIntoConstraints="NO" id="lhe-2R-F46" customClass="BubbleView" customModule="locator" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="JnP-p6-pRt"/>
@@ -2800,7 +2803,7 @@
         <segue reference="LgZ-gd-7kD"/>
         <segue reference="WG6-zk-XfW"/>
         <segue reference="ela-Fj-2Fq"/>
+        <segue reference="2oh-QA-SLC"/>
         <segue reference="Mj3-i4-FhS"/>
-        <segue reference="C0z-Ed-tMO"/>
     </inferredMetricsTieBreakers>
 </document>
