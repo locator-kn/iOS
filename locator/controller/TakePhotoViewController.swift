@@ -39,6 +39,9 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "cross"), style: .Plain, target: self, action: "close")
+        
         gps = GpsService(deniedHandler: gpsDeniedHandler)
         // Do any additional setup after loading the view.
     }
@@ -106,6 +109,10 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
             self.uiimage = nil
 
         }
+    }
+    
+    func close() {
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
 
