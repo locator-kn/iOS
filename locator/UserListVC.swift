@@ -26,7 +26,7 @@ class UserListVC: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        self.tableView.rowHeight = 90
+        self.tableView.rowHeight = 80
         
         if (showFollower) {
             self.getFollower()
