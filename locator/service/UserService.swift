@@ -26,7 +26,15 @@ class UserService {
             imagePathNormal = API.IMAGE_URL + json["picture"].string!
             imagePathThumb = API.IMAGE_URL + json["thumb"].string!
         }
-        return User(id: id, email: email, name: name, imagePathNormal: imagePathNormal, imagePathThumb: imagePathThumb, residence: residence)
+        
+        var following = [String]()
+        for (_,subJson):(String, JSON) in json["following"] {
+            following.append(subJson.string!)
+        }
+        let user = User(id: id, email: email, name: name, imagePathNormal: imagePathNormal, imagePathThumb: imagePathThumb, residence: residence)
+        user.following = following
+        
+        return user
     }
     
     static func login(mail:String, password:String) -> Promise<User> {
