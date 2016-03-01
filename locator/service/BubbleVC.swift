@@ -81,7 +81,10 @@ class BubbleVC: UIViewController {
     
     func addGestureRecognizer() {
         let schoenHierGesture = UITapGestureRecognizer(target:self, action:Selector("schoenHierTapped:"))
+        let schoenHierGesture_hold = UILongPressGestureRecognizer(target:self, action:Selector("schonHierLongPress:"))
         schoenHierImageView.addGestureRecognizer(schoenHierGesture)
+        schoenHierImageView.addGestureRecognizer(schoenHierGesture_hold)
+        
         let userProfileGesture = UITapGestureRecognizer(target:self, action:Selector("userProfileTapped:"))
         userProfilImageView.addGestureRecognizer(userProfileGesture)
         let firstBubbleGesture = UITapGestureRecognizer(target:self, action:Selector("firstBubbleTapped:"))
@@ -103,6 +106,10 @@ class BubbleVC: UIViewController {
     }
     
     func schoenHierTapped(imageView: UIImageView) {
+        performSegueWithIdentifier("map", sender: self)
+    }
+    
+    func schonHierLongPress(imageView: UIImageView) {
         performSegueWithIdentifier("createLocation", sender: self)
     }
     
@@ -186,6 +193,8 @@ class BubbleVC: UIViewController {
             if let destinationVC: UserVC = segue.destinationViewController as? UserVC {
                 
             }
+        } else if let destinationVC: MapVC = segue.destinationViewController as? MapVC {
+            destinationVC.initialSchoenHier = true
         }
     }
     
