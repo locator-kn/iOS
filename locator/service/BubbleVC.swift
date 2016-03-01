@@ -22,19 +22,19 @@ class BubbleVC: UIViewController {
     // Schoenhier
     @IBOutlet weak var schoenHierImageView: UIImageView!
     // UserProfil
-    @IBOutlet weak var userProfilImageView: UIImageView!
+    @IBOutlet weak var userProfilImageView: BubbleView!
     // First Bubble
-    @IBOutlet weak var firstBubbleImageView: UIImageView!
+    @IBOutlet weak var firstBubbleImageView: BubbleView!
     // Second Bubble
-    @IBOutlet weak var secondBubbleImageView: UIImageView!
+    @IBOutlet weak var secondBubbleImageView: BubbleView!
     // Third Bubble
-    @IBOutlet weak var thirdBubbleImageView: UIImageView!
+    @IBOutlet weak var thirdBubbleImageView: BubbleView!
     // Fourth Bubble
-    @IBOutlet weak var fourthBubbleImageView: UIImageView!
+    @IBOutlet weak var fourthBubbleImageView: BubbleView!
     // Fifth Bubble
-    @IBOutlet weak var fifthBubbleImageView: UIImageView!
+    @IBOutlet weak var fifthBubbleImageView: BubbleView!
     // Sixth Bubble
-    @IBOutlet weak var sixthBubbleImageView: UIImageView!
+    @IBOutlet weak var sixthBubbleImageView: BubbleView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +52,17 @@ class BubbleVC: UIViewController {
             
             }
             .then {
+                result -> Void in
                 self.reloadInputViews()
+                
+                self.firstBubbleImageView.show()
+                self.secondBubbleImageView.show()
+                self.thirdBubbleImageView.show()
+                self.fourthBubbleImageView.show()
+                self.fifthBubbleImageView.show()
+                self.sixthBubbleImageView.show()
+                
+                
         }
     }
     
