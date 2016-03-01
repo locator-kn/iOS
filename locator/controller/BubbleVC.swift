@@ -24,19 +24,19 @@ class BubbleVC: UIViewController {
     // Schoenhier
     @IBOutlet weak var schoenHierImageView: UIImageView!
     // UserProfil
-    @IBOutlet weak var userProfilImageView: UIImageView!
+    @IBOutlet weak var userProfilImageView: BubbleView!
     // First Bubble
-    @IBOutlet weak var firstBubbleImageView: UIImageView!
+    @IBOutlet weak var firstBubbleImageView: BubbleView!
     // Second Bubble
-    @IBOutlet weak var secondBubbleImageView: UIImageView!
+    @IBOutlet weak var secondBubbleImageView: BubbleView!
     // Third Bubble
-    @IBOutlet weak var thirdBubbleImageView: UIImageView!
+    @IBOutlet weak var thirdBubbleImageView: BubbleView!
     // Fourth Bubble
-    @IBOutlet weak var fourthBubbleImageView: UIImageView!
+    @IBOutlet weak var fourthBubbleImageView: BubbleView!
     // Fifth Bubble
-    @IBOutlet weak var fifthBubbleImageView: UIImageView!
+    @IBOutlet weak var fifthBubbleImageView: BubbleView!
     // Sixth Bubble
-    @IBOutlet weak var sixthBubbleImageView: UIImageView!
+    @IBOutlet weak var sixthBubbleImageView: BubbleView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +58,17 @@ class BubbleVC: UIViewController {
             
             }
             .then {
+                result -> Void in
                 self.reloadInputViews()
+                
+                self.firstBubbleImageView.show()
+                self.secondBubbleImageView.show()
+                self.thirdBubbleImageView.show()
+                self.fourthBubbleImageView.show()
+                self.fifthBubbleImageView.show()
+                self.sixthBubbleImageView.show()
+                
+                
         }
     }
     
@@ -91,7 +101,10 @@ class BubbleVC: UIViewController {
     
     func addGestureRecognizer() {
         let schoenHierGesture = UITapGestureRecognizer(target:self, action:Selector("schoenHierTapped:"))
+        let schoenHierGesture_hold = UILongPressGestureRecognizer(target:self, action:Selector("schonHierLongPress:"))
         schoenHierImageView.addGestureRecognizer(schoenHierGesture)
+        schoenHierImageView.addGestureRecognizer(schoenHierGesture_hold)
+        
         let userProfileGesture = UITapGestureRecognizer(target:self, action:Selector("userProfileTapped:"))
         userProfilImageView.addGestureRecognizer(userProfileGesture)
         let firstBubbleGesture = UITapGestureRecognizer(target:self, action:Selector("firstBubbleTapped:"))
@@ -113,6 +126,10 @@ class BubbleVC: UIViewController {
     }
     
     func schoenHierTapped(imageView: UIImageView) {
+        performSegueWithIdentifier("map", sender: self)
+    }
+    
+    func schonHierLongPress(imageView: UIImageView) {
         performSegueWithIdentifier("createLocation", sender: self)
     }
     
@@ -196,6 +213,8 @@ class BubbleVC: UIViewController {
             if let destinationVC: UserVC = segue.destinationViewController as? UserVC {
                 
             }
+        } else if let destinationVC: MapVC = segue.destinationViewController as? MapVC {
+            destinationVC.initialSchoenHier = true
         }
     }
     

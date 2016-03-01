@@ -21,6 +21,7 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     var nearLocations = [String: Location]()
     var nearSchoenHiers = [String: SchoenHier]()
     var locationsOfInterest = [String: Location]()
+    var initialSchoenHier = false
     
     var locationMarkers = [GMSMarker]()
     var schoenHierMarkers = [GMSMarker]()
@@ -203,6 +204,10 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         
         if let location = locations.first{
             googleMap.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+            
+            if self.initialSchoenHier {
+                self.schoenHier(self)
+            }
             locationManager.stopUpdatingLocation()
         }
     }
@@ -212,7 +217,13 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     }
     
     @IBAction func schoenHier(sender: AnyObject) {
-        LocationService.schonHier(googleMap.myLocation!.coordinate.latitude, long: googleMap.myLocation!.coordinate.longitude).then {
+        
+        var location = self.googleMap.myLocation
+        if googleMap.myLocation == nil {
+            location = self.locationManager.location!
+        }
+        
+        LocationService.schonHier(location!.coordinate.latitude, long: location!.coordinate.longitude).then {
             schoenHier -> Void in
             print("Success")
             self.getNearSchoenHiers(self.googleMap.myLocation!.coordinate, maxDistance: 0.2)
