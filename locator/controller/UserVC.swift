@@ -42,6 +42,7 @@ class UserVC: UIViewController {
                 print(error)
         }
         
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "home"), style: .Plain, target: self, action: "home")
         
         let overlay: CAGradientLayer = CAGradientLayer()
         overlay.frame = gradient.frame
@@ -60,6 +61,10 @@ class UserVC: UIViewController {
     
     @IBAction func back(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func home() {
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
     func updateView() {
