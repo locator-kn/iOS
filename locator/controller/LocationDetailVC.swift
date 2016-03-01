@@ -47,7 +47,7 @@ class LocationDetailVC: UITableViewController {
         view.addSubview(naviBack)
         
         self.refreshControl = UIRefreshControl()
-        self.refreshControl?.backgroundColor = COLORS.red
+        self.refreshControl?.backgroundColor = COLORS.blue
         self.refreshControl?.tintColor = UIColor.whiteColor()
         self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
 

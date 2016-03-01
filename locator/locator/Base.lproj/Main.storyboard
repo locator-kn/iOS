@@ -752,10 +752,10 @@
                                             </variation>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nb7-ZO-dd5" userLabel="favorButton">
-                                            <rect key="frame" x="568" y="227" width="20" height="20"/>
+                                            <rect key="frame" x="563" y="222" width="25" height="25"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="20" id="83P-cx-q1B"/>
-                                                <constraint firstAttribute="height" constant="20" id="WRb-6E-Mck"/>
+                                                <constraint firstAttribute="width" constant="25" id="83P-cx-q1B"/>
+                                                <constraint firstAttribute="height" constant="25" id="WRb-6E-Mck"/>
                                             </constraints>
                                             <state key="normal" image="favorite_icon"/>
                                             <connections>
@@ -763,13 +763,13 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pW9-vX-Di4" userLabel="mapButton">
-                                            <rect key="frame" x="537" y="226" width="23" height="23"/>
+                                            <rect key="frame" x="520" y="221" width="25" height="25"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="23" id="Y8k-t6-s0K"/>
-                                                <constraint firstAttribute="width" constant="23" id="vOw-xP-A9e"/>
+                                                <constraint firstAttribute="height" constant="25" id="Y8k-t6-s0K"/>
+                                                <constraint firstAttribute="width" constant="25" id="vOw-xP-A9e"/>
                                             </constraints>
                                             <inset key="contentEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
-                                            <state key="normal" title="Button" image="map_icon_white"/>
+                                            <state key="normal" title="Button" backgroundImage="map_icon_white"/>
                                             <connections>
                                                 <segue destination="4Mp-XX-Glu" kind="show" identifier="map" id="Q9G-yB-4zn"/>
                                             </connections>
@@ -787,7 +787,7 @@
                                             </variation>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite_icon_black" translatesAutoresizingMaskIntoConstraints="NO" id="Kyk-PS-lC3">
-                                            <rect key="frame" x="87" y="296" width="11" height="9"/>
+                                            <rect key="frame" x="89" y="296" width="11" height="9"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="9" id="acY-e9-l2v"/>
                                                 <constraint firstAttribute="width" constant="11" id="qiV-xO-6S5"/>
@@ -917,7 +917,7 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="XDq-gz-AVD" secondAttribute="trailing" constant="25" id="2t8-MH-LHJ"/>
                                         <constraint firstItem="ZSP-fm-YDO" firstAttribute="leading" secondItem="E6c-8O-3Ua" secondAttribute="leading" id="4BZ-qB-CEZ"/>
                                         <constraint firstItem="Kyk-PS-lC3" firstAttribute="top" secondItem="2Uv-6R-lJs" secondAttribute="top" constant="6" id="4m7-ul-CYm"/>
-                                        <constraint firstItem="nb7-ZO-dd5" firstAttribute="leading" secondItem="pW9-vX-Di4" secondAttribute="trailing" constant="8" id="5Pz-SE-ymn"/>
+                                        <constraint firstItem="nb7-ZO-dd5" firstAttribute="leading" secondItem="pW9-vX-Di4" secondAttribute="trailing" constant="18" id="5Pz-SE-ymn"/>
                                         <constraint firstItem="lmP-I0-6Be" firstAttribute="top" secondItem="ZSP-fm-YDO" secondAttribute="bottom" constant="8" id="5nC-7P-h1i"/>
                                         <constraint firstItem="kbi-3c-e8u" firstAttribute="baseline" secondItem="K8S-st-ZK4" secondAttribute="baseline" id="6bB-wi-IFl"/>
                                         <constraint firstItem="pW9-vX-Di4" firstAttribute="top" secondItem="nb7-ZO-dd5" secondAttribute="top" constant="-1" id="AoY-pG-Nct"/>
@@ -928,7 +928,7 @@
                                         <constraint firstItem="vE5-IY-R4z" firstAttribute="leading" secondItem="E6c-8O-3Ua" secondAttribute="leadingMargin" id="OXD-8t-Bsm"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="kbi-3c-e8u" secondAttribute="trailing" id="PD1-tF-y5k"/>
                                         <constraint firstItem="vE5-IY-R4z" firstAttribute="top" secondItem="K8S-st-ZK4" secondAttribute="bottom" constant="17" id="Pvg-jE-rvA"/>
-                                        <constraint firstItem="Kyk-PS-lC3" firstAttribute="leading" secondItem="2Uv-6R-lJs" secondAttribute="trailing" constant="1" id="Qxg-LV-YSJ"/>
+                                        <constraint firstItem="Kyk-PS-lC3" firstAttribute="leading" secondItem="2Uv-6R-lJs" secondAttribute="trailing" constant="3" id="Qxg-LV-YSJ"/>
                                         <constraint firstItem="K8S-st-ZK4" firstAttribute="top" secondItem="Kyk-PS-lC3" secondAttribute="bottom" constant="23" id="VVr-PX-DBq"/>
                                         <constraint firstItem="ckI-cM-stC" firstAttribute="leading" secondItem="E6c-8O-3Ua" secondAttribute="leadingMargin" id="buv-sq-pPO"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="K8S-st-ZK4" secondAttribute="leading" id="gMm-YV-WUa"/>
