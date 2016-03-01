@@ -22,7 +22,7 @@ class BubbleVC: UIViewController {
     // Schoenhier
     @IBOutlet weak var schoenHierImageView: UIImageView!
     // UserProfil
-    @IBOutlet weak var userProfilImageView: BubbleView!
+    @IBOutlet weak var userProfilImageView: UIImageView!
     // First Bubble
     @IBOutlet weak var firstBubbleImageView: BubbleView!
     // Second Bubble
