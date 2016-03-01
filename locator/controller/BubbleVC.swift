@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PromiseKit
 
 class BubbleVC: UIViewController {
     
@@ -43,15 +44,20 @@ class BubbleVC: UIViewController {
         
         addGestureRecognizer()
         
-        BubbleService.getBubbles(lat, long: long, maxDistance: maxDistance, limit: limit).then { bubbles -> Void in
+        self.loadBubles()
+    }
+    
+    func loadBubles() {
+        
+        BubbleService.getBubbles(lat, long: long, maxDistance: maxDistance, limit: limit).then {
+            bubbles -> Void in
             
             for (index, element) in bubbles.enumerate() {
                 self.locations.append(element)
                 self.loadLocationImage(index, urlPath: element.imagePathNormal)
             }
             
-            }
-            .then {
+            }.then {
                 result -> Void in
                 self.reloadInputViews()
                 
@@ -61,8 +67,28 @@ class BubbleVC: UIViewController {
                 self.fourthBubbleImageView.show()
                 self.fifthBubbleImageView.show()
                 self.sixthBubbleImageView.show()
-                
-                
+        }
+    }
+    
+    override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        if motion == .MotionShake {
+            
+            let prom1 = self.firstBubbleImageView.hide()
+            let prom2 = self.secondBubbleImageView.hide()
+            let prom3 = self.thirdBubbleImageView.hide()
+            let prom4 = self.fourthBubbleImageView.hide()
+            let prom5 = self.fifthBubbleImageView.hide()
+            let prom6 = self.sixthBubbleImageView.hide()
+            
+            when(prom1, prom2, prom3, prom4, prom5, prom6).then {
+                result -> Void in
+                self.loadBubles()
+            }
+            
         }
     }
     
