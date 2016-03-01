@@ -31,6 +31,7 @@ class LocationDetailVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "home"), style: .Plain, target: self, action: "home")
         self.loader = LoadingView(frame: self.view.frame)
         self.loader.backgroundColor = COLORS.blue
         self.view.addSubview(loader)
@@ -105,6 +106,10 @@ class LocationDetailVC: UITableViewController {
     
     func refresh(sender:AnyObject) {
         self.loadData()
+    }
+    
+    func home() {
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
 
     override func didReceiveMemoryWarning() {
