@@ -56,7 +56,7 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
             //self.presentViewController(vc, animated: true, completion: nil)
             
             self.loader = LoadingView(frame: self.view.frame)
-            self.loader.backgroundColor = COLORS.red
+            self.loader.backgroundColor = COLORS.black
             self.view.addSubview(loader)
             
             // TODO handle nil of lat and long
