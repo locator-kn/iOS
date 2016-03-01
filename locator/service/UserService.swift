@@ -59,7 +59,7 @@ class UserService {
         }
     }
     
-    static func register(mail:String, password:String, name: String, residence: String) -> Promise<AnyObject> {
+    static func register(mail:String, password:String, name: String, residence: String) -> Promise<User> {
         
         return Promise { fulfill, reject in
             
@@ -71,15 +71,19 @@ class UserService {
                 switch response.result {
                 case .Success:
                     
-//                    if let value = response.result.value {
-//                        let json = JSON(value)
-//                        
+                    
+                    
+                    if let value = response.result.value {
+                        let json = JSON(value)
+                        
+                        let user = jsonToUser(json)
+                        
 //                        let id = json["_id"].string
 //                        let name = json["name"].string
 //                        let email = json["mail"].string
-//                        
-                        fulfill("Success")
-//                    }
+//
+                        fulfill(user)
+                    }
                     
                 case .Failure(let error):
                     
