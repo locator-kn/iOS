@@ -15,10 +15,9 @@ class TextImpressionVC: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        textField.delegate = self //set delegate to textfile
-        print("open textimpression for location: " + self.locationId)
-
-        // Do any additional setup after loading the view.
+        textField.delegate = self
+        self.view.backgroundColor = COLORS.yellow
+        self.textField.becomeFirstResponder()
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
