@@ -44,10 +44,10 @@ class BubbleVC: UIViewController {
         
         addGestureRecognizer()
         
-        self.loadBubles()
+        self.loadBubbles()
     }
     
-    func loadBubles() {
+    func loadBubbles() {
         
         BubbleService.getBubbles(lat, long: long, maxDistance: maxDistance, limit: limit).then {
             bubbles -> Void in
@@ -86,7 +86,7 @@ class BubbleVC: UIViewController {
             
             when(prom1, prom2, prom3, prom4, prom5, prom6).then {
                 result -> Void in
-                self.loadBubles()
+                self.loadBubbles()
             }
             
         }
