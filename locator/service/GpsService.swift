@@ -36,33 +36,6 @@ class GpsService: NSObject, CLLocationManagerDelegate {
         self.locationManager.distanceFilter = 5.0
         self.locationManager.delegate = self
     }
-    /*
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status:CLAuthorizationStatus) {
-    
-    if status == .Denied {
-    
-    let alert = UIAlertController(title: "GPS aktivieren", message: "Du musst dein GPS aktivieren um eine Location zu erstellen.", preferredStyle: UIAlertControllerStyle.Alert)
-    alert.addAction(UIAlertAction(title: "Gerne", style: UIAlertActionStyle.Default, handler: openAppSettings))
-    self.presentViewController(alert, animated: true, completion: nil)
-    
-    }
-    
-    if status == .AuthorizedWhenInUse {
-    locationManager.startUpdatingLocation()
-    }
-    }
-    
-    func openAppSettings(a: UIAlertAction) {
-    UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
-    }
-    
-    /* delegate on user position update */
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    
-    lat = locations.first?.coordinate.latitude
-    long = locations.first?.coordinate.longitude
-    }
-    */
     
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         if status == .AuthorizedWhenInUse {

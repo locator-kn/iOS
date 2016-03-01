@@ -11,14 +11,16 @@ import PromiseKit
 
 class BubbleVC: UIViewController {
     
-    let long = 9.169753789901733
-    let lat = 47.66868204997508
+    //let long = 9.169753789901733
+    //let lat = 47.66868204997508
     let maxDistance: Float = 2.0
     let limit = 6
     let colorRed = Color.red()
     
     var locations = [Location]()
     var detailLocation: Location?
+    
+    var gps:GpsService!
     
     // Schoenhier
     @IBOutlet weak var schoenHierImageView: UIImageView!
@@ -42,15 +44,18 @@ class BubbleVC: UIViewController {
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "map_icon_white"), style: .Plain, target: self, action: "showMap")
         
+        gps = GpsService(deniedHandler: gpsDeniedHandler)
         addGestureRecognizer()
-        
         self.loadBubbles()
     }
     
     func loadBubbles() {
-        
-        BubbleService.getBubbles(lat, long: long, maxDistance: maxDistance, limit: limit).then {
-            bubbles -> Void in
+        let location = gps.getMaybeCurrentLocation()
+        let lat = location.keys.first
+        let long = location.values.first
+                
+        BubbleService.getBubbles(lat!, long: long!, maxDistance: maxDistance, limit: limit).then { bubbles -> Void in
+
             
             for (index, element) in bubbles.enumerate() {
                 self.locations.append(element)
@@ -90,6 +95,10 @@ class BubbleVC: UIViewController {
             }
             
         }
+    }
+    
+    func gpsDeniedHandler(accessGranted: Bool) {
+        print("TODO handle access:", accessGranted)
     }
     
     override func viewDidLayoutSubviews() {
