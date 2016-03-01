@@ -795,11 +795,11 @@
                                                 <rect key="frame" x="78" y="289" width="16" height="19"/>
                                             </variation>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite_icon_black" translatesAutoresizingMaskIntoConstraints="NO" id="Kyk-PS-lC3">
-                                            <rect key="frame" x="89" y="294" width="13" height="13"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite_icon_black" translatesAutoresizingMaskIntoConstraints="NO" id="Kyk-PS-lC3">
+                                            <rect key="frame" x="87" y="296" width="11" height="9"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="13" id="acY-e9-l2v"/>
-                                                <constraint firstAttribute="width" constant="13" id="qiV-xO-6S5"/>
+                                                <constraint firstAttribute="height" constant="9" id="acY-e9-l2v"/>
+                                                <constraint firstAttribute="width" constant="11" id="qiV-xO-6S5"/>
                                             </constraints>
                                             <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                                 <rect key="frame" x="97" y="293" width="13" height="13"/>
@@ -913,14 +913,14 @@
                                         <constraint firstItem="1VE-hu-K9m" firstAttribute="leading" secondItem="E6c-8O-3Ua" secondAttribute="leadingMargin" constant="-4" id="2vM-nW-WWs"/>
                                         <constraint firstItem="1VE-hu-K9m" firstAttribute="top" secondItem="ST3-7r-8L0" secondAttribute="bottom" id="3AY-n1-bvX"/>
                                         <constraint firstItem="ZSP-fm-YDO" firstAttribute="leading" secondItem="E6c-8O-3Ua" secondAttribute="leading" id="4BZ-qB-CEZ"/>
-                                        <constraint firstItem="Kyk-PS-lC3" firstAttribute="top" secondItem="2Uv-6R-lJs" secondAttribute="top" constant="4" id="4m7-ul-CYm"/>
+                                        <constraint firstItem="Kyk-PS-lC3" firstAttribute="top" secondItem="2Uv-6R-lJs" secondAttribute="top" constant="6" id="4m7-ul-CYm"/>
                                         <constraint firstItem="1VE-hu-K9m" firstAttribute="trailing" secondItem="E6c-8O-3Ua" secondAttribute="trailingMargin" id="5Lh-O4-laq"/>
                                         <constraint firstItem="nb7-ZO-dd5" firstAttribute="leading" secondItem="pW9-vX-Di4" secondAttribute="trailing" constant="8" id="5Pz-SE-ymn"/>
                                         <constraint firstItem="lmP-I0-6Be" firstAttribute="top" secondItem="ZSP-fm-YDO" secondAttribute="bottom" constant="8" id="5nC-7P-h1i"/>
                                         <constraint firstItem="kbi-3c-e8u" firstAttribute="baseline" secondItem="K8S-st-ZK4" secondAttribute="baseline" id="6bB-wi-IFl"/>
                                         <constraint firstItem="pW9-vX-Di4" firstAttribute="top" secondItem="nb7-ZO-dd5" secondAttribute="top" constant="-1" id="AoY-pG-Nct"/>
                                         <constraint firstItem="1VE-hu-K9m" firstAttribute="leading" secondItem="E6c-8O-3Ua" secondAttribute="leadingMargin" id="B3S-oa-8Y4"/>
-                                        <constraint firstItem="Kyk-PS-lC3" firstAttribute="baseline" secondItem="2Uv-6R-lJs" secondAttribute="baseline" constant="1" id="C3c-8w-bOJ"/>
+                                        <constraint firstItem="Kyk-PS-lC3" firstAttribute="baseline" secondItem="2Uv-6R-lJs" secondAttribute="baseline" constant="-1" id="C3c-8w-bOJ"/>
                                         <constraint firstItem="K8S-st-ZK4" firstAttribute="top" secondItem="1VE-hu-K9m" secondAttribute="bottom" constant="6" id="DKp-Ma-TL6"/>
                                         <constraint firstItem="ST3-7r-8L0" firstAttribute="leading" secondItem="E6c-8O-3Ua" secondAttribute="leadingMargin" id="DVA-6w-zSl"/>
                                         <constraint firstItem="kbi-3c-e8u" firstAttribute="baseline" secondItem="K8S-st-ZK4" secondAttribute="baseline" id="FCp-Q8-OvV"/>
@@ -930,7 +930,7 @@
                                         <constraint firstItem="vE5-IY-R4z" firstAttribute="leading" secondItem="E6c-8O-3Ua" secondAttribute="leadingMargin" id="OXD-8t-Bsm"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="kbi-3c-e8u" secondAttribute="trailing" id="PD1-tF-y5k"/>
                                         <constraint firstItem="vE5-IY-R4z" firstAttribute="top" secondItem="K8S-st-ZK4" secondAttribute="bottom" constant="17" id="Pvg-jE-rvA"/>
-                                        <constraint firstItem="Kyk-PS-lC3" firstAttribute="leading" secondItem="2Uv-6R-lJs" secondAttribute="trailing" constant="3" id="Qxg-LV-YSJ"/>
+                                        <constraint firstItem="Kyk-PS-lC3" firstAttribute="leading" secondItem="2Uv-6R-lJs" secondAttribute="trailing" constant="1" id="Qxg-LV-YSJ"/>
                                         <constraint firstItem="K8S-st-ZK4" firstAttribute="top" secondItem="Kyk-PS-lC3" secondAttribute="bottom" constant="23" id="VVr-PX-DBq"/>
                                         <constraint firstItem="lmP-I0-6Be" firstAttribute="top" secondItem="1VE-hu-K9m" secondAttribute="bottom" constant="-1" id="W0i-g9-sea"/>
                                         <constraint firstItem="ckI-cM-stC" firstAttribute="leading" secondItem="E6c-8O-3Ua" secondAttribute="leadingMargin" id="buv-sq-pPO"/>
@@ -938,6 +938,7 @@
                                         <constraint firstAttribute="leadingMargin" secondItem="K8S-st-ZK4" secondAttribute="leading" id="gMm-YV-WUa"/>
                                         <constraint firstItem="lmP-I0-6Be" firstAttribute="leading" secondItem="E6c-8O-3Ua" secondAttribute="leadingMargin" id="kGH-lO-E2S"/>
                                         <constraint firstItem="ckI-cM-stC" firstAttribute="top" secondItem="lmP-I0-6Be" secondAttribute="bottom" id="kPA-r5-1Sv"/>
+                                        <constraint firstItem="K8S-st-ZK4" firstAttribute="top" secondItem="1VE-hu-K9m" secondAttribute="bottom" constant="6" id="lwE-q3-ScJ"/>
                                         <constraint firstItem="2Uv-6R-lJs" firstAttribute="leading" secondItem="ckI-cM-stC" secondAttribute="trailing" constant="3" id="nGL-lb-QrS"/>
                                         <constraint firstAttribute="trailing" secondItem="ZSP-fm-YDO" secondAttribute="trailing" id="onV-M4-GcW"/>
                                         <constraint firstItem="ST3-7r-8L0" firstAttribute="top" secondItem="ckI-cM-stC" secondAttribute="bottom" constant="9" id="p0b-xO-Nia"/>
@@ -950,6 +951,7 @@
                                         <constraint firstItem="vE5-IY-R4z" firstAttribute="baseline" secondItem="8CZ-Io-utv" secondAttribute="baseline" constant="3" id="wJb-20-zgP"/>
                                         <constraint firstItem="PFD-cK-Myd" firstAttribute="baseline" secondItem="kbi-3c-e8u" secondAttribute="baseline" id="xZY-oS-xzN"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="nb7-ZO-dd5" secondAttribute="trailing" constant="4" id="yW9-4d-EJz"/>
+                                        <constraint firstItem="K8S-st-ZK4" firstAttribute="top" secondItem="ckI-cM-stC" secondAttribute="bottom" priority="999" constant="85" id="ydl-37-GjD"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
@@ -959,6 +961,7 @@
                                             <exclude reference="Lni-gB-zWm"/>
                                             <exclude reference="tnO-L1-mfF"/>
                                             <exclude reference="2vM-nW-WWs"/>
+                                            <exclude reference="DKp-Ma-TL6"/>
                                             <exclude reference="FSq-r8-x9D"/>
                                             <exclude reference="VVr-PX-DBq"/>
                                         </mask>
@@ -966,6 +969,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="_description" destination="1VE-hu-K9m" id="iRc-Pw-5gX"/>
+                                    <outlet property="_descriptionLabel" destination="ST3-7r-8L0" id="3BM-Bp-3Hr"/>
                                     <outlet property="city" destination="lmP-I0-6Be" id="BdX-94-8NW"/>
                                     <outlet property="favorCount" destination="2Uv-6R-lJs" id="ODA-rA-3mG"/>
                                     <outlet property="favorIcon" destination="nb7-ZO-dd5" id="MuS-6h-u1s"/>
@@ -2894,11 +2898,11 @@
         <image name="text" width="42" height="37"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="C0z-Ed-tMO"/>
-        <segue reference="Hxc-f3-ges"/>
-        <segue reference="PBI-Q7-c1i"/>
+        <segue reference="K3z-rv-EhQ"/>
         <segue reference="Q9G-yB-4zn"/>
+        <segue reference="PBI-Q7-c1i"/>
         <segue reference="WG6-zk-XfW"/>
         <segue reference="pqk-kP-sXI"/>
+        <segue reference="Hxc-f3-ges"/>
     </inferredMetricsTieBreakers>
 </document>
