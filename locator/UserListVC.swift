@@ -89,6 +89,7 @@ class UserListVC: UITableViewController {
         let singleFollower = follower![indexPath.row]
     
         cell.userName.text = singleFollower.name
+        cell.userCity.text = singleFollower.residence
         UtilService.roundImageView(cell.userImage, borderWidth: 3, borderColor: COLORS.yellow)
         
         UtilService.dataFromCache(singleFollower.imagePathThumb!).then {

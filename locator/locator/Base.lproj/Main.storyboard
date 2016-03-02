@@ -19,6 +19,7 @@
             <string>SourceSansPro-Light</string>
             <string>SourceSansPro-Light</string>
             <string>SourceSansPro-Light</string>
+            <string>SourceSansPro-Light</string>
         </mutableArray>
         <mutableArray key="SourceSansPro-Regular.ttf">
             <string>SourceSansPro-Regular</string>
@@ -1567,7 +1568,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Headline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1g-PW-ymf">
-                                            <rect key="frame" x="78" y="12" width="535" height="22"/>
+                                            <rect key="frame" x="78" y="14" width="66" height="22"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="HKX-wC-JPt"/>
                                             </constraints>
@@ -1596,7 +1597,7 @@
                                             </variation>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Konstanz, Deutschland" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zOK-Lb-m4F">
-                                            <rect key="frame" x="78" y="33" width="131" height="18"/>
+                                            <rect key="frame" x="78" y="35" width="131" height="18"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="18" id="3Mb-yQ-fhh"/>
                                                 <constraint firstAttribute="height" constant="18" id="bNv-Y4-JKb"/>
@@ -1616,16 +1617,21 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="k1g-PW-ymf" firstAttribute="leading" secondItem="4eQ-Ud-NA7" secondAttribute="trailing" constant="15" id="0Bq-VL-luE"/>
-                                        <constraint firstItem="k1g-PW-ymf" firstAttribute="top" secondItem="t71-m8-jXz" secondAttribute="topMargin" constant="4" id="3f8-Re-tQC"/>
+                                        <constraint firstItem="k1g-PW-ymf" firstAttribute="top" secondItem="t71-m8-jXz" secondAttribute="topMargin" constant="6" id="3f8-Re-tQC"/>
                                         <constraint firstItem="zOK-Lb-m4F" firstAttribute="leading" secondItem="4eQ-Ud-NA7" secondAttribute="trailing" constant="15" id="Cid-Nk-KFO"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="k1g-PW-ymf" secondAttribute="trailing" constant="-21" id="GJZ-3K-4Ig"/>
                                         <constraint firstItem="4eQ-Ud-NA7" firstAttribute="leading" secondItem="t71-m8-jXz" secondAttribute="leadingMargin" id="SyC-tF-q0f"/>
                                         <constraint firstItem="4eQ-Ud-NA7" firstAttribute="top" secondItem="t71-m8-jXz" secondAttribute="topMargin" id="V6y-YJ-0FG"/>
                                         <constraint firstItem="zOK-Lb-m4F" firstAttribute="top" secondItem="k1g-PW-ymf" secondAttribute="bottom" constant="-1" id="YGd-te-Klg"/>
                                         <constraint firstItem="4eQ-Ud-NA7" firstAttribute="leading" secondItem="t71-m8-jXz" secondAttribute="leadingMargin" id="dv5-iu-Uvw"/>
-                                        <constraint firstItem="zOK-Lb-m4F" firstAttribute="top" secondItem="t71-m8-jXz" secondAttribute="topMargin" constant="25" id="ofy-L6-vb0"/>
+                                        <constraint firstItem="zOK-Lb-m4F" firstAttribute="top" secondItem="t71-m8-jXz" secondAttribute="topMargin" constant="27" id="ofy-L6-vb0"/>
                                         <constraint firstItem="4eQ-Ud-NA7" firstAttribute="top" secondItem="t71-m8-jXz" secondAttribute="topMargin" id="ubx-Xp-Mwe"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="GJZ-3K-4Ig"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
@@ -1672,7 +1678,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Headline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbv-OJ-qrv">
-                                            <rect key="frame" x="78" y="15" width="66" height="22"/>
+                                            <rect key="frame" x="78" y="14" width="66" height="22"/>
                                             <fontDescription key="fontDescription" name="SourceSansPro-Semibold" family="Source Sans Pro" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -1689,16 +1695,25 @@
                                                 <constraint firstAttribute="width" constant="55" id="xR6-7P-j9D"/>
                                             </constraints>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Konstanz, Germany" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWd-g3-3JW">
+                                            <rect key="frame" x="78" y="35" width="111" height="18"/>
+                                            <fontDescription key="fontDescription" name="SourceSansPro-Light" family="Source Sans Pro" pointSize="14"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="iWd-g3-3JW" firstAttribute="top" secondItem="9Ky-MU-V4v" secondAttribute="topMargin" constant="27" id="HOh-As-xas"/>
                                         <constraint firstItem="Ad2-6Q-BFy" firstAttribute="top" secondItem="9Ky-MU-V4v" secondAttribute="topMargin" id="KIC-xq-wnp"/>
                                         <constraint firstItem="Ad2-6Q-BFy" firstAttribute="leading" secondItem="9Ky-MU-V4v" secondAttribute="leadingMargin" id="NnH-CV-64Z"/>
-                                        <constraint firstItem="zbv-OJ-qrv" firstAttribute="top" secondItem="9Ky-MU-V4v" secondAttribute="topMargin" constant="7" id="e0v-2e-7d8"/>
+                                        <constraint firstItem="iWd-g3-3JW" firstAttribute="leading" secondItem="Ad2-6Q-BFy" secondAttribute="trailing" constant="15" id="PoP-9z-YqK"/>
+                                        <constraint firstItem="zbv-OJ-qrv" firstAttribute="top" secondItem="9Ky-MU-V4v" secondAttribute="topMargin" constant="6" id="e0v-2e-7d8"/>
                                         <constraint firstItem="zbv-OJ-qrv" firstAttribute="leading" secondItem="Ad2-6Q-BFy" secondAttribute="trailing" constant="15" id="fKY-A7-naZ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
+                                    <outlet property="userCity" destination="iWd-g3-3JW" id="j6X-k4-8Ah"/>
                                     <outlet property="userImage" destination="Ad2-6Q-BFy" id="e8Q-O2-4O4"/>
                                     <outlet property="userName" destination="zbv-OJ-qrv" id="kcm-rp-GTb"/>
                                 </connections>
