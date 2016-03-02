@@ -188,5 +188,22 @@ class UserService {
             }
         }
     }
+    
+    static func unfollow(userId:String) -> Promise<Bool> {
+        
+        return Promise { fulfill, reject in
+            
+            Alamofire.request(.POST, API.BASE_URL + "/users/" + userId + "/unfollow").validate().responseJSON {
+                response in
+                
+                switch response.result {
+                case .Success:
+                    fulfill(true)
+                case .Failure(let error):
+                    reject(error)
+                }
+            }
+        }
+    }
 
 }
