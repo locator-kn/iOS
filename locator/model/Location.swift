@@ -25,7 +25,7 @@ class Location {
     var description:String!
     var user:User!
     //favored by me
-    var favored:Bool!
+    var favored:Bool = false
     var favorites:Int!
     var userWhoFavored:[String]!
     var stream:[AbstractImpression]!
