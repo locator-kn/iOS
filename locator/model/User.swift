@@ -30,6 +30,7 @@ class User {
     var follower:[User]?
     var followedBy:[User]?
     var following: [String]?
+    var mefollowing: Bool = false
     
     init(id:String) {
         self.id = id
@@ -76,7 +77,16 @@ class User {
     }
     
     func follow() -> Promise<Bool> {
+        self.mefollowing = true
+        User.me?.following?.append(self.id!)
         return UserService.follow(self.id!)
+    }
+    
+    func unfollow() -> Promise<Bool> {
+        self.mefollowing = false
+        let index = User.me!.following?.indexOf(self.id!)
+        User.me!.following?.removeAtIndex(index!)
+        return UserService.unfollow(self.id!)
     }
     
     static func setMe(me:User) {
