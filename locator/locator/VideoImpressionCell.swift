@@ -16,6 +16,7 @@ class VideoImpressionCell: UITableViewCell {
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var userThumb: UIImageView!
     
+    var videoUrl:String?
     var player: AVPlayer?
     var playerController: AVPlayerViewController?
     var vc: LocationDetailVC!
@@ -27,21 +28,16 @@ class VideoImpressionCell: UITableViewCell {
 
     @IBAction func clickThumb(sender: UIButton) {
     
-        func playVideo() {
-            
-            let myBaseUrl = "https://locator-app.com/api/v2/locations/impression/video/56b907022f08ffcd26f8c13a/impression.mov"
-            if let url = NSURL(string: myBaseUrl) {
+        if let url = NSURL(string: videoUrl!) {
                 
-                self.player = AVPlayer(URL: url)
-                self.playerController = AVPlayerViewController()
-                self.playerController!.player = self.player
+        self.player = AVPlayer(URL: url)
+        self.playerController = AVPlayerViewController()
+        self.playerController!.player = self.player
                 
-                self.vc.presentViewController(self.playerController!, animated: true) {
-                    () -> Void in
+        self.vc.presentViewController(self.playerController!, animated: true) {
+                () -> Void in
                     self.playerController!.player?.play()
-                }
             }
-            
         }
     
     }
