@@ -18,6 +18,7 @@ class VideoImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
     let imagePicker = UIImagePickerController()
     var videoData:NSData?
     var video:Bool = false
+    var dismiss:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,7 @@ class VideoImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
     }
     
     override func viewDidAppear(animated: Bool) {
-        if videoData == nil {
+        if self.videoData == nil && !self.dismiss {
             self.openPicker()
         }
     }
@@ -41,7 +42,9 @@ class VideoImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        self.dismiss = true
         dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(false, completion: nil)
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
@@ -57,7 +60,7 @@ class VideoImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
     }
     
     func openPicker() {
-        presentViewController(imagePicker, animated: false, completion: nil)
+        presentViewController(imagePicker, animated: true, completion: nil)
     }
     
     func submitVideo() {
