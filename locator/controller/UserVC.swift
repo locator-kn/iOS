@@ -82,17 +82,19 @@ class UserVC: UIViewController {
         self.followersCount.text = "\(self.user.followerCount!)"
         
         if (User.me!.following!.contains(self.user.id!)) {
+            self.user.mefollowing = true
             self.followButton.setImage(self.followActiveIcon, forState: .Normal)
         }
 
     }
     
     @IBAction func followButton(sender: UIButton) {
-        
-        self.followButton.setImage(self.followActiveIcon, forState: .Normal)
-        self.user.follow().then {
-            result -> Void in
-            print("Follow" + self.user.id!)
+        if !self.user.mefollowing {
+            self.followButton.setImage(self.followActiveIcon, forState: .Normal)
+            self.user.follow()
+        } else {
+            self.followButton.setImage(self.followIcon, forState: .Normal)
+            self.user.unfollow()
         }
     }
     
