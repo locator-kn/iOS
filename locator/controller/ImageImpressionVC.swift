@@ -17,7 +17,7 @@ class ImageImpressionVC: UIViewController, UINavigationControllerDelegate, Fusum
     var locationId:String!
     var initial = false
     let imagePicker = UIImagePickerController()
-    
+    var vc: LocationDetailVC!
     var image:UIImage?
     var video:Bool = false
     @IBOutlet weak var imageView: UIImageView!
@@ -71,7 +71,7 @@ class ImageImpressionVC: UIViewController, UINavigationControllerDelegate, Fusum
     @IBAction func submitImage(sender: AnyObject) {
         ImpressionService.addImageImpression(self.locationId, data: image!).then{
             result -> Void in
-            print("image upload success")
+            self.vc.loadData()
         }.always {
             self.dismissViewControllerAnimated(true, completion: nil);
         }
