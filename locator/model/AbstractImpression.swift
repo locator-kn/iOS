@@ -12,18 +12,13 @@ class AbstractImpression {
     
     let id:String
     let date:NSDate
-    let user:User
+    let userId: String
+    var user: User!
     
-    init(id:String, date:String, userId:String) {
+    init(id:String, date:String, userId: String) {
         self.id = id
         self.date = UtilService.dateFromIso(date)
-        self.user = User(id: userId)
-    }
-    
-    init(id:String, date:NSDate, user:User) {
-        self.id = id
-        self.date = date
-        self.user = user
+        self.userId = userId
     }
     
     func getDate() -> String {

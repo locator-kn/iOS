@@ -27,25 +27,39 @@ class ImpressionService {
                         
                         var impressions = [AbstractImpression]()
                         
+                        var promises = [Promise<User>]()
                         for (_,subJson):(String, JSON) in json {
                             
                             let id = subJson["_id"].string!
-                            let user = subJson["user_id"].string!
+                            let userId = subJson["user_id"].string!
                             let date = subJson["create_date"].string
                             let type = subJson["type"].string
                             let dataPath = subJson["data"].string!
                             
+                            
+                            promises.append(UserService.getUser(userId))
+                            
                             if type == "text" {
-                                impressions.append(TextImpression(id:id, date:date!, userId: user, text: dataPath))
+                                impressions.append(TextImpression(id:id, date:date!, userId: userId, text: dataPath))
                             } else if type == "image" {
-                                impressions.append(ImageImpression(id:id, date:date!, userId: user, imagePath: dataPath))
+                                impressions.append(ImageImpression(id:id, date:date!, userId: userId, imagePath: dataPath))
                             } else if type == "video" {
-                                impressions.append(VideoImpression(id:id, date:date!, userId: user, videoPath: dataPath))
+                                impressions.append(VideoImpression(id:id, date:date!, userId: userId, videoPath: dataPath))
                             } else if type == "audio" {
                                 //TODO
                             }
                         }
-                        fulfill(impressions)
+                        
+                        when(promises).then {
+                            result -> Void in
+                            
+                            for (index, impression) in impressions.enumerate() {
+                                impression.user = result[index]
+                                
+                            }
+                            fulfill(impressions)
+                        }
+                    
                     }
                     
                 case .Failure(let error):

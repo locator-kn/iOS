@@ -157,21 +157,14 @@ class LocationDetailVC: UITableViewController {
         if let imageImpression = impression as? ImageImpression {
             let cell = tableView.dequeueReusableCellWithIdentifier("imageImpression", forIndexPath: indexPath) as! ImageImpressionCell
           
-            cell.date.text = imageImpression.getDate()
             UtilService.roundImageView(cell.userThumb)
+            cell.date.text = impression.getDate()
+            cell.username.text = impression.user.name
             
-            UserService.getUser(imageImpression.user.id!).then {
+            UtilService.dataFromCache(impression.user.imagePathThumb!).then {
                 result -> Void in
-                print("user request")
                 if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? ImageImpressionCell {
-                    cellToUpdate.username.text = result.name
-                }
-                
-                UtilService.dataFromCache(result.imagePathThumb!).then {
-                    result -> Void in
-                    if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? ImageImpressionCell {
-                        cellToUpdate.userThumb.image = UIImage(data: result)
-                    }
+                    cellToUpdate.userThumb.image = UIImage(data: result)
                 }
             }
             
@@ -189,20 +182,14 @@ class LocationDetailVC: UITableViewController {
         } else if let textImpression = impression as? TextImpression {
             let cell = tableView.dequeueReusableCellWithIdentifier("textImpression", forIndexPath: indexPath) as! TextImpressionCell
             
-            cell.date.text = textImpression.getDate()
             UtilService.roundImageView(cell.userThumb)
+            cell.date.text = impression.getDate()
+            cell.username.text = impression.user.name
             
-            UserService.getUser(textImpression.user.id!).then {
+            UtilService.dataFromCache(impression.user.imagePathThumb!).then {
                 result -> Void in
                 if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? TextImpressionCell {
-                    cellToUpdate.username.text = result.name
-                }
-                
-                UtilService.dataFromCache(result.imagePathThumb!).then {
-                    result -> Void in
-                    if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? TextImpressionCell {
-                        cellToUpdate.userThumb.image = UIImage(data: result)
-                    }
+                    cellToUpdate.userThumb.image = UIImage(data: result)
                 }
             }
             
