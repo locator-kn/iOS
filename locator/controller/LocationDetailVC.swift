@@ -207,10 +207,12 @@ class LocationDetailVC: UITableViewController {
             let cell = tableView.dequeueReusableCellWithIdentifier("videoimpression", forIndexPath: indexPath) as! VideoImpressionCell
             cell.vc = self
             cell.username.text = impression.user.name
+            cell.videoUrl = videoImpression.videoPath
+            UtilService.roundImageView(cell.userThumb)
             
-            UtilService.dataFromCache(impression.user.imagePathThumb!).then {
+            UtilService.dataFromCache(videoImpression.user.imagePathThumb!).then {
                 result -> Void in
-                if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? TextImpressionCell {
+                if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? VideoImpressionCell {
                     cellToUpdate.userThumb.image = UIImage(data: result)
                 }
             }
@@ -305,6 +307,7 @@ class LocationDetailVC: UITableViewController {
         } else if (segue.identifier == "image") {
             let controller = segue.destinationViewController as! ImageImpressionVC
             controller.locationId = self.location.id
+            controller.vc = self
         } else if (segue.identifier == "video") {
             let controller = segue.destinationViewController as! VideoImpressionVC
             controller.locationId = self.location.id
