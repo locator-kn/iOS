@@ -10,6 +10,7 @@ import Foundation
 
 class VideoImpression:AbstractImpression {
     var videoPath: String
+    var imageThumb: String?
     
     init(id:String, date:String, userId:String, videoPath: String) {
         self.videoPath = videoPath
