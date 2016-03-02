@@ -334,7 +334,7 @@ class LocationDetailVC: UITableViewController {
         self.headerCell.impressionsCount.text = "0"
         self.headerCell.locationImage.image = UIImage(data: UtilService.dataFromPath(location.imagePathNormal))
         self.headerCell.city.text = location.city.title
-        if self.location.favored == true {
+        if self.location.favored {
             self.headerCell.favorIcon.setImage(self.favoriteIconActive, forState: .Normal)
         }
         
