@@ -28,6 +28,8 @@ class VideoImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
             imagePicker.allowsEditing = true
             imagePicker.sourceType = UIImagePickerControllerSourceType.Camera;
             imagePicker.mediaTypes = [kUTTypeMovie as String]
+            imagePicker.videoMaximumDuration = 10
+            imagePicker.videoQuality = .TypeMedium
         }
     }
     
