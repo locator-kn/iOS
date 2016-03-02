@@ -69,6 +69,7 @@ class LocationListVC: UITableViewController {
         let location = locations![indexPath.row]
 
         cell.locationTitle.text = location.title
+        cell.locationCity.text = location.city.title
         UtilService.roundImageView(cell.locationImage, borderWidth: 3, borderColor: COLORS.red)
         
         UtilService.dataFromCache(location.imagePathSmall).then {

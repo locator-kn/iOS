@@ -1629,6 +1629,7 @@
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
+                                    <outlet property="locationCity" destination="zOK-Lb-m4F" id="2PV-CH-3bV"/>
                                     <outlet property="locationImage" destination="4eQ-Ud-NA7" id="25m-J5-jVc"/>
                                     <outlet property="locationTitle" destination="k1g-PW-ymf" id="WUD-UD-bGj"/>
                                 </connections>
