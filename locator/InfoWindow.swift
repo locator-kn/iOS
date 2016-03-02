@@ -13,7 +13,6 @@ class InfoWindow: UIView {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var author: UILabel!
-    @IBOutlet weak var favorites: UILabel!
     
     /*
     // Only override drawRect: if you perform custom drawing.
