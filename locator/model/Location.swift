@@ -22,7 +22,6 @@ class Location {
     var imagePathNormal:String!
     var imagePathSmall:String!
     
-    var description:String!
     var user:User!
     //favored by me
     var favored:Bool = false
@@ -30,7 +29,7 @@ class Location {
     var userWhoFavored:[String]!
     var stream:[AbstractImpression]!
     
-    init(id: String, title: String, description:String, long: Double, lat: Double, city:City, imagePathSmall: String, imagePathNormal:String, imagePathLarge: String, imagePathXlarge:String, favored: Bool, favorites:Int, user: User) {
+    init(id: String, title: String, long: Double, lat: Double, city:City, imagePathSmall: String, imagePathNormal:String, imagePathLarge: String, imagePathXlarge:String, favored: Bool, favorites:Int, user: User) {
         self.id = id
         self.title = title
         self.geoPosition = (lat: lat, long: long)
@@ -40,7 +39,6 @@ class Location {
         self.imagePathLarge = imagePathLarge
         self.imagePathXlarge = imagePathXlarge
         
-        self.description = description
         self.favored = favored
         self.favorites = favorites
         self.user = user

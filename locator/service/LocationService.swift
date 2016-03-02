@@ -18,7 +18,6 @@ class LocationService {
         let title = json["title"].string
         let lat = json["geotag"]["coordinates"][1].double
         let long = json["geotag"]["coordinates"][0].double
-        let description = json["description"].string
         
         var imagePathSmall = ""
         var imagePathNormal = ""
@@ -37,11 +36,10 @@ class LocationService {
         let cityTitle = json["city"]["title"].string!
         let cityId = json["city"]["place_id"].string!
         let city = City(id: cityId, title: cityTitle)
+    
+        let location = Location(id: id!, title: title!, long: long!, lat: lat!, city: city, imagePathSmall: imagePathSmall, imagePathNormal: imagePathNormal, imagePathLarge: imagePathLarge, imagePathXlarge: imagePathXlarge, favored: false, favorites: 0, user: User(id: userId))
         
         //if location favored by myself
-        
-        let location = Location(id: id!, title: title!, description: description!, long: long!, lat: lat!, city: city, imagePathSmall: imagePathSmall, imagePathNormal: imagePathNormal, imagePathLarge: imagePathLarge, imagePathXlarge: imagePathXlarge, favored: false, favorites: 0, user: User(id: userId))
-        
         var favorites = [String]()
         for (_,subJson):(String, JSON) in json["favorites"] {
                 favorites.append(subJson.string!)
