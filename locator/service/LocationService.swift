@@ -62,7 +62,7 @@ class LocationService {
                 
                     if let value = response.result.value {
                         let json = JSON(value)
-                        for (_,subJson):(String, JSON) in json["results"] {
+                        for (_,subJson):(String, JSON) in json {
                             nearbyLocations.append(self.jsonToLocation(subJson["obj"]))
                         }
                         fulfill(nearbyLocations)
