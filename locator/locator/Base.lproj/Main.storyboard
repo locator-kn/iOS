@@ -867,7 +867,7 @@
                                                 <rect key="frame" x="250" y="431" width="100" height="36"/>
                                             </variation>
                                             <connections>
-                                                <segue destination="Gka-Qg-i3J" kind="presentation" identifier="image" animates="NO" id="UEt-Gg-DkK"/>
+                                                <segue destination="Gka-Qg-i3J" kind="presentation" identifier="image" animates="NO" modalPresentationStyle="overCurrentContext" id="UEt-Gg-DkK"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vE5-IY-R4z" userLabel="text">
@@ -938,7 +938,7 @@
                                                 <rect key="frame" x="513" y="433" width="54" height="34"/>
                                             </variation>
                                             <connections>
-                                                <segue destination="dJX-6C-xJc" kind="presentation" identifier="video" animates="NO" id="0Go-1C-qtD"/>
+                                                <segue destination="dJX-6C-xJc" kind="presentation" identifier="video" animates="NO" modalPresentationStyle="overCurrentContext" id="0Go-1C-qtD"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pW9-vX-Di4" userLabel="mapButton">
@@ -1641,13 +1641,12 @@
                     <view key="view" hidden="YES" contentMode="scaleToFill" id="fj5-Cu-ixA">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AYb-d0-Vgb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4382" y="-1545"/>
+            <point key="canvasLocation" x="4460" y="-1505"/>
         </scene>
         <!--MapVC-->
         <scene sceneID="SbJ-7x-eXs">
