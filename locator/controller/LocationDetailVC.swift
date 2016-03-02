@@ -205,6 +205,15 @@ class LocationDetailVC: UITableViewController {
         
         } else if let videoImpression = impression as? VideoImpression {
             let cell = tableView.dequeueReusableCellWithIdentifier("videoimpression", forIndexPath: indexPath) as! VideoImpressionCell
+            cell.vc = self
+            cell.username.text = impression.user.name
+            
+            UtilService.dataFromCache(impression.user.imagePathThumb!).then {
+                result -> Void in
+                if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? TextImpressionCell {
+                    cellToUpdate.userThumb.image = UIImage(data: result)
+                }
+            }
             
             return cell
         }
