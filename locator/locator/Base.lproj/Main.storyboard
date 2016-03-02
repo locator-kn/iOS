@@ -2818,11 +2818,11 @@
         <image name="weiter_icon" width="546" height="546"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PBI-Q7-c1i"/>
-        <segue reference="2oh-QA-SLC"/>
-        <segue reference="LgZ-gd-7kD"/>
         <segue reference="WG6-zk-XfW"/>
+        <segue reference="5LS-PO-7IX"/>
         <segue reference="Mj3-i4-FhS"/>
+        <segue reference="2oh-QA-SLC"/>
         <segue reference="Q9G-yB-4zn"/>
+        <segue reference="PBI-Q7-c1i"/>
     </inferredMetricsTieBreakers>
 </document>
