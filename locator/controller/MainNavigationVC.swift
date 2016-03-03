@@ -21,7 +21,7 @@ class MainNavigationVC: AbstractNavigationVC {
                 print("Statuscode Protected", result)
                 if (result != 401) {
                     self.redirectToDashboard()
-                    
+
                     UserService.getUser(NSUserDefaults.standardUserDefaults().stringForKey("me")!).then {
                         result -> Void in
                         User.me = result
