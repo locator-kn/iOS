@@ -177,7 +177,7 @@ extension UIImage {
         
         // Heyhey
         let animation = UIImage.animatedImageWithImages(frames,
-            duration: Double(duration) / 1000.0)
+            duration: Double(duration) / 1500.0)
         
         return animation
     }

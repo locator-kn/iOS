@@ -72,19 +72,12 @@ class LoginVC: UIViewController {
             } else {
                 print("Logged in")
                 self.returnUserData()
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    self.performSegueWithIdentifier("showDashboard", sender: self)
-                })
+                self.showDashboard()
             }
         }
     }
     
-    @IBAction func registerButtonPressed(sender: UIButton) {
-    }
-    
-    @IBAction func crossButtonPressed(sender: UIButton) {
-        self.navigationController?.popViewControllerAnimated(true)
-    }
+    @IBAction func registerButtonPressed(sender: UIButton) {}
     
     func returnUserData()
     {
@@ -100,6 +93,7 @@ class LoginVC: UIViewController {
             {
                 let userId : NSString = result.valueForKey("id") as! NSString
                 NSUserDefaults.standardUserDefaults().setValue(userId, forKey: "me")
+                User.me? = User(id: userId as String)
                 let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
                 print(accessToken)
                 print("fetched user: \(result)")
@@ -109,6 +103,13 @@ class LoginVC: UIViewController {
                 print("User Email is: \(userEmail)")
             }
         })
+    }
+    
+    func showDashboard() {
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), { () -> Void in
+            self.performSegueWithIdentifier("showDashboard", sender: self)
+            })
     }
     
     /*
