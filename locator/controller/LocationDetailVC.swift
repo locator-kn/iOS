@@ -13,6 +13,9 @@ import AVFoundation
 
 class LocationDetailVC: UITableViewController {
     
+    @IBOutlet weak var category_1: UIImageView!
+    @IBOutlet weak var category_2: UIImageView!
+    
     var player: AVPlayer!
     var playerController: AVPlayerViewController!
     
@@ -335,6 +338,14 @@ class LocationDetailVC: UITableViewController {
         self.headerCell.city.text = location.city.title
         if self.location.favored {
             self.headerCell.favorIcon.setImage(self.favoriteIconActive, forState: .Normal)
+        }
+        
+        if self.location.categories.count >= 1 {
+            let first:String = self.location.categories[0]
+            self.headerCell.category_1.image = UIImage(named: first) as UIImage?
+        } else if self.location.categories.count >= 2 {
+            let second:String = self.location.categories[1]
+            self.headerCell.category_2.image = UIImage(named: second) as UIImage?
         }
         
     }
