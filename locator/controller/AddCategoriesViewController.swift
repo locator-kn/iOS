@@ -15,6 +15,8 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
     var lat:Double!
     var long:Double!
     
+    var maxAllowedCategories:Int = 2
+    
     var uiimage:UIImage!
     
     var locationTitle:String!
@@ -192,7 +194,7 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
             // return false if category was removed
             return false
         } else {
-            if selectedCategories.count == 3 {
+            if selectedCategories.count == maxAllowedCategories {
                 return false
             }
             selectedCategories.append(ident)
