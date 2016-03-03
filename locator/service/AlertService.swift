@@ -29,11 +29,15 @@ class AlertService {
             let alertController = UIAlertController(title: "Ups", message: "Du musst eingeloggt sein", preferredStyle: .Alert)
             alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: {action in segueToLoginVC()}))
             alertController.addAction(UIAlertAction(title: "Nö", style: UIAlertActionStyle.Cancel, handler: nil))
+            currentView.presentViewController(alertController, animated: true, completion: nil)
         }
     }
     
     static func segueToLoginVC() {
-        
+        dispatch_async(dispatch_get_main_queue(), {
+            let window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            window.rootViewController = LoginVC()
+        })
     }
 
 }
