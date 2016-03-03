@@ -59,6 +59,7 @@ class LoginVC: UIViewController {
     }
 
     @IBAction func loginButtonPressed(sender: UIButton) {
+        
     }
     
     @IBAction func loginFacebookButtonPressed(sender: UIButton) {
@@ -71,8 +72,9 @@ class LoginVC: UIViewController {
             } else {
                 print("Logged in")
                 self.returnUserData()
-                // Temporärer: segue auf BubbleScreen
-                self.performSegueWithIdentifier("showDashboard", sender: self)
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.performSegueWithIdentifier("showDashboard", sender: self)
+                })
             }
         }
     }
@@ -96,6 +98,8 @@ class LoginVC: UIViewController {
             }
             else
             {
+                let userId : NSString = result.valueForKey("id") as! NSString
+                NSUserDefaults.standardUserDefaults().setValue(userId, forKey: "me")
                 let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
                 print(accessToken)
                 print("fetched user: \(result)")
