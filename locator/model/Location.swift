@@ -22,6 +22,8 @@ class Location {
     var imagePathNormal:String!
     var imagePathSmall:String!
     
+    var categories = [String]()
+    
     var user:User!
     //favored by me
     var favored:Bool = false

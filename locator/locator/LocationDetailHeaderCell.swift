@@ -9,7 +9,9 @@
 import UIKit
 
 class LocationDetailHeaderCell: UITableViewCell {
-
+    @IBOutlet weak var category_1: UIImageView!
+    @IBOutlet weak var category_2: UIImageView!
+    
     @IBOutlet weak var locationImage: UIImageView!
     @IBOutlet weak var favorCount: UILabel!
     @IBOutlet weak var favorIcon: UIButton!

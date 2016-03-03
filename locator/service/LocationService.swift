@@ -151,6 +151,11 @@ class LocationService {
                             fulfill(location)
                         }
                         
+                        location.categories.removeAll()
+                        for (_,subJson):(String, JSON) in json["categories"] {
+                            location.categories.append(subJson.string!)
+                        }
+                        
                         // check if favored by myself
                         if (User.me != nil && location.userWhoFavored.contains(User.getMe().id!)) {
                             location.favored = true
