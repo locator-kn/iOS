@@ -38,7 +38,7 @@ class AlertService {
         dispatch_async(dispatch_get_main_queue(), {
             
             let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
-            let loginVC = mainStoryBoard.instantiateViewControllerWithIdentifier("WelcomeVC") as! WelcomeVC
+            let loginVC = mainStoryBoard.instantiateViewControllerWithIdentifier("firstnavi") as! MainNavigationVC
             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             appDelegate.window?.rootViewController = loginVC
         })
