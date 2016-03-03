@@ -9,49 +9,31 @@
 import UIKit
 import Fusuma
 
-class TakePhotoViewController: UIViewController, UINavigationControllerDelegate, FusumaDelegate {
+class TakePhotoViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
-    var warschonda:Bool = false
-    
-    @IBAction func jaButtonAction(sender: AnyObject) {
-        self.performSegueWithIdentifier("nameYourLocation", sender: true)
-    }
-    @IBAction func noeButtonAction(sender: AnyObject) {
-        
-        if uiimage == nil {
-            self.navigationController?.popViewControllerAnimated(true)
-        } else {
-            self.takePhoto()
-        }
-        
-        //self.performSegueWithIdentifier("showImagePickerAgain", sender: true)
-    }
+   let imageFromSource = UIImagePickerController()
     @IBOutlet weak var imageViewController: UIImageView!
     
-    
     var imagePicker: UIImagePickerController!
-    
-    var uiimage: UIImage!
-    
+    @IBOutlet weak var loading: UIImageView!
+    var image: UIImage!
     var gps:GpsService!
-    
-    var fusuma:FusumaViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let imageData = NSData(contentsOfURL: NSBundle.mainBundle().URLForResource("locator_preloader", withExtension: "gif")!)
+        self.loading.image = UIImage.gifWithData(imageData!)
+        imageFromSource.delegate = self
+        imageFromSource.allowsEditing = true
+        self.title = "neue Location"
         self.view.backgroundColor = COLORS.black
-        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "cross"), style: .Plain, target: self, action: "close")
-        
         gps = GpsService(deniedHandler: gpsDeniedHandler)
-        // Do any additional setup after loading the view.
     }
     
-    override func viewDidAppear(animated: Bool) {
-        if uiimage == nil && warschonda {
-            self.navigationController?.popViewControllerAnimated(true)
-        }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     func gpsDeniedHandler(accessGranted: Bool) {
@@ -69,48 +51,34 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
         UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
     }
     
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     func takePhoto() {
-        fusuma = FusumaViewController()
-        fusuma.delegate = self
-        self.warschonda = true
-        self.presentViewController(fusuma, animated: false, completion: nil)
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+            imageFromSource.sourceType = UIImagePickerControllerSourceType.Camera
+            self.presentViewController(imageFromSource, animated: true, completion: nil)
+        }
     }
     
-    
-    func fusumaDismissedWithImage(image: UIImage) {
-        print("fusumaDismissedWithImage")
-    }
-    
-    func fusumaImageSelected(image: UIImage) {
-        self.uiimage = image
-        self.imageViewController.image = image
-        self.view.alpha = 1
-        
-    }
-    
-    func fusumaCameraRollUnauthorized() {
-        AlertService.simpleAlert(self, message: "Wir benötigen Rechte um deine Kamera zu nutzen")
-    }
-
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "nameYourLocation" {
             let controller = segue.destinationViewController as! NameYourLocationViewController
-            controller.uiimage = self.uiimage
+            controller.uiimage = self.image
             let location = gps.getMaybeCurrentLocation()
             print("setting gps coords", location.keys.first, location.values.first)
             controller.lat = location.keys.first
             controller.long = location.values.first
             gps.unsubscribeGps()
-            
-            self.uiimage = nil
-
         }
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        let editedImage: UIImage = info[UIImagePickerControllerEditedImage] as! UIImage
+        self.image = editedImage
+        self.dismissViewControllerAnimated(true, completion: nil)
+        self.performSegueWithIdentifier("nameYourLocation", sender: true)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func close() {
