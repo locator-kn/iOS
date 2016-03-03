@@ -11,6 +11,28 @@ import UIKit
 class SecondNavigationVC: AbstractNavigationVC {
 
     
+    override func viewDidLoad() {
+        
+        self.styleNaviBar()
+        
+        // if a user is set in defaults, redirect to dashboard
+        if (NSUserDefaults.standardUserDefaults().stringForKey("me") != nil) {
+            UserService.protected().then {
+                result -> Void in
+                User.me = User(id: NSUserDefaults.standardUserDefaults().stringForKey("me")!)
+                print("Statuscode Protected", result)
+                if (result == 401) {
+                    let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+                    let secondnavi = mainStoryboard.instantiateViewControllerWithIdentifier("firstnavi") as! MainNavigationVC
+                    let window = UIApplication.sharedApplication().delegate!.window!
+                    NSUserDefaults.standardUserDefaults().removeObjectForKey("me")
+                    window!.rootViewController = secondnavi
+                    window!.makeKeyAndVisible()
+                }
+            }
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -11,7 +11,7 @@ import UIKit
 class LocationListVC: UITableViewController {
 
     var locations:[Location]?
-    var user:User?
+    var user:User!
     var parentCtrl: UserTabVC?
     var showFavoritedLocations = false
     

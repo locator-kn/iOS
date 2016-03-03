@@ -118,7 +118,7 @@ class RegisterVC5: UIViewController, UINavigationControllerDelegate, UIImagePick
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        let tmp: UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        let tmp: UIImage = info[UIImagePickerControllerEditedImage] as! UIImage
         profilImageChanged = true
         profilImageView.image = tmp
         self.dismissViewControllerAnimated(true) { () -> Void in }

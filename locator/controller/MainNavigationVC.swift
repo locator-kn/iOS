@@ -12,35 +12,12 @@ class MainNavigationVC: AbstractNavigationVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // if a user is set in defaults, redirect to dashboard
-        if (NSUserDefaults.standardUserDefaults().stringForKey("me") != nil) {
-            UserService.protected().then {
-                result -> Void in
-                User.me = User(id: NSUserDefaults.standardUserDefaults().stringForKey("me")!)
-                print("Statuscode Protected", result)
-                if (result != 401) {
-                    self.redirectToDashboard()
-
-                    UserService.getUser(NSUserDefaults.standardUserDefaults().stringForKey("me")!).then {
-                        result -> Void in
-                        User.me = result
-                    }
-                }
-            }
-        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func redirectToDashboard() {
-        self.performSegueWithIdentifier("dashboard", sender: self)
-    }
-    
-   
     
     /*
     // MARK: - Navigation

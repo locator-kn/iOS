@@ -32,7 +32,7 @@ class UserVC: UIViewController {
     var me = false
     
     override func viewDidLoad() {
-        print("User with ID: " + self.user.id!)
+        print("User with ID: " + self.user!.id!)
         
         // fetch user information
         UserService.getUser(user.id!)
@@ -46,7 +46,7 @@ class UserVC: UIViewController {
                 print(error)
         }
         
-        if self.user.id == User.me?.id {
+        if self.user.id == User.me!.id {
             me = true
             self.followButton.hidden = true
         }
@@ -87,7 +87,7 @@ class UserVC: UIViewController {
         self.locationsCount.text = "\(self.user.locationCount!)"
         self.followersCount.text = "\(self.user.followerCount!)"
         
-        if (User.me != nil && User.me!.following!.contains(self.user.id!)) {
+        if (User.me != nil && User.me!.following != nil && User.me!.following!.contains(self.user.id!)) {
             self.user.mefollowing = true
             self.followButton.setImage(self.followActiveIcon, forState: .Normal)
         }

@@ -15,6 +15,7 @@ class BubbleVC: UIViewController {
     let limit = 6
     let colorRed = Color.red()
     
+    @IBOutlet weak var schoenHier: UIButton!
     var locations = [Location]()
     var detailLocation: Location?
     
@@ -124,8 +125,9 @@ class BubbleVC: UIViewController {
     func addGestureRecognizer() {
         let schoenHierGesture = UITapGestureRecognizer(target:self, action:Selector("schoenHierTapped:"))
         let schoenHierGesture_hold = UILongPressGestureRecognizer(target:self, action:Selector("schonHierLongPress:"))
-        schoenHierImageView.addGestureRecognizer(schoenHierGesture)
-        schoenHierImageView.addGestureRecognizer(schoenHierGesture_hold)
+        
+        schoenHier.addGestureRecognizer(schoenHierGesture)
+        schoenHier.addGestureRecognizer(schoenHierGesture_hold)
         
         let userProfileGesture = UITapGestureRecognizer(target:self, action:Selector("userProfileTapped:"))
         userProfilImageView.addGestureRecognizer(userProfileGesture)
@@ -147,12 +149,14 @@ class BubbleVC: UIViewController {
         view.addGestureRecognizer(rightSwipe)
     }
     
-    func schoenHierTapped(imageView: UIImageView) {
+    func schoenHierTapped(sender: UITapGestureRecognizer) {
         performSegueWithIdentifier("map", sender: self)
     }
     
-    func schonHierLongPress(imageView: UIImageView) {
-        performSegueWithIdentifier("createLocation", sender: self)
+    func schonHierLongPress(sender: UILongPressGestureRecognizer) {
+        if (sender.state == .Ended) {
+            performSegueWithIdentifier("createLocation", sender: self)
+        }
     }
     
     func userProfileTapped(imageView: UIImageView) {
@@ -232,8 +236,8 @@ class BubbleVC: UIViewController {
                 destinationVC.location = detailLocation
             }
         } else if (segue.identifier == "showOwnProfil") {
-            if let _: UserVC = segue.destinationViewController as? UserVC {
-                
+            if let destination: UserVC = segue.destinationViewController as? UserVC {
+                destination.user = User.me
             }
         } else if let destinationVC: MapVC = segue.destinationViewController as? MapVC {
             destinationVC.initialSchoenHier = true
