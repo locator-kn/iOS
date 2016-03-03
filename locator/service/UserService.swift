@@ -71,17 +71,9 @@ class UserService {
                 switch response.result {
                 case .Success:
                     
-                    
-                    
                     if let value = response.result.value {
                         let json = JSON(value)
-                        
                         let user = jsonToUser(json)
-                        
-//                        let id = json["_id"].string
-//                        let name = json["name"].string
-//                        let email = json["mail"].string
-//
                         fulfill(user)
                     }
                     

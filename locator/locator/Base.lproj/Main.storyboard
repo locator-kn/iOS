@@ -63,6 +63,7 @@
             <string>SourceSansPro-Semibold</string>
             <string>SourceSansPro-Semibold</string>
             <string>SourceSansPro-Semibold</string>
+            <string>SourceSansPro-Semibold</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -564,7 +565,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ylq-AA-Tqj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4422" y="1389.75"/>
+            <point key="canvasLocation" x="4381" y="933"/>
         </scene>
         <!--Location DetailVC-->
         <scene sceneID="Eyn-e7-LFX">
@@ -2126,7 +2127,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Konstanz" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gOb-J3-wKN">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Stadt" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gOb-J3-wKN">
                                 <rect key="frame" x="20" y="95" width="560" height="36"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="28"/>
@@ -2238,9 +2239,26 @@
                                     <rect key="frame" x="20" y="95" width="760" height="33"/>
                                 </variation>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wjR-jp-KfV">
+                                <rect key="frame" x="20" y="530" width="560" height="50"/>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Semibold" family="Source Sans Pro" pointSize="30"/>
+                                <state key="normal" title="Jetzt registrieren!"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="733" width="360" height="47"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="20" y="733" width="760" height="47"/>
+                                </variation>
+                                <connections>
+                                    <action selector="registerButtonClicked:" destination="ky3-wn-5IO" eventType="touchUpInside" id="paN-cc-NaM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.97647058819999999" green="0.67843137249999996" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="AaY-Oh-4hj" firstAttribute="top" secondItem="wjR-jp-KfV" secondAttribute="bottom" constant="20" id="7Kw-9U-UeH"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="wjR-jp-KfV" secondAttribute="leading" id="dX6-eG-BA6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wjR-jp-KfV" secondAttribute="trailing" id="rb9-jE-RGS"/>
                             <constraint firstItem="mcO-4V-hIH" firstAttribute="top" secondItem="DQz-yl-REc" secondAttribute="bottom" constant="51" id="udi-I9-Xkd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mcO-4V-hIH" secondAttribute="trailing" id="uhT-hb-VcE"/>
                             <constraint firstAttribute="leadingMargin" secondItem="mcO-4V-hIH" secondAttribute="leading" id="vYz-bI-wyg"/>
@@ -2333,7 +2351,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uWs-pp-0sG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7909.5" y="933.75"/>
+            <point key="canvasLocation" x="8071" y="1707"/>
         </scene>
         <!--About User Vc-->
         <scene sceneID="3GJ-VJ-OZ1">
@@ -2440,7 +2458,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XiF-qa-QEO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8605.5" y="933.75"/>
+            <point key="canvasLocation" x="8789" y="1707"/>
         </scene>
         <!--Pre LoginVC-->
         <scene sceneID="5tH-GS-qyQ">
@@ -2495,7 +2513,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sNa-lI-qhq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9351" y="933.75"/>
+            <point key="canvasLocation" x="9433" y="631"/>
         </scene>
         <!--Registrierung-->
         <scene sceneID="t3n-UO-nau">
@@ -2518,7 +2536,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="py5-Qx-pat">
                                 <rect key="frame" x="20" y="530" width="560" height="50"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Semibold" family="Source Sans Pro" pointSize="30"/>
-                                <state key="normal" title="Jetzt registrieren!"/>
+                                <state key="normal" title="Nein danke!"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="20" y="733" width="360" height="47"/>
                                 </variation>
@@ -2526,7 +2544,7 @@
                                     <rect key="frame" x="20" y="733" width="760" height="47"/>
                                 </variation>
                                 <connections>
-                                    <action selector="registerButtonPressed:" destination="qxr-V7-qqt" eventType="touchUpInside" id="iWL-FS-Lwf"/>
+                                    <action selector="showDashboard:" destination="qxr-V7-qqt" eventType="touchUpInside" id="yzw-O6-11C"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profil" translatesAutoresizingMaskIntoConstraints="NO" id="vtp-pb-BeO">
@@ -2554,7 +2572,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="profilImageView" destination="vtp-pb-BeO" id="kuM-qF-Gis"/>
-                        <segue destination="EZm-2G-H9D" kind="show" identifier="showWelcomeRegisteredView" id="Vjf-W9-zB6"/>
+                        <segue destination="QpN-yJ-0WM" kind="show" identifier="showPreLogin" id="F2M-Tf-eKn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YQq-4a-28V" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2958,11 +2976,11 @@
         <image name="weiter_icon" width="546" height="546"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="n5V-k0-1OC"/>
+        <segue reference="F2M-Tf-eKn"/>
+        <segue reference="pqk-kP-sXI"/>
         <segue reference="sX6-Cx-Ga0"/>
         <segue reference="ela-Fj-2Fq"/>
         <segue reference="2oh-QA-SLC"/>
         <segue reference="Mj3-i4-FhS"/>
-        <segue reference="WG6-zk-XfW"/>
     </inferredMetricsTieBreakers>
 </document>

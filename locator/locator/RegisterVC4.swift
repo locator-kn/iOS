@@ -17,6 +17,7 @@ class RegisterVC4: UIViewController, UITextFieldDelegate {
     var name: String?
     var residence: String?
     var email: String?
+    var password: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,18 +34,15 @@ class RegisterVC4: UIViewController, UITextFieldDelegate {
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
-
-    @IBAction func backButtonPressed(sender: UIButton) {
-        self.navigationController?.popViewControllerAnimated(true)
-    }
     
-    @IBAction func crossButtonPressed(sender: UIButton) {
-        self.navigationController?.popToRootViewControllerAnimated(true)
+    @IBAction func registerButtonClicked(sender: UIButton) {
+        textFieldShouldReturn(passwordTextField)
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {   //delegate method
-        if inputChecker.checkPasswordInput(textField.text! ?? "Konstanz") == true {
-            performSegueWithIdentifier("showRegisterVC5", sender: self)
+        if inputChecker.checkPasswordInput(textField.text! ?? "") == true {
+            password = textField.text
+            registerUser()
             return true
         } else {
             alertFalseInput()
@@ -58,15 +56,25 @@ class RegisterVC4: UIViewController, UITextFieldDelegate {
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showRegisterVC5"
-        {
-            if let destinationVC = segue.destinationViewController as? RegisterVC5 {
-                destinationVC.name = self.name
-                destinationVC.residence = self.residence
-                destinationVC.email = self.email
-                destinationVC.password = self.passwordTextField.text
+    func alertFalseRegistration() {
+        let alert = UIAlertController(title: "Ups", message: "Fehlerhafte Registrierung", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func registerUser() {
+        UserService.register(email!, password: password!, name: name!, residence: residence!).then{
+            response -> Void in
+            print("User successfully registered")
+            
+            if let userId = response.id {
+                NSUserDefaults.standardUserDefaults().setValue(userId, forKey: "me")
+                User.me? = User(id: userId as String)
             }
+            self.performSegueWithIdentifier("showRegisterVC5", sender: self)
+            
+            }.error { (error) -> Void in
+                self.alertFalseRegistration()
         }
     }
     

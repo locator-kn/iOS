@@ -41,12 +41,8 @@ class RegisterVC5: UIViewController, UINavigationControllerDelegate, UIImagePick
         return true
     }
     
-    @IBAction func backButtonPressed(sender: UIButton) {
-        self.navigationController?.popViewControllerAnimated(true)
-    }
-    
-    @IBAction func crossButtonPressed(sender: UIButton) {
-        self.navigationController?.popToRootViewControllerAnimated(true)
+    @IBAction func showDashboard(sender: UIButton) {
+        performSegueWithIdentifier("showPreLogin", sender: self)
     }
     
     func imageTapped(img: AnyObject)
@@ -60,21 +56,6 @@ class RegisterVC5: UIViewController, UINavigationControllerDelegate, UIImagePick
             self.getFromGallery()
         }))
         self.presentViewController(alert, animated: true, completion: nil)
-    }
-    
-    @IBAction func registerButtonPressed(sender: UIButton) {
-        registerUser()
-    }
-    
-    func registerUser() {
-        UserService.register(email!, password: password!, name: name!, residence: residence!).then{
-            response -> Void in
-            print("User successfully registered")
-            self.performSegueWithIdentifier("showWelcomeRegisteredView", sender: self)
-            
-            }.error { (error) -> Void in
-                self.alertFalseInput()
-        }
     }
     
     func alertFalseInput() {
