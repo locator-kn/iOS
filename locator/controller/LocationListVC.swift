@@ -13,6 +13,7 @@ class LocationListVC: UITableViewController {
     var locations:[Location]?
     var user:User?
     var parentCtrl: UserTabVC?
+    var showFavoritedLocations = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,18 +31,27 @@ class LocationListVC: UITableViewController {
     func getLocationsByUser() {
         
         //fetch user locations
-        self.user!.getLocations()
-            .then {
+        
+        if !self.showFavoritedLocations {
+        
+            self.user!.getLocations().then {
                 result -> Void in
                 self.locations = result
                 self.tableView.reloadData()
                 print("Fetch Locations By user success", self.user?.id)
             }
-            .error {
-                error -> Void in
-                print("Buff buff, rauchwolken, kaputt")
-                print(error)
+            
+        } else {
+            
+            self.user!.getFavoredLocations().then {
+                result -> Void in
+                self.locations = result
+                self.tableView.reloadData()
+                print("Fetch Locations By user success", self.user?.id)
+            }
+            
         }
+        
     }
 
     override func didReceiveMemoryWarning() {

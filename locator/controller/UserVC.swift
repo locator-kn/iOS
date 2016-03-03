@@ -12,7 +12,7 @@ class UserVC: UIViewController {
 
     var tabVC:UserTabVC?
     
-    var user:User = User(id: "569e4a83a6e5bb503b838306")
+    var user:User!
     var userLocations: [Location]?
     
     var locationForSegue: Location?
@@ -29,6 +29,7 @@ class UserVC: UIViewController {
     
     let followIcon = UIImage(named: "follow") as UIImage?
     let followActiveIcon = UIImage(named: "follow_active") as UIImage?
+    var me = false
     
     override func viewDidLoad() {
         print("User with ID: " + self.user.id!)
@@ -43,6 +44,11 @@ class UserVC: UIViewController {
             .error {
                 error -> Void in
                 print(error)
+        }
+        
+        if self.user.id == User.me?.id {
+            me = true
+            self.followButton.hidden = true
         }
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "home"), style: .Plain, target: self, action: "home")
@@ -81,7 +87,7 @@ class UserVC: UIViewController {
         self.locationsCount.text = "\(self.user.locationCount!)"
         self.followersCount.text = "\(self.user.followerCount!)"
         
-        if (User.me!.following!.contains(self.user.id!)) {
+        if (User.me != nil && User.me!.following!.contains(self.user.id!)) {
             self.user.mefollowing = true
             self.followButton.setImage(self.followActiveIcon, forState: .Normal)
         }

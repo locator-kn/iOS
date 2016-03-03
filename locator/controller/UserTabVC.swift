@@ -29,16 +29,23 @@ class UserTabVC: UIViewController {
         //Storyboard
         let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         let locationListCtrl = storyboard.instantiateViewControllerWithIdentifier("LocationListVC") as? LocationListVC
+        let favoritedLocations = storyboard.instantiateViewControllerWithIdentifier("LocationListVC") as? LocationListVC
+        
         let followerListCtrl = storyboard.instantiateViewControllerWithIdentifier("UserListVC") as? UserListVC
         let followedByListCtrl = storyboard.instantiateViewControllerWithIdentifier("UserListVC") as? UserListVC
         
         locationListCtrl!.title = "Locations"
+        favoritedLocations!.title = "Favorisiert"
+        
         followerListCtrl!.title = "Follower"
         followedByListCtrl!.title = "Folgt"
         
         locationListCtrl!.user = self.user
-        followerListCtrl!.user = self.user
         
+        favoritedLocations!.user = self.user
+        favoritedLocations!.showFavoritedLocations = true
+        
+        followerListCtrl!.user = self.user
         followerListCtrl!.showFollower = true
         followedByListCtrl!.user = self.user
         followerListCtrl!.showFollower = false
@@ -48,8 +55,9 @@ class UserTabVC: UIViewController {
         followedByListCtrl!.parentCtrl = self
         
         controllerArray.append(locationListCtrl!)
-        controllerArray.append(followerListCtrl!)
+        controllerArray.append(favoritedLocations!)
         controllerArray.append(followedByListCtrl!)
+        controllerArray.append(followerListCtrl!)
         
         // Customize page menu to your liking (optional) or use default settings by sending nil for 'options' in the init
         // Example:
@@ -59,9 +67,10 @@ class UserTabVC: UIViewController {
             .MenuItemSeparatorPercentageHeight(0.1),
             .ViewBackgroundColor(UIColor(red: 255/0, green: 255/0, blue: 255/0, alpha: 0)),
             .ScrollMenuBackgroundColor(UIColor(red: 255/0, green: 255/0, blue: 255/0, alpha: 0)),
-            .MenuItemFont(UIFont(name: "SourceSansPro-Bold", size: 18)!),
+            .MenuItemFont(UIFont(name: "SourceSansPro-Bold", size: 16)!),
             .MenuHeight (50),
-            .EnableHorizontalBounce(false)
+            .EnableHorizontalBounce(false),
+            .CenterMenuItems(true)
         ]
         
         // Initialize page menu with controller array, frame, and optional parameters

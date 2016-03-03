@@ -27,6 +27,7 @@ class User {
     var imagePathThumb:String?
     
     var locations:[Location]?
+    var favoredLocations:[Location]?
     var follower:[User]?
     var followedBy:[User]?
     var following: [String]?
@@ -72,6 +73,16 @@ class User {
             result -> Void in
                 self.locations = result
                 fulfill(self.locations!)
+            }
+        }
+    }
+    
+    func getFavoredLocations() -> Promise<[Location]> {
+        return Promise { fulfill, reject in
+            LocationService.getLocationsFavoredByUser(self.id!).then {
+                result -> Void in
+                self.favoredLocations = result
+                fulfill(self.favoredLocations!)
             }
         }
     }

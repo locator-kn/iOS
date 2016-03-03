@@ -56,7 +56,7 @@ class LocationService {
         
         var nearbyLocations = [Location]()
         
-        Alamofire.request(.GET, "https://locator-app.com/api/v2/locations/nearby", parameters: ["lat": lat, "long": long, "maxDistance":maxDistance, "limit":limit]).validate().responseJSON { response in
+        Alamofire.request(.GET, API.BASE_URL + "/locations/nearby", parameters: ["lat": lat, "long": long, "maxDistance":maxDistance, "limit":limit]).validate().responseJSON { response in
             switch response.result {
                 case .Success:
                 
@@ -82,13 +82,13 @@ class LocationService {
     
         var nearbySchoenHiers = [SchoenHier]()
         
-        Alamofire.request(.GET, "https://locator-app.com/api/v2/schoenhiers/nearby", parameters: ["lat": lat, "long": long, "maxDistance":maxDistance, "limit":limit]).validate().responseJSON { response in
+        Alamofire.request(.GET, API.BASE_URL + "/schoenhiers/nearby", parameters: ["lat": lat, "long": long, "maxDistance":maxDistance, "limit":limit]).validate().responseJSON { response in
             switch response.result {
                 case .Success:
                 
                     if let value = response.result.value {
                         let json = JSON(value)
-                        for (_,subJson):(String, JSON) in json["results"] {
+                        for (_,subJson):(String, JSON) in json {
                             let lat = subJson["obj"]["geotag"]["coordinates"][1].double
                             let long = subJson["obj"]["geotag"]["coordinates"][0].double
                             let createDate = subJson["obj"]["create_date"].string
@@ -176,6 +176,30 @@ class LocationService {
             var userLocations = [Location]()
             
             Alamofire.request(.GET, API.BASE_URL + "/locations/users/" + userId).validate().responseJSON { response in
+                switch response.result {
+                case .Success:
+                    
+                    if let value = response.result.value {
+                        let json = JSON(value)
+                        for (_,subJson):(String, JSON) in json {
+                            userLocations.append(self.jsonToLocation(subJson))
+                        }
+                        fulfill(userLocations)
+                    }
+                case .Failure(let error):
+                    reject(error)
+                }
+            }
+        }
+    }
+    
+    static func getLocationsFavoredByUser(userId:String) -> Promise<[Location]> {
+        
+        return Promise { fulfill, reject in
+            
+            var userLocations = [Location]()
+            
+            Alamofire.request(.GET, API.BASE_URL + "/locations/users/" + userId + "/favored").validate().responseJSON { response in
                 switch response.result {
                 case .Success:
                     
