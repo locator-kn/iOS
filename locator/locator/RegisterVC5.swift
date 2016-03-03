@@ -13,7 +13,6 @@ class RegisterVC5: UIViewController, UINavigationControllerDelegate, UIImagePick
     @IBOutlet weak var profilImageView: UIImageView!
     
     let imageFromSource = UIImagePickerController()
-//    var imageView: UIImageView!
     
     var name: String?
     var residence: String?
@@ -31,8 +30,6 @@ class RegisterVC5: UIViewController, UINavigationControllerDelegate, UIImagePick
         profilImageView.addGestureRecognizer(tapGestureRecognizer)
         profilImageView.layer.cornerRadius = profilImageView.frame.size.width / 2
         profilImageView.clipsToBounds = true
-        
-        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
