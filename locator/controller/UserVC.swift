@@ -12,7 +12,7 @@ class UserVC: UIViewController {
 
     var tabVC:UserTabVC?
     
-    var user:User!
+    var user:User = User.me!
     var userLocations: [Location]?
     
     var locationForSegue: Location?
