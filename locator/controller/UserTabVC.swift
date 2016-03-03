@@ -56,9 +56,8 @@ class UserTabVC: UIViewController {
         
         controllerArray.append(locationListCtrl!)
         controllerArray.append(favoritedLocations!)
-        
-        controllerArray.append(followerListCtrl!)
         controllerArray.append(followedByListCtrl!)
+        controllerArray.append(followerListCtrl!)
         
         // Customize page menu to your liking (optional) or use default settings by sending nil for 'options' in the init
         // Example:
