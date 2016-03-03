@@ -12,8 +12,6 @@ class PreLoginVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,9 +24,19 @@ class PreLoginVC: UIViewController {
         let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
         dispatch_after(time, dispatch_get_main_queue()) {
             self.performSegueWithIdentifier("showDashboard", sender: nil)
-//            let containerViewController = DashboardVC()
-//            self.view.window?.rootViewController = containerViewController
         }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        self.navigationController?.navigationBarHidden = true
+        self.navigationController?.navigationBar.hidden = true
+        
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
     
 

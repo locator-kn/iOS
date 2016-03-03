@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Alamofire
 
 class RegisterVC5: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var profilImageView: UIImageView!
+    var profilImageChanged = false
+    @IBOutlet weak var yesImageView: UIImageView!
     
     let imageFromSource = UIImagePickerController()
     
@@ -25,16 +28,22 @@ class RegisterVC5: UIViewController, UINavigationControllerDelegate, UIImagePick
         imageFromSource.delegate = self
         imageFromSource.allowsEditing = true
         
-        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("imageTapped:"))
-        profilImageView.userInteractionEnabled = true
-        profilImageView.addGestureRecognizer(tapGestureRecognizer)
-        profilImageView.layer.cornerRadius = profilImageView.frame.size.width / 2
-        profilImageView.clipsToBounds = true
+        let tapGestureRecognizer1 = UITapGestureRecognizer(target:self, action:Selector("imageTapped:"))
+        profilImageView.addGestureRecognizer(tapGestureRecognizer1)
+        
+        let tapGestureRecognizer2 = UITapGestureRecognizer(target:self, action:Selector("yesButtonTapped:"))
+        yesImageView.addGestureRecognizer(tapGestureRecognizer2)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        profilImageView.layer.cornerRadius = profilImageView.frame.size.width / 2
+        profilImageView.clipsToBounds = true
     }
     
     override func prefersStatusBarHidden() -> Bool {
@@ -43,6 +52,29 @@ class RegisterVC5: UIViewController, UINavigationControllerDelegate, UIImagePick
     
     @IBAction func showDashboard(sender: UIButton) {
         performSegueWithIdentifier("showPreLogin", sender: self)
+    }
+    
+    func yesButtonTapped(sender: UIImageView) {
+        if profilImageChanged == true {
+            Alamofire.upload(
+                .POST,
+                API.PROFIL_IMAGE_UPLOAD,
+                multipartFormData: { multipartFormData in
+                    multipartFormData.appendBodyPart(data: UIImageJPEGRepresentation(self.profilImageView.image!, 0.5)!, name: "file", fileName: "userProfilImage.jpg", mimeType: "image/jpeg")
+                },
+                encodingCompletion: { encodingResult in
+                    switch encodingResult {
+                    case .Success( _, _, _):
+                        self.performSegueWithIdentifier("showPreLogin", sender: self)
+                    case .Failure(let encodingError):
+                        self.alertFalseImageUpload()
+                        print(encodingError)
+                    }
+                }
+            )
+        } else {
+            alertNoImageSelected()
+        }
     }
     
     func imageTapped(img: AnyObject)
@@ -58,8 +90,14 @@ class RegisterVC5: UIViewController, UINavigationControllerDelegate, UIImagePick
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
-    func alertFalseInput() {
-        let alert = UIAlertController(title: "Ups", message: "Fehlerhafte Registrierung", preferredStyle: UIAlertControllerStyle.Alert)
+    func alertFalseImageUpload() {
+        let alert = UIAlertController(title: "Ups", message: "Dein Profilbild konnte nicht geladen werden!", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func alertNoImageSelected() {
+        let alert = UIAlertController(title: "Ups", message: "Du musst ein Profilbild auswählen!", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
     }
@@ -81,6 +119,7 @@ class RegisterVC5: UIViewController, UINavigationControllerDelegate, UIImagePick
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         let tmp: UIImage = info[UIImagePickerControllerEditedImage] as! UIImage
+        profilImageChanged = true
         profilImageView.image = tmp
         self.dismissViewControllerAnimated(true) { () -> Void in }
     }
