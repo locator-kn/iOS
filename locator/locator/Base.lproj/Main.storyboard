@@ -69,7 +69,7 @@
         <!--WelcomeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="WelcomeVC" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeVC" id="BYZ-38-t0r" customClass="WelcomeVC" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -2939,6 +2939,11 @@
         <image name="weiter_icon" width="546" height="546"/>
     </resources>
     <inferredMetricsTieBreakers>
-
+        <segue reference="d1c-kL-o1Y"/>
+        <segue reference="sX6-Cx-Ga0"/>
+        <segue reference="5LS-PO-7IX"/>
+        <segue reference="ela-Fj-2Fq"/>
+        <segue reference="dfM-kF-3kg"/>
+        <segue reference="WG6-zk-XfW"/>
     </inferredMetricsTieBreakers>
 </document>

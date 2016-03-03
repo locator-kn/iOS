@@ -21,22 +21,26 @@ class AlertService {
         currentView.presentViewController(alert, animated: true, completion: nil)
     }
     
-    static func validateLoggedUser(currentView: UIViewController) {
+    static func validateLoggedUser(currentView: UIViewController) -> Bool {
         
         if User.me != nil {
-            return
+            return true
         } else {
             let alertController = UIAlertController(title: "Ups", message: "Du musst eingeloggt sein", preferredStyle: .Alert)
             alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: {action in segueToLoginVC()}))
             alertController.addAction(UIAlertAction(title: "Nö", style: UIAlertActionStyle.Cancel, handler: nil))
             currentView.presentViewController(alertController, animated: true, completion: nil)
+            return false
         }
     }
     
     static func segueToLoginVC() {
         dispatch_async(dispatch_get_main_queue(), {
-            let window = UIWindow(frame: UIScreen.mainScreen().bounds)
-            window.rootViewController = LoginVC()
+            
+            let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+            let loginVC = mainStoryBoard.instantiateViewControllerWithIdentifier("WelcomeVC") as! WelcomeVC
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            appDelegate.window?.rootViewController = loginVC
         })
     }
 

@@ -72,7 +72,6 @@ class RegisterVC4: UIViewController, UITextFieldDelegate {
                 User.me? = User(id: userId as String)
             }
             self.performSegueWithIdentifier("showRegisterVC5", sender: self)
-            
             }.error { (error) -> Void in
                 self.alertFalseRegistration()
         }

@@ -155,7 +155,9 @@ class BubbleVC: UIViewController {
     
     func schonHierLongPress(sender: UILongPressGestureRecognizer) {
         if (sender.state == .Ended) {
-            performSegueWithIdentifier("createLocation", sender: self)
+            if AlertService.validateLoggedUser(self) {
+                performSegueWithIdentifier("createLocation", sender: self)
+            }
         }
     }
     
