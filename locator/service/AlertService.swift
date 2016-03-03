@@ -21,4 +21,19 @@ class AlertService {
         currentView.presentViewController(alert, animated: true, completion: nil)
     }
     
+    static func validateLoggedUser(currentView: UIViewController) {
+        
+        if User.me != nil {
+            return
+        } else {
+            let alertController = UIAlertController(title: "Ups", message: "Du musst eingeloggt sein", preferredStyle: .Alert)
+            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: {action in segueToLoginVC()}))
+            alertController.addAction(UIAlertAction(title: "Nö", style: UIAlertActionStyle.Cancel, handler: nil))
+        }
+    }
+    
+    static func segueToLoginVC() {
+        
+    }
+
 }
