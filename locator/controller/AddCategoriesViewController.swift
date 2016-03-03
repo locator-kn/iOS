@@ -192,7 +192,7 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
             // return false if category was removed
             return false
         } else {
-            if selectedCategories.count == 3 {
+            if selectedCategories.count == 2 {
                 return false
             }
             selectedCategories.append(ident)
