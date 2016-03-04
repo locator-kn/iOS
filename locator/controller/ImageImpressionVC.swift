@@ -21,6 +21,7 @@ class ImageImpressionVC: UIViewController, UINavigationControllerDelegate, Fusum
     var video:Bool = false
     let fusuma = FusumaViewController()
     @IBOutlet weak var imageView: UIImageView!
+    var loader: LoadingView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,10 +74,16 @@ class ImageImpressionVC: UIViewController, UINavigationControllerDelegate, Fusum
     }
     
     @IBAction func submitImage(sender: AnyObject) {
+        
+        self.loader = LoadingView(frame: self.view.frame)
+        self.loader.backgroundColor = COLORS.yellow
+        self.view.addSubview(loader)
+        
         ImpressionService.addImageImpression(self.locationId, data: image!).then{
             result -> Void in
             self.vc.loadData()
         }.always {
+            self.loader.dismiss()
             self.dismissViewControllerAnimated(true, completion: nil);
         }
     }
