@@ -19,6 +19,7 @@ class ChangePasswordTVC: UITableViewController, UITextFieldDelegate {
         
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
         
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -59,8 +60,12 @@ class ChangePasswordTVC: UITableViewController, UITextFieldDelegate {
                     // send request
                     UserService.changePassword(oldPasswordTextField.text!, newPassword: newPasswordRepeatTextField.text!).then({ status -> Void in
                         if status == true {
-                            AlertService.simpleAlert(self, message: "Dein Passwort wurde erfolgreich geändert!")
-                            self.navigationController?.popViewControllerAnimated(true)
+                            let alert = UIAlertController(title: "Super", message: "Dein Passwort wurde geändert.", preferredStyle: UIAlertControllerStyle.Alert)
+                            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                            self.presentViewController(alert, animated: true, completion: nil)
+                            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                self.navigationController?.popViewControllerAnimated(true)
+                            })
                         }
                     })
                 } else {
@@ -71,6 +76,8 @@ class ChangePasswordTVC: UITableViewController, UITextFieldDelegate {
             AlertService.simpleAlert(self, message: "Ups. Bitte gebe dein altes Passwort ein!")
         }
     }
+    
+    
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
