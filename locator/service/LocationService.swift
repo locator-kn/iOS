@@ -13,6 +13,8 @@ import PromiseKit
 
 class LocationService {
     
+    static var schonHierCache = [String: SchoenHier]()
+    
     static func jsonToLocation(json: JSON) -> Location {
         let id = json["_id"].string
         let title = json["title"].string
@@ -89,11 +91,20 @@ class LocationService {
                     if let value = response.result.value {
                         let json = JSON(value)
                         for (_,subJson):(String, JSON) in json {
+                            
+                            let id = subJson["obj"]["_id"].string!
+                            
+                            if self.schonHierCache[id] != nil {
+                                print("cache hit")
+                                continue
+                            }
+                            
                             let lat = subJson["obj"]["geotag"]["coordinates"][1].double
                             let long = subJson["obj"]["geotag"]["coordinates"][0].double
                             let createDate = subJson["obj"]["create_date"].string
-                            let id = subJson["obj"]["_id"].string
-                            nearbySchoenHiers.append(SchoenHier(id: id!, createDate: createDate!, long: long!, lat: lat!))
+                            let schoenHier = SchoenHier(id: id, createDate: createDate!, long: long!, lat: lat!)
+                            nearbySchoenHiers.append(schoenHier)
+                            self.schonHierCache[id] = schoenHier
                         }
                         
                     fulfill(nearbySchoenHiers)
