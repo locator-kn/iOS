@@ -17,7 +17,7 @@ class AlertService {
     
     static func simpleAlert(currentView: UIViewController, title:String, message:String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Hoppla", style: UIAlertActionStyle.Default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
         currentView.presentViewController(alert, animated: true, completion: nil)
     }
     
