@@ -50,15 +50,16 @@ class UtilService {
         return NSData(contentsOfURL: NSURL(string: path)!)!
     }
     
-    static func dataFromCache(var path:String) -> Promise<NSData> {
+    static func dataFromCache(path:String) -> Promise<NSData> {
         return Promise { fulfill, reject in
             
-            if (path == "") {
-                path = "https://scontent.xx.fbcdn.net/hprofile-xta1/v/t1.0-1/p160x160/11139987_10207678795748383_6785037833618997135_n.jpg?oh=22615386cd6be5f63a502af325ede808&oe=57241A43"
-            }
-            let cache = Shared.dataCache
-            cache.fetch(URL: NSURL(string: path)!).onSuccess { data in
-                fulfill(data)
+            if (path != "") {
+                let cache = Shared.dataCache
+                cache.fetch(URL: NSURL(string: path)!).onSuccess { data in
+                    fulfill(data)
+                }
+            } else {
+                reject(NSError(domain: "Imagecache", code: 404, userInfo: nil))
             }
         }
     }
