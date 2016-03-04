@@ -25,7 +25,7 @@ class DeviceService {
     }
 
     static func registerDevice(deviceData: [String:String]) -> Promise<Bool> {
-        
+        print("Token: ", deviceData["pushToken"])
         return Promise { fulfill, reject in
             
             Alamofire.request(.POST, API.BASE_URL + "/device/register", parameters: deviceData).validate().responseJSON {
