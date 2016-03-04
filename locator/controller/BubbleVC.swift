@@ -70,6 +70,9 @@ class BubbleVC: UIViewController {
                 self.fourthBubbleImageView.show()
                 self.fifthBubbleImageView.show()
                 self.sixthBubbleImageView.show()
+            }.error {
+                err -> Void in
+                AlertService.simpleAlert(self, message: "Da ist etwas schief gelaufen.. pardon")
         }
     }
     
