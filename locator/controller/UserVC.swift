@@ -50,7 +50,7 @@ class UserVC: UIViewController {
         
         if self.user.id == User.me!.id {
             me = true
-            self.followButton.hidden = true
+            //self.followButton.hidden = true
         }
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "home"), style: .Plain, target: self, action: "home")
@@ -95,6 +95,11 @@ class UserVC: UIViewController {
     }
     
     @IBAction func followButton(sender: UIButton) {
+        if self.me {
+            self.performSegueWithIdentifier("settings", sender: self)
+            return
+        }
+        
         if !self.user.mefollowing {
             self.followButton.setImage(self.followActiveIcon, forState: .Normal)
             self.user.follow()
