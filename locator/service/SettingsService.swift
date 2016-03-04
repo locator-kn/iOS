@@ -7,10 +7,14 @@
 //
 
 import Foundation
+import PromiseKit
 
 public class SettingsService {
     
     static func logout() {
-        NSUserDefaults.standardUserDefaults().removeObjectForKey("me")
+        UserService.logout().then { result -> Void in
+            NSUserDefaults.standardUserDefaults().removeObjectForKey("me")
+            AlertService.segueToLoginVC()
+        }
     }
 }

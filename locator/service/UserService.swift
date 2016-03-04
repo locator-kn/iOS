@@ -59,6 +59,25 @@ class UserService {
         }
     }
     
+    static func logout() -> Promise<AnyObject> {
+        
+        return Promise { fulfill, reject in
+            
+            Alamofire.request(.GET, API.USER_LOGOUT).validate().responseJSON {
+                response in
+                switch response.result {
+                case .Success:
+                    if let value = response.result.value {
+                        print("youre logout")
+                        fulfill(value)
+                    }
+                case .Failure(let error):
+                    reject(error)
+                }
+            }
+        }
+    }
+    
     static func register(mail:String, password:String, name: String, residence: String) -> Promise<User> {
         
         return Promise { fulfill, reject in

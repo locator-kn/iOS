@@ -28,19 +28,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         }
       
-//        if (NSUserDefaults.standardUserDefaults().stringForKey("me") != nil) {
-//            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-//            
-//            let secondnavi = mainStoryboard.instantiateViewControllerWithIdentifier("secondnavi") as! SecondNavigationVC
-//            window?.rootViewController = secondnavi
-//            User.me = User(id: NSUserDefaults.standardUserDefaults().stringForKey("me")!)
-//            window?.makeKeyAndVisible()
-//            
-//            UserService.getUser(NSUserDefaults.standardUserDefaults().stringForKey("me")!).then {
-//                result -> Void in
-//                User.me = result
-//            }
-//        }
+        if (NSUserDefaults.standardUserDefaults().stringForKey("me") != nil) {
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+            
+            let secondnavi = mainStoryboard.instantiateViewControllerWithIdentifier("secondnavi") as! SecondNavigationVC
+            window?.rootViewController = secondnavi
+            User.me = User(id: NSUserDefaults.standardUserDefaults().stringForKey("me")!)
+            window?.makeKeyAndVisible()
+            
+            UserService.getUser(NSUserDefaults.standardUserDefaults().stringForKey("me")!).then {
+                result -> Void in
+                User.me = result
+            }
+        }
         
         let settings = UIUserNotificationSettings(forTypes: .Alert, categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(settings)

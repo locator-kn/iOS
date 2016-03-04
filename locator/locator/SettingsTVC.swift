@@ -54,7 +54,8 @@ class SettingsTVC: UITableViewController {
     }
     
     func logoutTapped(label: UILabel) {
-        print("logout")
+        print("logout Button Tapped")
+        SettingsService.logout()
     }
     
     /*
