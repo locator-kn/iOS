@@ -16,15 +16,18 @@ class ImageImpressionVC: UIViewController, UINavigationControllerDelegate, Fusum
 
     var locationId:String!
     var initial = false
-    let imagePicker = UIImagePickerController()
     var vc: LocationDetailVC!
     var image:UIImage?
     var video:Bool = false
+    let fusuma = FusumaViewController()
     @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
-        self.view.alpha = 0
         super.viewDidLoad()
+        self.view.alpha = 0
+        self.fusuma.delegate = self
+        fusumaTintColor = COLORS.red
+        fusumaBackgroundColor = COLORS.black
         self.view.backgroundColor = COLORS.black
     }
     
@@ -45,10 +48,11 @@ class ImageImpressionVC: UIViewController, UINavigationControllerDelegate, Fusum
     }
     
     func openCamera() {
-        let fusuma = FusumaViewController()
-        fusuma.delegate = self
         self.presentViewController(fusuma, animated: true, completion: nil)
         self.initial = true
+    }
+    @IBAction func redo(sender: AnyObject) {
+        self.openCamera()
     }
     
     func fusumaDismissedWithImage(image: UIImage) {

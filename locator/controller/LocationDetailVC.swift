@@ -225,7 +225,7 @@ class LocationDetailVC: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 430.0
+        return 440.0
     }
     
     override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UITableViewCell? {
@@ -330,7 +330,7 @@ class LocationDetailVC: UITableViewController {
             result -> Void in
             self.headerCell.locationImage.image = UIImage(data: result)
         }
-        self.headerCell.username.setTitle(location.user.name! + "  \u{2E31}", forState: UIControlState.Normal)
+        self.headerCell.username.setTitle("von " + location.user.name!, forState: UIControlState.Normal)
         self.headerCell.favorCount.text = String(location.favorites)
         self.headerCell.impressionsCount.text = "0"
         self.headerCell.locationImage.image = UIImage(data: UtilService.dataFromPath(location.imagePathNormal))
@@ -349,4 +349,22 @@ class LocationDetailVC: UITableViewController {
         
     }
 
+    @IBAction func textImpression(sender: UIButton) {
+        if !AlertService.validateLoggedUser(self) {
+            return
+        }
+        self.performSegueWithIdentifier("text", sender: self)
+    }
+    @IBAction func fotoImpression(sender: UIButton) {
+        if !AlertService.validateLoggedUser(self) {
+            return
+        }
+        self.performSegueWithIdentifier("image", sender: self)
+    }
+    @IBAction func videoImpression(sender: UIButton) {
+        if !AlertService.validateLoggedUser(self) {
+            return
+        }
+        self.performSegueWithIdentifier("video", sender: self)
+    }
 }
