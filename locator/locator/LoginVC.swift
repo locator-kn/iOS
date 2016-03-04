@@ -67,8 +67,8 @@ class LoginVC: UIViewController {
                 print("Cancelled")
             } else {
                 print("Logged in")
+                self.loginFacebookUser()
                 self.returnUserData()
-                self.showDashboard()
             }
         }
     }
@@ -77,7 +77,7 @@ class LoginVC: UIViewController {
     
     func returnUserData()
     {
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"name,email,gender,id"])
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"id"])
         graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
             
             if ((error) != nil)
@@ -87,29 +87,33 @@ class LoginVC: UIViewController {
             }
             else
             {
-                let userId : NSString = result.valueForKey("id") as! NSString
-                NSUserDefaults.standardUserDefaults().setValue(userId, forKey: "me")
-                User.me? = User(id: userId as String)
+                _ = result.valueForKey("id") as! NSString
                 let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
                 print(accessToken)
-                print("fetched user: \(result)")
-                let userName : NSString = result.valueForKey("name") as! NSString
-                print("User Name is: \(userName)")
-                let userEmail : NSString = result .valueForKey("email") as! NSString
-                print("User Email is: \(userEmail)")
             }
         })
     }
     
     func showDashboard() {
-        
         dispatch_async(dispatch_get_main_queue(), {
-            
             let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
             let loginVC = mainStoryBoard.instantiateViewControllerWithIdentifier("secondnavi") as! SecondNavigationVC
             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             appDelegate.window?.rootViewController = loginVC
         })
+    }
+    
+    func loginFacebookUser() {
+        let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
+        UserService.facebookLogin(accessToken).then {
+            result -> Void in
+            User.me = result
+            if result.id != nil {
+                NSUserDefaults.standardUserDefaults().setValue(result.id, forKey: "me")
+            }
+            }.then {
+                self.showDashboard()
+        }
     }
     
     /*
