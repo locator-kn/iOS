@@ -58,6 +58,8 @@ class LocationDetailVC: UITableViewController {
         tableView.estimatedRowHeight = 300.0
         
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        self.loadData()
     }
     
     func playVideo() {
@@ -75,10 +77,6 @@ class LocationDetailVC: UITableViewController {
             }
         }
 
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        self.loadData()
     }
     
     func loadData() {
@@ -314,6 +312,7 @@ class LocationDetailVC: UITableViewController {
         } else if (segue.identifier == "video") {
             let controller = segue.destinationViewController as! VideoImpressionVC
             controller.locationId = self.location.id
+            controller.vc = self
         } else if (segue.identifier == "user") {
             let controller = segue.destinationViewController as! UserVC
             controller.user = self.location.user

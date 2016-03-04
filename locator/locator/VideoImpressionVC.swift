@@ -19,6 +19,7 @@ class VideoImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
     var videoData:NSData?
     var video:Bool = false
     var dismiss:Bool = false
+    var vc: LocationDetailVC!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +70,7 @@ class VideoImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
         ImpressionService.addVideoImpression(self.locationId, data: videoData!).then{
             result -> Void in
             print("video upload success")
+            self.vc.loadData()
         }.always {
             print("always called")
             self.dismissViewControllerAnimated(true, completion: nil);
