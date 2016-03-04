@@ -14,6 +14,7 @@ public class SettingsService {
     static func logout() {
         UserService.logout().then { result -> Void in
             NSUserDefaults.standardUserDefaults().removeObjectForKey("me")
+            NSUserDefaults.standardUserDefaults().removeObjectForKey("facebookUser")
             AlertService.segueToLoginVC()
         }
     }
