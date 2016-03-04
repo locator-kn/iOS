@@ -344,5 +344,11 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         return infoWindow
     }
     
+    @IBAction func createLocationButton(sender: UIButton) {
+        if !AlertService.validateLoggedUser(self) {
+            return
+        }
+        self.performSegueWithIdentifier("createLocation", sender: self)
+    }
     
 }

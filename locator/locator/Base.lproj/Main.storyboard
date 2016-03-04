@@ -1872,7 +1872,7 @@
                                 </constraints>
                                 <state key="normal" image="location"/>
                                 <connections>
-                                    <segue destination="wHA-Vl-Stn" kind="show" id="dfM-kF-3kg"/>
+                                    <action selector="createLocationButton:" destination="4Mp-XX-Glu" eventType="touchUpInside" id="Ua8-WZ-aSf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdt-da-1cq">
@@ -1963,6 +1963,7 @@
                         <outlet property="optionButton" destination="TRT-34-oxv" id="1PP-aQ-Igj"/>
                         <outlet property="overlay" destination="YVY-JW-BsL" id="tVL-Mv-fPw"/>
                         <segue destination="1XA-Ef-cjY" kind="show" identifier="locationDetail" id="K3z-rv-EhQ"/>
+                        <segue destination="wHA-Vl-Stn" kind="show" identifier="createlocation" id="fWT-Cw-pds"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4fM-eQ-3gY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3272,9 +3273,9 @@
     <inferredMetricsTieBreakers>
         <segue reference="pqk-kP-sXI"/>
         <segue reference="WG6-zk-XfW"/>
-        <segue reference="d1c-kL-o1Y"/>
-        <segue reference="PBI-Q7-c1i"/>
+        <segue reference="K3z-rv-EhQ"/>
         <segue reference="Q9G-yB-4zn"/>
-        <segue reference="dfM-kF-3kg"/>
+        <segue reference="fWT-Cw-pds"/>
+        <segue reference="PBI-Q7-c1i"/>
     </inferredMetricsTieBreakers>
 </document>
