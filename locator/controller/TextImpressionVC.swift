@@ -11,6 +11,7 @@ import UIKit
 class TextImpressionVC: UIViewController, UITextFieldDelegate {
     
     var locationId:String!
+    var vc: LocationDetailVC!
     @IBOutlet weak var textField: UITextField!
 
     override func viewDidLoad() {
@@ -34,17 +35,18 @@ class TextImpressionVC: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {   //delegate method
-        self.closeModal(self)
         
         if textField.text?.characters.count > 3 {
+            
             ImpressionService.addTextImpression(self.locationId, data: textField.text!).then {
                 result -> Void in
                 print("post textimpression success")
-            }.error {
-                err -> Void in
-                print("textimpression error")
-                print(err)
+                self.vc.loadData()
+            }.always {
+                self.dismissViewControllerAnimated(true, completion: nil);
             }
+        } else {
+            AlertService.simpleAlert(self, message: "Dein text muss länger sein")
         }
         
         return true
