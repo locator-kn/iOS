@@ -21,7 +21,7 @@ class SecondNavigationVC: AbstractNavigationVC {
                 result -> Void in
                 User.me = User(id: NSUserDefaults.standardUserDefaults().stringForKey("me")!)
                 print("Statuscode Protected", result)
-                if (result == 401) {
+                if (result == 401 || result == 400) {
                     let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
                     let secondnavi = mainStoryboard.instantiateViewControllerWithIdentifier("firstnavi") as! MainNavigationVC
                     let window = UIApplication.sharedApplication().delegate!.window!
