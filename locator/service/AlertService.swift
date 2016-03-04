@@ -12,7 +12,7 @@ import UIKit
 class AlertService {
         
     static func simpleAlert(currentView: UIViewController, message: String) {
-        self.simpleAlert(currentView, title: "Ops", message: message)
+        self.simpleAlert(currentView, title: "Hoppla", message: message)
     }
     
     static func simpleAlert(currentView: UIViewController, title:String, message:String) {
@@ -26,7 +26,7 @@ class AlertService {
         if User.me != nil {
             return true
         } else {
-            let alertController = UIAlertController(title: "Ups", message: "Du musst eingeloggt sein", preferredStyle: .Alert)
+            let alertController = UIAlertController(title: "Hoppla", message: "Du musst eingeloggt sein", preferredStyle: .Alert)
             alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: {action in segueToLoginVC()}))
             alertController.addAction(UIAlertAction(title: "Nö", style: UIAlertActionStyle.Cancel, handler: nil))
             currentView.presentViewController(alertController, animated: true, completion: nil)

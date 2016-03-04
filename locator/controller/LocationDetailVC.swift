@@ -16,6 +16,7 @@ class LocationDetailVC: UITableViewController {
     @IBOutlet weak var category_1: UIImageView!
     @IBOutlet weak var category_2: UIImageView!
     
+    var hideBack = false
     var player: AVPlayer!
     var playerController: AVPlayerViewController!
     
@@ -33,6 +34,10 @@ class LocationDetailVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if self.hideBack {
+            self.navigationItem.setHidesBackButton(true, animated:true);
+        }
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "home"), style: .Plain, target: self, action: "home")
         self.loader = LoadingView(frame: self.view.frame)
