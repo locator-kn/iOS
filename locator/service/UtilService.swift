@@ -115,6 +115,6 @@ struct COLORS {
     static let red = UIColor(red: 250, green: 102, blue: 75)
     static let blue = UIColor(red: 120, green: 162, blue: 178)
     static let grey = UIColor(red: 205, green: 205, blue: 205)
-    static let yellow = UIColor(red: 242, green: 203, blue: 128)
+    static let yellow = UIColor(red: 249, green: 172, blue: 23)
     static let black = UIColor(red: 30, green: 34, blue: 35)
 }
