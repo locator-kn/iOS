@@ -2322,6 +2322,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Einstellungen" id="DmY-Fz-tZh"/>
                     <connections>
+                        <outlet property="changePasswordCell" destination="A6q-c5-Tds" id="YLb-3f-IdA"/>
                         <outlet property="logoutLabel" destination="2n2-Aq-XHA" id="pwG-A3-v0I"/>
                     </connections>
                 </tableViewController>

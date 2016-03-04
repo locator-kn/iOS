@@ -110,6 +110,7 @@ class LoginVC: UIViewController {
             User.me = result
             if result.id != nil {
                 NSUserDefaults.standardUserDefaults().setValue(result.id, forKey: "me")
+                NSUserDefaults.standardUserDefaults().setBool(true, forKey: "facebookUser")
             }
             }.then {
                 self.showDashboard()

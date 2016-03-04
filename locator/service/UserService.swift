@@ -263,6 +263,7 @@ class UserService {
                 .validate()
                 .responseJSON {
                     response in
+                    print(response)
                     switch response.result {
                     case .Success:
                             fulfill(true)

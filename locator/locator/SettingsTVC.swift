@@ -11,6 +11,7 @@ import UIKit
 class SettingsTVC: UITableViewController {
 
     @IBOutlet weak var logoutLabel: UILabel!
+    @IBOutlet weak var changePasswordCell: UITableViewCell!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,11 +21,11 @@ class SettingsTVC: UITableViewController {
         let logoutLabelGesture = UITapGestureRecognizer(target:self, action:Selector("logoutTapped:"))
         logoutLabel.addGestureRecognizer(logoutLabelGesture)
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        let facebookUser = NSUserDefaults.standardUserDefaults().boolForKey("facebookUser")
+        if facebookUser == true {
+            changePasswordCell.userInteractionEnabled = false
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
