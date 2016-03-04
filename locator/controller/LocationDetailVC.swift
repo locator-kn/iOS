@@ -305,6 +305,7 @@ class LocationDetailVC: UITableViewController {
         if (segue.identifier == "text") {
             let controller = segue.destinationViewController as! TextImpressionVC
             controller.locationId = self.location.id
+            controller.vc = self
         } else if (segue.identifier == "image") {
             let controller = segue.destinationViewController as! ImageImpressionVC
             controller.locationId = self.location.id
