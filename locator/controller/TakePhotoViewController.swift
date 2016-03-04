@@ -28,7 +28,7 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
         self.title = "neue Location"
         self.view.backgroundColor = COLORS.black
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "cross"), style: .Plain, target: self, action: "close")
-        gps = GpsService(deniedHandler: gpsDeniedHandler)
+        gps = GpsService(successHandler: gpsSuccessHandler ,deniedHandler: gpsDeniedHandler)
     }
     
     override func didReceiveMemoryWarning() {
@@ -36,14 +36,15 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
         // Dispose of any resources that can be recreated.
     }
     
+    func gpsSuccessHandler(accessGranted: Bool) {
+        self.takePhoto()
+    }
+    
     func gpsDeniedHandler(accessGranted: Bool) {
         if !accessGranted {
             let alert = UIAlertController(title: "GPS aktivieren", message: "Du musst dein GPS aktivieren um eine Location zu erstellen.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Gerne", style: UIAlertActionStyle.Default, handler: openAppSettings))
             self.presentViewController(alert, animated: true, completion: takePhoto)
-        } else {
-            print("open foto")
-            takePhoto()
         }
     }
     
@@ -79,10 +80,12 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         self.dismissViewControllerAnimated(true, completion: nil)
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
     func close() {
-        self.navigationController?.popToRootViewControllerAnimated(true)
+        self.dismissViewControllerAnimated(true, completion: nil)
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
 

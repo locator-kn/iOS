@@ -13,20 +13,20 @@ class GpsService: NSObject, CLLocationManagerDelegate {
     
     var lat:CLLocationDegrees = CLLocationDegrees(0.0)
     var long:CLLocationDegrees = CLLocationDegrees(0.0)
-    
     var locationManager:CLLocationManager = CLLocationManager()
-    
     var deniedHandler:((Bool) -> Void)!
+    var successHandler:((Bool) -> Void)!
+    var initial = false
     
-    init(deniedHandler: (Bool) -> Void) {
+    init(successHandler: (Bool) -> Void, deniedHandler: (Bool) -> Void) {
         super.init()
         self.deniedHandler = deniedHandler
+        self.successHandler = successHandler
         setupLocationManager()
     }
     
     override init() {
         super.init()
-
         setupLocationManager()
     }
     
@@ -42,15 +42,18 @@ class GpsService: NSObject, CLLocationManagerDelegate {
             self.deniedHandler(true)
             locationManager.startUpdatingLocation()
         } else if status == .Denied {
-            
             self.deniedHandler(false)
         }
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("updateLocation")
         lat = (locations.first?.coordinate.latitude)!
         long = (locations.first?.coordinate.longitude)!
+        
+        if !self.initial {
+            self.initial = true
+            self.successHandler(true)
+        }
     }
     
     func getMaybeCurrentLocation() -> [CLLocationDegrees: CLLocationDegrees] {

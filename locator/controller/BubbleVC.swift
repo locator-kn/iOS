@@ -43,9 +43,9 @@ class BubbleVC: UIViewController {
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "map_icon_white"), style: .Plain, target: self, action: "showMap")
         
-        gps = GpsService(deniedHandler: gpsDeniedHandler)
+        gps = GpsService(successHandler: gpsSuccessHandler, deniedHandler: gpsDeniedHandler)
         addGestureRecognizer()
-        self.loadBubbles()
+        //self.loadBubbles()
     }
     
     func loadBubbles() {
@@ -97,6 +97,10 @@ class BubbleVC: UIViewController {
     
     func gpsDeniedHandler(accessGranted: Bool) {
         print("TODO handle access:", accessGranted)
+    }
+    
+    func gpsSuccessHandler(accessGranted: Bool) {
+        self.loadBubbles()
     }
     
     override func viewDidLayoutSubviews() {
