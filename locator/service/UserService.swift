@@ -257,7 +257,7 @@ class UserService {
         }
     }
     
-    static func changePassword(oldPassword: String, newPassword: String) -> Promise<AnyObject> {
+    static func changePassword(oldPassword: String, newPassword: String) -> Promise<Bool> {
         return Promise { fulfill, reject in
             Alamofire.request(.PUT, API.CHANGE_PASSWORD, parameters: ["old_password": oldPassword, "new_password": newPassword])
                 .validate()
@@ -265,9 +265,7 @@ class UserService {
                     response in
                     switch response.result {
                     case .Success:
-                        if let value = response.result.value {
-                            fulfill(value)
-                        }
+                            fulfill(true)
                     case .Failure(let error):
                         reject(error)
                     }

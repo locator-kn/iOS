@@ -28,9 +28,6 @@ public class ValidateInputService {
         } else {
             return true
         }
-        
-        //let passwordRest = NSPredicate(format:"SELF MATCHES %@", passwordRegEx)
-        //return passwordRest.evaluateWithObject(password)
     }
     
     func checkInput(input: String, minLength: Int) -> Bool {
