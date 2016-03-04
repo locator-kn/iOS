@@ -20,6 +20,7 @@ class VideoImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
     var video:Bool = false
     var dismiss:Bool = false
     var vc: LocationDetailVC!
+    var loader: LoadingView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,12 +68,18 @@ class VideoImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
     }
     
     func submitVideo() {
+        
+        self.loader = LoadingView(frame: self.view.frame)
+        self.loader.backgroundColor = COLORS.yellow
+        self.view.addSubview(loader)
+        
         ImpressionService.addVideoImpression(self.locationId, data: videoData!).then{
             result -> Void in
             print("video upload success")
             self.vc.loadData()
         }.always {
             print("always called")
+            self.loader.dismiss()
             self.dismissViewControllerAnimated(true, completion: nil);
         }
         
