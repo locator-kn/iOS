@@ -32,6 +32,8 @@ class UserVC: UIViewController {
     var me = false
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         print("User with ID: " + self.user!.id!)
         
         // fetch user information
@@ -58,8 +60,8 @@ class UserVC: UIViewController {
         overlay.colors = [UIColor.clearColor().CGColor, UIColor(red: 29/255, green: 29/255, blue: 29/255, alpha: 0.8).CGColor]
         overlay.locations = [0.0, 1]
         gradient.layer.insertSublayer(overlay, atIndex: 0)
-        
-        super.viewDidLoad()
+   
+        UtilService.roundImageView(self.profileImage)
         
     }
 
@@ -77,8 +79,6 @@ class UserVC: UIViewController {
     }
     
     func updateView() {
-        self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2
-        self.profileImage.clipsToBounds = true
         UtilService.dataFromCache(self.user.imagePathNormal!).then {
             result -> Void in
             self.profileImage.image = UIImage(data: result)

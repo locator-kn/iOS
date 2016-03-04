@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class AlertService {
-    
+        
     static func simpleAlert(currentView: UIViewController, message: String) {
         self.simpleAlert(currentView, title: "Ops", message: message)
     }
