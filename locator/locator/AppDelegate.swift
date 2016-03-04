@@ -177,7 +177,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
         // display the userInfo
-        if let notification = userInfo["aps"] as? NSDictionary {
+        if let notification = userInfo as? NSDictionary {
             print(notification)
             completionHandler(UIBackgroundFetchResult.NoData)
         }
