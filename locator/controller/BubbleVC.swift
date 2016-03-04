@@ -166,6 +166,9 @@ class BubbleVC: UIViewController {
     }
     
     func userProfileTapped(imageView: UIImageView) {
+        if !AlertService.validateLoggedUser(self) {
+            return
+        }
         performSegueWithIdentifier("showOwnProfil", sender: self)
     }
     
