@@ -121,7 +121,7 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     }
     
     func getNearSchoenHiers(target: CLLocationCoordinate2D, maxDistance:Float) {
-        LocationService.getSchoenHiers(target.latitude, long: target.longitude, maxDistance: maxDistance, limit: 100).then { schoenHiers -> Void in
+        LocationService.getSchoenHiers(target.latitude, long: target.longitude, maxDistance: maxDistance, limit: 1500).then { schoenHiers -> Void in
             
             for schoenHier in schoenHiers {
                 
@@ -159,7 +159,7 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2DMake(lat, long)
         marker.icon = UIImage(named: "heatmap")
-        marker.opacity = 0.3
+        marker.opacity = 0.2
         marker.groundAnchor = CGPoint(x: 0.5,y: 0.5)
         marker.flat = true
         marker.zIndex = 5
@@ -171,9 +171,9 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     /* delegate on map camerachange */
     func mapView(mapView: GMSMapView, idleAtCameraPosition position: GMSCameraPosition) {
         
-        getNearSchoenHiers(position.target, maxDistance: 0.5)
+        getNearSchoenHiers(position.target, maxDistance: 1.4)
         if (self.locationsVisible) {
-            getNearLocations(position.target, maxDistance: 0.5)
+            getNearLocations(position.target, maxDistance: 0.6)
         }
     }
     
