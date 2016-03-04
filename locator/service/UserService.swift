@@ -236,5 +236,43 @@ class UserService {
             }
         }
     }
+    
+    static func resetPassword(mail:String) -> Promise<AnyObject> {
+        return Promise { fulfill, reject in
+            Alamofire.request(.POST, API.RESET_PASSWORD, parameters: ["mail": mail])
+                .validate()
+                .responseJSON {
+                    response in
+                    
+                    switch response.result {
+                    case .Success:
+                        
+                        if let value = response.result.value {
+                            fulfill(value)
+                        }
+                    case .Failure(let error):
+                        reject(error)
+                    }
+            }
+        }
+    }
+    
+    static func changePassword(oldPassword: String, newPassword: String) -> Promise<AnyObject> {
+        return Promise { fulfill, reject in
+            Alamofire.request(.PUT, API.CHANGE_PASSWORD, parameters: ["old_password": oldPassword, "new_password": newPassword])
+                .validate()
+                .responseJSON {
+                    response in
+                    switch response.result {
+                    case .Success:
+                        if let value = response.result.value {
+                            fulfill(value)
+                        }
+                    case .Failure(let error):
+                        reject(error)
+                    }
+            }
+        }
+    }
 
 }

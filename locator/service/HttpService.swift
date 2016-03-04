@@ -57,6 +57,8 @@ struct API {
     static let BUBBLE_INPUT = "\(BASE_URL)/my/bubblescreen"
     static let PROFIL_IMAGE_UPLOAD = "\(BASE_URL)/users/image"
     static let FACEBOOK_LOGIN = "\(BASE_URL)/users/facebooklogin"
+    static let RESET_PASSWORD = "\(BASE_URL)/my/users/forgetPassword"
+    static let CHANGE_PASSWORD = "\(BASE_URL)/my/users/changePwd"
 }
 
 
