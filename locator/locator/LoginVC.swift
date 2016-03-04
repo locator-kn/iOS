@@ -10,7 +10,7 @@ import UIKit
 import FBSDKLoginKit
 
 class LoginVC: UIViewController {
-
+    
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var loginFacebookButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
@@ -34,7 +34,7 @@ class LoginVC: UIViewController {
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -57,10 +57,6 @@ class LoginVC: UIViewController {
         registerButton.layer.borderColor = borderColor
         registerButton.layer.cornerRadius = CGFloat(borderCornerRadius)
     }
-
-    @IBAction func loginButtonPressed(sender: UIButton) {
-        
-    }
     
     @IBAction func loginFacebookButtonPressed(sender: UIButton) {
         
@@ -71,8 +67,8 @@ class LoginVC: UIViewController {
                 print("Cancelled")
             } else {
                 print("Logged in")
+                self.loginFacebookUser()
                 self.returnUserData()
-                self.showDashboard()
             }
         }
     }
@@ -81,7 +77,7 @@ class LoginVC: UIViewController {
     
     func returnUserData()
     {
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"name,email,gender,id"])
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"id"])
         graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
             
             if ((error) != nil)
@@ -91,35 +87,43 @@ class LoginVC: UIViewController {
             }
             else
             {
-                let userId : NSString = result.valueForKey("id") as! NSString
-                NSUserDefaults.standardUserDefaults().setValue(userId, forKey: "me")
-                User.me? = User(id: userId as String)
+                _ = result.valueForKey("id") as! NSString
                 let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
                 print(accessToken)
-                print("fetched user: \(result)")
-                let userName : NSString = result.valueForKey("name") as! NSString
-                print("User Name is: \(userName)")
-                let userEmail : NSString = result .valueForKey("email") as! NSString
-                print("User Email is: \(userEmail)")
             }
         })
     }
     
     func showDashboard() {
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), { () -> Void in
-            self.performSegueWithIdentifier("showDashboard", sender: self)
-            })
+        dispatch_async(dispatch_get_main_queue(), {
+            let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+            let loginVC = mainStoryBoard.instantiateViewControllerWithIdentifier("secondnavi") as! SecondNavigationVC
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            appDelegate.window?.rootViewController = loginVC
+        })
+    }
+    
+    func loginFacebookUser() {
+        let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
+        UserService.facebookLogin(accessToken).then {
+            result -> Void in
+            User.me = result
+            if result.id != nil {
+                NSUserDefaults.standardUserDefaults().setValue(result.id, forKey: "me")
+            }
+            }.then {
+                self.showDashboard()
+        }
     }
     
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

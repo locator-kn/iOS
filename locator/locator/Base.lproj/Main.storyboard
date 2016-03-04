@@ -2980,11 +2980,6 @@
         <image name="weiter_icon" width="546" height="546"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="C0z-Ed-tMO"/>
-        <segue reference="dfM-kF-3kg"/>
-        <segue reference="Q9G-yB-4zn"/>
-        <segue reference="PBI-Q7-c1i"/>
-        <segue reference="WG6-zk-XfW"/>
-        <segue reference="pqk-kP-sXI"/>
+
     </inferredMetricsTieBreakers>
 </document>

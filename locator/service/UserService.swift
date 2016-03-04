@@ -84,6 +84,26 @@ class UserService {
             }
         }
     }
+    
+    static func facebookLogin(token: NSString) -> Promise<User> {
+        
+        return Promise { fulfill, reject in
+            
+            Alamofire.request(.POST, API.FACEBOOK_LOGIN, parameters: ["token": token]).validate().responseJSON {
+                response in
+                
+                switch response.result {
+                case .Success:
+                    if let value = response.result.value {
+                        let json = JSON(value)
+                        fulfill(self.jsonToUser(json))
+                    }
+                case .Failure(let error):
+                    reject(error)
+                }
+            }
+        }
+    }
 
     static func protected() -> Promise<Int> {
         
