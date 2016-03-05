@@ -49,7 +49,7 @@ class UserVC: UIViewController {
                 print(error)
         }
         
-        if self.user.id == User.me!.id {
+        if (User.me != nil && self.user.id == User.me!.id) {
             me = true
             self.followButton.setImage(self.settingsIcon, forState: .Normal)
         }
@@ -102,6 +102,10 @@ class UserVC: UIViewController {
     }
     
     @IBAction func followButton(sender: UIButton) {
+        if !AlertService.validateLoggedUser(self) {
+            return
+        }
+        
         if self.me {
             self.performSegueWithIdentifier("settings", sender: self)
             return
