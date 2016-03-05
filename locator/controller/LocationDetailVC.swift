@@ -339,7 +339,6 @@ class LocationDetailVC: UITableViewController {
         self.headerCell.username.setTitle("von " + location.user.name!, forState: UIControlState.Normal)
         self.headerCell.favorCount.text = String(location.favorites)
         self.headerCell.impressionsCount.text = "0"
-        self.headerCell.locationImage.image = UIImage(data: UtilService.dataFromPath(location.imagePathNormal))
         self.headerCell.city.text = location.city.title
         if self.location.favored {
             self.headerCell.favorIcon.setImage(self.favoriteIconActive, forState: .Normal)
