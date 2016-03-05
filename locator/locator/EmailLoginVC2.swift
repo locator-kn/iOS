@@ -62,7 +62,7 @@ class EmailLoginVC2: UIViewController, UITextFieldDelegate {
     }
     
     func showError() {
-        AlertService.simpleAlert(self, title: "ups", message: "Überprüfe deine Login Daten")
+        AlertService.simpleAlert(self, title: "Ups", message: "Überprüfe deine Login Daten!")
     }
     
     func close() {

@@ -8,6 +8,7 @@
 
 import Foundation
 import PromiseKit
+import FBSDKLoginKit
 
 public class SettingsService {
     
@@ -15,6 +16,7 @@ public class SettingsService {
         UserService.logout().then { result -> Void in
             NSUserDefaults.standardUserDefaults().removeObjectForKey("me")
             NSUserDefaults.standardUserDefaults().removeObjectForKey("facebookUser")
+            FBSDKLoginManager().logOut()
             AlertService.segueToLoginVC()
         }
     }
