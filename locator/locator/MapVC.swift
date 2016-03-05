@@ -192,6 +192,10 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     
         if status == .AuthorizedWhenInUse {
             locationManager.startUpdatingLocation()
+        } else if status == .Denied {
+            let alert = UIAlertController(title: "GPS aktivieren", message: "Du musst dein GPS aktivieren um eine Location zu erstellen.",preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Gerne", style: UIAlertActionStyle.Default, handler: AlertService.openAppSettings))
+            self.presentViewController(alert, animated: true, completion: nil)
         }
     }
     
@@ -213,10 +217,19 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     }
     
     func locate() {
+        
+        if self.googleMap.myLocation == nil {
+            return
+        }
+        
         self.googleMap.animateToCameraPosition(GMSCameraPosition(target: self.googleMap.myLocation!.coordinate, zoom: 17, bearing: 0, viewingAngle: 0))
     }
     
     @IBAction func schoenHier(sender: AnyObject) {
+        
+        if self.googleMap.myLocation == nil  &&  self.locationManager.location == nil {
+            return
+        }
         
         var location = self.googleMap.myLocation
         if googleMap.myLocation == nil {
