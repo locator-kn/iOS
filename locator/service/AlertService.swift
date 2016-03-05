@@ -43,5 +43,9 @@ class AlertService {
             appDelegate.window?.rootViewController = loginVC
         })
     }
+    
+    static func openAppSettings(a: UIAlertAction) {
+        UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
+    }
 
 }
