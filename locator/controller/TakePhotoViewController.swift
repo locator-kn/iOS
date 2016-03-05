@@ -43,13 +43,9 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
     func gpsDeniedHandler(accessGranted: Bool) {
         if !accessGranted {
             let alert = UIAlertController(title: "GPS aktivieren", message: "Du musst dein GPS aktivieren um eine Location zu erstellen.", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "Gerne", style: UIAlertActionStyle.Default, handler: openAppSettings))
+            alert.addAction(UIAlertAction(title: "Gerne", style: UIAlertActionStyle.Default, handler: AlertService.openAppSettings))
             self.presentViewController(alert, animated: true, completion: takePhoto)
         }
-    }
-    
-    func openAppSettings(a: UIAlertAction) {
-        UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
     }
     
     func takePhoto() {
