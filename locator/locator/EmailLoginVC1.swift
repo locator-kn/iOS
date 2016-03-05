@@ -43,7 +43,7 @@ class EmailLoginVC1: UIViewController, UITextFieldDelegate {
     }
     
     func alertFalseInput() {
-        let alert = UIAlertController(title: "Ups", message: "Bitte überprüfe deine Email-Adresse", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "Ups", message: "Bitte überprüfe deine Email-Adresse!", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
     }
@@ -63,15 +63,17 @@ class EmailLoginVC1: UIViewController, UITextFieldDelegate {
     
     @IBAction func passwordForget(sender: UIButton) {
         if emailTextField.text == nil {
-            AlertService.simpleAlert(self, message: "Bitte gebe deine Email Adresse ein")
+            AlertService.simpleAlert(self, message: "Bitte gebe deine Email Adresse ein!")
         } else if inputChecker.checkEmailInput(emailTextField.text!) == false {
-            AlertService.simpleAlert(self, message: "Bitte gebe eine korrekte Email Adresse ein")
+            AlertService.simpleAlert(self, message: "Bitte gebe eine korrekte Email Adresse ein!")
         } else {
             UserService.resetPassword(emailTextField.text!).then({ response -> Void in
                 if response == true {
                     let alert = UIAlertController(title: "Super", message: "Ein neues Passwort wurde an die angegebene Emailadresse gesendet!", preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
+                } else {
+                    AlertService.simpleAlert(self, message: "Deine Passwort konnte leider nicht geändert werden")
                 }
             })
         }
