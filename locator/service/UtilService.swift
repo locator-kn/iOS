@@ -50,16 +50,30 @@ class UtilService {
         return NSData(contentsOfURL: NSURL(string: path)!)!
     }
     
-    static func dataFromCache(path:String) -> Promise<NSData> {
+    static func stripString(text: String) -> String {
+        let okayChars : Set<Character> =
+        Set("`´èéòóàá".characters)
+        return String(text.characters.filter {
+            !okayChars.contains($0)
+        })
+    }
+    
+    static func dataFromCache(var path:String) -> Promise<NSData> {
         return Promise { fulfill, reject in
+            
+            path = self.stripString(path)
             
             if (path != "") {
                 let cache = Shared.dataCache
-                cache.fetch(URL: NSURL(string: path)!).onSuccess { data in
-                    fulfill(data)
-                }
+                cache.fetch(URL: NSURL(string: path)!)
+                    .onSuccess { data in
+                        fulfill(data)
+                    }.onFailure { err in
+                        reject(NSError(domain: "haneke failure", code: 404, userInfo: nil))
+                    }
+                
             } else {
-                reject(NSError(domain: "Imagecache", code: 404, userInfo: nil))
+                reject(NSError(domain: "empty path", code: 404, userInfo: nil))
             }
         }
     }
