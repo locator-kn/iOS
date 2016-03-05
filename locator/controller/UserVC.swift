@@ -29,6 +29,7 @@ class UserVC: UIViewController {
     
     let followIcon = UIImage(named: "follow") as UIImage?
     let followActiveIcon = UIImage(named: "follow_active") as UIImage?
+    let settingsIcon = UIImage(named: "settings") as UIImage?
     var me = false
     
     override func viewDidLoad() {
@@ -50,7 +51,7 @@ class UserVC: UIViewController {
         
         if self.user.id == User.me!.id {
             me = true
-            //self.followButton.hidden = true
+            self.followButton.setImage(self.settingsIcon, forState: .Normal)
         }
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "home"), style: .Plain, target: self, action: "home")
