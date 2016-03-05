@@ -45,7 +45,7 @@ class SettingsTVC: UITableViewController {
         if section == 0 {
             return 1
         } else if section == 1 {
-            return 3
+            return 2
         }
         return 0
     }

@@ -54,7 +54,6 @@
             <string>SourceSansPro-Regular</string>
             <string>SourceSansPro-Regular</string>
             <string>SourceSansPro-Regular</string>
-            <string>SourceSansPro-Regular</string>
         </mutableArray>
         <mutableArray key="SourceSansPro-Semibold.ttf">
             <string>SourceSansPro-Semibold</string>
@@ -1589,29 +1588,29 @@
                                     <constraint firstAttribute="height" constant="130" id="fNM-Zi-ZNp"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="70b-WD-Cs7">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="70b-WD-Cs7">
                                 <rect key="frame" x="20" y="213" width="84" height="13"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xol-eP-mwD" userLabel="locations Count">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xol-eP-mwD" userLabel="locations Count">
                                         <rect key="frame" x="0.0" y="0.0" width="17" height="13"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locations" translatesAutoresizingMaskIntoConstraints="NO" id="DUR-Am-62t">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="locations" translatesAutoresizingMaskIntoConstraints="NO" id="DUR-Am-62t">
                                         <rect key="frame" x="17" y="0.0" width="25" height="13"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="13" id="HcJ-gD-RXe"/>
                                             <constraint firstAttribute="width" constant="25" id="dN0-Om-2wD"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsS-vF-js4">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsS-vF-js4">
                                         <rect key="frame" x="42" y="0.0" width="17" height="13"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="follower" translatesAutoresizingMaskIntoConstraints="NO" id="HPi-Sg-Di2">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="follower" translatesAutoresizingMaskIntoConstraints="NO" id="HPi-Sg-Di2">
                                         <rect key="frame" x="59" y="0.0" width="25" height="13"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="GVG-4x-jYD"/>
@@ -2317,15 +2316,15 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Info" id="2Lw-s9-95J">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Mz5-Jx-nn2">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="Mz5-Jx-nn2">
                                         <rect key="frame" x="0.0" y="100" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mz5-Jx-nn2" id="GTW-fs-dMX">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datenschutzrechtlinien" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6a-eD-e9t">
-                                                    <rect key="frame" x="15" y="11" width="570" height="22"/>
+                                                    <rect key="frame" x="15" y="11" width="537" height="22"/>
                                                     <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -2340,33 +2339,12 @@
                                                 <constraint firstItem="d6a-eD-e9t" firstAttribute="leading" secondItem="GTW-fs-dMX" secondAttribute="leadingMargin" constant="7" id="mUg-ZG-U4p"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="QRZ-XZ-HMC">
-                                        <rect key="frame" x="0.0" y="144" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QRZ-XZ-HMC" id="9B0-1E-BvF">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Impressum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ix-jB-zFc">
-                                                    <rect key="frame" x="16" y="11" width="568" height="22"/>
-                                                    <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="16" y="12" width="368" height="20"/>
-                                                    </variation>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="5ix-jB-zFc" firstAttribute="centerX" secondItem="9B0-1E-BvF" secondAttribute="centerX" id="D2a-hs-PKT"/>
-                                                <constraint firstItem="5ix-jB-zFc" firstAttribute="centerY" secondItem="9B0-1E-BvF" secondAttribute="centerY" id="Qnb-ZC-B2f"/>
-                                                <constraint firstItem="5ix-jB-zFc" firstAttribute="leading" secondItem="9B0-1E-BvF" secondAttribute="leadingMargin" constant="8" id="qXA-Ut-Y76"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="sLe-9w-aXp" kind="show" id="f6k-BJ-Pnb"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Tao-sP-DSt">
-                                        <rect key="frame" x="0.0" y="188" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="144" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tao-sP-DSt" id="DOQ-hS-OQU">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -2410,6 +2388,77 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b2g-3S-q9m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6002" y="2131"/>
+        </scene>
+        <!--Viewcontroller-->
+        <scene sceneID="zds-Hc-Sg6">
+            <objects>
+                <viewController id="sLe-9w-aXp" customClass="Viewcontroller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eOI-0n-lGO"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cn7-kC-OcM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5ZS-lJ-4ae">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="stZ-8w-k9B">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="1554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Impressum
+Locator ist ein Projekt von Studenten der HTWG Konstanz und wird durch die Stadt Konstanz unterstützt
+
+FÜR DEN INHALT VERANTWORTLICH
+HTWG Konstanz
+Brauneggerstr. 55
+D-78462 Konstanz
+
+Postfach 100 543
+D-78405 Konstanz
+
+Telefon +49 7531 206 0
+E-Mail kontakt@htwg-konstanz.de
+
+HAFTUNGSAUSSCHLUSS
+1. INHALT DES ONLINE ANGEBOTS
+
+Der Autor übernimmt keinerlei Gewähr für die Aktualität, Korrektheit, Vollständigkeit oder Qualität der bereitgestellten Informationen. Haftungsansprüche gegen den Autor, welche sich auf Schäden materieller oder ideeller Art beziehen, die durch die Nutzung oder Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung fehlerhafter und unvollständiger Informationen verursacht wurden, sind grundsätzlich ausgeschlossen, sofern seitens des Autors kein nachweislich vorsätzliches oder grob fahrlässiges Verschulden vorliegt. Alle Angebote sind freibleibend und unverbindlich. Der Autor behält es sich ausdrücklich vor, Teile der Seiten oder das gesamte Angebot ohne gesonderte Ankündigung zu verändern, zu ergänzen, zu löschen oder die Veröffentlichung zeitweise oder endgültig einzustellen.
+
+2. VERWEISE UND LINKS
+
+Bei direkten oder indirekten Verweisen auf fremde Webseiten (”Hyperlinks”), die außerhalb des Verantwortungsbereiches des Autors liegen, würde eine Haftungsverpflichtung ausschließlich in dem Fall in Kraft treten, in dem der Autor von den Inhalten Kenntnis hat und es ihm technisch möglich und zumutbar wäre, die Nutzung im Falle rechtswidriger Inhalte zu verhindern. Der Autor erklärt hiermit ausdrücklich, dass zum Zeitpunkt der Linksetzung keine illegalen Inhalte auf den zu verlinkenden Seiten erkennbar waren. Auf die aktuelle und zukünftige Gestaltung, die Inhalte oder die Urheberschaft der verlinkten/verknüpften Seiten hat der Autor keinerlei Einfluss. Deshalb distanziert er sich hiermit ausdrücklich von allen Inhalten aller verlinkten /verknüpften Seiten, die nach der Linksetzung verändert wurden. Diese Feststellung gilt für alle innerhalb des eigenen Internetangebotes gesetzten Links und Verweise sowie für Fremdeinträge in vom Autor eingerichteten Gästebüchern, Diskussionsforen, Linkverzeichnissen, Mailinglisten und in allen anderen Formen von Datenbanken, auf deren Inhalt externe Schreibzugriffe möglich sind. Für illegale, fehlerhafte oder unvollständige Inhalte und insbesondere für Schäden, die aus der Nutzung oder Nichtnutzung solcherart dargebotener Informationen entstehen, haftet allein der Anbieter der Seite, auf welche verwiesen wurde, nicht derjenige, der über Links auf die jeweilige Veröffentlichung lediglich verweist.
+
+3. URHEBER- UND KENNZEICHENRECHT
+
+Der Autor ist bestrebt, in allen Publikationen die Urheberrechte der verwendeten Bilder, Grafiken, Tondokumente, Videosequenzen und Texte zu beachten, von ihm selbst erstellte Bilder, Grafiken, Tondokumente, Vi- deosequenzen und Texte zu nutzen oder auf lizenzfreie Grafiken, Tondokumente, Videosequenzen und Texte zurückzugreifen. Alle innerhalb des Internetangebotes genannten und ggf. durch Dritte geschützten Markenund Warenzeichen unterliegen uneingeschränkt den Bestimmungen des jeweils gültigen Kennzeichenrechts und den Besitzrechten der jeweiligen eingetragenen Eigentümer. Allein aufgrund der bloßen Nennung ist nicht der Schluss zu ziehen, dass Markenzeichen nicht durch Rechte Dritter geschützt sind! Das Copyright für veröffentlichte, vom Autor selbst erstellte Objekte bleibt allein beim Autor der Seiten. Eine Vervielfältigung oder Verwendung solcher Grafiken, Tondokumente, Videosequenzen und Texte in anderen elektronischen oder gedruckten Publikationen ist ohne ausdrückliche Zustimmung des Autors nicht gestattet.
+
+4. DATENSCHUTZ
+
+Sofern innerhalb des Internetangebotes die Möglichkeit zur Eingabe persönlicher oder geschäftlicher Daten (Emailadressen, Namen, Anschriften) besteht, so erfolgt die Preisgabe dieser Daten seitens des Nutzers auf ausdrücklich freiwilliger Basis. Die Inanspruchnahme und Bezahlung aller angebotenen Dienste ist - soweit technisch möglich und zumutbar - auch ohne Angabe solcher Daten bzw. unter Angabe anonymisierter Daten oder eines Pseudonyms gestattet. Die Nutzung der im Rahmen des Impressums oder vergleichbarer Angaben veröffentlichten Kontaktdaten wie Postanschriften, Telefon- und Faxnummern sowie Emailadressen durch Dritte zur Übersendung von nicht ausdrücklich angeforderten Informationen ist nicht gestattet. Rechtliche Schritte gegen die Versender von sogenannten Spam-Mails bei Verstössen gegen dieses Verbot sind ausdrücklich vorbehalten.
+
+5. RECHTSWIRKSAMKEIT
+
+Dieser Haftungsausschluss ist als Teil des Internetangebotes zu betrachten, von dem aus auf diese Seite verwiesen wurde. Sofern Teile oder einzelne Formulierungen dieses Textes der geltenden Rechtslage nicht, nicht mehr oder nicht vollständig entsprechen sollten, bleiben die übrigen Teile des Dokumentes in ihrem Inhalt und ihrer Gültigkeit davon unberührt.
+
+6. REGELN
+
+Locations, bei denen es sich nachweislich um Firmensitze handeln, die nicht im Sinne eines Kurztrips besuchbar sind, sondern nur zu Werbezwecken diesen, werden von LOCATOR gelöscht. Locations mit Trips mit sexistischem, fanatischen, rechtsradikalen oder homophoben Inhalt, werden von Locator gelöscht.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="stZ-8w-k9B" secondAttribute="leading" constant="20" id="BQD-8a-iJG"/>
+                            <constraint firstItem="stZ-8w-k9B" firstAttribute="top" secondItem="eOI-0n-lGO" secondAttribute="bottom" id="CQQ-vH-b5V"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="stZ-8w-k9B" secondAttribute="trailing" constant="-20" id="RVw-46-rHL"/>
+                            <constraint firstItem="Cn7-kC-OcM" firstAttribute="top" secondItem="stZ-8w-k9B" secondAttribute="bottom" id="yKG-ic-tAx"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r3d-Gj-cbX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6002" y="2953"/>
         </scene>
         <!--Change PasswordTVC-->
         <scene sceneID="wQD-F0-ofX">
@@ -3268,10 +3317,7 @@
                                 <exclude reference="E5d-QT-WOA"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="wkH-an-Hy6"/>
-                                <exclude reference="Uzz-j4-NF2"/>
-                                <exclude reference="V0P-hD-34E"/>
-                                <exclude reference="FLP-1A-DEC"/>
+                                <exclude reference="hwq-ES-w4j"/>
                                 <exclude reference="DPZ-ZU-YbS"/>
                                 <exclude reference="HTV-9f-EOe"/>
                                 <exclude reference="IAO-DS-lWX"/>
@@ -3279,16 +3325,19 @@
                                 <exclude reference="OXu-5O-S4Y"/>
                                 <exclude reference="x7s-lP-Voy"/>
                                 <exclude reference="xVy-DT-gYy"/>
-                                <exclude reference="fLG-VX-5OB"/>
-                                <exclude reference="cpN-cT-vUp"/>
-                                <exclude reference="Ccf-IO-7nQ"/>
+                                <exclude reference="Uzz-j4-NF2"/>
+                                <exclude reference="V0P-hD-34E"/>
                                 <exclude reference="Fbl-LE-Rtp"/>
                                 <exclude reference="f9N-Kp-GHC"/>
+                                <exclude reference="cpN-cT-vUp"/>
+                                <exclude reference="Ccf-IO-7nQ"/>
+                                <exclude reference="wkH-an-Hy6"/>
                                 <exclude reference="07G-vq-lkC"/>
                                 <exclude reference="Ext-K2-fzE"/>
                                 <exclude reference="Lbn-aZ-1jY"/>
                                 <exclude reference="NFL-sj-5MZ"/>
-                                <exclude reference="hwq-ES-w4j"/>
+                                <exclude reference="fLG-VX-5OB"/>
+                                <exclude reference="FLP-1A-DEC"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -3305,11 +3354,7 @@
                                 <include reference="E5d-QT-WOA"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="HTA-eg-iI1"/>
-                                <include reference="wkH-an-Hy6"/>
-                                <include reference="Uzz-j4-NF2"/>
-                                <include reference="V0P-hD-34E"/>
-                                <exclude reference="FLP-1A-DEC"/>
+                                <include reference="hwq-ES-w4j"/>
                                 <include reference="DPZ-ZU-YbS"/>
                                 <include reference="HTV-9f-EOe"/>
                                 <include reference="IAO-DS-lWX"/>
@@ -3317,16 +3362,20 @@
                                 <include reference="OXu-5O-S4Y"/>
                                 <include reference="x7s-lP-Voy"/>
                                 <include reference="xVy-DT-gYy"/>
-                                <include reference="fLG-VX-5OB"/>
-                                <include reference="cpN-cT-vUp"/>
-                                <include reference="Ccf-IO-7nQ"/>
+                                <include reference="Uzz-j4-NF2"/>
+                                <include reference="V0P-hD-34E"/>
                                 <include reference="Fbl-LE-Rtp"/>
                                 <include reference="f9N-Kp-GHC"/>
+                                <include reference="cpN-cT-vUp"/>
+                                <include reference="Ccf-IO-7nQ"/>
+                                <exclude reference="HTA-eg-iI1"/>
+                                <include reference="wkH-an-Hy6"/>
                                 <include reference="07G-vq-lkC"/>
                                 <include reference="Ext-K2-fzE"/>
                                 <include reference="Lbn-aZ-1jY"/>
                                 <include reference="NFL-sj-5MZ"/>
-                                <include reference="hwq-ES-w4j"/>
+                                <include reference="fLG-VX-5OB"/>
+                                <exclude reference="FLP-1A-DEC"/>
                             </mask>
                         </variation>
                     </view>
