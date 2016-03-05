@@ -95,7 +95,6 @@ class LocationService {
                             let id = subJson["obj"]["_id"].string!
                             
                             if self.schonHierCache[id] != nil {
-                                print("cache hit")
                                 continue
                             }
                             
