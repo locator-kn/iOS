@@ -793,9 +793,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="457"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZSP-fm-YDO">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location_placeholder-9" translatesAutoresizingMaskIntoConstraints="NO" id="ZSP-fm-YDO">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="259"/>
-                                            <color key="backgroundColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" red="0.75686274509999996" green="0.75686274509999996" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="259" id="8yi-SX-Dhj"/>
                                                 <constraint firstAttribute="width" secondItem="ZSP-fm-YDO" secondAttribute="height" multiplier="300:91" constant="-253.84615384615381" id="9n3-lE-bdF"/>
@@ -3434,6 +3434,7 @@ Locations, bei denen es sich nachweislich um Firmensitze handeln, die nicht im S
         <image name="foto" width="45" height="36"/>
         <image name="gastro" width="173" height="173"/>
         <image name="holiday" width="173" height="173"/>
+        <image name="location_placeholder-9" width="1449" height="1358"/>
         <image name="locations" width="62" height="75"/>
         <image name="locator_logo" width="440" height="213"/>
         <image name="locator_logo_small" width="206" height="100"/>

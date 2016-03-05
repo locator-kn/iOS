@@ -7,8 +7,8 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="SourceSansPro-Regular.ttf">
-            <string>SourceSansPro-Regular</string>
+        <mutableArray key="SourceSansPro-Light.ttf">
+            <string>SourceSansPro-Light</string>
         </mutableArray>
         <mutableArray key="SourceSansPro-Semibold.ttf">
             <string>SourceSansPro-Semibold</string>
@@ -21,7 +21,7 @@
             <rect key="frame" x="0.0" y="0.0" width="310" height="172"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MRY-4p-V1L">
+                <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location_placeholder-9" translatesAutoresizingMaskIntoConstraints="NO" id="MRY-4p-V1L">
                     <rect key="frame" x="0.0" y="0.0" width="310" height="133"/>
                     <color key="backgroundColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                     <constraints>
@@ -56,11 +56,11 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Lukas Doe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPY-KM-kYy">
-                            <rect key="frame" x="9" y="19" width="43" height="13"/>
+                            <rect key="frame" x="9" y="19" width="50" height="16"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="13" id="yFA-ET-8V9"/>
+                                <constraint firstAttribute="height" constant="16" id="yFA-ET-8V9"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="10"/>
+                            <fontDescription key="fontDescription" name="SourceSansPro-Light" family="Source Sans Pro" pointSize="12"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -111,5 +111,6 @@
     </objects>
     <resources>
         <image name="infowindowicon" width="35" height="22"/>
+        <image name="location_placeholder-9" width="1449" height="1358"/>
     </resources>
 </document>
