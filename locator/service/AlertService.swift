@@ -27,8 +27,8 @@ class AlertService {
             return true
         } else {
             let alertController = UIAlertController(title: "Hoppla", message: "Du musst eingeloggt sein", preferredStyle: .Alert)
-            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: {action in segueToLoginVC()}))
-            alertController.addAction(UIAlertAction(title: "Nö", style: UIAlertActionStyle.Cancel, handler: nil))
+            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: {action in segueToLoginVC()}))
+            alertController.addAction(UIAlertAction(title: "Nö", style: UIAlertActionStyle.Default, handler: nil))
             currentView.presentViewController(alertController, animated: true, completion: nil)
             return false
         }

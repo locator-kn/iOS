@@ -16,6 +16,7 @@ public class SettingsService {
         UserService.logout().then { result -> Void in
             NSUserDefaults.standardUserDefaults().removeObjectForKey("me")
             NSUserDefaults.standardUserDefaults().removeObjectForKey("facebookUser")
+            User.me = nil
             FBSDKLoginManager().logOut()
             AlertService.segueToLoginVC()
         }
