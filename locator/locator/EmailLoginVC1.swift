@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PromiseKit
 
 class EmailLoginVC1: UIViewController, UITextFieldDelegate {
 
@@ -29,14 +30,6 @@ class EmailLoginVC1: UIViewController, UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func backButtonPressed(sender: UIButton) {
-        self.navigationController?.popViewControllerAnimated(true)
-    }
-
-    @IBAction func crossButtonPressed(sender: UIButton) {
-        self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {   //delegate method
@@ -67,6 +60,23 @@ class EmailLoginVC1: UIViewController, UITextFieldDelegate {
     func close() {
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
+    
+    @IBAction func passwordForget(sender: UIButton) {
+        if emailTextField.text == nil {
+            AlertService.simpleAlert(self, message: "Bitte gebe deine Email Adresse ein")
+        } else if inputChecker.checkEmailInput(emailTextField.text!) == false {
+            AlertService.simpleAlert(self, message: "Bitte gebe eine korrekte Email Adresse ein")
+        } else {
+            UserService.resetPassword(emailTextField.text!).then({ response -> Void in
+                if response == true {
+                    let alert = UIAlertController(title: "Super", message: "Ein neues Passwort wurde an die angegebene Emailadresse gesendet!", preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }
+            })
+        }
+    }
+    
     
     /*
     // MARK: - Navigation

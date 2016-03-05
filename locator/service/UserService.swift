@@ -237,7 +237,7 @@ class UserService {
         }
     }
     
-    static func resetPassword(mail:String) -> Promise<AnyObject> {
+    static func resetPassword(mail:String) -> Promise<Bool> {
         return Promise { fulfill, reject in
             Alamofire.request(.POST, API.RESET_PASSWORD, parameters: ["mail": mail])
                 .validate()
@@ -246,10 +246,7 @@ class UserService {
                     
                     switch response.result {
                     case .Success:
-                        
-                        if let value = response.result.value {
-                            fulfill(value)
-                        }
+                            fulfill(true)
                     case .Failure(let error):
                         reject(error)
                     }

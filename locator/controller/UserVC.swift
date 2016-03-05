@@ -60,8 +60,6 @@ class UserVC: UIViewController {
         overlay.colors = [UIColor.clearColor().CGColor, UIColor(red: 29/255, green: 29/255, blue: 29/255, alpha: 0.8).CGColor]
         overlay.locations = [0.0, 1]
         gradient.layer.insertSublayer(overlay, atIndex: 0)
-   
-        UtilService.roundImageView(self.profileImage)
         
     }
 
@@ -78,10 +76,18 @@ class UserVC: UIViewController {
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
+    override func viewDidLayoutSubviews() {
+        UtilService.roundImageView(self.profileImage)
+    }
+    
     func updateView() {
         UtilService.dataFromCache(self.user.imagePathNormal!).then {
             result -> Void in
-            self.profileImage.image = UIImage(data: result)
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.profileImage.image = UIImage(data: result)
+                self.profileImage.layoutSubviews()
+            })
+            
         }
         self.title = self.user.name
         self.locationsCount.text = "\(self.user.locationCount!)"
