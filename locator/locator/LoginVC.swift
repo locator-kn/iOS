@@ -14,6 +14,7 @@ class LoginVC: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var loginFacebookButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var top: NSLayoutConstraint!
     
     let borderWidth = 2.0
     let borderColor = UIColor.whiteColor().CGColor
@@ -56,6 +57,10 @@ class LoginVC: UIViewController {
         registerButton.layer.borderWidth = CGFloat(borderWidth)
         registerButton.layer.borderColor = borderColor
         registerButton.layer.cornerRadius = CGFloat(borderCornerRadius)
+        
+        if (UIScreen.mainScreen().bounds.size.height == 480) {
+            self.top.constant = 5
+        }
     }
     
     @IBAction func loginFacebookButtonPressed(sender: UIButton) {

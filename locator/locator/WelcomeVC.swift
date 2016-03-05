@@ -10,10 +10,19 @@ import UIKit
 
 class WelcomeVC: UIViewController {
     
+    @IBOutlet weak var top: NSLayoutConstraint!
+    @IBOutlet weak var top_text: NSLayoutConstraint!
+    @IBOutlet weak var top_button: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Willkommen bei"
         // Do any additional setup after loading the view, typically from a nib.
+        
+        if (UIScreen.mainScreen().bounds.size.height == 480) {
+            self.top.constant = 5
+            self.top_button.constant = 10
+        }
     }
     
     override func didReceiveMemoryWarning() {
