@@ -208,7 +208,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="Ytr-wP-Z4G">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="Ytr-wP-Z4G">
                                 <rect key="frame" x="20" y="84" width="560" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="GdF-k7-gHT"/>
