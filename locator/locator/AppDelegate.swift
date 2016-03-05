@@ -174,14 +174,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("error during device post")
         }
     }
-    
+    /*
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
-        // display the userInfo
-        if let notification = userInfo as? NSDictionary {
-            print(notification)
+        if let notification = userInfo {
             completionHandler(UIBackgroundFetchResult.NoData)
         }
-    }
+    }*/
 
     
 }
