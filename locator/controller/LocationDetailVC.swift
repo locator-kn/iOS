@@ -248,6 +248,10 @@ class LocationDetailVC: UITableViewController {
     
     @IBAction func favorLocation(sender: UIButton) {
         
+        if !AlertService.validateLoggedUser(self) {
+            return
+        }
+        
         if (!self.location.favored) {
             self.headerCell.favorIcon.setImage(self.favoriteIconActive, forState: .Normal)
         } else {
