@@ -107,6 +107,7 @@ class LoginVC: UIViewController {
         let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
         UserService.facebookLogin(accessToken).then {
             result -> Void in
+            print(result)
             User.me = result
             if result.id != nil {
                 NSUserDefaults.standardUserDefaults().setValue(result.id, forKey: "me")
