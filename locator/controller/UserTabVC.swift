@@ -35,7 +35,7 @@ class UserTabVC: UIViewController {
         let followedByListCtrl = storyboard.instantiateViewControllerWithIdentifier("UserListVC") as? UserListVC
         
         locationListCtrl!.title = "Locations"
-        favoritedLocations!.title = "Favorisiert"
+        favoritedLocations!.title = "Favoriten"
         
         followerListCtrl!.title = "Follower"
         followedByListCtrl!.title = "Folgt"
