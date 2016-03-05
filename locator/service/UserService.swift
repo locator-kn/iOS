@@ -134,7 +134,7 @@ class UserService {
                 if response.response != nil {
                     fulfill((response.response!.statusCode))
                 } else {
-                    fulfill(401)
+                    fulfill(503)
                 }
             }
         }
