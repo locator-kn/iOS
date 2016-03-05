@@ -19,7 +19,6 @@ class ChangePasswordTVC: UITableViewController, UITextFieldDelegate {
         
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
         
-        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
