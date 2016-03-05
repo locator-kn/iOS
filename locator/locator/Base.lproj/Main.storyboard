@@ -816,7 +816,7 @@
                                             </constraints>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nb7-ZO-dd5" userLabel="favorButton">
-                                            <rect key="frame" x="553" y="219" width="35" height="35"/>
+                                            <rect key="frame" x="555" y="219" width="35" height="35"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="35" id="83P-cx-q1B"/>
                                                 <constraint firstAttribute="height" constant="35" id="WRb-6E-Mck"/>
@@ -872,7 +872,7 @@
                                             </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Impressions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbi-3c-e8u">
-                                            <rect key="frame" x="515" y="330" width="72" height="18"/>
+                                            <rect key="frame" x="512" y="330" width="72" height="18"/>
                                             <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
                                             <color key="textColor" red="0.49581330128205126" green="0.49581330128205126" blue="0.49581330128205126" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -934,7 +934,7 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFD-cK-Myd" userLabel="impressionsCount">
-                                            <rect key="frame" x="504" y="330" width="7" height="18"/>
+                                            <rect key="frame" x="501" y="330" width="7" height="18"/>
                                             <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
                                             <color key="textColor" red="0.41268028846153848" green="0.41268028846153848" blue="0.41268028846153848" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -1014,7 +1014,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pW9-vX-Di4" userLabel="mapButton">
-                                            <rect key="frame" x="553" y="261" width="35" height="35"/>
+                                            <rect key="frame" x="555" y="261" width="35" height="35"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="35" id="Y8k-t6-s0K"/>
                                                 <constraint firstAttribute="width" constant="35" id="vOw-xP-A9e"/>
@@ -1047,7 +1047,7 @@
                                         <constraint firstItem="ckI-cM-stC" firstAttribute="top" secondItem="ZSP-fm-YDO" secondAttribute="bottom" constant="105" id="M9i-X9-nSk"/>
                                         <constraint firstItem="lmP-I0-6Be" firstAttribute="top" secondItem="gdh-dn-TML" secondAttribute="bottom" constant="20" id="MmE-aJ-rK2"/>
                                         <constraint firstItem="vE5-IY-R4z" firstAttribute="leading" secondItem="E6c-8O-3Ua" secondAttribute="leadingMargin" constant="45" id="OXD-8t-Bsm"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="kbi-3c-e8u" secondAttribute="trailing" constant="5" id="PD1-tF-y5k"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="kbi-3c-e8u" secondAttribute="trailing" constant="8" id="PD1-tF-y5k"/>
                                         <constraint firstItem="vE5-IY-R4z" firstAttribute="top" secondItem="K8S-st-ZK4" secondAttribute="bottom" constant="22" id="Pvg-jE-rvA"/>
                                         <constraint firstItem="Qd5-dd-cVV" firstAttribute="leading" secondItem="E6c-8O-3Ua" secondAttribute="leadingMargin" constant="24" id="Pwn-cA-1b2"/>
                                         <constraint firstItem="Kyk-PS-lC3" firstAttribute="leading" secondItem="2Uv-6R-lJs" secondAttribute="trailing" constant="3" id="Qxg-LV-YSJ"/>
@@ -1062,7 +1062,7 @@
                                         <constraint firstItem="ckI-cM-stC" firstAttribute="top" secondItem="lmP-I0-6Be" secondAttribute="bottom" constant="-5" id="kPA-r5-1Sv"/>
                                         <constraint firstItem="2Uv-6R-lJs" firstAttribute="leading" secondItem="ckI-cM-stC" secondAttribute="trailing" constant="6" id="nGL-lb-QrS"/>
                                         <constraint firstAttribute="trailing" secondItem="ZSP-fm-YDO" secondAttribute="trailing" id="onV-M4-GcW"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="pW9-vX-Di4" secondAttribute="trailing" constant="4" id="p53-KB-rvR"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="pW9-vX-Di4" secondAttribute="trailing" constant="2" id="p53-KB-rvR"/>
                                         <constraint firstItem="XDq-gz-AVD" firstAttribute="baseline" secondItem="vE5-IY-R4z" secondAttribute="baseline" id="pFo-kE-sSw"/>
                                         <constraint firstItem="kbi-3c-e8u" firstAttribute="leading" secondItem="PFD-cK-Myd" secondAttribute="trailing" constant="4" id="qgc-ly-pvE"/>
                                         <constraint firstItem="nb7-ZO-dd5" firstAttribute="bottom" secondItem="ZSP-fm-YDO" secondAttribute="bottom" constant="-12" id="tQp-5Q-shi"/>
@@ -3453,11 +3453,11 @@ Locations, bei denen es sich nachweislich um Firmensitze handeln, die nicht im S
         <image name="weiter_icon" width="546" height="546"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="n5V-k0-1OC"/>
-        <segue reference="sX6-Cx-Ga0"/>
-        <segue reference="ela-Fj-2Fq"/>
-        <segue reference="fWT-Cw-pds"/>
-        <segue reference="K3z-rv-EhQ"/>
         <segue reference="WG6-zk-XfW"/>
+        <segue reference="fWT-Cw-pds"/>
+        <segue reference="Q9G-yB-4zn"/>
+        <segue reference="K3z-rv-EhQ"/>
+        <segue reference="PBI-Q7-c1i"/>
+        <segue reference="n5V-k0-1OC"/>
     </inferredMetricsTieBreakers>
 </document>
