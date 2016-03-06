@@ -72,7 +72,7 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Weil wir brauchen</string>
+	<string></string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>SourceSansPro-Bold.ttf</string>
