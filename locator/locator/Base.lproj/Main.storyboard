@@ -116,7 +116,7 @@
                                 <variation key="heightClass=regular" ambiguous="YES">
                                     <rect key="frame" x="20" y="454" width="560" height="88"/>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="20" y="454" width="360" height="88"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
@@ -221,9 +221,6 @@
                                         <color key="value" red="0.97066580966430815" green="1" blue="0.96350548471204056" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="20" y="40" width="360" height="54"/>
-                                </variation>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -3222,14 +3219,14 @@ Locations, bei denen es sich nachweislich um Firmensitze handeln, die nicht im S
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locator_logo_small" translatesAutoresizingMaskIntoConstraints="NO" id="E5d-QT-WOA">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locator_logo_small" translatesAutoresizingMaskIntoConstraints="NO" id="E5d-QT-WOA">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="136" id="6WB-fa-hMD">
                                         <variation key="heightClass=regular-widthClass=compact" constant="74"/>
                                     </constraint>
                                     <constraint firstAttribute="height" constant="73" id="dPS-s6-8O5">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="30"/>
                                     </constraint>
                                 </constraints>
                                 <variation key="default">
