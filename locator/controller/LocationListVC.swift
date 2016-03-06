@@ -14,6 +14,7 @@ class LocationListVC: UITableViewController {
     var user:User!
     var parentCtrl: UserTabVC?
     var showFavoritedLocations = false
+    let locationPlaceholder = UIImage(named: "location_placeholder_small") as UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,11 +83,15 @@ class LocationListVC: UITableViewController {
         cell.locationCity.text = location.city.title
         UtilService.roundImageView(cell.locationImage, borderWidth: 3, borderColor: COLORS.red)
         
-        UtilService.dataFromCache(location.imagePathSmall).then {
-            result -> Void in
-            if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? LocationCell {
-                cellToUpdate.locationImage.image = UIImage(data: result)
+        if location.imagePathSmall != "" {
+            UtilService.dataFromCache(location.imagePathSmall).then {
+                result -> Void in
+                if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? LocationCell {
+                    cellToUpdate.locationImage.image = UIImage(data: result)
+                }
             }
+        } else {
+            cell.locationImage.image = locationPlaceholder
         }
         
         return cell

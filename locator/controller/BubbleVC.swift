@@ -210,6 +210,11 @@ class BubbleVC: UIViewController {
     }
     
     func loadLocationImage(bubble: Int, urlPath: String) {
+        
+        if urlPath == "" {
+            return
+        }
+        
         UtilService.dataFromCache(urlPath).then { image -> Void in
             switch bubble{
             case 0:

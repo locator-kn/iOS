@@ -14,6 +14,7 @@ class UserListVC: UITableViewController {
     var user:User?
     var showFollower:Bool = true
     var parentCtrl: UserTabVC?
+    let userPlaceholder = UIImage(named: "user_placeholder") as UIImage?
 
     override func viewDidLoad() {
         
@@ -92,12 +93,16 @@ class UserListVC: UITableViewController {
         cell.userCity.text = singleFollower.residence
         UtilService.roundImageView(cell.userImage, borderWidth: 3, borderColor: COLORS.yellow)
         
-        UtilService.dataFromCache(singleFollower.imagePathThumb!).then {
-            result -> Void in
-            
-            if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? UserCell {
-                cellToUpdate.userImage.image = UIImage(data: result)
+        if singleFollower.imagePathThumb != "" {
+            UtilService.dataFromCache(singleFollower.imagePathThumb!).then {
+                result -> Void in
+                
+                if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? UserCell {
+                    cellToUpdate.userImage.image = UIImage(data: result)
+                }
             }
+        } else {
+            cell.userImage.image = userPlaceholder
         }
         
         return cell
