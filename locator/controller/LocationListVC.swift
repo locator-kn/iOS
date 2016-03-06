@@ -76,7 +76,8 @@ class LocationListVC: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "LocationCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! LocationCell
-
+        cell.layoutMargins = UIEdgeInsetsZero;
+        
         let location = locations![indexPath.row]
 
         cell.locationTitle.text = location.title

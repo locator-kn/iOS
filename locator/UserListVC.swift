@@ -86,7 +86,8 @@ class UserListVC: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "UserCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! UserCell
-    
+        cell.layoutMargins = UIEdgeInsetsZero;
+        
         let singleFollower = follower![indexPath.row]
     
         cell.userName.text = singleFollower.name
