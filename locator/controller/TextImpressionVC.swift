@@ -42,6 +42,7 @@ class TextImpressionVC: UIViewController, UITextFieldDelegate {
             self.loader = LoadingView(frame: self.view.frame)
             self.loader.backgroundColor = COLORS.yellow
             self.view.addSubview(loader)
+            self.view.endEditing(true)
             
             ImpressionService.addTextImpression(self.locationId, data: textField.text!).then {
                 result -> Void in
