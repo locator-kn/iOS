@@ -27,9 +27,8 @@ class VideoImpressionCell: UITableViewCell {
     }
 
     @IBAction func clickThumb(sender: UIButton) {
-    
-        if let url = NSURL(string: videoUrl!) {
-                
+        print("Play", videoUrl)
+        if let url = NSURL(string: API.IMAGE_URL + videoUrl!) {
         self.player = AVPlayer(URL: url)
         self.playerController = AVPlayerViewController()
         self.playerController!.player = self.player
