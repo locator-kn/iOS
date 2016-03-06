@@ -49,14 +49,14 @@
                     <rect key="frame" x="0.0" y="129" width="310" height="35"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kantine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEZ-0Z-eEr">
-                            <rect key="frame" x="8" y="-2" width="294" height="22"/>
+                            <rect key="frame" x="8" y="0.0" width="294" height="22"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.60056573275862069" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" name="SourceSansPro-Semibold" family="Source Sans Pro" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Lukas Doe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPY-KM-kYy">
-                            <rect key="frame" x="9" y="16" width="50" height="16"/>
+                            <rect key="frame" x="9" y="18" width="50" height="16"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="16" id="yFA-ET-8V9"/>
                             </constraints>
@@ -69,7 +69,7 @@
                     <constraints>
                         <constraint firstItem="PEZ-0Z-eEr" firstAttribute="leading" secondItem="vwp-t0-kHP" secondAttribute="leadingMargin" id="6CS-Ks-rsy"/>
                         <constraint firstItem="xPY-KM-kYy" firstAttribute="leading" secondItem="vwp-t0-kHP" secondAttribute="leading" constant="9" id="9N0-GU-D33"/>
-                        <constraint firstItem="PEZ-0Z-eEr" firstAttribute="top" secondItem="vwp-t0-kHP" secondAttribute="topMargin" constant="-10" id="Bzv-MN-hdw"/>
+                        <constraint firstItem="PEZ-0Z-eEr" firstAttribute="top" secondItem="vwp-t0-kHP" secondAttribute="topMargin" constant="-8" id="Bzv-MN-hdw"/>
                         <constraint firstItem="xPY-KM-kYy" firstAttribute="top" secondItem="PEZ-0Z-eEr" secondAttribute="bottom" constant="-4" id="Ffm-Er-sg6"/>
                         <constraint firstItem="PEZ-0Z-eEr" firstAttribute="leading" secondItem="vwp-t0-kHP" secondAttribute="leadingMargin" id="Jr2-jE-zlS"/>
                         <constraint firstItem="PEZ-0Z-eEr" firstAttribute="trailing" secondItem="vwp-t0-kHP" secondAttribute="trailingMargin" id="hfO-xi-9lh"/>
