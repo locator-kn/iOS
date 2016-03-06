@@ -209,7 +209,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="Ytr-wP-Z4G">
-                                <rect key="frame" x="20" y="40" width="560" height="54"/>
+                                <rect key="frame" x="20" y="84" width="560" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="GdF-k7-gHT"/>
                                 </constraints>
@@ -3068,7 +3068,7 @@ Locations, bei denen es sich nachweislich um Firmensitze handeln, die nicht im S
                                     </mask>
                                 </variation>
                             </view>
-                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W8Q-D5-2ee" customClass="BubbleView" customModule="locator" customModuleProvider="target">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location_placeholder_small" translatesAutoresizingMaskIntoConstraints="NO" id="W8Q-D5-2ee" customClass="BubbleView" customModule="locator" customModuleProvider="target">
                                 <rect key="frame" x="46" y="15" width="150" height="150"/>
                                 <color key="backgroundColor" red="0.75686274509999996" green="0.75686274509999996" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -3092,7 +3092,7 @@ Locations, bei denen es sich nachweislich um Firmensitze handeln, die nicht im S
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UJf-Py-dXU" customClass="BubbleView" customModule="locator" customModuleProvider="target">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location_placeholder_small" translatesAutoresizingMaskIntoConstraints="NO" id="UJf-Py-dXU" customClass="BubbleView" customModule="locator" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" red="0.75686274509999996" green="0.75686274509999996" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -3116,7 +3116,7 @@ Locations, bei denen es sich nachweislich um Firmensitze handeln, die nicht im S
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RFy-Bg-51N" customClass="BubbleView" customModule="locator" customModuleProvider="target">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location_placeholder_small" translatesAutoresizingMaskIntoConstraints="NO" id="RFy-Bg-51N" customClass="BubbleView" customModule="locator" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" red="0.75686274509999996" green="0.75686274509999996" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -3136,7 +3136,7 @@ Locations, bei denen es sich nachweislich um Firmensitze handeln, die nicht im S
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uai-va-mhn" customClass="BubbleView" customModule="locator" customModuleProvider="target">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location_placeholder_small" translatesAutoresizingMaskIntoConstraints="NO" id="uai-va-mhn" customClass="BubbleView" customModule="locator" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" red="0.75686274509999996" green="0.75686274509999996" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -3156,7 +3156,7 @@ Locations, bei denen es sich nachweislich um Firmensitze handeln, die nicht im S
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zwi-n6-4k8" customClass="BubbleView" customModule="locator" customModuleProvider="target">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location_placeholder_small" translatesAutoresizingMaskIntoConstraints="NO" id="Zwi-n6-4k8" customClass="BubbleView" customModule="locator" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" red="0.75686274509999996" green="0.75686274509999996" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -3176,7 +3176,7 @@ Locations, bei denen es sich nachweislich um Firmensitze handeln, die nicht im S
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lhe-2R-F46" customClass="BubbleView" customModule="locator" customModuleProvider="target">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location_placeholder_small" translatesAutoresizingMaskIntoConstraints="NO" id="lhe-2R-F46" customClass="BubbleView" customModule="locator" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" red="0.75686274509999996" green="0.75686274509999996" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -3453,11 +3453,11 @@ Locations, bei denen es sich nachweislich um Firmensitze handeln, die nicht im S
         <image name="weiter_icon" width="546" height="546"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WG6-zk-XfW"/>
-        <segue reference="fWT-Cw-pds"/>
-        <segue reference="Q9G-yB-4zn"/>
-        <segue reference="C0z-Ed-tMO"/>
-        <segue reference="PBI-Q7-c1i"/>
+        <segue reference="ela-Fj-2Fq"/>
         <segue reference="n5V-k0-1OC"/>
+        <segue reference="2oh-QA-SLC"/>
+        <segue reference="sX6-Cx-Ga0"/>
+        <segue reference="Mj3-i4-FhS"/>
+        <segue reference="WG6-zk-XfW"/>
     </inferredMetricsTieBreakers>
 </document>
