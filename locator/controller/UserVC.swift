@@ -37,6 +37,15 @@ class UserVC: UIViewController {
         
         print("User with ID: " + self.user!.id!)
         
+        // catch this edgecase
+        if (User.me != nil && User.me!.following == nil) {
+            UserService.getUser(User.me!.id!).then {
+                result -> Void in
+                User.me = result
+                self.updateView()
+            }
+        }
+        
         // fetch user information
         UserService.getUser(user.id!)
             .then {
