@@ -570,7 +570,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="textImpression" rowHeight="200" id="Nnk-qK-7KD" customClass="TextImpressionCell" customModule="locator" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="textImpression" rowHeight="200" id="Nnk-qK-7KD" customClass="TextImpressionCell" customModule="locator" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="600" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nnk-qK-7KD" id="FjW-ix-dwe">
@@ -673,7 +673,7 @@
                                     <outlet property="username" destination="pip-Gk-e32" id="EbB-8h-ocj"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="imageImpression" rowHeight="660" id="V8y-rU-5vG" customClass="ImageImpressionCell" customModule="locator" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="imageImpression" rowHeight="660" id="V8y-rU-5vG" customClass="ImageImpressionCell" customModule="locator" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="250" width="600" height="660"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V8y-rU-5vG" id="bpa-fu-dSR">
@@ -1083,6 +1083,7 @@
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="category_1" destination="gdh-dn-TML" id="CTT-0d-7L9"/>
                                     <outlet property="category_2" destination="Qd5-dd-cVV" id="4vk-KC-u25"/>
@@ -1268,6 +1269,7 @@
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="date" destination="1eR-d2-P8c" id="JFj-tG-Nqh"/>
                                     <outlet property="userThumb" destination="Kou-sD-RR4" id="yMm-LA-GZP"/>

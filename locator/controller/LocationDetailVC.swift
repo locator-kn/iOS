@@ -162,7 +162,8 @@ class LocationDetailVC: UITableViewController {
         
         if let imageImpression = impression as? ImageImpression {
             let cell = tableView.dequeueReusableCellWithIdentifier("imageImpression", forIndexPath: indexPath) as! ImageImpressionCell
-          
+            cell.layoutMargins = UIEdgeInsetsZero;
+            
             UtilService.roundImageView(cell.userThumb)
             cell.date.text = impression.getDate()
             cell.username.text = impression.user.name
@@ -187,6 +188,7 @@ class LocationDetailVC: UITableViewController {
             
         } else if let textImpression = impression as? TextImpression {
             let cell = tableView.dequeueReusableCellWithIdentifier("textImpression", forIndexPath: indexPath) as! TextImpressionCell
+            cell.layoutMargins = UIEdgeInsetsZero;
             
             UtilService.roundImageView(cell.userThumb)
             cell.date.text = impression.getDate()
@@ -211,6 +213,8 @@ class LocationDetailVC: UITableViewController {
         
         } else if let videoImpression = impression as? VideoImpression {
             let cell = tableView.dequeueReusableCellWithIdentifier("videoimpression", forIndexPath: indexPath) as! VideoImpressionCell
+            cell.layoutMargins = UIEdgeInsetsZero;
+            
             cell.vc = self
             cell.username.text = impression.user.name
             cell.videoUrl = videoImpression.videoPath
