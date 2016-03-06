@@ -797,18 +797,6 @@
                                                 <constraint firstAttribute="height" constant="40" id="W6o-Vf-kcx"/>
                                             </constraints>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nb7-ZO-dd5" userLabel="favorButton">
-                                            <rect key="frame" x="555" y="219" width="35" height="35"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="35" id="83P-cx-q1B"/>
-                                                <constraint firstAttribute="height" constant="35" id="WRb-6E-Mck"/>
-                                            </constraints>
-                                            <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
-                                            <state key="normal" image="favorite_icon"/>
-                                            <connections>
-                                                <action selector="favorLocation:" destination="1XA-Ef-cjY" eventType="touchUpInside" id="iLC-tZ-mIU"/>
-                                            </connections>
-                                        </button>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gdh-dn-TML" userLabel="category_1">
                                             <rect key="frame" x="8" y="207" width="40" height="40"/>
                                             <constraints>
@@ -853,6 +841,21 @@
                                                 <rect key="frame" x="8" y="398" width="165" height="18"/>
                                             </variation>
                                         </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location_placeholder-9" translatesAutoresizingMaskIntoConstraints="NO" id="ZSP-fm-YDO">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="259"/>
+                                            <color key="backgroundColor" red="0.75686274509999996" green="0.75686274509999996" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="259" id="8yi-SX-Dhj"/>
+                                                <constraint firstAttribute="width" secondItem="ZSP-fm-YDO" secondAttribute="height" multiplier="300:91" constant="-253.84615384615381" id="9n3-lE-bdF"/>
+                                                <constraint firstAttribute="height" constant="182" id="zQx-Sa-0VL"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="9n3-lE-bdF"/>
+                                                    <exclude reference="zQx-Sa-0VL"/>
+                                                </mask>
+                                            </variation>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Impressions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbi-3c-e8u">
                                             <rect key="frame" x="512" y="330" width="72" height="18"/>
                                             <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
@@ -913,6 +916,18 @@
                                             </variation>
                                             <connections>
                                                 <segue destination="G1J-vh-MOc" kind="show" identifier="user" id="PBI-Q7-c1i"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nb7-ZO-dd5" userLabel="favorButton">
+                                            <rect key="frame" x="555" y="219" width="35" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="35" id="83P-cx-q1B"/>
+                                                <constraint firstAttribute="height" constant="35" id="WRb-6E-Mck"/>
+                                            </constraints>
+                                            <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                            <state key="normal" image="favorite_icon"/>
+                                            <connections>
+                                                <action selector="favorLocation:" destination="1XA-Ef-cjY" eventType="touchUpInside" id="iLC-tZ-mIU"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFD-cK-Myd" userLabel="impressionsCount">
@@ -1007,21 +1022,6 @@
                                                 <segue destination="4Mp-XX-Glu" kind="show" identifier="map" id="Q9G-yB-4zn"/>
                                             </connections>
                                         </button>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location_placeholder-9" translatesAutoresizingMaskIntoConstraints="NO" id="ZSP-fm-YDO">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="259"/>
-                                            <color key="backgroundColor" red="0.75686274509999996" green="0.75686274509999996" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="259" id="8yi-SX-Dhj"/>
-                                                <constraint firstAttribute="width" secondItem="ZSP-fm-YDO" secondAttribute="height" multiplier="300:91" constant="-253.84615384615381" id="9n3-lE-bdF"/>
-                                                <constraint firstAttribute="height" constant="182" id="zQx-Sa-0VL"/>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="9n3-lE-bdF"/>
-                                                    <exclude reference="zQx-Sa-0VL"/>
-                                                </mask>
-                                            </variation>
-                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="8CZ-Io-utv" firstAttribute="centerX" secondItem="E6c-8O-3Ua" secondAttribute="centerX" id="0fr-Qh-HFd"/>
@@ -3435,7 +3435,7 @@ Locations, bei denen es sich nachweislich um Firmensitze handeln, die nicht im S
         <image name="location_placeholder_small" width="180" height="180"/>
         <image name="locations" width="62" height="75"/>
         <image name="locator_logo" width="440" height="213"/>
-        <image name="locator_logo_small" width="206" height="100"/>
+        <image name="locator_logo_small" width="82" height="40"/>
         <image name="map_icon_black" width="64" height="64"/>
         <image name="movie" width="179" height="128"/>
         <image name="nature" width="173" height="173"/>
@@ -3453,11 +3453,11 @@ Locations, bei denen es sich nachweislich um Firmensitze handeln, die nicht im S
         <image name="weiter_icon" width="546" height="546"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ela-Fj-2Fq"/>
-        <segue reference="n5V-k0-1OC"/>
+        <segue reference="Q9G-yB-4zn"/>
         <segue reference="2oh-QA-SLC"/>
-        <segue reference="sX6-Cx-Ga0"/>
+        <segue reference="n5V-k0-1OC"/>
         <segue reference="Mj3-i4-FhS"/>
+        <segue reference="PBI-Q7-c1i"/>
         <segue reference="WG6-zk-XfW"/>
     </inferredMetricsTieBreakers>
 </document>
