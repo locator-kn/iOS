@@ -50,6 +50,7 @@ class UserTabVC: UIViewController {
         followedByListCtrl!.user = self.user
         followerListCtrl!.showFollower = false
         
+        favoritedLocations!.parentCtrl = self
         locationListCtrl!.parentCtrl = self
         followerListCtrl!.parentCtrl = self
         followedByListCtrl!.parentCtrl = self
