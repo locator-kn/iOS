@@ -3,7 +3,7 @@
 //  locator
 //
 //  Created by Sergej Birklin on 13/01/16.
-//  Copyright © 2016 Sergej Birklin. All rights reserved.
+//  Copyright © 2016 Locator. All rights reserved.
 //
 
 import Foundation

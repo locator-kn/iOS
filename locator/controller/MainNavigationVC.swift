@@ -3,7 +3,7 @@
 //  locator
 //
 //  Created by Michael Knoch on 25/01/16.
-//  Copyright © 2016 Sergej Birklin. All rights reserved.
+//  Copyright © 2016 Locator. All rights reserved.
 //
 
 import UIKit
