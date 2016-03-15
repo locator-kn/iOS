@@ -12,9 +12,9 @@ import UIKit
 class Location {
     
     let id:String
-    let geoPosition:(lat :Double, long :Double)
+    var geoPosition:(lat :Double, long :Double)!
 
-    var title:String
+    var title:String!
     var city:City!
     
     var imagePathXlarge:String!
@@ -30,6 +30,10 @@ class Location {
     var favorites:Int!
     var userWhoFavored:[String]!
     var stream:[AbstractImpression]!
+    
+    init(id: String) {
+        self.id = id
+    }
     
     init(id: String, title: String, long: Double, lat: Double, city:City, imagePathSmall: String, imagePathNormal:String, imagePathLarge: String, imagePathXlarge:String, favored: Bool, favorites:Int, user: User) {
         self.id = id
