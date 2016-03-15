@@ -33,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             let secondnavi = mainStoryboard.instantiateViewControllerWithIdentifier("secondnavi") as! SecondNavigationVC
             window?.rootViewController = secondnavi
+            
             User.me = User(id: NSUserDefaults.standardUserDefaults().stringForKey("me")!)
             window?.makeKeyAndVisible()
             
@@ -174,11 +175,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("error during device post")
         }
     }
-    /*
+    
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
         print(userInfo)
+        
+        if (application.applicationState != UIApplicationState.Active) {
+        
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let second = window!.rootViewController as? SecondNavigationVC
+            
+            if let userId = userInfo["userId"] {
+                let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("UserVC") as! UserVC
+                nextViewController.user = User(id: userId as! String)
+                second?.pushViewController(nextViewController, animated: true)
+                
+            } else if let locationId = userInfo["locationId"] {
+                let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("LocationDetailVC") as! LocationDetailVC
+                nextViewController.location = Location(id: locationId as! String)
+                second?.pushViewController(nextViewController, animated: true)
+            }
+            
+        }
+        
+        
         completionHandler(UIBackgroundFetchResult.NoData)
-    }*/
+    }
 
     
 }

@@ -564,7 +564,7 @@
         <!--Location DetailVC-->
         <scene sceneID="Eyn-e7-LFX">
             <objects>
-                <tableViewController storyboardIdentifier="locationDetailStoryboardID" automaticallyAdjustsScrollViewInsets="NO" id="1XA-Ef-cjY" customClass="LocationDetailVC" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="LocationDetailVC" automaticallyAdjustsScrollViewInsets="NO" id="1XA-Ef-cjY" customClass="LocationDetailVC" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="tf1-I0-abU">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="2300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
