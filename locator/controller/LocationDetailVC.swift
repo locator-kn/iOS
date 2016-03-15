@@ -168,6 +168,9 @@ class LocationDetailVC: UITableViewController {
             cell.date.text = impression.getDate()
             cell.username.text = impression.user.name
             
+            cell.user = impression.user
+            cell.rootVC = self
+            
             UtilService.dataFromCache(impression.user.imagePathThumb!).then {
                 result -> Void in
                 if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? ImageImpressionCell {
@@ -194,6 +197,9 @@ class LocationDetailVC: UITableViewController {
             cell.date.text = impression.getDate()
             cell.username.text = impression.user.name
             
+            cell.user = impression.user
+            cell.rootVC = self
+            
             UtilService.dataFromCache(impression.user.imagePathThumb!).then {
                 result -> Void in
                 if let cellToUpdate = tableView.cellForRowAtIndexPath(indexPath) as? TextImpressionCell {
@@ -219,6 +225,9 @@ class LocationDetailVC: UITableViewController {
             cell.username.text = impression.user.name
             cell.videoUrl = videoImpression.videoPath
             UtilService.roundImageView(cell.userThumb)
+            
+            cell.user = impression.user
+            cell.rootVC = self
             
             UtilService.dataFromCache(videoImpression.user.imagePathThumb!).then {
                 result -> Void in
@@ -380,4 +389,5 @@ class LocationDetailVC: UITableViewController {
         }
         self.performSegueWithIdentifier("video", sender: self)
     }
+
 }

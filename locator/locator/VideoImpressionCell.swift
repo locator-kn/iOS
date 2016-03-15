@@ -12,6 +12,8 @@ import AVFoundation
 
 class VideoImpressionCell: UITableViewCell {
 
+    var user:User!
+    var rootVC: LocationDetailVC!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var userThumb: UIImageView!
@@ -45,6 +47,13 @@ class VideoImpressionCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @IBAction func redirectUser(sender: UIButton) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("UserVC") as! UserVC
+        nextViewController.user = self.user
+        self.rootVC.navigationController?.pushViewController(nextViewController, animated: true)
     }
 
 }
