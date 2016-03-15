@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-        let settings = UIUserNotificationSettings(forTypes: .Alert, categories: nil)
+        let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge , .Sound], categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(settings)
         UIApplication.sharedApplication().registerForRemoteNotifications()
         return true
@@ -176,9 +176,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     /*
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
-        if let notification = userInfo {
-            completionHandler(UIBackgroundFetchResult.NoData)
-        }
+        print(userInfo)
+        completionHandler(UIBackgroundFetchResult.NoData)
     }*/
 
     
