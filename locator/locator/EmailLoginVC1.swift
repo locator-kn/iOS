@@ -49,8 +49,7 @@ class EmailLoginVC1: UIViewController, UITextFieldDelegate {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showEmailLoginVC2"
-        {
+        if segue.identifier == "showEmailLoginVC2" {
             if let destinationVC = segue.destinationViewController as? EmailLoginVC2{
                 destinationVC.email = emailTextField.text
             }
