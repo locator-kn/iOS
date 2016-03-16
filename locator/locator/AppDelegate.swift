@@ -181,7 +181,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if (application.applicationState != UIApplicationState.Active) {
         
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-            let second = window!.rootViewController as? SecondNavigationVC
+            let second = window!.rootViewController as? AbstractNavigationVC
             
             if let userId = userInfo["userId"] {
                 let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("UserVC") as! UserVC
@@ -195,7 +195,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             
         }
-        
+
         
         completionHandler(UIBackgroundFetchResult.NoData)
     }
