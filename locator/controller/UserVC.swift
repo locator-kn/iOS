@@ -32,33 +32,41 @@ class UserVC: UIViewController {
     let settingsIcon = UIImage(named: "settings") as UIImage?
     var me = false
     
+    var loader: LoadingView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("User with ID: " + self.user!.id!)
+        self.loader = LoadingView(frame: self.view.frame)
+        self.loader.backgroundColor = COLORS.red
+        self.view.addSubview(loader)
         
-        // catch this edgecase
-        if (User.me != nil && User.me!.following == nil) {
-            UserService.getUser(User.me!.id!).then {
-                result -> Void in
-                User.me = result
-                self.updateView()
-            }
-        }
+        print("User with ID: " + self.user!.id!)
         
         // fetch user information
         UserService.getUser(user.id!)
             .then {
                 result -> Void in
                 self.user = result
-                self.updateView()
+                
+                // catch this edgecase
+                if (User.me?.following == nil) {
+                    UserService.getUser(User.me!.id!).then {
+                        result -> Void in
+                        User.me = result
+                        self.updateView()
+                    }
+                } else {
+                    self.updateView()
+                }
+                
             }
             .error {
                 error -> Void in
                 print(error)
         }
         
-        if (User.me != nil && self.user.id == User.me!.id) {
+        if (self.user.id == User.me?.id) {
             me = true
             self.followButton.setImage(self.settingsIcon, forState: .Normal)
         }
@@ -102,8 +110,9 @@ class UserVC: UIViewController {
         self.title = self.user.name
         self.locationsCount.text = "\(self.user.locationCount!)"
         self.followersCount.text = "\(self.user.followerCount!)"
+        self.loader.dismiss()
         
-        if (User.me != nil && User.me!.following != nil && User.me!.following!.contains(self.user.id!)) {
+        if (User.me?.following != nil && User.me!.following!.contains(self.user.id!)) {
             self.user.mefollowing = true
             self.followButton.setImage(self.followActiveIcon, forState: .Normal)
         }
