@@ -63,6 +63,7 @@ class EmailLoginVC2: UIViewController, UITextFieldDelegate {
             }.error {
                 err -> Void in
                 print("Login Error")
+                print(err)
                 self.showError()
             }
         
