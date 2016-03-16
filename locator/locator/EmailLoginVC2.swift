@@ -15,9 +15,11 @@ class EmailLoginVC2: UIViewController, UITextFieldDelegate {
     
     var email:String!
     let inputValidation = ValidateInputService()
+    var loader: LoadingView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "cross"), style: .Plain, target: self, action: "close")
         print(email)
         passwordTextField.delegate = self
@@ -44,6 +46,11 @@ class EmailLoginVC2: UIViewController, UITextFieldDelegate {
     @IBAction func passwordTextFieldDidEndOnExit(sender: UITextField) {
         
         if inputValidation.checkPasswordInput(sender.text!) == true {
+            
+            self.loader = LoadingView(frame: self.view.frame)
+            self.loader.backgroundColor = COLORS.red
+            self.view.addSubview(loader)
+            
             UserService.login(email, password: passwordTextField.text!).then {
                 user -> Void in
                 print("Login Success: " + user.name!)
@@ -51,11 +58,14 @@ class EmailLoginVC2: UIViewController, UITextFieldDelegate {
                 print(User.getMe().name)
                 NSUserDefaults.standardUserDefaults().setValue(User.getMe().id, forKey: "me")
                 self.performSegueWithIdentifier("dashboard", sender: self)
+            }.always {
+                self.loader.dismiss()
             }.error {
                 err -> Void in
                 print("Login Error")
                 self.showError()
             }
+        
         } else {
             self.showError()
         }
