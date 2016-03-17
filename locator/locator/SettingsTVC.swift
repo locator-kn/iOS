@@ -56,7 +56,12 @@ class SettingsTVC: UITableViewController {
     
     func logoutTapped(label: UILabel) {
         print("logout Button Tapped")
-        SettingsService.logout()
+        UserService.logout().then { result -> Void in
+            NSUserDefaults.standardUserDefaults().removeObjectForKey("me")
+            NSUserDefaults.standardUserDefaults().removeObjectForKey("facebookUser")
+            User.me = nil
+            AlertService.segueToLoginVC()
+        }
     }
     
     /*

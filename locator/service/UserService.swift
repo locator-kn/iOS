@@ -97,8 +97,8 @@ class UserService {
                     }
                     
                 case .Failure(let error):
-                    
-                    reject(error)
+                    print(error)
+                    reject((NSError(domain: "register error", code: response.response!.statusCode, userInfo: nil)))
                 }
             }
         }

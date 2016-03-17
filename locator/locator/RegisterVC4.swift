@@ -56,8 +56,14 @@ class RegisterVC4: UIViewController, UITextFieldDelegate {
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
-    func alertFalseRegistration() {
-        let alert = UIAlertController(title: "Ups", message: "Fehlerhafte Registrierung", preferredStyle: UIAlertControllerStyle.Alert)
+    func alertFalseRegistration(errorCode: Int) {
+        
+        var message:String = "Fehlerhafte Registrierung"
+        if errorCode == 409 {
+            message = "Diese Mail wird bereits verwendet"
+        }
+        
+        let alert = UIAlertController(title: "Ups", message: message, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
     }
@@ -72,8 +78,9 @@ class RegisterVC4: UIViewController, UITextFieldDelegate {
                 User.me? = User(id: userId as String)
             }
             self.performSegueWithIdentifier("showRegisterVC5", sender: self)
-            }.error { (error) -> Void in
-                self.alertFalseRegistration()
+            }.error { error -> Void in
+                let error = error as NSError
+                self.alertFalseRegistration(error.code)
         }
     }
     
