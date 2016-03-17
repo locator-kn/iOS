@@ -183,12 +183,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             let second = window!.rootViewController as? AbstractNavigationVC
             
-            if let userId = userInfo["userId"] {
+            if let userId = userInfo["user"] {
                 let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("UserVC") as! UserVC
                 nextViewController.user = User(id: userId as! String)
                 second?.pushViewController(nextViewController, animated: true)
                 
-            } else if let locationId = userInfo["locationId"] {
+            } else if let locationId = userInfo["location"] {
                 let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("LocationDetailVC") as! LocationDetailVC
                 nextViewController.location = Location(id: locationId as! String)
                 second?.pushViewController(nextViewController, animated: true)
