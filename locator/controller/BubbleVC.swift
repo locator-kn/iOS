@@ -100,7 +100,7 @@ class BubbleVC: UIViewController {
     
     func gpsDeniedHandler(accessGranted: Bool) {
         if !accessGranted {
-            let alert = UIAlertController(title: "GPS aktivieren", message: "Du musst dein GPS aktivieren um eine Location zu erstellen.",preferredStyle: UIAlertControllerStyle.Alert)
+            let alert = UIAlertController(title: "GPS aktivieren", message: "Du musst dein GPS aktivieren um Locations in deiner nähe entdecken zu können.",preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Gerne", style: UIAlertActionStyle.Default, handler: AlertService.openAppSettings))
             self.presentViewController(alert, animated: true, completion: nil)
         }
