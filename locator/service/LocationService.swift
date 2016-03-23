@@ -49,6 +49,10 @@ class LocationService {
         location.userWhoFavored = favorites
         location.favorites = location.userWhoFavored.count
         
+        if let imagePathEgg = json["images"]["egg"].string {
+            location.imagePathEgg = API.IMAGE_URL + imagePathEgg
+        }
+        
         return location
     }
     

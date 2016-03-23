@@ -21,6 +21,7 @@ class Location {
     var imagePathLarge: String!
     var imagePathNormal:String!
     var imagePathSmall:String!
+    var imagePathEgg:String?
     
     var categories = [String]()
     

@@ -150,7 +150,16 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
                 self.googleMap.selectedMarker = marker
             }
         } else {
-            marker.icon = UIImage(named: "location")
+            
+            if let path = location.imagePathEgg {
+                UtilService.dataFromCache(path).then {
+                    result -> Void in
+                    marker.icon = UIImage(data: result)
+                }
+            } else {
+                marker.icon = UIImage(named: "location")
+            }
+            
             locationMarkers.append(marker)
         }
     }
