@@ -28,11 +28,8 @@ class RegisterVC5: UIViewController, UINavigationControllerDelegate, UIImagePick
         imageFromSource.delegate = self
         imageFromSource.allowsEditing = true
         
-        let tapGestureRecognizer1 = UITapGestureRecognizer(target:self, action:Selector("imageTapped:"))
+        let tapGestureRecognizer1 = UITapGestureRecognizer(target:self, action:#selector(self.imageTapped(_:)))
         profilImageView.addGestureRecognizer(tapGestureRecognizer1)
-        
-        let tapGestureRecognizer2 = UITapGestureRecognizer(target:self, action:Selector("yesButtonTapped:"))
-        yesImageView.addGestureRecognizer(tapGestureRecognizer2)
     }
     
     override func didReceiveMemoryWarning() {
