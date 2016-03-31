@@ -39,7 +39,7 @@ class LocationDetailVC: UITableViewController {
             self.navigationItem.setHidesBackButton(true, animated:true);
         }
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "home"), style: .Plain, target: self, action: "home")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "home"), style: .Plain, target: self, action: #selector(self.home))
         self.loader = LoadingView(frame: self.view.frame)
         self.loader.backgroundColor = COLORS.blue
         self.view.addSubview(loader)
@@ -57,7 +57,7 @@ class LocationDetailVC: UITableViewController {
         self.refreshControl = UIRefreshControl()
         self.refreshControl?.backgroundColor = COLORS.blue
         self.refreshControl?.tintColor = UIColor.whiteColor()
-        self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl?.addTarget(self, action: #selector(self.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
 
         self.clearsSelectionOnViewWillAppear = false
         tableView.estimatedRowHeight = 300.0

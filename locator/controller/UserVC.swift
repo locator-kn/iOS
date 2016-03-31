@@ -71,7 +71,7 @@ class UserVC: UIViewController {
             self.followButton.setImage(self.settingsIcon, forState: .Normal)
         }
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "home"), style: .Plain, target: self, action: "home")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "home"), style: .Plain, target: self, action: #selector(self.home))
         
         let overlay: CAGradientLayer = CAGradientLayer()
         overlay.frame = gradient.frame

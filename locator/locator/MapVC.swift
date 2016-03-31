@@ -69,7 +69,7 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
         self.heatMapButton.alpha = 0
         self.locationButton.alpha = 0
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "navigate"), style: .Plain, target: self, action: "locate")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "navigate"), style: .Plain, target: self, action: #selector(MapVC.locate))
 
         locationManager = CLLocationManager()
         locationManager.requestWhenInUseAuthorization()

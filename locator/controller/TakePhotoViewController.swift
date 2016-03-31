@@ -27,7 +27,7 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
         imageFromSource.allowsEditing = true
         self.title = "neue Location"
         self.view.backgroundColor = COLORS.black
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "cross"), style: .Plain, target: self, action: "close")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "cross"), style: .Plain, target: self, action: #selector(self.close))
         gps = GpsService(successHandler: gpsSuccessHandler ,deniedHandler: gpsDeniedHandler)
     }
     

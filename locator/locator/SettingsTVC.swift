@@ -18,7 +18,7 @@ class SettingsTVC: UITableViewController {
         
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
         
-        let logoutLabelGesture = UITapGestureRecognizer(target:self, action:Selector("logoutTapped:"))
+        let logoutLabelGesture = UITapGestureRecognizer(target:self, action:#selector(self.logoutTapped(_:)))
         logoutLabel.addGestureRecognizer(logoutLabelGesture)
 
         let facebookUser = NSUserDefaults.standardUserDefaults().boolForKey("facebookUser")

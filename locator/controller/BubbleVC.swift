@@ -41,7 +41,7 @@ class BubbleVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "map_icon_white"), style: .Plain, target: self, action: "showMap")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "map_icon_white"), style: .Plain, target: self, action: #selector(self.showMap))
         
         gps = GpsService(successHandler: gpsSuccessHandler, deniedHandler: gpsDeniedHandler)
         addGestureRecognizer()
@@ -134,28 +134,28 @@ class BubbleVC: UIViewController {
     }
     
     func addGestureRecognizer() {
-        let schoenHierGesture = UITapGestureRecognizer(target:self, action:Selector("schoenHierTapped:"))
-        let schoenHierGesture_hold = UILongPressGestureRecognizer(target:self, action:Selector("schonHierLongPress:"))
+        let schoenHierGesture = UITapGestureRecognizer(target:self, action:#selector(self.schoenHierTapped(_:)))
+        let schoenHierGesture_hold = UILongPressGestureRecognizer(target:self, action:#selector(self.schonHierLongPress(_:)))
         
         schoenHier.addGestureRecognizer(schoenHierGesture)
         schoenHier.addGestureRecognizer(schoenHierGesture_hold)
         
-        let userProfileGesture = UITapGestureRecognizer(target:self, action:Selector("userProfileTapped:"))
+        let userProfileGesture = UITapGestureRecognizer(target:self, action:#selector(self.userProfileTapped(_:)))
         userProfilImageView.addGestureRecognizer(userProfileGesture)
-        let firstBubbleGesture = UITapGestureRecognizer(target:self, action:Selector("firstBubbleTapped:"))
+        let firstBubbleGesture = UITapGestureRecognizer(target:self, action:#selector(self.firstBubbleTapped(_:)))
         firstBubbleImageView.addGestureRecognizer(firstBubbleGesture)
-        let secondBubbleGesture = UITapGestureRecognizer(target:self, action:Selector("secondBubbleTapped:"))
+        let secondBubbleGesture = UITapGestureRecognizer(target:self, action:#selector(self.secondBubbleTapped(_:)))
         secondBubbleImageView.addGestureRecognizer(secondBubbleGesture)
-        let thirdBubbleGesture = UITapGestureRecognizer(target:self, action:Selector("thirdBubbleTapped:"))
+        let thirdBubbleGesture = UITapGestureRecognizer(target:self, action:#selector(self.thirdBubbleTapped(_:)))
         thirdBubbleImageView.addGestureRecognizer(thirdBubbleGesture)
-        let fourthBubbleGesture = UITapGestureRecognizer(target:self, action:Selector("fourthBubbleTapped:"))
+        let fourthBubbleGesture = UITapGestureRecognizer(target:self, action:#selector(self.fourthBubbleTapped(_:)))
         fourthBubbleImageView.addGestureRecognizer(fourthBubbleGesture)
-        let fifthBubbleGesture = UITapGestureRecognizer(target:self, action:Selector("fifthBubbleTapped:"))
+        let fifthBubbleGesture = UITapGestureRecognizer(target:self, action:#selector(self.fifthBubbleTapped(_:)))
         fifthBubbleImageView.addGestureRecognizer(fifthBubbleGesture)
-        let sixthBubbleGesture = UITapGestureRecognizer(target:self, action:Selector("sixthBubbleTapped:"))
+        let sixthBubbleGesture = UITapGestureRecognizer(target:self, action:#selector(self.sixthBubbleTapped(_:)))
         sixthBubbleImageView.addGestureRecognizer(sixthBubbleGesture)
         
-        let rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(self.handleSwipes(_:)))
         rightSwipe.direction = .Left
         view.addGestureRecognizer(rightSwipe)
     }

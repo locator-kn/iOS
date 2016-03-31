@@ -24,8 +24,8 @@ class AboutUserVc: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let firstTapGesture = UITapGestureRecognizer(target: self, action: Selector("firstAnswerPressed:"))
-        let secondTapGesture = UITapGestureRecognizer(target: self, action: Selector("secondAnswerPressed:"))
+        let firstTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.firstAnswerPressed(_:)))
+        let secondTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.secondAnswerPressed(_:)))
         secondLabel.userInteractionEnabled = true
         secondLabel.addGestureRecognizer(firstTapGesture)
         thirdLabel.userInteractionEnabled = true

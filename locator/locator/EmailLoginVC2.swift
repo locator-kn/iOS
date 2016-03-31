@@ -20,7 +20,7 @@ class EmailLoginVC2: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "cross"), style: .Plain, target: self, action: "close")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "cross"), style: .Plain, target: self, action: #selector(self.close))
         print(email)
         passwordTextField.delegate = self
         passwordTextField.becomeFirstResponder()
