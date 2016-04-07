@@ -1,7 +1,8 @@
 language: objective-c
 osx_image: xcode6.4
-xcode_project: Locator/locator.xcworkspace
+xcode_project: locator/locator.xcworkspace
 xcode_scheme: Locator
+podfile: locator/Podfile
 install:
   - pod update
 xcode_sdk: iphonesimulator8.4
