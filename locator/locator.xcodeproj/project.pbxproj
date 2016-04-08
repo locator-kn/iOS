@@ -959,6 +959,7 @@
 				5B0F82111CB71B3600FBF232 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		87F14D721C18604B00682709 /* Build configuration list for PBXProject "locator" */ = {
 			isa = XCConfigurationList;
