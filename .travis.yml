@@ -10,9 +10,8 @@ rvm:
 before_install: 
   - git clone https://github.com/facebook/xctool.git
   - gem install cocoapods
-  - pod setup --silent
+  - pod install
 
 script:
-  - pod lib lint
   - xctool/xctoolsh -workspace locator/locator.xcworkspace -scheme locator -sdk iphonesimulator9.3 build test
   - xctool/xctoolsh -workspace locator/locator.xcworkspace -scheme locator -sdk macosx.3 build test
