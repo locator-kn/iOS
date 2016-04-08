@@ -1,6 +1,6 @@
 language: objective-c
-xcode_project: locator/locator.xcodeproj
-#xcode_workspace: locator/locator.xcworkspace
+#xcode_project: locator/locator.xcodeproj
+xcode_workspace: locator/locator.xcworkspace
 xcode_scheme: locator
 podfile: locator/Podfile
 osx_image: xcode7.3
