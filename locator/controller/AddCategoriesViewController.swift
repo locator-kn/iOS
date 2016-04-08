@@ -170,6 +170,8 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
         nightlifeLabel.alpha = 0.4
         
         next.alpha = 0.4
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "cross"), style: .Plain, target: self, action: #selector(self.home))
 
     }
     
@@ -184,6 +186,10 @@ class AddCategoriesViewController: UIViewController, UITextFieldDelegate {
     func setAlphaForButtons(button1: UIButton, button2: UIButton, alpha: CGFloat) {
         button1.alpha = alpha
         button2.alpha = alpha
+    }
+    
+    func home() {
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
     func editSelectedCategories(ident: String) -> Bool {

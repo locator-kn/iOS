@@ -22,9 +22,10 @@ class NameYourLocationViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-
-        self.view.backgroundColor = COLORS.black
+        self.navigationItem.setHidesBackButton(true, animated: false);
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "cross"), style: .Plain, target: self, action: #selector(self.home))
         
+        self.view.backgroundColor = COLORS.black
         self.title = "Bennene deine Location"
         
         locationTitle.attributedPlaceholder = NSAttributedString(string:"Name eintragen",
@@ -36,6 +37,10 @@ class NameYourLocationViewController: UIViewController, UITextFieldDelegate {
         locationTitle.becomeFirstResponder()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func home() {
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
 
     override func didReceiveMemoryWarning() {

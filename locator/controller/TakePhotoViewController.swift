@@ -24,7 +24,7 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
         let imageData = NSData(contentsOfURL: NSBundle.mainBundle().URLForResource("locator_preloader", withExtension: "gif")!)
         self.loading.image = UIImage.gifWithData(imageData!)
         imageFromSource.delegate = self
-        imageFromSource.allowsEditing = true
+        imageFromSource.allowsEditing = false
         self.title = "neue Location"
         self.view.backgroundColor = COLORS.black
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "cross"), style: .Plain, target: self, action: #selector(self.close))
@@ -68,7 +68,7 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        let editedImage: UIImage = info[UIImagePickerControllerEditedImage] as! UIImage
+        let editedImage: UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         self.image = editedImage
         self.dismissViewControllerAnimated(true, completion: nil)
         self.performSegueWithIdentifier("nameYourLocation", sender: true)
