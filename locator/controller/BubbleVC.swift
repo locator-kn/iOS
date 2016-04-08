@@ -46,6 +46,20 @@ class BubbleVC: UIViewController {
         gps = GpsService(successHandler: gpsSuccessHandler, deniedHandler: gpsDeniedHandler)
         addGestureRecognizer()
         //self.loadBubbles()
+        
+        showUserThumb()
+    }
+    
+    func showUserThumb() {
+        if let imagePath = User.me?.imagePathNormal {
+            UtilService.dataFromCache(imagePath).then {
+                result -> Void in
+                self.userProfilImageView.image = UIImage(data: result)
+                
+                self.userProfilImageView = UtilService.roundImageView(self.userProfilImageView, borderWidth: 2)
+            
+            }
+        }
     }
     
     func loadBubbles() {

@@ -3178,10 +3178,10 @@ Locations, bei denen es sich nachweislich um Firmensitze handeln, die nicht im S
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="gWc-o3-zPl">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="75"/>
                                     </constraint>
                                     <constraint firstAttribute="height" constant="75" id="myd-yb-GB2">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="75"/>
                                     </constraint>
                                 </constraints>
                                 <variation key="default">
@@ -3242,7 +3242,7 @@ Locations, bei denen es sich nachweislich um Firmensitze handeln, die nicht im S
                             </constraint>
                             <constraint firstItem="1fR-e7-pl2" firstAttribute="centerX" secondItem="A2k-OK-pGt" secondAttribute="centerX" id="IAO-DS-lWX"/>
                             <constraint firstItem="qQB-CT-UpR" firstAttribute="top" secondItem="cQS-UU-HuG" secondAttribute="bottom" constant="-95" id="Lbn-aZ-1jY">
-                                <variation key="heightClass=regular-widthClass=compact" constant="-70"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="-97"/>
                             </constraint>
                             <constraint firstItem="1fR-e7-pl2" firstAttribute="leading" secondItem="W8Q-D5-2ee" secondAttribute="trailing" constant="-37" id="McX-33-Z67">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-81"/>
@@ -3431,11 +3431,11 @@ Locations, bei denen es sich nachweislich um Firmensitze handeln, die nicht im S
         <image name="weiter_icon" width="546" height="546"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="2oh-QA-SLC"/>
         <segue reference="n5V-k0-1OC"/>
         <segue reference="F2M-Tf-eKn"/>
-        <segue reference="2oh-QA-SLC"/>
+        <segue reference="ela-Fj-2Fq"/>
+        <segue reference="sX6-Cx-Ga0"/>
         <segue reference="Mj3-i4-FhS"/>
-        <segue reference="fMg-Vm-LP1"/>
-        <segue reference="Q9G-yB-4zn"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -40,6 +40,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserService.getUser(NSUserDefaults.standardUserDefaults().stringForKey("me")!).then {
                 result -> Void in
                 User.me = result
+                if let bubbleVC = secondnavi.visibleViewController as? BubbleVC {
+                    bubbleVC.showUserThumb()
+                }
             }
         }
         
