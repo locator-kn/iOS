@@ -2,10 +2,8 @@ language: objective-c
 #xcode_project: locator/locator.xcodeproj
 xcode_workspace: locator/locator.xcworkspace
 xcode_scheme: locator
-osx_image: xcode6.4 #2
 podfile: locator/Podfile
-
-osx_image: beta-xcode7.3
+osx_image: xcode7.3
 xcode_sdk: iphonesimulator9.3 
 
 rvm:  
