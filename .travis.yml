@@ -2,4 +2,6 @@ language: objective-c
 xcode_project: locator/locator.xcodeproj
 xcode_scheme: locator
 podfile: locator/Podfile
-before_install: gem install cocoapods
+before_install: 
+  - rvm use system
+  - gem install cocoapods
