@@ -135,6 +135,7 @@ class BubbleVC: UIViewController {
     
     func addGestureRecognizer() {
         let schoenHierGesture = UITapGestureRecognizer(target:self, action:#selector(self.schoenHierTapped(_:)))
+        
         let schoenHierGesture_hold = UILongPressGestureRecognizer(target:self, action:#selector(self.schonHierLongPress(_:)))
         
         schoenHier.addGestureRecognizer(schoenHierGesture)
@@ -165,7 +166,7 @@ class BubbleVC: UIViewController {
     }
     
     func schonHierLongPress(sender: UILongPressGestureRecognizer) {
-        if (sender.state == .Ended) {
+        if (sender.state == .Began) {
             if AlertService.validateLoggedUser(self) {
                 performSegueWithIdentifier("createLocation", sender: self)
             }
