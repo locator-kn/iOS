@@ -14,4 +14,3 @@ before_install:
 
 script:
   - xctool/xctool.sh -workspace locator/locator.xcworkspace -scheme locator -sdk iphonesimulator9.3 build test
- # - ./xctool/xctoolsh -workspace locator/locator.xcworkspace -scheme locator -sdk macosx.3 build test
