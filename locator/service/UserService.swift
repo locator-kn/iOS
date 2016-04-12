@@ -49,7 +49,9 @@ class UserService {
                     
                     if let value = response.result.value {
                         let json = JSON(value)
-                        fulfill(self.jsonToUser(json))
+                        let user = self.jsonToUser(json)
+                        TrackingService.setIdentity(user.id!, name: user.name!, mail: user.email!)
+                        fulfill(user)
                     }
                     
                 case .Failure(let error):

@@ -15,6 +15,9 @@ PODS:
   - Fusuma (0.2.1)
   - GoogleMaps (1.12.3)
   - HanekeSwift (0.10.1)
+  - Mixpanel (2.9.6):
+    - Mixpanel/Mixpanel (= 2.9.6)
+  - Mixpanel/Mixpanel (2.9.6)
   - OMGHTTPURLRQ (3.1.1):
     - OMGHTTPURLRQ/RQ (= 3.1.1)
   - OMGHTTPURLRQ/FormURLEncode (3.1.1)
@@ -44,6 +47,7 @@ DEPENDENCIES:
   - Fusuma
   - GoogleMaps
   - HanekeSwift
+  - Mixpanel
   - PromiseKit (~> 3.0)
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
 
@@ -65,6 +69,7 @@ SPEC CHECKSUMS:
   Fusuma: 4b71b2992773c3265b81327c966ee60db529aae8
   GoogleMaps: a4ac67918d0b5ba5f6b9893ac80487e357779e6c
   HanekeSwift: 08e47d3d0f2899ec58e5d257beba0de619aca9e8
+  Mixpanel: 048a9f2512ac1bb8bfdecf719da024873f50a9c2
   OMGHTTPURLRQ: 633f98ee745aeda02345935a52eec1784cddb589
   PromiseKit: 00ec2a219bf5ad2833f95977698e921932b8dfd3
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
