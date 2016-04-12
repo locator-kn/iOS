@@ -50,7 +50,7 @@ class UserVC: UIViewController {
                 self.user = result
                 
                 // catch this edgecase
-                if (User.me?.following == nil) {
+                if (User.me != nil && User.me!.following == nil) {
                     UserService.getUser(User.me!.id!).then {
                         result -> Void in
                         User.me = result
