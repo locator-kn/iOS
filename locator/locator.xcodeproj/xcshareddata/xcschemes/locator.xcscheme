@@ -38,6 +38,16 @@
                ReferencedContainer = "container:locator.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5BBAE5781CBE777F00B99C73"
+               BuildableName = "LocatorUITests.xctest"
+               BlueprintName = "LocatorUITests"
+               ReferencedContainer = "container:locator.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
@@ -71,6 +81,13 @@
             ReferencedContainer = "container:locator.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "mixpanel"
+            value = "0ae5852e575b8e0b44fb3dc5370b2c94"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
