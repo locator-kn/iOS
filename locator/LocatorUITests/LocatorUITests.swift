@@ -21,8 +21,8 @@ class LocatorUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    /*func testExample() {
         
-    }
+    }*/
     
 }
