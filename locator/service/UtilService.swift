@@ -58,12 +58,11 @@ class UtilService {
         })
     }
     
-    static func dataFromCache(var path:String) -> Promise<NSData> {
+    static func dataFromCache(path:String) -> Promise<NSData> {
         return Promise { fulfill, reject in
             
-            path = self.stripString(path)
-            
-            if (path != "") {
+            let tmp = self.stripString(path)
+            if (tmp != "") {
                 let cache = Shared.dataCache
                 cache.fetch(URL: NSURL(string: path)!)
                     .onSuccess { data in

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PageMenu
 
 class UserTabVC: UIViewController {
     
@@ -18,7 +19,7 @@ class UserTabVC: UIViewController {
     var locationForSegue: Location?
     var userForSegue: User?
     
-    var pageMenu : CAPSPageMenu?
+    var pageMenu: CAPSPageMenu?
 
     override func viewDidLoad() {
         super.viewDidLoad()

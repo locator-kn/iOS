@@ -15,5 +15,6 @@ pod 'FBSDKShareKit', '4.10.0'
 pod 'HanekeSwift'
 pod 'Fusuma'
 pod 'Mixpanel'
+pod 'PageMenu'
 
 end
