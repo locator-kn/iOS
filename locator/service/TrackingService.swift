@@ -10,14 +10,23 @@ import Foundation
 import Mixpanel
 
 class TrackingService {
-
-    static var mixpanel = Mixpanel.sharedInstanceWithToken("0ae5852e575b8e0b44fb3dc5370b2c94")
     
-    static func trackEvent(event: String) {
+    static var sharedInstance = TrackingService()
+    var mixpanel: Mixpanel!
+    
+    init() {
+        let env = NSProcessInfo.processInfo().environment
+        if let token: String = env["mixpanel"] {
+            print(token)
+            mixpanel = Mixpanel.sharedInstanceWithToken(token)
+        }
+    }
+    
+    func trackEvent(event: String) {
          mixpanel.track(event);
     }
     
-    static func setIdentity(id: String, name: String, mail: String) {
+    func setIdentity(id: String, name: String, mail: String) {
         mixpanel.identify(id);
         mixpanel.people.set(["$email": mail, "$name": name]);
     }

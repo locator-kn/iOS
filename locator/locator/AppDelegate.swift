@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+
         // Override point for customization after application launch.
         GMSServices.provideAPIKey("AIzaSyCAweq9kifxj3KO8lU_Z7oZFZlOO8MgsBQ")
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
@@ -42,14 +43,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserService.getUser(NSUserDefaults.standardUserDefaults().stringForKey("me")!).then {
                 result -> Void in
                 User.me = result
-                TrackingService.setIdentity(User.me!.id!, name: User.me!.name!, mail: User.me!.email!)
-                TrackingService.trackEvent("auto login success")
+                TrackingService.sharedInstance.setIdentity(User.me!.id!, name: User.me!.name!, mail: User.me!.email!)
+                TrackingService.sharedInstance.trackEvent("App | auto login success")
                 if let bubbleVC = secondnavi.visibleViewController as? BubbleVC {
                     bubbleVC.showUserThumb()
                 }
             }
         } else {
-            TrackingService.trackEvent("launch app as a guest")
+            TrackingService.sharedInstance.trackEvent("App | launch as guest")
         }
         
         let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge , .Sound], categories: nil)
@@ -61,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-        TrackingService.trackEvent("become inactive")
+        TrackingService.sharedInstance.trackEvent("App | become inactive")
     }
 
     func applicationDidEnterBackground(application: UIApplication) {
@@ -71,7 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-        TrackingService.trackEvent("become active")
+        TrackingService.sharedInstance.trackEvent("App | become active")
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
@@ -82,7 +83,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
-        TrackingService.trackEvent("terminate")
+        TrackingService.sharedInstance.trackEvent("App | terminate")
         self.saveContext()
     }
 

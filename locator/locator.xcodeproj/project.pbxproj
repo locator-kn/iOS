@@ -41,6 +41,7 @@
 		5BAC93D11C23385600FE502F /* SchoenHier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAC93D01C23385600FE502F /* SchoenHier.swift */; };
 		5BAC93E11C2824A500FE502F /* UtilService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAC93E01C2824A500FE502F /* UtilService.swift */; };
 		5BBAE5431CBD1DB500B99C73 /* TrackingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBAE5421CBD1DB500B99C73 /* TrackingService.swift */; };
+		5BBAE57C1CBE777F00B99C73 /* LocatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBAE57B1CBE777F00B99C73 /* LocatorUITests.swift */; };
 		5BC5F2F81C3BE55A0092E0E9 /* MapSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5F2F71C3BE55A0092E0E9 /* MapSearchVC.swift */; };
 		5BDAB61A1C5594D300A4D38E /* MainNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDAB6191C5594D300A4D38E /* MainNavigationVC.swift */; };
 		5BDAB61D1C58D38800A4D38E /* InfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BDAB61C1C58D38800A4D38E /* InfoWindow.xib */; };
@@ -105,6 +106,13 @@
 			remoteGlobalIDString = 87F14D761C18604B00682709;
 			remoteInfo = locator;
 		};
+		5BBAE57E1CBE777F00B99C73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 87F14D6F1C18604B00682709 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 87F14D761C18604B00682709;
+			remoteInfo = locator;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -154,6 +162,9 @@
 		5BAC93D01C23385600FE502F /* SchoenHier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoenHier.swift; sourceTree = "<group>"; };
 		5BAC93E01C2824A500FE502F /* UtilService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilService.swift; sourceTree = "<group>"; };
 		5BBAE5421CBD1DB500B99C73 /* TrackingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackingService.swift; sourceTree = "<group>"; };
+		5BBAE5791CBE777F00B99C73 /* LocatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BBAE57B1CBE777F00B99C73 /* LocatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocatorUITests.swift; sourceTree = "<group>"; };
+		5BBAE57D1CBE777F00B99C73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BC5F2F71C3BE55A0092E0E9 /* MapSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapSearchVC.swift; path = controller/MapSearchVC.swift; sourceTree = SOURCE_ROOT; };
 		5BDAB6191C5594D300A4D38E /* MainNavigationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainNavigationVC.swift; path = controller/MainNavigationVC.swift; sourceTree = SOURCE_ROOT; };
 		5BDAB61C1C58D38800A4D38E /* InfoWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoWindow.xib; sourceTree = "<group>"; };
@@ -221,6 +232,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5BBAE5761CBE777F00B99C73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		87F14D741C18604B00682709 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -278,12 +296,13 @@
 			name = postImpressions;
 			sourceTree = "<group>";
 		};
-		5B0F82091CB71B3600FBF232 /* LocatorTests */ = {
+		5B0F82091CB71B3600FBF232 /* LocatorUnitTests */ = {
 			isa = PBXGroup;
 			children = (
 				5B0F820A1CB71B3600FBF232 /* LocatorTests.swift */,
 				5B0F820C1CB71B3600FBF232 /* Info.plist */,
 			);
+			name = LocatorUnitTests;
 			path = LocatorTests;
 			sourceTree = "<group>";
 		};
@@ -362,6 +381,15 @@
 				5B2654C11C85E49800823EBF /* BubbleView.swift */,
 			);
 			name = customView;
+			sourceTree = "<group>";
+		};
+		5BBAE57A1CBE777F00B99C73 /* LocatorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5BBAE57B1CBE777F00B99C73 /* LocatorUITests.swift */,
+				5BBAE57D1CBE777F00B99C73 /* Info.plist */,
+			);
+			path = LocatorUITests;
 			sourceTree = "<group>";
 		};
 		5BDAB61B1C58D34F00A4D38E /* nib */ = {
@@ -458,7 +486,8 @@
 				87F14D791C18604B00682709 /* controller */,
 				5B6E10F01C849F9100456501 /* customView */,
 				876290121C18797B00D2870E /* Supporting Files */,
-				5B0F82091CB71B3600FBF232 /* LocatorTests */,
+				5B0F82091CB71B3600FBF232 /* LocatorUnitTests */,
+				5BBAE57A1CBE777F00B99C73 /* LocatorUITests */,
 				87F14D781C18604B00682709 /* Products */,
 				0C379E5A93285B69727480FF /* Pods */,
 				28C8E3043479B3786F84B281 /* Frameworks */,
@@ -470,6 +499,7 @@
 			children = (
 				87F14D771C18604B00682709 /* locator.app */,
 				5B0F82081CB71B3600FBF232 /* LocatorTests.xctest */,
+				5BBAE5791CBE777F00B99C73 /* LocatorUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -527,6 +557,24 @@
 			productReference = 5B0F82081CB71B3600FBF232 /* LocatorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		5BBAE5781CBE777F00B99C73 /* LocatorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BBAE5801CBE777F00B99C73 /* Build configuration list for PBXNativeTarget "LocatorUITests" */;
+			buildPhases = (
+				5BBAE5751CBE777F00B99C73 /* Sources */,
+				5BBAE5761CBE777F00B99C73 /* Frameworks */,
+				5BBAE5771CBE777F00B99C73 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BBAE57F1CBE777F00B99C73 /* PBXTargetDependency */,
+			);
+			name = LocatorUITests;
+			productName = LocatorUITests;
+			productReference = 5BBAE5791CBE777F00B99C73 /* LocatorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		87F14D761C18604B00682709 /* locator */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87F14D8C1C18604B00682709 /* Build configuration list for PBXNativeTarget "locator" */;
@@ -561,6 +609,10 @@
 						CreatedOnToolsVersion = 7.3;
 						TestTargetID = 87F14D761C18604B00682709;
 					};
+					5BBAE5781CBE777F00B99C73 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 87F14D761C18604B00682709;
+					};
 					87F14D761C18604B00682709 = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = 969HK8WJ4Z;
@@ -590,12 +642,20 @@
 			targets = (
 				87F14D761C18604B00682709 /* locator */,
 				5B0F82071CB71B3600FBF232 /* LocatorTests */,
+				5BBAE5781CBE777F00B99C73 /* LocatorUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5B0F82061CB71B3600FBF232 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BBAE5771CBE777F00B99C73 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -685,6 +745,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5BBAE5751CBE777F00B99C73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BBAE57C1CBE777F00B99C73 /* LocatorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		87F14D731C18604B00682709 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -769,6 +837,11 @@
 			target = 87F14D761C18604B00682709 /* locator */;
 			targetProxy = 5B0F820D1CB71B3600FBF232 /* PBXContainerItemProxy */;
 		};
+		5BBAE57F1CBE777F00B99C73 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 87F14D761C18604B00682709 /* locator */;
+			targetProxy = 5BBAE57E1CBE777F00B99C73 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -821,6 +894,34 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "de.my-smile-app.LocatorTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/locator.app/locator";
+			};
+			name = Release;
+		};
+		5BBAE5811CBE777F00B99C73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = LocatorUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.locator-app.LocatorUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = locator;
+			};
+			name = Debug;
+		};
+		5BBAE5821CBE777F00B99C73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = LocatorUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.locator-app.LocatorUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = locator;
 			};
 			name = Release;
 		};
@@ -960,6 +1061,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		5BBAE5801CBE777F00B99C73 /* Build configuration list for PBXNativeTarget "LocatorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BBAE5811CBE777F00B99C73 /* Debug */,
+				5BBAE5821CBE777F00B99C73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		87F14D721C18604B00682709 /* Build configuration list for PBXProject "locator" */ = {
 			isa = XCConfigurationList;
