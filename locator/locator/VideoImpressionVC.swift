@@ -77,6 +77,7 @@ class VideoImpressionVC: UIViewController, UIImagePickerControllerDelegate, UINa
             result -> Void in
             print("video upload success")
             self.vc.loadData()
+            TrackingService.sharedInstance.trackEvent("Locationview | videoimpression success")
         }.always {
             print("always called")
             self.loader.dismiss()

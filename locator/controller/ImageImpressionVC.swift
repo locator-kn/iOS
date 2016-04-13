@@ -82,6 +82,7 @@ class ImageImpressionVC: UIViewController, UINavigationControllerDelegate, Fusum
         ImpressionService.addImageImpression(self.locationId, data: image!).then{
             result -> Void in
             self.vc.loadData()
+            TrackingService.sharedInstance.trackEvent("Locationview | imageimpression success")
         }.always {
             self.loader.dismiss()
             self.dismissViewControllerAnimated(true, completion: nil);

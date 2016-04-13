@@ -90,6 +90,7 @@ class User {
     func follow() -> Promise<Bool> {
         self.mefollowing = true
         User.me?.following?.append(self.id!)
+        TrackingService.sharedInstance.trackEvent("Userview | follow")
         return UserService.follow(self.id!)
     }
     
@@ -97,6 +98,7 @@ class User {
         self.mefollowing = false
         let index = User.me!.following?.indexOf(self.id!)
         User.me!.following?.removeAtIndex(index!)
+        TrackingService.sharedInstance.trackEvent("Userview | unfollow")
         return UserService.unfollow(self.id!)
     }
     

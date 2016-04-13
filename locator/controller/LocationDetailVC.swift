@@ -65,6 +65,7 @@ class LocationDetailVC: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         
         self.loadData()
+        TrackingService.sharedInstance.trackEvent("Locationview | load")
     }
     
     func playVideo() {
@@ -267,8 +268,10 @@ class LocationDetailVC: UITableViewController {
         
         if (!self.location.favored) {
             self.headerCell.favorIcon.setImage(self.favoriteIconActive, forState: .Normal)
+            TrackingService.sharedInstance.trackEvent("Locationview | like")
         } else {
             self.headerCell.favorIcon.setImage(self.favoriteIcon, forState: .Normal)
+            TrackingService.sharedInstance.trackEvent("Locationview | unlike")
         }
         
         LocationService.favLocation(location.id).then {

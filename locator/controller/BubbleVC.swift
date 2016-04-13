@@ -97,6 +97,7 @@ class BubbleVC: UIViewController {
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
         if motion == .MotionShake {
             
+            TrackingService.sharedInstance.trackEvent("Bubble | shake")
             let prom1 = self.firstBubbleImageView.hide()
             let prom2 = self.secondBubbleImageView.hide()
             let prom3 = self.thirdBubbleImageView.hide()

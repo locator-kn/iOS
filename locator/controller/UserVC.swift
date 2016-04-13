@@ -42,6 +42,7 @@ class UserVC: UIViewController {
         self.view.addSubview(loader)
         
         print("User with ID: " + self.user!.id!)
+        TrackingService.sharedInstance.trackEvent("Userview | load")
         
         // fetch user information
         UserService.getUser(user.id!)
