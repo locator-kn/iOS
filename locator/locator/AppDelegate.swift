@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        TrackingService.sharedInstance.trackEvent("App | launch")
 
         // Override point for customization after application launch.
         GMSServices.provideAPIKey("AIzaSyCAweq9kifxj3KO8lU_Z7oZFZlOO8MgsBQ")
