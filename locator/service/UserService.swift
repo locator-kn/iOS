@@ -50,6 +50,7 @@ class UserService {
                     if let value = response.result.value {
                         let json = JSON(value)
                         let user = self.jsonToUser(json)
+                        TrackingService.sharedInstance.trackEvent("App | Login")
                         TrackingService.sharedInstance.setIdentity(user.id!, name: user.name!, mail: user.email!)
                         fulfill(user)
                     }
@@ -71,6 +72,7 @@ class UserService {
                 case .Success:
                     if let value = response.result.value {
                         print("youre logout")
+                        TrackingService.sharedInstance.trackEvent("App | Logout")
                         fulfill(value)
                     }
                 case .Failure(let error):
@@ -95,6 +97,8 @@ class UserService {
                     if let value = response.result.value {
                         let json = JSON(value)
                         let user = jsonToUser(json)
+                        TrackingService.sharedInstance.setIdentity(user.id!, name: user.name!, mail: user.email!)
+                        TrackingService.sharedInstance.trackEvent("App | Register")
                         fulfill(user)
                     }
                     
@@ -117,7 +121,10 @@ class UserService {
                 case .Success:
                     if let value = response.result.value {
                         let json = JSON(value)
-                        fulfill(self.jsonToUser(json))
+                        let user = self.jsonToUser(json)
+                        TrackingService.sharedInstance.setIdentity(user.id!, name: user.name!, mail: user.email!)
+                        TrackingService.sharedInstance.trackEvent("App | FB Login")
+                        fulfill(user)
                     }
                 case .Failure(let error):
                     reject(error)
