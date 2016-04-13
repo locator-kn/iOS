@@ -84,7 +84,7 @@
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "mixpanel"
-            value = "0ae5852e575b8e0b44fb3dc5370b2c94"
+            value = "39259b14d0685a26d043c2f394718d4b"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>
