@@ -15,11 +15,7 @@ class TrackingService {
     var mixpanel: Mixpanel!
     
     init() {
-        let env = NSProcessInfo.processInfo().environment
-        if let token: String = env["mixpanel"] {
-            print(token)
-            mixpanel = Mixpanel.sharedInstanceWithToken(token)
-        }
+        mixpanel = Mixpanel.sharedInstanceWithToken("8a116f252618b432ac6eaaee50374a69fee1b689a0fc7b750c7e9eca80caf141")
     }
     
     func trackEvent(event: String) {

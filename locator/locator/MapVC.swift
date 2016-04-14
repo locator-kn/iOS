@@ -149,6 +149,7 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
             if locationsOfInterest.count == 1 {
                 self.googleMap.selectedMarker = marker
             }
+            
         } else {
             
             if let path = location.imagePathEgg {
@@ -156,6 +157,9 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
                     result -> Void in
                     marker.icon = UIImage(data: result)
                 }
+            } else if let category: String = location.categories.first {
+                print("map_" + category)
+                marker.icon = UIImage(named: "map_" + category) as UIImage?
             } else {
                 marker.icon = UIImage(named: "location")
             }
@@ -180,8 +184,11 @@ class MapVC: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, G
     /* delegate on map camerachange */
     func mapView(mapView: GMSMapView, idleAtCameraPosition position: GMSCameraPosition) {
         
-        getNearSchoenHiers(position.target, maxDistance: 1)
-        if (self.locationsVisible) {
+        if heatmapVisible {
+            getNearSchoenHiers(position.target, maxDistance: 1)
+        }
+        
+        if locationsVisible {
             getNearLocations(position.target, maxDistance: 0.6)
         }
     }

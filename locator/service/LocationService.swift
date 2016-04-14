@@ -41,6 +41,11 @@ class LocationService {
     
         let location = Location(id: id!, title: title!, long: long!, lat: lat!, city: city, imagePathSmall: imagePathSmall, imagePathNormal: imagePathNormal, imagePathLarge: imagePathLarge, imagePathXlarge: imagePathXlarge, favored: false, favorites: 0, user: User(id: userId))
         
+        location.categories.removeAll()
+        for (_,subJson):(String, JSON) in json["categories"] {
+            location.categories.append(subJson.string!)
+        }
+        
         //if location favored by myself
         var favorites = [String]()
         for (_,subJson):(String, JSON) in json["favorites"] {
@@ -163,11 +168,6 @@ class LocationService {
                             result -> Void in
                             location.user = result
                             fulfill(location)
-                        }
-                        
-                        location.categories.removeAll()
-                        for (_,subJson):(String, JSON) in json["categories"] {
-                            location.categories.append(subJson.string!)
                         }
                         
                         // check if favored by myself
