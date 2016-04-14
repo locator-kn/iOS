@@ -19,8 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        TrackingService.sharedInstance.trackEvent("App | launch")
-
         // Override point for customization after application launch.
         GMSServices.provideAPIKey("AIzaSyCAweq9kifxj3KO8lU_Z7oZFZlOO8MgsBQ")
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
@@ -45,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 result -> Void in
                 User.me = result
                 TrackingService.sharedInstance.setIdentity(User.me!.id!, name: User.me!.name!, mail: User.me!.email!)
-                TrackingService.sharedInstance.trackEvent("App | auto login success")
+                TrackingService.sharedInstance.trackEvent("App | launch as user")
                 if let bubbleVC = secondnavi.visibleViewController as? BubbleVC {
                     bubbleVC.showUserThumb()
                 }
@@ -73,7 +71,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-        TrackingService.sharedInstance.trackEvent("App | become active")
+        TrackingService.sharedInstance.trackEvent("App | launch")
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
