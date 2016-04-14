@@ -56,7 +56,7 @@ class BubbleVC: UIViewController {
                 result -> Void in
                 self.userProfilImageView.image = UIImage(data: result)
                 
-                self.userProfilImageView = UtilService.roundImageView(self.userProfilImageView, borderWidth: 2)
+                self.userProfilImageView = UtilService.roundImageView(self.userProfilImageView, borderWidth: 3)
             
             }
         }
