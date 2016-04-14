@@ -39,6 +39,7 @@ class UserVC: UIViewController {
         
         self.loader = LoadingView(frame: self.view.frame)
         self.loader.backgroundColor = COLORS.red
+        profileImage = UtilService.roundImageView(profileImage, borderWidth: 4)
         self.view.addSubview(loader)
         
         print("User with ID: " + self.user!.id!)
