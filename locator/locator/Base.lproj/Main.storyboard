@@ -814,20 +814,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="457"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qd5-dd-cVV" userLabel="category_2">
-                                            <rect key="frame" x="32" y="207" width="40" height="40"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="40" id="D9i-6M-0un"/>
-                                                <constraint firstAttribute="height" constant="40" id="W6o-Vf-kcx"/>
-                                            </constraints>
-                                        </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gdh-dn-TML" userLabel="category_1">
-                                            <rect key="frame" x="8" y="207" width="40" height="40"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="c9e-iR-oRJ"/>
-                                                <constraint firstAttribute="width" constant="40" id="npO-78-DHA"/>
-                                            </constraints>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Uv-6R-lJs" userLabel="favorcount">
                                             <rect key="frame" x="75" y="285" width="14" height="20"/>
                                             <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
@@ -942,6 +928,20 @@
                                                 <segue destination="G1J-vh-MOc" kind="show" identifier="user" id="PBI-Q7-c1i"/>
                                             </connections>
                                         </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qd5-dd-cVV" userLabel="category_2">
+                                            <rect key="frame" x="32" y="207" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="D9i-6M-0un"/>
+                                                <constraint firstAttribute="height" constant="40" id="W6o-Vf-kcx"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gdh-dn-TML" userLabel="category_1">
+                                            <rect key="frame" x="8" y="207" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="c9e-iR-oRJ"/>
+                                                <constraint firstAttribute="width" constant="40" id="npO-78-DHA"/>
+                                            </constraints>
+                                        </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nb7-ZO-dd5" userLabel="favorButton">
                                             <rect key="frame" x="555" y="219" width="35" height="35"/>
                                             <constraints>
@@ -3401,14 +3401,14 @@ Locations, bei denen es sich nachweislich um Firmensitze handeln, die nicht im S
         <image name="background" width="640" height="1136"/>
         <image name="create_location" width="170" height="170"/>
         <image name="cross" width="21" height="21"/>
-        <image name="culture" width="173" height="173"/>
+        <image name="culture" width="302" height="302"/>
         <image name="favorite_icon" width="173" height="141"/>
         <image name="favorite_icon_black" width="104" height="74"/>
         <image name="follow" width="179" height="141"/>
         <image name="follower" width="99" height="75"/>
         <image name="foto" width="45" height="36"/>
-        <image name="gastro" width="173" height="173"/>
-        <image name="holiday" width="173" height="173"/>
+        <image name="gastro" width="302" height="302"/>
+        <image name="holiday" width="302" height="302"/>
         <image name="location_placeholder-9" width="400" height="375"/>
         <image name="location_placeholder_small" width="180" height="180"/>
         <image name="locations" width="62" height="75"/>
@@ -3416,13 +3416,13 @@ Locations, bei denen es sich nachweislich um Firmensitze handeln, die nicht im S
         <image name="locator_logo_small" width="82" height="40"/>
         <image name="map_icon_black" width="64" height="64"/>
         <image name="movie" width="179" height="128"/>
-        <image name="nature" width="173" height="173"/>
-        <image name="nightlife" width="173" height="173"/>
+        <image name="nature" width="302" height="302"/>
+        <image name="nightlife" width="302" height="302"/>
         <image name="play" width="75" height="90"/>
         <image name="profil" width="396" height="396"/>
         <image name="repeat" width="167" height="168"/>
         <image name="schoen_hier" width="560" height="560"/>
-        <image name="secret" width="173" height="173"/>
+        <image name="secret" width="302" height="302"/>
         <image name="show_heatmap_active" width="340" height="340"/>
         <image name="show_locations_active" width="340" height="340"/>
         <image name="show_options" width="340" height="340"/>
