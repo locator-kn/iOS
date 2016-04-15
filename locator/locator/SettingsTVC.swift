@@ -60,6 +60,11 @@ class SettingsTVC: UITableViewController {
             NSUserDefaults.standardUserDefaults().removeObjectForKey("me")
             NSUserDefaults.standardUserDefaults().removeObjectForKey("facebookUser")
             User.me = nil
+            
+            let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge , .Sound], categories: nil)
+            UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+            UIApplication.sharedApplication().registerForRemoteNotifications()
+            
             AlertService.segueToLoginVC()
         }
     }
