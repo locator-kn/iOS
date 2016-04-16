@@ -17,7 +17,7 @@ class SettingsTVC: UITableViewController {
         super.viewDidLoad()
         
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
-        
+        self.tableView.backgroundColor = COLORS.blue
         let logoutLabelGesture = UITapGestureRecognizer(target:self, action:#selector(self.logoutTapped(_:)))
         logoutLabel.addGestureRecognizer(logoutLabelGesture)
 
@@ -26,6 +26,11 @@ class SettingsTVC: UITableViewController {
             changePasswordCell.userInteractionEnabled = false
         }
         
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor.whiteColor()
     }
 
     override func didReceiveMemoryWarning() {

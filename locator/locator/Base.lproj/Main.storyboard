@@ -2280,10 +2280,13 @@
         <scene sceneID="5GG-ok-Ow4">
             <objects>
                 <tableViewController title="Einstellungen" id="Jw6-X9-MBa" customClass="SettingsTVC" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="0uw-36-kmz">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="0uw-36-kmz">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
+                        <color key="separatorColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <color key="sectionIndexColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <color key="sectionIndexBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                         <sections>
                             <tableViewSection headerTitle="Konto" id="TKq-UT-rey">
                                 <cells>
