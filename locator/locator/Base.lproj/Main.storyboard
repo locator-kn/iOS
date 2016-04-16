@@ -3177,7 +3177,7 @@ Locations, bei denen es sich nachweislich um Firmensitze handeln, die nicht im S
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profil" translatesAutoresizingMaskIntoConstraints="NO" id="qQB-CT-UpR">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profil" translatesAutoresizingMaskIntoConstraints="NO" id="qQB-CT-UpR">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="gWc-o3-zPl">
@@ -3434,11 +3434,11 @@ Locations, bei denen es sich nachweislich um Firmensitze handeln, die nicht im S
         <image name="weiter_icon" width="546" height="546"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fMg-Vm-LP1"/>
-        <segue reference="2oh-QA-SLC"/>
+        <segue reference="Mj3-i4-FhS"/>
         <segue reference="n5V-k0-1OC"/>
         <segue reference="F2M-Tf-eKn"/>
-        <segue reference="Mj3-i4-FhS"/>
-        <segue reference="Q9G-yB-4zn"/>
+        <segue reference="ela-Fj-2Fq"/>
+        <segue reference="2oh-QA-SLC"/>
+        <segue reference="sX6-Cx-Ga0"/>
     </inferredMetricsTieBreakers>
 </document>
