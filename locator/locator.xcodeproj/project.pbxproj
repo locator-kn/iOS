@@ -43,6 +43,7 @@
 		5BBAE5431CBD1DB500B99C73 /* TrackingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBAE5421CBD1DB500B99C73 /* TrackingService.swift */; };
 		5BBAE57C1CBE777F00B99C73 /* LocatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBAE57B1CBE777F00B99C73 /* LocatorUITests.swift */; };
 		5BC5F2F81C3BE55A0092E0E9 /* MapSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5F2F71C3BE55A0092E0E9 /* MapSearchVC.swift */; };
+		5BDA065F1CC266FF0088D1E2 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDA065E1CC266FF0088D1E2 /* CameraService.swift */; };
 		5BDAB61A1C5594D300A4D38E /* MainNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDAB6191C5594D300A4D38E /* MainNavigationVC.swift */; };
 		5BDAB61D1C58D38800A4D38E /* InfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BDAB61C1C58D38800A4D38E /* InfoWindow.xib */; };
 		5BDAB61F1C58D6A000A4D38E /* InfoWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDAB61E1C58D6A000A4D38E /* InfoWindow.swift */; };
@@ -166,6 +167,7 @@
 		5BBAE57B1CBE777F00B99C73 /* LocatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocatorUITests.swift; sourceTree = "<group>"; };
 		5BBAE57D1CBE777F00B99C73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BC5F2F71C3BE55A0092E0E9 /* MapSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapSearchVC.swift; path = controller/MapSearchVC.swift; sourceTree = SOURCE_ROOT; };
+		5BDA065E1CC266FF0088D1E2 /* CameraService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
 		5BDAB6191C5594D300A4D38E /* MainNavigationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainNavigationVC.swift; path = controller/MainNavigationVC.swift; sourceTree = SOURCE_ROOT; };
 		5BDAB61C1C58D38800A4D38E /* InfoWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoWindow.xib; sourceTree = "<group>"; };
 		5BDAB61E1C58D6A000A4D38E /* InfoWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoWindow.swift; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 				5B4EF1101C5E2559005D8612 /* GpsService.swift */,
 				5B63B25F1C7B53520070AC08 /* AlertService.swift */,
 				5BBAE5421CBD1DB500B99C73 /* TrackingService.swift */,
+				5BDA065E1CC266FF0088D1E2 /* CameraService.swift */,
 			);
 			path = service;
 			sourceTree = "<group>";
@@ -777,6 +780,7 @@
 				CC4075E41C7F8CB000364331 /* AddCategoriesViewController.swift in Sources */,
 				5BBAE5431CBD1DB500B99C73 /* TrackingService.swift in Sources */,
 				874AF1F61C415D7F00F386B0 /* AboutUserVc.swift in Sources */,
+				5BDA065F1CC266FF0088D1E2 /* CameraService.swift in Sources */,
 				5B514AD91C5D63F7001B3C17 /* DeviceService.swift in Sources */,
 				87B6DB721C4674E600CE97DC /* ValidateInputService.swift in Sources */,
 				5BAC93D11C23385600FE502F /* SchoenHier.swift in Sources */,
@@ -1069,6 +1073,7 @@
 				5BBAE5821CBE777F00B99C73 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		87F14D721C18604B00682709 /* Build configuration list for PBXProject "locator" */ = {
 			isa = XCConfigurationList;
