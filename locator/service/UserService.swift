@@ -279,5 +279,26 @@ class UserService {
             }
         }
     }
+    
+    static func uploadProfileImg(image: UIImage) -> Promise<Bool> {
+        return Promise { fulfill, reject in
+            Alamofire.upload(
+                .POST,
+                API.PROFIL_IMAGE_UPLOAD,
+                multipartFormData: { multipartFormData in
+                    multipartFormData.appendBodyPart(data: UIImageJPEGRepresentation(image, 0.6)!, name: "file", fileName: "userProfilImage.jpg", mimeType: "image/jpeg")
+                },
+                encodingCompletion: { encodingResult in
+                    switch encodingResult {
+                    case .Success( _, _, _):
+                        fulfill(true)
+                    case .Failure(let error):
+                        print(error)
+                        reject(error)
+                    }
+                }
+            )
+        }
+    }
 
 }
