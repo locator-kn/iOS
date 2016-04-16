@@ -49,19 +49,28 @@ class BubbleVC: UIViewController {
         addGestureRecognizer()
         //self.loadBubbles()
         
-        showUserThumb()
+        userProfilImageView = UtilService.roundImageView(userProfilImageView, borderWidth: 3)
     }
     
     func showUserThumb() {
-        if let imagePath = User.me?.imagePathNormal {
-            UtilService.dataFromCache(imagePath).then {
-                result -> Void in
-                self.userProfilImageView.image = UIImage(data: result)
-                
-                self.userProfilImageView = UtilService.roundImageView(self.userProfilImageView, borderWidth: 3)
+        
+        if let imgData: NSData = NSUserDefaults.standardUserDefaults().objectForKey("userimg") as? NSData {
+            userProfilImageView.image = UIImage(data: imgData)
             
+        } else {
+            
+            if let imagePath = User.me?.imagePathNormal {
+                UtilService.dataFromCache(imagePath).then {
+                    result -> Void in
+                    self.userProfilImageView.image = UIImage(data: result)
+                    
+                }
             }
         }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        showUserThumb()
     }
     
     func loadBubbles() {
