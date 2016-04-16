@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserVC: UIViewController {
+class UserVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     var tabVC:UserTabVC?
     
@@ -32,6 +32,7 @@ class UserVC: UIViewController {
     let settingsIcon = UIImage(named: "settings") as UIImage?
     var me = false
     
+    let imageFromSource = UIImagePickerController()
     var loader: LoadingView!
     
     override func viewDidLoad() {
@@ -40,6 +41,8 @@ class UserVC: UIViewController {
         self.loader = LoadingView(frame: self.view.frame)
         self.loader.backgroundColor = COLORS.red
         profileImage = UtilService.roundImageView(profileImage, borderWidth: 4)
+        imageFromSource.delegate = self
+        
         self.view.addSubview(loader)
         
         print("User with ID: " + self.user!.id!)
@@ -61,6 +64,7 @@ class UserVC: UIViewController {
                 } else {
                     self.updateView()
                 }
+
                 
             }
             .error {
@@ -70,7 +74,12 @@ class UserVC: UIViewController {
         
         if (self.user.id == User.me?.id) {
             me = true
-            self.followButton.setImage(self.settingsIcon, forState: .Normal)
+            followButton.setImage(self.settingsIcon, forState: .Normal)
+            
+            // register tapgesture for changing profileimage
+            let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(self.imageTapped))
+            profileImage.userInteractionEnabled = true
+            profileImage.addGestureRecognizer(tapGestureRecognizer)
         }
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "home"), style: .Plain, target: self, action: #selector(self.home))
@@ -92,6 +101,10 @@ class UserVC: UIViewController {
         self.navigationController?.popViewControllerAnimated(true)
     }
     
+    func imageTapped() {
+        CameraService.uploadProfileImage(self, imageSource: self.imageFromSource)
+    }
+    
     func home() {
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
@@ -103,12 +116,15 @@ class UserVC: UIViewController {
     func updateView() {
         UtilService.dataFromCache(self.user.imagePathNormal!).then {
             result -> Void in
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.profileImage.image = UIImage(data: result)
-                self.profileImage.layoutSubviews()
-            })
+            self.profileImage.image = UIImage(data: result)
+            self.profileImage.layoutSubviews()
             
+            // update userimg cache
+            if self.me {
+                NSUserDefaults.standardUserDefaults().setObject(UIImagePNGRepresentation(self.profileImage.image!), forKey: "userimg")
+            }
         }
+        
         self.title = self.user.name
         self.locationsCount.text = "\(self.user.locationCount!)"
         self.followersCount.text = "\(self.user.followerCount!)"
@@ -140,9 +156,24 @@ class UserVC: UIViewController {
         }
     }
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        let tmp: UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        profileImage.image = tmp
+        dismissViewControllerAnimated(true, completion: nil)
+        
+        UserService.uploadProfileImg(profileImage.image!)
+            .then {
+                result -> Void in
+                print("upload success")
+                NSUserDefaults.standardUserDefaults().setObject(UIImagePNGRepresentation(self.profileImage.image!), forKey: "userimg")
+            }
+            .error {
+                err -> Void in
+                print(err)
+        }
+        
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "tabBarVC") {
             self.tabVC = segue.destinationViewController as? UserTabVC
