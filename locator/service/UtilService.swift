@@ -64,7 +64,7 @@ class UtilService {
             let tmp = self.stripString(path)
             if (tmp != "") {
                 let cache = Shared.dataCache
-                cache.fetch(URL: NSURL(string: path)!)
+                cache.fetch(URL: NSURL(string: tmp)!)
                     .onSuccess { data in
                         fulfill(data)
                     }.onFailure { err in
