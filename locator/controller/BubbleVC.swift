@@ -43,6 +43,8 @@ class BubbleVC: UIViewController {
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "map_icon_white"), style: .Plain, target: self, action: #selector(self.showMap))
         
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "reload_white"), style: .Plain, target: self, action: #selector(self.resolveBubblePromises))
+        
         gps = GpsService(successHandler: gpsSuccessHandler, deniedHandler: gpsDeniedHandler)
         addGestureRecognizer()
         //self.loadBubbles()
@@ -96,20 +98,22 @@ class BubbleVC: UIViewController {
     
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
         if motion == .MotionShake {
-            
+            resolveBubblePromises()
             TrackingService.sharedInstance.trackEvent("Bubble | shake")
-            let prom1 = self.firstBubbleImageView.hide()
-            let prom2 = self.secondBubbleImageView.hide()
-            let prom3 = self.thirdBubbleImageView.hide()
-            let prom4 = self.fourthBubbleImageView.hide()
-            let prom5 = self.fifthBubbleImageView.hide()
-            let prom6 = self.sixthBubbleImageView.hide()
-            
-            when(prom1, prom2, prom3, prom4, prom5, prom6).then {
-                result -> Void in
-                self.loadBubbles()
-            }
-            
+        }
+    }
+    
+    func resolveBubblePromises() {
+        let prom1 = self.firstBubbleImageView.hide()
+        let prom2 = self.secondBubbleImageView.hide()
+        let prom3 = self.thirdBubbleImageView.hide()
+        let prom4 = self.fourthBubbleImageView.hide()
+        let prom5 = self.fifthBubbleImageView.hide()
+        let prom6 = self.sixthBubbleImageView.hide()
+        
+        when(prom1, prom2, prom3, prom4, prom5, prom6).then {
+            result -> Void in
+            self.loadBubbles()
         }
     }
     
