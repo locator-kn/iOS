@@ -92,7 +92,7 @@ class ImpressionService {
                 .POST,
                 API.BASE_URL + "/locations/" + id + "/impressions/image",
                 multipartFormData: { multipartFormData in
-                    multipartFormData.appendBodyPart(data: UIImageJPEGRepresentation(data, 0.8)!, name: "file", fileName: "impression.jpg", mimeType: "image/jpeg")
+                    multipartFormData.appendBodyPart(data: UIImageJPEGRepresentation(data, 0.6)!, name: "file", fileName: "impression.jpg", mimeType: "image/jpeg")
                 },
                 encodingCompletion: { encodingResult in
                     switch encodingResult {
