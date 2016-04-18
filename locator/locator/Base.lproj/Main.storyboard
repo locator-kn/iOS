@@ -3404,14 +3404,14 @@ Locations, bei denen es sich nachweislich um Firmensitze handeln, die nicht im S
         <image name="background" width="640" height="1136"/>
         <image name="create_location" width="170" height="170"/>
         <image name="cross" width="21" height="21"/>
-        <image name="culture" width="50" height="50"/>
+        <image name="culture" width="75" height="75"/>
         <image name="favorite_icon" width="173" height="141"/>
         <image name="favorite_icon_black" width="104" height="74"/>
         <image name="follow" width="179" height="141"/>
         <image name="follower" width="99" height="75"/>
         <image name="foto" width="45" height="36"/>
-        <image name="gastro" width="50" height="50"/>
-        <image name="holiday" width="50" height="50"/>
+        <image name="gastro" width="75" height="75"/>
+        <image name="holiday" width="75" height="75"/>
         <image name="location_placeholder-9" width="400" height="375"/>
         <image name="location_placeholder_small" width="180" height="180"/>
         <image name="locations" width="62" height="75"/>
@@ -3419,13 +3419,13 @@ Locations, bei denen es sich nachweislich um Firmensitze handeln, die nicht im S
         <image name="locator_logo_small" width="82" height="40"/>
         <image name="map_icon_black" width="64" height="64"/>
         <image name="movie" width="179" height="128"/>
-        <image name="nature" width="50" height="50"/>
-        <image name="nightlife" width="50" height="50"/>
+        <image name="nature" width="75" height="75"/>
+        <image name="nightlife" width="75" height="75"/>
         <image name="play" width="75" height="90"/>
         <image name="profil" width="396" height="396"/>
         <image name="repeat" width="167" height="168"/>
         <image name="schoen_hier" width="560" height="560"/>
-        <image name="secret" width="50" height="50"/>
+        <image name="secret" width="75" height="75"/>
         <image name="show_heatmap_active" width="340" height="340"/>
         <image name="show_locations_active" width="340" height="340"/>
         <image name="show_options" width="340" height="340"/>

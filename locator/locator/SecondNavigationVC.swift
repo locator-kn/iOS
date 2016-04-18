@@ -13,6 +13,10 @@ class SecondNavigationVC: AbstractNavigationVC {
     
     override func viewDidLoad() {
         
+        if let app = UIApplication.sharedApplication().delegate as? AppDelegate, let window = app.window {
+            window.rootViewController = self
+        }
+        
         self.styleNaviBar()
         
         // if a user is set in defaults, redirect to dashboard
