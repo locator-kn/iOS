@@ -38,6 +38,7 @@
 		5B90CCAF1C299A2400108693 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B90CCAE1C299A2400108693 /* UserService.swift */; };
 		5B90CCB11C29A56A00108693 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B90CCB01C29A56A00108693 /* User.swift */; };
 		5B90CCB31C2A220F00108693 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B90CCB21C2A220F00108693 /* DashboardVC.swift */; };
+		5BA786EA1CC55D4500B57EDD /* DatenschutzVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA786E91CC55D4500B57EDD /* DatenschutzVC.swift */; };
 		5BAC93D11C23385600FE502F /* SchoenHier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAC93D01C23385600FE502F /* SchoenHier.swift */; };
 		5BAC93E11C2824A500FE502F /* UtilService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAC93E01C2824A500FE502F /* UtilService.swift */; };
 		5BBAE5431CBD1DB500B99C73 /* TrackingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBAE5421CBD1DB500B99C73 /* TrackingService.swift */; };
@@ -160,6 +161,7 @@
 		5B90CCAE1C299A2400108693 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		5B90CCB01C29A56A00108693 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5B90CCB21C2A220F00108693 /* DashboardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashboardVC.swift; path = controller/DashboardVC.swift; sourceTree = SOURCE_ROOT; };
+		5BA786E91CC55D4500B57EDD /* DatenschutzVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatenschutzVC.swift; path = controller/DatenschutzVC.swift; sourceTree = SOURCE_ROOT; };
 		5BAC93D01C23385600FE502F /* SchoenHier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchoenHier.swift; sourceTree = "<group>"; };
 		5BAC93E01C2824A500FE502F /* UtilService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilService.swift; sourceTree = "<group>"; };
 		5BBAE5421CBD1DB500B99C73 /* TrackingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackingService.swift; sourceTree = "<group>"; };
@@ -422,6 +424,7 @@
 			children = (
 				870AB9181C89BD9F003AC07A /* SettingsTVC.swift */,
 				870AB91B1C89C581003AC07A /* ChangePasswordTVC.swift */,
+				5BA786E91CC55D4500B57EDD /* DatenschutzVC.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -785,6 +788,7 @@
 				87B6DB721C4674E600CE97DC /* ValidateInputService.swift in Sources */,
 				5BAC93D11C23385600FE502F /* SchoenHier.swift in Sources */,
 				870AB9191C89BD9F003AC07A /* SettingsTVC.swift in Sources */,
+				5BA786EA1CC55D4500B57EDD /* DatenschutzVC.swift in Sources */,
 				5B608CA01C4A5D3A00F5F0DA /* UserTabVC.swift in Sources */,
 				5BEA72B81C34B206005220CD /* AbstractImpression.swift in Sources */,
 				870507241C4FD82B008641BF /* BubbleVC.swift in Sources */,

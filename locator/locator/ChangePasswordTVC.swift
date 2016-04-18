@@ -17,6 +17,8 @@ class ChangePasswordTVC: UITableViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.backgroundColor = COLORS.blue
+        self.tableView.separatorColor = COLORS.blue
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
         
         // Uncomment the following line to preserve selection between presentations
@@ -24,6 +26,11 @@ class ChangePasswordTVC: UITableViewController, UITextFieldDelegate {
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor.whiteColor()
     }
     
     override func didReceiveMemoryWarning() {

@@ -18,6 +18,8 @@ class SettingsTVC: UITableViewController {
         
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
         self.tableView.backgroundColor = COLORS.blue
+        self.tableView.separatorColor = COLORS.blue
+        
         let logoutLabelGesture = UITapGestureRecognizer(target:self, action:#selector(self.logoutTapped(_:)))
         logoutLabel.addGestureRecognizer(logoutLabelGesture)
 
