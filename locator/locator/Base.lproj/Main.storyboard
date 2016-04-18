@@ -2481,7 +2481,7 @@ Locations, bei denen es sich nachweislich um Firmensitze handeln, die nicht im S
         <scene sceneID="wQD-F0-ofX">
             <objects>
                 <tableViewController id="jrY-Zk-E0g" customClass="ChangePasswordTVC" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="hPL-cH-IYE">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="hPL-cH-IYE">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
