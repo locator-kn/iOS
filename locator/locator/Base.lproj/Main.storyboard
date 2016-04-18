@@ -267,7 +267,7 @@
                                     <constraint firstAttribute="height" constant="70" id="1iy-Ho-tmt"/>
                                     <constraint firstAttribute="width" constant="70" id="XUd-31-zfc"/>
                                 </constraints>
-                                <state key="normal" title="nature" image="nature"/>
+                                <state key="normal" image="nature"/>
                                 <connections>
                                     <action selector="natureAction:" destination="3b4-4g-E5P" eventType="touchUpInside" id="b8c-uu-WrG"/>
                                 </connections>
@@ -279,7 +279,7 @@
                                     <constraint firstAttribute="height" constant="70" id="wPa-mA-lhL"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="7"/>
-                                <state key="normal" title="Kultur" image="culture"/>
+                                <state key="normal" image="culture"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="166" y="166" width="70" height="70"/>
                                 </variation>
@@ -293,7 +293,7 @@
                                     <constraint firstAttribute="width" constant="70" id="Afy-mD-BW4"/>
                                     <constraint firstAttribute="height" constant="70" id="hf9-cV-z20"/>
                                 </constraints>
-                                <state key="normal" title="secret" image="secret"/>
+                                <state key="normal" image="secret"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="165" y="337" width="70" height="70"/>
                                 </variation>
@@ -307,7 +307,7 @@
                                     <constraint firstAttribute="height" constant="70" id="JDh-30-Ct6"/>
                                     <constraint firstAttribute="width" constant="70" id="ZDr-yf-rKI"/>
                                 </constraints>
-                                <state key="normal" title="gastro" image="gastro"/>
+                                <state key="normal" image="gastro"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="280" y="234" width="70" height="70"/>
                                 </variation>
@@ -321,7 +321,7 @@
                                     <constraint firstAttribute="height" constant="70" id="LJW-OG-nw8"/>
                                     <constraint firstAttribute="width" constant="70" id="hzG-kz-VFL"/>
                                 </constraints>
-                                <state key="normal" title="holiday" image="holiday"/>
+                                <state key="normal" image="holiday"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="280" y="378" width="70" height="70"/>
                                 </variation>
@@ -427,7 +427,7 @@
                                     <constraint firstAttribute="width" constant="70" id="Zmp-NK-P8S"/>
                                     <constraint firstAttribute="height" constant="70" id="wJG-cw-YWl"/>
                                 </constraints>
-                                <state key="normal" title="party" image="nightlife"/>
+                                <state key="normal" image="nightlife"/>
                                 <connections>
                                     <action selector="nightlifeAction:" destination="3b4-4g-E5P" eventType="touchUpInside" id="1lO-3M-G7k"/>
                                 </connections>
@@ -3434,11 +3434,11 @@ Locations, bei denen es sich nachweislich um Firmensitze handeln, die nicht im S
         <image name="weiter_icon" width="546" height="546"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="n5V-k0-1OC"/>
-        <segue reference="2oh-QA-SLC"/>
+        <segue reference="C0z-Ed-tMO"/>
         <segue reference="Mj3-i4-FhS"/>
-        <segue reference="Q9G-yB-4zn"/>
-        <segue reference="fMg-Vm-LP1"/>
+        <segue reference="n5V-k0-1OC"/>
         <segue reference="F2M-Tf-eKn"/>
+        <segue reference="fMg-Vm-LP1"/>
+        <segue reference="Q9G-yB-4zn"/>
     </inferredMetricsTieBreakers>
 </document>
