@@ -24,6 +24,12 @@ class OnboardMainVC: BWWalkthroughViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction internal override func close(sender: AnyObject){
+        dismissViewControllerAnimated(true) {
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "onboarded")
+        }
+    }
+    
 
     /*
     // MARK: - Navigation

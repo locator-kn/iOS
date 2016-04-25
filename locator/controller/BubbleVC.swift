@@ -40,6 +40,7 @@ class BubbleVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        BoardingService.showBoarding(self)
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "map_icon_white"), style: .Plain, target: self, action: #selector(self.showMap))
         
