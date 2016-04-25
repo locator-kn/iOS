@@ -26,6 +26,7 @@
 		5B42BB6A1C7DD96F004F16D2 /* ImageImpressionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B42BB691C7DD96F004F16D2 /* ImageImpressionCell.swift */; };
 		5B4475091C2167BE00C30445 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4475081C2167BE00C30445 /* Location.swift */; };
 		5B44750D1C216E9600C30445 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44750C1C216E9600C30445 /* LocationService.swift */; };
+		5B4882D11CCE9E44001C2FBA /* OnboardMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4882D01CCE9E44001C2FBA /* OnboardMainVC.swift */; };
 		5B495C4E1C2061B5000D8974 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B495C4D1C2061B5000D8974 /* MapVC.swift */; };
 		5B4EF1111C5E2559005D8612 /* GpsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4EF1101C5E2559005D8612 /* GpsService.swift */; };
 		5B514AD71C5D3447001B3C17 /* ImpressionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B514AD61C5D3447001B3C17 /* ImpressionService.swift */; };
@@ -140,6 +141,7 @@
 		5B42BB691C7DD96F004F16D2 /* ImageImpressionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageImpressionCell.swift; sourceTree = "<group>"; };
 		5B4475081C2167BE00C30445 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		5B44750C1C216E9600C30445 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		5B4882D01CCE9E44001C2FBA /* OnboardMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardMainVC.swift; path = controller/OnboardMainVC.swift; sourceTree = SOURCE_ROOT; };
 		5B495C4D1C2061B5000D8974 /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		5B4EF1101C5E2559005D8612 /* GpsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GpsService.swift; sourceTree = "<group>"; };
 		5B514AD61C5D3447001B3C17 /* ImpressionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImpressionService.swift; sourceTree = "<group>"; };
@@ -213,7 +215,7 @@
 		87EED3851C4571BE00939E07 /* Questions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 		87F14D771C18604B00682709 /* locator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = locator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87F14D7A1C18604B00682709 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = locator/AppDelegate.swift; sourceTree = "<group>"; };
-		87F14D7C1C18604B00682709 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
+		87F14D7C1C18604B00682709 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; usesTabs = 0; };
 		87F14D7F1C18604B00682709 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		87F14D821C18604B00682709 /* locator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = locator.xcdatamodel; sourceTree = "<group>"; };
 		87F14D841C18604B00682709 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = locator/Assets.xcassets; sourceTree = "<group>"; };
@@ -527,6 +529,7 @@
 				CC857BE31C81CC2700776731 /* LoadingAnimationViewController.swift */,
 				CC857BE51C81E72900776731 /* Gif.swift */,
 				5BDAB61B1C58D34F00A4D38E /* nib */,
+				5B4882D01CCE9E44001C2FBA /* OnboardMainVC.swift */,
 			);
 			name = controller;
 			path = locator;
@@ -796,6 +799,7 @@
 				CC4075E21C7F776D00364331 /* NameYourLocationViewController.swift in Sources */,
 				87F14D7D1C18604B00682709 /* WelcomeVC.swift in Sources */,
 				5B091F0C1C83AA640064F03A /* AbstractNavigationVC.swift in Sources */,
+				5B4882D11CCE9E44001C2FBA /* OnboardMainVC.swift in Sources */,
 				876CAA801C3C03F8002A36FF /* RegisterVC2.swift in Sources */,
 				5B42BB6A1C7DD96F004F16D2 /* ImageImpressionCell.swift in Sources */,
 				5B4EF1111C5E2559005D8612 /* GpsService.swift in Sources */,

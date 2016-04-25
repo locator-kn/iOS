@@ -6,6 +6,7 @@ PODS:
   - Bolts/AppLinks (1.6.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.6.0)
+  - BWWalkthrough (1.1.0)
   - FBSDKCoreKit (4.10.0):
     - Bolts (~> 1.5)
   - FBSDKLoginKit (4.10.0):
@@ -42,6 +43,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 3.0)
+  - BWWalkthrough
   - FBSDKCoreKit (= 4.10.0)
   - FBSDKLoginKit (= 4.10.0)
   - FBSDKShareKit (= 4.10.0)
@@ -65,6 +67,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: f11d8624a05f5d39e0c99309b3e600a3ba64298a
   Bolts: f52a250053bb517ca874523c3913776359ab3def
+  BWWalkthrough: 0c27ad2773a25c8f4fb9004bc7d6685deb35fecc
   FBSDKCoreKit: 13bec8373fb3af94d44daf2aa1e0958687897fbd
   FBSDKLoginKit: d3d4a2e9d31954deb00bfea964167a05ca1ea976
   FBSDKShareKit: 54587b4624706ace1e810cf83412a918141f807a

@@ -30,6 +30,7 @@ class LoginVC: UIViewController {
         
         setButtons()
         // Do any additional setup after loading the view.
+        
     }
     
     override func prefersStatusBarHidden() -> Bool {
