@@ -58,8 +58,12 @@
             <string>SourceSansPro-Regular</string>
             <string>SourceSansPro-Regular</string>
             <string>SourceSansPro-Regular</string>
+            <string>SourceSansPro-Regular</string>
+            <string>SourceSansPro-Regular</string>
+            <string>SourceSansPro-Regular</string>
         </mutableArray>
         <mutableArray key="SourceSansPro-Semibold.ttf">
+            <string>SourceSansPro-Semibold</string>
             <string>SourceSansPro-Semibold</string>
             <string>SourceSansPro-Semibold</string>
             <string>SourceSansPro-Semibold</string>
@@ -579,10 +583,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="iWI-Ck-Ehd">
-                                <rect key="frame" x="281" y="493" width="39" height="37"/>
+                                <rect key="frame" x="281" y="28" width="39" height="37"/>
                             </pageControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLI-qM-kue">
-                                <rect key="frame" x="20" y="28" width="94" height="30"/>
+                                <rect key="frame" x="20" y="28" width="86" height="31"/>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="15"/>
                                 <state key="normal" title="Überspringen">
                                     <color key="titleColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </state>
@@ -591,7 +596,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fS-zd-zVB">
-                                <rect key="frame" x="535" y="28" width="45" height="30"/>
+                                <rect key="frame" x="539" y="28" width="41" height="31"/>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="15"/>
                                 <state key="normal" title="Weiter">
                                     <color key="titleColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
                                 </state>
@@ -600,8 +606,9 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <color key="backgroundColor" red="1" green="0.27715990621027697" blue="0.086540160433451474" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="vfs-nh-Aca" firstAttribute="top" secondItem="iWI-Ck-Ehd" secondAttribute="bottom" constant="70" id="E6A-q3-DDA"/>
+                            <constraint firstItem="iWI-Ck-Ehd" firstAttribute="top" secondItem="ed7-7z-VC1" secondAttribute="bottom" constant="8" id="Lcq-2R-UEQ"/>
                             <constraint firstItem="4fS-zd-zVB" firstAttribute="top" secondItem="ed7-7z-VC1" secondAttribute="bottom" constant="8" id="T4l-Kx-Xb1"/>
                             <constraint firstItem="yLI-qM-kue" firstAttribute="leading" secondItem="77U-k1-eDK" secondAttribute="leadingMargin" id="dSW-jt-FaV"/>
                             <constraint firstItem="4fS-zd-zVB" firstAttribute="trailing" secondItem="77U-k1-eDK" secondAttribute="trailingMargin" id="opb-yQ-vs2"/>
@@ -612,6 +619,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="closeButton" destination="yLI-qM-kue" id="fvR-8M-IXx"/>
+                        <outlet property="nextButton" destination="4fS-zd-zVB" id="utN-md-fIS"/>
                         <outlet property="pageControl" destination="iWI-Ck-Ehd" id="cm0-c6-z0v"/>
                     </connections>
                 </viewController>
@@ -686,7 +694,11 @@ biBzdGF0dCB0cm9ja2VuZSBJbmZvcm1hdGlvbi4
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="I8N-Bp-Enz"/>
                                 </constraints>
-                                <string key="text">Willkommen auf dem “Bubblescreen”.  Hier findest du Locations deiner Freunde oder von anderen Usern, die dich interessieren könnten. Schüttel mal dein Handy – vielleicht entdeckstdu ja was neues.</string>
+                                <string key="text">Willkommen auf dem “Bubblescreen”.  
+Hier findest du Locations deiner Freunde und anderer User, die dich interessieren könnten.
+
+Schüttel mal dein Handy – vielleicht entdeckst
+du ja was neues.</string>
                                 <color key="textColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -728,9 +740,12 @@ biBzdGF0dCB0cm9ja2VuZSBJbmZvcm1hdGlvbi4
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="PGs-dr-eh3"/>
                                 </constraints>
-                                <string key="text">Wenn dir eine Location gefällt oder du sie dir für später merken willst, tippe auf das Herz und füge Sie zu deiner persönlichen Merkliste hinzu.</string>
+                                <string key="text">Wenn dir eine Location gefällt 
+oder du sie dir für später merken willst, 
+tippe auf das Herz und füge Sie zu deiner 
+persönlichen Merkliste hinzu.</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -750,10 +765,10 @@ biBzdGF0dCB0cm9ja2VuZSBJbmZvcm1hdGlvbi4
             </objects>
             <point key="canvasLocation" x="1998" y="-2386"/>
         </scene>
-        <!--Walkthrough Page View Controller-->
+        <!--Custom Page View-->
         <scene sceneID="8Lm-4I-cbE">
             <objects>
-                <viewController storyboardIdentifier="onboard_5" id="Xe3-yt-YnF" customClass="BWWalkthroughPageViewController" customModule="BWWalkthrough" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="onboard_5" id="Xe3-yt-YnF" customClass="CustomPageView" customModule="locator" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hfs-Sd-Fan"/>
                         <viewControllerLayoutGuide type="bottom" id="1Ct-dS-vS8"/>
@@ -780,17 +795,50 @@ IGR1IGdlcmFkZSBiaXN0Lg
                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aga-v8-Xdf">
+                                <rect key="frame" x="0.0" y="555" width="600" height="45"/>
+                                <color key="backgroundColor" red="1" green="0.0041873490785883094" blue="0.16097984113848252" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="188" id="yFI-sz-TeT"/>
+                                    <constraint firstAttribute="height" constant="45" id="zk8-nh-qGX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Semibold" family="Source Sans Pro" pointSize="18"/>
+                                <state key="normal" title="Ok, verstanden">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="yFI-sz-TeT"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="go:" destination="Xe3-yt-YnF" eventType="touchUpInside" id="XHt-0D-duO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.24313725489999999" green="0.24313725489999999" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="98Y-KG-TPI" firstAttribute="top" secondItem="hfs-Sd-Fan" secondAttribute="bottom" constant="60" id="85W-hU-45f"/>
                             <constraint firstItem="AS0-FR-ZdS" firstAttribute="leading" secondItem="mQK-aa-9m5" secondAttribute="leading" id="NbT-Qd-AXQ"/>
+                            <constraint firstItem="Aga-v8-Xdf" firstAttribute="leading" secondItem="mQK-aa-9m5" secondAttribute="leadingMargin" id="OwQ-JJ-WJh"/>
+                            <constraint firstItem="1Ct-dS-vS8" firstAttribute="top" secondItem="Aga-v8-Xdf" secondAttribute="bottom" id="RjQ-Gg-x8O"/>
                             <constraint firstItem="98Y-KG-TPI" firstAttribute="leading" secondItem="mQK-aa-9m5" secondAttribute="leadingMargin" id="Wk2-NK-4FV"/>
+                            <constraint firstItem="Aga-v8-Xdf" firstAttribute="trailing" secondItem="mQK-aa-9m5" secondAttribute="trailingMargin" constant="20" id="eMa-og-SI8"/>
                             <constraint firstAttribute="trailing" secondItem="AS0-FR-ZdS" secondAttribute="trailing" id="ijW-z4-scu"/>
                             <constraint firstItem="AS0-FR-ZdS" firstAttribute="top" secondItem="hfs-Sd-Fan" secondAttribute="bottom" id="qih-sd-ZUQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="98Y-KG-TPI" secondAttribute="trailing" id="sdg-Se-3bY"/>
+                            <constraint firstItem="Aga-v8-Xdf" firstAttribute="leading" secondItem="mQK-aa-9m5" secondAttribute="leadingMargin" constant="-20" id="wK9-MC-Jhz"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="OwQ-JJ-WJh"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="button" destination="Aga-v8-Xdf" id="5ZK-Nr-Ort"/>
+                        <outlet property="buttonbottom" destination="RjQ-Gg-x8O" id="mTv-KD-oCs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="umX-GA-llA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -816,7 +864,12 @@ IGR1IGdlcmFkZSBiaXN0Lg
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="Mio-Kd-DRj"/>
                                 </constraints>
-                                <string key="text">Füge mit einem Klick auf “schön hier” einen Heatpoint der Karte hinzu und zeige so anderen Usern wo es am Schönsten ist. Oder halte “schön hier” länger gedrückt und erstelle eine neue Location.</string>
+                                <string key="text">Füge mit einem Klick auf “schön hier” 
+einen Heatpoint der Karte hinzu und zeige so 
+anderen Usern wo es am Schönsten ist. 
+
+Oder halte “schön hier” länger gedrückt 
+und erstelle eine neue Location.</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
