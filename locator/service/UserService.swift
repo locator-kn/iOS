@@ -306,9 +306,9 @@ class UserService {
     }
     
     static func registerPush() {
-        let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge , .Sound], categories: nil)
+      /*  let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge , .Sound], categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(settings)
-        UIApplication.sharedApplication().registerForRemoteNotifications()
+        UIApplication.sharedApplication().registerForRemoteNotifications() */
     }
 
 }
