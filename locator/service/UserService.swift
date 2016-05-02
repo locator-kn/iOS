@@ -52,6 +52,7 @@ class UserService {
                         let user = self.jsonToUser(json)
                         TrackingService.sharedInstance.trackEvent("App | Login")
                         TrackingService.sharedInstance.setIdentity(user.id!, name: user.name!, mail: user.email!)
+                        registerPush()
                         fulfill(user)
                     }
                     
@@ -73,6 +74,7 @@ class UserService {
                     if let value = response.result.value {
                         print("youre logout")
                         TrackingService.sharedInstance.trackEvent("App | Logout")
+                        NSUserDefaults.standardUserDefaults().removeObjectForKey("userimg")
                         fulfill(value)
                     }
                 case .Failure(let error):
@@ -99,6 +101,7 @@ class UserService {
                         let user = jsonToUser(json)
                         TrackingService.sharedInstance.setIdentity(user.id!, name: user.name!, mail: user.email!)
                         TrackingService.sharedInstance.trackEvent("App | Register")
+                        registerPush()
                         fulfill(user)
                     }
                     
@@ -124,6 +127,7 @@ class UserService {
                         let user = self.jsonToUser(json)
                         TrackingService.sharedInstance.setIdentity(user.id!, name: user.name!, mail: user.email!)
                         TrackingService.sharedInstance.trackEvent("App | FB Login")
+                        registerPush()
                         fulfill(user)
                     }
                 case .Failure(let error):
@@ -299,6 +303,12 @@ class UserService {
                 }
             )
         }
+    }
+    
+    static func registerPush() {
+        let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge , .Sound], categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+        UIApplication.sharedApplication().registerForRemoteNotifications()
     }
 
 }
