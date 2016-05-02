@@ -573,7 +573,7 @@
         <!--Onboard MainVC-->
         <scene sceneID="bV5-yX-vF7">
             <objects>
-                <viewController storyboardIdentifier="master" id="ITH-Ub-6Kt" customClass="OnboardMainVC" customModule="locator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="master" id="ITH-Ub-6Kt" customClass="OnboardMainVC" customModule="locator" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ed7-7z-VC1"/>
                         <viewControllerLayoutGuide type="bottom" id="vfs-nh-Aca"/>
@@ -606,7 +606,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.27715990621027697" blue="0.086540160433451474" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.42352941176470588" green="0.42352941176470588" blue="0.42352941176470588" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="iWI-Ck-Ehd" firstAttribute="top" secondItem="ed7-7z-VC1" secondAttribute="bottom" constant="8" id="Lcq-2R-UEQ"/>
                             <constraint firstItem="4fS-zd-zVB" firstAttribute="top" secondItem="ed7-7z-VC1" secondAttribute="bottom" constant="8" id="T4l-Kx-Xb1"/>
@@ -627,10 +627,10 @@
             </objects>
             <point key="canvasLocation" x="1359" y="-3045"/>
         </scene>
-        <!--Walkthrough Page View Controller-->
+        <!--Custom Page View-->
         <scene sceneID="Gxa-NO-5Tb">
             <objects>
-                <viewController storyboardIdentifier="onboard_3" id="sGr-Vs-BSm" customClass="BWWalkthroughPageViewController" customModule="BWWalkthrough" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="onboard_3" id="sGr-Vs-BSm" customClass="CustomPageView" customModule="locator" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3Dv-la-kgu"/>
                         <viewControllerLayoutGuide type="bottom" id="kV0-bz-PYW"/>
@@ -658,7 +658,7 @@ biBzdGF0dCB0cm9ja2VuZSBJbmZvcm1hdGlvbi4
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" red="0.24313725489999999" green="0.24313725489999999" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="syH-7e-6of" secondAttribute="trailing" id="45D-aw-2fT"/>
                             <constraint firstItem="tQ4-Ww-HGd" firstAttribute="top" secondItem="3Dv-la-kgu" secondAttribute="bottom" constant="10" id="8E4-0D-IJk"/>
@@ -674,10 +674,10 @@ biBzdGF0dCB0cm9ja2VuZSBJbmZvcm1hdGlvbi4
             </objects>
             <point key="canvasLocation" x="1998" y="-3045"/>
         </scene>
-        <!--Walkthrough Page View Controller-->
+        <!--Custom Page View-->
         <scene sceneID="CmZ-Hw-b2g">
             <objects>
-                <viewController storyboardIdentifier="onboard_1" id="iuH-Bb-Wik" customClass="BWWalkthroughPageViewController" customModule="BWWalkthrough" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="onboard_1" id="iuH-Bb-Wik" customClass="CustomPageView" customModule="locator" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dqD-50-nLv"/>
                         <viewControllerLayoutGuide type="bottom" id="xjk-cb-i2K"/>
@@ -720,10 +720,10 @@ du ja was neues.</string>
             </objects>
             <point key="canvasLocation" x="1373" y="-2386"/>
         </scene>
-        <!--Walkthrough Page View Controller-->
+        <!--Custom Page View-->
         <scene sceneID="Q2V-2V-ew9">
             <objects>
-                <viewController storyboardIdentifier="onboard_4" id="xU8-Wx-Deb" customClass="BWWalkthroughPageViewController" customModule="BWWalkthrough" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="onboard_4" id="xU8-Wx-Deb" customClass="CustomPageView" customModule="locator" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NPZ-BT-jC6"/>
                         <viewControllerLayoutGuide type="bottom" id="TpI-cn-2eh"/>
@@ -812,7 +812,7 @@ IGR1IGdlcmFkZSBiaXN0Lg
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="go:" destination="Xe3-yt-YnF" eventType="touchUpInside" id="XHt-0D-duO"/>
+                                    <action selector="go:" destination="Xe3-yt-YnF" eventType="touchUpInside" id="Aje-nm-TtY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -844,10 +844,10 @@ IGR1IGdlcmFkZSBiaXN0Lg
             </objects>
             <point key="canvasLocation" x="1998" y="-1733"/>
         </scene>
-        <!--Walkthrough Page View Controller-->
+        <!--Custom Page View-->
         <scene sceneID="SLA-W6-i03">
             <objects>
-                <viewController storyboardIdentifier="onboard_2" id="afk-2x-vFA" customClass="BWWalkthroughPageViewController" customModule="BWWalkthrough" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="onboard_2" id="afk-2x-vFA" customClass="CustomPageView" customModule="locator" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CJA-Bb-FtH"/>
                         <viewControllerLayoutGuide type="bottom" id="1cy-6q-jOi"/>

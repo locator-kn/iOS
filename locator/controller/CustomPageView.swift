@@ -11,14 +11,20 @@ import BWWalkthrough
 
 class CustomPageView: BWWalkthroughPageViewController {
 
-    @IBOutlet weak var button: UIButton!
-    @IBOutlet weak var buttonbottom: NSLayoutConstraint!
+    var root: OnboardMainVC?
+    
+    @IBOutlet weak var button: UIButton?
+    @IBOutlet weak var buttonbottom: NSLayoutConstraint?
+    
     @IBAction func go(sender: UIButton) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        root?.close()
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        button.backgroundColor = COLORS.red
+        if let btn = button {
+            btn.backgroundColor = COLORS.red
+        }
     }
 
     override func didReceiveMemoryWarning() {

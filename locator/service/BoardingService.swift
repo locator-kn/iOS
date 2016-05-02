@@ -12,14 +12,17 @@ import UIKit
 class BoardingService {
     
     static func showBoarding(ctrl: UIViewController) {
+        
         if !NSUserDefaults.standardUserDefaults().boolForKey("onboarded") {
             let stb = UIStoryboard(name: "Main", bundle: nil)
             let walkthrough = stb.instantiateViewControllerWithIdentifier("master") as! OnboardMainVC
-            let page_one = stb.instantiateViewControllerWithIdentifier("onboard_1") as UIViewController
-            let page_two = stb.instantiateViewControllerWithIdentifier("onboard_2") as UIViewController
-            let page_three = stb.instantiateViewControllerWithIdentifier("onboard_3") as UIViewController
-            let page_four = stb.instantiateViewControllerWithIdentifier("onboard_4") as UIViewController
-            let page_five = stb.instantiateViewControllerWithIdentifier("onboard_5") as UIViewController
+            let page_one = stb.instantiateViewControllerWithIdentifier("onboard_1") as! CustomPageView
+            let page_two = stb.instantiateViewControllerWithIdentifier("onboard_2") as! CustomPageView
+            let page_three = stb.instantiateViewControllerWithIdentifier("onboard_3") as! CustomPageView
+            let page_four = stb.instantiateViewControllerWithIdentifier("onboard_4") as! CustomPageView
+            let page_five = stb.instantiateViewControllerWithIdentifier("onboard_5") as! CustomPageView
+            
+            page_five.root = walkthrough
             
             // Attach the pages to the master
             walkthrough.addViewController(page_one)

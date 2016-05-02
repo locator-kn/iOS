@@ -25,20 +25,13 @@ class OnboardMainVC: BWWalkthroughViewController {
     }
     
     @IBAction internal override func close(sender: AnyObject){
+        close()
+    }
+    
+    func close() {
         dismissViewControllerAnimated(true) {
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "onboarded")
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
