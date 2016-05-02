@@ -80,7 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let ctrl = window!.rootViewController?.childViewControllers.last as? BubbleVC {
             ctrl.resolveBubblePromises()
         }
-        TrackingService.sharedInstance.trackEvent("App | launch")
+        TrackingService.sharedInstance.trackEvent("App | become active")
     }
     
     func applicationDidBecomeActive(application: UIApplication) {
