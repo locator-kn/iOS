@@ -59,6 +59,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             TrackingService.sharedInstance.trackEvent("App | launch as guest")
         }
         
+        let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge , .Sound], categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+        UIApplication.sharedApplication().registerForRemoteNotifications()
         return true
     }
     
