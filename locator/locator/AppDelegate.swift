@@ -28,25 +28,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         }
         
-        if (NSUserDefaults.standardUserDefaults().stringForKey("me") != nil) {
+        if let userID = NSUserDefaults.standardUserDefaults().stringForKey("me") {
+            
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-            
             let secondnavi = mainStoryboard.instantiateViewControllerWithIdentifier("secondnavi") as! SecondNavigationVC
+            
             window?.rootViewController = secondnavi
-            
-            User.me = User(id: NSUserDefaults.standardUserDefaults().stringForKey("me")!)
-            
             window?.makeKeyAndVisible()
             
-            UserService.getUser(NSUserDefaults.standardUserDefaults().stringForKey("me")!).then {
+            User.me = User(id: userID)
+            UserService.getUser(userID).then {
                 result -> Void in
                 User.me = result
-                TrackingService.sharedInstance.setIdentity(User.me!.id!, name: User.me!.name!, mail: User.me!.email!)
-                TrackingService.sharedInstance.trackEvent("App | launch as user")
+                
+                if let me = User.me {
+                 
+                    if let id = me.id, name = me.name, mail = me.email {
+                        TrackingService.sharedInstance.setIdentity(id, name: name, mail: mail)
+                        TrackingService.sharedInstance.trackEvent("App | launch as user")
+                    }
+                    
+                }
+                
                 if let bubbleVC = secondnavi.visibleViewController as? BubbleVC {
                     bubbleVC.showUserThumb()
                 }
             }
+            
         } else {
             TrackingService.sharedInstance.trackEvent("App | launch as guest")
         }
@@ -60,12 +68,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-        TrackingService.sharedInstance.trackEvent("App | become inactive")
     }
     
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        TrackingService.sharedInstance.trackEvent("App | become inactive")
     }
     
     func applicationWillEnterForeground(application: UIApplication) {
