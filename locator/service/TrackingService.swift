@@ -12,19 +12,23 @@ import Mixpanel
 class TrackingService {
     
     static var sharedInstance = TrackingService()
-    var mixpanel: Mixpanel!
+    var mixpanel: Mixpanel?
     
     init() {
-        mixpanel = Mixpanel.sharedInstanceWithToken("8a116f252618b432ac6eaaee50374a69fee1b689a0fc7b750c7e9eca80caf141")
+        mixpanel = Mixpanel.sharedInstanceWithToken("39259b14d0685a26d043c2f394718d4b")
     }
     
     func trackEvent(event: String) {
-         mixpanel.track(event);
+        if let mix = mixpanel {
+            mix.track(event);
+        }
     }
     
     func setIdentity(id: String, name: String, mail: String) {
-        mixpanel.identify(id);
-        mixpanel.people.set(["$email": mail, "$name": name]);
+        if let mix = mixpanel {
+            mix.identify(id);
+            mix.people.set(["$email": mail, "$name": name]);
+        }
     }
     
 }
