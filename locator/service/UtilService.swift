@@ -62,7 +62,7 @@ class UtilService {
         return Promise { fulfill, reject in
             
             let tmp = self.stripString(path)
-            if (tmp != "") {
+            if (tmp != "" && tmp != API.IMAGE_URL) {
                 let cache = Shared.dataCache
                 cache.fetch(URL: NSURL(string: tmp)!)
                     .onSuccess { data in
