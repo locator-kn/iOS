@@ -13,6 +13,7 @@ class CustomPageView: BWWalkthroughPageViewController {
 
     var root: OnboardMainVC?
     
+    @IBOutlet weak var imgbottom: NSLayoutConstraint!
     @IBOutlet weak var button: UIButton?
     @IBOutlet weak var buttonbottom: NSLayoutConstraint?
     
@@ -25,6 +26,12 @@ class CustomPageView: BWWalkthroughPageViewController {
         if let btn = button {
             btn.backgroundColor = COLORS.red
         }
+        
+        let screenSize = UIScreen.mainScreen().bounds.height
+        if screenSize <= 480.0 {
+            imgbottom.constant = -120
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
