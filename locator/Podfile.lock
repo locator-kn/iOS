@@ -14,11 +14,11 @@ PODS:
   - FBSDKShareKit (4.10.0):
     - FBSDKCoreKit
   - Fusuma (0.3.8)
-  - GoogleMaps (1.13.0)
+  - GoogleMaps (1.13.1)
   - HanekeSwift (0.10.1)
-  - Mixpanel (2.9.8):
-    - Mixpanel/Mixpanel (= 2.9.8)
-  - Mixpanel/Mixpanel (2.9.8)
+  - Mixpanel (2.9.9):
+    - Mixpanel/Mixpanel (= 2.9.9)
+  - Mixpanel/Mixpanel (2.9.9)
   - OMGHTTPURLRQ (3.1.1):
     - OMGHTTPURLRQ/RQ (= 3.1.1)
   - OMGHTTPURLRQ/FormURLEncode (3.1.1)
@@ -72,9 +72,9 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: d3d4a2e9d31954deb00bfea964167a05ca1ea976
   FBSDKShareKit: 54587b4624706ace1e810cf83412a918141f807a
   Fusuma: e54c4a1627c7faa26733b1354e8e959318b1f763
-  GoogleMaps: 7a6caeb8336d7cb42982e969fc9b1b20a889fe79
+  GoogleMaps: 8935220056a6cc8e9ca298b4da4ae530620aa71b
   HanekeSwift: 08e47d3d0f2899ec58e5d257beba0de619aca9e8
-  Mixpanel: 39c8e140d74d914e460ea3b4c770434fcd29c8a0
+  Mixpanel: 818d1940c2d9402453b349545022a86968097f57
   OMGHTTPURLRQ: 633f98ee745aeda02345935a52eec1784cddb589
   PageMenu: ba19ff267f7a19e444e93c20a7847b78954a7011
   PromiseKit: 4e8127c22a9b29d1b44958ab2ec762ea6115cbfb
