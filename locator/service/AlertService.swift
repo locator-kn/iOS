@@ -47,5 +47,23 @@ class AlertService {
     static func openAppSettings(a: UIAlertAction) {
         UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
     }
+    
+    static func menuActionSheet(ctrl: UIViewController) {
+        let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .ActionSheet)
+        
+        let saveAction = UIAlertAction(title: "Location Melden", style: .Destructive, handler: {
+            (alert: UIAlertAction!) -> Void in
+            AlertService.simpleAlert(ctrl, title: "Danke", message: "Wir kümmen uns darum")
+        })
+        
+        let cancelAction = UIAlertAction(title: "Abbrechen", style: .Cancel, handler: {
+            (alert: UIAlertAction!) -> Void in
+        })
+        
+        optionMenu.addAction(saveAction)
+        optionMenu.addAction(cancelAction)
+        
+        ctrl.presentViewController(optionMenu, animated: true, completion: nil)
+    }
 
 }
