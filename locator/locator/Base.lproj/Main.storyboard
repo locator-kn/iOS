@@ -1289,7 +1289,7 @@ und erstelle eine neue Location.</string>
                                             <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                                             <state key="normal" image="favorite_icon"/>
                                             <connections>
-                                                <action selector="favorLocation:" destination="1XA-Ef-cjY" eventType="touchUpInside" id="iLC-tZ-mIU"/>
+                                                <action selector="openActionSheet:" destination="1XA-Ef-cjY" eventType="touchUpInside" id="aLj-6m-mDI"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFD-cK-Myd" userLabel="impressionsCount">
@@ -1384,6 +1384,18 @@ und erstelle eine neue Location.</string>
                                                 <segue destination="4Mp-XX-Glu" kind="show" identifier="map" id="Q9G-yB-4zn"/>
                                             </connections>
                                         </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ni9-q4-H3Q" userLabel="favorButton">
+                                            <rect key="frame" x="282" y="219" width="35" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="Che-40-87l"/>
+                                                <constraint firstAttribute="width" constant="35" id="PnZ-PB-IET"/>
+                                            </constraints>
+                                            <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                            <state key="normal" image="favorite_icon"/>
+                                            <connections>
+                                                <action selector="favorLocation:" destination="1XA-Ef-cjY" eventType="touchUpInside" id="n2G-qA-Auw"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="8CZ-Io-utv" firstAttribute="centerX" secondItem="E6c-8O-3Ua" secondAttribute="centerX" id="0fr-Qh-HFd"/>
@@ -1412,6 +1424,7 @@ und erstelle eine neue Location.</string>
                                         <constraint firstItem="Kyk-PS-lC3" firstAttribute="leading" secondItem="2Uv-6R-lJs" secondAttribute="trailing" constant="3" id="Qxg-LV-YSJ"/>
                                         <constraint firstItem="1SA-hI-d78" firstAttribute="top" secondItem="XDq-gz-AVD" secondAttribute="bottom" constant="-2" id="S0k-Ac-2PJ"/>
                                         <constraint firstItem="K8S-st-ZK4" firstAttribute="top" secondItem="Kyk-PS-lC3" secondAttribute="bottom" constant="23" id="VVr-PX-DBq"/>
+                                        <constraint firstItem="Ni9-q4-H3Q" firstAttribute="bottom" secondItem="ZSP-fm-YDO" secondAttribute="bottom" constant="-5" id="WsX-9L-viN"/>
                                         <constraint firstItem="lmP-I0-6Be" firstAttribute="top" secondItem="Qd5-dd-cVV" secondAttribute="bottom" constant="20" id="X3W-YN-FtH"/>
                                         <constraint firstItem="ckI-cM-stC" firstAttribute="leading" secondItem="E6c-8O-3Ua" secondAttribute="leadingMargin" id="buv-sq-pPO"/>
                                         <constraint firstItem="pW9-vX-Di4" firstAttribute="top" secondItem="nb7-ZO-dd5" secondAttribute="bottom" constant="7" id="d0I-s0-u6e"/>
@@ -1420,6 +1433,7 @@ und erstelle eine neue Location.</string>
                                         <constraint firstItem="lmP-I0-6Be" firstAttribute="leading" secondItem="E6c-8O-3Ua" secondAttribute="leadingMargin" id="kGH-lO-E2S"/>
                                         <constraint firstItem="ckI-cM-stC" firstAttribute="top" secondItem="lmP-I0-6Be" secondAttribute="bottom" constant="-5" id="kPA-r5-1Sv"/>
                                         <constraint firstItem="2Uv-6R-lJs" firstAttribute="leading" secondItem="ckI-cM-stC" secondAttribute="trailing" constant="6" id="nGL-lb-QrS"/>
+                                        <constraint firstItem="Ni9-q4-H3Q" firstAttribute="centerX" secondItem="E6c-8O-3Ua" secondAttribute="centerX" id="og9-hT-hHN"/>
                                         <constraint firstAttribute="trailing" secondItem="ZSP-fm-YDO" secondAttribute="trailing" id="onV-M4-GcW"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="pW9-vX-Di4" secondAttribute="trailing" constant="2" id="p53-KB-rvR"/>
                                         <constraint firstItem="XDq-gz-AVD" firstAttribute="baseline" secondItem="vE5-IY-R4z" secondAttribute="baseline" id="pFo-kE-sSw"/>
@@ -1451,7 +1465,7 @@ und erstelle eine neue Location.</string>
                                     <outlet property="category_2" destination="Qd5-dd-cVV" id="4vk-KC-u25"/>
                                     <outlet property="city" destination="lmP-I0-6Be" id="BdX-94-8NW"/>
                                     <outlet property="favorCount" destination="2Uv-6R-lJs" id="ODA-rA-3mG"/>
-                                    <outlet property="favorIcon" destination="nb7-ZO-dd5" id="MuS-6h-u1s"/>
+                                    <outlet property="favorIcon" destination="Ni9-q4-H3Q" id="KB2-iG-315"/>
                                     <outlet property="impressionsCount" destination="PFD-cK-Myd" id="aTJ-gs-ijg"/>
                                     <outlet property="locationImage" destination="ZSP-fm-YDO" id="nh6-58-TNW"/>
                                     <outlet property="username" destination="ckI-cM-stC" id="god-UV-IyR"/>
