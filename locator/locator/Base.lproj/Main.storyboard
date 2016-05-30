@@ -1373,7 +1373,7 @@ und erstelle eine neue Location.</string>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ni9-q4-H3Q" userLabel="favorButton">
-                                            <rect key="frame" x="282" y="219" width="35" height="35"/>
+                                            <rect key="frame" x="282" y="211" width="35" height="35"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="35" id="Che-40-87l"/>
                                                 <constraint firstAttribute="width" constant="35" id="PnZ-PB-IET"/>
@@ -1385,7 +1385,7 @@ und erstelle eine neue Location.</string>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nb7-ZO-dd5" userLabel="favorButton">
-                                            <rect key="frame" x="561" y="220" width="27" height="27"/>
+                                            <rect key="frame" x="559" y="215" width="27" height="27"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="27" id="83P-cx-q1B"/>
                                                 <constraint firstAttribute="height" constant="27" id="WRb-6E-Mck"/>
@@ -1410,7 +1410,7 @@ und erstelle eine neue Location.</string>
                                         <constraint firstItem="4u5-TR-HrK" firstAttribute="top" secondItem="vE5-IY-R4z" secondAttribute="bottom" constant="-2" id="7TO-NE-4qy"/>
                                         <constraint firstItem="pW9-vX-Di4" firstAttribute="top" secondItem="nb7-ZO-dd5" secondAttribute="top" constant="-1" id="AoY-pG-Nct"/>
                                         <constraint firstItem="Kyk-PS-lC3" firstAttribute="baseline" secondItem="2Uv-6R-lJs" secondAttribute="baseline" constant="-1" id="C3c-8w-bOJ"/>
-                                        <constraint firstItem="nb7-ZO-dd5" firstAttribute="leading" secondItem="pW9-vX-Di4" secondAttribute="leading" constant="6" id="DyK-Lf-a7C"/>
+                                        <constraint firstItem="nb7-ZO-dd5" firstAttribute="leading" secondItem="pW9-vX-Di4" secondAttribute="leading" constant="4" id="DyK-Lf-a7C"/>
                                         <constraint firstItem="7p9-Lt-PDz" firstAttribute="leading" secondItem="8CZ-Io-utv" secondAttribute="leading" id="EnX-Wx-tNj"/>
                                         <constraint firstItem="kbi-3c-e8u" firstAttribute="baseline" secondItem="K8S-st-ZK4" secondAttribute="baseline" id="FCp-Q8-OvV"/>
                                         <constraint firstItem="K8S-st-ZK4" firstAttribute="top" secondItem="ckI-cM-stC" secondAttribute="top" constant="45" id="FSq-r8-x9D"/>
@@ -1426,10 +1426,10 @@ und erstelle eine neue Location.</string>
                                         <constraint firstItem="Kyk-PS-lC3" firstAttribute="leading" secondItem="2Uv-6R-lJs" secondAttribute="trailing" constant="3" id="Qxg-LV-YSJ"/>
                                         <constraint firstItem="1SA-hI-d78" firstAttribute="top" secondItem="XDq-gz-AVD" secondAttribute="bottom" constant="-2" id="S0k-Ac-2PJ"/>
                                         <constraint firstItem="K8S-st-ZK4" firstAttribute="top" secondItem="Kyk-PS-lC3" secondAttribute="bottom" constant="23" id="VVr-PX-DBq"/>
-                                        <constraint firstItem="Ni9-q4-H3Q" firstAttribute="bottom" secondItem="ZSP-fm-YDO" secondAttribute="bottom" constant="-5" id="WsX-9L-viN"/>
+                                        <constraint firstItem="Ni9-q4-H3Q" firstAttribute="bottom" secondItem="ZSP-fm-YDO" secondAttribute="bottom" constant="-13" id="WsX-9L-viN"/>
                                         <constraint firstItem="lmP-I0-6Be" firstAttribute="top" secondItem="Qd5-dd-cVV" secondAttribute="bottom" constant="20" id="X3W-YN-FtH"/>
                                         <constraint firstItem="ckI-cM-stC" firstAttribute="leading" secondItem="E6c-8O-3Ua" secondAttribute="leadingMargin" id="buv-sq-pPO"/>
-                                        <constraint firstItem="pW9-vX-Di4" firstAttribute="top" secondItem="nb7-ZO-dd5" secondAttribute="bottom" constant="14" id="d0I-s0-u6e"/>
+                                        <constraint firstItem="pW9-vX-Di4" firstAttribute="top" secondItem="nb7-ZO-dd5" secondAttribute="bottom" constant="19" id="d0I-s0-u6e"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="K8S-st-ZK4" secondAttribute="leading" id="gMm-YV-WUa"/>
                                         <constraint firstItem="7p9-Lt-PDz" firstAttribute="top" secondItem="8CZ-Io-utv" secondAttribute="bottom" constant="-2" id="jIZ-g5-s4f"/>
                                         <constraint firstItem="lmP-I0-6Be" firstAttribute="leading" secondItem="E6c-8O-3Ua" secondAttribute="leadingMargin" id="kGH-lO-E2S"/>
