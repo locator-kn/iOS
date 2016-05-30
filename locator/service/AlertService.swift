@@ -8,6 +8,9 @@
 
 import Foundation
 import UIKit
+import PromiseKit
+import SwiftyJSON
+import Alamofire
 
 class AlertService {
         
@@ -49,21 +52,57 @@ class AlertService {
     }
     
     static func menuActionSheet(ctrl: UIViewController) {
-        let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .ActionSheet)
         
-        let saveAction = UIAlertAction(title: "Location Melden", style: .Destructive, handler: {
+        var string: String = ""
+        var id: String = ""
+        
+        if let _ctrl = ctrl as? LocationDetailVC {
+            string = "Location "
+            id = _ctrl.location.id
+        } else if let _ctrl = ctrl as? UserVC,
+            _id = _ctrl.user.id {
+            
+            id = _id
+            string = "User "
+        }
+        
+        let optionMenu = UIAlertController(title: nil, message: "Menü", preferredStyle: .ActionSheet)
+        
+        let reportAction = UIAlertAction(title: string + "Melden", style: .Destructive, handler: {
             (alert: UIAlertAction!) -> Void in
-            AlertService.simpleAlert(ctrl, title: "Danke", message: "Wir kümmen uns darum")
+            self.simpleAlert(ctrl, title: "Danke", message: "Wir kümmen uns darum")
+            
+            let reportString = string + ": " + id
+            self.report(reportString)
+            print("Report: " + reportString)
+            
         })
         
         let cancelAction = UIAlertAction(title: "Abbrechen", style: .Cancel, handler: {
             (alert: UIAlertAction!) -> Void in
         })
         
-        optionMenu.addAction(saveAction)
+        optionMenu.addAction(reportAction)
         optionMenu.addAction(cancelAction)
         
         ctrl.presentViewController(optionMenu, animated: true, completion: nil)
+    }
+    
+    static func report(reportString: String) -> Promise<Bool> {
+        return Promise { fulfill, reject in
+            Alamofire.request(.POST, API.BASE_URL + "/report", parameters: ["report": reportString])
+                .validate()
+                .responseJSON {
+                    response in
+                    
+                    switch response.result {
+                    case .Success:
+                        fulfill(true)
+                    case .Failure(let error):
+                        reject(error)
+                    }
+            }
+        }
     }
 
 }
