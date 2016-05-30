@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="U8m-eU-1FD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="U8m-eU-1FD">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -1280,18 +1280,6 @@ und erstelle eine neue Location.</string>
                                                 <constraint firstAttribute="width" constant="40" id="npO-78-DHA"/>
                                             </constraints>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nb7-ZO-dd5" userLabel="favorButton">
-                                            <rect key="frame" x="555" y="219" width="35" height="35"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="35" id="83P-cx-q1B"/>
-                                                <constraint firstAttribute="height" constant="35" id="WRb-6E-Mck"/>
-                                            </constraints>
-                                            <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
-                                            <state key="normal" image="favorite_icon"/>
-                                            <connections>
-                                                <action selector="openActionSheet:" destination="1XA-Ef-cjY" eventType="touchUpInside" id="aLj-6m-mDI"/>
-                                            </connections>
-                                        </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFD-cK-Myd" userLabel="impressionsCount">
                                             <rect key="frame" x="501" y="330" width="7" height="18"/>
                                             <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
@@ -1396,19 +1384,33 @@ und erstelle eine neue Location.</string>
                                                 <action selector="favorLocation:" destination="1XA-Ef-cjY" eventType="touchUpInside" id="n2G-qA-Auw"/>
                                             </connections>
                                         </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nb7-ZO-dd5" userLabel="favorButton">
+                                            <rect key="frame" x="561" y="220" width="27" height="27"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="27" id="83P-cx-q1B"/>
+                                                <constraint firstAttribute="height" constant="27" id="WRb-6E-Mck"/>
+                                            </constraints>
+                                            <inset key="contentEdgeInsets" minX="100" minY="100" maxX="100" maxY="100"/>
+                                            <inset key="imageEdgeInsets" minX="50" minY="50" maxX="50" maxY="50"/>
+                                            <state key="normal" backgroundImage="dots_white"/>
+                                            <connections>
+                                                <action selector="openActionSheet:" destination="1XA-Ef-cjY" eventType="touchUpInside" id="aLj-6m-mDI"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="8CZ-Io-utv" firstAttribute="centerX" secondItem="E6c-8O-3Ua" secondAttribute="centerX" id="0fr-Qh-HFd"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="XDq-gz-AVD" secondAttribute="trailing" constant="45" id="2t8-MH-LHJ"/>
                                         <constraint firstItem="ZSP-fm-YDO" firstAttribute="leading" secondItem="E6c-8O-3Ua" secondAttribute="leading" id="4BZ-qB-CEZ"/>
                                         <constraint firstItem="Kyk-PS-lC3" firstAttribute="top" secondItem="2Uv-6R-lJs" secondAttribute="top" constant="6" id="4m7-ul-CYm"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="nb7-ZO-dd5" secondAttribute="trailing" constant="7" id="5GP-iY-yhE"/>
                                         <constraint firstItem="nb7-ZO-dd5" firstAttribute="leading" secondItem="pW9-vX-Di4" secondAttribute="trailing" constant="18" id="5Pz-SE-ymn"/>
                                         <constraint firstItem="lmP-I0-6Be" firstAttribute="top" secondItem="ZSP-fm-YDO" secondAttribute="bottom" constant="8" id="5nC-7P-h1i"/>
                                         <constraint firstItem="kbi-3c-e8u" firstAttribute="baseline" secondItem="K8S-st-ZK4" secondAttribute="baseline" id="6bB-wi-IFl"/>
                                         <constraint firstItem="4u5-TR-HrK" firstAttribute="top" secondItem="vE5-IY-R4z" secondAttribute="bottom" constant="-2" id="7TO-NE-4qy"/>
                                         <constraint firstItem="pW9-vX-Di4" firstAttribute="top" secondItem="nb7-ZO-dd5" secondAttribute="top" constant="-1" id="AoY-pG-Nct"/>
                                         <constraint firstItem="Kyk-PS-lC3" firstAttribute="baseline" secondItem="2Uv-6R-lJs" secondAttribute="baseline" constant="-1" id="C3c-8w-bOJ"/>
-                                        <constraint firstItem="nb7-ZO-dd5" firstAttribute="leading" secondItem="pW9-vX-Di4" secondAttribute="leading" id="DyK-Lf-a7C"/>
+                                        <constraint firstItem="nb7-ZO-dd5" firstAttribute="leading" secondItem="pW9-vX-Di4" secondAttribute="leading" constant="6" id="DyK-Lf-a7C"/>
                                         <constraint firstItem="7p9-Lt-PDz" firstAttribute="leading" secondItem="8CZ-Io-utv" secondAttribute="leading" id="EnX-Wx-tNj"/>
                                         <constraint firstItem="kbi-3c-e8u" firstAttribute="baseline" secondItem="K8S-st-ZK4" secondAttribute="baseline" id="FCp-Q8-OvV"/>
                                         <constraint firstItem="K8S-st-ZK4" firstAttribute="top" secondItem="ckI-cM-stC" secondAttribute="top" constant="45" id="FSq-r8-x9D"/>
@@ -1427,7 +1429,7 @@ und erstelle eine neue Location.</string>
                                         <constraint firstItem="Ni9-q4-H3Q" firstAttribute="bottom" secondItem="ZSP-fm-YDO" secondAttribute="bottom" constant="-5" id="WsX-9L-viN"/>
                                         <constraint firstItem="lmP-I0-6Be" firstAttribute="top" secondItem="Qd5-dd-cVV" secondAttribute="bottom" constant="20" id="X3W-YN-FtH"/>
                                         <constraint firstItem="ckI-cM-stC" firstAttribute="leading" secondItem="E6c-8O-3Ua" secondAttribute="leadingMargin" id="buv-sq-pPO"/>
-                                        <constraint firstItem="pW9-vX-Di4" firstAttribute="top" secondItem="nb7-ZO-dd5" secondAttribute="bottom" constant="7" id="d0I-s0-u6e"/>
+                                        <constraint firstItem="pW9-vX-Di4" firstAttribute="top" secondItem="nb7-ZO-dd5" secondAttribute="bottom" constant="14" id="d0I-s0-u6e"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="K8S-st-ZK4" secondAttribute="leading" id="gMm-YV-WUa"/>
                                         <constraint firstItem="7p9-Lt-PDz" firstAttribute="top" secondItem="8CZ-Io-utv" secondAttribute="bottom" constant="-2" id="jIZ-g5-s4f"/>
                                         <constraint firstItem="lmP-I0-6Be" firstAttribute="leading" secondItem="E6c-8O-3Ua" secondAttribute="leadingMargin" id="kGH-lO-E2S"/>
@@ -1452,6 +1454,7 @@ und erstelle eine neue Location.</string>
                                             <exclude reference="M9i-X9-nSk"/>
                                             <exclude reference="FSq-r8-x9D"/>
                                             <exclude reference="VVr-PX-DBq"/>
+                                            <exclude reference="5GP-iY-yhE"/>
                                             <exclude reference="5Pz-SE-ymn"/>
                                             <exclude reference="tQp-5Q-shi"/>
                                             <exclude reference="yW9-4d-EJz"/>
@@ -1972,10 +1975,10 @@ und erstelle eine neue Location.</string>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohi-hV-ckE" userLabel="Follow">
-                                <rect key="frame" x="550" y="194" width="38" height="33"/>
+                                <rect key="frame" x="280" y="192" width="40" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="38" id="3Tc-4I-cwt"/>
-                                    <constraint firstAttribute="height" constant="33" id="Wl4-Fj-cKF"/>
+                                    <constraint firstAttribute="width" constant="40" id="3Tc-4I-cwt"/>
+                                    <constraint firstAttribute="height" constant="35" id="Wl4-Fj-cKF"/>
                                 </constraints>
                                 <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                                 <state key="normal" image="follow"/>
@@ -1989,6 +1992,26 @@ und erstelle eine neue Location.</string>
                                     <segue destination="TZr-82-eDo" kind="embed" identifier="tabBarVC" id="duB-uZ-5u4"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvv-eo-Bpa" userLabel="Follow">
+                                <rect key="frame" x="570" y="196" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="IaP-AU-wIc"/>
+                                    <constraint firstAttribute="height" constant="24" id="ogC-jT-nsn"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="33" id="pIx-4H-Owq"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="38" id="phl-IG-dnM"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                <state key="normal" backgroundImage="dots_white"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="pIx-4H-Owq"/>
+                                        <exclude reference="phl-IG-dnM"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="openMenu:" destination="G1J-vh-MOc" eventType="touchUpInside" id="Dvc-LP-b6K"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
                         <constraints>
@@ -2004,13 +2027,21 @@ und erstelle eine neue Location.</string>
                             <constraint firstItem="0H4-fT-IyP" firstAttribute="top" secondItem="1vC-Kz-1OR" secondAttribute="bottom" constant="41" id="Nn9-xG-d9Z"/>
                             <constraint firstItem="Yxg-Pb-2PJ" firstAttribute="top" secondItem="O0A-8Z-wUN" secondAttribute="top" constant="-25" id="OTq-pz-u4q"/>
                             <constraint firstItem="0H4-fT-IyP" firstAttribute="top" secondItem="1vC-Kz-1OR" secondAttribute="bottom" constant="41" id="QC8-Oc-6Er"/>
+                            <constraint firstItem="tvv-eo-Bpa" firstAttribute="top" secondItem="Ohi-hV-ckE" secondAttribute="top" constant="4" id="RPC-Y8-xqB"/>
                             <constraint firstItem="1vC-Kz-1OR" firstAttribute="top" secondItem="ZJv-YQ-Sxt" secondAttribute="bottom" constant="30" id="Tof-Yf-pAC"/>
+                            <constraint firstItem="Ohi-hV-ckE" firstAttribute="centerX" secondItem="O0A-8Z-wUN" secondAttribute="centerX" id="Yti-qW-l0C"/>
                             <constraint firstItem="1vC-Kz-1OR" firstAttribute="centerX" secondItem="O0A-8Z-wUN" secondAttribute="centerX" id="etd-bY-Rso"/>
                             <constraint firstItem="qfK-lX-Rwx" firstAttribute="top" secondItem="Yxg-Pb-2PJ" secondAttribute="top" constant="115" id="g1Q-BW-GZO"/>
                             <constraint firstItem="0H4-fT-IyP" firstAttribute="trailing" secondItem="Yxg-Pb-2PJ" secondAttribute="trailing" id="pe4-wh-t1p"/>
+                            <constraint firstAttribute="trailing" secondItem="tvv-eo-Bpa" secondAttribute="trailing" constant="6" id="r3L-FN-Eq0"/>
                             <constraint firstItem="qfK-lX-Rwx" firstAttribute="leading" secondItem="O0A-8Z-wUN" secondAttribute="leading" id="sfq-5m-gzQ"/>
                             <constraint firstItem="Yxg-Pb-2PJ" firstAttribute="leading" secondItem="O0A-8Z-wUN" secondAttribute="leading" id="twl-V1-chq"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="NKr-Ni-ocx"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -3791,6 +3822,7 @@ Locations, bei denen es sich nachweislich um Firmensitze handeln, die nicht im S
         <image name="create_location" width="170" height="170"/>
         <image name="cross" width="21" height="21"/>
         <image name="culture" width="75" height="75"/>
+        <image name="dots_white" width="295" height="295"/>
         <image name="favorite_icon" width="173" height="141"/>
         <image name="favorite_icon_black" width="104" height="74"/>
         <image name="follow" width="179" height="141"/>
