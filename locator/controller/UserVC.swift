@@ -180,5 +180,9 @@ class UserVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
             self.tabVC!.user = self.user
         }
     }
+    
+    @IBAction func openMenu(sender: AnyObject) {
+        AlertService.menuActionSheet(self)
+    }
 
 }
