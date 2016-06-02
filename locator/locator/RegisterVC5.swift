@@ -27,6 +27,7 @@ class RegisterVC5: UIViewController, UINavigationControllerDelegate, UIImagePick
         imageFromSource.delegate = self
         let tapGestureRecognizer1 = UITapGestureRecognizer(target:self, action:#selector(self.imageTapped(_:)))
         profilImageView.addGestureRecognizer(tapGestureRecognizer1)
+        navigationItem.setHidesBackButton(true, animated:true);
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,7 +47,7 @@ class RegisterVC5: UIViewController, UINavigationControllerDelegate, UIImagePick
         performSegueWithIdentifier("showPreLogin", sender: self)
     }
     
-    func yesButtonTapped(sender: UIImageView) {
+    func yesButtonTapped() {
         
         if profilImageChanged == true {
             
@@ -103,7 +104,15 @@ class RegisterVC5: UIViewController, UINavigationControllerDelegate, UIImagePick
         let tmp: UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         profilImageChanged = true
         profilImageView.image = tmp
-        self.dismissViewControllerAnimated(true) { () -> Void in }
+        
+        if let img = self.profilImageView.image {
+            NSUserDefaults.standardUserDefaults().setObject(UIImagePNGRepresentation(img), forKey: "userimg")
+        }
+        
+        dismissViewControllerAnimated(true, completion: nil)
+        
+        yesButtonTapped()
+        
     }
     
 }
