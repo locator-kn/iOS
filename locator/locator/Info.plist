@@ -26,6 +26,18 @@
 				<string>fb383834701823910</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLIconFile</key>
+			<string></string>
+			<key>CFBundleURLName</key>
+			<string>com.locator-app</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>schoenhier</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>5</string>

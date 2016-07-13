@@ -213,5 +213,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         completionHandler(UIBackgroundFetchResult.NoData)
     }
     
+    func application(app: UIApplication, openURL url: NSURL, options: [String: AnyObject]) -> Bool {
+        print(url, options)
+        return true
+    }
+    
     
 }
