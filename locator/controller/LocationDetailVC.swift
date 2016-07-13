@@ -70,7 +70,7 @@ class LocationDetailVC: UITableViewController {
     
     func playVideo() {
         
-        let myBaseUrl = "https://locator-app.com/api/v2/locations/impression/video/56b907022f08ffcd26f8c13a/impression.mov"
+        let myBaseUrl = "http://locator-app.com/api/v2/locations/impression/video/56b907022f08ffcd26f8c13a/impression.mov"
         if let url = NSURL(string: myBaseUrl) {
 
             self.player = AVPlayer(URL: url)
